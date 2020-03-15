@@ -15,6 +15,13 @@
 		03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */; };
 		03AAFB00241E2FDD0068FB1E /* fetilipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAFF241E2FDD0068FB1E /* fetilipTests.swift */; };
 		03AAFB0B241E2FDD0068FB1E /* fetilipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */; };
+		03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */; };
+		03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */; };
+		03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB20241E45730068FB1E /* RxSwift.framework */; };
+		03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB24241E46800068FB1E /* RxRelay.framework */; };
+		03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB27241E46970068FB1E /* IQKeyboardManagerSwift.framework */; };
+		03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB24241E46800068FB1E /* RxRelay.framework */; };
+		03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,12 @@
 		03AAFB06241E2FDD0068FB1E /* fetilipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fetilipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetilipUITests.swift; sourceTree = "<group>"; };
 		03AAFB0C241E2FDD0068FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
+		03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		03AAFB20241E45730068FB1E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		03AAFB24241E46800068FB1E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		03AAFB27241E46970068FB1E /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		03AAFB2E241E4A140068FB1E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */,
+				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
+				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
+				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
+				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
+				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
+				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +103,7 @@
 				03AAFAFE241E2FDD0068FB1E /* fetilipTests */,
 				03AAFB09241E2FDD0068FB1E /* fetilipUITests */,
 				03AAFAE6241E2FD70068FB1E /* Products */,
+				03AAFB18241E45460068FB1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +149,19 @@
 			path = fetilipUITests;
 			sourceTree = "<group>";
 		};
+		03AAFB18241E45460068FB1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB2E241E4A140068FB1E /* RxCocoa.framework */,
+				03AAFB27241E46970068FB1E /* IQKeyboardManagerSwift.framework */,
+				03AAFB24241E46800068FB1E /* RxRelay.framework */,
+				03AAFB20241E45730068FB1E /* RxSwift.framework */,
+				03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */,
+				03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +172,7 @@
 				03AAFAE1241E2FD70068FB1E /* Sources */,
 				03AAFAE2241E2FD70068FB1E /* Frameworks */,
 				03AAFAE3241E2FD70068FB1E /* Resources */,
+				03AAFB2A241E47740068FB1E /* Carthage Run Script */,
 			);
 			buildRules = (
 			);
@@ -253,6 +288,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03AAFB2A241E47740068FB1E /* Carthage Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManager.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+			);
+			name = "Carthage Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManager.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		03AAFAE1241E2FD70068FB1E /* Sources */ = {
@@ -436,6 +504,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = fetilip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +526,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = fetilip/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
