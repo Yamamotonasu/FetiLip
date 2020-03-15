@@ -1,0 +1,10 @@
+{
+  "commitish" : "5.0.3",
+  "iOS" : [
+    {
+      "name" : "NSObject_Rx",
+      "hash" : "d71f30f3bea0aed65bf2dd1eb1acea78146f3cd4428ac1abefcdb4ec7a897c00",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}

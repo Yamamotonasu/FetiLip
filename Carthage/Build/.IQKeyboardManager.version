@@ -1,0 +1,14 @@
+{
+  "commitish" : "v6.5.5",
+  "iOS" : [
+    {
+      "name" : "IQKeyboardManager",
+      "hash" : "bfc63120e9c5219ce484efa5b952f2293a1ab5b6897b4ea1314cbbec3f3d5616"
+    },
+    {
+      "name" : "IQKeyboardManagerSwift",
+      "hash" : "0c1bffa34e71cfb2296c26c9001f3f999dfc5bf056b01d23dc5983fae56bac59",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}
