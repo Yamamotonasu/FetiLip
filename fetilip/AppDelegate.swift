@@ -8,11 +8,59 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import XCGLogger
+
+// MARK: XCGLogger
+
+let log: XCGLogger = {
+    let level: XCGLogger.Level = {
+        // TODO: Releaseすると本番環境では.errorのみのログ出力にする事
+        #if DEBUG
+        return .verbose
+        #else
+        return .error
+        #endif
+    }()
+    let log = XCGLogger.default
+    log.setup(level: level,
+              showLogIdentifier: true,
+              showFunctionName: true,
+              showThreadName: true,
+              showLevel: true,
+              showFileNames: true,
+              showLineNumbers: true,
+              showDate: true,
+              writeToFile: nil,
+              fileLevel: XCGLogger.Level.none)
+    // TODO: logの色付き出力
+    if let fileDestination: FileDestination = log.destination(withIdentifier: XCGLogger.Constants.fileDestinationIdentifier) as? FileDestination {
+        let ansiColorLogFormatter: ANSIColorLogFormatter = ANSIColorLogFormatter()
+        ansiColorLogFormatter.colorize(level: .verbose, with: .colorIndex(number: 244), options: [.faint])
+        ansiColorLogFormatter.colorize(level: .debug, with: .black)
+        ansiColorLogFormatter.colorize(level: .info, with: .blue, options: [.underline])
+        ansiColorLogFormatter.colorize(level: .notice, with: .green, options: [.italic])
+        ansiColorLogFormatter.colorize(level: .warning, with: .red, options: [.faint])
+        ansiColorLogFormatter.colorize(level: .error, with: .red, options: [.bold])
+        ansiColorLogFormatter.colorize(level: .severe, with: .white, on: .red)
+        ansiColorLogFormatter.colorize(level: .alert, with: .white, on: .red, options: [.bold])
+        ansiColorLogFormatter.colorize(level: .emergency, with: .white, on: .red, options: [.bold, .blink])
+        fileDestination.formatters = [ansiColorLogFormatter]
+        fileDestination.logQueue = XCGLogger.logQueue
+        log.add(destination: fileDestination)
+        log.logAppDetails()
+        return log
+    } else {
+        return log
+    }
+}()
+
+// MARK: AppDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let _ = log
         // IQKeyBoardManagerの有効化
         IQKeyboardManager.shared.enable = true
 
@@ -29,3 +77,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
+
