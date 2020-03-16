@@ -12,9 +12,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
+}
+
+// MARK: Make Instance
+
+extension ViewController {
+
+    static func makeInstance() -> UIViewController {
+        guard let vc = R.storyboard.main.mainViewController() else {
+            assertionFailure()
+            return UIViewController()
+        }
+        return vc
+    }
 
 }
 
