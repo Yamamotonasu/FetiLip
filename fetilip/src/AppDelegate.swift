@@ -60,7 +60,7 @@ let log: XCGLogger = {
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let _ = log
+        _ = log
         // IQKeyBoardManagerの有効化
         IQKeyboardManager.shared.enable = true
 
@@ -77,4 +77,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
