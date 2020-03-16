@@ -126,10 +126,8 @@
 		03AAFAE7241E2FD70068FB1E /* fetilip */ = {
 			isa = PBXGroup;
 			children = (
-				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
+				03AAFB39241F9D0B0068FB1E /* src */,
 				03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */,
-				03AAFAEC241E2FD70068FB1E /* ViewController.swift */,
-				03AAFAEE241E2FD70068FB1E /* Main.storyboard */,
 				03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */,
 				03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */,
 				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
@@ -168,6 +166,40 @@
 				03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		03AAFB39241F9D0B0068FB1E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
+				03AAFB3B241F9D2B0068FB1E /* ViewModels */,
+				03AAFB3A241F9D230068FB1E /* Views */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		03AAFB3A241F9D230068FB1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB3C241F9D570068FB1E /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		03AAFB3C241F9D570068FB1E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFAEC241E2FD70068FB1E /* ViewController.swift */,
+				03AAFAEE241E2FD70068FB1E /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
