@@ -24,6 +24,7 @@
 		03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; };
 		03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB31241E50E10068FB1E /* XCGLogger.framework */; };
 		03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
+		03AAFB3F241FA0240068FB1E /* UIViewController+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		03AAFB2E241E4A140068FB1E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		03AAFB31241E50E10068FB1E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
+		03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extended.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +173,10 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
-				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
+				03AAFB3D241FA00B0068FB1E /* Extensions */,
 				03AAFB3B241F9D2B0068FB1E /* ViewModels */,
 				03AAFB3A241F9D230068FB1E /* Views */,
+				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -200,6 +203,14 @@
 				03AAFAEE241E2FD70068FB1E /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		03AAFB3D241FA00B0068FB1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +385,7 @@
 				03AAFAED241E2FD70068FB1E /* ViewController.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
+				03AAFB3F241FA0240068FB1E /* UIViewController+Extended.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
