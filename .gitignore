@@ -191,5 +191,5 @@ fastlane/metadata/review_information
 vendor/bundler
 
 Gemfile.lock
-R.generated.swift
+*.generated.swift
 
