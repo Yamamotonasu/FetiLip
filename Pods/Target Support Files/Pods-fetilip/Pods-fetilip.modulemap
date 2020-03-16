@@ -1,4 +1,4 @@
-module Pods_fetilip {
+framework module Pods_fetilip {
   umbrella header "Pods-fetilip-umbrella.h"
 
   export *

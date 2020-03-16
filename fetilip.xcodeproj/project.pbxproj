@@ -26,9 +26,9 @@
 		03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
 		03AAFB3F241FA0240068FB1E /* UIViewController+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */; };
 		03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB45241FAC530068FB1E /* R.generated.swift */; };
-		57B53629D18B5703AA8FDAEB /* libPods-fetilipTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9114FF26D31066DDAEE24FE /* libPods-fetilipTests.a */; };
+		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
-		F05669C6F682938A2B1036AD /* libPods-fetilip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3B4B27FD70A1544F6F20CE /* libPods-fetilip.a */; };
+		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,15 +73,15 @@
 		03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extended.swift"; sourceTree = "<group>"; };
 		03AAFB45241FAC530068FB1E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
-		1F3B4B27FD70A1544F6F20CE /* libPods-fetilip.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilip.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.debug.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.debug.xcconfig"; sourceTree = "<group>"; };
+		92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.release.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9114FF26D31066DDAEE24FE /* libPods-fetilipTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
+		F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +98,7 @@
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
 				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
-				F05669C6F682938A2B1036AD /* libPods-fetilip.a in Frameworks */,
+				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57B53629D18B5703AA8FDAEB /* libPods-fetilipTests.a in Frameworks */,
+				DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,9 +184,9 @@
 				03AAFB20241E45730068FB1E /* RxSwift.framework */,
 				03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */,
 				03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */,
-				1F3B4B27FD70A1544F6F20CE /* libPods-fetilip.a */,
-				D9114FF26D31066DDAEE24FE /* libPods-fetilipTests.a */,
 				9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */,
+				F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */,
+				92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -261,6 +261,7 @@
 				03AAFAE2241E2FD70068FB1E /* Frameworks */,
 				03AAFAE3241E2FD70068FB1E /* Resources */,
 				03AAFB2A241E47740068FB1E /* Carthage Run Script */,
+				432510C923D697783A36108D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -428,7 +429,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -454,6 +455,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		432510C923D697783A36108D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		495E295DA36C5F5C9F564043 /* [CP] Check Pods Manifest.lock */ = {
