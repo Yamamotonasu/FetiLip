@@ -6,27 +6,41 @@
 //  Copyright © 2020 YutaYamamoto. All rights reserved.
 //
 
+// 参考: https://qiita.com/motokiee/items/e8f07c11b88d692b2cc5
+
 import Foundation
 
-struct Extension<Base> {
+public struct Extension<Base> {
     let base: Base
     init (_ base: Base) {
         self.base = base
     }
 }
 
-protocol ExtensionCompatible {
+public protocol ExtensionCompatible {
     associatedtype Compatible
     static var ex: Extension<Compatible>.Type { get }
     var ex: Extension<Compatible> { get }
 }
 
 extension ExtensionCompatible {
-    static var ex: Extension<Self>.Type {
+    public static var ex: Extension<Self>.Type {
         return Extension<Self>.self
     }
 
-    var ex: Extension<Self> {
+    public var ex: Extension<Self> {
         return Extension(self)
     }
+
+}
+
+// MARK: For creating extend of array and collection
+
+public protocol FetiLipCompatible {
+    associatedtype CompatibleType
+    var ex: CompatibleType { get }
+}
+
+public struct SingleAssociatedTypeContainer<Base, AssociatedType> {
+    var base: Base
 }

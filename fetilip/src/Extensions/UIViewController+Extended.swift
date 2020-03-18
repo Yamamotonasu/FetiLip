@@ -10,6 +10,10 @@ import Foundation
 import NSObject_Rx
 import UIKit
 
-extension UIViewController {
+extension UIViewController: ExtensionCompatible {}
+
+extension Extension where Base: UIViewController {
+
+    // Define static functions
 
 }
