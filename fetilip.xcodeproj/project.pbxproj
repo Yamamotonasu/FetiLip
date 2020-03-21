@@ -23,13 +23,15 @@
 		03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; };
 		03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB31241E50E10068FB1E /* XCGLogger.framework */; };
 		03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
-		03AAFB3F241FA0240068FB1E /* UIViewController+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */; };
+		03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */; };
 		03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB45241FAC530068FB1E /* R.generated.swift */; };
 		03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */; };
 		03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */; };
 		03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */; };
-		03AAFB50242245C20068FB1E /* Array+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB4F242245C20068FB1E /* Array+Extended.swift */; };
+		03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB4F242245C20068FB1E /* Array+Extentions.swift */; };
 		03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */; };
+		03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB582425E4E40068FB1E /* UIColor.Extensions.swift */; };
+		03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB5B2425E8770068FB1E /* GCD.swift */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
@@ -74,13 +76,15 @@
 		03AAFB2E241E4A140068FB1E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		03AAFB31241E50E10068FB1E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
-		03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extended.swift"; sourceTree = "<group>"; };
+		03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
 		03AAFB45241FAC530068FB1E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCompatible.swift; sourceTree = "<group>"; };
 		03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Bold.otf"; sourceTree = "<group>"; };
 		03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Medium.otf"; sourceTree = "<group>"; };
-		03AAFB4F242245C20068FB1E /* Array+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extended.swift"; sourceTree = "<group>"; };
+		03AAFB4F242245C20068FB1E /* Array+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extentions.swift"; sourceTree = "<group>"; };
 		03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
+		03AAFB582425E4E40068FB1E /* UIColor.Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.Extensions.swift; sourceTree = "<group>"; };
+		03AAFB5B2425E8770068FB1E /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +208,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				03AAFB5A2425E8660068FB1E /* Utils */,
 				03AAFB3D241FA00B0068FB1E /* Extensions */,
 				03AAFB3B241F9D2B0068FB1E /* ViewModels */,
 				03AAFB3A241F9D230068FB1E /* Views */,
@@ -241,8 +246,9 @@
 			isa = PBXGroup;
 			children = (
 				03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */,
-				03AAFB3E241FA0240068FB1E /* UIViewController+Extended.swift */,
-				03AAFB4F242245C20068FB1E /* Array+Extended.swift */,
+				03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */,
+				03AAFB4F242245C20068FB1E /* Array+Extentions.swift */,
+				03AAFB582425E4E40068FB1E /* UIColor.Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +283,14 @@
 			children = (
 			);
 			path = CustomFunctions;
+			sourceTree = "<group>";
+		};
+		03AAFB5A2425E8660068FB1E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB5B2425E8770068FB1E /* GCD.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		86210B9D74CAD08855592760 /* Pods */ = {
@@ -576,8 +590,10 @@
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
-				03AAFB3F241FA0240068FB1E /* UIViewController+Extended.swift in Sources */,
-				03AAFB50242245C20068FB1E /* Array+Extended.swift in Sources */,
+				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
+				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
+				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
+				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
