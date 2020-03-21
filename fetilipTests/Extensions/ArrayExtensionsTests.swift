@@ -30,19 +30,20 @@ class ArrayExtensionsTests: XCTestCase {
 
 extension ArrayExtensionsTests {
 
-    /// 削除成功
     func testRemoveSuccess() {
-        XCTAssertEqual(testArray.ex.remove(5), [1, 2, 3, 4])
-    }
+        XCTContext.runActivity(named: "正常系") { _ in
+            XCTContext.runActivity(named: "正常に追加出来る") { _ in
+                XCTAssertEqual(testArray.ex.remove(5), [1, 2, 3, 4])
+            }
 
-    /// 合致する要素が無ければ何も起きない
-    func testRemoveSuccess2() {
-        XCTAssertEqual(testArray.ex.remove(6), [1, 2, 3, 4, 5])
-    }
+            XCTContext.runActivity(named: "合致する要素が無ければ何も起きない") { _ in
+                XCTAssertEqual(testArray.ex.remove(6), [1, 2, 3, 4, 5])
+            }
 
-    /// 空配列に対して実行すると何も起きない
-    func testRemoveSuccess3() {
-        XCTAssertEqual(emptyArray.ex.remove(1), [])
+            XCTContext.runActivity(named: "空配列に対して実行すると何も起きない") { _ in
+                XCTAssertEqual(emptyArray.ex.remove(1), [])
+            }
+        }
     }
 
 }
@@ -71,13 +72,16 @@ extension ArrayExtensionsTests {
 extension ArrayExtensionsTests {
 
     /// 追加正常系
-    func testAppendIfPossibleSuccess() {
-        XCTAssertEqual(testArray.ex.appendIfPossible(6), [1, 2, 3, 4, 5, 6])
-    }
+    func testAppendIfPossible() {
+        XCTContext.runActivity(named: "正常系") { _ in
+            XCTContext.runActivity(named: "正常に追加出来る") { _ in
+                XCTAssertEqual(testArray.ex.appendIfPossible(6), [1, 2, 3, 4, 5, 6])
+            }
 
-    /// nilは追加されない
-    func testAppendIfPossibleSuccess2() {
-        XCTAssertEqual(testArray.ex.appendIfPossible(nil), [1, 2, 3, 4, 5])
+            XCTContext.runActivity(named: "nilは追加されない") { _ in
+                XCTAssertEqual(testArray.ex.appendIfPossible(nil), [1, 2, 3, 4, 5])
+            }
+        }
     }
 
 }
