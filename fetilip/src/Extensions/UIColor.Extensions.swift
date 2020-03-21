@@ -13,7 +13,7 @@ extension UIColor: ExtensionCompatible {}
 
 extension Extension where Base: UIColor{
 
-    public static func hex(_ hexStr: String, alpha: CGFloat) -> UIColor {
+    public static func hex(_ hexStr: String, alpha: CGFloat = 1.0) -> UIColor {
         let alpha = alpha
         var hexStr = hexStr
         hexStr = (hexStr.replacingOccurrences(of: "#", with: "") as NSString) as String
