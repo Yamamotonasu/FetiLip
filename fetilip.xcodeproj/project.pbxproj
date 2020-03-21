@@ -13,7 +13,6 @@
 		03AAFAF0241E2FD70068FB1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAEE241E2FD70068FB1E /* Main.storyboard */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
 		03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */; };
-		03AAFB00241E2FDD0068FB1E /* fetilipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAFF241E2FDD0068FB1E /* fetilipTests.swift */; };
 		03AAFB0B241E2FDD0068FB1E /* fetilipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */; };
 		03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */; };
 		03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */; };
@@ -30,6 +29,7 @@
 		03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */; };
 		03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */; };
 		03AAFB50242245C20068FB1E /* Array+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB4F242245C20068FB1E /* Array+Extended.swift */; };
+		03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
@@ -62,7 +62,6 @@
 		03AAFAF4241E2FDD0068FB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03AAFAF6241E2FDD0068FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03AAFAFB241E2FDD0068FB1E /* fetilipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fetilipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03AAFAFF241E2FDD0068FB1E /* fetilipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetilipTests.swift; sourceTree = "<group>"; };
 		03AAFB01241E2FDD0068FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03AAFB06241E2FDD0068FB1E /* fetilipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fetilipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetilipUITests.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Bold.otf"; sourceTree = "<group>"; };
 		03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Medium.otf"; sourceTree = "<group>"; };
 		03AAFB4F242245C20068FB1E /* Array+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extended.swift"; sourceTree = "<group>"; };
+		03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,7 +167,8 @@
 		03AAFAFE241E2FDD0068FB1E /* fetilipTests */ = {
 			isa = PBXGroup;
 			children = (
-				03AAFAFF241E2FDD0068FB1E /* fetilipTests.swift */,
+				03AAFB572425C45E0068FB1E /* CustomFunctions */,
+				03AAFB542425AB020068FB1E /* Extensions */,
 				03AAFB01241E2FDD0068FB1E /* Info.plist */,
 			);
 			path = fetilipTests;
@@ -261,6 +262,21 @@
 				03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		03AAFB542425AB020068FB1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03AAFB572425C45E0068FB1E /* CustomFunctions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomFunctions;
 			sourceTree = "<group>";
 		};
 		86210B9D74CAD08855592760 /* Pods */ = {
@@ -569,7 +585,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03AAFB00241E2FDD0068FB1E /* fetilipTests.swift in Sources */,
+				03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

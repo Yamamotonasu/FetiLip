@@ -11,7 +11,9 @@ import Foundation
 extension Array: FetiLipCompatible {
 
     public var ex: SingleAssociatedTypeContainer<Array<Element>, Element> {
-        return SingleAssociatedTypeContainer(base: self)
+        get {
+            return SingleAssociatedTypeContainer(base: self)
+        }
     }
 
 }
@@ -52,20 +54,26 @@ extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
 extension SingleAssociatedTypeContainer where Base == Array<AssociatedType>, AssociatedType : Equatable {
 
     /// 配列から指定した要素を削除する
-    public mutating func remove(_ element: AssociatedType) {
+    // TODO: コピー作って返すのびみょー・・・
+    public func remove(_ element: AssociatedType) -> Array<AssociatedType> {
+        var array = self.base
         if let index = self.base.firstIndex(of: element) {
-            self.base.remove(at: index)
+            array.remove(at: index)
         }
+        return array
     }
 
-    /// 配列から要素を置き換える
-    public mutating func replace(_ element: AssociatedType) {
+    /// 要素を置き換える
+    public func replace(_ element: AssociatedType) -> Array<AssociatedType> {
+        var array = self.base
         if let index = self.base.firstIndex(of: element) {
-            self.base.remove(at: index)
-            self.base.insert(element, at: index)
+            array.remove(at: index)
+            array.insert(element, at: index)
         }
+        return array
     }
 
+    /// 要素を置き換える、又は一致する要素が無ければappendする
     public mutating func insertOrUpdate(_ element: AssociatedType) {
         if let index = self.base.firstIndex(of: element) {
             self.base.remove(at: index)
@@ -81,9 +89,13 @@ extension SingleAssociatedTypeContainer where Base == Array<AssociatedType>, Ass
 
 extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
 
-    public mutating func appendIfPossible(_ element: AssociatedType?) {
-        guard let e = element else { return }
-        self.base.append(e)
+    public func appendIfPossible(_ element: AssociatedType?) -> Array<AssociatedType> {
+        var array = self.base
+        guard let e = element else {
+            return  array
+        }
+        array.append(e)
+        return array
     }
 
 }

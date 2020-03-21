@@ -37,7 +37,9 @@ extension ExtensionCompatible {
 // MARK: For creating extend of array and collection
 
 public protocol FetiLipCompatible {
+
     associatedtype CompatibleType
+    
     var ex: CompatibleType { get }
 }
 
