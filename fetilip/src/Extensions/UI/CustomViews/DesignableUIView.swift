@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-extension UIView {
+@IBDesignable
+class DesignableUIView: UIView {
 
     /// 角丸の大きさ
     @IBInspectable var cornerRadius: CGFloat {
