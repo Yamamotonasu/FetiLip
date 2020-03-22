@@ -39,7 +39,7 @@ extension ExtensionCompatible {
 public protocol FetiLipCompatible {
 
     associatedtype CompatibleType
-    
+
     var ex: CompatibleType { get }
 }
 

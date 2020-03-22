@@ -11,7 +11,7 @@ import UIKit
 
 extension UIColor: ExtensionCompatible {}
 
-extension Extension where Base: UIColor{
+extension Extension where Base: UIColor {
 
     public static func hex(_ hexStr: String, alpha: CGFloat = 1.0) -> UIColor {
         let alpha = alpha

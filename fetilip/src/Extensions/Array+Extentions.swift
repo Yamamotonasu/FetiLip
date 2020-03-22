@@ -51,7 +51,7 @@ extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
 
 // MARK: Public functions(Conform Equatable)
 
-extension SingleAssociatedTypeContainer where Base == Array<AssociatedType>, AssociatedType : Equatable {
+extension SingleAssociatedTypeContainer where Base == Array<AssociatedType>, AssociatedType: Equatable {
 
     /// 配列から指定した要素を削除する
     // TODO: コピー作って返すのびみょー・・・
