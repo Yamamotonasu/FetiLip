@@ -77,5 +77,4 @@ class DesignableUIButton: UIButton {
       }
     }
 
-    
 }
