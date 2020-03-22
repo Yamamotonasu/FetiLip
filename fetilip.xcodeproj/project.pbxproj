@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,6 @@
 		03AAFAF0241E2FD70068FB1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAEE241E2FD70068FB1E /* Main.storyboard */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
 		03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */; };
-		03AAFB00241E2FDD0068FB1E /* fetilipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAFF241E2FDD0068FB1E /* fetilipTests.swift */; };
 		03AAFB0B241E2FDD0068FB1E /* fetilipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */; };
 		03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */; };
 		03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */; };
@@ -24,6 +23,21 @@
 		03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; };
 		03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB31241E50E10068FB1E /* XCGLogger.framework */; };
 		03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
+		03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */; };
+		03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB45241FAC530068FB1E /* R.generated.swift */; };
+		03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */; };
+		03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */; };
+		03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */; };
+		03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB4F242245C20068FB1E /* Array+Extentions.swift */; };
+		03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */; };
+		03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB582425E4E40068FB1E /* UIColor.Extensions.swift */; };
+		03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB5B2425E8770068FB1E /* GCD.swift */; };
+		03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB5D2425E9FF0068FB1E /* Typealias.swift */; };
+		03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */; };
+		03AAFB622425ECFC0068FB1E /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB612425ECFC0068FB1E /* UIColorExtensionTests.swift */; };
+		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
+		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
+		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +67,6 @@
 		03AAFAF4241E2FDD0068FB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03AAFAF6241E2FDD0068FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03AAFAFB241E2FDD0068FB1E /* fetilipTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fetilipTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03AAFAFF241E2FDD0068FB1E /* fetilipTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetilipTests.swift; sourceTree = "<group>"; };
 		03AAFB01241E2FDD0068FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03AAFB06241E2FDD0068FB1E /* fetilipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fetilipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetilipUITests.swift; sourceTree = "<group>"; };
@@ -66,6 +79,27 @@
 		03AAFB2E241E4A140068FB1E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		03AAFB31241E50E10068FB1E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
+		03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
+		03AAFB45241FAC530068FB1E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCompatible.swift; sourceTree = "<group>"; };
+		03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Bold.otf"; sourceTree = "<group>"; };
+		03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Medium.otf"; sourceTree = "<group>"; };
+		03AAFB4F242245C20068FB1E /* Array+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extentions.swift"; sourceTree = "<group>"; };
+		03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
+		03AAFB582425E4E40068FB1E /* UIColor.Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.Extensions.swift; sourceTree = "<group>"; };
+		03AAFB5B2425E8770068FB1E /* GCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
+		03AAFB5D2425E9FF0068FB1E /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
+		03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetiLipColors.swift; sourceTree = "<group>"; };
+		03AAFB612425ECFC0068FB1E /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
+		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.debug.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.debug.xcconfig"; sourceTree = "<group>"; };
+		92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.release.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.release.xcconfig"; sourceTree = "<group>"; };
+		9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
+		F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +116,7 @@
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
 				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
+				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +147,7 @@
 				03AAFB09241E2FDD0068FB1E /* fetilipUITests */,
 				03AAFAE6241E2FD70068FB1E /* Products */,
 				03AAFB18241E45460068FB1E /* Frameworks */,
+				86210B9D74CAD08855592760 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,10 +164,9 @@
 		03AAFAE7241E2FD70068FB1E /* fetilip */ = {
 			isa = PBXGroup;
 			children = (
-				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
+				03AAFB492420FB450068FB1E /* Resources */,
+				03AAFB39241F9D0B0068FB1E /* src */,
 				03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */,
-				03AAFAEC241E2FD70068FB1E /* ViewController.swift */,
-				03AAFAEE241E2FD70068FB1E /* Main.storyboard */,
 				03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */,
 				03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */,
 				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
@@ -140,7 +177,8 @@
 		03AAFAFE241E2FDD0068FB1E /* fetilipTests */ = {
 			isa = PBXGroup;
 			children = (
-				03AAFAFF241E2FDD0068FB1E /* fetilipTests.swift */,
+				03AAFB572425C45E0068FB1E /* CustomFunctions */,
+				03AAFB542425AB020068FB1E /* Extensions */,
 				03AAFB01241E2FDD0068FB1E /* Info.plist */,
 			);
 			path = fetilipTests;
@@ -166,8 +204,115 @@
 				03AAFB20241E45730068FB1E /* RxSwift.framework */,
 				03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */,
 				03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */,
+				9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */,
+				F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */,
+				92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		03AAFB39241F9D0B0068FB1E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB5A2425E8660068FB1E /* Utils */,
+				03AAFB3D241FA00B0068FB1E /* Extensions */,
+				03AAFB3B241F9D2B0068FB1E /* ViewModels */,
+				03AAFB3A241F9D230068FB1E /* Views */,
+				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
+				03AAFB45241FAC530068FB1E /* R.generated.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		03AAFB3A241F9D230068FB1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB3C241F9D570068FB1E /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		03AAFB3C241F9D570068FB1E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFAEC241E2FD70068FB1E /* ViewController.swift */,
+				03AAFAEE241E2FD70068FB1E /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		03AAFB3D241FA00B0068FB1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */,
+				03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */,
+				03AAFB4F242245C20068FB1E /* Array+Extentions.swift */,
+				03AAFB582425E4E40068FB1E /* UIColor.Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03AAFB492420FB450068FB1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB4A2420FB560068FB1E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		03AAFB4A2420FB560068FB1E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */,
+				03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		03AAFB542425AB020068FB1E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */,
+				03AAFB612425ECFC0068FB1E /* UIColorExtensionTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03AAFB572425C45E0068FB1E /* CustomFunctions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomFunctions;
+			sourceTree = "<group>";
+		};
+		03AAFB5A2425E8660068FB1E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB5B2425E8770068FB1E /* GCD.swift */,
+				03AAFB5D2425E9FF0068FB1E /* Typealias.swift */,
+				03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		86210B9D74CAD08855592760 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */,
+				DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */,
+				3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */,
+				9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */,
+				295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */,
+				4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +322,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB0F241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilip" */;
 			buildPhases = (
+				495E295DA36C5F5C9F564043 /* [CP] Check Pods Manifest.lock */,
+				03AAFB44241FAB690068FB1E /* Rswift Run Script */,
 				03AAFAE1241E2FD70068FB1E /* Sources */,
 				03AAFAE2241E2FD70068FB1E /* Frameworks */,
 				03AAFAE3241E2FD70068FB1E /* Resources */,
 				03AAFB2A241E47740068FB1E /* Carthage Run Script */,
+				432510C923D697783A36108D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,6 +343,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB12241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilipTests" */;
 			buildPhases = (
+				1F845C1FD009EA7829127B73 /* [CP] Check Pods Manifest.lock */,
 				03AAFAF7241E2FDD0068FB1E /* Sources */,
 				03AAFAF8241E2FDD0068FB1E /* Frameworks */,
 				03AAFAF9241E2FDD0068FB1E /* Resources */,
@@ -213,6 +362,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB15241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilipUITests" */;
 			buildPhases = (
+				AA375CFA37B41BA7D2DB22EB /* [CP] Check Pods Manifest.lock */,
 				03AAFB02241E2FDD0068FB1E /* Sources */,
 				03AAFB03241E2FDD0068FB1E /* Frameworks */,
 				03AAFB04241E2FDD0068FB1E /* Resources */,
@@ -277,7 +427,9 @@
 			files = (
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
+				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFAF0241E2FD70068FB1E /* Main.storyboard in Resources */,
+				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +484,109 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
+		03AAFB44241FAB690068FB1E /* Rswift Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Rswift Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		1F845C1FD009EA7829127B73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fetilipTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		432510C923D697783A36108D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		495E295DA36C5F5C9F564043 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fetilip-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA375CFA37B41BA7D2DB22EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-fetilipUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -340,8 +595,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AAFAED241E2FD70068FB1E /* ViewController.swift in Sources */,
+				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
+				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
+				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
+				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
+				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
+				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
+				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
+				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +612,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03AAFB00241E2FDD0068FB1E /* fetilipTests.swift in Sources */,
+				03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */,
+				03AAFB622425ECFC0068FB1E /* UIColorExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +776,7 @@
 		};
 		03AAFB10241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -534,6 +799,7 @@
 		};
 		03AAFB11241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,6 +822,7 @@
 		};
 		03AAFB13241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -578,6 +845,7 @@
 		};
 		03AAFB14241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -600,6 +868,7 @@
 		};
 		03AAFB16241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -620,6 +889,7 @@
 		};
 		03AAFB17241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
