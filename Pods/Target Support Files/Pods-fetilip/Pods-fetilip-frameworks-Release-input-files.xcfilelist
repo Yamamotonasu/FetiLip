@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks.sh
+${BUILT_PRODUCTS_DIR}/PTCardTabBar/PTCardTabBar.framework
 ${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
