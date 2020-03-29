@@ -9,6 +9,20 @@
 import UIKit
 import PTCardTabBar
 
-class GlobalTabBarController: PTCardTabBar {
+class GlobalTabBarController: UITabBarController {
+
+}
+
+// MARK: MakeInstance
+
+extension GlobalTabBarController {
+
+    static func makeInstance() -> UITabBarController {
+        guard let tab = R.storyboard.globalTabBar.globalTabBarController() else {
+            assertionFailure()
+            return GlobalTabBarController()
+        }
+        return tab
+    }
 
 }
