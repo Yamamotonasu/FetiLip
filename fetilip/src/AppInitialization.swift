@@ -26,7 +26,7 @@ public struct AppInitialization {
         }
         // タブ画面を初期画面に設定
         app.window?.rootViewController = tab
-        app.window?.makeKeyAndVisible()
+//        app.window?.makeKeyAndVisible()
     }
 
 }

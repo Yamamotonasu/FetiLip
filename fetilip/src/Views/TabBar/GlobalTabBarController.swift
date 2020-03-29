@@ -11,6 +11,10 @@ import PTCardTabBar
 
 class GlobalTabBarController: UITabBarController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
 }
 
 // MARK: MakeInstance

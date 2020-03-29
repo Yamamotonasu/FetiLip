@@ -76,8 +76,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // IQKeyBoardManagerの有効化
         IQKeyboardManager.shared.enable = true
 
-        // 初期起動画面の設定
-        AppInitialization.settingStartScreen()
+        // 初期起動画面の設定(iOS13以下の時だけ初期化処理を行う)
+        if #available(iOS 13, *) {
+        } else {
+            AppInitialization.settingStartScreen()
+        }
 
         return true
     }
