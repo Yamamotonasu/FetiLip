@@ -14,7 +14,12 @@ protocol CustomCardTabBarDelegate: class {
 
 }
 
+/**
+ * TabBarに表示するView本体
+ */
 class CardTabBar: UIView {
+
+    // MARK: Properties
 
     weak var delegate: CustomCardTabBarDelegate?
 
@@ -58,9 +63,13 @@ class CardTabBar: UIView {
         return view
     }()
 
-
+    /// インジケータビューのY軸制約
     private var indicatorViewYConstraint: NSLayoutConstraint!
+
+    /// インジケータビューのX軸制約
     private var indicatorViewXConstraint: NSLayoutConstraint!
+
+    // MARK: Lifecycle
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -89,7 +98,7 @@ class CardTabBar: UIView {
         self.backgroundColor = .white
 
         self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 3, height: 3)
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
         self.layer.shadowRadius = 6
         self.layer.shadowOpacity = 0.15
 
