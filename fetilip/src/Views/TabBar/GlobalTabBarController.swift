@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PTCardTabBar
 
 /**
  * メイン表示するタブバー
@@ -44,26 +43,9 @@ class GlobalTabBarController: UITabBarController {
     private var tabBarHeight: CGFloat = 70
 
     /// 両端のスペース
-    private var horizontleSpacing: CGFloat = 20
-
-
-    // MARK: LifeCycle
-
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-
-        if #available(iOS 11.0, *) {
-            self.additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: tabBarHeight + bottomSpacing, right: 0)
-        }
-
-        // デフォルトのタブバーは非表示にする
-        self.tabBar.isHidden = true
-
-        addAnotherSmallView()
-        setupTabBar()
-
-        customTabBar.items = tabBar.items!
-        customTabBar.select(at: selectedIndex)
+    private var horizontleSpacing: CGFloat {
+        // TODO: タブが2つなので一旦決め打ち
+        return 70
     }
 
     private lazy var smallBottomView: UIView = {
@@ -88,6 +70,26 @@ class GlobalTabBarController: UITabBarController {
         }
     }
 
+
+    // MARK: LifeCycle
+
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+
+        if #available(iOS 11.0, *) {
+            self.additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: tabBarHeight + bottomSpacing, right: 0)
+        }
+
+        // デフォルトのタブバーは非表示にする
+        self.tabBar.isHidden = true
+
+        addAnotherSmallView()
+        setupTabBar()
+        setupTabBarItems()
+        customTabBar.items = tabBar.items!
+        customTabBar.select(at: selectedIndex)
+    }
+
     private func addAnotherSmallView() {
         self.view.addSubview(smallBottomView)
 
@@ -108,6 +110,13 @@ class GlobalTabBarController: UITabBarController {
         smallBottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
+}
+
+// MARK: Private functions
+
+extension GlobalTabBarController {
+
+    /// タブバーのレイアウト、色、delegateの設定
     private func setupTabBar() {
         customTabBar.delegate = self
         self.view.addSubview(customTabBar)
@@ -123,11 +132,19 @@ class GlobalTabBarController: UITabBarController {
         customTabBar.tintColor = tintColor
     }
 
-}
-
-// MARK: Desinable properties
-
-extension GlobalTabBarController {
+    /// タブの画像を設定
+    private func setupTabBarItems() {
+        tabBar.items?.enumerated().forEach {
+            switch $0.offset {
+            case TabViewControllerIndex.postList.rawValue:
+                $0.element.image = R.image.tab_lip()
+            case TabViewControllerIndex.myPage.rawValue:
+                $0.element.image = R.image.notification()
+            default:
+                break
+            }
+        }
+    }
 
 }
 
