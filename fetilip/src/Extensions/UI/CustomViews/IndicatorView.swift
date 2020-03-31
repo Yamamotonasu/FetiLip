@@ -11,12 +11,12 @@ import UIKit
 
 class IndicatorView: UIView {
 
-    override open func layoutSubviews() {
+    override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = self.bounds.height / 2
     }
 
-    override open func tintColorDidChange() {
+    override func tintColorDidChange() {
         super.tintColorDidChange()
         self.backgroundColor = tintColor
     }

@@ -8,19 +8,29 @@
 
 import UIKit
 
+
+/**
+ * TabBarに表示するボタン本体
+ */
 public class CustomTabBarButton: UIButton {
 
-    var selectedColor: UIColor! = .black {
+    // MARK: Properties
+
+    /// 選択状態の色
+    public var selectedColor: UIColor! = .black {
         didSet {
             reloadApperance()
         }
     }
 
-    var unselectedColor: UIColor! = .black {
+    /// 未選択状態の色
+    private var unselectedColor: UIColor! = .black {
         didSet {
             reloadApperance()
         }
     }
+
+    // MARK: init
 
     init(forItem item: UITabBarItem) {
         super.init(frame: .zero)
@@ -43,7 +53,8 @@ public class CustomTabBarButton: UIButton {
         }
     }
 
-    func reloadApperance(){
+    /// 選択状態によって色を変える
+    private func reloadApperance(){
         self.tintColor = isSelected ? selectedColor : unselectedColor
     }
 
