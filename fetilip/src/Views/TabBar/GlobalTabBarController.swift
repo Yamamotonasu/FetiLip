@@ -70,7 +70,6 @@ class GlobalTabBarController: UITabBarController {
         }
     }
 
-
     // MARK: LifeCycle
 
     override open func viewDidLoad() {

@@ -13,7 +13,7 @@ extension UIView: ExtensionCompatible {}
 
 extension Extension where Base: UIView {
 
-    func pinToSafeArea(top: CGFloat? = 0, left: CGFloat? = 0, bottom: CGFloat? = 0, right: CGFloat? = 0){
+    func pinToSafeArea(top: CGFloat? = 0, left: CGFloat? = 0, bottom: CGFloat? = 0, right: CGFloat? = 0) {
         guard let superview = self.base.superview else { return }
 
         prepareForAutoLayout()
@@ -42,7 +42,7 @@ extension Extension where Base: UIView {
         }
     }
 
-    func pinToSuperView(top: CGFloat? = 0, left: CGFloat? = 0, bottom: CGFloat? = 0, right: CGFloat? = 0){
+    func pinToSuperView(top: CGFloat? = 0, left: CGFloat? = 0, bottom: CGFloat? = 0, right: CGFloat? = 0) {
         guard let superview = self.base.superview else { return }
 
         prepareForAutoLayout()
@@ -64,7 +64,7 @@ extension Extension where Base: UIView {
         }
     }
 
-    func centerInSuperView(){
+    func centerInSuperView() {
         guard let superview = self.base.superview else { return }
 
         prepareForAutoLayout()
@@ -73,23 +73,23 @@ extension Extension where Base: UIView {
         self.base.centerYAnchor.constraint(equalTo: superview.centerYAnchor).isActive = true
     }
 
-    func constraint(width: CGFloat){
+    func constraint(width: CGFloat) {
         prepareForAutoLayout()
         self.base.widthAnchor.constraint(equalToConstant: width).isActive = true
     }
 
-    func constraint(height: CGFloat){
+    func constraint(height: CGFloat) {
         prepareForAutoLayout()
         self.base.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
 
-    func makeWidthEqualHeight(){
+    func makeWidthEqualHeight() {
         prepareForAutoLayout()
         self.base.widthAnchor.constraint(equalTo: self.base.heightAnchor).isActive = true
     }
 
-    func prepareForAutoLayout(){
+    func prepareForAutoLayout() {
         self.base.translatesAutoresizingMaskIntoConstraints = false
     }
-    
+
 }

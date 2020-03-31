@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 /**
  * TabBarに表示するボタン本体
  */
@@ -37,7 +36,7 @@ public class CustomTabBarButton: UIButton {
         setImage(item.image, for: .normal)
     }
 
-    init(image: UIImage){
+    init(image: UIImage) {
         super.init(frame: .zero)
         setImage(image, for: .normal)
     }
@@ -46,7 +45,6 @@ public class CustomTabBarButton: UIButton {
         super.init(coder: aDecoder)
     }
 
-
     override public var isSelected: Bool {
         didSet {
             reloadApperance()
@@ -54,7 +52,7 @@ public class CustomTabBarButton: UIButton {
     }
 
     /// 選択状態によって色を変える
-    private func reloadApperance(){
+    private func reloadApperance() {
         self.tintColor = isSelected ? selectedColor : unselectedColor
     }
 

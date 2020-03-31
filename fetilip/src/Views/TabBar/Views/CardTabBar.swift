@@ -111,7 +111,7 @@ class CardTabBar: UIView {
 
 extension CardTabBar {
 
-    private func setup(){
+    private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(stackView)
@@ -131,7 +131,7 @@ extension CardTabBar {
         tintColorDidChange()
     }
 
-    public func reloadApperance(){
+    public func reloadApperance() {
         buttons().forEach { button in
             button.selectedColor = tintColor
         }
@@ -141,7 +141,7 @@ extension CardTabBar {
 
     // FIXME: Rx置き換え
     @objc private func buttonTapped(sender: CustomTabBarButton) {
-        if let index = stackView.arrangedSubviews.firstIndex(of: sender){
+        if let index = stackView.arrangedSubviews.firstIndex(of: sender) {
             select(at: index)
         }
     }
@@ -152,12 +152,12 @@ extension CardTabBar {
 
 extension CardTabBar {
 
-    private func add(item: UITabBarItem){
+    private func add(item: UITabBarItem) {
         self.items.append(item)
         self.addButton(with: item.image!)
     }
 
-    private func remove(item: UITabBarItem){
+    private func remove(item: UITabBarItem) {
         if let index = self.items.firstIndex(of: item) {
             self.items.remove(at: index)
             let view = self.stackView.arrangedSubviews[index]
@@ -194,11 +194,10 @@ extension CardTabBar {
         self.delegate?.cardTabBar(self, didSelectItemAt: index)
     }
 
-    private func reloadViews(){
+    private func reloadViews() {
         indicatorViewYConstraint?.isActive = false
         indicatorViewYConstraint = indicatorView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10.5)
         indicatorViewYConstraint.isActive = true
-
 
         for button in (stackView.arrangedSubviews.compactMap { $0 as? CustomTabBarButton }) {
             stackView.removeArrangedSubview(button)
@@ -217,7 +216,7 @@ extension CardTabBar {
         select(at: 0)
     }
 
-    private func addButton(with image: UIImage){
+    private func addButton(with image: UIImage) {
         let button = CustomTabBarButton(image: image)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.selectedColor = tintColor
@@ -226,7 +225,7 @@ extension CardTabBar {
         self.stackView.addArrangedSubview(button)
     }
 
-    public func select(at index: Int, notifyDelegate: Bool = true){
+    public func select(at index: Int, notifyDelegate: Bool = true) {
         for (bIndex, view) in stackView.arrangedSubviews.enumerated() {
             if let button = view as? UIButton {
                 button.tintColor =  bIndex == index ? tintColor : #colorLiteral(red: 0.6078431373, green: 0.6078431373, blue: 0.6078431373, alpha: 1)
