@@ -20,54 +20,43 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		006CC2D46E5BF6F14F70E0FDDA2006D5 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E3E0CB5FD8FD2C4B0F70349D34C86 /* CGPoint+Distance.swift */; };
-		0531D2ECFAED1869832D1960366BF51D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		085E1345CDD6E0200D5F926CF4E4C081 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEC2CF93D86EC68552093D81A2436D5 /* ReuseIdentifierProtocol.swift */; };
-		0A0218B7E7032F88E95372A33D0E59FA /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD71EFA4F79C621F301E16DA1E619AA /* StoryboardSegueIdentifierProtocol.swift */; };
-		1198816B5130E79971F58CBA17BE3C38 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3318E61155AF335B09E3A07CD1DEB50F /* UIColor+Additions.swift */; };
-		13461A2FE7D1733253DDAAE91F5133A7 /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B76CA35E6F909E37551EC7AE06B9537 /* UICollectionView+ReuseIdentifierProtocol.swift */; };
-		2190C724BFC6EBDB60D55F429C30CA68 /* UIImage+ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1500D4E6A5B1DD9991C2C2757926CD11 /* UIImage+ImageResource.swift */; };
-		22FC5E2C9706121D35E30B03C9D4BF79 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
+		0531D2ECFAED1869832D1960366BF51D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		085E1345CDD6E0200D5F926CF4E4C081 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD449AA3E438E458541AA1A8C17926C9 /* ReuseIdentifierProtocol.swift */; };
+		0A0218B7E7032F88E95372A33D0E59FA /* StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36706481ED5D470D45E911080BB661D4 /* StoryboardSegueIdentifierProtocol.swift */; };
+		13461A2FE7D1733253DDAAE91F5133A7 /* UICollectionView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5195A247CCEFF2F5220C058E0726F9 /* UICollectionView+ReuseIdentifierProtocol.swift */; };
+		213F7C667FD4BE346B64752FB938AEF7 /* Pods-fetilip-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E26D76E9F1C2A62B4DA3E0257FD6C9 /* Pods-fetilip-dummy.m */; };
+		2190C724BFC6EBDB60D55F429C30CA68 /* UIImage+ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806FECEE456B92636E6ED23B18CDEBE4 /* UIImage+ImageResource.swift */; };
 		24F66EA41325B3E7D7411F672B66499C /* Pods-fetilipTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD7ACE5F6D13049109C0A8540F56C2C /* Pods-fetilipTests-dummy.m */; };
-		273C8549B316E7A19B65447D08392FCB /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05281262FB1F086F9D2F0CD9DE918C49 /* UINib+NibResource.swift */; };
-		28F6DC2DB83FA6A599F2731697A093F1 /* UIViewController+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4706E21AE04D05E0761C696C44F3D267 /* UIViewController+NibResource.swift */; };
+		273C8549B316E7A19B65447D08392FCB /* UINib+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C82C8CF9693B16A91F527ECE1F2F56 /* UINib+NibResource.swift */; };
+		28F6DC2DB83FA6A599F2731697A093F1 /* UIViewController+NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79C3DD5681EED326FED1651EF8FEA5C /* UIViewController+NibResource.swift */; };
 		2E8A9C2599A35766258CE07FAF1B90F1 /* Pods-fetilipUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC36FF0C2EB85C20211BBCCC927C3C4 /* Pods-fetilipUITests-dummy.m */; };
-		3E451C116831D1C328AA3C949F73C24D /* PTIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD9E1AF8596368BCC62DE568545D951 /* PTIndicatorView.swift */; };
-		406F23EE65207FF0595CF2561129031A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		418F6F68F387AE0ACE8F5CB02B0F0A4C /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158D863DEFDDFBFC7F3AA2759855C69 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */; };
-		5B5D6303E6BD4A611F64D519A76B6849 /* Data+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B7FF4BFE4E06F542E2D49DDDC1FEA /* Data+FileResource.swift */; };
-		5D2511F98472CA6A4B339A7579C411EE /* Pods-fetilip-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E26D76E9F1C2A62B4DA3E0257FD6C9 /* Pods-fetilip-dummy.m */; };
-		680AEC5E7C049F327CD07A09642E14CC /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D7A9445E661F30645C6C78633C3D53 /* FileResource.swift */; };
-		70DA24E8458F49F040AE9BD1DD28D8BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 312B988EF117AE4DE76A268D970131FE /* UIKit.framework */; };
-		71B273E749EEA83662770BC064B232E4 /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72116FB29A69EF40138D2D56B4D890BD /* UITableView+ReuseIdentifierProtocol.swift */; };
-		787C2D5A903E84974D32122E3BC7271F /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D94F15E747766E2ADBCC0954A17B6A8 /* NibResource.swift */; };
-		78FEB707F4316AB0B6DAC1B0A54782CE /* UIStoryboard+StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB416BD6CC506361373223AD10DC4C /* UIStoryboard+StoryboardResource.swift */; };
-		7C6728F02A59EF3FD0B8D5BA464A2E00 /* Bundle+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA797CFC0CB80503B128756F78AAFB1 /* Bundle+FileResource.swift */; };
-		7D7EBD23329B0DEF17CFC16CC610B187 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EEF2E92A8A8E0AD2C495533A5B64F1DD /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		80BBB14543C200C58859A6B1488374D7 /* PTBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BCDD9E894A288F9BA310CF7AE31BE6 /* PTBarButton.swift */; };
-		82DC63E8609767B33A4A8366E5501D84 /* PTCardTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6921BB71FDBD97844534C1848E1787D0 /* PTCardTabBarController.swift */; };
-		833F08FCFFEB5655316F591B65BE0745 /* R.swift.Library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09FCF038F69A84E747012C7A351EF859 /* R.swift.Library-dummy.m */; };
+		36CA79FE27BAFD04088C5C8403E09BD8 /* Pods-fetilip-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD92D55E319D79DAD893549005F9D10 /* Pods-fetilip-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3863E36292E06FFC4859D91944635989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		418F6F68F387AE0ACE8F5CB02B0F0A4C /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8126F72192ADDB2B23A4D7D12E23FC /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */; };
+		5B5D6303E6BD4A611F64D519A76B6849 /* Data+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F553A12EED532E7AE3021677116F7942 /* Data+FileResource.swift */; };
+		680AEC5E7C049F327CD07A09642E14CC /* FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377614FA66999F79E025C0A40822C54B /* FileResource.swift */; };
+		71B273E749EEA83662770BC064B232E4 /* UITableView+ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C5F2997A929013F500353AA72D57ED /* UITableView+ReuseIdentifierProtocol.swift */; };
+		787C2D5A903E84974D32122E3BC7271F /* NibResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D51BED72BFDE35709D2F35C23B171BA /* NibResource.swift */; };
+		78FEB707F4316AB0B6DAC1B0A54782CE /* UIStoryboard+StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8C1E55A92D5612A2E038A554B531F /* UIStoryboard+StoryboardResource.swift */; };
+		7C6728F02A59EF3FD0B8D5BA464A2E00 /* Bundle+FileResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A22C6BA11A3D76A6C1FF485B6ABE7A /* Bundle+FileResource.swift */; };
+		7D7EBD23329B0DEF17CFC16CC610B187 /* R.swift.Library-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2C02F33041C29B52150C04592F72CB /* R.swift.Library-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		833F08FCFFEB5655316F591B65BE0745 /* R.swift.Library-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 556477BB5F55AFB68185E69A41A0FDC4 /* R.swift.Library-dummy.m */; };
 		88BCB84F7FE6B4018A5C9EF1D5817FD0 /* Pods-fetilipTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FA7BF94AD52B58F8A06C2DFF9D35794 /* Pods-fetilipTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8A98C3896D68AE1D981B6D696C83926C /* PTCardTabBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A02DA2DC8F4E64CA24CDD09B16F4A9CF /* PTCardTabBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C58EEF353181356477F0633458B0E6D /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDCF8E982DDA9C07F7EF16281822984 /* StringResource.swift */; };
-		951B28FB05A3937167DF1F879C23FFEA /* PTCardTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4361F9DDF5EB5D02754339A88D9F3C09 /* PTCardTabBar.swift */; };
-		9F2F94EFB17237C6156DA668CB5A151A /* UIColor+ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3594A7B5F4519D1542916677767CACB /* UIColor+ColorResource.swift */; };
-		A27A6B037464416A97B08E37F9816F7F /* Pods-fetilip-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BD92D55E319D79DAD893549005F9D10 /* Pods-fetilip-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A372DEE1A3AFC1D2F84B90AE14EED4BA /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DBCEE5F87C2B3535C0F6C711123B060 /* NibResource+UIKit.swift */; };
-		AD1FD4609566517C6973D925E621A80B /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0A999770A90FDC92083947CB136EE2 /* StoryboardResource.swift */; };
-		B1E2FA42DF4AC1C67A92CA1E1C060A33 /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865B3C061B4C0DB6506E73D5B9313185 /* UIStoryboard+StoryboardViewControllerResource.swift */; };
-		B2A5CE8CD682CB685687143831B6B240 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364EE6D5CA2A27644A7FF0C174A3FECC /* Validatable.swift */; };
-		B41DF244ABE936F746A29A4B001E50D3 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EA81C4F266D9D941F0BEA40DCFE72 /* StoryboardResourceWithInitialController+UIKit.swift */; };
-		B5A4512E966A04C9477A257142745DD5 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0C914EE7FEBBAE36E606FA7D305A08 /* ImageResource.swift */; };
-		BC943CA2CF08DB3B4D23C7273596624C /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B147D068A837C8763F070ACC7898B4 /* Identifier.swift */; };
-		BD670CB6BA6460AEBD219F212A933176 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */; };
-		BFD2837CBD442EE283A1B503FB8A281A /* PTCardTabBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0679292DAD0A7FDDB875FAC3504A1A /* PTCardTabBar-dummy.m */; };
-		D171B6B816C94937ED316BA25B15346B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF5CB40A13A3BE77F51155081AF8DBE /* UIView+AutoLayout.swift */; };
-		DDCCDA0CC4F6901364FFA98C9D878CF0 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C05551595F2D879D4CD9E60D9D12607 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
-		E2E23A0BA2E6DECE6B80040989C81C9D /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6423674205149A65351EC41202D3CF /* FontResource.swift */; };
-		EDB09FEF14F948C58491AD459C55829C /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A1E2EE24CF6840E50B5BA12C78E8BC /* UIFont+FontResource.swift */; };
-		EDCFC5B0AD3CA4514BA167968CC3FCE1 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E25C6479CE883849CF9989362B9829B /* ColorResource.swift */; };
-		EE9C49ECB0513F8E45259AE810731A42 /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715B09E1C9F4945242F7EEC320C83338 /* StoryboardViewControllerResource.swift */; };
+		8C58EEF353181356477F0633458B0E6D /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3086EC9564737D4D38BDCB9FBFB66F /* StringResource.swift */; };
+		9F2F94EFB17237C6156DA668CB5A151A /* UIColor+ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91711A2BBCA31416A7E49F4E75BC5BAB /* UIColor+ColorResource.swift */; };
+		A372DEE1A3AFC1D2F84B90AE14EED4BA /* NibResource+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8A0E458863B7EEAB1F30106C6482DE /* NibResource+UIKit.swift */; };
+		AD1FD4609566517C6973D925E621A80B /* StoryboardResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8B651AD88B221CD1454F9D7BADBAC7 /* StoryboardResource.swift */; };
+		B1E2FA42DF4AC1C67A92CA1E1C060A33 /* UIStoryboard+StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787C3DD9F8C90D9233FE2C387DFD1A1C /* UIStoryboard+StoryboardViewControllerResource.swift */; };
+		B2A5CE8CD682CB685687143831B6B240 /* Validatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4AC8A7732057F7447EB8E446DCE8B78 /* Validatable.swift */; };
+		B41DF244ABE936F746A29A4B001E50D3 /* StoryboardResourceWithInitialController+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589C2C35429B14B4348FF37AE189F5B8 /* StoryboardResourceWithInitialController+UIKit.swift */; };
+		B5A4512E966A04C9477A257142745DD5 /* ImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9920803972B3AAD4A78B346632460CC0 /* ImageResource.swift */; };
+		BC943CA2CF08DB3B4D23C7273596624C /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5427F70939DC52ECAA5DAC097D0033EC /* Identifier.swift */; };
+		BD670CB6BA6460AEBD219F212A933176 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		DDCCDA0CC4F6901364FFA98C9D878CF0 /* UIViewController+StoryboardSegueIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F574F74BFBC2805EA921E0B3F68652F /* UIViewController+StoryboardSegueIdentifierProtocol.swift */; };
+		E2E23A0BA2E6DECE6B80040989C81C9D /* FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6865FA624CB9FDA7D2B92F9BD9963B /* FontResource.swift */; };
+		EDB09FEF14F948C58491AD459C55829C /* UIFont+FontResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC75843867C5B40F483E0CD06A8694A7 /* UIFont+FontResource.swift */; };
+		EDCFC5B0AD3CA4514BA167968CC3FCE1 /* ColorResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A610F0BE4841758CA6D0DE7A8B560B /* ColorResource.swift */; };
+		EE9C49ECB0513F8E45259AE810731A42 /* StoryboardViewControllerResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02536CED8E590AA380713A1F1DC9424 /* StoryboardViewControllerResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,105 +74,83 @@
 			remoteGlobalIDString = B12748D8506CB48696BD90F2CA4F4E38;
 			remoteInfo = R.swift.Library;
 		};
-		404DA166B09D9F6849B62E5AC2EEF967 /* PBXContainerItemProxy */ = {
+		765BA3BF75CD7793F9FAE922CCE9D783 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B12748D8506CB48696BD90F2CA4F4E38;
 			remoteInfo = R.swift.Library;
 		};
-		75128366E71EA234305627B0161FFEE0 /* PBXContainerItemProxy */ = {
+		C4012632BBA140102D98F0120CD3FA78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 230984053C6652DFF510F450F21C5CF7;
 			remoteInfo = R.swift;
 		};
-		DB1D0D1ED5F48EA7FD23974B46A2D10F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B5E34DEC86133C45795287F399C33E3;
-			remoteInfo = PTCardTabBar;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05281262FB1F086F9D2F0CD9DE918C49 /* UINib+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+NibResource.swift"; path = "Library/UIKit/UINib+NibResource.swift"; sourceTree = "<group>"; };
 		0644E8554351ACBA2F3AD5110D30D4B8 /* Pods_fetilipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_fetilipTests.framework; path = "Pods-fetilipTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09FCF038F69A84E747012C7A351EF859 /* R.swift.Library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "R.swift.Library-dummy.m"; sourceTree = "<group>"; };
-		0ABCC4C92B38AD5AD623CB34CD98BC10 /* R.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.xcconfig; sourceTree = "<group>"; };
+		0A8A0E458863B7EEAB1F30106C6482DE /* NibResource+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibResource+UIKit.swift"; path = "Library/UIKit/NibResource+UIKit.swift"; sourceTree = "<group>"; };
 		0B788541AF30046D94AF58E395F6EE74 /* Pods-fetilip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-fetilip.debug.xcconfig"; sourceTree = "<group>"; };
-		0D4E6FF9656FA17835C165CB6530505C /* PTCardTabBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PTCardTabBar.modulemap; sourceTree = "<group>"; };
-		0DBCEE5F87C2B3535C0F6C711123B060 /* NibResource+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NibResource+UIKit.swift"; path = "Library/UIKit/NibResource+UIKit.swift"; sourceTree = "<group>"; };
 		0E4F4C52A650F314B2C2AC0058EAEC20 /* Pods-fetilipTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-fetilipTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1500D4E6A5B1DD9991C2C2757926CD11 /* UIImage+ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+ImageResource.swift"; path = "Library/UIKit/UIImage+ImageResource.swift"; sourceTree = "<group>"; };
-		1C7C17064FD1E2072AA6255DE749A0BC /* PTCardTabBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PTCardTabBar-prefix.pch"; sourceTree = "<group>"; };
-		1E25C6479CE883849CF9989362B9829B /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Library/Core/ColorResource.swift; sourceTree = "<group>"; };
-		1F0679292DAD0A7FDDB875FAC3504A1A /* PTCardTabBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PTCardTabBar-dummy.m"; sourceTree = "<group>"; };
-		230B47A05DE112003542DBB658909AF9 /* R.swift.Library.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.xcconfig; sourceTree = "<group>"; };
+		0F574F74BFBC2805EA921E0B3F68652F /* UIViewController+StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+StoryboardSegueIdentifierProtocol.swift"; path = "Library/UIKit/UIViewController+StoryboardSegueIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		11C82C8CF9693B16A91F527ECE1F2F56 /* UINib+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINib+NibResource.swift"; path = "Library/UIKit/UINib+NibResource.swift"; sourceTree = "<group>"; };
+		19A610F0BE4841758CA6D0DE7A8B560B /* ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorResource.swift; path = Library/Core/ColorResource.swift; sourceTree = "<group>"; };
+		1A895402A7B61CB1AAD576A4705DE5AC /* R.swift.Library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = R.swift.Library.modulemap; sourceTree = "<group>"; };
 		29D09D83F44F665AC7CC07C6D730C42E /* Pods-fetilipTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-fetilipTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2B76CA35E6F909E37551EC7AE06B9537 /* UICollectionView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UICollectionView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
-		2BD71EFA4F79C621F301E16DA1E619AA /* StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardSegueIdentifierProtocol.swift; path = Library/Core/StoryboardSegueIdentifierProtocol.swift; sourceTree = "<group>"; };
-		2DEB416BD6CC506361373223AD10DC4C /* UIStoryboard+StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardResource.swift"; sourceTree = "<group>"; };
-		312B988EF117AE4DE76A268D970131FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2D51BED72BFDE35709D2F35C23B171BA /* NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibResource.swift; path = Library/Core/NibResource.swift; sourceTree = "<group>"; };
+		2F5D4AA872E5204298064E63493E415A /* R.swift.Library-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "R.swift.Library-Info.plist"; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		32BA99D4ABB3D0AF4D645EB85126B5B5 /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		32E68969A1349DC354AB5F7275E0A37C /* Pods-fetilip-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-fetilip-acknowledgements.plist"; sourceTree = "<group>"; };
-		3318E61155AF335B09E3A07CD1DEB50F /* UIColor+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Additions.swift"; path = "PTCardTabBar/Classes/Extensions/UIColor+Additions.swift"; sourceTree = "<group>"; };
-		35D701917D96D46944E85701A12AA36C /* R.swift.Library-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "R.swift.Library-Info.plist"; sourceTree = "<group>"; };
-		364EE6D5CA2A27644A7FF0C174A3FECC /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Library/Core/Validatable.swift; sourceTree = "<group>"; };
+		36706481ED5D470D45E911080BB661D4 /* StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardSegueIdentifierProtocol.swift; path = Library/Core/StoryboardSegueIdentifierProtocol.swift; sourceTree = "<group>"; };
+		377614FA66999F79E025C0A40822C54B /* FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileResource.swift; path = Library/Core/FileResource.swift; sourceTree = "<group>"; };
 		3BD92D55E319D79DAD893549005F9D10 /* Pods-fetilip-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-fetilip-umbrella.h"; sourceTree = "<group>"; };
-		4361F9DDF5EB5D02754339A88D9F3C09 /* PTCardTabBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PTCardTabBar.swift; path = PTCardTabBar/Classes/PTCardTabBar.swift; sourceTree = "<group>"; };
-		436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4706E21AE04D05E0761C696C44F3D267 /* UIViewController+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+NibResource.swift"; path = "Library/UIKit/UIViewController+NibResource.swift"; sourceTree = "<group>"; };
-		490F1351FF718C46AC197845B56EB82C /* PTCardTabBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PTCardTabBar.framework; path = PTCardTabBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CA797CFC0CB80503B128756F78AAFB1 /* Bundle+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+FileResource.swift"; path = "Library/Foundation/Bundle+FileResource.swift"; sourceTree = "<group>"; };
-		53B147D068A837C8763F070ACC7898B4 /* Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = Library/Core/Identifier.swift; sourceTree = "<group>"; };
+		3EAD8FCE9CB4C0FF82FE9F67ACE73C6B /* R.swift.Library-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-prefix.pch"; sourceTree = "<group>"; };
+		4C5195A247CCEFF2F5220C058E0726F9 /* UICollectionView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UICollectionView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		5427F70939DC52ECAA5DAC097D0033EC /* Identifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Identifier.swift; path = Library/Core/Identifier.swift; sourceTree = "<group>"; };
+		556477BB5F55AFB68185E69A41A0FDC4 /* R.swift.Library-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "R.swift.Library-dummy.m"; sourceTree = "<group>"; };
+		589C2C35429B14B4348FF37AE189F5B8 /* StoryboardResourceWithInitialController+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StoryboardResourceWithInitialController+UIKit.swift"; path = "Library/UIKit/StoryboardResourceWithInitialController+UIKit.swift"; sourceTree = "<group>"; };
 		59E26D76E9F1C2A62B4DA3E0257FD6C9 /* Pods-fetilip-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-fetilip-dummy.m"; sourceTree = "<group>"; };
+		5B2C02F33041C29B52150C04592F72CB /* R.swift.Library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-umbrella.h"; sourceTree = "<group>"; };
 		5DBFB298559057FC5AC4E27849F176D1 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6185D24E35C3DCC7FD95274251EB5A3E /* Pods-fetilipTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-fetilipTests.modulemap"; sourceTree = "<group>"; };
-		62FCA16A0F563DF7F79F10CCAAB6D44E /* PTCardTabBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PTCardTabBar-Info.plist"; sourceTree = "<group>"; };
-		6921BB71FDBD97844534C1848E1787D0 /* PTCardTabBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PTCardTabBarController.swift; path = PTCardTabBar/Classes/PTCardTabBarController.swift; sourceTree = "<group>"; };
+		6B47FEBF8F55FA919E9D6B0AA85C9CDC /* R.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.xcconfig; sourceTree = "<group>"; };
 		6FA7BF94AD52B58F8A06C2DFF9D35794 /* Pods-fetilipTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-fetilipTests-umbrella.h"; sourceTree = "<group>"; };
-		715B09E1C9F4945242F7EEC320C83338 /* StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardViewControllerResource.swift; path = Library/Core/StoryboardViewControllerResource.swift; sourceTree = "<group>"; };
-		72116FB29A69EF40138D2D56B4D890BD /* UITableView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UITableView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
-		786B7FF4BFE4E06F542E2D49DDDC1FEA /* Data+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+FileResource.swift"; path = "Library/Foundation/Data+FileResource.swift"; sourceTree = "<group>"; };
-		7D94F15E747766E2ADBCC0954A17B6A8 /* NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibResource.swift; path = Library/Core/NibResource.swift; sourceTree = "<group>"; };
+		70C5F2997A929013F500353AA72D57ED /* UITableView+ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+ReuseIdentifierProtocol.swift"; path = "Library/UIKit/UITableView+ReuseIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		787C3DD9F8C90D9233FE2C387DFD1A1C /* UIStoryboard+StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardViewControllerResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift"; sourceTree = "<group>"; };
+		7D6865FA624CB9FDA7D2B92F9BD9963B /* FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontResource.swift; path = Library/Core/FontResource.swift; sourceTree = "<group>"; };
+		806FECEE456B92636E6ED23B18CDEBE4 /* UIImage+ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+ImageResource.swift"; path = "Library/UIKit/UIImage+ImageResource.swift"; sourceTree = "<group>"; };
 		824641DAC0FD3E1579B70AEAC039DC89 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-fetilipUITests.a"; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		840EA81C4F266D9D941F0BEA40DCFE72 /* StoryboardResourceWithInitialController+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StoryboardResourceWithInitialController+UIKit.swift"; path = "Library/UIKit/StoryboardResourceWithInitialController+UIKit.swift"; sourceTree = "<group>"; };
-		865B3C061B4C0DB6506E73D5B9313185 /* UIStoryboard+StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardViewControllerResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift"; sourceTree = "<group>"; };
-		8BD9E1AF8596368BCC62DE568545D951 /* PTIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PTIndicatorView.swift; path = PTCardTabBar/Classes/PTIndicatorView.swift; sourceTree = "<group>"; };
-		8CF5CB40A13A3BE77F51155081AF8DBE /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+AutoLayout.swift"; path = "PTCardTabBar/Classes/Extensions/UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		8DD7ACE5F6D13049109C0A8540F56C2C /* Pods-fetilipTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-fetilipTests-dummy.m"; sourceTree = "<group>"; };
 		8E46118C46D46C75C02D843B268971AF /* Pods-fetilip-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-fetilip-frameworks.sh"; sourceTree = "<group>"; };
 		8ED17584F571593B5092408D667A88CE /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
-		9C05551595F2D879D4CD9E60D9D12607 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+StoryboardSegueIdentifierProtocol.swift"; path = "Library/UIKit/UIViewController+StoryboardSegueIdentifierProtocol.swift"; sourceTree = "<group>"; };
+		91711A2BBCA31416A7E49F4E75BC5BAB /* UIColor+ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+ColorResource.swift"; path = "Library/UIKit/UIColor+ColorResource.swift"; sourceTree = "<group>"; };
+		9920803972B3AAD4A78B346632460CC0 /* ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResource.swift; path = Library/Core/ImageResource.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A02DA2DC8F4E64CA24CDD09B16F4A9CF /* PTCardTabBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PTCardTabBar-umbrella.h"; sourceTree = "<group>"; };
-		A0A1E2EE24CF6840E50B5BA12C78E8BC /* UIFont+FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+FontResource.swift"; path = "Library/UIKit/UIFont+FontResource.swift"; sourceTree = "<group>"; };
-		AA0A999770A90FDC92083947CB136EE2 /* StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardResource.swift; path = Library/Core/StoryboardResource.swift; sourceTree = "<group>"; };
+		A0C8C1E55A92D5612A2E038A554B531F /* UIStoryboard+StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStoryboard+StoryboardResource.swift"; path = "Library/UIKit/UIStoryboard+StoryboardResource.swift"; sourceTree = "<group>"; };
+		A79C3DD5681EED326FED1651EF8FEA5C /* UIViewController+NibResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+NibResource.swift"; path = "Library/UIKit/UIViewController+NibResource.swift"; sourceTree = "<group>"; };
+		AFF28F419AA96BE56BEEE4ECC9850257 /* R.swift.Library.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = R.swift.Library.xcconfig; sourceTree = "<group>"; };
 		B1A5C931A248D54652BF68842CD1A763 /* Pods-fetilipUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-fetilipUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BDEC2CF93D86EC68552093D81A2436D5 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReuseIdentifierProtocol.swift; path = Library/Core/ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
-		C061B66111A27AC5C72DBC3CEC7D9C03 /* R.swift.Library.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = R.swift.Library.modulemap; sourceTree = "<group>"; };
-		C158D863DEFDDFBFC7F3AA2759855C69 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; path = "Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
-		C3594A7B5F4519D1542916677767CACB /* UIColor+ColorResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+ColorResource.swift"; path = "Library/UIKit/UIColor+ColorResource.swift"; sourceTree = "<group>"; };
-		C6D7A9445E661F30645C6C78633C3D53 /* FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FileResource.swift; path = Library/Core/FileResource.swift; sourceTree = "<group>"; };
+		B7A22C6BA11A3D76A6C1FF485B6ABE7A /* Bundle+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+FileResource.swift"; path = "Library/Foundation/Bundle+FileResource.swift"; sourceTree = "<group>"; };
+		C4AC8A7732057F7447EB8E446DCE8B78 /* Validatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validatable.swift; path = Library/Core/Validatable.swift; sourceTree = "<group>"; };
 		C84D6537BE294A253E49BB2DF330AD37 /* Pods-fetilipTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-fetilipTests-Info.plist"; sourceTree = "<group>"; };
 		CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Rswift.framework; path = R.swift.Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA6423674205149A65351EC41202D3CF /* FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontResource.swift; path = Library/Core/FontResource.swift; sourceTree = "<group>"; };
-		CCB4D787C04C24B5F99CFC3E845FFCE5 /* R.swift.Library-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-prefix.pch"; sourceTree = "<group>"; };
+		CF8126F72192ADDB2B23A4D7D12E23FC /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; path = "Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift"; sourceTree = "<group>"; };
 		CFE947D6A04BD522351946435CE0E442 /* Pods-fetilipUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-fetilipUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D08CC1D077DD68654E5A650B2F7B6F72 /* PTCardTabBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PTCardTabBar.xcconfig; sourceTree = "<group>"; };
 		D27E00A8A869D2C68F683EA4E97B1078 /* Pods-fetilip-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-fetilip-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EBDCF8E982DDA9C07F7EF16281822984 /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Library/Core/StringResource.swift; sourceTree = "<group>"; };
-		EE0C914EE7FEBBAE36E606FA7D305A08 /* ImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageResource.swift; path = Library/Core/ImageResource.swift; sourceTree = "<group>"; };
-		EEF2E92A8A8E0AD2C495533A5B64F1DD /* R.swift.Library-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "R.swift.Library-umbrella.h"; sourceTree = "<group>"; };
-		F0BCDD9E894A288F9BA310CF7AE31BE6 /* PTBarButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PTBarButton.swift; path = PTCardTabBar/Classes/PTBarButton.swift; sourceTree = "<group>"; };
-		F22E3E0CB5FD8FD2C4B0F70349D34C86 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CGPoint+Distance.swift"; path = "PTCardTabBar/Classes/Extensions/CGPoint+Distance.swift"; sourceTree = "<group>"; };
+		DC3086EC9564737D4D38BDCB9FBFB66F /* StringResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringResource.swift; path = Library/Core/StringResource.swift; sourceTree = "<group>"; };
+		DC75843867C5B40F483E0CD06A8694A7 /* UIFont+FontResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIFont+FontResource.swift"; path = "Library/UIKit/UIFont+FontResource.swift"; sourceTree = "<group>"; };
+		DF8B651AD88B221CD1454F9D7BADBAC7 /* StoryboardResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardResource.swift; path = Library/Core/StoryboardResource.swift; sourceTree = "<group>"; };
+		F02536CED8E590AA380713A1F1DC9424 /* StoryboardViewControllerResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StoryboardViewControllerResource.swift; path = Library/Core/StoryboardViewControllerResource.swift; sourceTree = "<group>"; };
+		F553A12EED532E7AE3021677116F7942 /* Data+FileResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+FileResource.swift"; path = "Library/Foundation/Data+FileResource.swift"; sourceTree = "<group>"; };
 		F562749F321FECA72132C9A4E900D20F /* Pods-fetilipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-fetilipTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA5C8E502FD2509BD5001BAFA4C89162 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FAC36FF0C2EB85C20211BBCCC927C3C4 /* Pods-fetilipUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-fetilipUITests-dummy.m"; sourceTree = "<group>"; };
 		FCB504D6F835848FF7EC0E56384E66C2 /* Pods-fetilip.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-fetilip.modulemap"; sourceTree = "<group>"; };
+		FD449AA3E438E458541AA1A8C17926C9 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReuseIdentifierProtocol.swift; path = Library/Core/ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 		FDCB816CC97DCC35FAA10F9C03E6B591 /* Pods_fetilip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_fetilip.framework; path = "Pods-fetilip.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC21FBC5D81E32433835D51D4D36929 /* Pods-fetilip-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-fetilip-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,28 +164,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7AC719B134198FBF991F6D7C309486BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3863E36292E06FFC4859D91944635989 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7E4D3CC7790F553E78DEB60C4FEA0A25 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BD670CB6BA6460AEBD219F212A933176 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F55E7476E7EE0C0B8FF910C8D0921E4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				406F23EE65207FF0595CF2561129031A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B7E5AD04AD96C6F3494D2D516B2928A0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22FC5E2C9706121D35E30B03C9D4BF79 /* Foundation.framework in Frameworks */,
-				70DA24E8458F49F040AE9BD1DD28D8BA /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,26 +219,22 @@
 			path = "Target Support Files/Pods-fetilipUITests";
 			sourceTree = "<group>";
 		};
-		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+		1CD066E7ADB55D29E59F97F412B9A8F3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E2983683FD097A93297E2F5D4E382B36 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5C742A02750980688DE3234144958CDD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0D4E6FF9656FA17835C165CB6530505C /* PTCardTabBar.modulemap */,
-				D08CC1D077DD68654E5A650B2F7B6F72 /* PTCardTabBar.xcconfig */,
-				1F0679292DAD0A7FDDB875FAC3504A1A /* PTCardTabBar-dummy.m */,
-				62FCA16A0F563DF7F79F10CCAAB6D44E /* PTCardTabBar-Info.plist */,
-				1C7C17064FD1E2072AA6255DE749A0BC /* PTCardTabBar-prefix.pch */,
-				A02DA2DC8F4E64CA24CDD09B16F4A9CF /* PTCardTabBar-umbrella.h */,
+				6B47FEBF8F55FA919E9D6B0AA85C9CDC /* R.swift.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/PTCardTabBar";
+			path = "../Target Support Files/R.swift";
+			sourceTree = "<group>";
+		};
+		465B090EA1DA9CE61C4360D8C3785379 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D43440E5C05D0EAD182D12CE1459D81F /* R.swift */,
+				9E1A85C9B14FE73418D32206A4161BF5 /* R.swift.Library */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		64AE7FFEEE05169737407C58C067A7FC /* Pods-fetilip */ = {
@@ -300,23 +254,40 @@
 			path = "Target Support Files/Pods-fetilip";
 			sourceTree = "<group>";
 		};
-		7177811857D3F4B76FCFD72F06934DD9 /* Support Files */ = {
+		9E1A85C9B14FE73418D32206A4161BF5 /* R.swift.Library */ = {
 			isa = PBXGroup;
 			children = (
-				0ABCC4C92B38AD5AD623CB34CD98BC10 /* R.swift.xcconfig */,
+				B7A22C6BA11A3D76A6C1FF485B6ABE7A /* Bundle+FileResource.swift */,
+				19A610F0BE4841758CA6D0DE7A8B560B /* ColorResource.swift */,
+				F553A12EED532E7AE3021677116F7942 /* Data+FileResource.swift */,
+				377614FA66999F79E025C0A40822C54B /* FileResource.swift */,
+				7D6865FA624CB9FDA7D2B92F9BD9963B /* FontResource.swift */,
+				5427F70939DC52ECAA5DAC097D0033EC /* Identifier.swift */,
+				9920803972B3AAD4A78B346632460CC0 /* ImageResource.swift */,
+				2D51BED72BFDE35709D2F35C23B171BA /* NibResource.swift */,
+				0A8A0E458863B7EEAB1F30106C6482DE /* NibResource+UIKit.swift */,
+				FD449AA3E438E458541AA1A8C17926C9 /* ReuseIdentifierProtocol.swift */,
+				DF8B651AD88B221CD1454F9D7BADBAC7 /* StoryboardResource.swift */,
+				589C2C35429B14B4348FF37AE189F5B8 /* StoryboardResourceWithInitialController+UIKit.swift */,
+				36706481ED5D470D45E911080BB661D4 /* StoryboardSegueIdentifierProtocol.swift */,
+				F02536CED8E590AA380713A1F1DC9424 /* StoryboardViewControllerResource.swift */,
+				DC3086EC9564737D4D38BDCB9FBFB66F /* StringResource.swift */,
+				CF8126F72192ADDB2B23A4D7D12E23FC /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */,
+				4C5195A247CCEFF2F5220C058E0726F9 /* UICollectionView+ReuseIdentifierProtocol.swift */,
+				91711A2BBCA31416A7E49F4E75BC5BAB /* UIColor+ColorResource.swift */,
+				DC75843867C5B40F483E0CD06A8694A7 /* UIFont+FontResource.swift */,
+				806FECEE456B92636E6ED23B18CDEBE4 /* UIImage+ImageResource.swift */,
+				11C82C8CF9693B16A91F527ECE1F2F56 /* UINib+NibResource.swift */,
+				A0C8C1E55A92D5612A2E038A554B531F /* UIStoryboard+StoryboardResource.swift */,
+				787C3DD9F8C90D9233FE2C387DFD1A1C /* UIStoryboard+StoryboardViewControllerResource.swift */,
+				70C5F2997A929013F500353AA72D57ED /* UITableView+ReuseIdentifierProtocol.swift */,
+				A79C3DD5681EED326FED1651EF8FEA5C /* UIViewController+NibResource.swift */,
+				0F574F74BFBC2805EA921E0B3F68652F /* UIViewController+StoryboardSegueIdentifierProtocol.swift */,
+				C4AC8A7732057F7447EB8E446DCE8B78 /* Validatable.swift */,
+				E768441AB2190264EA8BDE4886B5A21B /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/R.swift";
-			sourceTree = "<group>";
-		};
-		A592C97D2398147CB0CED4451837BB0E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EE3165D027FEBDD62D544D3978826148 /* PTCardTabBar */,
-				B766120CC46D57CDA4E77CE093F76A80 /* R.swift */,
-				E6D39733BEDBC6B643193F43FB8629DC /* R.swift.Library */,
-			);
-			name = Pods;
+			name = R.swift.Library;
+			path = R.swift.Library;
 			sourceTree = "<group>";
 		};
 		AEF8D4201B4C75DDE1098E424A912D1E /* Targets Support Files */ = {
@@ -329,111 +300,65 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B766120CC46D57CDA4E77CE093F76A80 /* R.swift */ = {
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7177811857D3F4B76FCFD72F06934DD9 /* Support Files */,
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
 			);
-			name = R.swift;
-			path = R.swift;
-			sourceTree = "<group>";
-		};
-		C0A29CB5FB0F5F7A9C4CC787110DBDDE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				824641DAC0FD3E1579B70AEAC039DC89 /* libPods-fetilipUITests.a */,
-				FDCB816CC97DCC35FAA10F9C03E6B591 /* Pods_fetilip.framework */,
-				0644E8554351ACBA2F3AD5110D30D4B8 /* Pods_fetilipTests.framework */,
-				490F1351FF718C46AC197845B56EB82C /* PTCardTabBar.framework */,
-				CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */,
-			);
-			name = Products;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				A592C97D2398147CB0CED4451837BB0E /* Pods */,
-				C0A29CB5FB0F5F7A9C4CC787110DBDDE /* Products */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				465B090EA1DA9CE61C4360D8C3785379 /* Pods */,
+				F234A11A8B75423138476E693DF1B69D /* Products */,
 				AEF8D4201B4C75DDE1098E424A912D1E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		DF1C42EA1B49CFD29288DC0B3FEDF711 /* Support Files */ = {
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C061B66111A27AC5C72DBC3CEC7D9C03 /* R.swift.Library.modulemap */,
-				230B47A05DE112003542DBB658909AF9 /* R.swift.Library.xcconfig */,
-				09FCF038F69A84E747012C7A351EF859 /* R.swift.Library-dummy.m */,
-				35D701917D96D46944E85701A12AA36C /* R.swift.Library-Info.plist */,
-				CCB4D787C04C24B5F99CFC3E845FFCE5 /* R.swift.Library-prefix.pch */,
-				EEF2E92A8A8E0AD2C495533A5B64F1DD /* R.swift.Library-umbrella.h */,
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D43440E5C05D0EAD182D12CE1459D81F /* R.swift */ = {
+			isa = PBXGroup;
+			children = (
+				1CD066E7ADB55D29E59F97F412B9A8F3 /* Support Files */,
+			);
+			name = R.swift;
+			path = R.swift;
+			sourceTree = "<group>";
+		};
+		E768441AB2190264EA8BDE4886B5A21B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A895402A7B61CB1AAD576A4705DE5AC /* R.swift.Library.modulemap */,
+				AFF28F419AA96BE56BEEE4ECC9850257 /* R.swift.Library.xcconfig */,
+				556477BB5F55AFB68185E69A41A0FDC4 /* R.swift.Library-dummy.m */,
+				2F5D4AA872E5204298064E63493E415A /* R.swift.Library-Info.plist */,
+				3EAD8FCE9CB4C0FF82FE9F67ACE73C6B /* R.swift.Library-prefix.pch */,
+				5B2C02F33041C29B52150C04592F72CB /* R.swift.Library-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/R.swift.Library";
 			sourceTree = "<group>";
 		};
-		E2983683FD097A93297E2F5D4E382B36 /* iOS */ = {
+		F234A11A8B75423138476E693DF1B69D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				436BAA54A31999B53B3CC7115C55FE50 /* Foundation.framework */,
-				312B988EF117AE4DE76A268D970131FE /* UIKit.framework */,
+				824641DAC0FD3E1579B70AEAC039DC89 /* libPods-fetilipUITests.a */,
+				FDCB816CC97DCC35FAA10F9C03E6B591 /* Pods_fetilip.framework */,
+				0644E8554351ACBA2F3AD5110D30D4B8 /* Pods_fetilipTests.framework */,
+				CA4E3B66CE4D02048C77392B64FD0ABB /* Rswift.framework */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E6D39733BEDBC6B643193F43FB8629DC /* R.swift.Library */ = {
-			isa = PBXGroup;
-			children = (
-				4CA797CFC0CB80503B128756F78AAFB1 /* Bundle+FileResource.swift */,
-				1E25C6479CE883849CF9989362B9829B /* ColorResource.swift */,
-				786B7FF4BFE4E06F542E2D49DDDC1FEA /* Data+FileResource.swift */,
-				C6D7A9445E661F30645C6C78633C3D53 /* FileResource.swift */,
-				CA6423674205149A65351EC41202D3CF /* FontResource.swift */,
-				53B147D068A837C8763F070ACC7898B4 /* Identifier.swift */,
-				EE0C914EE7FEBBAE36E606FA7D305A08 /* ImageResource.swift */,
-				7D94F15E747766E2ADBCC0954A17B6A8 /* NibResource.swift */,
-				0DBCEE5F87C2B3535C0F6C711123B060 /* NibResource+UIKit.swift */,
-				BDEC2CF93D86EC68552093D81A2436D5 /* ReuseIdentifierProtocol.swift */,
-				AA0A999770A90FDC92083947CB136EE2 /* StoryboardResource.swift */,
-				840EA81C4F266D9D941F0BEA40DCFE72 /* StoryboardResourceWithInitialController+UIKit.swift */,
-				2BD71EFA4F79C621F301E16DA1E619AA /* StoryboardSegueIdentifierProtocol.swift */,
-				715B09E1C9F4945242F7EEC320C83338 /* StoryboardViewControllerResource.swift */,
-				EBDCF8E982DDA9C07F7EF16281822984 /* StringResource.swift */,
-				C158D863DEFDDFBFC7F3AA2759855C69 /* TypedStoryboardSegueInfo+UIStoryboardSegue.swift */,
-				2B76CA35E6F909E37551EC7AE06B9537 /* UICollectionView+ReuseIdentifierProtocol.swift */,
-				C3594A7B5F4519D1542916677767CACB /* UIColor+ColorResource.swift */,
-				A0A1E2EE24CF6840E50B5BA12C78E8BC /* UIFont+FontResource.swift */,
-				1500D4E6A5B1DD9991C2C2757926CD11 /* UIImage+ImageResource.swift */,
-				05281262FB1F086F9D2F0CD9DE918C49 /* UINib+NibResource.swift */,
-				2DEB416BD6CC506361373223AD10DC4C /* UIStoryboard+StoryboardResource.swift */,
-				865B3C061B4C0DB6506E73D5B9313185 /* UIStoryboard+StoryboardViewControllerResource.swift */,
-				72116FB29A69EF40138D2D56B4D890BD /* UITableView+ReuseIdentifierProtocol.swift */,
-				4706E21AE04D05E0761C696C44F3D267 /* UIViewController+NibResource.swift */,
-				9C05551595F2D879D4CD9E60D9D12607 /* UIViewController+StoryboardSegueIdentifierProtocol.swift */,
-				364EE6D5CA2A27644A7FF0C174A3FECC /* Validatable.swift */,
-				DF1C42EA1B49CFD29288DC0B3FEDF711 /* Support Files */,
-			);
-			name = R.swift.Library;
-			path = R.swift.Library;
-			sourceTree = "<group>";
-		};
-		EE3165D027FEBDD62D544D3978826148 /* PTCardTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				F22E3E0CB5FD8FD2C4B0F70349D34C86 /* CGPoint+Distance.swift */,
-				F0BCDD9E894A288F9BA310CF7AE31BE6 /* PTBarButton.swift */,
-				4361F9DDF5EB5D02754339A88D9F3C09 /* PTCardTabBar.swift */,
-				6921BB71FDBD97844534C1848E1787D0 /* PTCardTabBarController.swift */,
-				8BD9E1AF8596368BCC62DE568545D951 /* PTIndicatorView.swift */,
-				3318E61155AF335B09E3A07CD1DEB50F /* UIColor+Additions.swift */,
-				8CF5CB40A13A3BE77F51155081AF8DBE /* UIView+AutoLayout.swift */,
-				5C742A02750980688DE3234144958CDD /* Support Files */,
-			);
-			name = PTCardTabBar;
-			path = PTCardTabBar;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,19 +379,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9DFBD99FD3D53AD5CD8B9B5022ABD25A /* Headers */ = {
+		BA5A23FF10840BD04FA1C42C754337E2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A27A6B037464416A97B08E37F9816F7F /* Pods-fetilip-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E6203835DEBFDF32B01D4F1149B8F892 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8A98C3896D68AE1D981B6D696C83926C /* PTCardTabBar-umbrella.h in Headers */,
+				36CA79FE27BAFD04088C5C8403E09BD8 /* Pods-fetilip-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,24 +415,6 @@
 			productReference = 824641DAC0FD3E1579B70AEAC039DC89 /* libPods-fetilipUITests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		9B5E34DEC86133C45795287F399C33E3 /* PTCardTabBar */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C4782EC6CA3510DD45972051432491B9 /* Build configuration list for PBXNativeTarget "PTCardTabBar" */;
-			buildPhases = (
-				E6203835DEBFDF32B01D4F1149B8F892 /* Headers */,
-				1BFF11341F4E7CCF515D4DD53190B86C /* Sources */,
-				B7E5AD04AD96C6F3494D2D516B2928A0 /* Frameworks */,
-				66B854758DB64B5C853CBC34B6EEE466 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PTCardTabBar;
-			productName = PTCardTabBar;
-			productReference = 490F1351FF718C46AC197845B56EB82C /* PTCardTabBar.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D966A6E3B737E009252B4616EF68E0D /* Build configuration list for PBXNativeTarget "R.swift.Library" */;
@@ -536,19 +435,18 @@
 		};
 		DB6642718119AFCDE34682339AC97276 /* Pods-fetilip */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8FFE903826FCF17F1B4A8B0F48D2669B /* Build configuration list for PBXNativeTarget "Pods-fetilip" */;
+			buildConfigurationList = 85C33F6DB91AA3BDF75C9AA8E0170BDA /* Build configuration list for PBXNativeTarget "Pods-fetilip" */;
 			buildPhases = (
-				9DFBD99FD3D53AD5CD8B9B5022ABD25A /* Headers */,
-				B6B7F78B9AB75F64AC56C6FC0903F77E /* Sources */,
-				9F55E7476E7EE0C0B8FF910C8D0921E4 /* Frameworks */,
-				8EBFBF4BC4B7FD4F12F31F0BBBC1D931 /* Resources */,
+				BA5A23FF10840BD04FA1C42C754337E2 /* Headers */,
+				FE5CFC0D9F2447E6E3EB0045FA8A6A13 /* Sources */,
+				7AC719B134198FBF991F6D7C309486BA /* Frameworks */,
+				D68E3A3FEBCF34D77BCB81346E0FFB5E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				71868DD225D552260F829495BF8F0C24 /* PBXTargetDependency */,
-				F035B5A54039D6B19DA8F7EBE90353CF /* PBXTargetDependency */,
-				2186C2319545A6B7BE240AE48A0E8164 /* PBXTargetDependency */,
+				C0DE28B4C1B3AD7F970BFBD69A22AD98 /* PBXTargetDependency */,
+				64C79FC82554D451785AE10249B08A69 /* PBXTargetDependency */,
 			);
 			name = "Pods-fetilip";
 			productName = "Pods-fetilip";
@@ -592,14 +490,13 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = C0A29CB5FB0F5F7A9C4CC787110DBDDE /* Products */;
+			productRefGroup = F234A11A8B75423138476E693DF1B69D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DB6642718119AFCDE34682339AC97276 /* Pods-fetilip */,
 				E4ACCFFD0DA53A60D7E55B1AF462E79D /* Pods-fetilipTests */,
 				893B7A29C2E8F6A7EEA4C7C5256A5171 /* Pods-fetilipUITests */,
-				9B5E34DEC86133C45795287F399C33E3 /* PTCardTabBar */,
 				230984053C6652DFF510F450F21C5CF7 /* R.swift */,
 				B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */,
 			);
@@ -607,21 +504,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		66B854758DB64B5C853CBC34B6EEE466 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8018E3EECD09F5E7F2A39D6B6629D81D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8EBFBF4BC4B7FD4F12F31F0BBBC1D931 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -635,24 +518,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		1BFF11341F4E7CCF515D4DD53190B86C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		D68E3A3FEBCF34D77BCB81346E0FFB5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				006CC2D46E5BF6F14F70E0FDDA2006D5 /* CGPoint+Distance.swift in Sources */,
-				80BBB14543C200C58859A6B1488374D7 /* PTBarButton.swift in Sources */,
-				BFD2837CBD442EE283A1B503FB8A281A /* PTCardTabBar-dummy.m in Sources */,
-				951B28FB05A3937167DF1F879C23FFEA /* PTCardTabBar.swift in Sources */,
-				82DC63E8609767B33A4A8366E5501D84 /* PTCardTabBarController.swift in Sources */,
-				3E451C116831D1C328AA3C949F73C24D /* PTIndicatorView.swift in Sources */,
-				1198816B5130E79971F58CBA17BE3C38 /* UIColor+Additions.swift in Sources */,
-				D171B6B816C94937ED316BA25B15346B /* UIView+AutoLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		9F52BBE74F215CD219C080FE067D6C68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,14 +563,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B6B7F78B9AB75F64AC56C6FC0903F77E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D2511F98472CA6A4B339A7579C411EE /* Pods-fetilip-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D33A8737A53B22EE10FC944A0AF9A421 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,26 +579,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE5CFC0D9F2447E6E3EB0045FA8A6A13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				213F7C667FD4BE346B64752FB938AEF7 /* Pods-fetilip-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2186C2319545A6B7BE240AE48A0E8164 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = R.swift.Library;
-			target = B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */;
-			targetProxy = 404DA166B09D9F6849B62E5AC2EEF967 /* PBXContainerItemProxy */;
-		};
 		4C96BD147A28C219742913509A3A6065 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = R.swift.Library;
 			target = B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */;
 			targetProxy = 1F0ACA2E2CAC4C39619D3CD6F4CDA62F /* PBXContainerItemProxy */;
 		};
-		71868DD225D552260F829495BF8F0C24 /* PBXTargetDependency */ = {
+		64C79FC82554D451785AE10249B08A69 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = PTCardTabBar;
-			target = 9B5E34DEC86133C45795287F399C33E3 /* PTCardTabBar */;
-			targetProxy = DB1D0D1ED5F48EA7FD23974B46A2D10F /* PBXContainerItemProxy */;
+			name = R.swift.Library;
+			target = B12748D8506CB48696BD90F2CA4F4E38 /* R.swift.Library */;
+			targetProxy = 765BA3BF75CD7793F9FAE922CCE9D783 /* PBXContainerItemProxy */;
 		};
 		A14B4C02C5335CE02976142203D5BAFC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -739,15 +608,53 @@
 			target = DB6642718119AFCDE34682339AC97276 /* Pods-fetilip */;
 			targetProxy = 03C0659420D6AD334990586B2E655A7D /* PBXContainerItemProxy */;
 		};
-		F035B5A54039D6B19DA8F7EBE90353CF /* PBXTargetDependency */ = {
+		C0DE28B4C1B3AD7F970BFBD69A22AD98 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = R.swift;
 			target = 230984053C6652DFF510F450F21C5CF7 /* R.swift */;
-			targetProxy = 75128366E71EA234305627B0161FFEE0 /* PBXContainerItemProxy */;
+			targetProxy = C4012632BBA140102D98F0120CD3FA78 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0BBC8E8189B900B847F31273E9DD3D58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B788541AF30046D94AF58E395F6EE74 /* Pods-fetilip.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-fetilip/Pods-fetilip-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-fetilip/Pods-fetilip.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		131356BE54884448CA49C07BEDF4BB2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -837,7 +744,7 @@
 		};
 		1DDE2AE37418905C8A07CF9D5AD78F28 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 230B47A05DE112003542DBB658909AF9 /* R.swift.Library.xcconfig */;
+			baseConfigurationReference = AFF28F419AA96BE56BEEE4ECC9850257 /* R.swift.Library.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -871,47 +778,9 @@
 			};
 			name = Release;
 		};
-		1ED9CF76265D9A523B4667431901D626 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B788541AF30046D94AF58E395F6EE74 /* Pods-fetilip.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-fetilip/Pods-fetilip-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-fetilip/Pods-fetilip.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		280953B2C329B1538FA170D526C7D5D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ABCC4C92B38AD5AD623CB34CD98BC10 /* R.swift.xcconfig */;
+			baseConfigurationReference = 6B47FEBF8F55FA919E9D6B0AA85C9CDC /* R.swift.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -928,7 +797,7 @@
 		};
 		398726D960DCA44CB9C7D5866A06AEDB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0ABCC4C92B38AD5AD623CB34CD98BC10 /* R.swift.xcconfig */;
+			baseConfigurationReference = 6B47FEBF8F55FA919E9D6B0AA85C9CDC /* R.swift.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -944,7 +813,7 @@
 		};
 		4760060F3ED2E118A4DFB50F348DC0A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 230B47A05DE112003542DBB658909AF9 /* R.swift.Library.xcconfig */;
+			baseConfigurationReference = AFF28F419AA96BE56BEEE4ECC9850257 /* R.swift.Library.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1015,7 +884,29 @@
 			};
 			name = Debug;
 		};
-		8F7772FCCE2DAD3ACC746BB52D8F4300 /* Release */ = {
+		B97060059522B054C51C3D6ADD536F29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32BA99D4ABB3D0AF4D645EB85126B5B5 /* Pods-fetilipUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D080960A07E9C7227CE9482BE9EE07EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8ED17584F571593B5092408D667A88CE /* Pods-fetilip.release.xcconfig */;
 			buildSettings = {
@@ -1047,99 +938,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B97060059522B054C51C3D6ADD536F29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32BA99D4ABB3D0AF4D645EB85126B5B5 /* Pods-fetilipUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E4547646118A9B2F1F58F97EFAAA382D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08CC1D077DD68654E5A650B2F7B6F72 /* PTCardTabBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PTCardTabBar/PTCardTabBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PTCardTabBar/PTCardTabBar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PTCardTabBar/PTCardTabBar.modulemap";
-				PRODUCT_MODULE_NAME = PTCardTabBar;
-				PRODUCT_NAME = PTCardTabBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EC8777CA1936BBB73323DA52F312072D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D08CC1D077DD68654E5A650B2F7B6F72 /* PTCardTabBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PTCardTabBar/PTCardTabBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PTCardTabBar/PTCardTabBar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PTCardTabBar/PTCardTabBar.modulemap";
-				PRODUCT_MODULE_NAME = PTCardTabBar;
-				PRODUCT_NAME = PTCardTabBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1276,29 +1074,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		85C33F6DB91AA3BDF75C9AA8E0170BDA /* Build configuration list for PBXNativeTarget "Pods-fetilip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BBC8E8189B900B847F31273E9DD3D58 /* Debug */,
+				D080960A07E9C7227CE9482BE9EE07EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8FDD85595A594C258412E28C59D8FE24 /* Build configuration list for PBXNativeTarget "Pods-fetilipUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B97060059522B054C51C3D6ADD536F29 /* Debug */,
 				1B8E057798298F7F62EA291FBED7167D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8FFE903826FCF17F1B4A8B0F48D2669B /* Build configuration list for PBXNativeTarget "Pods-fetilip" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1ED9CF76265D9A523B4667431901D626 /* Debug */,
-				8F7772FCCE2DAD3ACC746BB52D8F4300 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C4782EC6CA3510DD45972051432491B9 /* Build configuration list for PBXNativeTarget "PTCardTabBar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E4547646118A9B2F1F58F97EFAAA382D /* Debug */,
-				EC8777CA1936BBB73323DA52F312072D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,24 +1,20 @@
 PODS:
-  - PTCardTabBar (1.0.1)
   - R.swift (5.1.0):
     - R.swift.Library (~> 5.1.0)
   - R.swift.Library (5.1.0)
 
 DEPENDENCIES:
-  - PTCardTabBar
   - R.swift (~> 5.1.0)
 
 SPEC REPOS:
   trunk:
-    - PTCardTabBar
     - R.swift
     - R.swift.Library
 
 SPEC CHECKSUMS:
-  PTCardTabBar: 9112a6d4eb2b73da9cf4e7f3aefe04504479cf98
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
 
-PODFILE CHECKSUM: d741d9ef15d082f36363510efb87a6c196e6e52c
+PODFILE CHECKSUM: a715b8888f64ab99370a85658bc0a58b72c15ea8
 
 COCOAPODS: 1.8.4
