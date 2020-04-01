@@ -40,6 +40,18 @@
 		03AAFB6B24273B540068FB1E /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB6A24273B540068FB1E /* DesignableUITextField.swift */; };
 		03AAFB6D24273C320068FB1E /* DesignableUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */; };
 		03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */; };
+		03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
+		03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */; };
+		03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC312434C7130068FB1E /* nanopb.framework */; };
+		03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */; };
+		03AAFC452434C7140068FB1E /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC342434C7130068FB1E /* FirebaseInstallations.framework */; };
+		03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC352434C7130068FB1E /* FirebaseCore.framework */; };
+		03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC362434C7130068FB1E /* PromisesObjC.framework */; };
+		03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */; };
+		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
+		03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */; };
+		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
+		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
@@ -101,6 +113,147 @@
 		03AAFB6A24273B540068FB1E /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIImageView.swift; sourceTree = "<group>"; };
 		03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		03AAFC312434C7130068FB1E /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
+		03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Carthage/Build/iOS/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		03AAFC332434C7130068FB1E /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = Carthage/Build/iOS/Firebase.framework; sourceTree = "<group>"; };
+		03AAFC342434C7130068FB1E /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = Carthage/Build/iOS/FirebaseInstallations.framework; sourceTree = "<group>"; };
+		03AAFC352434C7130068FB1E /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Carthage/Build/iOS/FirebaseCore.framework; sourceTree = "<group>"; };
+		03AAFC362434C7130068FB1E /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromisesObjC.framework; path = Carthage/Build/iOS/PromisesObjC.framework; sourceTree = "<group>"; };
+		03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
+		03AAFC382434C7140068FB1E /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-C++.framework"; path = "Carthage/Build/iOS/gRPC-C++.framework"; sourceTree = "<group>"; };
+		03AAFC392434C7140068FB1E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
+		03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransportCCTSupport.framework; path = Carthage/Build/iOS/GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
+		03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		03AAFC582434C9520068FB1E /* .NSObject-Rx.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".NSObject-Rx.version"; sourceTree = "<group>"; };
+		03AAFC592434C9520068FB1E /* .RxSwift.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .RxSwift.version; sourceTree = "<group>"; };
+		03AAFC5B2434C9520068FB1E /* NSObject_Rx.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = NSObject_Rx.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC5C2434C9520068FB1E /* 773F9855-FEEE-32AC-9C70-412F7ACD2A48.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "773F9855-FEEE-32AC-9C70-412F7ACD2A48.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC5D2434C9520068FB1E /* 01318B70-E7FA-3E0E-853D-D071BC6A4711.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "01318B70-E7FA-3E0E-853D-D071BC6A4711.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC5E2434C9520068FB1E /* F2DF4AD7-8B20-3822-B384-2A813BECAD3B.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F2DF4AD7-8B20-3822-B384-2A813BECAD3B.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC5F2434C9520068FB1E /* 1B31D76C-5039-3A1C-9187-8F6703CF41B0.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1B31D76C-5039-3A1C-9187-8F6703CF41B0.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC602434C9520068FB1E /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
+		03AAFC612434C9520068FB1E /* 56966FB4-8BA3-33D1-90DC-0D3DCC7D5FCD.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "56966FB4-8BA3-33D1-90DC-0D3DCC7D5FCD.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC622434C9520068FB1E /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		03AAFC632434C9520068FB1E /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
+		03AAFC642434C9520068FB1E /* 47921CDD-C34A-3ABE-B6A8-090842E70229.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "47921CDD-C34A-3ABE-B6A8-090842E70229.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC652434C9520068FB1E /* BC9BB2C1-C9F9-37EA-A366-16C0063308B1.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BC9BB2C1-C9F9-37EA-A366-16C0063308B1.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC662434C9520068FB1E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxRelay.framework; sourceTree = "<group>"; };
+		03AAFC672434C9520068FB1E /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC682434C9520068FB1E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		03AAFC692434C9520068FB1E /* 1A500EDB-200E-3EA3-9027-B1636340E7B9.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1A500EDB-200E-3EA3-9027-B1636340E7B9.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC6A2434C9520068FB1E /* AA09658A-B326-3F4B-9741-C7EC02D6F031.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AA09658A-B326-3F4B-9741-C7EC02D6F031.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC6B2434C9520068FB1E /* 1D7D7922-1CBE-39EF-8AE2-7B607854358C.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1D7D7922-1CBE-39EF-8AE2-7B607854358C.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC6C2434C9520068FB1E /* AE015E33-46B8-3D4F-8535-D2FB88DF6CFE.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AE015E33-46B8-3D4F-8535-D2FB88DF6CFE.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC6D2434C9520068FB1E /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		03AAFC6E2434C9520068FB1E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		03AAFC6F2434C9520068FB1E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		03AAFC702434C9520068FB1E /* ObjcExceptionBridging.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = ObjcExceptionBridging.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC712434C9520068FB1E /* 986D3344-83C7-3464-8F4D-543E65230785.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "986D3344-83C7-3464-8F4D-543E65230785.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC722434C9520068FB1E /* XCGLogger.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XCGLogger.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC732434C9520068FB1E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCGLogger.framework; sourceTree = "<group>"; };
+		03AAFC742434C9520068FB1E /* A500FDB5-6DE3-397B-97B0-ABEA0928A550.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "A500FDB5-6DE3-397B-97B0-ABEA0928A550.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC752434C9520068FB1E /* 0C7EECB3-A923-3EC1-8EEF-1A231F7C9B33.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "0C7EECB3-A923-3EC1-8EEF-1A231F7C9B33.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC762434C9520068FB1E /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromisesObjC.framework; sourceTree = "<group>"; };
+		03AAFC772434C9520068FB1E /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxTest.framework; sourceTree = "<group>"; };
+		03AAFC782434C9520068FB1E /* RxRelay.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxRelay.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC792434C9520068FB1E /* D77D7FEE-0E7B-3D96-B98E-CB6568325310.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "D77D7FEE-0E7B-3D96-B98E-CB6568325310.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC7A2434C9520068FB1E /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
+		03AAFC7B2434C9520068FB1E /* IQKeyboardManager.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IQKeyboardManager.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC7C2434C9520068FB1E /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxCocoa.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC7D2434C9520068FB1E /* BDCF7342-80F8-3D7E-8487-42876880B3F4.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BDCF7342-80F8-3D7E-8487-42876880B3F4.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC7E2434C9520068FB1E /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = "<group>"; };
+		03AAFC7F2434C9520068FB1E /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		03AAFC802434C9520068FB1E /* CC14FE18-0103-3748-A6CD-AAD3DEC6A457.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "CC14FE18-0103-3748-A6CD-AAD3DEC6A457.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC812434C9520068FB1E /* 1EB1C59F-803E-3834-B939-C4CA71629BEA.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1EB1C59F-803E-3834-B939-C4CA71629BEA.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC822434C9520068FB1E /* 0ED74432-C198-3A65-96A0-89F5D3614E64.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "0ED74432-C198-3A65-96A0-89F5D3614E64.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC832434C9520068FB1E /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC842434C9520068FB1E /* F853EB78-018C-363D-BAAD-F6F04DCDDE5C.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F853EB78-018C-363D-BAAD-F6F04DCDDE5C.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC852434C9520068FB1E /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "gRPC-C++.framework"; sourceTree = "<group>"; };
+		03AAFC862434C9520068FB1E /* RxTest.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxTest.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC872434C9520068FB1E /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstallations.framework; sourceTree = "<group>"; };
+		03AAFC882434C9520068FB1E /* BE8BF6B3-D13D-3CCC-8575-2C6595243C63.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BE8BF6B3-D13D-3CCC-8575-2C6595243C63.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC892434C9520068FB1E /* 40C8502D-14F2-3B0C-B616-0874A64F2CB4.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "40C8502D-14F2-3B0C-B616-0874A64F2CB4.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC8A2434C9520068FB1E /* 50DE3D1D-94D5-3D80-B546-5E3DFB930C1E.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "50DE3D1D-94D5-3D80-B546-5E3DFB930C1E.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC8B2434C9520068FB1E /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		03AAFC8C2434C9520068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ObjcExceptionBridging.framework; sourceTree = "<group>"; };
+		03AAFC8D2434C9520068FB1E /* IQKeyboardManagerSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IQKeyboardManagerSwift.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC8E2434C9520068FB1E /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NSObject_Rx.framework; sourceTree = "<group>"; };
+		03AAFC8F2434C9520068FB1E /* 7461C7E9-7611-3AED-8643-DBF3CFFAB9AB.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "7461C7E9-7611-3AED-8643-DBF3CFFAB9AB.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC902434C9520068FB1E /* 773B97C3-ED71-3E89-80E0-DD21A3DB6305.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "773B97C3-ED71-3E89-80E0-DD21A3DB6305.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC912434C9520068FB1E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
+		03AAFC922434C9520068FB1E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
+		03AAFC932434C9520068FB1E /* 4F0412C4-2DB7-3CE6-AB8E-8F4CD3CF5C78.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "4F0412C4-2DB7-3CE6-AB8E-8F4CD3CF5C78.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC942434C9520068FB1E /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		03AAFC952434C9520068FB1E /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
+		03AAFC962434C9520068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
+		03AAFC972434C9530068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
+		03AAFC982434C9530068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
+		03AAFC9A2434C9640068FB1E /* .NSObject-Rx.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".NSObject-Rx.version"; sourceTree = "<group>"; };
+		03AAFC9B2434C9640068FB1E /* .RxSwift.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .RxSwift.version; sourceTree = "<group>"; };
+		03AAFC9D2434C9640068FB1E /* NSObject_Rx.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = NSObject_Rx.framework.dSYM; sourceTree = "<group>"; };
+		03AAFC9E2434C9640068FB1E /* 773F9855-FEEE-32AC-9C70-412F7ACD2A48.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "773F9855-FEEE-32AC-9C70-412F7ACD2A48.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFC9F2434C9640068FB1E /* 01318B70-E7FA-3E0E-853D-D071BC6A4711.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "01318B70-E7FA-3E0E-853D-D071BC6A4711.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCA02434C9640068FB1E /* F2DF4AD7-8B20-3822-B384-2A813BECAD3B.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F2DF4AD7-8B20-3822-B384-2A813BECAD3B.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCA12434C9640068FB1E /* 1B31D76C-5039-3A1C-9187-8F6703CF41B0.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1B31D76C-5039-3A1C-9187-8F6703CF41B0.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCA22434C9640068FB1E /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
+		03AAFCA32434C9640068FB1E /* 56966FB4-8BA3-33D1-90DC-0D3DCC7D5FCD.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "56966FB4-8BA3-33D1-90DC-0D3DCC7D5FCD.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCA42434C9640068FB1E /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		03AAFCA52434C9640068FB1E /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
+		03AAFCA62434C9640068FB1E /* 47921CDD-C34A-3ABE-B6A8-090842E70229.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "47921CDD-C34A-3ABE-B6A8-090842E70229.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCA72434C9640068FB1E /* BC9BB2C1-C9F9-37EA-A366-16C0063308B1.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BC9BB2C1-C9F9-37EA-A366-16C0063308B1.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCA82434C9640068FB1E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxRelay.framework; sourceTree = "<group>"; };
+		03AAFCA92434C9640068FB1E /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCAA2434C9640068FB1E /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		03AAFCAB2434C9640068FB1E /* 1A500EDB-200E-3EA3-9027-B1636340E7B9.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1A500EDB-200E-3EA3-9027-B1636340E7B9.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCAC2434C9640068FB1E /* AA09658A-B326-3F4B-9741-C7EC02D6F031.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AA09658A-B326-3F4B-9741-C7EC02D6F031.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCAD2434C9640068FB1E /* 1D7D7922-1CBE-39EF-8AE2-7B607854358C.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1D7D7922-1CBE-39EF-8AE2-7B607854358C.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCAE2434C9640068FB1E /* AE015E33-46B8-3D4F-8535-D2FB88DF6CFE.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "AE015E33-46B8-3D4F-8535-D2FB88DF6CFE.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCAF2434C9640068FB1E /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		03AAFCB02434C9640068FB1E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		03AAFCB12434C9640068FB1E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		03AAFCB22434C9640068FB1E /* ObjcExceptionBridging.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = ObjcExceptionBridging.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCB32434C9640068FB1E /* 986D3344-83C7-3464-8F4D-543E65230785.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "986D3344-83C7-3464-8F4D-543E65230785.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCB42434C9640068FB1E /* XCGLogger.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XCGLogger.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCB52434C9640068FB1E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCGLogger.framework; sourceTree = "<group>"; };
+		03AAFCB62434C9640068FB1E /* A500FDB5-6DE3-397B-97B0-ABEA0928A550.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "A500FDB5-6DE3-397B-97B0-ABEA0928A550.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCB72434C9640068FB1E /* 0C7EECB3-A923-3EC1-8EEF-1A231F7C9B33.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "0C7EECB3-A923-3EC1-8EEF-1A231F7C9B33.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCB82434C9640068FB1E /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromisesObjC.framework; sourceTree = "<group>"; };
+		03AAFCB92434C9640068FB1E /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxTest.framework; sourceTree = "<group>"; };
+		03AAFCBA2434C9640068FB1E /* RxRelay.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxRelay.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCBB2434C9640068FB1E /* D77D7FEE-0E7B-3D96-B98E-CB6568325310.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "D77D7FEE-0E7B-3D96-B98E-CB6568325310.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCBC2434C9640068FB1E /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
+		03AAFCBD2434C9640068FB1E /* IQKeyboardManager.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IQKeyboardManager.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCBE2434C9640068FB1E /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxCocoa.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCBF2434C9640068FB1E /* BDCF7342-80F8-3D7E-8487-42876880B3F4.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BDCF7342-80F8-3D7E-8487-42876880B3F4.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCC02434C9640068FB1E /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = "<group>"; };
+		03AAFCC12434C9640068FB1E /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		03AAFCC22434C9640068FB1E /* CC14FE18-0103-3748-A6CD-AAD3DEC6A457.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "CC14FE18-0103-3748-A6CD-AAD3DEC6A457.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCC32434C9640068FB1E /* 1EB1C59F-803E-3834-B939-C4CA71629BEA.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "1EB1C59F-803E-3834-B939-C4CA71629BEA.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCC42434C9640068FB1E /* 0ED74432-C198-3A65-96A0-89F5D3614E64.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "0ED74432-C198-3A65-96A0-89F5D3614E64.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCC52434C9640068FB1E /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCC62434C9640068FB1E /* F853EB78-018C-363D-BAAD-F6F04DCDDE5C.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F853EB78-018C-363D-BAAD-F6F04DCDDE5C.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCC72434C9640068FB1E /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "gRPC-C++.framework"; sourceTree = "<group>"; };
+		03AAFCC82434C9640068FB1E /* RxTest.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxTest.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCC92434C9640068FB1E /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstallations.framework; sourceTree = "<group>"; };
+		03AAFCCA2434C9640068FB1E /* BE8BF6B3-D13D-3CCC-8575-2C6595243C63.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "BE8BF6B3-D13D-3CCC-8575-2C6595243C63.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCCB2434C9640068FB1E /* 40C8502D-14F2-3B0C-B616-0874A64F2CB4.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "40C8502D-14F2-3B0C-B616-0874A64F2CB4.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCCC2434C9640068FB1E /* 50DE3D1D-94D5-3D80-B546-5E3DFB930C1E.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "50DE3D1D-94D5-3D80-B546-5E3DFB930C1E.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCCD2434C9640068FB1E /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		03AAFCCE2434C9640068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ObjcExceptionBridging.framework; sourceTree = "<group>"; };
+		03AAFCCF2434C9640068FB1E /* IQKeyboardManagerSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IQKeyboardManagerSwift.framework.dSYM; sourceTree = "<group>"; };
+		03AAFCD02434C9640068FB1E /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NSObject_Rx.framework; sourceTree = "<group>"; };
+		03AAFCD12434C9640068FB1E /* 7461C7E9-7611-3AED-8643-DBF3CFFAB9AB.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "7461C7E9-7611-3AED-8643-DBF3CFFAB9AB.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCD22434C9640068FB1E /* 773B97C3-ED71-3E89-80E0-DD21A3DB6305.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "773B97C3-ED71-3E89-80E0-DD21A3DB6305.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCD32434C9640068FB1E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
+		03AAFCD42434C9640068FB1E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
+		03AAFCD52434C9640068FB1E /* 4F0412C4-2DB7-3CE6-AB8E-8F4CD3CF5C78.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "4F0412C4-2DB7-3CE6-AB8E-8F4CD3CF5C78.bcsymbolmap"; sourceTree = "<group>"; };
+		03AAFCD62434C9640068FB1E /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		03AAFCD72434C9640068FB1E /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
+		03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
+		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
+		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
 		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,14 +271,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */,
+				03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */,
+				03AAFC452434C7140068FB1E /* FirebaseInstallations.framework in Frameworks */,
+				03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */,
 				03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */,
+				03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */,
+				03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */,
 				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
 				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
+				03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */,
+				03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */,
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
+				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
+				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
 				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
 				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
+				03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
+				03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */,
 				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,6 +372,21 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03AAFC572434C9520068FB1E /* Build */,
+				03AAFC992434C9640068FB1E /* Build */,
+				03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */,
+				03AAFC332434C7130068FB1E /* Firebase.framework */,
+				03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */,
+				03AAFC352434C7130068FB1E /* FirebaseCore.framework */,
+				03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */,
+				03AAFC342434C7130068FB1E /* FirebaseInstallations.framework */,
+				03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */,
+				03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */,
+				03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */,
+				03AAFC392434C7140068FB1E /* GoogleUtilities.framework */,
+				03AAFC382434C7140068FB1E /* gRPC-C++.framework */,
+				03AAFC312434C7130068FB1E /* nanopb.framework */,
+				03AAFC362434C7130068FB1E /* PromisesObjC.framework */,
 				03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */,
 				03AAFB31241E50E10068FB1E /* XCGLogger.framework */,
 				03AAFB2E241E4A140068FB1E /* RxCocoa.framework */,
@@ -339,6 +519,166 @@
 				03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		03AAFC572434C9520068FB1E /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFC582434C9520068FB1E /* .NSObject-Rx.version */,
+				03AAFC592434C9520068FB1E /* .RxSwift.version */,
+				03AAFC5A2434C9520068FB1E /* iOS */,
+				03AAFC962434C9520068FB1E /* .IQKeyboardManager.version */,
+				03AAFC972434C9530068FB1E /* .FirebaseAnalyticsBinary.version */,
+				03AAFC982434C9530068FB1E /* .XCGLogger.version */,
+			);
+			name = Build;
+			path = Carthage/Build;
+			sourceTree = "<group>";
+		};
+		03AAFC5A2434C9520068FB1E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFC5B2434C9520068FB1E /* NSObject_Rx.framework.dSYM */,
+				03AAFC5C2434C9520068FB1E /* 773F9855-FEEE-32AC-9C70-412F7ACD2A48.bcsymbolmap */,
+				03AAFC5D2434C9520068FB1E /* 01318B70-E7FA-3E0E-853D-D071BC6A4711.bcsymbolmap */,
+				03AAFC5E2434C9520068FB1E /* F2DF4AD7-8B20-3822-B384-2A813BECAD3B.bcsymbolmap */,
+				03AAFC5F2434C9520068FB1E /* 1B31D76C-5039-3A1C-9187-8F6703CF41B0.bcsymbolmap */,
+				03AAFC602434C9520068FB1E /* GoogleDataTransport.framework */,
+				03AAFC612434C9520068FB1E /* 56966FB4-8BA3-33D1-90DC-0D3DCC7D5FCD.bcsymbolmap */,
+				03AAFC622434C9520068FB1E /* Firebase.framework */,
+				03AAFC632434C9520068FB1E /* GoogleDataTransportCCTSupport.framework */,
+				03AAFC642434C9520068FB1E /* 47921CDD-C34A-3ABE-B6A8-090842E70229.bcsymbolmap */,
+				03AAFC652434C9520068FB1E /* BC9BB2C1-C9F9-37EA-A366-16C0063308B1.bcsymbolmap */,
+				03AAFC662434C9520068FB1E /* RxRelay.framework */,
+				03AAFC672434C9520068FB1E /* RxBlocking.framework.dSYM */,
+				03AAFC682434C9520068FB1E /* GoogleAppMeasurement.framework */,
+				03AAFC692434C9520068FB1E /* 1A500EDB-200E-3EA3-9027-B1636340E7B9.bcsymbolmap */,
+				03AAFC6A2434C9520068FB1E /* AA09658A-B326-3F4B-9741-C7EC02D6F031.bcsymbolmap */,
+				03AAFC6B2434C9520068FB1E /* 1D7D7922-1CBE-39EF-8AE2-7B607854358C.bcsymbolmap */,
+				03AAFC6C2434C9520068FB1E /* AE015E33-46B8-3D4F-8535-D2FB88DF6CFE.bcsymbolmap */,
+				03AAFC6D2434C9520068FB1E /* FirebaseCore.framework */,
+				03AAFC6E2434C9520068FB1E /* FirebaseAnalytics.framework */,
+				03AAFC6F2434C9520068FB1E /* GoogleUtilities.framework */,
+				03AAFC702434C9520068FB1E /* ObjcExceptionBridging.framework.dSYM */,
+				03AAFC712434C9520068FB1E /* 986D3344-83C7-3464-8F4D-543E65230785.bcsymbolmap */,
+				03AAFC722434C9520068FB1E /* XCGLogger.framework.dSYM */,
+				03AAFC732434C9520068FB1E /* XCGLogger.framework */,
+				03AAFC742434C9520068FB1E /* A500FDB5-6DE3-397B-97B0-ABEA0928A550.bcsymbolmap */,
+				03AAFC752434C9520068FB1E /* 0C7EECB3-A923-3EC1-8EEF-1A231F7C9B33.bcsymbolmap */,
+				03AAFC762434C9520068FB1E /* PromisesObjC.framework */,
+				03AAFC772434C9520068FB1E /* RxTest.framework */,
+				03AAFC782434C9520068FB1E /* RxRelay.framework.dSYM */,
+				03AAFC792434C9520068FB1E /* D77D7FEE-0E7B-3D96-B98E-CB6568325310.bcsymbolmap */,
+				03AAFC7A2434C9520068FB1E /* nanopb.framework */,
+				03AAFC7B2434C9520068FB1E /* IQKeyboardManager.framework.dSYM */,
+				03AAFC7C2434C9520068FB1E /* RxCocoa.framework.dSYM */,
+				03AAFC7D2434C9520068FB1E /* BDCF7342-80F8-3D7E-8487-42876880B3F4.bcsymbolmap */,
+				03AAFC7E2434C9520068FB1E /* IQKeyboardManager.framework */,
+				03AAFC7F2434C9520068FB1E /* IQKeyboardManagerSwift.framework */,
+				03AAFC802434C9520068FB1E /* CC14FE18-0103-3748-A6CD-AAD3DEC6A457.bcsymbolmap */,
+				03AAFC812434C9520068FB1E /* 1EB1C59F-803E-3834-B939-C4CA71629BEA.bcsymbolmap */,
+				03AAFC822434C9520068FB1E /* 0ED74432-C198-3A65-96A0-89F5D3614E64.bcsymbolmap */,
+				03AAFC832434C9520068FB1E /* RxSwift.framework.dSYM */,
+				03AAFC842434C9520068FB1E /* F853EB78-018C-363D-BAAD-F6F04DCDDE5C.bcsymbolmap */,
+				03AAFC852434C9520068FB1E /* gRPC-C++.framework */,
+				03AAFC862434C9520068FB1E /* RxTest.framework.dSYM */,
+				03AAFC872434C9520068FB1E /* FirebaseInstallations.framework */,
+				03AAFC882434C9520068FB1E /* BE8BF6B3-D13D-3CCC-8575-2C6595243C63.bcsymbolmap */,
+				03AAFC892434C9520068FB1E /* 40C8502D-14F2-3B0C-B616-0874A64F2CB4.bcsymbolmap */,
+				03AAFC8A2434C9520068FB1E /* 50DE3D1D-94D5-3D80-B546-5E3DFB930C1E.bcsymbolmap */,
+				03AAFC8B2434C9520068FB1E /* FIRAnalyticsConnector.framework */,
+				03AAFC8C2434C9520068FB1E /* ObjcExceptionBridging.framework */,
+				03AAFC8D2434C9520068FB1E /* IQKeyboardManagerSwift.framework.dSYM */,
+				03AAFC8E2434C9520068FB1E /* NSObject_Rx.framework */,
+				03AAFC8F2434C9520068FB1E /* 7461C7E9-7611-3AED-8643-DBF3CFFAB9AB.bcsymbolmap */,
+				03AAFC902434C9520068FB1E /* 773B97C3-ED71-3E89-80E0-DD21A3DB6305.bcsymbolmap */,
+				03AAFC912434C9520068FB1E /* RxCocoa.framework */,
+				03AAFC922434C9520068FB1E /* RxSwift.framework */,
+				03AAFC932434C9520068FB1E /* 4F0412C4-2DB7-3CE6-AB8E-8F4CD3CF5C78.bcsymbolmap */,
+				03AAFC942434C9520068FB1E /* FirebaseCoreDiagnostics.framework */,
+				03AAFC952434C9520068FB1E /* RxBlocking.framework */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		03AAFC992434C9640068FB1E /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFC9A2434C9640068FB1E /* .NSObject-Rx.version */,
+				03AAFC9B2434C9640068FB1E /* .RxSwift.version */,
+				03AAFC9C2434C9640068FB1E /* iOS */,
+				03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */,
+				03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */,
+				03AAFCDA2434C9640068FB1E /* .XCGLogger.version */,
+			);
+			name = Build;
+			path = Carthage/Build;
+			sourceTree = "<group>";
+		};
+		03AAFC9C2434C9640068FB1E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFC9D2434C9640068FB1E /* NSObject_Rx.framework.dSYM */,
+				03AAFC9E2434C9640068FB1E /* 773F9855-FEEE-32AC-9C70-412F7ACD2A48.bcsymbolmap */,
+				03AAFC9F2434C9640068FB1E /* 01318B70-E7FA-3E0E-853D-D071BC6A4711.bcsymbolmap */,
+				03AAFCA02434C9640068FB1E /* F2DF4AD7-8B20-3822-B384-2A813BECAD3B.bcsymbolmap */,
+				03AAFCA12434C9640068FB1E /* 1B31D76C-5039-3A1C-9187-8F6703CF41B0.bcsymbolmap */,
+				03AAFCA22434C9640068FB1E /* GoogleDataTransport.framework */,
+				03AAFCA32434C9640068FB1E /* 56966FB4-8BA3-33D1-90DC-0D3DCC7D5FCD.bcsymbolmap */,
+				03AAFCA42434C9640068FB1E /* Firebase.framework */,
+				03AAFCA52434C9640068FB1E /* GoogleDataTransportCCTSupport.framework */,
+				03AAFCA62434C9640068FB1E /* 47921CDD-C34A-3ABE-B6A8-090842E70229.bcsymbolmap */,
+				03AAFCA72434C9640068FB1E /* BC9BB2C1-C9F9-37EA-A366-16C0063308B1.bcsymbolmap */,
+				03AAFCA82434C9640068FB1E /* RxRelay.framework */,
+				03AAFCA92434C9640068FB1E /* RxBlocking.framework.dSYM */,
+				03AAFCAA2434C9640068FB1E /* GoogleAppMeasurement.framework */,
+				03AAFCAB2434C9640068FB1E /* 1A500EDB-200E-3EA3-9027-B1636340E7B9.bcsymbolmap */,
+				03AAFCAC2434C9640068FB1E /* AA09658A-B326-3F4B-9741-C7EC02D6F031.bcsymbolmap */,
+				03AAFCAD2434C9640068FB1E /* 1D7D7922-1CBE-39EF-8AE2-7B607854358C.bcsymbolmap */,
+				03AAFCAE2434C9640068FB1E /* AE015E33-46B8-3D4F-8535-D2FB88DF6CFE.bcsymbolmap */,
+				03AAFCAF2434C9640068FB1E /* FirebaseCore.framework */,
+				03AAFCB02434C9640068FB1E /* FirebaseAnalytics.framework */,
+				03AAFCB12434C9640068FB1E /* GoogleUtilities.framework */,
+				03AAFCB22434C9640068FB1E /* ObjcExceptionBridging.framework.dSYM */,
+				03AAFCB32434C9640068FB1E /* 986D3344-83C7-3464-8F4D-543E65230785.bcsymbolmap */,
+				03AAFCB42434C9640068FB1E /* XCGLogger.framework.dSYM */,
+				03AAFCB52434C9640068FB1E /* XCGLogger.framework */,
+				03AAFCB62434C9640068FB1E /* A500FDB5-6DE3-397B-97B0-ABEA0928A550.bcsymbolmap */,
+				03AAFCB72434C9640068FB1E /* 0C7EECB3-A923-3EC1-8EEF-1A231F7C9B33.bcsymbolmap */,
+				03AAFCB82434C9640068FB1E /* PromisesObjC.framework */,
+				03AAFCB92434C9640068FB1E /* RxTest.framework */,
+				03AAFCBA2434C9640068FB1E /* RxRelay.framework.dSYM */,
+				03AAFCBB2434C9640068FB1E /* D77D7FEE-0E7B-3D96-B98E-CB6568325310.bcsymbolmap */,
+				03AAFCBC2434C9640068FB1E /* nanopb.framework */,
+				03AAFCBD2434C9640068FB1E /* IQKeyboardManager.framework.dSYM */,
+				03AAFCBE2434C9640068FB1E /* RxCocoa.framework.dSYM */,
+				03AAFCBF2434C9640068FB1E /* BDCF7342-80F8-3D7E-8487-42876880B3F4.bcsymbolmap */,
+				03AAFCC02434C9640068FB1E /* IQKeyboardManager.framework */,
+				03AAFCC12434C9640068FB1E /* IQKeyboardManagerSwift.framework */,
+				03AAFCC22434C9640068FB1E /* CC14FE18-0103-3748-A6CD-AAD3DEC6A457.bcsymbolmap */,
+				03AAFCC32434C9640068FB1E /* 1EB1C59F-803E-3834-B939-C4CA71629BEA.bcsymbolmap */,
+				03AAFCC42434C9640068FB1E /* 0ED74432-C198-3A65-96A0-89F5D3614E64.bcsymbolmap */,
+				03AAFCC52434C9640068FB1E /* RxSwift.framework.dSYM */,
+				03AAFCC62434C9640068FB1E /* F853EB78-018C-363D-BAAD-F6F04DCDDE5C.bcsymbolmap */,
+				03AAFCC72434C9640068FB1E /* gRPC-C++.framework */,
+				03AAFCC82434C9640068FB1E /* RxTest.framework.dSYM */,
+				03AAFCC92434C9640068FB1E /* FirebaseInstallations.framework */,
+				03AAFCCA2434C9640068FB1E /* BE8BF6B3-D13D-3CCC-8575-2C6595243C63.bcsymbolmap */,
+				03AAFCCB2434C9640068FB1E /* 40C8502D-14F2-3B0C-B616-0874A64F2CB4.bcsymbolmap */,
+				03AAFCCC2434C9640068FB1E /* 50DE3D1D-94D5-3D80-B546-5E3DFB930C1E.bcsymbolmap */,
+				03AAFCCD2434C9640068FB1E /* FIRAnalyticsConnector.framework */,
+				03AAFCCE2434C9640068FB1E /* ObjcExceptionBridging.framework */,
+				03AAFCCF2434C9640068FB1E /* IQKeyboardManagerSwift.framework.dSYM */,
+				03AAFCD02434C9640068FB1E /* NSObject_Rx.framework */,
+				03AAFCD12434C9640068FB1E /* 7461C7E9-7611-3AED-8643-DBF3CFFAB9AB.bcsymbolmap */,
+				03AAFCD22434C9640068FB1E /* 773B97C3-ED71-3E89-80E0-DD21A3DB6305.bcsymbolmap */,
+				03AAFCD32434C9640068FB1E /* RxCocoa.framework */,
+				03AAFCD42434C9640068FB1E /* RxSwift.framework */,
+				03AAFCD52434C9640068FB1E /* 4F0412C4-2DB7-3CE6-AB8E-8F4CD3CF5C78.bcsymbolmap */,
+				03AAFCD62434C9640068FB1E /* FirebaseCoreDiagnostics.framework */,
+				03AAFCD72434C9640068FB1E /* RxBlocking.framework */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 		86210B9D74CAD08855592760 /* Pods */ = {
@@ -758,6 +1098,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS) -ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -811,6 +1152,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS) -ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -834,6 +1176,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Rswift\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -856,6 +1203,11 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Rswift\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
