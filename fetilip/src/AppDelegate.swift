@@ -59,28 +59,10 @@ let log: XCGLogger = {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    /// シングルトンオブジェクト化
-    public static var shared: AppDelegate {
-        guard let app = UIApplication.shared.delegate as? AppDelegate else {
-            assertionFailure()
-            // AppDelegateのインスタンス化に失敗した時は強制終了させる
-            exit(0)
-        }
-        return app
-    }
-
-    var window: UIWindow?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _ = log
         // IQKeyBoardManagerの有効化
         IQKeyboardManager.shared.enable = true
-
-        // 初期起動画面の設定(iOS13以下の時だけ初期化処理を行う)
-        if #available(iOS 13, *) {
-        } else {
-            AppInitialization.settingStartScreen()
-        }
 
         return true
     }

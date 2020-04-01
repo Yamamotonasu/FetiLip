@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
+		03AAFAED241E2FD70068FB1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEC241E2FD70068FB1E /* ViewController.swift */; };
+		03AAFAF0241E2FD70068FB1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAEE241E2FD70068FB1E /* Main.storyboard */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
 		03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */; };
 		03AAFB0B241E2FDD0068FB1E /* fetilipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */; };
@@ -37,19 +39,6 @@
 		03AAFB69242733C80068FB1E /* DesignableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB68242733C80068FB1E /* DesignableUIButton.swift */; };
 		03AAFB6B24273B540068FB1E /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB6A24273B540068FB1E /* DesignableUITextField.swift */; };
 		03AAFB6D24273C320068FB1E /* DesignableUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */; };
-		03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */; };
-		03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB9E2428D4610068FB1E /* MyPage.storyboard */; };
-		03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFBA02428D54E0068FB1E /* PostList.storyboard */; };
-		03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBA22428D5B60068FB1E /* PostListViewController.swift */; };
-		03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBA42428D5D20068FB1E /* MyPageViewController.swift */; };
-		03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBA62428DA890068FB1E /* GlobalTabBarController.swift */; };
-		03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */; };
-		03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBAC243094A40068FB1E /* UIView+Extensions.swift */; };
-		03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBAE243096480068FB1E /* IndicatorView.swift */; };
-		03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB0243096B20068FB1E /* CustomTabBarButton.swift */; };
-		03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */; };
-		03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB424309BE40068FB1E /* CardTabBar.swift */; };
-		03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
@@ -76,6 +65,8 @@
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		03AAFAEC241E2FD70068FB1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03AAFAEF241E2FD70068FB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03AAFAF4241E2FDD0068FB1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03AAFAF6241E2FDD0068FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,19 +99,6 @@
 		03AAFB68242733C80068FB1E /* DesignableUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIButton.swift; sourceTree = "<group>"; };
 		03AAFB6A24273B540068FB1E /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIImageView.swift; sourceTree = "<group>"; };
-		03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GlobalTabBar.storyboard; sourceTree = "<group>"; };
-		03AAFB9E2428D4610068FB1E /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
-		03AAFBA02428D54E0068FB1E /* PostList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostList.storyboard; sourceTree = "<group>"; };
-		03AAFBA22428D5B60068FB1E /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
-		03AAFBA42428D5D20068FB1E /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		03AAFBA62428DA890068FB1E /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
-		03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitialization.swift; sourceTree = "<group>"; };
-		03AAFBAC243094A40068FB1E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		03AAFBAE243096480068FB1E /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		03AAFBB0243096B20068FB1E /* CustomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarButton.swift; sourceTree = "<group>"; };
-		03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		03AAFBB424309BE40068FB1E /* CardTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTabBar.swift; sourceTree = "<group>"; };
-		03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extensions.swift"; sourceTree = "<group>"; };
 		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,7 +228,6 @@
 				03AAFB3A241F9D230068FB1E /* Views */,
 				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
 				03AAFB45241FAC530068FB1E /* R.generated.swift */,
-				03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -258,9 +235,7 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				03AAFB9B2428D1B70068FB1E /* PostList */,
-				03AAFB9A2428D1AF0068FB1E /* MyPage */,
-				03AAFB992428D1A60068FB1E /* TabBar */,
+				03AAFB3C241F9D570068FB1E /* Main */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +245,15 @@
 			children = (
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		03AAFB3C241F9D570068FB1E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFAEC241E2FD70068FB1E /* ViewController.swift */,
+				03AAFAEE241E2FD70068FB1E /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		03AAFB3D241FA00B0068FB1E /* Extensions */ = {
@@ -339,9 +323,6 @@
 				03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */,
 				03AAFB4F242245C20068FB1E /* Array+Extentions.swift */,
 				03AAFB582425E4E40068FB1E /* UIColor.Extensions.swift */,
-				03AAFBAC243094A40068FB1E /* UIView+Extensions.swift */,
-				03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */,
-				03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -355,44 +336,6 @@
 				03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		03AAFB992428D1A60068FB1E /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFBB62433652B0068FB1E /* Views */,
-				03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */,
-				03AAFBA62428DA890068FB1E /* GlobalTabBarController.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
-		03AAFB9A2428D1AF0068FB1E /* MyPage */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFB9E2428D4610068FB1E /* MyPage.storyboard */,
-				03AAFBA42428D5D20068FB1E /* MyPageViewController.swift */,
-			);
-			path = MyPage;
-			sourceTree = "<group>";
-		};
-		03AAFB9B2428D1B70068FB1E /* PostList */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFBA02428D54E0068FB1E /* PostList.storyboard */,
-				03AAFBA22428D5B60068FB1E /* PostListViewController.swift */,
-			);
-			path = PostList;
-			sourceTree = "<group>";
-		};
-		03AAFBB62433652B0068FB1E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFBAE243096480068FB1E /* IndicatorView.swift */,
-				03AAFBB0243096B20068FB1E /* CustomTabBarButton.swift */,
-				03AAFBB424309BE40068FB1E /* CardTabBar.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		86210B9D74CAD08855592760 /* Pods */ = {
@@ -521,9 +464,7 @@
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
-				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
-				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
-				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
+				03AAFAF0241E2FD70068FB1E /* Main.storyboard in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -689,7 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
+				03AAFAED241E2FD70068FB1E /* ViewController.swift in Sources */,
 				03AAFB69242733C80068FB1E /* DesignableUIButton.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
@@ -697,21 +638,12 @@
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
-				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
-				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
 				03AAFB6D24273C320068FB1E /* DesignableUIImageView.swift in Sources */,
-				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
-				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
-				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				03AAFB6B24273B540068FB1E /* DesignableUITextField.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
-				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,
-				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
-				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
-				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +681,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		03AAFAEE241E2FD70068FB1E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03AAFAEF241E2FD70068FB1E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -893,7 +833,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -916,7 +856,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
