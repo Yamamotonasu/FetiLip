@@ -21,17 +21,33 @@
                                 <color key="textColor" red="1" green="0.73333333329999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjR-DO-RiC">
+                                <rect key="frame" x="295" y="607" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.29791845030000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9H6-ZA-O0X"/>
+                                    <constraint firstAttribute="width" secondItem="RjR-DO-RiC" secondAttribute="height" multiplier="1.5:1" id="vkc-i3-35T"/>
+                                </constraints>
+                                <state key="normal" title="Debug">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="0nv-9B-6Jf" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="AcQ-Mt-58Y"/>
+                            <constraint firstItem="aUB-aZ-yPw" firstAttribute="bottom" secondItem="RjR-DO-RiC" secondAttribute="bottom" constant="20" id="HqJ-lQ-z2I"/>
                             <constraint firstItem="aUB-aZ-yPw" firstAttribute="trailing" secondItem="0nv-9B-6Jf" secondAttribute="trailing" constant="20" id="eiG-sH-pI4"/>
+                            <constraint firstItem="aUB-aZ-yPw" firstAttribute="trailing" secondItem="RjR-DO-RiC" secondAttribute="trailing" constant="20" id="gFS-za-A8T"/>
                             <constraint firstItem="0nv-9B-6Jf" firstAttribute="centerY" secondItem="aUB-aZ-yPw" secondAttribute="centerY" id="iM6-TB-Lsl"/>
                             <constraint firstItem="0nv-9B-6Jf" firstAttribute="leading" secondItem="aUB-aZ-yPw" secondAttribute="leading" constant="20" id="sZP-fP-qCa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUB-aZ-yPw"/>
                     </view>
                     <navigationItem key="navigationItem" id="KMn-KN-nkj"/>
+                    <connections>
+                        <outlet property="debugButton" destination="RjR-DO-RiC" id="E7D-Kf-W8h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bJ-36-3jN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

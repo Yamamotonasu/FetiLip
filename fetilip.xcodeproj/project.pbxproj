@@ -15,6 +15,8 @@
 		039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */; };
 		039EB667243611900016436C /* gRPC-C++.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC382434C7140068FB1E /* gRPC-C++.framework */; };
 		039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB669243611F00016436C /* gRPC-Core.framework */; };
+		039EB66F243615990016436C /* Debug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039EB66E243615990016436C /* Debug.storyboard */; };
+		039EB671243615FC0016436C /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB670243615FC0016436C /* DebugViewController.swift */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -101,6 +103,8 @@
 		039EB659243611290016436C /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
 		039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
 		039EB669243611F00016436C /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-Core.framework"; path = "Carthage/Build/iOS/gRPC-Core.framework"; sourceTree = "<group>"; };
+		039EB66E243615990016436C /* Debug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Debug.storyboard; sourceTree = "<group>"; };
+		039EB670243615FC0016436C /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -358,6 +362,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		039EB66D2436157B0016436C /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				039EB66E243615990016436C /* Debug.storyboard */,
+				039EB670243615FC0016436C /* DebugViewController.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +483,7 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				039EB66D2436157B0016436C /* Debug */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
@@ -896,6 +910,7 @@
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
+				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */,
@@ -1067,6 +1082,7 @@
 				03AAFB69242733C80068FB1E /* DesignableUIButton.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
+				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
