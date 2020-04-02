@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
+		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
+		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
+		039EB660243611290016436C /* FirebaseStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB658243611290016436C /* FirebaseStorage.framework */; };
+		039EB662243611290016436C /* leveldb-library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB659243611290016436C /* leveldb-library.framework */; };
+		039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */; };
+		039EB667243611900016436C /* gRPC-C++.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC382434C7140068FB1E /* gRPC-C++.framework */; };
+		039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB669243611F00016436C /* gRPC-Core.framework */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -37,19 +45,6 @@
 		03AAFB69242733C80068FB1E /* DesignableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB68242733C80068FB1E /* DesignableUIButton.swift */; };
 		03AAFB6B24273B540068FB1E /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB6A24273B540068FB1E /* DesignableUITextField.swift */; };
 		03AAFB6D24273C320068FB1E /* DesignableUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */; };
-		03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */; };
-		03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
-		03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */; };
-		03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC312434C7130068FB1E /* nanopb.framework */; };
-		03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */; };
-		03AAFC452434C7140068FB1E /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC342434C7130068FB1E /* FirebaseInstallations.framework */; };
-		03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC352434C7130068FB1E /* FirebaseCore.framework */; };
-		03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC362434C7130068FB1E /* PromisesObjC.framework */; };
-		03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */; };
-		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
-		03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */; };
-		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
-		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
 		03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */; };
 		03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB9E2428D4610068FB1E /* MyPage.storyboard */; };
 		03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFBA02428D54E0068FB1E /* PostList.storyboard */; };
@@ -63,6 +58,19 @@
 		03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */; };
 		03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB424309BE40068FB1E /* CardTabBar.swift */; };
 		03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */; };
+		03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */; };
+		03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
+		03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */; };
+		03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC312434C7130068FB1E /* nanopb.framework */; };
+		03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */; };
+		03AAFC452434C7140068FB1E /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC342434C7130068FB1E /* FirebaseInstallations.framework */; };
+		03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC352434C7130068FB1E /* FirebaseCore.framework */; };
+		03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC362434C7130068FB1E /* PromisesObjC.framework */; };
+		03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */; };
+		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
+		03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */; };
+		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
+		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
@@ -86,6 +94,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
+		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
+		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
+		039EB658243611290016436C /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Carthage/Build/iOS/FirebaseStorage.framework; sourceTree = "<group>"; };
+		039EB659243611290016436C /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "leveldb-library.framework"; path = "Carthage/Build/iOS/leveldb-library.framework"; sourceTree = "<group>"; };
+		039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "gRPCCertificates-Cpp.bundle"; path = "Carthage/Build/iOS/gRPC-C++.framework/Resources/gRPCCertificates-Cpp.bundle"; sourceTree = "<group>"; };
+		039EB669243611F00016436C /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-Core.framework"; path = "Carthage/Build/iOS/gRPC-Core.framework"; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +136,19 @@
 		03AAFB68242733C80068FB1E /* DesignableUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIButton.swift; sourceTree = "<group>"; };
 		03AAFB6A24273B540068FB1E /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIImageView.swift; sourceTree = "<group>"; };
+		03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GlobalTabBar.storyboard; sourceTree = "<group>"; };
+		03AAFB9E2428D4610068FB1E /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		03AAFBA02428D54E0068FB1E /* PostList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostList.storyboard; sourceTree = "<group>"; };
+		03AAFBA22428D5B60068FB1E /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		03AAFBA42428D5D20068FB1E /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		03AAFBA62428DA890068FB1E /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
+		03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitialization.swift; sourceTree = "<group>"; };
+		03AAFBAC243094A40068FB1E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		03AAFBAE243096480068FB1E /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		03AAFBB0243096B20068FB1E /* CustomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarButton.swift; sourceTree = "<group>"; };
+		03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		03AAFBB424309BE40068FB1E /* CardTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTabBar.swift; sourceTree = "<group>"; };
+		03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extensions.swift"; sourceTree = "<group>"; };
 		03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Carthage/Build/iOS/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		03AAFC312434C7130068FB1E /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Carthage/Build/iOS/nanopb.framework; sourceTree = "<group>"; };
@@ -263,19 +291,6 @@
 		03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
 		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
-		03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GlobalTabBar.storyboard; sourceTree = "<group>"; };
-		03AAFB9E2428D4610068FB1E /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
-		03AAFBA02428D54E0068FB1E /* PostList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostList.storyboard; sourceTree = "<group>"; };
-		03AAFBA22428D5B60068FB1E /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
-		03AAFBA42428D5D20068FB1E /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
-		03AAFBA62428DA890068FB1E /* GlobalTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTabBarController.swift; sourceTree = "<group>"; };
-		03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitialization.swift; sourceTree = "<group>"; };
-		03AAFBAC243094A40068FB1E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		03AAFBAE243096480068FB1E /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
-		03AAFBB0243096B20068FB1E /* CustomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarButton.swift; sourceTree = "<group>"; };
-		03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		03AAFBB424309BE40068FB1E /* CardTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTabBar.swift; sourceTree = "<group>"; };
-		03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extensions.swift"; sourceTree = "<group>"; };
 		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -292,28 +307,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039EB65A243611290016436C /* abseil.framework in Frameworks */,
 				03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */,
 				03AAFC452434C7140068FB1E /* FirebaseInstallations.framework in Frameworks */,
 				03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */,
+				039EB662243611290016436C /* leveldb-library.framework in Frameworks */,
 				03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */,
 				03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */,
 				03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */,
 				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
 				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
 				03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */,
+				039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */,
 				03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */,
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
+				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
+				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
 				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
+				039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */,
 				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
 				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
 				03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
 				03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */,
 				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
+				039EB660243611290016436C /* FirebaseStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +361,7 @@
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
+				039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */,
 				03AAFAE7241E2FD70068FB1E /* fetilip */,
 				03AAFAFE241E2FDD0068FB1E /* fetilipTests */,
 				03AAFB09241E2FDD0068FB1E /* fetilipUITests */,
@@ -394,6 +417,12 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				039EB669243611F00016436C /* gRPC-Core.framework */,
+				039EB655243611280016436C /* abseil.framework */,
+				039EB657243611290016436C /* BoringSSL-GRPC.framework */,
+				039EB656243611280016436C /* FirebaseFirestore.framework */,
+				039EB658243611290016436C /* FirebaseStorage.framework */,
+				039EB659243611290016436C /* leveldb-library.framework */,
 				03AAFC572434C9520068FB1E /* Build */,
 				03AAFC992434C9640068FB1E /* Build */,
 				03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */,
@@ -538,6 +567,44 @@
 				03AAFB6C24273C320068FB1E /* DesignableUIImageView.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		03AAFB992428D1A60068FB1E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFBB62433652B0068FB1E /* Views */,
+				03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */,
+				03AAFBA62428DA890068FB1E /* GlobalTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		03AAFB9A2428D1AF0068FB1E /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFB9E2428D4610068FB1E /* MyPage.storyboard */,
+				03AAFBA42428D5D20068FB1E /* MyPageViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		03AAFB9B2428D1B70068FB1E /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFBA02428D54E0068FB1E /* PostList.storyboard */,
+				03AAFBA22428D5B60068FB1E /* PostListViewController.swift */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		03AAFBB62433652B0068FB1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFBAE243096480068FB1E /* IndicatorView.swift */,
+				03AAFBB0243096B20068FB1E /* CustomTabBarButton.swift */,
+				03AAFBB424309BE40068FB1E /* CardTabBar.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		03AAFC572434C9520068FB1E /* Build */ = {
@@ -698,44 +765,6 @@
 				03AAFCD72434C9640068FB1E /* RxBlocking.framework */,
 			);
 			path = iOS;
-                        sourceTree = "<group>";
-                };
-		03AAFB992428D1A60068FB1E /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFBB62433652B0068FB1E /* Views */,
-				03AAFB9C2428D2430068FB1E /* GlobalTabBar.storyboard */,
-				03AAFBA62428DA890068FB1E /* GlobalTabBarController.swift */,
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
-		03AAFB9A2428D1AF0068FB1E /* MyPage */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFB9E2428D4610068FB1E /* MyPage.storyboard */,
-				03AAFBA42428D5D20068FB1E /* MyPageViewController.swift */,
-			);
-			path = MyPage;
-			sourceTree = "<group>";
-		};
-		03AAFB9B2428D1B70068FB1E /* PostList */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFBA02428D54E0068FB1E /* PostList.storyboard */,
-				03AAFBA22428D5B60068FB1E /* PostListViewController.swift */,
-			);
-			path = PostList;
-			sourceTree = "<group>";
-		};
-		03AAFBB62433652B0068FB1E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				03AAFBAE243096480068FB1E /* IndicatorView.swift */,
-				03AAFBB0243096B20068FB1E /* CustomTabBarButton.swift */,
-				03AAFBB424309BE40068FB1E /* CardTabBar.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		86210B9D74CAD08855592760 /* Pods */ = {
@@ -861,6 +890,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */,
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
