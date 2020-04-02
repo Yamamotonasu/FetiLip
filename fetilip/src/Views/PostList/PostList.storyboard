@@ -6,11 +6,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="YuGothic-Bold.otf">
-            <string>YuGo-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Post List View Controller-->
         <scene sceneID="CzM-wa-gBJ">
@@ -20,43 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oti-TC-zV9" customClass="DesignableUIView" customModule="fetilip" customModuleProvider="target">
-                                <rect key="frame" x="29" y="315.5" width="317" height="80"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="仮一覧ページ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8A-va-PHM">
-                                        <rect key="frame" x="68.5" y="25" width="180" height="30"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Bold" family="YuGothic" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="s8A-va-PHM" firstAttribute="centerX" secondItem="Oti-TC-zV9" secondAttribute="centerX" id="dzH-kS-Jr1"/>
-                                    <constraint firstItem="s8A-va-PHM" firstAttribute="centerY" secondItem="Oti-TC-zV9" secondAttribute="centerY" id="tI2-Vm-4wQ"/>
-                                    <constraint firstAttribute="height" constant="80" id="yxl-b2-hxx"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.5" height="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WJ-0t-ZxQ">
+                                <rect key="frame" x="20" y="345" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Oti-TC-zV9" firstAttribute="leading" secondItem="gJd-3R-OSo" secondAttribute="leading" constant="29" id="QHF-qT-9tE"/>
-                            <constraint firstItem="Oti-TC-zV9" firstAttribute="centerX" secondItem="gJd-3R-OSo" secondAttribute="centerX" id="Ujj-cw-qcH"/>
-                            <constraint firstItem="Oti-TC-zV9" firstAttribute="centerY" secondItem="gJd-3R-OSo" secondAttribute="centerY" id="u9L-in-m5d"/>
+                            <constraint firstItem="5WJ-0t-ZxQ" firstAttribute="leading" secondItem="gJd-3R-OSo" secondAttribute="leading" constant="20" id="jHw-wN-WRI"/>
+                            <constraint firstItem="5WJ-0t-ZxQ" firstAttribute="centerX" secondItem="gJd-3R-OSo" secondAttribute="centerX" id="poV-hE-5qD"/>
+                            <constraint firstItem="gJd-3R-OSo" firstAttribute="trailing" secondItem="5WJ-0t-ZxQ" secondAttribute="trailing" constant="20" id="qaZ-Ry-hV1"/>
+                            <constraint firstItem="5WJ-0t-ZxQ" firstAttribute="centerY" secondItem="gJd-3R-OSo" secondAttribute="centerY" id="xqF-71-X6X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gJd-3R-OSo"/>
                     </view>
