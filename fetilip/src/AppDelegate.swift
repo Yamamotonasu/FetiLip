@@ -9,6 +9,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import XCGLogger
+import Firebase
 
 // MARK: XCGLogger
 
@@ -58,6 +59,12 @@ let log: XCGLogger = {
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    override init() {
+        super.init()
+        // firebase init
+        FirebaseApp.configure()
+    }
 
     /// シングルトンオブジェクト化
     public static var shared: AppDelegate {
