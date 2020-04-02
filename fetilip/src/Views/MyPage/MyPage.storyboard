@@ -6,11 +6,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="YuGothic-Bold.otf">
-            <string>YuGo-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--My Page View Controller-->
         <scene sceneID="pZS-3W-h14">
@@ -20,45 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7b-be-VZu" customClass="DesignableUIView" customModule="fetilip" customModuleProvider="target">
-                                <rect key="frame" x="20" y="315.5" width="335" height="80"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="仮マイページ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4u-1t-Z7P">
-                                        <rect key="frame" x="78" y="25" width="179" height="30"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Bold" family="YuGothic" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="a4u-1t-Z7P" firstAttribute="centerX" secondItem="J7b-be-VZu" secondAttribute="centerX" id="Cd1-DJ-Q8C"/>
-                                    <constraint firstItem="a4u-1t-Z7P" firstAttribute="centerY" secondItem="J7b-be-VZu" secondAttribute="centerY" id="Iwh-wk-NLd"/>
-                                    <constraint firstAttribute="height" constant="80" id="XGB-7D-Q8j"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="0.5" height="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マイページ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nv-9B-6Jf">
+                                <rect key="frame" x="20" y="345" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.73333333329999995" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="aUB-aZ-yPw" firstAttribute="trailing" secondItem="J7b-be-VZu" secondAttribute="trailing" constant="20" id="HGs-8t-VCZ"/>
-                            <constraint firstItem="J7b-be-VZu" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="khE-D7-DHv"/>
-                            <constraint firstItem="J7b-be-VZu" firstAttribute="leading" secondItem="aUB-aZ-yPw" secondAttribute="leading" constant="20" id="sut-6i-7jS"/>
-                            <constraint firstItem="J7b-be-VZu" firstAttribute="centerY" secondItem="aUB-aZ-yPw" secondAttribute="centerY" id="ujQ-Lg-kmg"/>
-                            <constraint firstItem="J7b-be-VZu" firstAttribute="centerX" secondItem="1P6-G4-gHT" secondAttribute="centerXWithinMargins" id="yhE-Ba-STb"/>
+                            <constraint firstItem="0nv-9B-6Jf" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="AcQ-Mt-58Y"/>
+                            <constraint firstItem="aUB-aZ-yPw" firstAttribute="trailing" secondItem="0nv-9B-6Jf" secondAttribute="trailing" constant="20" id="eiG-sH-pI4"/>
+                            <constraint firstItem="0nv-9B-6Jf" firstAttribute="centerY" secondItem="aUB-aZ-yPw" secondAttribute="centerY" id="iM6-TB-Lsl"/>
+                            <constraint firstItem="0nv-9B-6Jf" firstAttribute="leading" secondItem="aUB-aZ-yPw" secondAttribute="leading" constant="20" id="sZP-fP-qCa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUB-aZ-yPw"/>
                     </view>
