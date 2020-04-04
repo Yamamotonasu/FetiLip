@@ -42,6 +42,7 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribe()
+        viewModel?.checkLogined()
     }
 
 }
@@ -51,16 +52,27 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
 extension DebugViewController {
 
     private func subscribe() {
-        /// 前の画面へ戻る
+        // 前の画面へ戻る
         backButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
             self?.dismiss(animated: true)
         }).disposed(by: rx.disposeBag)
 
-        /// 匿名ログインボタン
+        // 匿名ログインボタン
         anonymousLoginButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
             self?.viewModel?.anonymousLogin()
         }).disposed(by: rx.disposeBag)
 
+        // ログイン情報描画
+        viewModel?.loginInfoDriver
+            .drive(loginUserInfoLabel.rx.text)
+            .disposed(by: rx.disposeBag)
+
+        // エラー監視
+        viewModel?.errorObservable.subscribe(onNext: { [weak self] message in
+            let alert = UIAlertController.init(title: "", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
+            self?.present(alert, animated: true)
+        }).disposed(by: rx.disposeBag)
     }
 
 }
