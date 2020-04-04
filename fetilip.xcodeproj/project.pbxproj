@@ -19,6 +19,7 @@
 		039EB671243615FC0016436C /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB670243615FC0016436C /* DebugViewController.swift */; };
 		039EB673243833F30016436C /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB672243833F30016436C /* DebugViewModel.swift */; };
 		039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB675243840580016436C /* ViewControllerMethodInjectable.swift */; };
+		039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67724384FD50016436C /* FirebaseAuth.framework */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -109,6 +110,7 @@
 		039EB670243615FC0016436C /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		039EB672243833F30016436C /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugViewModel.swift; path = fetilip/src/Views/Debug/DebugViewModel.swift; sourceTree = SOURCE_ROOT; };
 		039EB675243840580016436C /* ViewControllerMethodInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMethodInjectable.swift; sourceTree = "<group>"; };
+		039EB67724384FD50016436C /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
 				03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */,
+				039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */,
 				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
 				039EB660243611290016436C /* FirebaseStorage.framework in Frameworks */,
 			);
@@ -442,6 +445,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				039EB67724384FD50016436C /* FirebaseAuth.framework */,
 				039EB669243611F00016436C /* gRPC-Core.framework */,
 				039EB655243611280016436C /* abseil.framework */,
 				039EB657243611290016436C /* BoringSSL-GRPC.framework */,
