@@ -75,15 +75,62 @@
                                 <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="5hD-4g-X0r">
+                                <rect key="frame" x="20" y="188" width="374" height="70"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_lip" translatesAutoresizingMaskIntoConstraints="NO" id="Ftc-5m-jcb">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Ftc-5m-jcb" secondAttribute="height" multiplier="1:1" id="mHX-q5-Pdg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-PI-JO1">
+                                        <rect key="frame" x="122" y="20" width="252" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="アップロードテスト">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="YuGo-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ftc-5m-jcb" firstAttribute="top" secondItem="5hD-4g-X0r" secondAttribute="top" id="7gL-hd-u5e"/>
+                                    <constraint firstItem="Ftc-5m-jcb" firstAttribute="leading" secondItem="5hD-4g-X0r" secondAttribute="leading" id="Fjd-7p-RGa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ftc-5m-jcb" secondAttribute="bottom" id="KFe-S1-26L"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="ZRV-Dg-35g"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アップロードした画像URL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUr-6W-fQU">
+                                <rect key="frame" x="20" y="283" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lE5-Mo-CKo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="aIS-sE-jbX" firstAttribute="top" secondItem="afH-Vp-x2U" secondAttribute="bottom" constant="25" id="0xz-Iy-z2h"/>
                             <constraint firstItem="aIS-sE-jbX" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="2aH-bZ-fXa"/>
                             <constraint firstItem="afH-Vp-x2U" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="5IU-UJ-afj"/>
+                            <constraint firstItem="5hD-4g-X0r" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="9Hn-eu-UYL"/>
                             <constraint firstItem="v9i-aT-Hr7" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="DI8-lr-Xk1"/>
+                            <constraint firstItem="Qn7-P9-clV" firstAttribute="trailing" secondItem="5hD-4g-X0r" secondAttribute="trailing" constant="20" id="GDE-uw-jLn"/>
+                            <constraint firstItem="AUr-6W-fQU" firstAttribute="top" secondItem="5hD-4g-X0r" secondAttribute="bottom" constant="25" id="IdJ-eS-SyH"/>
                             <constraint firstItem="afH-Vp-x2U" firstAttribute="top" secondItem="Qn7-P9-clV" secondAttribute="top" constant="20" id="Igg-d8-1t7"/>
+                            <constraint firstItem="5hD-4g-X0r" firstAttribute="top" secondItem="aIS-sE-jbX" secondAttribute="bottom" constant="25" id="RJm-AB-shW"/>
                             <constraint firstItem="v9i-aT-Hr7" firstAttribute="bottom" secondItem="Qn7-P9-clV" secondAttribute="bottom" constant="20" id="Rsx-jn-zDq"/>
+                            <constraint firstItem="AUr-6W-fQU" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="Thv-Kg-4Ef"/>
+                            <constraint firstItem="Qn7-P9-clV" firstAttribute="trailing" secondItem="AUr-6W-fQU" secondAttribute="trailing" constant="20" id="cTy-wM-RGJ"/>
                             <constraint firstItem="Qn7-P9-clV" firstAttribute="trailing" secondItem="afH-Vp-x2U" secondAttribute="trailing" constant="20" id="lAo-vA-tkw"/>
                             <constraint firstItem="Qn7-P9-clV" firstAttribute="trailing" secondItem="aIS-sE-jbX" secondAttribute="trailing" constant="20" id="lX9-7a-myk"/>
                         </constraints>
@@ -94,6 +141,9 @@
                         <outlet property="backButton" destination="v9i-aT-Hr7" id="e2a-ae-64S"/>
                         <outlet property="loginUserInfoLabel" destination="aIS-sE-jbX" id="S72-c3-dPB"/>
                         <outlet property="logoutButton" destination="qga-Ir-366" id="9C8-qD-35m"/>
+                        <outlet property="uploadButton" destination="QcA-PI-JO1" id="OLE-0O-CMl"/>
+                        <outlet property="uploadImageView" destination="Ftc-5m-jcb" id="56u-9f-SjJ"/>
+                        <outlet property="uploadedImageUrlLabel" destination="AUr-6W-fQU" id="nrO-o7-kd6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8V8-7b-zuk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,4 +151,7 @@
             <point key="canvasLocation" x="66.666666666666671" y="145.98214285714286"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab_lip" width="25" height="25"/>
+    </resources>
 </document>

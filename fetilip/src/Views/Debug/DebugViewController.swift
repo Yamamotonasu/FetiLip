@@ -43,6 +43,15 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
     /// ログアウトボタン
     @IBOutlet private weak var logoutButton: UIButton!
 
+    /// 画像アップロードボタン
+    @IBOutlet private weak var uploadButton: UIButton!
+
+    /// アップロードする画像
+    @IBOutlet private weak var uploadImageView: UIImageView!
+
+    /// アップロード後の画像URL
+    @IBOutlet private weak var uploadedImageUrlLabel: UILabel!
+
     // MARK: LifeCycle
 
     override func viewDidLoad() {
@@ -72,6 +81,16 @@ extension DebugViewController {
         logoutButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
             self?.viewModel?.logout()
         }).disposed(by: rx.disposeBag)
+
+        // アップロードボタン
+        uploadButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
+            self?.viewModel?.uploadImage(image: self?.uploadImageView.image)
+        }).disposed(by: rx.disposeBag)
+
+        // アップロード後の画像URL
+        viewModel?.uploadedImageUrlDriver
+            .drive(uploadedImageUrlLabel.rx.text)
+            .disposed(by: rx.disposeBag)
 
         // ログイン情報描画
         viewModel?.loginInfoDriver

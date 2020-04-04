@@ -6,9 +6,10 @@
 //  Copyright © 2020 YutaYamamoto. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseStorage
 import RxSwift
 import RxCocoa
 
@@ -23,11 +24,15 @@ protocol DebugViewModelProtocol {
 
     func logout()
 
+    func uploadImage(image: UIImage?)
+
     var loginInfoDriver: Driver<String> { get }
 
     var errorObservable: Observable<String> { get }
 
     var loginStateDriver: Driver<Bool> { get }
+
+    var uploadedImageUrlDriver: Driver<String> { get }
 
 }
 
@@ -40,6 +45,7 @@ struct DebugViewModel: DebugViewModelProtocol {
         loginInfoDriver = loginInfoRelay.asDriver(onErrorJustReturn: "")
         errorObservable = errorSubject.asObservable()
         loginStateDriver = loginStateRelay.asDriver(onErrorJustReturn: false)
+        uploadedImageUrlDriver = uploadedImageUrlRelay.asDriver(onErrorJustReturn: "")
     }
 
     /// エラーアラート通知用Subject
@@ -51,6 +57,9 @@ struct DebugViewModel: DebugViewModelProtocol {
     /// ログイン状態通知用Relay
     private let loginStateRelay: PublishRelay<Bool> = PublishRelay<Bool>()
 
+    /// アップロードした画像URL表示用
+    private let uploadedImageUrlRelay: PublishRelay<String> = PublishRelay<String>()
+
     /// ログイン情報描画用Driver
     private(set) var loginInfoDriver: Driver<String>
 
@@ -59,6 +68,9 @@ struct DebugViewModel: DebugViewModelProtocol {
 
     /// ログインしているかどうかのDriver
     private(set) var loginStateDriver: Driver<Bool>
+
+    /// アップロードした画像URL表示用
+    private(set) var uploadedImageUrlDriver: Driver<String>
 
 }
 
@@ -124,6 +136,29 @@ extension DebugViewModel {
             checkLogined()
         } catch let e {
             self.errorSubject.onNext(e.localizedDescription)
+        }
+    }
+
+    public func uploadImage(image: UIImage?) {
+        guard let uploadImage = image?.jpegData(compressionQuality: 0.3) else { return }
+        let imageReference = Storage.storage().reference().child("/productImages/lip.jpeg")
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        imageReference.putData(uploadImage, metadata: metaData) { metaData, error in
+            if let e = error {
+                self.errorSubject.onNext(e.localizedDescription)
+                return
+            }
+            imageReference.downloadURL { url, error in
+                if let e = error {
+                    self.errorSubject.onNext(e.localizedDescription)
+                }
+                guard let uploadedImageUrl = url else {
+                    return
+                }
+                let str = String(describing: uploadedImageUrl)
+                self.uploadedImageUrlRelay.accept(str)
+            }
         }
     }
 
