@@ -7,12 +7,24 @@
 //
 
 import Foundation
+import Firebase
 
+/**
+ * DebugViewModelのProtocol
+ */
 protocol DebugViewModelProtocol {
 
+    func anonymousLogin()
 
 }
 
 struct DebugViewModel: DebugViewModelProtocol {
-    
+
+    /// 匿名ログインを実行する
+    func anonymousLogin() {
+//        Auth.auth().signInAnonymously { (result, error) in
+//
+//        }
+    }
+
 }

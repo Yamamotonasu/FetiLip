@@ -9,14 +9,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import FirebaseAuth
 
 /**
  * Debugやテスト用ViewController
  */
 class DebugViewController: UIViewController, ViewControllerMethodInjectable {
 
-    // MARK: ViewModel
+    // MARK: Init process
 
     struct Dependency {
         let viewModel: DebugViewController.ViewModel
@@ -59,15 +58,9 @@ extension DebugViewController {
 
         /// 匿名ログインボタン
         anonymousLoginButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-//            self?.anonymousLogin()
+            self?.viewModel?.anonymousLogin()
         }).disposed(by: rx.disposeBag)
 
-    }
-
-    private func anonymousLogin() {
-        Auth.auth().signInAnonymously { result, error in
-            
-        }
     }
 
 }
