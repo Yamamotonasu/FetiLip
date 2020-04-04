@@ -100,7 +100,7 @@ extension DebugViewModel {
                 self.drawUserInfo(with: user)
                 self.loginStateRelay.accept(true)
                 // FireStore動作確認の為とりあえず雑にデータ保存を実装
-                let userData: [String : Any] = [
+                let userData: [String: Any] = [
                     "email": user.email ?? "",
                     "userName": user.displayName ?? "",
                     "phoneNumber": user.phoneNumber ?? "",
@@ -144,7 +144,7 @@ extension DebugViewModel {
         let imageReference = Storage.storage().reference().child("/productImages/lip.jpeg")
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
-        imageReference.putData(uploadImage, metadata: metaData) { metaData, error in
+        imageReference.putData(uploadImage, metadata: metaData) { _, error in
             if let e = error {
                 self.errorSubject.onNext(e.localizedDescription)
                 return

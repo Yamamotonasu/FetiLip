@@ -106,13 +106,12 @@ extension DebugViewController {
 
         // ログイン状態監視
         viewModel?.loginStateDriver
-            .map{ !$0 }
+            .map { !$0 }
             .drive(logoutButton.rx.isHidden)
             .disposed(by: rx.disposeBag)
     }
 
 }
-
 
 /**
  * DebugViewController初期化用コンテナ
