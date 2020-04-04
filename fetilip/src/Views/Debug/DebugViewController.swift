@@ -31,11 +31,17 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
 
     // MARK: Outlets
 
+    /// 戻るボタン
     @IBOutlet private weak var backButton: UIButton!
 
+    /// 匿名ログインボタン
     @IBOutlet private weak var anonymousLoginButton: UIButton!
 
+    /// ログイン中のユーザーのボタン
     @IBOutlet private weak var loginUserInfoLabel: UILabel!
+
+    /// ログアウトボタン
+    @IBOutlet private weak var logoutButton: UIButton!
 
     // MARK: LifeCycle
 
@@ -62,6 +68,11 @@ extension DebugViewController {
             self?.viewModel?.anonymousLogin()
         }).disposed(by: rx.disposeBag)
 
+        // ログアウトボタン
+        logoutButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
+            self?.viewModel?.logout()
+        }).disposed(by: rx.disposeBag)
+
         // ログイン情報描画
         viewModel?.loginInfoDriver
             .drive(loginUserInfoLabel.rx.text)
@@ -73,6 +84,12 @@ extension DebugViewController {
             alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true)
         }).disposed(by: rx.disposeBag)
+
+        // ログイン状態監視
+        viewModel?.loginStateDriver
+            .map{ !$0 }
+            .drive(logoutButton.rx.isHidden)
+            .disposed(by: rx.disposeBag)
     }
 
 }

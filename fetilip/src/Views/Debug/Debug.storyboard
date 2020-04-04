@@ -31,18 +31,44 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-8v-s9I">
-                                <rect key="frame" x="20" y="64" width="200" height="40"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="S1G-T4-JDL"/>
-                                    <constraint firstAttribute="height" constant="40" id="VCS-JS-or8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Anonymous Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="afH-Vp-x2U">
+                                <rect key="frame" x="20" y="64" width="374" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JWe-8v-s9I">
+                                        <rect key="frame" x="0.0" y="0.0" width="176.5" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="VCS-JS-or8"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="匿名ログイン">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="17" name="YuGo-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qga-Ir-366">
+                                        <rect key="frame" x="197.5" y="0.0" width="176.5" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="ログアウト">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="17" name="YuGo-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ログイン時にはここにログインユーザーの情報が表示されます。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIS-sE-jbX">
                                 <rect key="frame" x="20" y="129" width="374" height="34"/>
                                 <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
@@ -52,13 +78,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="aIS-sE-jbX" firstAttribute="top" secondItem="afH-Vp-x2U" secondAttribute="bottom" constant="25" id="0xz-Iy-z2h"/>
                             <constraint firstItem="aIS-sE-jbX" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="2aH-bZ-fXa"/>
+                            <constraint firstItem="afH-Vp-x2U" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="5IU-UJ-afj"/>
                             <constraint firstItem="v9i-aT-Hr7" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="DI8-lr-Xk1"/>
-                            <constraint firstItem="aIS-sE-jbX" firstAttribute="top" secondItem="JWe-8v-s9I" secondAttribute="bottom" constant="25" id="Ovg-tg-ux6"/>
+                            <constraint firstItem="afH-Vp-x2U" firstAttribute="top" secondItem="Qn7-P9-clV" secondAttribute="top" constant="20" id="Igg-d8-1t7"/>
                             <constraint firstItem="v9i-aT-Hr7" firstAttribute="bottom" secondItem="Qn7-P9-clV" secondAttribute="bottom" constant="20" id="Rsx-jn-zDq"/>
+                            <constraint firstItem="Qn7-P9-clV" firstAttribute="trailing" secondItem="afH-Vp-x2U" secondAttribute="trailing" constant="20" id="lAo-vA-tkw"/>
                             <constraint firstItem="Qn7-P9-clV" firstAttribute="trailing" secondItem="aIS-sE-jbX" secondAttribute="trailing" constant="20" id="lX9-7a-myk"/>
-                            <constraint firstItem="JWe-8v-s9I" firstAttribute="leading" secondItem="Qn7-P9-clV" secondAttribute="leading" constant="20" id="vE8-x9-bWu"/>
-                            <constraint firstItem="JWe-8v-s9I" firstAttribute="top" secondItem="Qn7-P9-clV" secondAttribute="top" constant="20" id="vE9-HO-WA9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qn7-P9-clV"/>
                     </view>
@@ -66,6 +93,7 @@
                         <outlet property="anonymousLoginButton" destination="JWe-8v-s9I" id="Obz-Zi-jig"/>
                         <outlet property="backButton" destination="v9i-aT-Hr7" id="e2a-ae-64S"/>
                         <outlet property="loginUserInfoLabel" destination="aIS-sE-jbX" id="S72-c3-dPB"/>
+                        <outlet property="logoutButton" destination="qga-Ir-366" id="9C8-qD-35m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8V8-7b-zuk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

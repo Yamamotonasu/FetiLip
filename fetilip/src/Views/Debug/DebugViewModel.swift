@@ -20,9 +20,13 @@ protocol DebugViewModelProtocol {
 
     func anonymousLogin()
 
+    func logout()
+
     var loginInfoDriver: Driver<String> { get }
 
     var errorObservable: Observable<String> { get }
+
+    var loginStateDriver: Driver<Bool> { get }
 
 }
 
@@ -34,6 +38,7 @@ struct DebugViewModel: DebugViewModelProtocol {
     init() {
         loginInfoDriver = loginInfoRelay.asDriver(onErrorJustReturn: "")
         errorObservable = errorSubject.asObservable()
+        loginStateDriver = loginStateRelay.asDriver(onErrorJustReturn: false)
     }
 
     /// エラーアラート通知用Subject
@@ -42,23 +47,29 @@ struct DebugViewModel: DebugViewModelProtocol {
     /// ログイン情報描画用Relay
     private let loginInfoRelay: PublishRelay<String> = PublishRelay<String>()
 
+    /// ログイン状態通知用Relay
+    private let loginStateRelay: PublishRelay<Bool> = PublishRelay<Bool>()
+
     /// ログイン情報描画用Driver
     private(set) var loginInfoDriver: Driver<String>
 
     /// エラーアラート通知用Observable
     private(set) var errorObservable: Observable<String>
 
+    /// ログインしているかどうかのDriver
+    private(set) var loginStateDriver: Driver<Bool>
+
 }
 
 extension DebugViewModel {
 
-
-    /// 匿名ログインを実行する
+    /// 匿名ユーザー作成/ログインを実行する
     public func anonymousLogin() {
         // すでにログイン中の場合はreturnする
         if let user = Auth.auth().currentUser {
             self.errorSubject.onNext("すでにログインしています。")
             self.drawUserInfo(with: user)
+            self.loginStateRelay.accept(true)
         }
         // TODO: モデル化
         Auth.auth().signInAnonymously { (result, error) in
@@ -69,17 +80,34 @@ extension DebugViewModel {
             // ユーザー作成失敗時
             guard let _ = result?.user else {
                 self.errorSubject.onNext("ユーザーの作成に失敗しました。")
+                self.loginStateRelay.accept(false)
                 return
             }
             if let user = Auth.auth().currentUser {
                 self.drawUserInfo(with: user)
+                self.loginStateRelay.accept(true)
             }
         }
     }
 
+    /// ログイン状態を確認する
     public func checkLogined() {
         if let user = Auth.auth().currentUser {
             self.drawUserInfo(with: user)
+            loginStateRelay.accept(true)
+        } else {
+            loginInfoRelay.accept("ログイン時にはここにログインユーザーの情報が表示されます。")
+            loginStateRelay.accept(false)
+        }
+    }
+
+    public func logout() {
+        do {
+            try Auth.auth().signOut()
+            self.errorSubject.onNext("ログアウトしました。")
+            checkLogined()
+        } catch let e {
+            self.errorSubject.onNext(e.localizedDescription)
         }
     }
 
