@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 import RxSwift
 import RxCocoa
 
@@ -86,6 +87,21 @@ extension DebugViewModel {
             if let user = Auth.auth().currentUser {
                 self.drawUserInfo(with: user)
                 self.loginStateRelay.accept(true)
+                // FireStore動作確認の為とりあえず雑にデータ保存を実装
+                let userData: [String : Any] = [
+                    "email": user.email ?? "",
+                    "userName": user.displayName ?? "",
+                    "phoneNumber": user.phoneNumber ?? "",
+                    "createdAt": Timestamp(date: Date())
+                ]
+                // データを保存(uidをdocumentに設定)
+                Firestore.firestore().collection("users").document(user.uid).setData(userData) { error in
+                    if let e = error {
+                        self.errorSubject.onNext(e.localizedDescription)
+                    } else {
+                        self.errorSubject.onNext("ユーザーを作成しました")
+                    }
+                }
             }
         }
     }
