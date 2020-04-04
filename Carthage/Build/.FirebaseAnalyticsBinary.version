@@ -11,48 +11,48 @@
   "commitish" : "6.21.0",
   "iOS" : [
     {
-      "name" : "GoogleDataTransport",
-      "hash" : "12f80c6f5502cb11b672dcadab0fb2ea69a4793855d458c6a6186712043f19cc"
-    },
-    {
-      "name" : "FirebaseCore",
-      "hash" : "aa645f9437a3bcfcbcfb979d01d1308e37b81688afd7d6863c4a335ec74960d0"
-    },
-    {
-      "name" : "FirebaseAnalytics",
-      "hash" : "16a123bb1f6692eb590d7b8461a55d7055f17198bdf615d06993bc381ecd3732"
-    },
-    {
-      "name" : "nanopb",
-      "hash" : "a33498f1659ebe78a8a86838a3c93534f276dbb3e3938b9084e90e63cd0bf5d7"
+      "name" : "Firebase",
+      "hash" : "a8669248da9519e9955e00448e518e1ca6becb32689eedddde237e19ad1136ae"
     },
     {
       "name" : "GoogleDataTransportCCTSupport",
       "hash" : "339cde8d9b67c2cfd263cca4732541ee61fd6fd3f80783fdb02ee1827591b923"
     },
     {
-      "name" : "Firebase",
-      "hash" : "a8669248da9519e9955e00448e518e1ca6becb32689eedddde237e19ad1136ae"
+      "name" : "FirebaseAnalytics",
+      "hash" : "16a123bb1f6692eb590d7b8461a55d7055f17198bdf615d06993bc381ecd3732"
+    },
+    {
+      "name" : "FirebaseCore",
+      "hash" : "aa645f9437a3bcfcbcfb979d01d1308e37b81688afd7d6863c4a335ec74960d0"
+    },
+    {
+      "name" : "nanopb",
+      "hash" : "a33498f1659ebe78a8a86838a3c93534f276dbb3e3938b9084e90e63cd0bf5d7"
     },
     {
       "name" : "FirebaseCoreDiagnostics",
       "hash" : "5403240f71598d724c863f58cbd9a8e206e57d8fc4c72f681dcc36a4668b9641"
     },
     {
-      "name" : "PromisesObjC",
-      "hash" : "4707318ea89c8cce8fcf691b0128c2950b3b28f37aa051226e1fec04e7fb0fdf"
+      "name" : "FIRAnalyticsConnector",
+      "hash" : "c963731b374b04d64ca328137b2177897a634d41ad3709f1555b88f5bb751ba6"
     },
     {
-      "name" : "GoogleUtilities",
-      "hash" : "b2201fa24e7e705041e4375ec0e89bcfaf48e53e3ae339a9131c58809ec8b3fb"
+      "name" : "GoogleDataTransport",
+      "hash" : "12f80c6f5502cb11b672dcadab0fb2ea69a4793855d458c6a6186712043f19cc"
+    },
+    {
+      "name" : "PromisesObjC",
+      "hash" : "4707318ea89c8cce8fcf691b0128c2950b3b28f37aa051226e1fec04e7fb0fdf"
     },
     {
       "name" : "FirebaseInstallations",
       "hash" : "cd58821b90044b01e569427941c76de09ac763558a2932676477b7c0f4b0e3cb"
     },
     {
-      "name" : "FIRAnalyticsConnector",
-      "hash" : "c963731b374b04d64ca328137b2177897a634d41ad3709f1555b88f5bb751ba6"
+      "name" : "GoogleUtilities",
+      "hash" : "b2201fa24e7e705041e4375ec0e89bcfaf48e53e3ae339a9131c58809ec8b3fb"
     },
     {
       "name" : "GoogleAppMeasurement",
