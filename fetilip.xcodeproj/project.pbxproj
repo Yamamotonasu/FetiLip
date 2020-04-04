@@ -926,11 +926,11 @@
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
+				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
-				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
