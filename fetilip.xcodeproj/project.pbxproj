@@ -17,6 +17,8 @@
 		039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB669243611F00016436C /* gRPC-Core.framework */; };
 		039EB66F243615990016436C /* Debug.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039EB66E243615990016436C /* Debug.storyboard */; };
 		039EB671243615FC0016436C /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB670243615FC0016436C /* DebugViewController.swift */; };
+		039EB673243833F30016436C /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB672243833F30016436C /* DebugViewModel.swift */; };
+		039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB675243840580016436C /* ViewControllerMethodInjectable.swift */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -105,6 +107,8 @@
 		039EB669243611F00016436C /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-Core.framework"; path = "Carthage/Build/iOS/gRPC-Core.framework"; sourceTree = "<group>"; };
 		039EB66E243615990016436C /* Debug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Debug.storyboard; sourceTree = "<group>"; };
 		039EB670243615FC0016436C /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		039EB672243833F30016436C /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugViewModel.swift; path = fetilip/src/Views/Debug/DebugViewModel.swift; sourceTree = SOURCE_ROOT; };
+		039EB675243840580016436C /* ViewControllerMethodInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMethodInjectable.swift; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -371,6 +375,14 @@
 			path = Debug;
 			sourceTree = "<group>";
 		};
+		039EB6742438403B0016436C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				039EB675243840580016436C /* ViewControllerMethodInjectable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +481,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				039EB6742438403B0016436C /* Protocol */,
 				03AAFB5A2425E8660068FB1E /* Utils */,
 				03AAFB3D241FA00B0068FB1E /* Extensions */,
 				03AAFB3B241F9D2B0068FB1E /* ViewModels */,
@@ -494,6 +507,7 @@
 		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				039EB672243833F30016436C /* DebugViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1082,6 +1096,7 @@
 				03AAFB69242733C80068FB1E /* DesignableUIButton.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
+				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
@@ -1096,6 +1111,7 @@
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
+				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
 				03AAFB6B24273B540068FB1E /* DesignableUITextField.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
 				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,

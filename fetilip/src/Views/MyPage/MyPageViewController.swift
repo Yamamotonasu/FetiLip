@@ -42,7 +42,7 @@ extension MyPageViewController {
 
     /// デバッグ画面へ遷移する
     private func transitionDebugScreen() {
-        let vc = DebugViewController.makeInstance()
+        let vc = DebugViewControllerContainer.makeInstance()
         self.present(vc, animated: true)
     }
 
