@@ -21,6 +21,7 @@
 		039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB675243840580016436C /* ViewControllerMethodInjectable.swift */; };
 		039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67724384FD50016436C /* FirebaseAuth.framework */; };
 		039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */; };
+		039EB6872439BEB00016436C /* AppIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB6862439BEB00016436C /* AppIndicator.swift */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -114,6 +115,7 @@
 		039EB67724384FD50016436C /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
 		039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
 		039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		039EB6862439BEB00016436C /* AppIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIndicator.swift; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -390,6 +392,14 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		039EB6852439BE7F0016436C /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				039EB6862439BEB00016436C /* AppIndicator.swift */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +588,7 @@
 		03AAFB6324272C250068FB1E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				039EB6852439BE7F0016436C /* Indicator */,
 				03AAFB672427330F0068FB1E /* CustomViews */,
 			);
 			path = UI;
@@ -1116,6 +1127,7 @@
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
+				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
 				03AAFB6D24273C320068FB1E /* DesignableUIImageView.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
