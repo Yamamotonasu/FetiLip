@@ -114,17 +114,17 @@ extension DebugViewController {
 }
 
 /**
- * DebugViewController初期化用コンテナ
+ * DebugViewControllerジェネレータ
  */
-final class DebugViewControllerContainer {
+final class DebugViewControllerGenerator {
 
     private init() {}
 
-    public static func makeInstance() -> UIViewController {
+    public static func generate(viewModel: DebugViewController.ViewModel) -> UIViewController {
         guard let vc = R.storyboard.debug.debugViewController() else {
             return UIViewController()
         }
-        vc.inject(with: .init(viewModel: DebugViewModel()))
+        vc.inject(with: .init(viewModel: viewModel))
         return vc
     }
 

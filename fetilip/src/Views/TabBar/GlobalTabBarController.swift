@@ -157,11 +157,14 @@ extension GlobalTabBarController: CustomCardTabBarDelegate {
 
 }
 
-// MARK: MakeInstance
+/**
+ * タブバー生成用Generator
+ */
+final class GlobalTabBarControllerGenerator {
 
-extension GlobalTabBarController {
+    private init() {}
 
-    static func makeInstance() -> UITabBarController {
+    public static func generate() -> UITabBarController {
         guard let tab = R.storyboard.globalTabBar.globalTabBarController() else {
             assertionFailure()
             return GlobalTabBarController()

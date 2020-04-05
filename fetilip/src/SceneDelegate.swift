@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: scene)
         self.window = window
         window.makeKeyAndVisible()
-        let tab = GlobalTabBarController.makeInstance()
+        let tab = GlobalTabBarControllerGenerator.generate()
         window.rootViewController = tab
     }
 
