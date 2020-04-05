@@ -20,6 +20,7 @@
 		039EB673243833F30016436C /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB672243833F30016436C /* DebugViewModel.swift */; };
 		039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB675243840580016436C /* ViewControllerMethodInjectable.swift */; };
 		039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67724384FD50016436C /* FirebaseAuth.framework */; };
+		039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -111,6 +112,8 @@
 		039EB672243833F30016436C /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugViewModel.swift; path = fetilip/src/Views/Debug/DebugViewModel.swift; sourceTree = SOURCE_ROOT; };
 		039EB675243840580016436C /* ViewControllerMethodInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMethodInjectable.swift; sourceTree = "<group>"; };
 		039EB67724384FD50016436C /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
+		039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
+		039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +338,7 @@
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
+				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
 				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
@@ -445,6 +449,8 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */,
+				039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */,
 				039EB67724384FD50016436C /* FirebaseAuth.framework */,
 				039EB669243611F00016436C /* gRPC-Core.framework */,
 				039EB655243611280016436C /* abseil.framework */,
@@ -968,6 +974,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -981,6 +988,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

@@ -10,6 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 import XCGLogger
 import Firebase
+import NVActivityIndicatorView
 
 // MARK: XCGLogger
 
