@@ -114,7 +114,7 @@ extension DebugViewController {
 }
 
 /**
- * DebugViewControllerジェネレータ
+ * DebugViewController Generator
  */
 final class DebugViewControllerGenerator {
 
