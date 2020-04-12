@@ -22,6 +22,7 @@
 		039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67724384FD50016436C /* FirebaseAuth.framework */; };
 		039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */; };
 		039EB6872439BEB00016436C /* AppIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB6862439BEB00016436C /* AppIndicator.swift */; };
+		039EB68B243B641B0016436C /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB68A243B641A0016436C /* UsersModel.swift */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -113,6 +114,7 @@
 		039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
 		039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		039EB6862439BEB00016436C /* AppIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIndicator.swift; sourceTree = "<group>"; };
+		039EB68A243B641A0016436C /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -394,6 +396,30 @@
 			path = Indicator;
 			sourceTree = "<group>";
 		};
+		039EB688243B5F310016436C /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				039EB68C243B648D0016436C /* Auth */,
+				039EB689243B5F570016436C /* Models */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		039EB689243B5F570016436C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		039EB68C243B648D0016436C /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				039EB68A243B641A0016436C /* UsersModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
@@ -494,6 +520,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				039EB688243B5F310016436C /* Firestore */,
 				039EB6742438403B0016436C /* Protocol */,
 				03AAFB5A2425E8660068FB1E /* Utils */,
 				03AAFB3D241FA00B0068FB1E /* Extensions */,
@@ -1128,6 +1155,7 @@
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
 				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,
 				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
+				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
