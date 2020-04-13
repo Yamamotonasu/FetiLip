@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 /**
  * 投稿一覧
@@ -22,18 +23,41 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
     typealias ViewModel = PostListViewModelProtocol
 
     // Memo: TabBarのルートビューなので初期値を代入
-    var viewModel: PostListViewModelProtocol? = PostListViewModel()
+    var viewModel: PostListViewModelProtocol?
 
     func inject(with dependency: Dependency) {
         self.viewModel = dependency.viewModel
     }
 
+    // MARK: Outlets
+
+    @IBOutlet weak var passText1: UITextField!
+
+    @IBOutlet weak var passText2: UITextField!
+
+    @IBOutlet weak var titleLabel: UILabel!
+
+    var input: (Observable<String>, Observable<String>)!
+
+    var dependency: (ValidationShare)!
+
     // MARK: Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        input = (passText1.rx.text.orEmpty.asObservable(), passText2.rx.text.orEmpty.asObservable())
+        dependency = Validation()
+        self.viewModel = PostListViewModel(input: input, dependency: dependency)
+        subscribe()
     }
 
+}
+
+extension PostListViewController {
+
+    private func subscribe() {
+
+    }
 }
 
 /**

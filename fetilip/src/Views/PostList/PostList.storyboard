@@ -16,15 +16,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WJ-0t-ZxQ">
-                                <rect key="frame" x="20" y="345" width="335" height="21"/>
+                                <rect key="frame" x="20" y="345.5" width="335" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AyO-1k-5b7">
+                                <rect key="frame" x="20" y="64" width="335" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pass1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BIP-OE-e1A">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="pass2" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiH-AO-UMK">
+                                        <rect key="frame" x="0.0" y="46.5" width="335" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54q-JM-s8B">
+                                        <rect key="frame" x="0.0" y="93.5" width="335" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="QKW-4l-EgR"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="AyO-1k-5b7" firstAttribute="top" secondItem="gJd-3R-OSo" secondAttribute="top" constant="20" id="5kL-0H-KTs"/>
+                            <constraint firstItem="AyO-1k-5b7" firstAttribute="leading" secondItem="gJd-3R-OSo" secondAttribute="leading" constant="20" id="her-Yg-67b"/>
                             <constraint firstItem="5WJ-0t-ZxQ" firstAttribute="leading" secondItem="gJd-3R-OSo" secondAttribute="leading" constant="20" id="jHw-wN-WRI"/>
+                            <constraint firstItem="gJd-3R-OSo" firstAttribute="trailing" secondItem="AyO-1k-5b7" secondAttribute="trailing" constant="20" id="mB3-eK-Ixy"/>
                             <constraint firstItem="5WJ-0t-ZxQ" firstAttribute="centerX" secondItem="gJd-3R-OSo" secondAttribute="centerX" id="poV-hE-5qD"/>
                             <constraint firstItem="gJd-3R-OSo" firstAttribute="trailing" secondItem="5WJ-0t-ZxQ" secondAttribute="trailing" constant="20" id="qaZ-Ry-hV1"/>
                             <constraint firstItem="5WJ-0t-ZxQ" firstAttribute="centerY" secondItem="gJd-3R-OSo" secondAttribute="centerY" id="xqF-71-X6X"/>
@@ -32,6 +59,11 @@
                         <viewLayoutGuide key="safeArea" id="gJd-3R-OSo"/>
                     </view>
                     <navigationItem key="navigationItem" id="hIx-I5-YOw"/>
+                    <connections>
+                        <outlet property="passText1" destination="BIP-OE-e1A" id="7B6-fR-bHm"/>
+                        <outlet property="passText2" destination="EiH-AO-UMK" id="KkS-Y7-lqb"/>
+                        <outlet property="titleLabel" destination="54q-JM-s8B" id="h7A-Hh-gg1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liA-My-3DD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
