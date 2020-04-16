@@ -11,6 +11,9 @@ import RxSwift
 
 protocol PostListViewModelProtocol {
 
+    var validatedPassword1: Observable<ValidationResult> { get }
+
+    var validatedPassword2: Observable<ValidationResult> { get }
 }
 
 struct PostListViewModel: PostListViewModelProtocol {
@@ -30,7 +33,8 @@ struct PostListViewModel: PostListViewModelProtocol {
         }
         .share(replay: 1, scope: .whileConnected)
 
-        validatedPassword2 = Observable.combineLatest(input.pass1, input.pass2, resultSelector: dependency.validateCombinedPassword).share(replay: 1, scope: .whileConnected)
+        validatedPassword2 = Observable.combineLatest(input.pass1, input.pass2, resultSelector: dependency.validateCombinedPassword)
+            .share(replay: 1, scope: .whileConnected)
     }
 
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 /**
  * 投稿一覧
@@ -56,7 +57,9 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 extension PostListViewController {
 
     private func subscribe() {
-
+        viewModel?.validatedPassword2
+            .bind(to: titleLabel.rx.validationResult)
+            .disposed(by: rx.disposeBag)
     }
 }
 
@@ -76,4 +79,11 @@ final class PostListViewControllerGenerator {
         return vc
     }
 
+}
+
+extension Reactive where Base: UILabel {
+    var validationResult: Binder<ValidationResult> {
+        return Binder(base) { label, result in
+        }
+    }
 }
