@@ -113,13 +113,13 @@ extension DebugViewModel {
 
     /// ログイン状態を確認する
     public func checkLogined() {
-        if let user = Auth.auth().currentUser {
+        let _ = authModel.checkLogin().subscribe(onSuccess: { user in
             self.drawUserInfo(with: user)
-            loginStateRelay.accept(true)
-        } else {
-            loginInfoRelay.accept("ログイン時にはここにログインユーザーの情報が表示されます。")
-            loginStateRelay.accept(false)
-        }
+            self.loginStateRelay.accept(true)
+        }, onError: { _ in
+            self.loginInfoRelay.accept("ログイン時にはここにログインユーザーの情報が表示されます。")
+            self.loginStateRelay.accept(false)
+        })
     }
 
     public func logout() {

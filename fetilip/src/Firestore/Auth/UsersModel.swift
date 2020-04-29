@@ -14,6 +14,8 @@ protocol UserAuthModelProtocol {
 
     func createAnonymousUser() -> Single<User>
 
+    func checkLogin() -> Single<User>
+
 }
 
 /**
@@ -23,7 +25,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
 
     public init() {}
 
-    /// Anonymous login with firebase auth
+    /// Anonymous login with firebase auth.
     public func createAnonymousUser() -> Single<User> {
         return Single.create { observer in
             Auth.auth().signInAnonymously { result, error in
@@ -38,12 +40,25 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         }
     }
 
+    /// Check the login status of the current user with firebase auth.
+    public func checkLogin() -> Single<User> {
+        return Single.create { observer in
+            if let user = Auth.auth().currentUser {
+                observer(.success(user))
+            } else {
+                observer(.error(User.AuthError.notLoginError))
+            }
+            return Disposables.create()
+        }
+    }
+
 }
 
 extension User {
 
     public enum AuthError: Error {
         case notInitialized(error: Error)
+        case notLoginError
     }
 
 }
