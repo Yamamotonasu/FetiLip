@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
 import RxSwift
@@ -78,14 +77,9 @@ struct DebugViewModel: DebugViewModelProtocol {
 
 extension DebugViewModel {
 
-    /// 匿名ユーザー作成/ログインを実行する
+    /// Create user and login.
     public func anonymousLogin() {
-        // すでにログイン中の場合はreturnする
-        if let user = Auth.auth().currentUser {
-            self.errorSubject.onNext("すでにログインしています。")
-            self.drawUserInfo(with: user)
-            self.loginStateRelay.accept(true)
-        }
+        // Return if already logged in.
         let _ = authModel.createAnonymousUser().subscribe(onSuccess: {
             user in
             self.drawUserInfo(with: user)
@@ -111,7 +105,7 @@ extension DebugViewModel {
 
     }
 
-    /// ログイン状態を確認する
+    /// Confirming login state.
     public func checkLogined() {
         let _ = authModel.checkLogin().subscribe(onSuccess: { user in
             self.drawUserInfo(with: user)
@@ -122,14 +116,14 @@ extension DebugViewModel {
         })
     }
 
+    /// Log out with auth model.
     public func logout() {
-        do {
-            try Auth.auth().signOut()
+        let _ = authModel.logout().subscribe(onSuccess: {
             self.errorSubject.onNext("ログアウトしました。")
-            checkLogined()
-        } catch let e {
+            self.checkLogined()
+        }, onError: { e in
             self.errorSubject.onNext(e.localizedDescription)
-        }
+        })
     }
 
     public func uploadImage(image: UIImage?) {
@@ -162,7 +156,7 @@ extension DebugViewModel {
 extension DebugViewModel {
 
     /// ユーザー情報をLabelに描画する
-    private func drawUserInfo(with user: User) {
+    private func drawUserInfo(with user: FirebaseUser) {
         loginInfoRelay.accept("メールアドレス: \(user.email ?? "未登録")\nユーザー名: \(user.displayName ?? "未登録")\n電話番号: \(user.phoneNumber ?? "未登録")\nuid: \(user.uid)\nプロバイダID: \(user.providerID)")
     }
 

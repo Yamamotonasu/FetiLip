@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -99,6 +100,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -371,6 +373,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035BAFE524597C56001FF6D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		039EB66D2436157B0016436C /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +409,7 @@
 		039EB688243B5F310016436C /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
+				035BAFE524597C56001FF6D1 /* Extensions */,
 				039EB68C243B648D0016436C /* Auth */,
 				039EB689243B5F570016436C /* Models */,
 			);
@@ -1154,6 +1165,7 @@
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
 				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,
+				035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */,
 				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,

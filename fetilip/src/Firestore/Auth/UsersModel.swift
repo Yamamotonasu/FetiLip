@@ -10,23 +10,28 @@ import Foundation
 import RxSwift
 import Firebase
 
+/**
+ * Firebase auth user model protocol.
+ */
 protocol UserAuthModelProtocol {
 
-    func createAnonymousUser() -> Single<User>
+    func createAnonymousUser() -> Single<FirebaseUser>
 
-    func checkLogin() -> Single<User>
+    func checkLogin() -> Single<FirebaseUser>
+
+    func logout() -> Single<Void>
 
 }
 
 /**
- * Firebase User Model
+ * Firebase auth user model.
  */
 public struct UsersAuthModel: UserAuthModelProtocol {
 
     public init() {}
 
     /// Anonymous login with firebase auth.
-    public func createAnonymousUser() -> Single<User> {
+    public func createAnonymousUser() -> Single<FirebaseUser> {
         return Single.create { observer in
             Auth.auth().signInAnonymously { result, error in
                 if let e = error {
@@ -41,7 +46,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     }
 
     /// Check the login status of the current user with firebase auth.
-    public func checkLogin() -> Single<User> {
+    public func checkLogin() -> Single<FirebaseUser> {
         return Single.create { observer in
             if let user = Auth.auth().currentUser {
                 observer(.success(user))
@@ -52,13 +57,17 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         }
     }
 
-}
-
-extension User {
-
-    public enum AuthError: Error {
-        case notInitialized(error: Error)
-        case notLoginError
+    /// Log out.
+    public func logout() -> Single<Void> {
+        return Single.create { observer in
+            do {
+                try Auth.auth().signOut()
+                observer(.success(()))
+            } catch let e {
+                observer(.error(User.AuthError.failedLogout(error: e)))
+            }
+            return Disposables.create()
+        }
     }
 
 }
