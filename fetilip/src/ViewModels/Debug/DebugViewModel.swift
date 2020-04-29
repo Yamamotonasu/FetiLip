@@ -40,11 +40,12 @@ protocol DebugViewModelProtocol {
  */
 struct DebugViewModel: DebugViewModelProtocol {
 
-    init() {
+    init(model: UserAuthModelProtocol) {
         loginInfoDriver = loginInfoRelay.asDriver(onErrorJustReturn: "")
         errorObservable = errorSubject.asObservable()
         loginStateDriver = loginStateRelay.asDriver(onErrorJustReturn: false)
         uploadedImageUrlDriver = uploadedImageUrlRelay.asDriver(onErrorJustReturn: "")
+        authModel = model
     }
 
     /// エラーアラート通知用Subject
@@ -71,7 +72,7 @@ struct DebugViewModel: DebugViewModelProtocol {
     /// アップロードした画像URL表示用
     private(set) var uploadedImageUrlDriver: Driver<String>
 
-    private let authModel: UserAuthModelProtocol = UsersAuthModel()
+    private let authModel: UserAuthModelProtocol
 
 }
 
