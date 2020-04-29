@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
+		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
+		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -101,6 +103,8 @@
 
 /* Begin PBXFileReference section */
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
+		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -110,7 +114,7 @@
 		039EB669243611F00016436C /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-Core.framework"; path = "Carthage/Build/iOS/gRPC-Core.framework"; sourceTree = "<group>"; };
 		039EB66E243615990016436C /* Debug.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Debug.storyboard; sourceTree = "<group>"; };
 		039EB670243615FC0016436C /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
-		039EB672243833F30016436C /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugViewModel.swift; path = fetilip/src/Views/Debug/DebugViewModel.swift; sourceTree = SOURCE_ROOT; };
+		039EB672243833F30016436C /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugViewModel.swift; path = fetilip/src/ViewModels/Debug/DebugViewModel.swift; sourceTree = SOURCE_ROOT; };
 		039EB675243840580016436C /* ViewControllerMethodInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMethodInjectable.swift; sourceTree = "<group>"; };
 		039EB67724384FD50016436C /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
 		039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
@@ -381,6 +385,37 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		035BAFDA2443302D001FF6D1 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				039EB672243833F30016436C /* DebugViewModel.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		035BAFDB24433040001FF6D1 /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		035BAFDC2443305D001FF6D1 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		035BAFDD2443306D001FF6D1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		039EB66D2436157B0016436C /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,8 +584,8 @@
 			isa = PBXGroup;
 			children = (
 				039EB66D2436157B0016436C /* Debug */,
-				03AAFB9B2428D1B70068FB1E /* PostList */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
+				03AAFB9B2428D1B70068FB1E /* PostList */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
 			);
 			path = Views;
@@ -559,7 +594,10 @@
 		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				039EB672243833F30016436C /* DebugViewModel.swift */,
+				035BAFDA2443302D001FF6D1 /* Debug */,
+				035BAFDC2443305D001FF6D1 /* MyPage */,
+				035BAFDB24433040001FF6D1 /* PostList */,
+				035BAFDD2443306D001FF6D1 /* TabBar */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1155,8 +1193,10 @@
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
+				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
+				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
