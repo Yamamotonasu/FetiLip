@@ -72,6 +72,8 @@ struct DebugViewModel: DebugViewModelProtocol {
     /// アップロードした画像URL表示用
     private(set) var uploadedImageUrlDriver: Driver<String>
 
+    private let authModel: UserAuthModelProtocol = UsersAuthModel()
+
 }
 
 extension DebugViewModel {
@@ -84,38 +86,29 @@ extension DebugViewModel {
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
         }
-        // TODO: モデル化
-        Auth.auth().signInAnonymously { (result, error) in
-            if let e = error {
-                // TODO: AuthErrorsを日本語に変換する為のクラス作成
-                self.errorSubject.onNext(e.localizedDescription)
-            }
-            // ユーザー作成失敗時
-            guard let _ = result?.user else {
-                self.errorSubject.onNext("ユーザーの作成に失敗しました。")
-                self.loginStateRelay.accept(false)
-                return
-            }
-            if let user = Auth.auth().currentUser {
-                self.drawUserInfo(with: user)
-                self.loginStateRelay.accept(true)
-                // FireStore動作確認の為とりあえず雑にデータ保存を実装
-                let userData: [String: Any] = [
-                    "email": user.email ?? "",
-                    "userName": user.displayName ?? "",
-                    "phoneNumber": user.phoneNumber ?? "",
-                    "createdAt": Timestamp(date: Date())
-                ]
-                // データを保存(uidをdocumentに設定)
-                Firestore.firestore().collection("users").document(user.uid).setData(userData) { error in
-                    if let e = error {
-                        self.errorSubject.onNext(e.localizedDescription)
-                    } else {
-                        self.errorSubject.onNext("ユーザーを作成しました")
-                    }
+        let _ = authModel.createAnonymousUser().subscribe(onSuccess: {
+            user in
+            self.drawUserInfo(with: user)
+            self.loginStateRelay.accept(true)
+            // FireStore動作確認の為とりあえず雑にデータ保存を実装
+            let userData: [String: Any] = [
+                "email": user.email ?? "",
+                "userName": user.displayName ?? "",
+                "phoneNumber": user.phoneNumber ?? "",
+                "createdAt": Timestamp(date: Date())
+            ]
+            Firestore.firestore().collection("users").document(user.uid).setData(userData) { error in
+                if let e = error {
+                    self.errorSubject.onNext(e.localizedDescription)
+
+                } else {
+                    self.errorSubject.onNext("ユーザーを作成しました")
+
                 }
-            }
-        }
+            }}, onError: { error in
+                self.errorSubject.onNext(error.localizedDescription)
+        })
+
     }
 
     /// ログイン状態を確認する

@@ -8,14 +8,42 @@
 
 import Foundation
 import RxSwift
-import FirebaseAuth
+import Firebase
+
+protocol UserAuthModelProtocol {
+
+    func createAnonymousUser() -> Single<User>
+
+}
 
 /**
- * Firebase
+ * Firebase User Model
  */
-public struct UsersAuthModel {
+public struct UsersAuthModel: UserAuthModelProtocol {
 
-    init() {}
+    public init() {}
 
+    /// Anonymous login with firebase auth
+    public func createAnonymousUser() -> Single<User> {
+        return Single.create { observer in
+            Auth.auth().signInAnonymously { result, error in
+                if let e = error {
+                    observer(.error(User.AuthError.notInitialized(error: e)))
+                }
+                if let user = Auth.auth().currentUser {
+                    observer(.success(user))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+}
+
+extension User {
+
+    public enum AuthError: Error {
+        case notInitialized(error: Error)
+    }
 
 }
