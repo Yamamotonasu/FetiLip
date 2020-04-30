@@ -41,11 +41,11 @@ protocol DebugViewModelProtocol {
 struct DebugViewModel: DebugViewModelProtocol {
 
     init(model: UserAuthModelProtocol) {
-        loginInfoDriver = loginInfoRelay.asDriver(onErrorJustReturn: "")
-        errorObservable = errorSubject.asObservable()
-        loginStateDriver = loginStateRelay.asDriver(onErrorJustReturn: false)
-        uploadedImageUrlDriver = uploadedImageUrlRelay.asDriver(onErrorJustReturn: "")
-        authModel = model
+        self.loginInfoDriver = loginInfoRelay.asDriver(onErrorJustReturn: "")
+        self.errorObservable = errorSubject.asObservable()
+        self.loginStateDriver = loginStateRelay.asDriver(onErrorJustReturn: false)
+        self.uploadedImageUrlDriver = uploadedImageUrlRelay.asDriver(onErrorJustReturn: "")
+        self.authModel = model
     }
 
     /// エラーアラート通知用Subject
@@ -72,7 +72,11 @@ struct DebugViewModel: DebugViewModelProtocol {
     /// アップロードした画像URL表示用
     private(set) var uploadedImageUrlDriver: Driver<String>
 
+    /// User authentication model.
     private let authModel: UserAuthModelProtocol
+
+    /// Communication with firestore users collection model.
+    private let usersModelClient: UsersModelClient = UsersModelClient()
 
 }
 
@@ -85,6 +89,8 @@ extension DebugViewModel {
             user in
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
+            // TODO: UserDefaults
+            let u = UserModel(id: user.uid)
             // FireStore動作確認の為とりあえず雑にデータ保存を実装
             let userData: [String: Any] = [
                 "email": user.email ?? "",
@@ -92,16 +98,7 @@ extension DebugViewModel {
                 "phoneNumber": user.phoneNumber ?? "",
                 "createdAt": Timestamp(date: Date())
             ]
-            Firestore.firestore().collection("users").document(user.uid).setData(userData) { error in
-                if let e = error {
-                    self.errorSubject.onNext(e.localizedDescription)
-
-                } else {
-                    self.errorSubject.onNext("ユーザーを作成しました")
-
-                }
-            }}, onError: { error in
-                self.errorSubject.onNext(error.localizedDescription)
+            self.setUserData(user: u, fields: userData)
         })
 
     }
@@ -122,6 +119,15 @@ extension DebugViewModel {
         let _ = authModel.logout().subscribe(onSuccess: {
             self.errorSubject.onNext("ログアウトしました。")
             self.checkLogined()
+        }, onError: { e in
+            self.errorSubject.onNext(e.localizedDescription)
+        })
+    }
+
+    /// Save users collection to default user
+    private func setUserData(user: UserModel, fields: [String: Any]) {
+        let _ = usersModelClient.setData(user, documentRef: user.makeDocumentRef(), fields: fields).subscribe(onSuccess: { _ in
+            self.errorSubject.onNext("ユーザーを作成しました")
         }, onError: { e in
             self.errorSubject.onNext(e.localizedDescription)
         })
