@@ -31,4 +31,18 @@ public struct UsersModelClient {
         }
     }
 
+    public func updateData(_ type: UserModel, documentRef: DocumentReference, fields: [String: Any]) -> Single<()> {
+        return Single.create { observer in
+            documentRef.updateData(fields) { error in
+                if let error = error {
+                    log.error(error)
+                    observer(.error(error))
+                } else {
+                    observer(.success(()))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
 }

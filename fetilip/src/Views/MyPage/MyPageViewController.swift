@@ -57,7 +57,7 @@ extension MyPageViewController {
 
     /// デバッグ画面へ遷移する
     private func transitionDebugScreen() {
-        let vc = DebugViewControllerGenerator.generate(viewModel: DebugViewModel(model: UsersAuthModel()))
+        let vc = DebugViewControllerGenerator.generate()
         self.present(vc, animated: true)
     }
 

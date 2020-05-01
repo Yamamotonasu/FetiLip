@@ -22,6 +22,8 @@ public struct UserModel: FirestoreDatabaseCollection {
 
     public struct Fields: Codable {
 
+        public let profile: String
+
         public let email: String
 
         public let userName: String

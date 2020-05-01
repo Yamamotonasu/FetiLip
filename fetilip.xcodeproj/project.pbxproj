@@ -13,6 +13,7 @@
 		035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE924598A73001FF6D1 /* UserModel.swift */; };
 		035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFEC2459922C001FF6D1 /* FirestoreDatabaseCollection.swift */; };
 		035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFF02459AD6F001FF6D1 /* UserModelClient.swift */; };
+		035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -111,6 +112,7 @@
 		035BAFE924598A73001FF6D1 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		035BAFEC2459922C001FF6D1 /* FirestoreDatabaseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabaseCollection.swift; sourceTree = "<group>"; };
 		035BAFF02459AD6F001FF6D1 /* UserModelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelClient.swift; sourceTree = "<group>"; };
+		035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -454,6 +456,13 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
+		035BAFF4245AEC99001FF6D1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		039EB66D2436157B0016436C /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				039EB675243840580016436C /* ViewControllerMethodInjectable.swift */,
+				035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -607,6 +617,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				035BAFF4245AEC99001FF6D1 /* Models */,
 				039EB688243B5F310016436C /* Firestore */,
 				039EB6742438403B0016436C /* Protocol */,
 				03AAFB5A2425E8660068FB1E /* Utils */,
@@ -1234,6 +1245,7 @@
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
+				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,

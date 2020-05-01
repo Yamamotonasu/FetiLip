@@ -20,10 +20,4 @@ public protocol ViewControllerMethodInjectable: class {
     /// Dependency構造体のプロパティを使ってViewControllerのプロパティを初期化する為の関数
     func inject(with dependency: Dependency)
 
-    /// ViewModelProtocol又はViewModelの型をtypealiasで指定しておく
-    associatedtype ViewModel
-
-    /// ViewModel
-    var viewModel: ViewModel? { get }
-
 }
