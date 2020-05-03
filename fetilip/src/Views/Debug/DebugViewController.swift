@@ -11,8 +11,7 @@ import RxSwift
 import RxCocoa
 
 // Rule
-// 1, Define "initViewModel" function to initialize the ViewModel
-// 2,
+// 1, Do not reference ViewModel Properties.
 
 /**
  * Debug View Controller.
@@ -75,7 +74,6 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribe()
         subscribeUI()
         viewModel.checkLogined()
     }
@@ -91,39 +89,21 @@ extension DebugViewController {
         return DebugViewModel(dependency: ((usersModelClient: UsersModelClient(), authModel: UsersAuthModel())))
     }
 
-    /// Subscribe UI Actions.
-    private func subscribe() {
-        // 匿名ログインボタン
-        anonymousLoginButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-            self?.viewModel.anonymousLogin()
-        }).disposed(by: rx.disposeBag)
-
-        // ログアウトボタン
-        logoutButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-            self?.viewModel.logout()
-        }).disposed(by: rx.disposeBag)
-
-        // アップロードボタン
-        uploadButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-            self?.viewModel.uploadImage(image: self?.uploadImageView.image)
-        }).disposed(by: rx.disposeBag)
-    }
-
-    /// Bind UI
+    /// Bind UI from view model outputs
     private func subscribeUI() {
         let input = ViewModel.Input(userNameObservable: userNameTextField.rx.text.orEmpty.asObservable(),
                                     userProfileObservable: profileTextField.rx.text.orEmpty.asObservable(),
-                                    tapBackButton: backButton.rx.tap.asSignal(),
-                                    tapLoginButton: anonymousLoginButton.rx.tap.asSignal(),
-                                    tapLogoutButton: logoutButton.rx.tap.asSignal(),
-                                    tapUploadImageButton: uploadButton.rx.tap.asSignal(),
-                                    tapSaveNameButton: saveUserNameButton.rx.tap.asSignal(),
-                                    tapSaveProfileButton: saveUserProfileButton.rx.tap.asSignal())
+                                    updaloadImageViewObservable: uploadImageView.rx.observe(UIImage.self, "image"),
+                                    tapLoginButton: anonymousLoginButton.rx.tap.asObservable(),
+                                    tapLogoutButton: logoutButton.rx.tap.asObservable(),
+                                    tapUploadImageButton: uploadButton.rx.tap.asObservable(),
+                                    tapSaveNameButton: saveUserNameButton.rx.tap.asObservable(),
+                                    tapSaveProfileButton: saveUserProfileButton.rx.tap.asObservable())
 
         let output = viewModel.transform(input: input)
 
-        output.backEvent.emit(onNext: {
-            self.dismiss(animated: true)
+        backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
+            self?.dismiss(animated: true)
         }).disposed(by: rx.disposeBag)
 
         // アップロード後の画像URL

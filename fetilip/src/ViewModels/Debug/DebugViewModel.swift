@@ -32,7 +32,9 @@ struct DebugViewModel {
 
     // MARK: - Rx
 
-    private let dismissRelay: PublishRelay<()> = PublishRelay<()>()
+    private let disposeBag = DisposeBag()
+
+    private let dismissRelay: BehaviorRelay<()> = BehaviorRelay<()>(value: ())
 
     private let loginInfoRelay: PublishRelay<String> = PublishRelay<String>()
 
@@ -49,7 +51,7 @@ extension DebugViewModel {
     /// Create user and login.
     public func anonymousLogin() {
         // Return if already logged in.
-        let _ = authModel.createAnonymousUser().subscribe(onSuccess: {
+        authModel.createAnonymousUser().subscribe(onSuccess: {
             user in
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
@@ -63,19 +65,19 @@ extension DebugViewModel {
                 "createdAt": Timestamp(date: Date())
             ]
             self.setUserData(user: u, fields: userData)
-            })
+        }).disposed(by: disposeBag)
 
     }
 
     /// Confirming login state.
     public func checkLogined() {
-        let _ = authModel.checkLogin().subscribe(onSuccess: { user in
+        authModel.checkLogin().subscribe(onSuccess: { user in
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
         }, onError: { _ in
             self.loginInfoRelay.accept("ログイン時にはここにログインユーザーの情報が表示されます。")
             self.loginStateRelay.accept(false)
-        })
+            }).disposed(by: disposeBag)
     }
 
     /// Log out with auth model.
@@ -129,27 +131,38 @@ extension DebugViewModel: ViewModelType {
     public struct Input {
         let userNameObservable: Observable<String>
         let userProfileObservable: Observable<String>
-        let tapBackButton: Signal<()>
-        let tapLoginButton: Signal<()>
-        let tapLogoutButton: Signal<()>
-        let tapUploadImageButton: Signal<()>
-        let tapSaveNameButton: Signal<()>
-        let tapSaveProfileButton: Signal<()>
+        let updaloadImageViewObservable: Observable<UIImage?>
+        let tapLoginButton: Observable<Void>
+        let tapLogoutButton: Observable<Void>
+        let tapUploadImageButton: Observable<Void>
+        let tapSaveNameButton: Observable<Void>
+        let tapSaveProfileButton: Observable<Void>
     }
 
     public struct Output {
-        let backEvent: Signal<()>
         let loginInfoDriver: Driver<String>
         let errorObservable: Observable<String>
         let loginStateDriver: Driver<Bool>
         let uploadedImageUrlDriver: Driver<String>
     }
 
-    public mutating func transform(input: Self.Input) -> Self.Output {
-        // Bind back button event
-        input.tapBackButton.emit(to: dismissRelay).disposed(by: DisposeBag())
-        return  Output(backEvent: dismissRelay.asSignal().asSharedSequence(),
-                       loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
+    public func transform(input: Input) -> Output {
+        // Reaction to the tap of the login button.
+        input.tapLoginButton.subscribe(onNext: { _ in
+            self.anonymousLogin()
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the logout button.
+        input.tapLogoutButton.subscribe(onNext: { _ in
+            self.logout()
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the upload image button.
+        input.tapUploadImageButton.withLatestFrom(input.updaloadImageViewObservable).subscribe(onNext: { image in
+            self.uploadImage(image: image)
+        }).disposed(by: disposeBag)
+
+        return  Output(loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
                        errorObservable: errorSubject.asObservable(),
                        loginStateDriver: loginStateRelay.asDriver(onErrorJustReturn: false),
                        uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""))

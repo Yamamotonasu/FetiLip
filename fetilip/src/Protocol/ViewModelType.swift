@@ -14,6 +14,12 @@ public protocol ViewModelType {
 
     associatedtype Output
 
-    mutating func transform(input: Input) -> Output
+    /**
+     * Define reaction for Input. And return outputs.
+     * - Parameters:
+     *  - input : Input from view.
+     * - Returns: Reaction from view model.
+     */
+    func transform(input: Input) -> Output
 
 }
