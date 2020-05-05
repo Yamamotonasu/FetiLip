@@ -1,6 +1,4 @@
 # FetiLip
-## Project OverView
-https://docs.google.com/spreadsheets/d/1NWyfvIjtAVCkktNJj7UASdI0yAbafakun38_mjTi9uU/edit#gid=0
 
 ## Requirements
 ・iOS12.0+  
@@ -11,11 +9,10 @@ https://docs.google.com/spreadsheets/d/1NWyfvIjtAVCkktNJj7UASdI0yAbafakun38_mjTi
 ・iPhone only  
   
 ## Environment
-Carthage/Build配下とPods/配下をgitの管理下に入れています。  
-Cocoapods、Carthage、Xcodeの環境を合わせれば事前操作の必要無しでビルドする事が出来ます。  
-R.Swiftの関係で初回ビルドが通らない事がありますが、その場合は`Clean Build`を行ってください。  
+"Carthage/Build" and "Pods/" are in git management.  
+So, Can build without any pre-operation.  
   
 ## Rule
-・マージ前に `$ swiftlint autocorrect`  
-・`Automatically trim trailing whitespace Including whitespace-only lines`はONにしておく  
+・Run `$ swiftlint autocorrect` before merging.  
+・Turn on `Automatically trim trailing whitespace Including whitespace-only lines`.
    
