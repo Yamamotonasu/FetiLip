@@ -20,7 +20,10 @@ public struct UserModel: FirestoreDatabaseCollection {
 
     public let fields: Fields?
 
+    // 構造
     public struct Fields: Codable {
+
+        public let uid: String
 
         public let profile: String
 
@@ -31,6 +34,31 @@ public struct UserModel: FirestoreDatabaseCollection {
         public let phoneNumber: String
 
         public let createdAt: Date
+
+        public let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+
+            case uid
+
+            case profile
+
+            case email
+
+            case userName
+
+            case phoneNumber
+
+            case createdAt
+
+            case updatedAt
+
+        }
+
+    }
+
+    static subscript(key: Self.Fields.CodingKeys) -> String {
+        return ""
     }
 
     public init(id: String, fields: Fields?) {

@@ -94,16 +94,17 @@ extension DebugViewController {
         let input = ViewModel.Input(userNameObservable: userNameTextField.rx.text.orEmpty.asObservable(),
                                     userProfileObservable: profileTextField.rx.text.orEmpty.asObservable(),
                                     updaloadImageViewObservable: uploadImageView.rx.observe(UIImage.self, "image"),
-                                    tapLoginButton: anonymousLoginButton.rx.tap.asObservable(),
-                                    tapLogoutButton: logoutButton.rx.tap.asObservable(),
+                                    tapBackButton: backButton.rx.tap.asSignal(),
+                                    tapLoginButton: anonymousLoginButton.rx.tap.asSignal(),
+                                    tapLogoutButton: logoutButton.rx.tap.asSignal(),
                                     tapUploadImageButton: uploadButton.rx.tap.asObservable(),
                                     tapSaveNameButton: saveUserNameButton.rx.tap.asObservable(),
                                     tapSaveProfileButton: saveUserProfileButton.rx.tap.asObservable())
 
         let output = viewModel.transform(input: input)
 
-        backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
-            self?.dismiss(animated: true)
+        output.dismissEvent.emit(onNext: { [unowned self] _ in
+            self.dismiss(animated: true)
         }).disposed(by: rx.disposeBag)
 
         // アップロード後の画像URL

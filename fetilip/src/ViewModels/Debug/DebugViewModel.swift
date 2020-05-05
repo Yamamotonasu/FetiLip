@@ -34,7 +34,7 @@ struct DebugViewModel {
 
     private let disposeBag = DisposeBag()
 
-    private let dismissRelay: BehaviorRelay<()> = BehaviorRelay<()>(value: ())
+    private let dismissRelay: PublishRelay<()> = PublishRelay<()>()
 
     private let loginInfoRelay: PublishRelay<String> = PublishRelay<String>()
 
@@ -77,29 +77,30 @@ extension DebugViewModel {
         }, onError: { _ in
             self.loginInfoRelay.accept("ログイン時にはここにログインユーザーの情報が表示されます。")
             self.loginStateRelay.accept(false)
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     /// Log out with auth model.
     public func logout() {
-        let _ = authModel.logout().subscribe(onSuccess: {
+        authModel.logout().subscribe(onSuccess: {
             self.errorSubject.onNext("ログアウトしました。")
             self.checkLogined()
         }, onError: { e in
             self.errorSubject.onNext(e.localizedDescription)
-        })
+        }).disposed(by: disposeBag)
     }
 
     /// Save users collection to default user
-    private func setUserData(user: UserModel, fields: [String: Any]) {
-        let _ = usersModelClient.setData(user, documentRef: user.makeDocumentRef(), fields: fields).subscribe(onSuccess: { _ in
-            self.errorSubject.onNext("ユーザーを作成しました")
-        }, onError: { e in
-            self.errorSubject.onNext(e.localizedDescription)
-        })
+    private func setUserData(user: UserModel, fields: Parameters) {
+        // TODO: Fix called.
+//        usersModelClient.setData(documentRef: user.makeDocumentRef(), fields:).subscribe(onSuccess: { _ in
+//            self.errorSubject.onNext("ユーザーを作成しました")
+//        }, onError: { e in
+//            self.errorSubject.onNext(e.localizedDescription)
+//        }).disposed(by: disposeBag)
     }
 
-    public func uploadImage(image: UIImage?) {
+    private func uploadImage(image: UIImage?) {
         guard let uploadImage = image?.jpegData(compressionQuality: 0.3) else { return }
         let imageReference = Storage.storage().reference().child("/productImages/lip.jpeg")
         let metaData = StorageMetadata()
@@ -122,6 +123,16 @@ extension DebugViewModel {
         }
     }
 
+    /// Commit user name
+    private func commitUserName(with userName: String) {
+
+    }
+
+    /// Commit user profile.
+    private func commitUserProfile(with userProfile: String) {
+
+    }
+
 }
 
 // MARK: I/O
@@ -132,14 +143,16 @@ extension DebugViewModel: ViewModelType {
         let userNameObservable: Observable<String>
         let userProfileObservable: Observable<String>
         let updaloadImageViewObservable: Observable<UIImage?>
-        let tapLoginButton: Observable<Void>
-        let tapLogoutButton: Observable<Void>
+        let tapBackButton: Signal<Void>
+        let tapLoginButton: Signal<Void>
+        let tapLogoutButton: Signal<Void>
         let tapUploadImageButton: Observable<Void>
         let tapSaveNameButton: Observable<Void>
         let tapSaveProfileButton: Observable<Void>
     }
 
     public struct Output {
+        let dismissEvent: Signal<()>
         let loginInfoDriver: Driver<String>
         let errorObservable: Observable<String>
         let loginStateDriver: Driver<Bool>
@@ -147,13 +160,16 @@ extension DebugViewModel: ViewModelType {
     }
 
     public func transform(input: Input) -> Output {
+        // Reaction to the dismiss event.
+        input.tapBackButton.emit(to: dismissRelay).disposed(by: disposeBag)
+
         // Reaction to the tap of the login button.
-        input.tapLoginButton.subscribe(onNext: { _ in
+        input.tapLoginButton.emit(onNext: { _ in
             self.anonymousLogin()
         }).disposed(by: disposeBag)
 
         // Reaction to the tap of the logout button.
-        input.tapLogoutButton.subscribe(onNext: { _ in
+        input.tapLogoutButton.emit(onNext: { _ in
             self.logout()
         }).disposed(by: disposeBag)
 
@@ -162,7 +178,18 @@ extension DebugViewModel: ViewModelType {
             self.uploadImage(image: image)
         }).disposed(by: disposeBag)
 
-        return  Output(loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
+        // Reaction to the tap of the save user name button.
+        input.tapSaveNameButton.withLatestFrom(input.userNameObservable).subscribe(onNext: { userName in
+            self.commitUserName(with: userName)
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the save user profile button.
+        input.tapSaveProfileButton.withLatestFrom(input.userProfileObservable).subscribe(onNext: { profile in
+            self.commitUserProfile(with: profile)
+        }).disposed(by: disposeBag)
+
+        return  Output(dismissEvent: dismissRelay.asSignal(),
+                       loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
                        errorObservable: errorSubject.asObservable(),
                        loginStateDriver: loginStateRelay.asDriver(onErrorJustReturn: false),
                        uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""))
@@ -180,23 +207,4 @@ extension DebugViewModel {
         loginInfoRelay.accept("メールアドレス: \(user.email ?? "未登録")\nユーザー名: \(user.displayName ?? "未登録")\n電話番号: \(user.phoneNumber ?? "未登録")\nuid: \(user.uid)\nプロバイダID: \(user.providerID)")
     }
 
-}
-
-extension Reactive where Base: Firestore {
-public func setData<T: FirestoreDatabaseCollection>(_ type: T.Type,
-                                           documentRef: DocumentReference,
-                                           fields: [String: Any]) -> Single<()> {
-    return Single.create { observer in
-        documentRef
-            .setData(fields) { error in
-                if let error = error {
-                    log.error(error)
-                    observer(.error(error))
-                } else {
-                    observer(.success(()))
-                }
-        }
-        return Disposables.create()
-    }
-    }
 }

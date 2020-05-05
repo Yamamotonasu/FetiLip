@@ -14,6 +14,8 @@
 		035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFEC2459922C001FF6D1 /* FirestoreDatabaseCollection.swift */; };
 		035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFF02459AD6F001FF6D1 /* UserModelClient.swift */; };
 		035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */; };
+		035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFF9245ED6FD001FF6D1 /* Firestore+Reactive.swift */; };
+		035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFFF24603602001FF6D1 /* UsersRequests.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -113,6 +115,8 @@
 		035BAFEC2459922C001FF6D1 /* FirestoreDatabaseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabaseCollection.swift; sourceTree = "<group>"; };
 		035BAFF02459AD6F001FF6D1 /* UserModelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelClient.swift; sourceTree = "<group>"; };
 		035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		035BAFF9245ED6FD001FF6D1 /* Firestore+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Reactive.swift"; sourceTree = "<group>"; };
+		035BAFFF24603602001FF6D1 /* UsersRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequests.swift; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -420,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */,
+				035BAFF9245ED6FD001FF6D1 /* Firestore+Reactive.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -463,6 +468,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		035BAFFB246035B7001FF6D1 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				035BAFFE246035E3001FF6D1 /* Users */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		035BAFFE246035E3001FF6D1 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				035BAFFF24603602001FF6D1 /* UsersRequests.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
 		039EB66D2436157B0016436C /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +513,7 @@
 		039EB688243B5F310016436C /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
+				035BAFFB246035B7001FF6D1 /* Requests */,
 				035BAFEE2459AD3C001FF6D1 /* Clients */,
 				035BAFEB24598FD2001FF6D1 /* Protocol */,
 				035BAFE524597C56001FF6D1 /* Extensions */,
@@ -1238,6 +1260,7 @@
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
+				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
@@ -1266,6 +1289,7 @@
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
+				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
