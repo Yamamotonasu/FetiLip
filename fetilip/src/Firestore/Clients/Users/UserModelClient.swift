@@ -18,11 +18,9 @@ public struct UsersModelClient {
     public init() {}
 
     /// Initial commit users document.
-    func setInitialData(params: (email: String, uid: String, createdAt: Date, updatedAt: Date)) -> Single<()> {
+    func setInitialData(params: (email: String, uid: String)) -> Single<()> {
         let fields = UsersRequests.initialCommit(email: params.email,
-                                                 uid: params.uid,
-                                                 createdAt: params.updatedAt,
-                                                 updatedAt: params.updatedAt).parameters
+                                                 uid: params.uid).parameters
         return Firestore.firestore().rx.setData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: params.uid), fields: fields)
     }
 
@@ -36,6 +34,19 @@ public struct UsersModelClient {
         }
         let fields = UsersRequests.updateUserName(userName: userName).parameters
         return Firestore.firestore().rx.updateData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: uid), fields: fields)
+    }
+
+    public func updateUserProfile(profile: String) -> Single<()> {
+        // TODO: Make common.
+        guard let uid = LoginAccountData.uid else {
+            return Single.create { observer in
+                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                return Disposables.create()
+            }
+        }
+        let fields = UsersRequests.updateProfile(userProfile: profile).parameters
+        return Firestore.firestore().rx.updateData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: uid), fields: fields)
+
     }
 
 }

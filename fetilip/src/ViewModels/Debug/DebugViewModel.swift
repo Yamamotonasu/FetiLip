@@ -56,9 +56,7 @@ extension DebugViewModel {
             self.loginStateRelay.accept(true)
             LoginAccountData.uid = user.uid
             self.setUserData(params: (email: user.email ?? "",
-                                      uid: user.uid,
-                                      createdAt: Date(),
-                                      updatedAt: Date()))
+                                      uid: user.uid))
         }).disposed(by: disposeBag)
 
     }
@@ -86,7 +84,7 @@ extension DebugViewModel {
     }
 
     /// Save users collection to default user
-    private func setUserData(params: (email: String, uid: String, createdAt: Date, updatedAt: Date)) {
+    private func setUserData(params: (email: String, uid: String)) {
         usersModelClient.setInitialData(params: params).subscribe(onSuccess: { _ in
             self.notifySubject.onNext("ユーザーを作成しました。")
         }, onError: { e in
@@ -130,7 +128,12 @@ extension DebugViewModel {
 
     /// Commit user profile.
     private func commitUserProfile(with userProfile: String) {
-
+        usersModelClient.updateUserProfile(profile: userProfile).subscribe(onSuccess: { _ in
+            self.notifySubject.onNext("プロフィールを更新しました。")
+        }, onError: { e in
+            log.error(e)
+            self.notifySubject.onNext("プロフィールの更新に失敗しました。")
+        }).disposed(by: disposeBag)
     }
 
 }
