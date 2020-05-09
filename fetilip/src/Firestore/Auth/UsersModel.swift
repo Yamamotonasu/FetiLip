@@ -33,7 +33,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     /// Anonymous login with firebase auth.
     public func createAnonymousUser() -> Single<FirebaseUser> {
         return Single.create { observer in
-            Auth.auth().signInAnonymously { result, error in
+            Auth.auth().signInAnonymously { _, error in
                 if let e = error {
                     observer(.error(User.AuthError.notInitialized(error: e)))
                 }
