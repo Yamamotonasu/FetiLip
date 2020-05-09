@@ -64,7 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override init() {
         super.init()
         // firebase init
-        FirebaseApp.configure()
+        let filePath: String?
+        if FetilipBuildScheme.PRODUCTION {
+            filePath = Bundle.main.path(forResource: "GoogleService-Production-Info", ofType: "plist")
+        } else {
+            filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")
+        }
+        let option = FirebaseOptions(contentsOfFile: filePath!)
+        FirebaseApp.configure(options: option!)
     }
 
     /// シングルトンオブジェクト化
