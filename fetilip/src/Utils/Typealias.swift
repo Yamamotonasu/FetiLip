@@ -7,5 +7,12 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 public typealias VoidClosure = (() -> Void)
+
+// Firebase authentication user model.
+public typealias FirebaseUser = User
+
+// Firebase parameters.
+public typealias Parameters = [String: Any]

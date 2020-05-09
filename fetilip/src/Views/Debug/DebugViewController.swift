@@ -10,54 +10,72 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+// Rule
+// 1, Do not reference ViewModel Properties.
+
 /**
- * Debugやテスト用ViewController
+ * Debug View Controller.
+ *  - Architecture test.
  */
 class DebugViewController: UIViewController, ViewControllerMethodInjectable {
+
+    // MARK: View model
+
+    typealias ViewModel = DebugViewModel
+
+    lazy var viewModel: ViewModel = DebugViewModel(dependency: ((usersModelClient: UsersModelClient(), authModel: UsersAuthModel())))
 
     // MARK: Init process
 
     struct Dependency {
-        let viewModel: DebugViewController.ViewModel
+        // Write dependency object.
     }
 
-    typealias ViewModel = DebugViewModelProtocol
-
-    var viewModel: DebugViewModelProtocol?
-
-    func inject(with dependency: Dependency) {
-        self.viewModel = dependency.viewModel
+    func inject(with dependency: DebugViewController.Dependency) {
+        // Write DI process.
     }
 
     // MARK: Outlets
 
-    /// 戻るボタン
+    /// Back button
     @IBOutlet private weak var backButton: UIButton!
 
-    /// 匿名ログインボタン
+    /// Anonymous login button.
     @IBOutlet private weak var anonymousLoginButton: UIButton!
 
-    /// ログイン中のユーザーのボタン
+    /// UILabel displaying user infomation.
     @IBOutlet private weak var loginUserInfoLabel: UILabel!
 
-    /// ログアウトボタン
+    /// Logout button.
     @IBOutlet private weak var logoutButton: UIButton!
 
-    /// 画像アップロードボタン
+    /// UIButton for uploading some image.
     @IBOutlet private weak var uploadButton: UIButton!
 
-    /// アップロードする画像
+    /// UIImage to upload to firestore.
     @IBOutlet private weak var uploadImageView: UIImageView!
 
-    /// アップロード後の画像URL
+    /// After upload image url.
     @IBOutlet private weak var uploadedImageUrlLabel: UILabel!
+
+    /// Text field for enternig user name.
+    @IBOutlet private weak var userNameTextField: UITextField!
+
+    /// UIButton for saving user name.
+    @IBOutlet private weak var saveUserNameButton: UIButton!
+
+    /// Text field for entering user profile.
+    @IBOutlet private weak var profileTextField: UITextField!
+
+    /// UIButton for saving user profile.
+    @IBOutlet private weak var saveUserProfileButton: UIButton!
 
     // MARK: LifeCycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        subscribe()
-        viewModel?.checkLogined()
+        subscribeUI()
+        viewModel.checkLogined()
     }
 
 }
@@ -66,46 +84,48 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
 
 extension DebugViewController {
 
-    private func subscribe() {
-        // 前の画面へ戻る
-        backButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-            self?.dismiss(animated: true)
-        }).disposed(by: rx.disposeBag)
+    /// Init view model
+    private func initViewModel() -> ViewModel {
+        return DebugViewModel(dependency: ((usersModelClient: UsersModelClient(), authModel: UsersAuthModel())))
+    }
 
-        // 匿名ログインボタン
-        anonymousLoginButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-            self?.viewModel?.anonymousLogin()
-        }).disposed(by: rx.disposeBag)
+    /// Bind UI from view model outputs
+    private func subscribeUI() {
+        let input = ViewModel.Input(userNameObservable: userNameTextField.rx.text.orEmpty.asObservable(),
+                                    userProfileObservable: profileTextField.rx.text.orEmpty.asObservable(),
+                                    updaloadImageViewObservable: uploadImageView.rx.observe(UIImage.self, "image"),
+                                    tapBackButton: backButton.rx.tap.asSignal(),
+                                    tapLoginButton: anonymousLoginButton.rx.tap.asSignal(),
+                                    tapLogoutButton: logoutButton.rx.tap.asSignal(),
+                                    tapUploadImageButton: uploadButton.rx.tap.asObservable(),
+                                    tapSaveNameButton: saveUserNameButton.rx.tap.asObservable(),
+                                    tapSaveProfileButton: saveUserProfileButton.rx.tap.asObservable())
 
-        // ログアウトボタン
-        logoutButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-            self?.viewModel?.logout()
-        }).disposed(by: rx.disposeBag)
+        let output = viewModel.transform(input: input)
 
-        // アップロードボタン
-        uploadButton.rx.tap.asDriver().drive(onNext: { [weak self] _ in
-            self?.viewModel?.uploadImage(image: self?.uploadImageView.image)
+        output.dismissEvent.emit(onNext: { [unowned self] _ in
+            self.dismiss(animated: true)
         }).disposed(by: rx.disposeBag)
 
         // アップロード後の画像URL
-        viewModel?.uploadedImageUrlDriver
+        output.uploadedImageUrlDriver
             .drive(uploadedImageUrlLabel.rx.text)
             .disposed(by: rx.disposeBag)
 
         // ログイン情報描画
-        viewModel?.loginInfoDriver
+        output.loginInfoDriver
             .drive(loginUserInfoLabel.rx.text)
             .disposed(by: rx.disposeBag)
 
-        // エラー監視
-        viewModel?.errorObservable.subscribe(onNext: { [weak self] message in
+        // Alert event subscribe.
+        output.notifyObservable.subscribe(onNext: { [weak self] message in
             let alert = UIAlertController.init(title: "", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true)
         }).disposed(by: rx.disposeBag)
 
         // ログイン状態監視
-        viewModel?.loginStateDriver
+        output.loginStateDriver
             .map { !$0 }
             .drive(logoutButton.rx.isHidden)
             .disposed(by: rx.disposeBag)
@@ -120,11 +140,11 @@ final class DebugViewControllerGenerator {
 
     private init() {}
 
-    public static func generate(viewModel: DebugViewController.ViewModel) -> UIViewController {
+    public static func generate() -> UIViewController {
         guard let vc = R.storyboard.debug.debugViewController() else {
             return UIViewController()
         }
-        vc.inject(with: .init(viewModel: viewModel))
+        vc.inject(with: .init())
         return vc
     }
 

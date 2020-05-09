@@ -7,151 +7,105 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseFirestore
 import FirebaseStorage
 import RxSwift
 import RxCocoa
 
 /**
- * DebugViewModelのProtocol
- */
-protocol DebugViewModelProtocol {
-
-    func checkLogined()
-
-    func anonymousLogin()
-
-    func logout()
-
-    func uploadImage(image: UIImage?)
-
-    var loginInfoDriver: Driver<String> { get }
-
-    var errorObservable: Observable<String> { get }
-
-    var loginStateDriver: Driver<Bool> { get }
-
-    var uploadedImageUrlDriver: Driver<String> { get }
-
-}
-
-/**
  * DebugViewControllerに対応するViewModel
  */
-struct DebugViewModel: DebugViewModelProtocol {
+struct DebugViewModel {
 
-    init() {
-        loginInfoDriver = loginInfoRelay.asDriver(onErrorJustReturn: "")
-        errorObservable = errorSubject.asObservable()
-        loginStateDriver = loginStateRelay.asDriver(onErrorJustReturn: false)
-        uploadedImageUrlDriver = uploadedImageUrlRelay.asDriver(onErrorJustReturn: "")
+    /// DI init.
+    init(dependency: ((usersModelClient: UsersModelClient,
+        authModel: UserAuthModelProtocol))) {
+        usersModelClient = dependency.usersModelClient
+        authModel = dependency.authModel
     }
 
-    /// エラーアラート通知用Subject
-    private let errorSubject: PublishSubject<String> = PublishSubject<String>()
+    /// User authentication model.
+    private let authModel: UserAuthModelProtocol
 
-    /// ログイン情報描画用Relay
+    /// Communication with firestore users collection model.
+    private let usersModelClient: UsersModelClient
+
+    // MARK: - Rx
+
+    private let disposeBag = DisposeBag()
+
+    private let dismissRelay: PublishRelay<()> = PublishRelay<()>()
+
     private let loginInfoRelay: PublishRelay<String> = PublishRelay<String>()
 
-    /// ログイン状態通知用Relay
+    private let notifySubject: PublishSubject<String> = PublishSubject<String>()
+
     private let loginStateRelay: PublishRelay<Bool> = PublishRelay<Bool>()
 
-    /// アップロードした画像URL表示用
     private let uploadedImageUrlRelay: PublishRelay<String> = PublishRelay<String>()
-
-    /// ログイン情報描画用Driver
-    private(set) var loginInfoDriver: Driver<String>
-
-    /// エラーアラート通知用Observable
-    private(set) var errorObservable: Observable<String>
-
-    /// ログインしているかどうかのDriver
-    private(set) var loginStateDriver: Driver<Bool>
-
-    /// アップロードした画像URL表示用
-    private(set) var uploadedImageUrlDriver: Driver<String>
 
 }
 
 extension DebugViewModel {
 
-    /// 匿名ユーザー作成/ログインを実行する
+    /// Create user and login.
     public func anonymousLogin() {
-        // すでにログイン中の場合はreturnする
-        if let user = Auth.auth().currentUser {
-            self.errorSubject.onNext("すでにログインしています。")
+        // Return if already logged in.
+        authModel.createAnonymousUser().subscribe(onSuccess: {
+            user in
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
-        }
-        // TODO: モデル化
-        Auth.auth().signInAnonymously { (result, error) in
-            if let e = error {
-                // TODO: AuthErrorsを日本語に変換する為のクラス作成
-                self.errorSubject.onNext(e.localizedDescription)
-            }
-            // ユーザー作成失敗時
-            guard let _ = result?.user else {
-                self.errorSubject.onNext("ユーザーの作成に失敗しました。")
-                self.loginStateRelay.accept(false)
-                return
-            }
-            if let user = Auth.auth().currentUser {
-                self.drawUserInfo(with: user)
-                self.loginStateRelay.accept(true)
-                // FireStore動作確認の為とりあえず雑にデータ保存を実装
-                let userData: [String: Any] = [
-                    "email": user.email ?? "",
-                    "userName": user.displayName ?? "",
-                    "phoneNumber": user.phoneNumber ?? "",
-                    "createdAt": Timestamp(date: Date())
-                ]
-                // データを保存(uidをdocumentに設定)
-                Firestore.firestore().collection("users").document(user.uid).setData(userData) { error in
-                    if let e = error {
-                        self.errorSubject.onNext(e.localizedDescription)
-                    } else {
-                        self.errorSubject.onNext("ユーザーを作成しました")
-                    }
-                }
-            }
-        }
+            LoginAccountData.uid = user.uid
+            self.setUserData(params: (email: user.email ?? "",
+                                      uid: user.uid))
+        }).disposed(by: disposeBag)
+
     }
 
-    /// ログイン状態を確認する
+    /// Confirming login state.
     public func checkLogined() {
-        if let user = Auth.auth().currentUser {
+        authModel.checkLogin().subscribe(onSuccess: { user in
             self.drawUserInfo(with: user)
-            loginStateRelay.accept(true)
-        } else {
-            loginInfoRelay.accept("ログイン時にはここにログインユーザーの情報が表示されます。")
-            loginStateRelay.accept(false)
-        }
+            self.loginStateRelay.accept(true)
+        }, onError: { _ in
+            self.loginInfoRelay.accept("ログイン時にはここにログインユーザーの情報が表示されます。")
+            self.loginStateRelay.accept(false)
+        }).disposed(by: disposeBag)
     }
 
+    /// Log out with auth model.
     public func logout() {
-        do {
-            try Auth.auth().signOut()
-            self.errorSubject.onNext("ログアウトしました。")
-            checkLogined()
-        } catch let e {
-            self.errorSubject.onNext(e.localizedDescription)
-        }
+        authModel.logout().subscribe(onSuccess: {
+            self.notifySubject.onNext("ログアウトしました。")
+            self.checkLogined()
+        }, onError: { e in
+            log.error(e)
+            self.notifySubject.onNext(e.localizedDescription)
+        }).disposed(by: disposeBag)
     }
 
-    public func uploadImage(image: UIImage?) {
+    /// Save users collection to default user
+    private func setUserData(params: (email: String, uid: String)) {
+        usersModelClient.setInitialData(params: params).subscribe(onSuccess: { _ in
+            self.notifySubject.onNext("ユーザーを作成しました。")
+        }, onError: { e in
+            log.error(e)
+            self.notifySubject.onNext("ユーザーの作成に失敗しました")
+        }).disposed(by: disposeBag)
+    }
+
+    private func uploadImage(image: UIImage?) {
         guard let uploadImage = image?.jpegData(compressionQuality: 0.3) else { return }
         let imageReference = Storage.storage().reference().child("/productImages/lip.jpeg")
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
         imageReference.putData(uploadImage, metadata: metaData) { _, error in
             if let e = error {
-                self.errorSubject.onNext(e.localizedDescription)
+                self.notifySubject.onNext(e.localizedDescription)
                 return
             }
             imageReference.downloadURL { url, error in
                 if let e = error {
-                    self.errorSubject.onNext(e.localizedDescription)
+                    self.notifySubject.onNext(e.localizedDescription)
                 }
                 guard let uploadedImageUrl = url else {
                     return
@@ -162,6 +116,89 @@ extension DebugViewModel {
         }
     }
 
+    /// Commit user name
+    private func commitUserName(with userName: String) {
+        usersModelClient.updateUserName(userName: userName).subscribe(onSuccess: { _ in
+            self.notifySubject.onNext("名前を更新しました。")
+        }, onError: { e in
+            log.error(e)
+            self.notifySubject.onNext("名前の更新に失敗しました。")
+        }).disposed(by: disposeBag)
+    }
+
+    /// Commit user profile.
+    private func commitUserProfile(with userProfile: String) {
+        usersModelClient.updateUserProfile(profile: userProfile).subscribe(onSuccess: { _ in
+            self.notifySubject.onNext("プロフィールを更新しました。")
+        }, onError: { e in
+            log.error(e)
+            self.notifySubject.onNext("プロフィールの更新に失敗しました。")
+        }).disposed(by: disposeBag)
+    }
+
+}
+
+// MARK: I/O
+
+extension DebugViewModel: ViewModelType {
+
+    public struct Input {
+        let userNameObservable: Observable<String>
+        let userProfileObservable: Observable<String>
+        let updaloadImageViewObservable: Observable<UIImage?>
+        let tapBackButton: Signal<Void>
+        let tapLoginButton: Signal<Void>
+        let tapLogoutButton: Signal<Void>
+        let tapUploadImageButton: Observable<Void>
+        let tapSaveNameButton: Observable<Void>
+        let tapSaveProfileButton: Observable<Void>
+    }
+
+    public struct Output {
+        let dismissEvent: Signal<()>
+        let loginInfoDriver: Driver<String>
+        let notifyObservable: Observable<String>
+        let loginStateDriver: Driver<Bool>
+        let uploadedImageUrlDriver: Driver<String>
+    }
+
+    public func transform(input: Input) -> Output {
+        // Reaction to the dismiss event.
+        input.tapBackButton.emit(to: dismissRelay).disposed(by: disposeBag)
+
+        // Reaction to the tap of the login button.
+        input.tapLoginButton.emit(onNext: { _ in
+            self.anonymousLogin()
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the logout button.
+        input.tapLogoutButton.emit(onNext: { _ in
+            self.logout()
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the upload image button.
+        input.tapUploadImageButton.withLatestFrom(input.updaloadImageViewObservable).subscribe(onNext: { image in
+            self.uploadImage(image: image)
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the save user name button.
+        input.tapSaveNameButton.withLatestFrom(input.userNameObservable).subscribe(onNext: { userName in
+            self.commitUserName(with: userName)
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the save user profile button.
+        input.tapSaveProfileButton.withLatestFrom(input.userProfileObservable).subscribe(onNext: { profile in
+            self.commitUserProfile(with: profile)
+        }).disposed(by: disposeBag)
+
+        return  Output(dismissEvent: dismissRelay.asSignal(),
+                       loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
+                       notifyObservable: notifySubject.asObservable(),
+                       loginStateDriver: loginStateRelay.asDriver(onErrorJustReturn: false),
+                       uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""))
+
+    }
+
 }
 
 // MARK: Private functions
@@ -169,7 +206,7 @@ extension DebugViewModel {
 extension DebugViewModel {
 
     /// ユーザー情報をLabelに描画する
-    private func drawUserInfo(with user: User) {
+    private func drawUserInfo(with user: FirebaseUser) {
         loginInfoRelay.accept("メールアドレス: \(user.email ?? "未登録")\nユーザー名: \(user.displayName ?? "未登録")\n電話番号: \(user.phoneNumber ?? "未登録")\nuid: \(user.uid)\nプロバイダID: \(user.providerID)")
     }
 

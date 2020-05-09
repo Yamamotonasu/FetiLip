@@ -82,7 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _ = log
         // IQKeyBoardManagerの有効化
-        IQKeyboardManager.shared.enable = true
+        // TODO: 何故か落ちるので調査
+//        IQKeyboardManager.shared.enable = true
 
         // 初期起動画面の設定(iOS13以下の時だけ初期化処理を行う)
         if #available(iOS 13, *) {
