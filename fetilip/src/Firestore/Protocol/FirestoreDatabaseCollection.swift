@@ -63,7 +63,8 @@ extension FirestoreDatabaseCollection {
 
     /// Create collection reference.
     public static func makeCollectionRef() -> CollectionReference {
-        return Firestore.firestore().collection(collectionName)
+        let root = AppSettings.FireStore.rootDocumentName
+        return Firestore.firestore().document(root).collection(collectionName)
     }
 
     /// Create document reference. (Use without instantiating.)

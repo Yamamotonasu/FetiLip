@@ -12,17 +12,16 @@ enum UsersRequests {
 
     typealias Fields = UserModel.Fields
 
-    case initialCommit(phone: String, email: String, uid: String, createdAt: Date, updatedAt: Date)
+    case initialCommit(email: String, uid: String, createdAt: Date, updatedAt: Date)
 
     var parameters: Parameters {
         var params: Parameters = [:]
         switch self {
-        case .initialCommit(let phone, let email, let uid, let createdAt, let updatedAt):
-            params[Fields.CodingKeys.uid.rawValue] = phone
-            params[Fields.CodingKeys.email.rawValue] = email
-            params[Fields.CodingKeys.uid.rawValue] = uid
-            params[Fields.CodingKeys.createdAt.rawValue] = createdAt
-            params[Fields.CodingKeys.updatedAt.rawValue] = updatedAt
+        case .initialCommit(let email, let uid, let createdAt, let updatedAt):
+            params[Fields.Key.email.rawValue] = email
+            params[Fields.Key.uid.rawValue] = uid
+            params[Fields.Key.createdAt.rawValue] = createdAt
+            params[Fields.Key.updatedAt.rawValue] = updatedAt
             return params
         }
     }

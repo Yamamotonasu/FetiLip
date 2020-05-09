@@ -16,6 +16,7 @@
 		035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */; };
 		035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFF9245ED6FD001FF6D1 /* Firestore+Reactive.swift */; };
 		035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFFF24603602001FF6D1 /* UsersRequests.swift */; };
+		035BB00224666121001FF6D1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00124666121001FF6D1 /* AppSettings.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -117,6 +118,7 @@
 		035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		035BAFF9245ED6FD001FF6D1 /* Firestore+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Reactive.swift"; sourceTree = "<group>"; };
 		035BAFFF24603602001FF6D1 /* UsersRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequests.swift; sourceTree = "<group>"; };
+		035BB00124666121001FF6D1 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -725,6 +727,7 @@
 				03AAFB5B2425E8770068FB1E /* GCD.swift */,
 				03AAFB5D2425E9FF0068FB1E /* Typealias.swift */,
 				03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */,
+				035BB00124666121001FF6D1 /* AppSettings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1270,6 +1273,7 @@
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
+				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,

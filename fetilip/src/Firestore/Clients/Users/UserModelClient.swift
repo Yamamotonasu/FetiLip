@@ -17,10 +17,13 @@ public struct UsersModelClient {
 
     public init() {}
 
-    // もうちょっと調整したい
-    func setInitialData(documentRef: DocumentReference, params: (phone: String, email: String, uid: String, createdAt: Date, updatedAt: Date)) -> Single<()> {
-        let fields = UsersRequests.initialCommit(phone: params.phone, email: params.email, uid: params.uid, createdAt: params.updatedAt, updatedAt: params.updatedAt).parameters
-        return Firestore.firestore().rx.setData(UserModel.self, documentRef: documentRef, fields: fields)
+    /// Initial commit users document.
+    func setInitialData(params: (email: String, uid: String, createdAt: Date, updatedAt: Date)) -> Single<()> {
+        let fields = UsersRequests.initialCommit(email: params.email,
+                                                 uid: params.uid,
+                                                 createdAt: params.updatedAt,
+                                                 updatedAt: params.updatedAt).parameters
+        return Firestore.firestore().rx.setData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: params.uid), fields: fields)
     }
 
     public func updateData(_ type: UserModel, documentRef: DocumentReference, fields: [String: Any]) -> Single<()> {

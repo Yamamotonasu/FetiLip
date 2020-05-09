@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseFirestore
 import FirebaseStorage
 import RxSwift
 import RxCocoa
@@ -55,16 +54,10 @@ extension DebugViewModel {
             user in
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
-            // TODO: UserDefaults
-            let u = UserModel(id: user.uid)
-            // FireStore動作確認の為とりあえず雑にデータ保存を実装
-            let userData: [String: Any] = [
-                "email": user.email ?? "",
-                "userName": user.displayName ?? "",
-                "phoneNumber": user.phoneNumber ?? "",
-                "createdAt": Timestamp(date: Date())
-            ]
-            self.setUserData(user: u, fields: userData)
+            self.setUserData(params: (email: user.email ?? "",
+                                      uid: user.uid,
+                                      createdAt: Date(),
+                                      updatedAt: Date()))
         }).disposed(by: disposeBag)
 
     }
@@ -86,18 +79,19 @@ extension DebugViewModel {
             self.errorSubject.onNext("ログアウトしました。")
             self.checkLogined()
         }, onError: { e in
+            log.error(e)
             self.errorSubject.onNext(e.localizedDescription)
         }).disposed(by: disposeBag)
     }
 
     /// Save users collection to default user
-    private func setUserData(user: UserModel, fields: Parameters) {
-        // TODO: Fix called.
-//        usersModelClient.setData(documentRef: user.makeDocumentRef(), fields:).subscribe(onSuccess: { _ in
-//            self.errorSubject.onNext("ユーザーを作成しました")
-//        }, onError: { e in
-//            self.errorSubject.onNext(e.localizedDescription)
-//        }).disposed(by: disposeBag)
+    private func setUserData(params: (email: String, uid: String, createdAt: Date, updatedAt: Date)) {
+        usersModelClient.setInitialData(params: params).subscribe(onSuccess: { _ in
+            self.errorSubject.onNext("ユーザーを作成しました。")
+        }, onError: { e in
+            log.error(e)
+            self.errorSubject.onNext("ユーザーの作成に失敗しました")
+        }).disposed(by: disposeBag)
     }
 
     private func uploadImage(image: UIImage?) {

@@ -9,15 +9,15 @@
 import Foundation
 
 /**
- * ViewControllerにViewModelの初期化を強制する為のProtocol
+ * Protocol for implementing method injection of ViewController.
+ * - Note:This protocol is supposed to be used with ViewController generator class.
  */
 public protocol ViewControllerMethodInjectable: class {
 
-    /// ViewController内にDependency構造体を定義する
-    /// Dependency内にViewController内に初期化したいPropertyを定義する]
+    /// Define the parameter that depend on the initialization of the ViewController.
     associatedtype Dependency
 
-    /// Dependency構造体のプロパティを使ってViewControllerのプロパティを初期化する為の関数
+    /// Function that actually performs method injection.
     func inject(with dependency: Dependency)
 
 }
