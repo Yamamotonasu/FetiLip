@@ -18,6 +18,8 @@
 		035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFFF24603602001FF6D1 /* UsersRequests.swift */; };
 		035BB00224666121001FF6D1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00124666121001FF6D1 /* AppSettings.swift */; };
 		035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00324666D3E001FF6D1 /* LoginAccountData.swift */; };
+		035BB00624668839001FF6D1 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */; };
+		035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -121,6 +123,8 @@
 		035BAFFF24603602001FF6D1 /* UsersRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequests.swift; sourceTree = "<group>"; };
 		035BB00124666121001FF6D1 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		035BB00324666D3E001FF6D1 /* LoginAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccountData.swift; sourceTree = "<group>"; };
+		035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Production-Info.plist"; sourceTree = "<group>"; };
+		035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetilipBuildScheme.swift; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -489,6 +493,14 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
+		035BB007246696E7001FF6D1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		039EB66D2436157B0016436C /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,12 +582,13 @@
 		03AAFAE7241E2FD70068FB1E /* fetilip */ = {
 			isa = PBXGroup;
 			children = (
+				035BB007246696E7001FF6D1 /* Service */,
 				03AAFB492420FB450068FB1E /* Resources */,
 				03AAFB39241F9D0B0068FB1E /* src */,
 				03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */,
 				03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */,
-				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
 				03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */,
+				035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */,
 			);
 			path = fetilip;
 			sourceTree = "<group>";
@@ -731,6 +744,7 @@
 				03AAFB5D2425E9FF0068FB1E /* Typealias.swift */,
 				03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */,
 				035BB00124666121001FF6D1 /* AppSettings.swift */,
+				035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1086,6 +1100,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035BB00624668839001FF6D1 /* GoogleService-Production-Info.plist in Resources */,
 				039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */,
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
@@ -1279,6 +1294,7 @@
 				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
+				035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
@@ -1396,7 +1412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1408,6 +1424,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1455,9 +1472,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(OTHER_LDFLAGS)",
 					"-ObjC",
@@ -1466,6 +1484,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1475,13 +1494,14 @@
 			baseConfigurationReference = 8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_NAME_PREFIX = d_;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = fetilip/Info.plist;
+				INFOPLIST_FILE = fetilip/Service/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1491,6 +1511,7 @@
 					"-framework",
 					"\"Rswift\"",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1503,13 +1524,14 @@
 			baseConfigurationReference = DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUNDLE_NAME_PREFIX = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = fetilip/Info.plist;
+				INFOPLIST_FILE = fetilip/Service/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1519,7 +1541,8 @@
 					"-framework",
 					"\"Rswift\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D PRODUCTION";
+				PRODUCT_BUNDLE_IDENTIFIER = "fetilip.fetilip-production";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
