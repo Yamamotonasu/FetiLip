@@ -117,8 +117,8 @@ extension DebugViewController {
             .drive(loginUserInfoLabel.rx.text)
             .disposed(by: rx.disposeBag)
 
-        // エラー監視
-        output.errorObservable.subscribe(onNext: { [weak self] message in
+        // Alert event subscribe.
+        output.notifyObservable.subscribe(onNext: { [weak self] message in
             let alert = UIAlertController.init(title: "", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: nil))
             self?.present(alert, animated: true)

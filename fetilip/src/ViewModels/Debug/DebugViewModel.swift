@@ -37,7 +37,7 @@ struct DebugViewModel {
 
     private let loginInfoRelay: PublishRelay<String> = PublishRelay<String>()
 
-    private let errorSubject: PublishSubject<String> = PublishSubject<String>()
+    private let notifySubject: PublishSubject<String> = PublishSubject<String>()
 
     private let loginStateRelay: PublishRelay<Bool> = PublishRelay<Bool>()
 
@@ -54,6 +54,7 @@ extension DebugViewModel {
             user in
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
+            LoginAccountData.uid = user.uid
             self.setUserData(params: (email: user.email ?? "",
                                       uid: user.uid,
                                       createdAt: Date(),
@@ -76,21 +77,21 @@ extension DebugViewModel {
     /// Log out with auth model.
     public func logout() {
         authModel.logout().subscribe(onSuccess: {
-            self.errorSubject.onNext("ログアウトしました。")
+            self.notifySubject.onNext("ログアウトしました。")
             self.checkLogined()
         }, onError: { e in
             log.error(e)
-            self.errorSubject.onNext(e.localizedDescription)
+            self.notifySubject.onNext(e.localizedDescription)
         }).disposed(by: disposeBag)
     }
 
     /// Save users collection to default user
     private func setUserData(params: (email: String, uid: String, createdAt: Date, updatedAt: Date)) {
         usersModelClient.setInitialData(params: params).subscribe(onSuccess: { _ in
-            self.errorSubject.onNext("ユーザーを作成しました。")
+            self.notifySubject.onNext("ユーザーを作成しました。")
         }, onError: { e in
             log.error(e)
-            self.errorSubject.onNext("ユーザーの作成に失敗しました")
+            self.notifySubject.onNext("ユーザーの作成に失敗しました")
         }).disposed(by: disposeBag)
     }
 
@@ -101,12 +102,12 @@ extension DebugViewModel {
         metaData.contentType = "image/jpeg"
         imageReference.putData(uploadImage, metadata: metaData) { _, error in
             if let e = error {
-                self.errorSubject.onNext(e.localizedDescription)
+                self.notifySubject.onNext(e.localizedDescription)
                 return
             }
             imageReference.downloadURL { url, error in
                 if let e = error {
-                    self.errorSubject.onNext(e.localizedDescription)
+                    self.notifySubject.onNext(e.localizedDescription)
                 }
                 guard let uploadedImageUrl = url else {
                     return
@@ -119,7 +120,12 @@ extension DebugViewModel {
 
     /// Commit user name
     private func commitUserName(with userName: String) {
-
+        usersModelClient.updateUserName(userName: userName).subscribe(onSuccess: { _ in
+            self.notifySubject.onNext("名前を更新しました。")
+        }, onError: { e in
+            log.error(e)
+            self.notifySubject.onNext("名前の更新に失敗しました。")
+        }).disposed(by: disposeBag)
     }
 
     /// Commit user profile.
@@ -148,7 +154,7 @@ extension DebugViewModel: ViewModelType {
     public struct Output {
         let dismissEvent: Signal<()>
         let loginInfoDriver: Driver<String>
-        let errorObservable: Observable<String>
+        let notifyObservable: Observable<String>
         let loginStateDriver: Driver<Bool>
         let uploadedImageUrlDriver: Driver<String>
     }
@@ -184,7 +190,7 @@ extension DebugViewModel: ViewModelType {
 
         return  Output(dismissEvent: dismissRelay.asSignal(),
                        loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
-                       errorObservable: errorSubject.asObservable(),
+                       notifyObservable: notifySubject.asObservable(),
                        loginStateDriver: loginStateRelay.asDriver(onErrorJustReturn: false),
                        uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""))
 

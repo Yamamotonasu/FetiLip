@@ -26,18 +26,16 @@ public struct UsersModelClient {
         return Firestore.firestore().rx.setData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: params.uid), fields: fields)
     }
 
-    public func updateData(_ type: UserModel, documentRef: DocumentReference, fields: [String: Any]) -> Single<()> {
-        return Single.create { observer in
-            documentRef.updateData(fields) { error in
-                if let error = error {
-                    log.error(error)
-                    observer(.error(error))
-                } else {
-                    observer(.success(()))
-                }
+    public func updateUserName(userName: String) -> Single<()> {
+        // TODO: Make common.
+        guard let uid = LoginAccountData.uid else {
+            return Single.create { observer in
+                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                return Disposables.create()
             }
-            return Disposables.create()
         }
+        let fields = UsersRequests.updateUserName(userName: userName).parameters
+        return Firestore.firestore().rx.updateData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: uid), fields: fields)
     }
 
 }

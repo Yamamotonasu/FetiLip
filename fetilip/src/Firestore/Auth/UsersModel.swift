@@ -62,6 +62,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             do {
                 try Auth.auth().signOut()
+                LoginAccountData.resetUserData()
                 observer(.success(()))
             } catch let e {
                 observer(.error(User.AuthError.failedLogout(error: e)))

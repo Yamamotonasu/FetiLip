@@ -8,11 +8,18 @@
 
 import Foundation
 
+/**
+ * Data change request parameters to users document.
+ */
 enum UsersRequests {
 
     typealias Fields = UserModel.Fields
 
+    /// First commit request parametes.
     case initialCommit(email: String, uid: String, createdAt: Date, updatedAt: Date)
+
+    /// Update user name.
+    case updateUserName(userName: String)
 
     var parameters: Parameters {
         var params: Parameters = [:]
@@ -22,6 +29,9 @@ enum UsersRequests {
             params[Fields.Key.uid.rawValue] = uid
             params[Fields.Key.createdAt.rawValue] = createdAt
             params[Fields.Key.updatedAt.rawValue] = updatedAt
+            return params
+        case .updateUserName(let userName):
+            params[Fields.Key.userName.rawValue] = userName
             return params
         }
     }

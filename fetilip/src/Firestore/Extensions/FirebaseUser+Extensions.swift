@@ -12,6 +12,7 @@ import FirebaseAuth
 extension User {
 
     public enum AuthError: Error {
+        case UnauthenticatedError
         case notInitialized(error: Error)
         case notLoginError
         case failedLogout(error: Error)
