@@ -40,7 +40,7 @@ class GlobalTabBarController: UITabBarController {
     private var bottomSpacing: CGFloat = 20
 
     /// タブ本体の高さ
-    private var tabBarHeight: CGFloat = 70
+    private var tabBarHeight: CGFloat = 60
 
     /// 両端のスペース
     private var horizontleSpacing: CGFloat {
