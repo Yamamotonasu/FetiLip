@@ -20,6 +20,7 @@
 		035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00324666D3E001FF6D1 /* LoginAccountData.swift */; };
 		035BB00624668839001FF6D1 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */; };
 		035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */; };
+		035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -125,6 +126,7 @@
 		035BB00324666D3E001FF6D1 /* LoginAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccountData.swift; sourceTree = "<group>"; };
 		035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Production-Info.plist"; sourceTree = "<group>"; };
 		035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetilipBuildScheme.swift; sourceTree = "<group>"; };
+		035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMPhotoPicker.framework; path = Carthage/Build/iOS/FMPhotoPicker.framework; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 				03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */,
 				039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */,
 				03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */,
+				035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */,
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
@@ -615,6 +618,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */,
 				039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */,
 				039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */,
 				039EB67724384FD50016436C /* FirebaseAuth.framework */,
@@ -1148,6 +1152,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FMPhotoPicker.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1162,6 +1167,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FMPhotoPicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

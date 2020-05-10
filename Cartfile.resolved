@@ -5,5 +5,6 @@ binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseStorageBinary.jso
 github "DaveWoodCom/XCGLogger" "7.0.1"
 github "ReactiveX/RxSwift" "5.1.1"
 github "RxSwiftCommunity/NSObject-Rx" "5.0.3"
+github "congnd/FMPhotoPicker" "0.9.1"
 github "hackiftekhar/IQKeyboardManager" "v6.5.5"
 github "ninjaprox/NVActivityIndicatorView" "4.8.0"
