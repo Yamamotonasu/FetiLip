@@ -7,31 +7,52 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 /**
- * 投稿一覧
+ * PostListViewController,
  */
 class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
-    // MARK: Init process
+    // MARK: - ViewModel
+
+    typealias ViewModel = PostListViewModel
+
+    var viewModel: ViewModel = PostListViewModel()
+
+    // MARK: - Init process
 
     struct Dependency {
         let viewModel: PostListViewController.ViewModel
     }
 
-    typealias ViewModel = PostListViewModelProtocol
-
-    // Memo: TabBarのルートビューなので初期値を代入
-    var viewModel: PostListViewModelProtocol? = PostListViewModel()
-
     func inject(with dependency: Dependency) {
         self.viewModel = dependency.viewModel
     }
 
-    // MARK: Lifecycle
+    // MARK: - Outlets
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
+    }
+
+}
+
+extension PostListViewController {
+
+    /// Bind UI from view model outputs.
+    private func subscribeUI() {
+
+    }
+
+    /// Transition post lip page.
+    private func transitionPostLipScene() {
+        let vc = PostLipViewControllerGenerator.generate()
+        self.present(vc, animated: true)
     }
 
 }

@@ -138,10 +138,11 @@ extension DebugViewController {
  */
 final class DebugViewControllerGenerator {
 
-    private init() {}
+    public init() {}
 
     public static func generate() -> UIViewController {
         guard let vc = R.storyboard.debug.debugViewController() else {
+            assertionFailure()
             return UIViewController()
         }
         vc.inject(with: .init())

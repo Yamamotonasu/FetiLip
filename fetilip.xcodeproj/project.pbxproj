@@ -21,6 +21,10 @@
 		035BB00624668839001FF6D1 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */; };
 		035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */; };
 		035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */; };
+		035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035BB0102467CFA2001FF6D1 /* PostLip.storyboard */; };
+		035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */; };
+		035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0142467D080001FF6D1 /* PostLipViewModel.swift */; };
+		035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -127,6 +131,10 @@
 		035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Production-Info.plist"; sourceTree = "<group>"; };
 		035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetilipBuildScheme.swift; sourceTree = "<group>"; };
 		035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMPhotoPicker.framework; path = Carthage/Build/iOS/FMPhotoPicker.framework; sourceTree = "<group>"; };
+		035BB0102467CFA2001FF6D1 /* PostLip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostLip.storyboard; sourceTree = "<group>"; };
+		035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewController.swift; sourceTree = "<group>"; };
+		035BB0142467D080001FF6D1 /* PostLipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewModel.swift; sourceTree = "<group>"; };
+		035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPostPageViewController.swift; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -504,6 +512,23 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		035BB00E2467CF58001FF6D1 /* PostLip */ = {
+			isa = PBXGroup;
+			children = (
+				035BB0102467CFA2001FF6D1 /* PostLip.storyboard */,
+				035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */,
+			);
+			path = PostLip;
+			sourceTree = "<group>";
+		};
+		035BB00F2467CF6A001FF6D1 /* PostLip */ = {
+			isa = PBXGroup;
+			children = (
+				035BB0142467D080001FF6D1 /* PostLipViewModel.swift */,
+			);
+			path = PostLip;
+			sourceTree = "<group>";
+		};
 		039EB66D2436157B0016436C /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,6 +704,7 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				035BB00E2467CF58001FF6D1 /* PostLip */,
 				039EB66D2436157B0016436C /* Debug */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
@@ -690,6 +716,7 @@
 		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				035BAFDA2443302D001FF6D1 /* Debug */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
 				035BAFDB24433040001FF6D1 /* PostList */,
@@ -807,6 +834,7 @@
 			children = (
 				03AAFBA02428D54E0068FB1E /* PostList.storyboard */,
 				03AAFBA22428D5B60068FB1E /* PostListViewController.swift */,
+				035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */,
 			);
 			path = PostList;
 			sourceTree = "<group>";
@@ -1108,6 +1136,7 @@
 				039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */,
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
+				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
@@ -1283,6 +1312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
@@ -1291,6 +1321,7 @@
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
+				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
@@ -1311,6 +1342,7 @@
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
 				035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
+				035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */,
 				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,
 				035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */,
 				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
