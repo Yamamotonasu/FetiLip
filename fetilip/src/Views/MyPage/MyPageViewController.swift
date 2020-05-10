@@ -39,6 +39,7 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        composeUI()
         subscribe()
     }
 
@@ -47,6 +48,12 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
 // MARK: Private functions
 
 extension MyPageViewController {
+
+    private func composeUI() {
+        if FetilipBuildScheme.PRODUCTION {
+            debugButton.isHidden = true
+        }
+    }
 
     /// Rx subscribe
     private func subscribe() {
