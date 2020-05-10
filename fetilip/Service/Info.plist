@@ -2,10 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>アルバムから選択するのに許可が必要です。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>カメラで撮影するのに許可が必要です。</string>
 	<key>CFBundleDisplayName</key>
 	<string>$(BUNDLE_NAME_PREFIX)Fetilip</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>ja_JP</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
