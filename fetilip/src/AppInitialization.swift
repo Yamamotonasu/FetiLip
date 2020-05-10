@@ -24,6 +24,7 @@ public struct AppInitialization {
         if app.window == nil {
             app.window = UIWindow(frame: UIScreen.main.bounds)
         }
+        app.window?.makeKeyAndVisible()
         // タブ画面を初期画面に設定
         app.window?.rootViewController = tab
     }
