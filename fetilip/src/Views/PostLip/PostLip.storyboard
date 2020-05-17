@@ -42,28 +42,42 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4A-fe-XsL">
-                                <rect key="frame" x="20" y="127" width="374" height="265"/>
+                                <rect key="frame" x="50" y="127" width="314" height="314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RhH-NR-iWL">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="265"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="314"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.29791845030000003" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.5"/>
+                                                <real key="value" value="0.29999999999999999"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="5"/>
+                                                <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの唇画像を選択してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqr-Ug-sjk">
-                                        <rect key="frame" x="57" y="123.5" width="260.5" height="18"/>
+                                        <rect key="frame" x="27" y="148" width="260.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtA-XL-Duu">
+                                        <rect key="frame" x="269" y="15" width="30" height="30"/>
+                                        <color key="backgroundColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1o2-QX-5PS"/>
+                                            <constraint firstAttribute="width" constant="30" id="WZf-4J-6e2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="✗">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -71,13 +85,20 @@
                                     <constraint firstItem="RhH-NR-iWL" firstAttribute="leading" secondItem="l4A-fe-XsL" secondAttribute="leading" id="AtE-LY-U0Q"/>
                                     <constraint firstItem="Dqr-Ug-sjk" firstAttribute="centerY" secondItem="l4A-fe-XsL" secondAttribute="centerY" id="Boc-j2-HVE"/>
                                     <constraint firstAttribute="bottom" secondItem="RhH-NR-iWL" secondAttribute="bottom" id="C7H-y1-TUE"/>
-                                    <constraint firstAttribute="width" secondItem="l4A-fe-XsL" secondAttribute="height" multiplier="1.41:1" id="EMi-6y-nzO"/>
+                                    <constraint firstAttribute="width" secondItem="l4A-fe-XsL" secondAttribute="height" multiplier="1:1" id="EMi-6y-nzO"/>
+                                    <constraint firstItem="CtA-XL-Duu" firstAttribute="top" secondItem="l4A-fe-XsL" secondAttribute="top" constant="15" id="FEf-Xm-sKg"/>
                                     <constraint firstItem="Dqr-Ug-sjk" firstAttribute="centerX" secondItem="l4A-fe-XsL" secondAttribute="centerX" id="b8Y-m7-Xjq"/>
                                     <constraint firstItem="RhH-NR-iWL" firstAttribute="top" secondItem="l4A-fe-XsL" secondAttribute="top" id="hXb-5T-fYC"/>
+                                    <constraint firstAttribute="trailing" secondItem="CtA-XL-Duu" secondAttribute="trailing" constant="15" id="lyv-IS-Upq"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NzN-8j-K1V">
-                                <rect key="frame" x="20" y="497" width="374" height="48.5"/>
+                                <rect key="frame" x="20" y="546" width="374" height="48.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※個人情報が特定される画像をアップロードしないでください。" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-VD-0aY">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
@@ -94,7 +115,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IJ-9Z-SQA">
-                                <rect key="frame" x="70" y="427" width="274" height="50"/>
+                                <rect key="frame" x="70" y="476" width="274" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Kfz-h2-saC"/>
@@ -112,12 +133,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="l4A-fe-XsL" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="20" id="1BB-5n-WZK"/>
+                            <constraint firstItem="l4A-fe-XsL" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="50" id="1BB-5n-WZK"/>
                             <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="3IJ-9Z-SQA" secondAttribute="trailing" constant="70" id="88a-Tv-mWz"/>
                             <constraint firstItem="Sme-66-6ua" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="20" id="8Sm-50-J7W"/>
                             <constraint firstItem="NzN-8j-K1V" firstAttribute="top" secondItem="3IJ-9Z-SQA" secondAttribute="bottom" constant="20" id="Ac6-Xo-Pgk"/>
                             <constraint firstItem="Sme-66-6ua" firstAttribute="top" secondItem="6rx-Ae-JVp" secondAttribute="top" constant="20" id="Rl7-oS-4CI"/>
-                            <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="l4A-fe-XsL" secondAttribute="trailing" constant="20" id="Say-yO-Noc"/>
+                            <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="l4A-fe-XsL" secondAttribute="trailing" constant="50" id="Say-yO-Noc"/>
                             <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="Sme-66-6ua" secondAttribute="trailing" constant="20" id="TdC-vz-JZv"/>
                             <constraint firstItem="3IJ-9Z-SQA" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="70" id="blN-ee-mD1"/>
                             <constraint firstItem="3IJ-9Z-SQA" firstAttribute="top" secondItem="l4A-fe-XsL" secondAttribute="bottom" constant="35" id="elP-IO-GAb"/>
@@ -132,10 +153,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addImageButton" destination="UWk-l8-NXn" id="0fp-IK-pAr"/>
+                        <outlet property="deleteImageButton" destination="CtA-XL-Duu" id="hWT-2f-BcR"/>
                         <outlet property="descriptionLabel" destination="Dqr-Ug-sjk" id="UYQ-H1-7b1"/>
                         <outlet property="dismissButton" destination="nS0-6m-8qE" id="aat-rV-kfQ"/>
                         <outlet property="imagePosted" destination="RhH-NR-iWL" id="gIP-JS-Qz0"/>
                         <outlet property="postButton" destination="3IJ-9Z-SQA" id="b00-fr-UIc"/>
+                        <outlet property="selectedImageViewArea" destination="l4A-fe-XsL" id="lyy-cg-QBt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DA8-6e-qyU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

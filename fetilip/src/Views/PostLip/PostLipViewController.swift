@@ -8,6 +8,8 @@
 
 import UIKit
 import FMPhotoPicker
+import RxSwift
+import RxCocoa
 
 /**
  * ViewController for posting lips.
@@ -47,6 +49,13 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
     /// Description label.
     @IBOutlet private weak var descriptionLabel: UILabel!
 
+    /// Delete image button.
+    @IBOutlet private weak var deleteImageButton: UIButton!
+
+    /// Where to display the selected image.
+    @IBOutlet private weak var selectedImageViewArea: UIView!
+
+
     // MARK: - LifeCycles
 
     override func viewDidLoad() {
@@ -66,22 +75,48 @@ extension PostLipViewController {
         // Swipe down to close the ViewController.
         let downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.close))
         downSwipeGesture.direction = .down
+        self.deleteImageButton.isHidden = true
         view.addGestureRecognizer(downSwipeGesture)
     }
 
     private func subscribe() {
-
         dismissButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.close()
         }).disposed(by: rx.disposeBag)
 
-        addImageButton.rx.tap.asSignal().emit(onNext: { [unowned self]_ in
+        addImageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.launchCameraOrLibrary()
         }).disposed(by: rx.disposeBag)
+
+        let tapGesture = UITapGestureRecognizer()
+        selectedImageViewArea.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event
+            .observeOn(MainScheduler.instance).bind(onNext: { [unowned self] _ in
+                self.launchCameraOrLibrary()
+            }).disposed(by: rx.disposeBag)
     }
 
-    /// Bint UI from view model outputs.
+    /// Bint UI from view model outputs and ViewModel.
     private func bindUI() {
+        let input = ViewModel.Input(deleteButtonTap: deleteImageButton.rx.tap.asObservable())
+        let output = viewModel.transform(input: input)
+
+        output.updatedImage
+            .bind(to: self.imagePosted.rx.image)
+            .disposed(by: rx.disposeBag)
+
+        output.updatedImage
+            .flatMapLatest { image in
+                return Observable.just(image != nil)
+        }
+        .observeOn(MainScheduler.instance)
+        .subscribe(onNext: { [unowned self] exists in
+            self.deleteImageButton.isHidden = !exists
+            self.descriptionLabel.isHidden = exists
+            self.postButton.isEnabled = exists
+            self.postButton.alpha = exists ? 1.0 : 0.5
+            self.imagePosted.borderColor = exists ? .white : .gray
+        }).disposed(by: rx.disposeBag)
 
     }
 
@@ -94,14 +129,13 @@ extension PostLipViewController {
 extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEditorViewControllerDelegate {
 
     func fmImageEditorViewController(_ editor: FMImageEditorViewController, didFinishEdittingPhotoWith photo: UIImage) {
-        self.imagePosted.image = photo
+        viewModel.updatedImage.accept(photo)
     }
 
     func fmPhotoPickerController(_ picker: FMPhotoPickerViewController, didFinishPickingPhotoWith photos: [UIImage]) {
         if let selected = photos.first {
-            self.imagePosted.image = selected
+            viewModel.updatedImage.accept(selected)
             self.imagePosted.borderColor = .white
-            self.descriptionLabel.isHidden = true
         }
         self.dismiss(animated: true)
     }
@@ -111,14 +145,9 @@ extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEdi
         config.mediaTypes = [.image]
         config.selectMode = .single
         config.maxImage = 1
-        config.forceCropEnabled = false
+        config.forceCropEnabled = true
         config.availableCrops = [
-            FMCrop.ratioSquare,
-            FMCrop.ratioCustom,
-            FMCrop.ratio4x3,
-            FMCrop.ratio16x9,
-            FMCrop.ratio9x16,
-            FMCrop.ratioOrigin,
+            FMCrop.ratioSquare
         ]
         let picker = FMPhotoPickerViewController(config: config)
         picker.delegate = self
