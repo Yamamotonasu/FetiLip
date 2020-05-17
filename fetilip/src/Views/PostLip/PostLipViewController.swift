@@ -58,6 +58,10 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
     /// Sentence to post only lip image.
     @IBOutlet private weak var attentionLabel: UILabel!
 
+    // MARK: - Properties
+
+    let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
+
     // MARK: - LifeCycles
 
     override func viewDidLoad() {
@@ -79,7 +83,8 @@ extension PostLipViewController {
 
         addImageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             if self.imagePosted.image == nil {
-                self.launchLibrary()
+                let vc = SelectModeViewControllerGenerator.generate(selectSubject: self.selectModeSuject)
+                self.present(vc, animated: true)
             } else {
                 self.launchEditor()
             }
@@ -88,9 +93,21 @@ extension PostLipViewController {
         let tapGesture = UITapGestureRecognizer()
         selectedImageViewArea.addGestureRecognizer(tapGesture)
         tapGesture.rx.event
-            .observeOn(MainScheduler.instance).bind(onNext: { [unowned self] _ in
+            .observeOn(MainScheduler.instance)
+            .bind(onNext: { [unowned self] _ in
                 self.launchLibrary()
             }).disposed(by: rx.disposeBag)
+
+        selectModeSuject.asObservable().subscribe(onNext: { [unowned self] mode in
+            switch mode {
+            case .libary:
+                self.launchLibrary()
+            case .camera:
+                self.launchCamera()
+            case .editor:
+                self.launchEditor()
+            }
+        }).disposed(by: rx.disposeBag)
     }
 
     /// Bint UI from view model outputs and ViewModel.
@@ -120,11 +137,13 @@ extension PostLipViewController {
 
     }
 
-    @objc private func close() {
+    private func close() {
         self.dismiss(animated: true)
     }
 
 }
+
+// MARK: - FMPhotoPicker
 
 extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEditorViewControllerDelegate {
 
@@ -140,6 +159,7 @@ extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEdi
         self.dismiss(animated: true)
     }
 
+    /// Launch library with app setting.
     private func launchLibrary() {
         let config = AppSettings.FMPhotoPickerSetting.setup()
         let picker = FMPhotoPickerViewController(config: config)
@@ -147,12 +167,43 @@ extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEdi
         self.present(picker, animated: true)
     }
 
-    private func launchEditor() {
-        guard let image = imagePosted.image else { return }
-        let config = AppSettings.FMPhotoPickerSetting.setup()
-        let picker = FMImageEditorViewController(config: config, sourceImage: image)
-        picker.delegate = self
-        self.present(picker, animated: true)
+    /// /// Launch Editor with app setting.
+    private func launchEditor(selectedImage: UIImage? = nil) {
+        // TODO: refector
+        if let image = imagePosted.image {
+            let config = AppSettings.FMPhotoPickerSetting.setup()
+            let picker = FMImageEditorViewController(config: config, sourceImage: image)
+            picker.delegate = self
+            self.present(picker, animated: true)
+        } else if let selected = selectedImage {
+            let config = AppSettings.FMPhotoPickerSetting.setup()
+            let picker = FMImageEditorViewController(config: config, sourceImage: selected)
+            picker.delegate = self
+            self.present(picker, animated: true)
+        }
+    }
+
+}
+
+extension PostLipViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            viewModel.uploadedImage.accept(image)
+            self.dismiss(animated: true) {
+                self.launchEditor(selectedImage: image)
+            }
+        }
+    }
+
+    private func launchCamera() {
+        let sourceType: UIImagePickerController.SourceType = UIImagePickerController.SourceType.camera
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            let camera = UIImagePickerController()
+            camera.sourceType = sourceType
+            camera.delegate = self
+            self.present(camera, animated: true)
+        }
     }
 
 }
@@ -173,4 +224,10 @@ final class PostLipViewControllerGenerator {
         return vc
     }
 
+}
+
+public enum SelectMode {
+    case libary
+    case camera
+    case editor
 }

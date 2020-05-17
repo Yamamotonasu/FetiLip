@@ -27,6 +27,8 @@
 		035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
+		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
+		036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45092471902000DD9282 /* SelectModeViewController.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -139,6 +141,8 @@
 		035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPostPageViewController.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
+		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
+		036A45092471902000DD9282 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -519,6 +523,7 @@
 		035BB00E2467CF58001FF6D1 /* PostLip */ = {
 			isa = PBXGroup;
 			children = (
+				036A4506247188B600DD9282 /* Modal */,
 				035BB0102467CFA2001FF6D1 /* PostLip.storyboard */,
 				035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */,
 			);
@@ -547,6 +552,15 @@
 				036A45042471408000DD9282 /* Reactive+Extentions.swift */,
 			);
 			path = Rx;
+			sourceTree = "<group>";
+		};
+		036A4506247188B600DD9282 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				036A450724718E8D00DD9282 /* SelectMode.storyboard */,
+				036A45092471902000DD9282 /* SelectModeViewController.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		039EB66D2436157B0016436C /* Debug */ = {
@@ -1163,6 +1177,7 @@
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
+				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
 				03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */,
@@ -1335,6 +1350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
+				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
