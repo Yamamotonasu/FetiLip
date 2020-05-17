@@ -37,12 +37,20 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        composeUI()
         subscribeUI()
     }
 
 }
 
 extension PostListViewController {
+
+    private func composeUI() {
+        // Delete under bar line in navigation controller.
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        let item = UIImageView(image: R.image.feti_word())
+        self.navigationItem.titleView = item
+    }
 
     /// Bind UI from view model outputs.
     private func subscribeUI() {
