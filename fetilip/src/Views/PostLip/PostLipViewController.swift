@@ -60,7 +60,6 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        composeUI()
         subscribe()
         bindUI()
     }
@@ -70,14 +69,6 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 // MARK: - Private functions
 
 extension PostLipViewController {
-
-    private func composeUI() {
-        // Swipe down to close the ViewController.
-        let downSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.close))
-        downSwipeGesture.direction = .down
-        self.deleteImageButton.isHidden = true
-        view.addGestureRecognizer(downSwipeGesture)
-    }
 
     private func subscribe() {
         dismissButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
@@ -98,7 +89,8 @@ extension PostLipViewController {
 
     /// Bint UI from view model outputs and ViewModel.
     private func bindUI() {
-        let input = ViewModel.Input(deleteButtonTap: deleteImageButton.rx.tap.asObservable())
+        let input = ViewModel.Input(deleteButtonTapEvent: deleteImageButton.rx.tap.asObservable(),
+                                    postButtonTapEvent: postButton.rx.tap.asObservable())
         let output = viewModel.transform(input: input)
 
         output.updatedImage
@@ -135,7 +127,6 @@ extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEdi
     func fmPhotoPickerController(_ picker: FMPhotoPickerViewController, didFinishPickingPhotoWith photos: [UIImage]) {
         if let selected = photos.first {
             viewModel.updatedImage.accept(selected)
-            self.imagePosted.borderColor = .white
         }
         self.dismiss(animated: true)
     }

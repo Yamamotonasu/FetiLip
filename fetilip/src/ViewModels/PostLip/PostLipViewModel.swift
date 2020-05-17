@@ -16,7 +16,10 @@ struct PostLipViewModel {
     // Image updated observable.
     let updatedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
 
+    // When Image selected, return true. Otherwise returns false.
     let imageExistsState: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: true)
+
+    let disposeBag: DisposeBag = DisposeBag()
     
 }
 
@@ -24,7 +27,9 @@ extension PostLipViewModel: ViewModelType {
 
     struct Input {
         // Delete image action.
-        let deleteButtonTap: Observable<Void>
+        let deleteButtonTapEvent: Observable<Void>
+        // Post button action.
+        let postButtonTapEvent: Observable<Void>
     }
 
     struct Output {
@@ -35,12 +40,31 @@ extension PostLipViewModel: ViewModelType {
     }
 
     func transform(input: Input) -> Output {
-        let _ = input.deleteButtonTap.withLatestFrom(self.updatedImage).subscribe(onNext: { image in
-            self.imageExistsState.accept(image == nil)
-            self.updatedImage.accept(nil)
-        })
+        input.deleteButtonTapEvent
+            .withLatestFrom(self.updatedImage)
+            .subscribe(onNext: { image in
+                self.imageExistsState.accept(image == nil)
+                self.updatedImage.accept(nil)
+            }).disposed(by: disposeBag)
+
+        input.postButtonTapEvent
+            .withLatestFrom(self.updatedImage)
+            .flatMap { $0.flatMap(Observable.just) ?? Observable.empty() }
+            .subscribe(onNext: { image in
+                self.postImage(with: image)
+            }).disposed(by: disposeBag)
+
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: updatedImage.asObservable())
     }
 
+}
+
+// MARK: Private functions
+
+extension PostLipViewModel {
+
+    private func postImage(with image: UIImage) {
+
+    }
 }
