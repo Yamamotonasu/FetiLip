@@ -55,6 +55,8 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
     /// Where to display the selected image.
     @IBOutlet private weak var selectedImageViewArea: UIView!
 
+    /// Sentence to post only lip image.
+    @IBOutlet private weak var attentionLabel: UILabel!
 
     // MARK: - LifeCycles
 
@@ -76,14 +78,18 @@ extension PostLipViewController {
         }).disposed(by: rx.disposeBag)
 
         addImageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
-            self.launchCameraOrLibrary()
+            if self.imagePosted.image == nil {
+                self.launchLibrary()
+            } else {
+                self.launchEditor()
+            }
         }).disposed(by: rx.disposeBag)
 
         let tapGesture = UITapGestureRecognizer()
         selectedImageViewArea.addGestureRecognizer(tapGesture)
         tapGesture.rx.event
             .observeOn(MainScheduler.instance).bind(onNext: { [unowned self] _ in
-                self.launchCameraOrLibrary()
+                self.launchLibrary()
             }).disposed(by: rx.disposeBag)
     }
 
@@ -104,7 +110,9 @@ extension PostLipViewController {
         .observeOn(MainScheduler.instance)
         .subscribe(onNext: { [unowned self] exists in
             self.deleteImageButton.isHidden = !exists
+            self.attentionLabel.isHidden = !exists
             self.descriptionLabel.isHidden = exists
+            self.addImageButton.titleLabel?.text = exists ? "画像を編集する" : "画像を選択する"
             self.postButton.isEnabled = exists
             self.postButton.alpha = exists ? 1.0 : 0.5
             self.imagePosted.borderColor = exists ? .white : .gray
@@ -121,26 +129,28 @@ extension PostLipViewController {
 extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEditorViewControllerDelegate {
 
     func fmImageEditorViewController(_ editor: FMImageEditorViewController, didFinishEdittingPhotoWith photo: UIImage) {
-        viewModel.updatedImage.accept(photo)
+        viewModel.uploadedImage.accept(photo)
+        self.dismiss(animated: true)
     }
 
     func fmPhotoPickerController(_ picker: FMPhotoPickerViewController, didFinishPickingPhotoWith photos: [UIImage]) {
         if let selected = photos.first {
-            viewModel.updatedImage.accept(selected)
+            viewModel.uploadedImage.accept(selected)
         }
         self.dismiss(animated: true)
     }
 
-    private func launchCameraOrLibrary() {
-        var config = FMPhotoPickerConfig()
-        config.mediaTypes = [.image]
-        config.selectMode = .single
-        config.maxImage = 1
-        config.forceCropEnabled = true
-        config.availableCrops = [
-            FMCrop.ratioSquare
-        ]
+    private func launchLibrary() {
+        let config = AppSettings.FMPhotoPickerSetting.setup()
         let picker = FMPhotoPickerViewController(config: config)
+        picker.delegate = self
+        self.present(picker, animated: true)
+    }
+
+    private func launchEditor() {
+        guard let image = imagePosted.image else { return }
+        let config = AppSettings.FMPhotoPickerSetting.setup()
+        let picker = FMImageEditorViewController(config: config, sourceImage: image)
         picker.delegate = self
         self.present(picker, animated: true)
     }

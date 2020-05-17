@@ -14,7 +14,7 @@ import RxCocoa
 struct PostLipViewModel {
 
     // Image updated observable.
-    let updatedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
+    let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
 
     // When Image selected, return true. Otherwise returns false.
     let imageExistsState: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: true)
@@ -41,21 +41,21 @@ extension PostLipViewModel: ViewModelType {
 
     func transform(input: Input) -> Output {
         input.deleteButtonTapEvent
-            .withLatestFrom(self.updatedImage)
+            .withLatestFrom(self.uploadedImage)
             .subscribe(onNext: { image in
                 self.imageExistsState.accept(image == nil)
-                self.updatedImage.accept(nil)
+                self.uploadedImage.accept(nil)
             }).disposed(by: disposeBag)
 
         input.postButtonTapEvent
-            .withLatestFrom(self.updatedImage)
+            .withLatestFrom(self.uploadedImage)
             .flatMap { $0.flatMap(Observable.just) ?? Observable.empty() }
             .subscribe(onNext: { image in
                 self.postImage(with: image)
             }).disposed(by: disposeBag)
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
-                      updatedImage: updatedImage.asObservable())
+                      updatedImage: uploadedImage.asObservable())
     }
 
 }
@@ -64,7 +64,9 @@ extension PostLipViewModel: ViewModelType {
 
 extension PostLipViewModel {
 
+    /// Uploaded lip image.
     private func postImage(with image: UIImage) {
 
     }
+
 }

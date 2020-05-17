@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FMPhotoPicker
 
 /// Struct that summarizes the setting values related to the Fetilip application.
 public struct AppSettings {
@@ -20,6 +21,23 @@ public struct AppSettings {
 
         /// Version control reference.
         static let version: String = "1"
+
+    }
+
+    /// Setting config related to FMPhotoPicker.
+    struct FMPhotoPickerSetting {
+
+        static func setup() -> FMPhotoPickerConfig {
+            var config = FMPhotoPickerConfig()
+            config.mediaTypes = [.image]
+            config.selectMode = .single
+            config.maxImage = 1
+            config.forceCropEnabled = true
+            config.availableCrops = [
+                FMCrop.ratioSquare
+            ]
+            return config
+        }
 
     }
 

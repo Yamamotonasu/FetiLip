@@ -76,6 +76,15 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.29791845030000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                <size key="value" width="3" height="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
@@ -98,7 +107,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NzN-8j-K1V">
-                                <rect key="frame" x="20" y="546" width="374" height="48.5"/>
+                                <rect key="frame" x="20" y="560.5" width="374" height="48.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="※個人情報が特定される画像をアップロードしないでください。" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsr-VD-0aY">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="14.5"/>
@@ -114,36 +123,50 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IJ-9Z-SQA">
-                                <rect key="frame" x="70" y="476" width="274" height="50"/>
-                                <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BoW-aA-FJY">
+                                <rect key="frame" x="70" y="456" width="274" height="89.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これは唇の画像ですか？ 唇なら投稿してみましょう！" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-cK-SB3">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IJ-9Z-SQA">
+                                        <rect key="frame" x="0.0" y="39.5" width="274" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Kfz-h2-saC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="投稿">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Kfz-h2-saC"/>
+                                    <constraint firstItem="3IJ-9Z-SQA" firstAttribute="width" secondItem="wBC-cK-SB3" secondAttribute="width" id="cW7-kj-tja"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="投稿">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="l4A-fe-XsL" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="50" id="1BB-5n-WZK"/>
-                            <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="3IJ-9Z-SQA" secondAttribute="trailing" constant="70" id="88a-Tv-mWz"/>
                             <constraint firstItem="Sme-66-6ua" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="20" id="8Sm-50-J7W"/>
-                            <constraint firstItem="NzN-8j-K1V" firstAttribute="top" secondItem="3IJ-9Z-SQA" secondAttribute="bottom" constant="20" id="Ac6-Xo-Pgk"/>
+                            <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="BoW-aA-FJY" secondAttribute="trailing" constant="70" id="BtG-i6-EmX"/>
+                            <constraint firstItem="BoW-aA-FJY" firstAttribute="top" secondItem="l4A-fe-XsL" secondAttribute="bottom" constant="15" id="Gza-dD-uxK"/>
                             <constraint firstItem="Sme-66-6ua" firstAttribute="top" secondItem="6rx-Ae-JVp" secondAttribute="top" constant="20" id="Rl7-oS-4CI"/>
                             <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="l4A-fe-XsL" secondAttribute="trailing" constant="50" id="Say-yO-Noc"/>
                             <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="Sme-66-6ua" secondAttribute="trailing" constant="20" id="TdC-vz-JZv"/>
-                            <constraint firstItem="3IJ-9Z-SQA" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="70" id="blN-ee-mD1"/>
-                            <constraint firstItem="3IJ-9Z-SQA" firstAttribute="top" secondItem="l4A-fe-XsL" secondAttribute="bottom" constant="35" id="elP-IO-GAb"/>
+                            <constraint firstItem="BoW-aA-FJY" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="70" id="hIe-K5-eJe"/>
                             <constraint firstAttribute="trailing" secondItem="NzN-8j-K1V" secondAttribute="trailing" constant="20" id="qCT-LU-JfJ"/>
                             <constraint firstItem="NzN-8j-K1V" firstAttribute="leading" secondItem="bap-td-deK" secondAttribute="leading" constant="20" id="vT1-xO-xeZ"/>
+                            <constraint firstItem="NzN-8j-K1V" firstAttribute="top" secondItem="BoW-aA-FJY" secondAttribute="bottom" constant="15" id="wDM-Dt-GfP"/>
                             <constraint firstItem="l4A-fe-XsL" firstAttribute="top" secondItem="Sme-66-6ua" secondAttribute="bottom" constant="30" id="yp4-LP-BBS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6rx-Ae-JVp"/>
@@ -153,6 +176,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addImageButton" destination="UWk-l8-NXn" id="0fp-IK-pAr"/>
+                        <outlet property="attentionLabel" destination="wBC-cK-SB3" id="5Pd-gK-ubq"/>
                         <outlet property="deleteImageButton" destination="CtA-XL-Duu" id="hWT-2f-BcR"/>
                         <outlet property="descriptionLabel" destination="Dqr-Ug-sjk" id="UYQ-H1-7b1"/>
                         <outlet property="dismissButton" destination="nS0-6m-8qE" id="aat-rV-kfQ"/>
