@@ -83,8 +83,7 @@ extension PostLipViewController {
 
         addImageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             if self.imagePosted.image == nil {
-                let vc = SelectModeViewControllerGenerator.generate(selectSubject: self.selectModeSuject)
-                self.present(vc, animated: true)
+                self.presentingSelectMode()
             } else {
                 self.launchEditor()
             }
@@ -95,7 +94,9 @@ extension PostLipViewController {
         tapGesture.rx.event
             .observeOn(MainScheduler.instance)
             .bind(onNext: { [unowned self] _ in
-                self.launchLibrary()
+                if self.imagePosted.image == nil {
+                    self.presentingSelectMode()
+                }
             }).disposed(by: rx.disposeBag)
 
         selectModeSuject.asObservable().subscribe(onNext: { [unowned self] mode in
@@ -139,6 +140,11 @@ extension PostLipViewController {
 
     private func close() {
         self.dismiss(animated: true)
+    }
+
+    private func presentingSelectMode() {
+        let vc = SelectModeViewControllerGenerator.generate(selectSubject: self.selectModeSuject)
+        self.present(vc, animated: true)
     }
 
 }
@@ -187,15 +193,17 @@ extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEdi
 
 extension PostLipViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    /// Called after selecting an image with the camera.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            viewModel.uploadedImage.accept(image)
+//            viewModel.uploadedImage.accept(image)
             self.dismiss(animated: true) {
                 self.launchEditor(selectedImage: image)
             }
         }
     }
 
+    /// Launch camera.
     private func launchCamera() {
         let sourceType: UIImagePickerController.SourceType = UIImagePickerController.SourceType.camera
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {

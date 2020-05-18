@@ -57,6 +57,12 @@ extension SelectModeViewController {
                 self?.selectSubject.onNext(.libary)
             }
         }).disposed(by: rx.disposeBag)
+
+        let tapGesture = UITapGestureRecognizer()
+        self.view.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event.bind(onNext: { [weak self] _ in
+            self?.dismiss(animated: true)
+        }).disposed(by: rx.disposeBag)
     }
 }
 
