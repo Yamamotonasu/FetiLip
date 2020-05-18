@@ -13,6 +13,13 @@ import RxCocoa
 
 struct PostLipViewModel {
 
+    /// DI init.
+    init(postModelClient: PostModelClientProtocol) {
+        self.postModelClient = postModelClient
+    }
+
+    private let postModelClient: PostModelClientProtocol
+
     // Image updated observable.
     let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
 
@@ -66,7 +73,12 @@ extension PostLipViewModel {
 
     /// Uploaded lip image.
     private func postImage(with image: UIImage) {
-
+        let base64imageStr = image.base64
+        postModelClient.postImage(image: base64imageStr ?? "").subscribe(onSuccess: { _ in
+            print("投稿成功！")
+        }, onError: { error in
+            print("投稿失敗...")
+        }).disposed(by: disposeBag)
     }
 
 }

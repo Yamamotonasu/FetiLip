@@ -20,7 +20,7 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     typealias ViewModel = PostLipViewModel
 
-    var viewModel: ViewModel = PostLipViewModel()
+    var viewModel: ViewModel = PostLipViewModel(postModelClient: PostModelClient())
 
     // MARK: - Init process
 
@@ -196,7 +196,6 @@ extension PostLipViewController: UIImagePickerControllerDelegate, UINavigationCo
     /// Called after selecting an image with the camera.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//            viewModel.uploadedImage.accept(image)
             self.dismiss(animated: true) {
                 self.launchEditor(selectedImage: image)
             }

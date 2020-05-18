@@ -34,6 +34,7 @@ class SelectModeViewController: UIViewController, ViewControllerMethodInjectable
     /// Library button.
     @IBOutlet private weak var libraryButton: UIButton!
 
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribe()
