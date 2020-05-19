@@ -16,11 +16,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-66-6ua">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-66-6ua">
                                 <rect key="frame" x="20" y="64" width="374" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-6m-8qE">
-                                        <rect key="frame" x="0.0" y="0.0" width="152" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="232" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="suX-2D-B9o"/>
                                         </constraints>
@@ -55,8 +55,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの唇画像を選択してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqr-Ug-sjk">
-                                        <rect key="frame" x="27" y="148" width="260.5" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの唇画像を選択してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dqr-Ug-sjk">
+                                        <rect key="frame" x="10" y="148" width="294" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -90,6 +90,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Dqr-Ug-sjk" secondAttribute="trailing" constant="10" id="AH4-69-J1r"/>
                                     <constraint firstAttribute="trailing" secondItem="RhH-NR-iWL" secondAttribute="trailing" id="Aln-qs-MQD"/>
                                     <constraint firstItem="RhH-NR-iWL" firstAttribute="leading" secondItem="l4A-fe-XsL" secondAttribute="leading" id="AtE-LY-U0Q"/>
                                     <constraint firstItem="Dqr-Ug-sjk" firstAttribute="centerY" secondItem="l4A-fe-XsL" secondAttribute="centerY" id="Boc-j2-HVE"/>
@@ -99,6 +100,7 @@
                                     <constraint firstItem="Dqr-Ug-sjk" firstAttribute="centerX" secondItem="l4A-fe-XsL" secondAttribute="centerX" id="b8Y-m7-Xjq"/>
                                     <constraint firstItem="RhH-NR-iWL" firstAttribute="top" secondItem="l4A-fe-XsL" secondAttribute="top" id="hXb-5T-fYC"/>
                                     <constraint firstAttribute="trailing" secondItem="CtA-XL-Duu" secondAttribute="trailing" constant="15" id="lyv-IS-Upq"/>
+                                    <constraint firstItem="Dqr-Ug-sjk" firstAttribute="leading" secondItem="l4A-fe-XsL" secondAttribute="leading" constant="10" id="yCb-bw-YKK"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

@@ -77,7 +77,7 @@ extension PostLipViewModel {
         postModelClient.postImage(image: base64imageStr ?? "").subscribe(onSuccess: { _ in
             print("投稿成功！")
         }, onError: { error in
-            print("投稿失敗...")
+            print("**\(error)")
         }).disposed(by: disposeBag)
     }
 

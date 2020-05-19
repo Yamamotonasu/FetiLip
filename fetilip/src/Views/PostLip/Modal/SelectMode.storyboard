@@ -19,18 +19,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoR-2f-tQs">
                                 <rect key="frame" x="60" y="378" width="294" height="150"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jUa-Qu-Mhs">
-                                        <rect key="frame" x="49.5" y="35" width="195" height="80"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jUa-Qu-Mhs">
+                                        <rect key="frame" x="62" y="40" width="170" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzb-MR-RmC">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Fzb-MR-RmC" secondAttribute="height" multiplier="1:1" id="bg7-Xi-WlB"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="select_camera"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFa-e4-ty7">
-                                                <rect key="frame" x="115" y="0.0" width="80" height="80"/>
+                                                <rect key="frame" x="100" y="0.0" width="70" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oFa-e4-ty7" secondAttribute="height" multiplier="1:1" id="bvJ-rQ-OYg"/>
                                                     <constraint firstAttribute="width" secondItem="oFa-e4-ty7" secondAttribute="height" multiplier="1:1" id="jKJ-VY-o6e"/>
@@ -42,8 +42,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="jUa-Qu-Mhs" firstAttribute="top" secondItem="BoR-2f-tQs" secondAttribute="top" constant="35" id="NIw-qb-E0f"/>
-                                    <constraint firstAttribute="bottom" secondItem="jUa-Qu-Mhs" secondAttribute="bottom" constant="35" id="Nim-D1-m98"/>
+                                    <constraint firstItem="jUa-Qu-Mhs" firstAttribute="top" secondItem="BoR-2f-tQs" secondAttribute="top" constant="40" id="NIw-qb-E0f"/>
+                                    <constraint firstAttribute="bottom" secondItem="jUa-Qu-Mhs" secondAttribute="bottom" constant="40" id="Nim-D1-m98"/>
                                     <constraint firstItem="jUa-Qu-Mhs" firstAttribute="centerX" secondItem="BoR-2f-tQs" secondAttribute="centerX" id="lIa-eu-IsC"/>
                                     <constraint firstAttribute="height" constant="150" id="mF3-ec-nfu"/>
                                     <constraint firstItem="jUa-Qu-Mhs" firstAttribute="centerY" secondItem="BoR-2f-tQs" secondAttribute="centerY" id="t63-bu-EDb"/>
