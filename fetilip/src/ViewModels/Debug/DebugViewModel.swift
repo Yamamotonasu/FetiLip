@@ -17,17 +17,22 @@ import RxCocoa
 struct DebugViewModel {
 
     /// DI init.
-    init(dependency: ((usersModelClient: UsersModelClient,
-        authModel: UserAuthModelProtocol))) {
+    init(dependency: ((usersModelClient: UsersModelClientProtocol,
+        authModel: UserAuthModelProtocol,
+        postsModelClient: PostModelClientProtocol))) {
         usersModelClient = dependency.usersModelClient
         authModel = dependency.authModel
+        postModelClient = dependency.postsModelClient
     }
 
     /// User authentication model.
     private let authModel: UserAuthModelProtocol
 
     /// Communication with firestore users collection model.
-    private let usersModelClient: UsersModelClient
+    private let usersModelClient: UsersModelClientProtocol
+
+    /// Communication with firestore posts collection model.
+    private let postModelClient: PostModelClientProtocol
 
     // MARK: - Rx
 
@@ -136,6 +141,10 @@ extension DebugViewModel {
         }).disposed(by: disposeBag)
     }
 
+    private func getLatestImage() {
+        
+    }
+
 }
 
 // MARK: I/O
@@ -152,6 +161,7 @@ extension DebugViewModel: ViewModelType {
         let tapUploadImageButton: Observable<Void>
         let tapSaveNameButton: Observable<Void>
         let tapSaveProfileButton: Observable<Void>
+        let tapFetchLatestImageButton: Signal<Void>
     }
 
     public struct Output {
@@ -189,6 +199,11 @@ extension DebugViewModel: ViewModelType {
         // Reaction to the tap of the save user profile button.
         input.tapSaveProfileButton.withLatestFrom(input.userProfileObservable).subscribe(onNext: { profile in
             self.commitUserProfile(with: profile)
+        }).disposed(by: disposeBag)
+
+        // Reaction to the tap of the fetch latest image button.
+        input.tapFetchLatestImageButton.emit(onNext: { _ in
+            self.getLatestImage()
         }).disposed(by: disposeBag)
 
         return  Output(dismissEvent: dismissRelay.asSignal(),

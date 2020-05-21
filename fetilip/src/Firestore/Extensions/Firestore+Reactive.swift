@@ -64,4 +64,53 @@ extension Reactive where Base: Firestore {
         }
     }
 
+    /// Fetch data specify collection.
+    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, collectionRef: CollectionReference) -> Single<[T]> {
+        return Single.create { observer in
+            collectionRef.getDocuments { snapshot, error in
+                if let e = error {
+                    observer(.error(e))
+                    return
+                }
+                guard let snap = snapshot else {
+                    observer(.error(ApplicationError.unknown))
+                    return
+                }
+                let results = snap.documents.compactMap { s -> T? in
+                    do {
+                        return try s.makeResult(id: s.documentID)
+                    } catch {
+                        // TODO: Error handler
+                        log.error(error)
+                        return nil
+                    }
+                }
+                observer(.success(results))
+            }
+            return Disposables.create()
+        }
+    }
+
+}
+
+extension DocumentSnapshot {
+
+    func makeResult<T: FirestoreDatabaseCollection>(id: String) throws -> T {
+        guard exists else {
+            throw ApplicationError.notFoundEntity(documentId: documentID)
+        }
+        let json = data()
+        log.debug(json)
+        guard let j = json else {
+            throw ApplicationError.notFoundJson
+        }
+        return T(id: id, json: j)
+    }
+
+}
+
+public enum ApplicationError: Error {
+    case unknown
+    case notFoundEntity(documentId: String)
+    case notFoundJson
 }
