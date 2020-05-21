@@ -48,6 +48,8 @@ struct DebugViewModel {
 
     private let uploadedImageUrlRelay: PublishRelay<String> = PublishRelay<String>()
 
+    private let fetchedImageDriver: PublishRelay<UIImage?> = PublishRelay<UIImage?>()
+
 }
 
 extension DebugViewModel {
@@ -142,7 +144,17 @@ extension DebugViewModel {
     }
 
     private func getLatestImage() {
-        
+        postModelClient.getImage().subscribe(onSuccess: { image in
+            // TODO: Safe decode
+            if let base64str = image.first?.fields?.image {
+                let imageData = NSData(base64Encoded: base64str, options: .ignoreUnknownCharacters)
+                guard let data = imageData else {
+                    return
+                }
+                let image = UIImage(data: data as Data)
+                self.fetchedImageDriver.accept(image)
+            }
+        }).disposed(by: disposeBag)
     }
 
 }
@@ -170,6 +182,7 @@ extension DebugViewModel: ViewModelType {
         let notifyObservable: Observable<String>
         let loginStateDriver: Driver<Bool>
         let uploadedImageUrlDriver: Driver<String>
+        let fetchedImageDriver: Driver<UIImage?>
     }
 
     public func transform(input: Input) -> Output {
@@ -210,7 +223,8 @@ extension DebugViewModel: ViewModelType {
                        loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
                        notifyObservable: notifySubject.asObservable(),
                        loginStateDriver: loginStateRelay.asDriver(onErrorJustReturn: false),
-                       uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""))
+                       uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""),
+                       fetchedImageDriver: fetchedImageDriver.asDriver(onErrorJustReturn: UIImage()))
 
     }
 

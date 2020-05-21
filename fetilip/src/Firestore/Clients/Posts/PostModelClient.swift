@@ -14,6 +14,8 @@ protocol PostModelClientProtocol {
 
     func postImage(image: String) -> Single<()>
 
+    func getImage() -> Single<[PostModel]>
+
 }
 
 /**
@@ -32,6 +34,10 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
         }
         let fields = PostsRequests.postImage(userId: uid, image: image).parameters
         return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeCollectionRef(), fields: fields)
+    }
+
+    func getImage() -> Single<[PostModel]> {
+        Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
     
 }

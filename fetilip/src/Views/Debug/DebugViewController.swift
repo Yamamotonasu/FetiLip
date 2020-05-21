@@ -130,6 +130,10 @@ extension DebugViewController {
             .map { !$0 }
             .drive(logoutButton.rx.isHidden)
             .disposed(by: rx.disposeBag)
+
+        output.fetchedImageDriver
+            .drive(uploadImageView.rx.image)
+            .disposed(by: rx.disposeBag)
     }
 
 }
