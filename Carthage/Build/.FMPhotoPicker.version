@@ -3,8 +3,8 @@
   "iOS" : [
     {
       "name" : "FMPhotoPicker",
-      "hash" : "ef4258702ff58317609fec88e64d8b859b14a6ec3b596b831f79cd9259dd4f15",
-      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+      "hash" : "d88f91afc86ad7c13bb254f094b80490142f9a717e2dc37649e04a56fb90aa98",
+      "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
     }
   ]
 }
