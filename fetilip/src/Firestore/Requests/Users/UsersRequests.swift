@@ -11,7 +11,7 @@ import Foundation
 /**
  * Data change request parameters to users document.
  */
-enum UsersRequests {
+enum UsersRequests: FirestoreRequest {
 
     typealias Fields = UserModel.Fields
 

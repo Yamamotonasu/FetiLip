@@ -11,9 +11,22 @@ import RxSwift
 import FirebaseFirestore
 
 /**
- * Communication with firestore users collection.
+* Communication client model with firestore users collection protocol.
+*/
+protocol UsersModelClientProtocol {
+
+    func setInitialData(params: (email: String, uid: String)) -> Single<()>
+
+    func updateUserName(userName: String) -> Single<()>
+
+    func updateUserProfile(profile: String) -> Single<()>
+
+}
+
+/**
+ * Communication client model with firestore users collection.
  */
-public struct UsersModelClient {
+public struct UsersModelClient: UsersModelClientProtocol {
 
     public init() {}
 

@@ -20,6 +20,20 @@
 		035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00324666D3E001FF6D1 /* LoginAccountData.swift */; };
 		035BB00624668839001FF6D1 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */; };
 		035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */; };
+		035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */; };
+		035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035BB0102467CFA2001FF6D1 /* PostLip.storyboard */; };
+		035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */; };
+		035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0142467D080001FF6D1 /* PostLipViewModel.swift */; };
+		035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */; };
+		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
+		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
+		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
+		036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45092471902000DD9282 /* SelectModeViewController.swift */; };
+		036A450D2472CB8C00DD9282 /* PostModelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A450C2472CB8C00DD9282 /* PostModelClient.swift */; };
+		036A45102472CC4A00DD9282 /* PostsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A450F2472CC4A00DD9282 /* PostsRequests.swift */; };
+		036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45112472CD3900DD9282 /* FirestoreRequest.swift */; };
+		036A45142472D13800DD9282 /* LoginRequired.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45132472D13800DD9282 /* LoginRequired.swift */; };
+		036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45152472D96000DD9282 /* UIImage+Extensions.swift */; };
 		039EB65A243611290016436C /* abseil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB655243611280016436C /* abseil.framework */; };
 		039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB656243611280016436C /* FirebaseFirestore.framework */; };
 		039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB657243611290016436C /* BoringSSL-GRPC.framework */; };
@@ -125,6 +139,20 @@
 		035BB00324666D3E001FF6D1 /* LoginAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccountData.swift; sourceTree = "<group>"; };
 		035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Production-Info.plist"; sourceTree = "<group>"; };
 		035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetilipBuildScheme.swift; sourceTree = "<group>"; };
+		035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMPhotoPicker.framework; path = Carthage/Build/iOS/FMPhotoPicker.framework; sourceTree = "<group>"; };
+		035BB0102467CFA2001FF6D1 /* PostLip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostLip.storyboard; sourceTree = "<group>"; };
+		035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewController.swift; sourceTree = "<group>"; };
+		035BB0142467D080001FF6D1 /* PostLipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewModel.swift; sourceTree = "<group>"; };
+		035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPostPageViewController.swift; sourceTree = "<group>"; };
+		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
+		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
+		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
+		036A45092471902000DD9282 /* SelectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectModeViewController.swift; sourceTree = "<group>"; };
+		036A450C2472CB8C00DD9282 /* PostModelClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelClient.swift; sourceTree = "<group>"; };
+		036A450F2472CC4A00DD9282 /* PostsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRequests.swift; sourceTree = "<group>"; };
+		036A45112472CD3900DD9282 /* FirestoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRequest.swift; sourceTree = "<group>"; };
+		036A45132472D13800DD9282 /* LoginRequired.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequired.swift; sourceTree = "<group>"; };
+		036A45152472D96000DD9282 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		039EB655243611280016436C /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = abseil.framework; path = Carthage/Build/iOS/abseil.framework; sourceTree = "<group>"; };
 		039EB656243611280016436C /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseFirestore.framework; path = Carthage/Build/iOS/FirebaseFirestore.framework; sourceTree = "<group>"; };
 		039EB657243611290016436C /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BoringSSL-GRPC.framework"; path = "Carthage/Build/iOS/BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
@@ -358,6 +386,7 @@
 				03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */,
 				039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */,
 				03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */,
+				035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */,
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
@@ -449,6 +478,8 @@
 			isa = PBXGroup;
 			children = (
 				035BAFEC2459922C001FF6D1 /* FirestoreDatabaseCollection.swift */,
+				036A45112472CD3900DD9282 /* FirestoreRequest.swift */,
+				036A45132472D13800DD9282 /* LoginRequired.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -456,6 +487,7 @@
 		035BAFEE2459AD3C001FF6D1 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				036A450B2472CB6E00DD9282 /* Posts */,
 				035BAFEF2459AD52001FF6D1 /* Users */,
 			);
 			path = Clients;
@@ -480,6 +512,7 @@
 		035BAFFB246035B7001FF6D1 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				036A450E2472CC2F00DD9282 /* Posts */,
 				035BAFFE246035E3001FF6D1 /* Users */,
 			);
 			path = Requests;
@@ -499,6 +532,65 @@
 				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		035BB00E2467CF58001FF6D1 /* PostLip */ = {
+			isa = PBXGroup;
+			children = (
+				036A4506247188B600DD9282 /* Modal */,
+				035BB0102467CFA2001FF6D1 /* PostLip.storyboard */,
+				035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */,
+			);
+			path = PostLip;
+			sourceTree = "<group>";
+		};
+		035BB00F2467CF6A001FF6D1 /* PostLip */ = {
+			isa = PBXGroup;
+			children = (
+				035BB0142467D080001FF6D1 /* PostLipViewModel.swift */,
+			);
+			path = PostLip;
+			sourceTree = "<group>";
+		};
+		036A450024711D9500DD9282 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				036A45012471212A00DD9282 /* PostsModel.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		036A45032471406100DD9282 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				036A45042471408000DD9282 /* Reactive+Extentions.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		036A4506247188B600DD9282 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				036A450724718E8D00DD9282 /* SelectMode.storyboard */,
+				036A45092471902000DD9282 /* SelectModeViewController.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		036A450B2472CB6E00DD9282 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				036A450C2472CB8C00DD9282 /* PostModelClient.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		036A450E2472CC2F00DD9282 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				036A450F2472CC4A00DD9282 /* PostsRequests.swift */,
+			);
+			path = Posts;
 			sourceTree = "<group>";
 		};
 		039EB66D2436157B0016436C /* Debug */ = {
@@ -543,6 +635,7 @@
 		039EB689243B5F570016436C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				036A450024711D9500DD9282 /* Posts */,
 				035BAFE824598A31001FF6D1 /* Users */,
 			);
 			path = Models;
@@ -615,6 +708,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */,
 				039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */,
 				039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */,
 				039EB67724384FD50016436C /* FirebaseAuth.framework */,
@@ -675,6 +769,7 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				035BB00E2467CF58001FF6D1 /* PostLip */,
 				039EB66D2436157B0016436C /* Debug */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
@@ -686,6 +781,7 @@
 		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				035BAFDA2443302D001FF6D1 /* Debug */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
 				035BAFDB24433040001FF6D1 /* PostList */,
@@ -697,6 +793,7 @@
 		03AAFB3D241FA00B0068FB1E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				036A45032471406100DD9282 /* Rx */,
 				03AAFB6424272C360068FB1E /* Functions */,
 				03AAFB6324272C250068FB1E /* UI */,
 				03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */,
@@ -767,6 +864,7 @@
 				03AAFBAC243094A40068FB1E /* UIView+Extensions.swift */,
 				03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */,
 				03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */,
+				036A45152472D96000DD9282 /* UIImage+Extensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -803,6 +901,7 @@
 			children = (
 				03AAFBA02428D54E0068FB1E /* PostList.storyboard */,
 				03AAFBA22428D5B60068FB1E /* PostListViewController.swift */,
+				035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */,
 			);
 			path = PostList;
 			sourceTree = "<group>";
@@ -1104,10 +1203,12 @@
 				039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */,
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
+				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
+				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
 				03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */,
@@ -1148,6 +1249,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FMPhotoPicker.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1162,6 +1264,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FMPhotoPicker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1277,14 +1380,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
+				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
+				036A45022471212A00DD9282 /* PostsModel.swift in Sources */,
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
+				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
+				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
@@ -1296,6 +1404,8 @@
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
+				036A45102472CC4A00DD9282 /* PostsRequests.swift in Sources */,
+				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
@@ -1305,16 +1415,20 @@
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
 				035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
+				035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */,
 				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,
 				035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */,
 				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
+				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
+				036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
 				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,
+				036A450D2472CB8C00DD9282 /* PostModelClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1494,7 +1608,7 @@
 			baseConfigurationReference = 8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				BUNDLE_NAME_PREFIX = d_;
+				BUNDLE_NAME_PREFIX = dev;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -23,7 +23,9 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
 
     typealias ViewModel = DebugViewModel
 
-    lazy var viewModel: ViewModel = DebugViewModel(dependency: ((usersModelClient: UsersModelClient(), authModel: UsersAuthModel())))
+    let viewModel: ViewModel = DebugViewModel(dependency: ((usersModelClient: UsersModelClient(),
+                                                            authModel: UsersAuthModel(),
+                                                            postsModelClient: PostModelClient())))
 
     // MARK: Init process
 
@@ -70,6 +72,9 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
     /// UIButton for saving user profile.
     @IBOutlet private weak var saveUserProfileButton: UIButton!
 
+    /// UIButton for Fetching posted image.
+    @IBOutlet private weak var fetchLatestImage: UIButton!
+
     // MARK: LifeCycle
 
     override func viewDidLoad() {
@@ -84,11 +89,6 @@ class DebugViewController: UIViewController, ViewControllerMethodInjectable {
 
 extension DebugViewController {
 
-    /// Init view model
-    private func initViewModel() -> ViewModel {
-        return DebugViewModel(dependency: ((usersModelClient: UsersModelClient(), authModel: UsersAuthModel())))
-    }
-
     /// Bind UI from view model outputs
     private func subscribeUI() {
         let input = ViewModel.Input(userNameObservable: userNameTextField.rx.text.orEmpty.asObservable(),
@@ -99,7 +99,8 @@ extension DebugViewController {
                                     tapLogoutButton: logoutButton.rx.tap.asSignal(),
                                     tapUploadImageButton: uploadButton.rx.tap.asObservable(),
                                     tapSaveNameButton: saveUserNameButton.rx.tap.asObservable(),
-                                    tapSaveProfileButton: saveUserProfileButton.rx.tap.asObservable())
+                                    tapSaveProfileButton: saveUserProfileButton.rx.tap.asObservable(),
+                                    tapFetchLatestImageButton: fetchLatestImage.rx.tap.asSignal())
 
         let output = viewModel.transform(input: input)
 
@@ -129,6 +130,10 @@ extension DebugViewController {
             .map { !$0 }
             .drive(logoutButton.rx.isHidden)
             .disposed(by: rx.disposeBag)
+
+        output.fetchedImageDriver
+            .drive(uploadImageView.rx.image)
+            .disposed(by: rx.disposeBag)
     }
 
 }
@@ -138,10 +143,11 @@ extension DebugViewController {
  */
 final class DebugViewControllerGenerator {
 
-    private init() {}
+    public init() {}
 
     public static func generate() -> UIViewController {
         guard let vc = R.storyboard.debug.debugViewController() else {
+            assertionFailure()
             return UIViewController()
         }
         vc.inject(with: .init())

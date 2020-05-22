@@ -17,17 +17,22 @@ import RxCocoa
 struct DebugViewModel {
 
     /// DI init.
-    init(dependency: ((usersModelClient: UsersModelClient,
-        authModel: UserAuthModelProtocol))) {
+    init(dependency: ((usersModelClient: UsersModelClientProtocol,
+        authModel: UserAuthModelProtocol,
+        postsModelClient: PostModelClientProtocol))) {
         usersModelClient = dependency.usersModelClient
         authModel = dependency.authModel
+        postModelClient = dependency.postsModelClient
     }
 
     /// User authentication model.
     private let authModel: UserAuthModelProtocol
 
     /// Communication with firestore users collection model.
-    private let usersModelClient: UsersModelClient
+    private let usersModelClient: UsersModelClientProtocol
+
+    /// Communication with firestore posts collection model.
+    private let postModelClient: PostModelClientProtocol
 
     // MARK: - Rx
 
@@ -42,6 +47,8 @@ struct DebugViewModel {
     private let loginStateRelay: PublishRelay<Bool> = PublishRelay<Bool>()
 
     private let uploadedImageUrlRelay: PublishRelay<String> = PublishRelay<String>()
+
+    private let fetchedImageDriver: PublishRelay<UIImage?> = PublishRelay<UIImage?>()
 
 }
 
@@ -136,6 +143,20 @@ extension DebugViewModel {
         }).disposed(by: disposeBag)
     }
 
+    private func getLatestImage() {
+        postModelClient.getImage().subscribe(onSuccess: { image in
+            // TODO: Safe decode
+            if let base64str = image.first?.fields?.image {
+                let imageData = NSData(base64Encoded: base64str, options: .ignoreUnknownCharacters)
+                guard let data = imageData else {
+                    return
+                }
+                let image = UIImage(data: data as Data)
+                self.fetchedImageDriver.accept(image)
+            }
+        }).disposed(by: disposeBag)
+    }
+
 }
 
 // MARK: I/O
@@ -152,6 +173,7 @@ extension DebugViewModel: ViewModelType {
         let tapUploadImageButton: Observable<Void>
         let tapSaveNameButton: Observable<Void>
         let tapSaveProfileButton: Observable<Void>
+        let tapFetchLatestImageButton: Signal<Void>
     }
 
     public struct Output {
@@ -160,6 +182,7 @@ extension DebugViewModel: ViewModelType {
         let notifyObservable: Observable<String>
         let loginStateDriver: Driver<Bool>
         let uploadedImageUrlDriver: Driver<String>
+        let fetchedImageDriver: Driver<UIImage?>
     }
 
     public func transform(input: Input) -> Output {
@@ -191,11 +214,17 @@ extension DebugViewModel: ViewModelType {
             self.commitUserProfile(with: profile)
         }).disposed(by: disposeBag)
 
+        // Reaction to the tap of the fetch latest image button.
+        input.tapFetchLatestImageButton.emit(onNext: { _ in
+            self.getLatestImage()
+        }).disposed(by: disposeBag)
+
         return  Output(dismissEvent: dismissRelay.asSignal(),
                        loginInfoDriver: loginInfoRelay.asDriver(onErrorJustReturn: ""),
                        notifyObservable: notifySubject.asObservable(),
                        loginStateDriver: loginStateRelay.asDriver(onErrorJustReturn: false),
-                       uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""))
+                       uploadedImageUrlDriver: uploadedImageUrlRelay.asDriver(onErrorJustReturn: ""),
+                       fetchedImageDriver: fetchedImageDriver.asDriver(onErrorJustReturn: UIImage()))
 
     }
 
