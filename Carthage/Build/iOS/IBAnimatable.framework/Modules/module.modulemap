@@ -1,0 +1,11 @@
+framework module IBAnimatable {
+  umbrella header "IBAnimatable.h"
+
+  export *
+  module * { export * }
+}
+
+module IBAnimatable.Swift {
+    header "IBAnimatable-Swift.h"
+    requires objc
+}

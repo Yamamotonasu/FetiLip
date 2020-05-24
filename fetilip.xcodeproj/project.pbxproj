@@ -50,6 +50,7 @@
 		039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */; };
 		039EB6872439BEB00016436C /* AppIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB6862439BEB00016436C /* AppIndicator.swift */; };
 		039EB68B243B641B0016436C /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB68A243B641A0016436C /* UsersModel.swift */; };
+		03A939C4247A93C3000265E6 /* IBAnimatable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A939C3247A93C3000265E6 /* IBAnimatable.framework */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
 		03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */; };
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
@@ -169,6 +170,7 @@
 		039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		039EB6862439BEB00016436C /* AppIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIndicator.swift; sourceTree = "<group>"; };
 		039EB68A243B641A0016436C /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
+		03A939C3247A93C3000265E6 /* IBAnimatable.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IBAnimatable.framework; path = Carthage/Build/iOS/IBAnimatable.framework; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */,
 				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
 				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
+				03A939C4247A93C3000265E6 /* IBAnimatable.framework in Frameworks */,
 				03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */,
 				039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */,
 				03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */,
@@ -708,6 +711,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03A939C3247A93C3000265E6 /* IBAnimatable.framework */,
 				035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */,
 				039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */,
 				039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */,
@@ -1250,6 +1254,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FMPhotoPicker.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IBAnimatable.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1265,6 +1270,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FMPhotoPicker.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IBAnimatable.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

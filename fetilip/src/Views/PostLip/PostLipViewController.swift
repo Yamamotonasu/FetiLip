@@ -10,6 +10,7 @@ import UIKit
 import FMPhotoPicker
 import RxSwift
 import RxCocoa
+import IBAnimatable
 
 /**
  * ViewController for posting lips.
