@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034A9859249602F7009336F0 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9856249602F7009336F0 /* Nuke.framework */; };
+		034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9857249602F7009336F0 /* Differentiator.framework */; };
+		034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9858249602F7009336F0 /* RxDataSources.framework */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -126,6 +129,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034A9856249602F7009336F0 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		034A9857249602F7009336F0 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		034A9858249602F7009336F0 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -389,9 +395,11 @@
 				035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */,
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
+				034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
 				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
+				034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */,
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
 				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
@@ -402,6 +410,7 @@
 				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
 				03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */,
 				039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */,
+				034A9859249602F7009336F0 /* Nuke.framework in Frameworks */,
 				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
 				039EB660243611290016436C /* FirebaseStorage.framework in Frameworks */,
 			);
@@ -708,6 +717,9 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				034A9857249602F7009336F0 /* Differentiator.framework */,
+				034A9856249602F7009336F0 /* Nuke.framework */,
+				034A9858249602F7009336F0 /* RxDataSources.framework */,
 				035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */,
 				039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */,
 				039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */,
@@ -1250,6 +1262,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FMPhotoPicker.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1265,6 +1280,9 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FMPhotoPicker.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
