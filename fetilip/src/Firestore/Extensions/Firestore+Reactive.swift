@@ -76,9 +76,10 @@ extension Reactive where Base: Firestore {
                     observer(.error(ApplicationError.unknown))
                     return
                 }
-                let results = snap.documents.compactMap { s -> T? in
+                // compactMapでnil除去
+                let results = snap.documents.compactMap { document -> T? in
                     do {
-                        return try s.makeResult(id: s.documentID)
+                        return try document.makeResult(id: document.documentID)
                     } catch {
                         // TODO: Error handler
                         log.error(error)

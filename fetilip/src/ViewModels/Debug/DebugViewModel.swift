@@ -147,11 +147,11 @@ extension DebugViewModel {
         postModelClient.getImage().subscribe(onSuccess: { image in
             // TODO: Safe decode
             if let base64str = image.first?.fields?.image {
-                let imageData = NSData(base64Encoded: base64str, options: .ignoreUnknownCharacters)
+                let imageData = Data(base64Encoded: base64str)
                 guard let data = imageData else {
                     return
                 }
-                let image = UIImage(data: data as Data)
+                let image = UIImage(data: data)
                 self.fetchedImageDriver.accept(image)
             }
         }).disposed(by: disposeBag)
