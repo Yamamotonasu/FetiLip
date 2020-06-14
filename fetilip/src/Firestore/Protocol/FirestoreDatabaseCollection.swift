@@ -8,7 +8,6 @@
 
 import Foundation
 import FirebaseFirestore
-import CodableFirebase
 
 // Reference: https://gist.github.com/mono0926/ae6c491862370348ad4b4fcc7b4a5556
 
