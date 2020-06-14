@@ -39,7 +39,8 @@ extension UIImage {
         guard let base64String = jpeg(.medium)?.base64EncodedString() else {
             return nil
         }
-        return "data:image/jpeg;base64," + base64String
+//        return "data:image/jpeg;base64," + base64String
+        return base64String
     }
 
 }

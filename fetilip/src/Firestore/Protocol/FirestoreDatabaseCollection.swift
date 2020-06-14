@@ -52,7 +52,21 @@ extension FirestoreDatabaseCollection {
 
     public init(id: String, json: [String: Any]) {
         do {
-            let data = try JSONSerialization.data(withJSONObject: json)
+            var j = json
+            // Timestamp → Date変換処理
+            // あまりやりたくない処理。大体案考えたいなぁ
+            j.forEach { (key: String, value: Any) in
+                switch value {
+                case let timestamp as Timestamp:
+                    let date = timestamp.dateValue()
+                    let jsonValue = Int((date.timeIntervalSince1970 * 1000).rounded())
+                    j[key] = jsonValue
+                    break
+                default:
+                    break
+                }
+            }
+            let data = try JSONSerialization.data(withJSONObject: j)
             let decoded = try JSONDecoder().decode(FieldType.self, from: data)
             self.init(id: id, fields: decoded)
         } catch {
@@ -78,3 +92,5 @@ extension FirestoreDatabaseCollection {
     }
 
 }
+
+//extension Timestamp: TimestampType{}
