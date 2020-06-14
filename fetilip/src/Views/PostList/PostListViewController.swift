@@ -31,17 +31,33 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         self.viewModel = dependency.viewModel
     }
 
+    // MARK: - Properties
+
+    private let cellMargin: CGFloat = 10.0
+
+    private var data: [PostDomainModel] = [] {
+        didSet {
+            // TODO: 一時的にreloadしておく
+            self.lipCollectionView.reloadData()
+        }
+    }
+
     // MARK: - Outlets
+
+    @IBOutlet private weak var lipCollectionView: UICollectionView!
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         composeUI()
+        setupCollectionView()
         subscribeUI()
     }
 
 }
+
+// MARK: - Private functions
 
 extension PostListViewController {
 
@@ -61,6 +77,51 @@ extension PostListViewController {
     private func transitionPostLipScene() {
         let vc = PostLipViewControllerGenerator.generate()
         self.present(vc, animated: true)
+    }
+
+    private func setupCollectionView() {
+        lipCollectionView.dataSource = self
+        lipCollectionView.contentInset = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
+        lipCollectionView.register(PostLipCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.postLipCell.identifier)
+        if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonaryCollectionViewLayout {
+            collectionViewLayout.delegate = self
+        }
+    }
+
+}
+
+// MARK: - CollectionView
+
+extension PostListViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.postLipCell.identifier, for: indexPath) as? PostLipCollectionViewCell {
+            cell.setupCell(data[indexPath.row])
+            return cell
+        } else {
+            assertionFailure()
+            return UICollectionViewCell()
+        }
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+
+}
+
+// MARK: - Masonary collection view delegate
+
+extension PostListViewController: MasonaryLayoutDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath index: IndexPath) -> CGFloat {
+        let targetImage = data[index.row]
+        return targetImage.image?.size.height ?? 0.0
     }
 
 }

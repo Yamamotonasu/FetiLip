@@ -24,6 +24,7 @@ public struct PostModel: FirestoreDatabaseCollection {
 
         public let userId: String
 
+        // base64
         public let image: String
 
         public let createdAt: Date
