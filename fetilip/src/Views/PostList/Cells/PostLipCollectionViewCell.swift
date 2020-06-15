@@ -32,8 +32,8 @@ class PostLipCollectionViewCell: UICollectionViewCell {
         lipImage = nil
     }
 
-    func setupCell(_ cell: PostDomainModel) {
-
+    func setupCell(_ model: PostDomainModel) {
+        lipImage.image = model.image
     }
 
 }

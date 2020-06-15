@@ -14,7 +14,7 @@ class TransitionPostPageViewController: UIViewController {
 
     typealias ViewModel = PostListViewModel
 
-    var viewModel: ViewModel = PostListViewModel()
+    var viewModel: ViewModel = PostListViewModel(postModel: PostModelClient())
 
     /// Button to transition to the lip posting page.
     @IBOutlet weak var transitionPostPageButton: UIButton!

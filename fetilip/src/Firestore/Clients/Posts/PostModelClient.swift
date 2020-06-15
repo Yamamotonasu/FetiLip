@@ -14,6 +14,9 @@ protocol PostModelClientProtocol {
 
     func postImage(image: String) -> Single<()>
 
+    func getPostList() -> Single<[PostModel]>
+
+    // For test function.
     func getImage() -> Single<[PostModel]>
 
 }
@@ -34,6 +37,16 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
         }
         let fields = PostsRequests.postImage(userId: uid, image: image).parameters
         return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeCollectionRef(), fields: fields)
+    }
+
+    func getPostList() -> Single<[PostModel]> {
+        guard let _ = LoginAccountData.uid else {
+            return Single.create { observer in
+                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                return Disposables.create()
+            }
+        }
+        return Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
 
     func getImage() -> Single<[PostModel]> {

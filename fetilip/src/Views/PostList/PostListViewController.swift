@@ -19,7 +19,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     typealias ViewModel = PostListViewModel
 
-    var viewModel: ViewModel = PostListViewModel()
+    var viewModel: ViewModel = PostListViewModel(postModel: PostModelClient())
 
     // MARK: - Init process
 
@@ -51,8 +51,9 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
     override func viewDidLoad() {
         super.viewDidLoad()
         composeUI()
+        subscribe()
         setupCollectionView()
-        subscribeUI()
+        viewModel.fetchList()
     }
 
 }
@@ -69,8 +70,11 @@ extension PostListViewController {
     }
 
     /// Bind UI from view model outputs.
-    private func subscribeUI() {
-
+    private func subscribe() {
+        viewModel.fetchCompletionObservable
+            .subscribe(onNext: { [weak self] domains in
+                self?.data = domains
+            }).disposed(by: rx.disposeBag)
     }
 
     /// Transition post lip page.
@@ -111,7 +115,6 @@ extension PostListViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-
 
 }
 
