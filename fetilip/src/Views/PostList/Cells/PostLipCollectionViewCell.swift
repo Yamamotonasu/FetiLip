@@ -25,7 +25,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-//        clear()
+        clear()
     }
 
     func clear() {
@@ -35,13 +35,30 @@ class PostLipCollectionViewCell: UICollectionViewCell {
     func setupCell(_ model: PostDomainModel) {
         if let lip = model.image {
             lipImage.alpha = 0
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.24) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.36) {
                 self.lipImage.image = lip
-                UIView.animate(withDuration: 0.24) {
+                UIView.animate(withDuration: 0.36) {
                     self.lipImage.alpha = 1
                 }
             }
         }
+        setupDesign()
+    }
+
+    func setupDesign() {
+        self.contentView.layer.masksToBounds = true
+        self.contentView.layer.cornerRadius = 7.0
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor.ex.hex("#dddddd").cgColor
+
+        self.layer.masksToBounds = false
+        self.layer.shadowColor = UIColor.ex.hex("#aaaaaa").cgColor
+        self.layer.shadowOffset = CGSize(width: 3.00, height: 3.00)
+        self.layer.shadowRadius = 2.5
+        self.layer.shadowOpacity = 0.5
+
+        // ドロップシャドウの形状をcontentViewに付与した角丸を考慮するようにする
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
 
 }
