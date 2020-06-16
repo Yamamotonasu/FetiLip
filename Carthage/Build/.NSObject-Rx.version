@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "NSObject_Rx",
-      "hash" : "9cc35dcec34179c93a6110a3cc89413d0dd67b9eb89673d4c93bf26b75486f7b",
+      "hash" : "9444a0898c7b3ceffa33657a34a39c0db5d4c1e98df7be836fe011b3a44a9f77",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
     }
   ]

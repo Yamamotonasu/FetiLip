@@ -3,7 +3,7 @@
   "iOS" : [
     {
       "name" : "Nuke",
-      "hash" : "7a51fa8912faba054c3274f0308195e3f731a917c2befd4dc835ea3d00dfa240",
+      "hash" : "f22f4434cdd0f9db36eb61fa5b4d458fa4007e7a1b700b74eaacb114afb62f5b",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
     }
   ]
