@@ -13,7 +13,7 @@ import RxCocoa
 /**
  * PostListViewController,
  */
-class PostListViewController: UIViewController, ViewControllerMethodInjectable {
+class PostListViewController: UIViewController, ViewControllerMethodInjectable, UICollectionViewDelegateFlowLayout {
 
     // MARK: - ViewModel
 
@@ -37,7 +37,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private var data: [PostDomainModel] = [] {
         didSet {
-            // TODO: 一時的にreloadしておく
+            // TODO: 動作確認用
             self.lipCollectionView.reloadData()
         }
     }
@@ -83,10 +83,12 @@ extension PostListViewController {
         self.present(vc, animated: true)
     }
 
+    /// Setup collection view and set delegate masonary collection view layout.
     private func setupCollectionView() {
+        lipCollectionView.register(R.nib.postLipCollectionViewCell)
+        lipCollectionView.delegate = self
         lipCollectionView.dataSource = self
         lipCollectionView.contentInset = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
-        lipCollectionView.register(PostLipCollectionViewCell.self, forCellWithReuseIdentifier: R.reuseIdentifier.postLipCell.identifier)
         if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonaryCollectionViewLayout {
             collectionViewLayout.delegate = self
         }
@@ -103,7 +105,7 @@ extension PostListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.postLipCell.identifier, for: indexPath) as? PostLipCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.postListCell.identifier, for: indexPath) as? PostLipCollectionViewCell {
             cell.setupCell(data[indexPath.row])
             return cell
         } else {

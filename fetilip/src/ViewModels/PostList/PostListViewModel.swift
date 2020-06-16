@@ -46,7 +46,7 @@ extension PostListViewModel {
             .do()
             .map { $0.filter { $0.fields != nil }.map { PostDomainModel.convert($0.fields!) } }
             .subscribe(onSuccess: { postDomains in
-                let newDomain = postDomains.filter { $0.image == nil }
+                let newDomain = postDomains.filter { $0.image != nil }
                 self.fetchCompletionSubject.accept(newDomain)
             }) { e in
                 log.error(e.localizedDescription)

@@ -28,13 +28,3 @@ struct PostDomainModel: DomainModelProtocol {
     }
 
 }
-
-protocol DomainModelProtocol {
-
-    associatedtype Input: FirestoreDatabaseCollection
-
-    associatedtype Output: DomainModelProtocol
-
-    static func convert(_ model: Input.FieldType) -> Output
-
-}

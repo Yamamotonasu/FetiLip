@@ -29,11 +29,13 @@ class PostLipCollectionViewCell: UICollectionViewCell {
     }
 
     func clear() {
-        lipImage = nil
+        lipImage.image = nil
     }
 
     func setupCell(_ model: PostDomainModel) {
-        lipImage.image = model.image
+        if let lip = model.image {
+            lipImage.image = lip
+        }
     }
 
 }

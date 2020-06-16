@@ -14,6 +14,7 @@
 		034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */; };
 		034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */; };
 		034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986B24964F1B009336F0 /* PostDomainModel.swift */; };
+		034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986E24984024009336F0 /* DomainModelProtocol.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -140,6 +141,7 @@
 		034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipCollectionViewCell.swift; sourceTree = "<group>"; };
 		034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostLipCollectionViewCell.xib; sourceTree = "<group>"; };
 		034A986B24964F1B009336F0 /* PostDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDomainModel.swift; sourceTree = "<group>"; };
+		034A986E24984024009336F0 /* DomainModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModelProtocol.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 		034A986924964EF5009336F0 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
+				034A986D24983FE8009336F0 /* RxDatasource */,
 				034A986A24964EFE009336F0 /* Posts */,
 			);
 			path = Domains;
@@ -482,6 +485,13 @@
 				034A986B24964F1B009336F0 /* PostDomainModel.swift */,
 			);
 			path = Posts;
+			sourceTree = "<group>";
+		};
+		034A986D24983FE8009336F0 /* RxDatasource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RxDatasource;
 			sourceTree = "<group>";
 		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
@@ -665,6 +675,7 @@
 			children = (
 				039EB675243840580016436C /* ViewControllerMethodInjectable.swift */,
 				035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */,
+				034A986E24984024009336F0 /* DomainModelProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1452,6 +1463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
+				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
