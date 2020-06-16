@@ -18,7 +18,7 @@ protocol MasonaryLayoutDelegate: class {
 }
 
 /// Masonary Layout
-final class MasonaryCollectionViewLayout: UICollectionViewLayout {
+final class MasonryCollectionViewLayout: UICollectionViewLayout {
 
     // MARK: - Properties
 

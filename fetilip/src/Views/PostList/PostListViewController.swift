@@ -13,7 +13,7 @@ import RxCocoa
 /**
  * PostListViewController,
  */
-class PostListViewController: UIViewController, ViewControllerMethodInjectable, UICollectionViewDelegateFlowLayout {
+class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     // MARK: - ViewModel
 
@@ -85,11 +85,10 @@ extension PostListViewController {
 
     /// Setup collection view and set delegate masonary collection view layout.
     private func setupCollectionView() {
-        lipCollectionView.register(R.nib.postLipCollectionViewCell)
-        lipCollectionView.delegate = self
         lipCollectionView.dataSource = self
         lipCollectionView.contentInset = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
-        if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonaryCollectionViewLayout {
+        lipCollectionView.registerCustomCell(PostLipCollectionViewCell.self)
+        if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonryCollectionViewLayout {
             collectionViewLayout.delegate = self
         }
     }
@@ -105,13 +104,10 @@ extension PostListViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: R.reuseIdentifier.postListCell.identifier, for: indexPath) as? PostLipCollectionViewCell {
-            cell.setupCell(data[indexPath.row])
-            return cell
-        } else {
-            assertionFailure()
-            return UICollectionViewCell()
-        }
+        let cell = collectionView.dequeueReusableCustomCell(PostLipCollectionViewCell.self, indexPath: indexPath)
+        cell.setupCell(data[indexPath.row])
+        return cell
+
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {

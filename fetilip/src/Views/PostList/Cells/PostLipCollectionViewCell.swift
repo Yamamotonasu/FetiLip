@@ -15,7 +15,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var lipImage: UIImageView!
+    @IBOutlet private weak var lipImage: UIImageView!
 
     // MARK: - LifeCycle
 
@@ -25,7 +25,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        clear()
+//        clear()
     }
 
     func clear() {
@@ -34,7 +34,13 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     func setupCell(_ model: PostDomainModel) {
         if let lip = model.image {
-            lipImage.image = lip
+            lipImage.alpha = 0
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.24) {
+                self.lipImage.image = lip
+                UIView.animate(withDuration: 0.24) {
+                    self.lipImage.alpha = 1
+                }
+            }
         }
     }
 
