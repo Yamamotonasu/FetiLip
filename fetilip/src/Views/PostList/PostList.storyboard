@@ -11,14 +11,14 @@
         <!--Post List View Controller-->
         <scene sceneID="CzM-wa-gBJ">
             <objects>
-                <viewController storyboardIdentifier="postListViewController" id="nLP-Ln-25S" customClass="PostListViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="postListViewController" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="nLP-Ln-25S" customClass="PostListViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gw8-d4-j7a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fYI-Ez-7at">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0zF-4s-2xE">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -47,6 +47,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hIx-I5-YOw"/>
                     <connections>
+                        <outlet property="collectionViewBottomConstraint" destination="TQW-my-zZT" id="7m0-cV-suH"/>
                         <outlet property="lipCollectionView" destination="fYI-Ez-7at" id="qrN-ug-hHA"/>
                     </connections>
                 </viewController>
@@ -82,19 +83,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4u5-Oy-wkj">
-                                <rect key="frame" x="314" y="552" width="46" height="46"/>
+                                <rect key="frame" x="304" y="542" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.6588235294" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="6Hj-7U-ZTg"/>
+                                    <constraint firstAttribute="width" constant="56" id="6Hj-7U-ZTg"/>
                                     <constraint firstAttribute="width" secondItem="4u5-Oy-wkj" secondAttribute="height" multiplier="1:1" id="G1J-EM-2em"/>
-                                    <constraint firstAttribute="height" constant="46" id="aIA-j7-HVf"/>
+                                    <constraint firstAttribute="height" constant="56" id="aIA-j7-HVf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="+"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="23"/>
+                                        <real key="value" value="26"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.29791845030000003" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,6 +108,12 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                         <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>

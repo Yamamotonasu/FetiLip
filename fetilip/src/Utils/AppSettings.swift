@@ -9,9 +9,16 @@
 import Foundation
 import FirebaseFirestore
 import FMPhotoPicker
+import UIKit
 
 /// Struct that summarizes the setting values related to the Fetilip application.
 public struct AppSettings {
+
+    /// TabBarBottomHeight
+    static let tabBarHeight: CGFloat = 60
+
+    /// Tab bar bottom constraint.
+    static let tabBarBottomMargin: CGFloat = 20
 
     /// Setting value related to Firestore.
     struct FireStore {

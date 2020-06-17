@@ -92,7 +92,7 @@ final class MasonryCollectionViewLayout: UICollectionViewLayout {
     }
 
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        return false
+        return true
     }
 
 }

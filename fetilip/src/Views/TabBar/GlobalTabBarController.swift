@@ -37,16 +37,18 @@ class GlobalTabBarController: UITabBarController {
     }()
 
     /// タブ本体の下からの高さ
-    private var bottomSpacing: CGFloat = 20
+    private var bottomSpacing: CGFloat =
+        AppSettings.tabBarBottomMargin
 
     /// タブ本体の高さ
-    private var tabBarHeight: CGFloat = 60
+    private var tabBarHeight: CGFloat = AppSettings.tabBarHeight
 
     /// 両端のスペース
     private var horizontleSpacing: CGFloat {
-        // TODO: タブが2つなので一旦決め打ち
         return 70
     }
+
+    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
 
     private lazy var smallBottomView: UIView = {
         let anotherSmallView = UIView()
@@ -74,10 +76,7 @@ class GlobalTabBarController: UITabBarController {
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-
-        if #available(iOS 11.0, *) {
-            self.additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: tabBarHeight + bottomSpacing, right: 0)
-        }
+        self.additionalSafeAreaInsets = UIEdgeInsets(top: 0, left: 0, bottom: tabBarHeight + bottomSpacing, right: 0)
 
         // デフォルトのタブバーは非表示にする
         self.tabBar.isHidden = true
@@ -153,6 +152,17 @@ extension GlobalTabBarController: CustomCardTabBarDelegate {
 
     func cardTabBar(_ sender: CardTabBar, didSelectItemAt index: Int) {
         self.selectedIndex = index
+    }
+
+}
+
+extension UITabBar {
+
+    /// Specify tab bar height.
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        var sizeThatFits = super.sizeThatFits(size)
+        sizeThatFits.height = 0
+        return sizeThatFits
     }
 
 }

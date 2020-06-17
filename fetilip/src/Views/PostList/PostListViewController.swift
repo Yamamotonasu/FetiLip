@@ -24,16 +24,18 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
     // MARK: - Init process
 
     struct Dependency {
-        let viewModel: PostListViewController.ViewModel
+        let isHiddenBottomBar: Bool
     }
 
     func inject(with dependency: Dependency) {
-        self.viewModel = dependency.viewModel
+        self.isHiddenBottomBar = dependency.isHiddenBottomBar
     }
 
     // MARK: - Properties
 
-    private let cellMargin: CGFloat = 10.0
+    private let cellMargin: CGFloat = 12.0
+
+    private var isHiddenBottomBar: Bool? = true
 
     private var data: [PostDomainModel] = [] {
         didSet {
@@ -44,7 +46,10 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     // MARK: - Outlets
 
+    /// Collection view displaying post list.
     @IBOutlet private weak var lipCollectionView: UICollectionView!
+
+    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
 
     // MARK: - Lifecycle
 
@@ -54,6 +59,13 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         subscribe()
         setupCollectionView()
         viewModel.fetchList()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if isHiddenBottomBar == true {
+            self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
+        }
     }
 
 }
@@ -114,6 +126,8 @@ extension PostListViewController: UICollectionViewDataSource {
         return 1
     }
 
+    
+
 }
 
 // MARK: - Masonary collection view delegate
@@ -134,12 +148,16 @@ final class PostListViewControllerGenerator {
 
     private init() {}
 
-    public static func generate(viewModel: PostListViewController.ViewModel) -> UIViewController {
+    /**
+     * - isHiddenBottomBar: Boolean
+     *  hidden tab bar → true,  not hidden → false
+     */
+    public static func generate(isHiddenBottomBar: Bool = true) -> UIViewController {
         guard let vc = R.storyboard.postList.postListViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(viewModel: viewModel))
+        vc.inject(with: .init(isHiddenBottomBar: isHiddenBottomBar))
         return vc
     }
 
