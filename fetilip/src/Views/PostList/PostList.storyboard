@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQL-F9-A4J">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="postListViewController" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="nLP-Ln-25S" customClass="PostListViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gw8-d4-j7a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fYI-Ez-7at">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0zF-4s-2xE">
                                     <size key="itemSize" width="128" height="128"/>
@@ -27,8 +27,8 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <containerView opaque="NO" contentMode="scaleToFill" id="RJu-fV-DXZ">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" id="RJu-fV-DXZ">
+                                <rect key="frame" x="229" y="683" width="185" height="213"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -40,8 +40,10 @@
                         <constraints>
                             <constraint firstItem="fYI-Ez-7at" firstAttribute="leading" secondItem="gJd-3R-OSo" secondAttribute="leading" id="6DG-1k-YZN"/>
                             <constraint firstItem="fYI-Ez-7at" firstAttribute="trailing" secondItem="gJd-3R-OSo" secondAttribute="trailing" id="OCT-Wp-wxa"/>
+                            <constraint firstItem="RJu-fV-DXZ" firstAttribute="bottom" secondItem="fYI-Ez-7at" secondAttribute="bottom" id="SQN-9x-67l"/>
                             <constraint firstItem="fYI-Ez-7at" firstAttribute="bottom" secondItem="gJd-3R-OSo" secondAttribute="bottom" id="TQW-my-zZT"/>
                             <constraint firstItem="fYI-Ez-7at" firstAttribute="top" secondItem="gJd-3R-OSo" secondAttribute="top" id="faU-qh-mSJ"/>
+                            <constraint firstItem="RJu-fV-DXZ" firstAttribute="trailing" secondItem="fYI-Ez-7at" secondAttribute="trailing" id="ioP-dM-nyi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gJd-3R-OSo"/>
                     </view>
@@ -53,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liA-My-3DD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.4000000000001" y="125.4872563718141"/>
+            <point key="canvasLocation" x="1048.8" y="124.58770614692655"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WMa-iE-gE0">
@@ -61,7 +63,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oQL-F9-A4J" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EjF-71-JEd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -79,11 +81,11 @@
             <objects>
                 <viewController id="9ad-TS-G13" customClass="TransitionPostPageViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMX-3W-1OU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="185" height="213"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4u5-Oy-wkj">
-                                <rect key="frame" x="304" y="542" width="56" height="56"/>
+                                <rect key="frame" x="114" y="132" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.6588235294" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="6Hj-7U-ZTg"/>
