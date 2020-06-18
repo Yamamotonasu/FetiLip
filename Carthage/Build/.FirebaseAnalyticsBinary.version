@@ -8,55 +8,55 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.24.0",
+  "commitish" : "6.26.0",
   "iOS" : [
+    {
+      "name" : "PromisesObjC",
+      "hash" : "cfb99ffd54f699a2c1e59b97cd85dc7c299ac2b5e4da9f6fca8486cc8bdc6944"
+    },
+    {
+      "name" : "GoogleDataTransport",
+      "hash" : "1a758a2125212d39c0875e5bdb597593a35517d88dd29c8391398bd35f23bfa1"
+    },
+    {
+      "name" : "GoogleDataTransportCCTSupport",
+      "hash" : "b365fdc83f9f8618ef69a5fcc9663e83fc428e6429f7e5dd92b06bcbd099d750"
+    },
+    {
+      "name" : "FirebaseCore",
+      "hash" : "08be3fc7dce03a1fbe1e208484c1a2fdfb5b7e7d63c336e8f47ce0e94c24113e"
+    },
     {
       "name" : "Firebase",
       "hash" : "a8669248da9519e9955e00448e518e1ca6becb32689eedddde237e19ad1136ae"
     },
     {
-      "name" : "FirebaseAnalytics",
-      "hash" : "2ae3859207730bee11368e068e907961c672d12f721c67a3cf935bc4adba614d"
-    },
-    {
-      "name" : "PromisesObjC",
-      "hash" : "1d1203ac265e7ffc1c2db1a8fc5b4dcd5062d3dfdd90b3a8cf6ff679a93661a7"
-    },
-    {
       "name" : "nanopb",
-      "hash" : "0ac9dbb22ad5faea0900deafb90497222d40f723e6bac4f16ca5a537d2e5bb00"
-    },
-    {
-      "name" : "FirebaseCore",
-      "hash" : "af81290314a3acf1715157dad35f26da672537da796125e44b0fe07aa7d52008"
-    },
-    {
-      "name" : "GoogleUtilities",
-      "hash" : "53eac5c46528df7c9f1a6fe072218d8c9bb8dc5bec60ebea3a4cf4ec4ba2da71"
-    },
-    {
-      "name" : "GoogleDataTransportCCTSupport",
-      "hash" : "134ebda9a15e9f3e580d9ebf2f5379878b75b68c29184e07304a2ef33b932090"
+      "hash" : "0d2d50f0ab0f2fd386a35ad6855004b4fb289ae7c9f876243e2bc5fec2eddf9c"
     },
     {
       "name" : "FIRAnalyticsConnector",
-      "hash" : "e95cbc17a73b703defaa1eee713a5d155631dbfa378a9dc49a034fddbbce4852"
+      "hash" : "822655a2dd45242e7964f2fefdbd4ce02ef367fe1fd75ded73d9e90e873db6f0"
     },
     {
       "name" : "FirebaseCoreDiagnostics",
-      "hash" : "6ceb81fd5b905c5c579d34eb450593622a2ee680842d9a320ec983707f0785aa"
+      "hash" : "8cebe0ef1313f897f3dfa344f2a58e06e2b2148c7f84e100abcfaea394a32c62"
     },
     {
-      "name" : "GoogleDataTransport",
-      "hash" : "5efa256bff18777bbadf1e8a91834eb78830acdb74f37006d917b980f8139489"
+      "name" : "FirebaseAnalytics",
+      "hash" : "88f867a06c6e33dfef66f702f7dab0721e9b16a8d199ee4631246b7f1a96feb1"
     },
     {
       "name" : "FirebaseInstallations",
-      "hash" : "fcb33cff78ef3b1c945710d1f21f9292c49ae29f8dba067b6bcba59d6e01783d"
+      "hash" : "e4e06bc58ea0f97be07025b21d04a015de64cf8db610a0a12634717668ebd5a0"
+    },
+    {
+      "name" : "GoogleUtilities",
+      "hash" : "86ae27c5c09276cb0b5ea5e94148a8bab3dd6f96599b5f54a1d4749ffcdd7fb5"
     },
     {
       "name" : "GoogleAppMeasurement",
-      "hash" : "eb2712effef6ef78733320041ee4cd08808e8a6f02d9972b0d8ddbb35a3cab4d"
+      "hash" : "80ee1631dd35bd78898c500323d908e79330381edd93f69dc3e49fefed5bb5fb"
     }
   ]
 }

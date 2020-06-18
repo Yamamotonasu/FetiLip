@@ -1,7 +1,7 @@
 BCSymbolMap Version: 2.0
 Apple clang version 11.0.3 (clang-1103.0.32.59)
 /Users/yamamotoyuuta/Library/Caches/org.carthage.CarthageKit/DerivedData/11.4.1_11E503a/IQKeyboardManager/v6.5.5/Build/Intermediates.noindex/ArchiveIntermediates/IQKeyboardManager/IntermediateBuildFilesPath/IQKeyboardManager.build/Release-iphoneos/IQKeyboardManager.build/DerivedSources/IQKeyboardManager_vers.c
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager
 -[UIView(IQ_UIView_Hierarchy) viewContainingController]
 -[UIView(IQ_UIView_Hierarchy) topMostController]
 -[UIView(IQ_UIView_Hierarchy) parentContainerViewController]
@@ -117,7 +117,7 @@ __OBJC_$_CATEGORY_INSTANCE_METHODS_NSObject_$_IQ_Logging
 __OBJC_$_PROP_LIST_NSObject_$_IQ_Logging
 __OBJC_$_CATEGORY_NSObject_$_IQ_Logging
 _OBJC_LABEL_CATEGORY_$
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUIView+Hierarchy.m
 IQKeyboardManager/Categories/IQUIView+Hierarchy.m
 __destroy_helper_block_e4_20s
 __copy_helper_block_e4_20s
@@ -263,7 +263,7 @@ __OBJC_$_INSTANCE_VARIABLES_IQKeyboardReturnKeyHandler
 __OBJC_$_PROP_LIST_IQKeyboardReturnKeyHandler
 __OBJC_CLASS_RO_$_IQKeyboardReturnKeyHandler
 _OBJC_LABEL_CLASS_$
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQKeyboardReturnKeyHandler.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQKeyboardReturnKeyHandler.m
 IQKeyboardManager/IQKeyboardReturnKeyHandler.m
 +[IQKeyboardManager load]
 -[IQKeyboardManager init]
@@ -725,7 +725,7 @@ __OBJC_$_INSTANCE_VARIABLES_IQKeyboardManager
 __OBJC_$_PROP_LIST_IQKeyboardManager
 __OBJC_CLASS_RO_$_IQKeyboardManager
 _OBJC_LABEL_NONLAZY_CLASS_$
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQKeyboardManager.m
 IQKeyboardManager/IQKeyboardManager.m
 IQKeyboardManager/IQKeyboardManager.h
 __52-[IQKeyboardManager willChangeStatusBarOrientation:]_block_invoke
@@ -767,7 +767,7 @@ __25-[IQKeyboardManager init]_block_invoke
 __OBJC_$_CATEGORY_INSTANCE_METHODS_UIViewController_$_Additions
 __OBJC_$_PROP_LIST_UIViewController_$_Additions
 __OBJC_$_CATEGORY_UIViewController_$_Additions
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUIViewController+Additions.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUIViewController+Additions.m
 IQKeyboardManager/Categories/IQUIViewController+Additions.m
 -[UIView(Additions) setKeyboardDistanceFromTextField:]
 -[UIView(Additions) keyboardDistanceFromTextField]
@@ -780,7 +780,7 @@ IQKeyboardManager/Categories/IQUIViewController+Additions.m
 __OBJC_$_CATEGORY_INSTANCE_METHODS_UIView_$_Additions
 __OBJC_$_PROP_LIST_UIView_$_Additions
 __OBJC_$_CATEGORY_UIView_$_Additions
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUITextFieldView+Additions.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUITextFieldView+Additions.m
 IQKeyboardManager/Categories/IQUITextFieldView+Additions.m
 +[IQBarButtonItem initialize]
 -[IQBarButtonItem setTintColor:]
@@ -804,7 +804,7 @@ __OBJC_$_INSTANCE_METHODS_IQBarButtonItem
 __OBJC_$_INSTANCE_VARIABLES_IQBarButtonItem
 __OBJC_$_PROP_LIST_IQBarButtonItem
 __OBJC_CLASS_RO_$_IQBarButtonItem
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQBarButtonItem.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQBarButtonItem.m
 IQKeyboardManager/IQToolbar/IQBarButtonItem.m
 IQKeyboardManager/IQToolbar/IQBarButtonItem.h
 -[NSArray(IQ_NSArray_Sort) sortedArrayByTag]
@@ -817,7 +817,7 @@ ___block_literal_global.5
 __OBJC_$_CATEGORY_INSTANCE_METHODS_NSArray_$_IQ_NSArray_Sort
 __OBJC_$_PROP_LIST_NSArray_$_IQ_NSArray_Sort
 __OBJC_$_CATEGORY_NSArray_$_IQ_NSArray_Sort
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQNSArray+Sort.m
 __49-[NSArray(IQ_NSArray_Sort) sortedArrayByPosition]_block_invoke
 IQKeyboardManager/Categories/IQNSArray+Sort.m
 __44-[NSArray(IQ_NSArray_Sort) sortedArrayByTag]_block_invoke
@@ -857,7 +857,7 @@ __OBJC_$_INSTANCE_METHODS_IQTextView
 __OBJC_$_INSTANCE_VARIABLES_IQTextView
 __OBJC_$_PROP_LIST_IQTextView
 __OBJC_CLASS_RO_$_IQTextView
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQTextView/IQTextView.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQTextView/IQTextView.m
 IQKeyboardManager/IQTextView/IQTextView.m
 IQKeyboardManager/IQTextView/IQTextView.h
 CGRectMake
@@ -896,7 +896,7 @@ __OBJC_$_INSTANCE_METHODS_IQTitleBarButtonItem
 __OBJC_$_INSTANCE_VARIABLES_IQTitleBarButtonItem
 __OBJC_$_PROP_LIST_IQTitleBarButtonItem
 __OBJC_CLASS_RO_$_IQTitleBarButtonItem
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m
 IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.m
 IQKeyboardManager/IQToolbar/IQTitleBarButtonItem.h
 -[UIScrollView(Additions) setShouldIgnoreScrollingAdjustment:]
@@ -915,7 +915,7 @@ __OBJC_$_CATEGORY_INSTANCE_METHODS_UITableView_$_PreviousNextIndexPath
 __OBJC_$_CATEGORY_UITableView_$_PreviousNextIndexPath
 __OBJC_$_CATEGORY_INSTANCE_METHODS_UICollectionView_$_PreviousNextIndexPath
 __OBJC_$_CATEGORY_UICollectionView_$_PreviousNextIndexPath
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUIScrollView+Additions.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/Categories/IQUIScrollView+Additions.m
 IQKeyboardManager/Categories/IQUIScrollView+Additions.m
 -[IQBarButtonItemConfiguration initWithBarButtonSystemItem:action:]
 -[IQBarButtonItemConfiguration initWithImage:action:]
@@ -1012,12 +1012,12 @@ __OBJC_$_CATEGORY_INSTANCE_METHODS_UIView_$_IQToolbarAddition
 __OBJC_$_CATEGORY_CLASS_METHODS_UIView_$_IQToolbarAddition
 __OBJC_$_PROP_LIST_UIView_$_IQToolbarAddition
 __OBJC_$_CATEGORY_UIView_$_IQToolbarAddition
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m
 IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.m
 IQKeyboardManager/IQToolbar/IQUIView+IQKeyboardToolbar.h
 __OBJC_METACLASS_RO_$_IQPreviousNextView
 __OBJC_CLASS_RO_$_IQPreviousNextView
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQPreviousNextView.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQPreviousNextView.m
 +[IQToolbar initialize]
 -[IQToolbar initialize]
 -[IQToolbar initWithFrame:]
@@ -1058,7 +1058,7 @@ __OBJC_$_INSTANCE_METHODS_IQToolbar
 __OBJC_$_INSTANCE_VARIABLES_IQToolbar
 __OBJC_$_PROP_LIST_IQToolbar
 __OBJC_CLASS_RO_$_IQToolbar
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQToolbar.m
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/IQKeyboardManager/IQKeyboardManager/IQToolbar/IQToolbar.m
 IQKeyboardManager/IQToolbar/IQToolbar.m
 __27-[IQToolbar layoutSubviews]_block_invoke
 __ZL15__ARCLite__loadv

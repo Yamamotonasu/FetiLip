@@ -101,7 +101,6 @@ extension DocumentSnapshot {
             throw ApplicationError.notFoundEntity(documentId: documentID)
         }
         let json = data()
-        log.debug(json)
         guard let j = json else {
             throw ApplicationError.notFoundJson
         }

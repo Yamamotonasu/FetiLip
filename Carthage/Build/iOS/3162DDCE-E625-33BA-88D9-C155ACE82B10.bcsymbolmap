@@ -1,7 +1,7 @@
 BCSymbolMap Version: 2.0
 Apple clang version 11.0.3 (clang-1103.0.32.59)
 /Users/yamamotoyuuta/Library/Caches/org.carthage.CarthageKit/DerivedData/11.4.1_11E503a/XCGLogger/7.0.1/Build/Intermediates.noindex/ArchiveIntermediates/XCGLogger (iOS)/IntermediateBuildFilesPath/XCGLogger.build/Release-iphoneos/XCGLogger (iOS).build/DerivedSources/XCGLogger_vers.c
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger
 _$sSD17dictionaryLiteralSDyxq_Gx_q_td_tcfC9XCGLoggerACC5LevelO_SSTg5
 _$s9XCGLogger22PrePostFixLogFormatterC13prefixStringsSDyA2AC5LevelOSSGvpACTK
 _$s9XCGLogger22PrePostFixLogFormatterC13prefixStringsSDyA2AC5LevelOSSGvpACTk
@@ -254,7 +254,7 @@ _objc_classes
 Apple clang version 11.0.3 (clang-1103.0.32.51)
 <swift-imported-modules>
 Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/PrePostFixLogFormatter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/PrePostFixLogFormatter.swift
 _conditionallyBridgeFromObjectiveC
 <compiler-generated>
 $sSq7flatMapyqd__SgABxKXEKlFSS_So18NSFileAttributeKeyaTg5
@@ -442,7 +442,7 @@ prefixStrings.get
 $s9XCGLogger22PrePostFixLogFormatterC13prefixStringsSDyA2AC5LevelOSSGvpACTk
 $s9XCGLogger22PrePostFixLogFormatterC13prefixStringsSDyA2AC5LevelOSSGvpACTK
 $s9XCGLogger22PrePostFixLogFormatterC13prefixStringsSDyA2AC5LevelOSSGvpfi
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Extensions/DispatchQueue+XCGAdditions.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Extensions/DispatchQueue+XCGAdditions.swift
 currentQueueLabel.get
 _$s9XCGLogger15BaseDestinationC5owner10identifierAc2ACSg_SStcfcTf4gnn_n
 _got.$ss23_ContiguousArrayStorageCMn
@@ -457,7 +457,7 @@ _$s9XCGLogger18ConsoleDestinationCML
 _$s9XCGLogger18ConsoleDestinationCMf
 _symbolic _____ 9XCGLogger18ConsoleDestinationC
 _$s9XCGLogger18ConsoleDestinationCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/ConsoleDestination.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/ConsoleDestination.swift
 $s9XCGLogger18ConsoleDestinationCMa
 Sources/XCGLogger/Destinations/BaseQueuedDestination.swift
 Sources/XCGLogger/Destinations/BaseDestination.swift
@@ -478,7 +478,7 @@ _$s9XCGLogger19DestinationProtocolPAAE13shouldExclude10logDetails7messageSbAA03L
 _symbolic $s9XCGLogger19DestinationProtocolP
 _$s9XCGLogger19DestinationProtocol_pMF
 _symbolic x
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/DestinationProtocol.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/DestinationProtocol.swift
 __swift_destroy_boxed_opaque_existential_1
 __swift_project_boxed_opaque_existential_1
 $s9XCGLogger14FilterProtocol_pWOc
@@ -543,7 +543,7 @@ _$s9XCGLogger21BaseQueuedDestinationCML
 _$s9XCGLogger21BaseQueuedDestinationCMf
 _symbolic So17OS_dispatch_queueCSg
 _$s9XCGLogger21BaseQueuedDestinationCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/BaseQueuedDestination.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/BaseQueuedDestination.swift
 $s9XCGLogger10LogDetailsVWOh
 $s9XCGLogger21BaseQueuedDestinationCMa
 $sSay8Dispatch0A13WorkItemFlagsVGMa
@@ -576,7 +576,7 @@ _$s9XCGLogger9TagFilterCML
 _$s9XCGLogger9TagFilterCMf
 _symbolic _____ 9XCGLogger9TagFilterC
 _$s9XCGLogger9TagFilterCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/TagFilter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/TagFilter.swift
 $s9XCGLogger9TagFilterCMa
 $s9XCGLoggerAAC9ConstantsV15userInfoKeyTagsSSvau
 Sources/XCGLogger/Filters/UserInfoFilter.swift
@@ -665,7 +665,7 @@ _symbolic _____ 9XCGLogger21ANSIColorLogFormatterC10ANSIOptionO
 _$s9XCGLogger21ANSIColorLogFormatterC10ANSIOptionOMF
 _got.$ss23CustomStringConvertibleMp
 _got.$ss23CustomStringConvertibleP11descriptionSSvgTq
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/ANSIColorLogFormatter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/ANSIColorLogFormatter.swift
 $s9XCGLogger21ANSIColorLogFormatterC10ANSIOptionOMa
 $s9XCGLogger21ANSIColorLogFormatterC10ANSIOptionOwui
 $s9XCGLogger21ANSIColorLogFormatterC10ANSIOptionOwup
@@ -858,7 +858,7 @@ _got.$s9XCGLogger14FilterProtocolMp
 _symbolic Say______pGSg 9XCGLogger14FilterProtocolP
 _$s9XCGLogger15BaseDestinationCMF
 _got.$s9XCGLogger19DestinationProtocolMp
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/BaseDestination.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/BaseDestination.swift
 $s9XCGLogger15BaseDestinationCACs28CustomDebugStringConvertibleAAWl
 $s9XCGLogger15BaseDestinationCAA0C8ProtocolAAWI
 $sSo8NSThreadCSo8NSObjectCs7CVarArg10ObjectiveCWl
@@ -968,7 +968,7 @@ _$ss22_ContiguousArrayBufferVySSGML
 _got.$ss11_SetStorageCMn
 _symbolic _____ySSG s11_SetStorageC
 _$ss11_SetStorageCySSGMD
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/UserInfoFilter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/UserInfoFilter.swift
 $s9XCGLogger14UserInfoFilterCACs28CustomDebugStringConvertibleAAWl
 $s9XCGLogger14UserInfoFilterCAA0D8ProtocolAAWI
 $ss22_ContiguousArrayBufferV19_uninitializedCount15minimumCapacityAByxGSi_SitcfCSS_Tg5Tf4nnd_n
@@ -1124,7 +1124,7 @@ _$s9XCGLogger15TestDestinationCML
 _$s9XCGLogger15TestDestinationCMf
 _symbolic _____ 9XCGLogger15TestDestinationC
 _$s9XCGLogger15TestDestinationCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/TestDestination.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/TestDestination.swift
 $s9XCGLogger15TestDestinationCMa
 firstIndex
 objectdestroy.9
@@ -1292,7 +1292,7 @@ _$ss12_ArrayBufferVy10Foundation3URLV3url_SS9timestamptGML
 _$s10Foundation3URLV3url_SS9timestamptML
 _symbolic _____ySnySiGG s23_ContiguousArrayStorageC
 _$ss23_ContiguousArrayStorageCySnySiGGMD
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/AutoRotatingFileDestination.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/AutoRotatingFileDestination.swift
 $s10Foundation3URLVSgWOh
 $s10Foundation3URLVSgWOc
 $ss12_ArrayBufferVy10Foundation3URLV3url_SS9timestamptGAByxGs01_aB8ProtocolsWl
@@ -1595,13 +1595,13 @@ _$s9XCGLogger14FileNameFilterCML
 _$s9XCGLogger14FileNameFilterCMf
 _symbolic _____ 9XCGLogger14FileNameFilterC
 _$s9XCGLogger14FileNameFilterCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/FileNameFilter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/FileNameFilter.swift
 $s9XCGLogger14FileNameFilterCACs28CustomDebugStringConvertibleAAWl
 $s9XCGLogger14FileNameFilterCAA0D8ProtocolAAWI
 $s9XCGLogger14FileNameFilterCMa
 _symbolic $s9XCGLogger14FilterProtocolP
 _$s9XCGLogger14FilterProtocol_pMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/FilterProtocol.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/FilterProtocol.swift
 _$sSDyq_SgxcigSS_SSTg5
 _$s9XCGLogger3TagV4nameSSvM.resume.0
 _$s9XCGLogger3TagVIetMl_TC
@@ -1702,7 +1702,7 @@ _symbolic _____ySSSaySSGG s18_DictionaryStorageC
 _$ss18_DictionaryStorageCySSSaySSGGMD
 _symbolic _____yS2SG s18_DictionaryStorageC
 _$ss18_DictionaryStorageCyS2SGMD
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Misc/Optional/UserInfoHelpers.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Misc/Optional/UserInfoHelpers.swift
 $sq_SgSHRzr0_lWOh
 $sSS3key_yp5valuetSgWOh
 $sypSgWOd
@@ -1922,7 +1922,7 @@ _symbolic _____ 10Foundation4DateV
 _symbolic Si
 _symbolic SDySSypG
 _$s9XCGLogger10LogDetailsVMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Misc/LogDetails.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Misc/LogDetails.swift
 $s9XCGLogger10LogDetailsVMr
 $s9XCGLogger10LogDetailsVwst
 $s9XCGLogger10LogDetailsVwet
@@ -1993,7 +1993,7 @@ _$s9XCGLogger23XcodeColorsLogFormatterC0B5ColorVWV
 _$s9XCGLogger23XcodeColorsLogFormatterC0B5ColorVMf
 _symbolic _____ 9XCGLogger23XcodeColorsLogFormatterC0B5ColorV
 _$s9XCGLogger23XcodeColorsLogFormatterC0B5ColorVMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/XcodeColorsLogFormatter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/XcodeColorsLogFormatter.swift
 $s9XCGLogger23XcodeColorsLogFormatterC0B5ColorVMa
 $s9XCGLogger23XcodeColorsLogFormatterC0B5ColorVwst
 $s9XCGLogger23XcodeColorsLogFormatterC0B5ColorVwet
@@ -2068,7 +2068,7 @@ _block_descriptor.3
 _symbolic ytIegr_
 _block_descriptor.6
 _symbolic Ieg_
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Misc/HelperFunctions.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Misc/HelperFunctions.swift
 _throw
 _throw_objc
 Sources/ObjcExceptionBridging/include/ObjcExceptionBridging.h
@@ -2091,7 +2091,7 @@ _$s9XCGLogger9DevFilterCML
 _$s9XCGLogger9DevFilterCMf
 _symbolic _____ 9XCGLogger9DevFilterC
 _$s9XCGLogger9DevFilterCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/DevFilter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Filters/DevFilter.swift
 $s9XCGLogger9DevFilterCMa
 _$s9XCGLogger25AppleSystemLogDestinationC8showDateSbvM.resume.0
 _$s9XCGLogger25AppleSystemLogDestinationCIetMg_TC
@@ -2104,7 +2104,7 @@ _$s9XCGLogger25AppleSystemLogDestinationCML
 _$s9XCGLogger25AppleSystemLogDestinationCMf
 _symbolic _____ 9XCGLogger25AppleSystemLogDestinationC
 _$s9XCGLogger25AppleSystemLogDestinationCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/AppleSystemLogDestination.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/AppleSystemLogDestination.swift
 $s9XCGLogger25AppleSystemLogDestinationCMa
 $sS2Ss7CVarArg10FoundationWl
 _$s9XCGLogger18Base64LogFormatterCAA0cD8ProtocolA2aDP6format10logDetails7messageSSAA0cH0Vz_SSztFTW
@@ -2118,7 +2118,7 @@ _$s9XCGLogger18Base64LogFormatterCML
 _$s9XCGLogger18Base64LogFormatterCMf
 _symbolic _____ 9XCGLogger18Base64LogFormatterC
 _$s9XCGLogger18Base64LogFormatterCMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/Base64LogFormatter.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/Base64LogFormatter.swift
 $s10Foundation13__DataStorageC28withInteriorPointerReferenceyxSnySiG_xSo6NSDataCKXEtKlFSS_Tgq5015$s10Foundation4b36V19base64EncodedString7optionsSSSo27H38Base64EncodingOptionsV_tFSSSo0G0CXEfU_So0hopQ0VTf1ncn_n
 $sSo6NSDataCSSs5Error_pIggozo_ABSSsAC_pIeggrzo_TR
 $s10Foundation4DataV19base64EncodedString7optionsSSSo27NSDataBase64EncodingOptionsV_tFSSSo0G0CXEfU_
@@ -2133,7 +2133,7 @@ $sSa11_getElement_20wasNativeTypeChecked22matchingSubscriptCheckxSi_Sbs16_Depend
 $sSa9_getCountSiyFSo27NSDataBase64EncodingOptionsV_Tgq5
 _symbolic $s9XCGLogger20LogFormatterProtocolP
 _$s9XCGLogger20LogFormatterProtocol_pMF
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/LogFormatterProtocol.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/LogFormatters/LogFormatterProtocol.swift
 _$s10Foundation3URLV9XCGLoggerE20setExtendedAttribute4data7forNameyAA4DataV_SStKFySPys4Int8VGSgKXEfU_
 _$s10Foundation3URLV9XCGLoggerE20setExtendedAttribute4data7forNameyAA4DataV_SStKFySPys4Int8VGSgKXEfU_TA
 _$sSPys4Int8VGSgs5Error_pIgyzo_ADytsAE_pIegyrzo_TR
@@ -2174,7 +2174,7 @@ _symbolic SPy_____G s4Int8V
 _$sSPys4Int8VGMD
 _$sSPys4Int8VGSPyxGs8_PointersWL
 _$sSPys4Int8VGML
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Extensions/URL+XCGAdditions.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Extensions/URL+XCGAdditions.swift
 $sSPys4Int8VGMa
 $sSPys4Int8VGSPyxGs8_PointersWl
 $s10Foundation15ContiguousBytes_pWOb
@@ -2373,7 +2373,7 @@ _got.$sSo18NSFileAttributeKeyaMn
 _symbolic SDy_____ypGSg So18NSFileAttributeKeya
 _$s9XCGLogger15FileDestinationCMF
 _$sSo12NSFileHandleCML
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/FileDestination.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/Destinations/FileDestination.swift
 $s9XCGLogger15FileDestinationC04openB033_5A899ABDC53510C688AE4F7BFED3E6EBLLyyFyycfU_TA
 $s9XCGLogger15FileDestinationC04openB033_5A899ABDC53510C688AE4F7BFED3E6EBLLyyFyycfU_
 $s9XCGLogger19DestinationProtocol_pSgWOc
@@ -2561,7 +2561,7 @@ _got.$sSL1loiySbx_xtFZTq
 _got.$sSL2leoiySbx_xtFZTq
 _got.$sSL2geoiySbx_xtFZTq
 _got.$sSL1goiySbx_xtFZTq
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/XCGLogger.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/XCGLogger/Sources/XCGLogger/XCGLogger.swift
 $sSS_yptWOc
 $s9XCGLogger15FileDestinationCAA04BaseC0CAA0C8ProtocolAAWl
 $sSaySo17OS_dispatch_queueC8DispatchE10AttributesVGMa

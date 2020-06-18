@@ -14,7 +14,7 @@ class TransitionPostPageViewController: UIViewController {
 
     typealias ViewModel = PostListViewModel
 
-    var viewModel: ViewModel = PostListViewModel()
+    var viewModel: ViewModel = PostListViewModel(postModel: PostModelClient())
 
     /// Button to transition to the lip posting page.
     @IBOutlet weak var transitionPostPageButton: UIButton!
@@ -42,8 +42,33 @@ extension TransitionPostPageViewController {
 
     /// Transition post lip page.
     private func transitionPostLipScene() {
+        touchStartAnimation()
+        touchEndAnimation()
         let vc = PostLipViewControllerGenerator.generate()
         self.present(vc, animated: true)
+    }
+
+    private func touchStartAnimation(){
+        UIView.animate(withDuration: 0.1,
+            delay: 0.0,
+            options: UIView.AnimationOptions.curveEaseIn,
+            animations: {() -> Void in
+                self.transitionPostPageButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                self.transitionPostPageButton.alpha = 0.7
+            },
+            completion: nil
+        )
+    }
+    private func touchEndAnimation(){
+        UIView.animate(withDuration: 0.1,
+            delay: 0.0,
+            options: UIView.AnimationOptions.curveEaseIn,
+            animations: {() -> Void in
+                self.transitionPostPageButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.transitionPostPageButton.alpha = 1
+            },
+            completion: nil
+        )
     }
 
 }

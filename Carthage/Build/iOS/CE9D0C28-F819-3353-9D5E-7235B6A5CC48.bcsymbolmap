@@ -1,7 +1,7 @@
 BCSymbolMap Version: 2.0
 Apple clang version 11.0.3 (clang-1103.0.32.59)
 /Users/yamamotoyuuta/Library/Caches/org.carthage.CarthageKit/DerivedData/11.4.1_11E503a/NSObject-Rx/5.1.1/Build/Intermediates.noindex/ArchiveIntermediates/NSObject_Rx/IntermediateBuildFilesPath/NSObject-Rx.build/Release-iphoneos/NSObject_Rx.build/DerivedSources/NSObject_Rx_vers.c
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/NSObject-Rx
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/NSObject-Rx
 _$s7RxSwift8ReactiveV09NSObject_A0RlzClE15synchronizedBagyqd__qd__yXElF
 _$s7RxSwift8ReactiveV09NSObject_A0RlzClE10disposeBagAA07DisposeF0CvgAGyXEfU_
 _$s7RxSwift8ReactiveV09NSObject_A0RlzClE10disposeBagAA07DisposeF0CvgAGyXEfU_TA
@@ -23,7 +23,7 @@ ___swift_reflection_version
 Apple clang version 11.0.3 (clang-1103.0.32.51)
 <swift-imported-modules>
 Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/NSObject-Rx/NSObject+Rx.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/NSObject-Rx/NSObject+Rx.swift
 __swift_destroy_boxed_opaque_existential_0
 <compiler-generated>
 $sypSgWOh
@@ -52,7 +52,7 @@ _symbolic $s11NSObject_Rx13HasDisposeBagP
 _$s11NSObject_Rx13HasDisposeBag_pMF
 _$s11NSObject_RxMXM
 _symbolic x
-/Users/yamamotoyuuta/iostest/FetiLip/Carthage/Checkouts/NSObject-Rx/HasDisposeBag.swift
+/Users/yamamotoyuuta/fetilip/fetilip/Carthage/Checkouts/NSObject-Rx/HasDisposeBag.swift
 $s11NSObject_Rx13HasDisposeBagPAAE07disposeE00B5Swift0dE0CvsyyXEfU_TA
 $s11NSObject_Rx13HasDisposeBagPAAE07disposeE00B5Swift0dE0CvsyyXEfU_
 $sIg_ytIegr_TR

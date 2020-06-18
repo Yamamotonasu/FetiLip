@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		034A9859249602F7009336F0 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9856249602F7009336F0 /* Nuke.framework */; };
+		034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9857249602F7009336F0 /* Differentiator.framework */; };
+		034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9858249602F7009336F0 /* RxDataSources.framework */; };
+		034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986224960674009336F0 /* MasonaryCollectionViewLayout.swift */; };
+		034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */; };
+		034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */; };
+		034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986B24964F1B009336F0 /* PostDomainModel.swift */; };
+		034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986E24984024009336F0 /* DomainModelProtocol.swift */; };
+		034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -126,6 +135,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		034A9856249602F7009336F0 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		034A9857249602F7009336F0 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		034A9858249602F7009336F0 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		034A986224960674009336F0 /* MasonaryCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasonaryCollectionViewLayout.swift; sourceTree = "<group>"; };
+		034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipCollectionViewCell.swift; sourceTree = "<group>"; };
+		034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostLipCollectionViewCell.xib; sourceTree = "<group>"; };
+		034A986B24964F1B009336F0 /* PostDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDomainModel.swift; sourceTree = "<group>"; };
+		034A986E24984024009336F0 /* DomainModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModelProtocol.swift; sourceTree = "<group>"; };
+		034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -389,9 +407,11 @@
 				035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */,
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
+				034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
 				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
+				034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */,
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
 				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
@@ -402,6 +422,7 @@
 				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
 				03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */,
 				039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */,
+				034A9859249602F7009336F0 /* Nuke.framework in Frameworks */,
 				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
 				039EB660243611290016436C /* FirebaseStorage.framework in Frameworks */,
 			);
@@ -426,6 +447,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034A98602496063E009336F0 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				034A98612496064E009336F0 /* CollectionView */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		034A98612496064E009336F0 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				034A986224960674009336F0 /* MasonaryCollectionViewLayout.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		034A986424963CEC009336F0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */,
+				034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		034A986924964EF5009336F0 /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				034A986D24983FE8009336F0 /* RxDatasource */,
+				034A986A24964EFE009336F0 /* Posts */,
+			);
+			path = Domains;
+			sourceTree = "<group>";
+		};
+		034A986A24964EFE009336F0 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				034A986B24964F1B009336F0 /* PostDomainModel.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		034A986D24983FE8009336F0 /* RxDatasource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RxDatasource;
+			sourceTree = "<group>";
+		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +677,7 @@
 			children = (
 				039EB675243840580016436C /* ViewControllerMethodInjectable.swift */,
 				035BAFF5245BC0B2001FF6D1 /* ViewModelType.swift */,
+				034A986E24984024009336F0 /* DomainModelProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -708,6 +779,9 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				034A9857249602F7009336F0 /* Differentiator.framework */,
+				034A9856249602F7009336F0 /* Nuke.framework */,
+				034A9858249602F7009336F0 /* RxDataSources.framework */,
 				035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */,
 				039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */,
 				039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */,
@@ -751,6 +825,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				034A986924964EF5009336F0 /* Domains */,
 				035BAFF4245AEC99001FF6D1 /* Models */,
 				039EB688243B5F310016436C /* Firestore */,
 				039EB6742438403B0016436C /* Protocol */,
@@ -769,6 +844,7 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				034A98602496063E009336F0 /* Layouts */,
 				035BB00E2467CF58001FF6D1 /* PostLip */,
 				039EB66D2436157B0016436C /* Debug */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
@@ -865,6 +941,7 @@
 				03AAFBB2243097660068FB1E /* CGPoint+Extensions.swift */,
 				03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */,
 				036A45152472D96000DD9282 /* UIImage+Extensions.swift */,
+				034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -899,6 +976,7 @@
 		03AAFB9B2428D1B70068FB1E /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				034A986424963CEC009336F0 /* Cells */,
 				03AAFBA02428D54E0068FB1E /* PostList.storyboard */,
 				03AAFBA22428D5B60068FB1E /* PostListViewController.swift */,
 				035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */,
@@ -1203,6 +1281,7 @@
 				039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */,
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
+				034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */,
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
@@ -1250,6 +1329,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FMPhotoPicker.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1265,6 +1347,9 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FMPhotoPicker.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1381,6 +1466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
+				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
@@ -1390,6 +1476,7 @@
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
+				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
@@ -1405,6 +1492,8 @@
 				035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
 				036A45102472CC4A00DD9282 /* PostsRequests.swift in Sources */,
+				034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */,
+				034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
@@ -1426,6 +1515,7 @@
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
 				036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
+				034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */,
 				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,
 				036A450D2472CB8C00DD9282 /* PostModelClient.swift in Sources */,

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="PostLipCollectionViewCell" customModule="fetilip" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="262" height="244"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="262" height="244"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3t-9B-jbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="262" height="244"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mcc-U7-Dha">
+                                <rect key="frame" x="0.0" y="0.0" width="262" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" id="vVH-4I-4Qn"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mcc-U7-Dha" firstAttribute="top" secondItem="A3t-9B-jbJ" secondAttribute="top" id="bBo-ug-osy"/>
+                            <constraint firstAttribute="bottom" secondItem="mcc-U7-Dha" secondAttribute="bottom" id="hxh-ZW-c4o"/>
+                            <constraint firstItem="mcc-U7-Dha" firstAttribute="leading" secondItem="A3t-9B-jbJ" secondAttribute="leading" id="mta-f6-PY4"/>
+                            <constraint firstAttribute="trailing" secondItem="mcc-U7-Dha" secondAttribute="trailing" id="pFW-tS-wXa"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.29791845030000003" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="2" height="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="A3t-9B-jbJ" secondAttribute="trailing" id="EIi-tC-Me9"/>
+                <constraint firstAttribute="bottom" secondItem="A3t-9B-jbJ" secondAttribute="bottom" id="Q4v-mJ-2z0"/>
+                <constraint firstItem="A3t-9B-jbJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Y99-Hk-Ggt"/>
+                <constraint firstItem="A3t-9B-jbJ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dbh-LU-prL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="262" height="244"/>
+            <connections>
+                <outlet property="lipImage" destination="mcc-U7-Dha" id="k3u-2R-nEi"/>
+            </connections>
+            <point key="canvasLocation" x="113.04347826086958" y="95.089285714285708"/>
+        </collectionViewCell>
+    </objects>
+</document>
