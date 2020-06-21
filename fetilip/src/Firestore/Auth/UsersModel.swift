@@ -21,6 +21,8 @@ protocol UserAuthModelProtocol {
 
     func logout() -> Single<Void>
 
+    func createUserWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser>
+
 }
 
 /**
@@ -45,6 +47,21 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         }
     }
 
+    /// Create user account with email and password.
+    public func createUserWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
+        return Single.create { observer in
+            Auth.auth().createUser(withEmail: email, password: password) { _, error in
+                if let e = error {
+                    observer(.error(User.AuthError.notInitialized(error: e)))
+                }
+                if let user = Auth.auth().currentUser {
+                    observer(.success(user))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
     /// Check the login status of the current user with firebase auth.
     public func checkLogin() -> Single<FirebaseUser> {
         return Single.create { observer in
@@ -53,6 +70,23 @@ public struct UsersAuthModel: UserAuthModelProtocol {
             } else {
                 observer(.error(User.AuthError.notLoginError))
             }
+            return Disposables.create()
+        }
+    }
+
+    /// Login.
+    public func signInWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
+        return Single.create { observer in
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
+                if let _ = error {
+                    observer(.error(User.AuthError.notLoginError))
+                }
+                if let user = Auth.auth().currentUser {
+                    observer(.success(user))
+                } else {
+                    observer(.error(User.AuthError.notLoginError))
+                }
+            })
             return Disposables.create()
         }
     }
@@ -70,5 +104,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
             return Disposables.create()
         }
     }
+
+
 
 }

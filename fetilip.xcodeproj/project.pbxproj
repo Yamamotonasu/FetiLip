@@ -16,6 +16,9 @@
 		034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986B24964F1B009336F0 /* PostDomainModel.swift */; };
 		034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986E24984024009336F0 /* DomainModelProtocol.swift */; };
 		034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */; };
+		034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9876249D7F50009336F0 /* UsersModelTests.swift */; };
+		034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987A249F3372009336F0 /* LoginFunctions.swift */; };
+		034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987D249F5779009336F0 /* TestUserAuthentications.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -144,6 +147,9 @@
 		034A986B24964F1B009336F0 /* PostDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDomainModel.swift; sourceTree = "<group>"; };
 		034A986E24984024009336F0 /* DomainModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModelProtocol.swift; sourceTree = "<group>"; };
 		034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		034A9876249D7F50009336F0 /* UsersModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModelTests.swift; sourceTree = "<group>"; };
+		034A987A249F3372009336F0 /* LoginFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFunctions.swift; sourceTree = "<group>"; };
+		034A987D249F5779009336F0 /* TestUserAuthentications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserAuthentications.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -496,6 +502,62 @@
 			path = RxDatasource;
 			sourceTree = "<group>";
 		};
+		034A9872249CFF94009336F0 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				034A9878249F3334009336F0 /* Stub */,
+				034A9875249D7E95009336F0 /* Model */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		034A9873249CFFB0009336F0 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				034A9876249D7F50009336F0 /* UsersModelTests.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		034A9874249CFFBB009336F0 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		034A9875249D7E95009336F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				034A9873249CFFB0009336F0 /* Users */,
+				034A9874249CFFBB009336F0 /* Posts */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		034A9878249F3334009336F0 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		034A9879249F335F009336F0 /* TestFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				034A987A249F3372009336F0 /* LoginFunctions.swift */,
+			);
+			path = TestFunctions;
+			sourceTree = "<group>";
+		};
+		034A987C249F5753009336F0 /* Authentications */ = {
+			isa = PBXGroup;
+			children = (
+				034A987D249F5779009336F0 /* TestUserAuthentications.swift */,
+			);
+			path = Authentications;
+			sourceTree = "<group>";
+		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +662,8 @@
 			isa = PBXGroup;
 			children = (
 				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
+				03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */,
+				035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -751,8 +815,6 @@
 				03AAFB39241F9D0B0068FB1E /* src */,
 				03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */,
 				03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */,
-				03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */,
-				035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */,
 			);
 			path = fetilip;
 			sourceTree = "<group>";
@@ -760,6 +822,9 @@
 		03AAFAFE241E2FDD0068FB1E /* fetilipTests */ = {
 			isa = PBXGroup;
 			children = (
+				034A987C249F5753009336F0 /* Authentications */,
+				034A9879249F335F009336F0 /* TestFunctions */,
+				034A9872249CFF94009336F0 /* Firestore */,
 				03AAFB572425C45E0068FB1E /* CustomFunctions */,
 				03AAFB542425AB020068FB1E /* Extensions */,
 				03AAFB01241E2FDD0068FB1E /* Info.plist */,
@@ -1526,6 +1591,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */,
+				034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */,
+				034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */,
 				03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */,
 				03AAFB622425ECFC0068FB1E /* UIColorExtensionTests.swift in Sources */,
 			);
