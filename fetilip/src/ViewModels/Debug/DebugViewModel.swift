@@ -62,8 +62,6 @@ extension DebugViewModel {
             self.drawUserInfo(with: user)
             self.loginStateRelay.accept(true)
             LoginAccountData.uid = user.uid
-            self.setUserData(params: (email: user.email ?? "",
-                                      uid: user.uid))
         }).disposed(by: disposeBag)
 
     }

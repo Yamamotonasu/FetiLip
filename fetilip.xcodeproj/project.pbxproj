@@ -19,6 +19,7 @@
 		034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9876249D7F50009336F0 /* UsersModelTests.swift */; };
 		034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987A249F3372009336F0 /* LoginFunctions.swift */; };
 		034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987D249F5779009336F0 /* TestUserAuthentications.swift */; };
+		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -438,6 +439,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */,
 				DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1829,12 +1831,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilipTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1852,12 +1859,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilipTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

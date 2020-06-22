@@ -30,9 +30,10 @@ class TestUserAuthentications: XCTestCase {
 extension TestUserAuthentications {
 
     /// Register user with email and password
-    func testCreateUserWithEmailAndPassword() {
+    func xtestCreateUserWithEmailAndPassword() throws {
         XCTContext.runActivity(named: "正常系") { _ in
-//            model.createUserWithEmailAndPassword(email: email, password: password).toBlocking().single()
+            // emai
+            XCTAssertEqual(try! model.createUserWithEmailAndPassword(email: email, password: password).toBlocking().single().email, email)
         }
     }
 }
