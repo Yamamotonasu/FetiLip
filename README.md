@@ -2,7 +2,7 @@
 
 ## Requirements
 ・iOS12.0+  
-・Xcode11.3+  
+・Xcode11.4+  
 ・Swift5.1.3+  
 ・Cocoapods 1.8.4  
 ・Carthage 0.34.0  
