@@ -23,6 +23,7 @@
 		034A988224A0ECF9009336F0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A988124A0ECF9009336F0 /* Nimble.framework */; platformFilter = ios; };
 		034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988D24A0EFF7009336F0 /* Quick.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988E24A0EFF8009336F0 /* Nimble.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		034A989324A1814B009336F0 /* MockUserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989224A1814B009336F0 /* MockUserAuthentication.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
@@ -173,6 +174,7 @@
 		034A988124A0ECF9009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		034A988D24A0EFF7009336F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		034A988E24A0EFF8009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		034A989224A1814B009336F0 /* MockUserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserAuthentication.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -584,6 +586,14 @@
 			path = Authentications;
 			sourceTree = "<group>";
 		};
+		034A989124A18112009336F0 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				034A989224A1814B009336F0 /* MockUserAuthentication.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,10 +861,11 @@
 			isa = PBXGroup;
 			children = (
 				034A987C249F5753009336F0 /* Authentications */,
-				034A9879249F335F009336F0 /* TestFunctions */,
-				034A9872249CFF94009336F0 /* Firestore */,
 				03AAFB572425C45E0068FB1E /* CustomFunctions */,
 				03AAFB542425AB020068FB1E /* Extensions */,
+				034A9872249CFF94009336F0 /* Firestore */,
+				034A989124A18112009336F0 /* Mock */,
+				034A9879249F335F009336F0 /* TestFunctions */,
 				03AAFB01241E2FDD0068FB1E /* Info.plist */,
 			);
 			path = fetilipTests;
@@ -1626,6 +1637,7 @@
 				034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */,
 				034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */,
 				03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */,
+				034A989324A1814B009336F0 /* MockUserAuthentication.swift in Sources */,
 				03AAFB622425ECFC0068FB1E /* UIColorExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

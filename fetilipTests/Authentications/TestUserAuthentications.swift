@@ -17,7 +17,9 @@ import FirebaseAuth
 /**
  * Testing user firebase authentication.
  */
-class TestUserAuthenticationModel: QuickSpec {
+class TestUserAuthenticationModel: QuickSpec, LoginFunction {
+
+    var selfUid: String?
 
     /// Testing model.
     let model: UserAuthModelProtocol = UsersAuthModel()

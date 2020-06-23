@@ -8,18 +8,27 @@
 
 import Foundation
 @testable import fetilip
+import RxSwift
 
 /**
  * Login function for unit tests.
  */
-protocol LoginFunction {
+protocol LoginFunction: class {
 
     /// Cunnrent user's uid.
-    var selfUid: String { get set }
+    var selfUid: String? { get set }
 
 }
 
 extension LoginFunction {
 
-//    func login()
+    /// Login firebase authentication.
+    func login(email: String, password: String) {
+        UsersAuthModel().loginWithEmailAndPassword(email: email, password: password).subscribe(onSuccess: { [weak self] user in
+            self?.selfUid = user.uid
+        }, onError: { [weak self] _ in
+            self?.selfUid = nil
+        }).disposed(by: DisposeBag())
+    }
+
 }
