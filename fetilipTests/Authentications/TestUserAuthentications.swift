@@ -42,7 +42,7 @@ class TestUserAuthenticationModel: QuickSpec, LoginFunction {
                     // Convert to unregister email address.
                     let dummyEmail = self.email + "com"
                     let dummyPassword = "aaa"
-                    expect { try self.model.loginWithEmailAndPassword(email: dummyEmail, password: dummyPassword).toBlocking().single() }.to(throwError(FirebaseUser.AuthError.notLoginError))
+                    expect { try self.model.loginWithEmailAndPassword(email: dummyEmail, password: dummyPassword).toBlocking().single() }.to(throwError(FirebaseUser.AuthError.currentUserNotFound))
                 }
             }
 

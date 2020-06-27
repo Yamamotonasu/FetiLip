@@ -44,7 +44,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().signInAnonymously { _, error in
                 if let e = error {
-                    observer(.error(User.AuthError.notInitialized(error: e)))
+                    observer(.error(e))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -59,10 +59,12 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
                 if let e = error {
-                    observer(.error(User.AuthError.notInitialized(error: e)))
+                    observer(.error(e))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
+                } else {
+                    observer(.error(User.AuthError.currentUserNotFound))
                 }
             }
             return Disposables.create()
@@ -75,7 +77,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
             if let user = Auth.auth().currentUser {
                 observer(.success(user))
             } else {
-                observer(.error(User.AuthError.notLoginError))
+                observer(.error(User.AuthError.currentUserNotFound))
             }
             return Disposables.create()
         }
@@ -85,13 +87,13 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     public func loginWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
         return Single.create { observer in
             Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
-                if let _ = error {
-                    observer(.error(User.AuthError.notLoginError))
+                if let e = error {
+                    observer(.error(e))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
                 } else {
-                    observer(.error(User.AuthError.notLoginError))
+                    observer(.error(User.AuthError.currentUserNotFound))
                 }
             })
             return Disposables.create()
@@ -102,13 +104,13 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     public func signInWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
         return Single.create { observer in
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                if let _ = error {
-                    observer(.error(User.AuthError.notLoginError))
+                if let e = error {
+                    observer(.error(e))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
                 } else {
-                    observer(.error(User.AuthError.notLoginError))
+                    observer(.error(User.AuthError.currentUserNotFound))
                 }
             }
             return Disposables.create()
@@ -122,13 +124,11 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 try Auth.auth().signOut()
                 LoginAccountData.resetUserData()
                 observer(.success(()))
-            } catch let e {
-                observer(.error(User.AuthError.failedLogout(error: e)))
+            } catch {
+                observer(.error(User.AuthError.failedLogout))
             }
             return Disposables.create()
         }
     }
-
-
 
 }

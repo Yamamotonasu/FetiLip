@@ -11,11 +11,19 @@ import FirebaseAuth
 
 extension User {
 
+    /// Custom error from firebase authentication.
     public enum AuthError: Error {
-        case UnauthenticatedError
-        case notInitialized(error: Error)
-        case notLoginError
-        case failedLogout(error: Error)
+        case currentUserNotFound
+        case failedLogout
+
+        var message: String {
+            switch self {
+            case .currentUserNotFound:
+                return "ユーザーが見つかりません。再度ログインしてください。"
+            case .failedLogout:
+                return "ログアウトに失敗しました。再度お試しください。"
+            }
+        }
     }
 
 }

@@ -31,7 +31,7 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
     func postImage(image: String) -> Single<()> {
         guard let uid = LoginAccountData.uid else {
             return Single.create { observer in
-                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
         }
@@ -42,7 +42,7 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
     func getPostList() -> Single<[PostModel]> {
         guard let _ = LoginAccountData.uid else {
             return Single.create { observer in
-                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
         }

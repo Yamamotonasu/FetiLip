@@ -22,7 +22,7 @@ exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCrea
 
   const requestData = {
     uid: `${user.uid}`,
-    userName: 'TestUser',
+    userName: `${user.displayName}`,
     email: `${user.email}`,
     profile: '',
     updatedAt: new Date(),

@@ -41,7 +41,7 @@ public struct UsersModelClient: UsersModelClientProtocol {
         // TODO: Make common.
         guard let uid = LoginAccountData.uid else {
             return Single.create { observer in
-                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
         }
@@ -53,7 +53,7 @@ public struct UsersModelClient: UsersModelClientProtocol {
         // TODO: Make common.
         guard let uid = LoginAccountData.uid else {
             return Single.create { observer in
-                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
         }
