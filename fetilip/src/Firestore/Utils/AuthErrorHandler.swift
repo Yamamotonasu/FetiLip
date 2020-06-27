@@ -26,26 +26,26 @@ public struct AuthErrorHandler {
         if let e = AuthErrorCode(rawValue: error._code) {
             switch e {
             case .invalidEmail:
-                return "メールアドレスの形式が違います。正しい形式で入力してください。"
+                return R._string.invalidEmail
             case .weakPassword:
-                return "パスワードは6文字以上で入力してください。"
+                return R._string.weakPassword
             case .emailAlreadyInUse:
-                return "このメールアドレスは既に使われています。別のアドレスを利用してください。"
+                return R._string.emailAlreadyInUse
             case .wrongPassword:
-                return "メールアドレス、またはパスワードが異なります。"
+                return R._string.wrongPassword
             case .userNotFound:
-                return "ユーザーが見つかりません。管理者にお問い合わせください。"
+                return R._string.userNotFound
             case .internalError:
-                return "サーバーで問題が発生しています。\n管理者にお問い合わせ頂くか、時間を置いてお試しください。"
+                return R._string.internalError
             case .userTokenExpired:
-                return "無効なセッションです。再ログインしてください。"
+                return R._string.userTokenExpired
             case .userDisabled:
-                return "無効なアカウントです。"
+                return R._string.userDisabled
             default:
-                return "エラーが発生しました。時間を置いて再度お試しください。"
+                return R._string.errorOccurred
             }
         } else {
-            return "エラーが発生しました。時間を置いて再度お試しください。"
+            return R._string.errorOccurred
         }
     }
 

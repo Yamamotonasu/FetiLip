@@ -25,6 +25,8 @@
 		034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988E24A0EFF8009336F0 /* Nimble.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		034A989324A1814B009336F0 /* MockUserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989224A1814B009336F0 /* MockUserAuthentication.swift */; };
 		034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989524A6F86B009336F0 /* AuthErrorHandler.swift */; };
+		034A989824A713F2009336F0 /* R+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989724A713F2009336F0 /* R+Extensions.swift */; };
+		034A989A24A72166009336F0 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989924A72165009336F0 /* TestingInformation.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
@@ -177,6 +179,8 @@
 		034A988E24A0EFF8009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		034A989224A1814B009336F0 /* MockUserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserAuthentication.swift; sourceTree = "<group>"; };
 		034A989524A6F86B009336F0 /* AuthErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorHandler.swift; sourceTree = "<group>"; };
+		034A989724A713F2009336F0 /* R+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Extensions.swift"; sourceTree = "<group>"; };
+		034A989924A72165009336F0 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -576,6 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				034A987A249F3372009336F0 /* LoginFunctions.swift */,
+				034A989924A72165009336F0 /* TestingInformation.swift */,
 			);
 			path = TestFunctions;
 			sourceTree = "<group>";
@@ -990,6 +995,7 @@
 				03AAFB6424272C360068FB1E /* Functions */,
 				03AAFB6324272C250068FB1E /* UI */,
 				03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */,
+				034A989724A713F2009336F0 /* R+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1616,6 +1622,7 @@
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
+				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
@@ -1645,6 +1652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034A989A24A72166009336F0 /* TestingInformation.swift in Sources */,
 				034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */,
 				034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */,
 				034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */,

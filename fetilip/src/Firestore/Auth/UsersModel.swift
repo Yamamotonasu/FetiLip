@@ -30,6 +30,9 @@ protocol UserAuthModelProtocol {
     /// Login with exists email and password.
     func loginWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser>
 
+    /// Sign in with email and password.
+    func signInWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser>
+
 }
 
 /**
