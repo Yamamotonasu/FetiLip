@@ -73,12 +73,18 @@ class TestUserAuthenticationModel: QuickSpec, LoginFunction {
             }
 
             describe("createUserWithEmailAndPassword(email:password:)") {
-                it("Expect succeed") {
-                    // TODO: Mock
+                xit("Expect succeed") {
+                    let newEmail = "new_test_user@email.com"
+                    expect { try self.model.createUserWithEmailAndPassword(email: newEmail, password: self.password).toBlocking().single() }.to(beAnInstanceOf(FirebaseUser.self))
                 }
 
                 it("Expect failed") {
-                    // TODO: Mock
+                    let dummyEmail = "dummy_email@co.com"
+                    let dummyPassword = "aaa"
+                    expect { try self.model.createUserWithEmailAndPassword(email: dummyEmail, password: dummyPassword).toBlocking().single() }.to(throwError { error in
+                            expect(AuthErrorCode(rawValue: error._code)).to(equal(AuthErrorCode.weakPassword))
+                        })
+                    }
                 }
             }
 
@@ -93,4 +99,4 @@ class TestUserAuthenticationModel: QuickSpec, LoginFunction {
         }
     }
 
-}
+

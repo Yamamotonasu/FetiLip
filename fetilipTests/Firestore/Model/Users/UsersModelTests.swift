@@ -8,58 +8,12 @@
 
 import XCTest
 @testable import fetilip
+import Quick
+import Nimble
 
-class UsersModelTests: XCTestCase {
-
-    let model: UsersModelClientProtocol = UsersModelClient()
-
-    override class func setUp() {
-        super.setUp()
-    }
-
-    override func tearDown() {
-        super.tearDown()
-    }
-
-    func testPerformanceExample() throws {
-        self.measure {}
-    }
-
+class TestUserModel: QuickSpec, LoginFunction {
+    var selfUid: String?
 }
 
-// MARK: - Write
-
-extension UsersModelTests {
-
-    /// Initial commit test
-    func testInitialCommit() {
-        XCTContext.runActivity(named: "正常系") { _ in
-
-        }
-    }
-
-    /// Initial commit test
-    func testupdateUserName() {
-        XCTContext.runActivity(named: "正常系") { _ in
-
-        }
-    }
-
-    func testUpdateProfile() {
-        XCTContext.runActivity(named: "正常系") { _ in
-
-        }
-    }
-
-}
-
-// MARK: - Read
-
-extension UsersModelTests {
-
-    func testCurrentUserFetch() {
-
-    }
-}
 
 
