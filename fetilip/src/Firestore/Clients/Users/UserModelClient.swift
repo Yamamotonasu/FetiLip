@@ -31,17 +31,19 @@ public struct UsersModelClient: UsersModelClientProtocol {
     public init() {}
 
     /// Initial commit users document.
+    // TODO: Unuse
     func setInitialData(params: (email: String, uid: String)) -> Single<()> {
         let fields = UsersRequests.initialCommit(email: params.email,
                                                  uid: params.uid).parameters
         return Firestore.firestore().rx.setData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: params.uid), fields: fields)
     }
 
+    // TODO: Unuse
     public func updateUserName(userName: String) -> Single<()> {
         // TODO: Make common.
         guard let uid = LoginAccountData.uid else {
             return Single.create { observer in
-                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
         }
@@ -49,11 +51,12 @@ public struct UsersModelClient: UsersModelClientProtocol {
         return Firestore.firestore().rx.updateData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: uid), fields: fields)
     }
 
+    // TODO: Unuse
     public func updateUserProfile(profile: String) -> Single<()> {
         // TODO: Make common.
         guard let uid = LoginAccountData.uid else {
             return Single.create { observer in
-                observer(.error(FirebaseUser.AuthError.UnauthenticatedError))
+                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
         }

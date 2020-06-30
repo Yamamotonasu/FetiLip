@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,20 @@
 		034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986B24964F1B009336F0 /* PostDomainModel.swift */; };
 		034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986E24984024009336F0 /* DomainModelProtocol.swift */; };
 		034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */; };
+		034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9876249D7F50009336F0 /* UsersModelTests.swift */; };
+		034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987A249F3372009336F0 /* LoginFunctions.swift */; };
+		034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987D249F5779009336F0 /* TestUserAuthentications.swift */; };
+		034A988024A0ECE7009336F0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A987F24A0ECE6009336F0 /* Quick.framework */; platformFilter = ios; };
+		034A988224A0ECF9009336F0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A988124A0ECF9009336F0 /* Nimble.framework */; platformFilter = ios; };
+		034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988D24A0EFF7009336F0 /* Quick.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988E24A0EFF8009336F0 /* Nimble.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		034A989324A1814B009336F0 /* MockUserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989224A1814B009336F0 /* MockUserAuthentication.swift */; };
+		034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989524A6F86B009336F0 /* AuthErrorHandler.swift */; };
+		034A989824A713F2009336F0 /* R+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989724A713F2009336F0 /* R+Extensions.swift */; };
+		034A989A24A72166009336F0 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989924A72165009336F0 /* TestingInformation.swift */; };
+		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
+		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
+		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -114,7 +128,7 @@
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
-		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; };
+		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +148,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		034A988324A0ED10009336F0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */,
+				034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		034A9856249602F7009336F0 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		034A9857249602F7009336F0 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
@@ -144,6 +172,19 @@
 		034A986B24964F1B009336F0 /* PostDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDomainModel.swift; sourceTree = "<group>"; };
 		034A986E24984024009336F0 /* DomainModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainModelProtocol.swift; sourceTree = "<group>"; };
 		034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		034A9876249D7F50009336F0 /* UsersModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModelTests.swift; sourceTree = "<group>"; };
+		034A987A249F3372009336F0 /* LoginFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFunctions.swift; sourceTree = "<group>"; };
+		034A987D249F5779009336F0 /* TestUserAuthentications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserAuthentications.swift; sourceTree = "<group>"; };
+		034A987F24A0ECE6009336F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		034A988124A0ECF9009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		034A988D24A0EFF7009336F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		034A988E24A0EFF8009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		034A989224A1814B009336F0 /* MockUserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserAuthentication.swift; sourceTree = "<group>"; };
+		034A989524A6F86B009336F0 /* AuthErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorHandler.swift; sourceTree = "<group>"; };
+		034A989724A713F2009336F0 /* R+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Extensions.swift"; sourceTree = "<group>"; };
+		034A989924A72165009336F0 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
+		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
+		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -432,6 +473,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034A988224A0ECF9009336F0 /* Nimble.framework in Frameworks */,
+				034A988024A0ECE7009336F0 /* Quick.framework in Frameworks */,
+				0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */,
 				DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +538,80 @@
 			children = (
 			);
 			path = RxDatasource;
+			sourceTree = "<group>";
+		};
+		034A9872249CFF94009336F0 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				034A9878249F3334009336F0 /* Stub */,
+				034A9875249D7E95009336F0 /* Model */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		034A9873249CFFB0009336F0 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				034A9876249D7F50009336F0 /* UsersModelTests.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		034A9874249CFFBB009336F0 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				03598FFE24A8D715000F8A27 /* PostModelTests.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		034A9875249D7E95009336F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				034A9873249CFFB0009336F0 /* Users */,
+				034A9874249CFFBB009336F0 /* Posts */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		034A9878249F3334009336F0 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		034A9879249F335F009336F0 /* TestFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				034A987A249F3372009336F0 /* LoginFunctions.swift */,
+				034A989924A72165009336F0 /* TestingInformation.swift */,
+			);
+			path = TestFunctions;
+			sourceTree = "<group>";
+		};
+		034A987C249F5753009336F0 /* Authentications */ = {
+			isa = PBXGroup;
+			children = (
+				034A987D249F5779009336F0 /* TestUserAuthentications.swift */,
+			);
+			path = Authentications;
+			sourceTree = "<group>";
+		};
+		034A989124A18112009336F0 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				034A989224A1814B009336F0 /* MockUserAuthentication.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		034A989424A6F853009336F0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				034A989524A6F86B009336F0 /* AuthErrorHandler.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
@@ -600,6 +718,8 @@
 			isa = PBXGroup;
 			children = (
 				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
+				03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */,
+				035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -693,6 +813,7 @@
 		039EB688243B5F310016436C /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
+				034A989424A6F853009336F0 /* Utils */,
 				035BAFFB246035B7001FF6D1 /* Requests */,
 				035BAFEE2459AD3C001FF6D1 /* Clients */,
 				035BAFEB24598FD2001FF6D1 /* Protocol */,
@@ -723,6 +844,8 @@
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
+				034A988E24A0EFF8009336F0 /* Nimble.framework */,
+				034A988D24A0EFF7009336F0 /* Quick.framework */,
 				039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */,
 				03AAFAE7241E2FD70068FB1E /* fetilip */,
 				03AAFAFE241E2FDD0068FB1E /* fetilipTests */,
@@ -751,8 +874,6 @@
 				03AAFB39241F9D0B0068FB1E /* src */,
 				03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */,
 				03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */,
-				03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */,
-				035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */,
 			);
 			path = fetilip;
 			sourceTree = "<group>";
@@ -760,8 +881,12 @@
 		03AAFAFE241E2FDD0068FB1E /* fetilipTests */ = {
 			isa = PBXGroup;
 			children = (
+				034A987C249F5753009336F0 /* Authentications */,
 				03AAFB572425C45E0068FB1E /* CustomFunctions */,
 				03AAFB542425AB020068FB1E /* Extensions */,
+				034A9872249CFF94009336F0 /* Firestore */,
+				034A989124A18112009336F0 /* Mock */,
+				034A9879249F335F009336F0 /* TestFunctions */,
 				03AAFB01241E2FDD0068FB1E /* Info.plist */,
 			);
 			path = fetilipTests;
@@ -779,6 +904,8 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				034A988124A0ECF9009336F0 /* Nimble.framework */,
+				034A987F24A0ECE6009336F0 /* Quick.framework */,
 				034A9857249602F7009336F0 /* Differentiator.framework */,
 				034A9856249602F7009336F0 /* Nuke.framework */,
 				034A9858249602F7009336F0 /* RxDataSources.framework */,
@@ -873,6 +1000,7 @@
 				03AAFB6424272C360068FB1E /* Functions */,
 				03AAFB6324272C250068FB1E /* UI */,
 				03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */,
+				034A989724A713F2009336F0 /* R+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -899,6 +1027,7 @@
 			children = (
 				03AAFB552425AB6A0068FB1E /* ArrayExtensionsTests.swift */,
 				03AAFB612425ECFC0068FB1E /* UIColorExtensionTests.swift */,
+				0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1199,6 +1328,7 @@
 				03AAFAF7241E2FDD0068FB1E /* Sources */,
 				03AAFAF8241E2FDD0068FB1E /* Frameworks */,
 				03AAFAF9241E2FDD0068FB1E /* Resources */,
+				034A988324A0ED10009336F0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1498,6 +1628,7 @@
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
+				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
@@ -1509,6 +1640,7 @@
 				035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */,
 				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,
+				034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
 				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
@@ -1526,7 +1658,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034A989A24A72166009336F0 /* TestingInformation.swift in Sources */,
+				034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */,
+				034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */,
+				03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */,
+				034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */,
 				03AAFB562425AB6A0068FB1E /* ArrayExtensionsTests.swift in Sources */,
+				0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */,
+				034A989324A1814B009336F0 /* MockUserAuthentication.swift in Sources */,
 				03AAFB622425ECFC0068FB1E /* UIColorExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1761,12 +1900,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilipTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1784,12 +1928,17 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+					"$(FRAMEWORK_SEARCH_PATHS)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilipTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

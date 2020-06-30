@@ -15,11 +15,23 @@ import Firebase
  */
 protocol UserAuthModelProtocol {
 
+    /// Login anonymous user.
     func createAnonymousUser() -> Single<FirebaseUser>
 
+    /// Check logining. if login, return FirebaseUser, else return User.AuthError.notLoginError.
     func checkLogin() -> Single<FirebaseUser>
 
+    /// Logout from firebase authentication system. if succeed return empty tuple, else return User.AuthError.failedLogout.
     func logout() -> Single<Void>
+
+    /// Create user with email and password.
+    func createUserWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser>
+
+    /// Login with exists email and password.
+    func loginWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser>
+
+    /// Sign in with email and password.
+    func signInWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser>
 
 }
 
@@ -35,10 +47,27 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().signInAnonymously { _, error in
                 if let e = error {
-                    observer(.error(User.AuthError.notInitialized(error: e)))
+                    observer(.error(e))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    /// Create user account with email and password.
+    public func createUserWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
+        return Single.create { observer in
+            Auth.auth().createUser(withEmail: email, password: password) { _, error in
+                if let e = error {
+                    observer(.error(e))
+                }
+                if let user = Auth.auth().currentUser {
+                    observer(.success(user))
+                } else {
+                    observer(.error(User.AuthError.currentUserNotFound))
                 }
             }
             return Disposables.create()
@@ -51,7 +80,41 @@ public struct UsersAuthModel: UserAuthModelProtocol {
             if let user = Auth.auth().currentUser {
                 observer(.success(user))
             } else {
-                observer(.error(User.AuthError.notLoginError))
+                observer(.error(User.AuthError.currentUserNotFound))
+            }
+            return Disposables.create()
+        }
+    }
+
+    /// Sign up with email and password.
+    public func loginWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
+        return Single.create { observer in
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
+                if let e = error {
+                    observer(.error(e))
+                }
+                if let user = Auth.auth().currentUser {
+                    observer(.success(user))
+                } else {
+                    observer(.error(User.AuthError.currentUserNotFound))
+                }
+            })
+            return Disposables.create()
+        }
+    }
+
+    /// Login
+    public func signInWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
+        return Single.create { observer in
+            Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                if let e = error {
+                    observer(.error(e))
+                }
+                if let user = Auth.auth().currentUser {
+                    observer(.success(user))
+                } else {
+                    observer(.error(User.AuthError.currentUserNotFound))
+                }
             }
             return Disposables.create()
         }
@@ -64,8 +127,8 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 try Auth.auth().signOut()
                 LoginAccountData.resetUserData()
                 observer(.success(()))
-            } catch let e {
-                observer(.error(User.AuthError.failedLogout(error: e)))
+            } catch {
+                observer(.error(User.AuthError.failedLogout))
             }
             return Disposables.create()
         }
