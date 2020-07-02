@@ -15,7 +15,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
 
-    @IBOutlet private weak var lipImage: UIImageView!
+    @IBOutlet weak var lipImage: UIImageView!
 
     // MARK: - LifeCycle
 

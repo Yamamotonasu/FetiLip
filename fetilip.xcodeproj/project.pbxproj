@@ -30,6 +30,9 @@
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
+		0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900224ACD775000F8A27 /* TransitionManager.swift */; };
+		0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */; };
+		0359900924ACDE4F000F8A27 /* PostLipDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -185,6 +188,9 @@
 		034A989924A72165009336F0 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
+		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipDetailViewController.swift; sourceTree = "<group>"; };
+		0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostLipDetail.storyboard; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -610,8 +616,25 @@
 			isa = PBXGroup;
 			children = (
 				034A989524A6F86B009336F0 /* AuthErrorHandler.swift */,
+				0359900224ACD775000F8A27 /* TransitionManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */,
+				0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */,
+			);
+			path = PostLipDetail;
+			sourceTree = "<group>";
+		};
+		0359900524ACDCCD000F8A27 /* PostLipDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PostLipDetail;
 			sourceTree = "<group>";
 		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
@@ -971,10 +994,11 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				034A98602496063E009336F0 /* Layouts */,
-				035BB00E2467CF58001FF6D1 /* PostLip */,
 				039EB66D2436157B0016436C /* Debug */,
+				034A98602496063E009336F0 /* Layouts */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
+				035BB00E2467CF58001FF6D1 /* PostLip */,
+				0359900424ACDCBE000F8A27 /* PostLipDetail */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
 			);
@@ -984,9 +1008,10 @@
 		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				035BAFDA2443302D001FF6D1 /* Debug */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
+				035BB00F2467CF6A001FF6D1 /* PostLip */,
+				0359900524ACDCCD000F8A27 /* PostLipDetail */,
 				035BAFDB24433040001FF6D1 /* PostList */,
 				035BAFDD2443306D001FF6D1 /* TabBar */,
 			);
@@ -1420,6 +1445,7 @@
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
+				0359900924ACDE4F000F8A27 /* PostLipDetail.storyboard in Resources */,
 				03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1595,6 +1621,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */,
 				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
 				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
@@ -1631,6 +1658,7 @@
 				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
+				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
 				035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */,

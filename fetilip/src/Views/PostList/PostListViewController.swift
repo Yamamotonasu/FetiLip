@@ -47,7 +47,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
     // MARK: - Outlets
 
     /// Collection view displaying post list.
-    @IBOutlet private weak var lipCollectionView: UICollectionView!
+    @IBOutlet weak var lipCollectionView: UICollectionView!
 
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
 
@@ -126,7 +126,12 @@ extension PostListViewController: UICollectionViewDataSource {
         return 1
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailView = segue.destination as? PostLipDetailViewController, let indexPath = sender as? IndexPath {
+
+            // TODO
+        }
+    }
 
 }
 
