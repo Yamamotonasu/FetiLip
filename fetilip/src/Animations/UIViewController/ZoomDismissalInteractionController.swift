@@ -31,7 +31,8 @@ class ZoomDismissalInteractionController: NSObject {
             let fromReferenceImageView = animator.fromDelegate?.referenceImageView(for: animator),
             let toReferenceImageView = animator.toDelegate?.referenceImageView(for: animator),
             let fromReferenceImageViewFrame = self.fromReferenceImageViewFrame,
-            let toReferenceImageViewFrame = self.fromReferenceImageViewFrame else {
+            let toReferenceImageViewFrame = self.toReferenceImageViewFrame,
+            let tab = toVC.tabBarController as? GlobalTabBarController else {
                 return
         }
 
@@ -47,13 +48,12 @@ class ZoomDismissalInteractionController: NSObject {
         fromVC.view.alpha = backgroundAlpha
 
         transitionImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
-        let newCenter = CGPoint(x: anchorPoint.x + translatedPoint.x, y: anchorPoint.y + translatedPoint.y - transitionImageView.frame.height * (1 - scale) / 2.0)
+        let newCenter = CGPoint(x: anchorPoint.x + translatedPoint.x, y: anchorPoint.y + translatedPoint.y - transitionImageView.frame.height * (1 - scale) / 1.5)
         transitionImageView.center = newCenter
 
         toReferenceImageView.isHidden = true
 
         transitionContext.updateInteractiveTransition(1 - scale)
-//        tab.customTabBar.alpha = 1 - backgroundAlpha
 
         if gestureRecognizer.state == .ended {
             let velocity = gestureRecognizer.velocity(in: fromVC.view)
@@ -66,7 +66,7 @@ class ZoomDismissalInteractionController: NSObject {
                                animations: {
                                 transitionImageView.frame = fromReferenceImageViewFrame
                                 fromVC.view.alpha = 1.0
-//                                tab.customTabBar.alpha = 0
+                                tab.customTabBar.isHidden = true
 
                 }, completion: { finished in
                     toReferenceImageView.isHidden = false
@@ -90,7 +90,7 @@ class ZoomDismissalInteractionController: NSObject {
                            animations: {
                             fromVC.view.alpha = 0
                             transitionImageView.frame = finalTransitionSize
-//                            tab.customTabBar.alpha = 1
+                            tab.customTabBar.isHidden = false
                 }, completion: { finished in
                     transitionImageView.removeFromSuperview()
                     toReferenceImageView.isHidden = false
@@ -105,6 +105,7 @@ class ZoomDismissalInteractionController: NSObject {
         }
     }
 
+    /// Return the alpha value according to the amount of pulling the screen.
     private func backgroundAlphaFor(view: UIView, withPanningVerticalDelta verticalDelta: CGFloat) -> CGFloat {
         let startingAlpha: CGFloat = 1.0
         let finishingAlpha: CGFloat = 0.0
@@ -116,6 +117,7 @@ class ZoomDismissalInteractionController: NSObject {
         return startingAlpha - (deltaAsPercentageMaximum * totalAvailableAlpha)
     }
 
+    /// Return the scalling value according to the amout of pulling the screen.
     private func scaleFor(view: UIView, withPanningVerticalDelta verticalDelta: CGFloat) -> CGFloat {
         let startingScale: CGFloat = 1.0
         let finalScale: CGFloat = 0.5
@@ -161,6 +163,9 @@ extension ZoomDismissalInteractionController: UIViewControllerInteractiveTransit
             let transitionImageView = UIImageView(image: referenceImage)
             transitionImageView.contentMode = .scaleAspectFill
             transitionImageView.clipsToBounds = true
+            transitionImageView.cornerRadius = 10
+            transitionImageView.borderWidth = 0.5
+            transitionImageView.borderColor = .lightGray
             transitionImageView.frame = fromReferenceImageViewFrame
             animator.transitioningImageView = transitionImageView
             containerView.addSubview(transitionImageView)

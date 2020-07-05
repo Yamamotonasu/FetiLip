@@ -72,6 +72,9 @@ extension TransitionManager {
             let transitionImageView = UIImageView(image: referenceImage)
             transitionImageView.contentMode = .scaleAspectFill
             transitionImageView.clipsToBounds = true
+            transitionImageView.cornerRadius = 10
+            transitionImageView.borderWidth = 0.5
+            transitionImageView.borderColor = .lightGray
             transitionImageView.frame = fromReferenceImageViewFrame
             self.transitioningImageView = transitionImageView
             containerView.addSubview(transitionImageView)
@@ -126,6 +129,9 @@ extension TransitionManager {
             let transitionImageView = UIImageView(image: referenceImage)
             transitionImageView.contentMode = .scaleAspectFill
             transitionImageView.clipsToBounds = true
+            transitionImageView.cornerRadius = 10
+            transitionImageView.borderWidth = 0.5
+            transitionImageView.borderColor = .lightGray
             transitionImageView.frame = fromReferenceImageViewFrame
             self.transitioningImageView = transitionImageView
             containerView.addSubview(transitionImageView)
