@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 // Reference: https://github.com/masamichiueta/FluidPhoto/tree/master/FluidPhoto/Animation
 
 class TransitionManager: NSObject {
@@ -64,6 +63,7 @@ extension TransitionManager {
         toVC.view.alpha = 0
 
         toReferenceImageView.isHidden = true
+        containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(toVC.view)
 
         let referenceImage = fromReferenceImageView.image!
@@ -79,16 +79,16 @@ extension TransitionManager {
 
         fromReferenceImageView.isHidden = true
 
-        let finalTransitionSize = calculateZoomInImageFrame(image: referenceImage, forView: toVC.view)
-
         UIView.animate(withDuration: transitionDuration(using: transitionContext),
                        delay: 0,
                        usingSpringWithDamping: 0.8,
                        initialSpringVelocity: 0,
                        options: [UIView.AnimationOptions.transitionCrossDissolve], animations: {
-                        self.transitioningImageView?.frame = finalTransitionSize
+                        self.transitioningImageView?.frame = containerView.convert(toReferenceImageView.frame, from: toVC.view)
                         toVC.view.alpha = 1.0
-                        fromVC.tabBarController?.tabBar.alpha = 0
+                        if let tab = fromVC.tabBarController as? GlobalTabBarController {
+                            tab.customTabBar.isHidden = true
+                        }
         }, completion: { completed in
             self.transitioningImageView?.removeFromSuperview()
             toReferenceImageView.isHidden = false
@@ -141,7 +141,9 @@ extension TransitionManager {
                        options: [], animations: {
                         self.transitioningImageView?.frame = finalTransitionSize
                         fromVC.view.alpha = 0
-                        toVC.tabBarController?.tabBar.alpha = 1.0
+                        if let tab = fromVC.tabBarController as? GlobalTabBarController {
+                            tab.customTabBar.isHidden = false
+                        }
         }, completion: { completed in
             self.transitioningImageView?.removeFromSuperview()
             toReferenceImageView.isHidden = false
@@ -155,21 +157,6 @@ extension TransitionManager {
         })
     }
 
-    private func calculateZoomInImageFrame(image: UIImage, forView view: UIView) -> CGRect {
-        let viewRatio = view.frame.size.width / view.frame.size.height
-        let imageRatio = image.size.width / image.size.height
-        let touchesSides = (imageRatio > viewRatio)
-
-        if touchesSides {
-            let height = view.frame.width / imageRatio
-            let yPoint = view.frame.minY + (view.frame.height - height) / 2
-            return CGRect(x: 0, y: yPoint, width: view.frame.width, height: height)
-        } else {
-            let width = view.frame.height * imageRatio
-            let xPoint = view.frame.minX + (view.frame.width - width) / 2
-            return CGRect(x: xPoint, y: 0, width: width, height: view.frame.height)
-        }
-    }
  }
 
 extension TransitionManager: UIViewControllerTransitioningDelegate {

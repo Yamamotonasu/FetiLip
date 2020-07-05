@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 /**
  * Lip detaild view conttoller.
@@ -27,6 +29,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet weak var lipImageView: UIImageView!
 
+    @IBOutlet private weak var backButton: UIButton!
+
     var image: UIImage?
 
     // MARK: - Properties
@@ -37,9 +41,24 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        composeUI()
+        subscribe()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    private func composeUI() {
         self.lipImageView.image = self.image
     }
 
+    private func subscribe() {
+        backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }).disposed(by: rx.disposeBag)
+    }
 }
 
 extension PostLipDetailViewController: ZoomAnimatorDelegate {

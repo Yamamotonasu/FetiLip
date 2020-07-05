@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r4g-Wh-V0f">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -11,33 +11,72 @@
         <!--Post Lip Detail View Controller-->
         <scene sceneID="1JW-3b-8rh">
             <objects>
-                <viewController storyboardIdentifier="PostLipDetailViewController" id="r4g-Wh-V0f" customClass="PostLipDetailViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostLipDetailViewController" hidesBottomBarWhenPushed="YES" id="r4g-Wh-V0f" customClass="PostLipDetailViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Afe-8F-u6b">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A42-uA-tdc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="A42-uA-tdc" secondAttribute="height" multiplier="1:1" id="BWC-X6-f9o"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.29791845030000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="0.29791845030000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8e-1C-CNC">
+                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3b5-mj-UQf"/>
+                                    <constraint firstAttribute="width" constant="40" id="LqG-rF-Ixd"/>
+                                    <constraint firstAttribute="width" secondItem="Z8e-1C-CNC" secondAttribute="height" multiplier="1:1" id="OsD-uJ-R63"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="back_image"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Z8e-1C-CNC" firstAttribute="top" secondItem="bJv-GG-Gcg" secondAttribute="top" constant="20" id="7nP-N9-7Ju"/>
+                            <constraint firstItem="Z8e-1C-CNC" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" constant="20" id="BP2-cK-2tS"/>
                             <constraint firstItem="A42-uA-tdc" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" id="EKg-gI-RAn"/>
-                            <constraint firstItem="A42-uA-tdc" firstAttribute="top" secondItem="Afe-8F-u6b" secondAttribute="top" id="ErJ-kp-i9H"/>
+                            <constraint firstItem="A42-uA-tdc" firstAttribute="top" secondItem="Afe-8F-u6b" secondAttribute="top" id="Wlo-ow-byz"/>
                             <constraint firstItem="A42-uA-tdc" firstAttribute="trailing" secondItem="bJv-GG-Gcg" secondAttribute="trailing" id="XJT-bN-MaI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bJv-GG-Gcg"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2GV-4p-Vp2"/>
                     <connections>
+                        <outlet property="backButton" destination="Z8e-1C-CNC" id="c5h-oj-GoS"/>
                         <outlet property="lipImageView" destination="A42-uA-tdc" id="QSR-ew-bUk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcy-GJ-zfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63.768115942028992" y="-106.47321428571428"/>
+            <point key="canvasLocation" x="846.37681159420299" y="-106.47321428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back_image" width="13.5" height="13.5"/>
+    </resources>
 </document>

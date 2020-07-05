@@ -150,7 +150,7 @@ extension PostListViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
-        performSegue(withIdentifier: R.segue.postListViewController.goToPostLipDetail.identifier, sender: indexPath)
+        self.performSegue(withIdentifier: R.segue.postListViewController.goToPostLipDetail.identifier, sender: self)
     }
 
 }
