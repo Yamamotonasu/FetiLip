@@ -33,6 +33,8 @@
 		0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900224ACD775000F8A27 /* TransitionManager.swift */; };
 		0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */; };
 		0359900924ACDE4F000F8A27 /* PostLipDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */; };
+		0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */; };
+		0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -191,6 +193,8 @@
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipDetailViewController.swift; sourceTree = "<group>"; };
 		0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostLipDetail.storyboard; sourceTree = "<group>"; };
+		0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAnimatorDelegate.swift; sourceTree = "<group>"; };
+		0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -616,7 +620,6 @@
 			isa = PBXGroup;
 			children = (
 				034A989524A6F86B009336F0 /* AuthErrorHandler.swift */,
-				0359900224ACD775000F8A27 /* TransitionManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -635,6 +638,24 @@
 			children = (
 			);
 			path = PostLipDetail;
+			sourceTree = "<group>";
+		};
+		0359900D24B174A3000F8A27 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				0359900E24B174DB000F8A27 /* UIViewController */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		0359900E24B174DB000F8A27 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0359900224ACD775000F8A27 /* TransitionManager.swift */,
+				0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */,
+				0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
@@ -975,6 +996,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0359900D24B174A3000F8A27 /* Animations */,
 				034A986924964EF5009336F0 /* Domains */,
 				035BAFF4245AEC99001FF6D1 /* Models */,
 				039EB688243B5F310016436C /* Firestore */,
@@ -1640,6 +1662,7 @@
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
+				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
@@ -1657,6 +1680,7 @@
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
 				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
+				0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,

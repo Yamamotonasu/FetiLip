@@ -27,10 +27,35 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet weak var lipImageView: UIImageView!
 
+    var image: UIImage?
+
+    // MARK: - Properties
+
+    let transitionController: ZoomTransitionController = ZoomTransitionController()
+
     // MARK: - LifeCycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.lipImageView.image = self.image
+    }
+
+}
+
+extension PostLipDetailViewController: ZoomAnimatorDelegate {
+
+    func transitionWillStartWith(zoomAnimator: TransitionManager) {
+    }
+
+    func transitionDidEndWith(zoomAnimator: TransitionManager) {
+    }
+
+    func referenceImageView(for zoomAnimator: TransitionManager) -> UIImageView? {
+        return self.lipImageView
+    }
+
+    func referenceImageViewFrameInTransitioningView(for zoomAnimator: TransitionManager) -> CGRect? {
+        return self.lipImageView.frame
     }
 
 }

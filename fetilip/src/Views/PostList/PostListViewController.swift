@@ -44,6 +44,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         }
     }
 
+    var selectedIndexPath: IndexPath!
+
     // MARK: - Outlets
 
     /// Collection view displaying post list.
@@ -98,10 +100,12 @@ extension PostListViewController {
     /// Setup collection view and set delegate masonary collection view layout.
     private func setupCollectionView() {
         lipCollectionView.dataSource = self
+        lipCollectionView.delegate = self
         lipCollectionView.contentInset = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
         lipCollectionView.registerCustomCell(PostLipCollectionViewCell.self)
         if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonryCollectionViewLayout {
             collectionViewLayout.delegate = self
+
         }
     }
 
@@ -127,10 +131,26 @@ extension PostListViewController: UICollectionViewDataSource {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let detailView = segue.destination as? PostLipDetailViewController, let indexPath = sender as? IndexPath {
-
-            // TODO
+        if segue.identifier == R.segue.postListViewController.goToPostLipDetail.identifier {
+            let nav = self.navigationController
+            let vc = segue.destination as! PostLipDetailViewController
+            nav?.delegate = vc.transitionController
+            vc.transitionController.fromDelegate = self
+            vc.transitionController.toDelegate = vc
+            let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
+            vc.image = cell.lipImage.image
         }
+    }
+
+}
+
+// MARK: - UICollectionViewDelegate
+
+extension PostListViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.selectedIndexPath = indexPath
+        performSegue(withIdentifier: R.segue.postListViewController.goToPostLipDetail.identifier, sender: indexPath)
     }
 
 }
@@ -142,6 +162,35 @@ extension PostListViewController: MasonaryLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath index: IndexPath) -> CGFloat {
         let targetImage = data[index.row]
         return targetImage.image?.size.height ?? 0.0
+    }
+
+}
+
+// MARK: - ZoomAnimatorDelegate
+
+extension PostListViewController: ZoomAnimatorDelegate {
+
+    func transitionWillStartWith(zoomAnimator: TransitionManager) {
+    }
+
+    func transitionDidEndWith(zoomAnimator: TransitionManager) {
+        // TODO: Auto scrolling collection view.
+    }
+
+    func referenceImageView(for zoomAnimator: TransitionManager) -> UIImageView? {
+        let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
+        return cell.lipImage
+    }
+
+    func referenceImageViewFrameInTransitioningView(for zoomAnimator: TransitionManager) -> CGRect? {
+        // Return collection view cell frame.
+        let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
+        let cellFrame = self.lipCollectionView.convert(cell.frame, to: self.view)
+
+        if cellFrame.minY < self.lipCollectionView.contentInset.top {
+            return CGRect(x: cellFrame.minY, y: self.lipCollectionView.contentInset.top, width: cellFrame.width, height: cellFrame.height - (self.lipCollectionView.contentInset.top - cellFrame.minY))
+        }
+        return cellFrame
     }
 
 }
