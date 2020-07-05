@@ -63,6 +63,11 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         viewModel.fetchList()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         if isHiddenBottomBar == true {
@@ -162,6 +167,28 @@ extension PostListViewController: MasonaryLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath index: IndexPath) -> CGFloat {
         let targetImage = data[index.row]
         return targetImage.image?.size.height ?? 0.0
+    }
+
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension  PostListViewController: UIScrollViewDelegate {
+
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        if let tab = self.tabBarController as? GlobalTabBarController {
+            UIView.animate(withDuration: 0.1) {
+                tab.customTabBar.alpha = 0
+            }
+        }
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if let tab = self.tabBarController as? GlobalTabBarController {
+            UIView.animate(withDuration: 0.5) {
+                tab.customTabBar.alpha = 1.0
+            }
+        }
     }
 
 }

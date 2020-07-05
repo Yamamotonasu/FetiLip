@@ -13,7 +13,7 @@ import RxCocoa
 /**
  * Lip detaild view conttoller.
  */
-class PostLipDetailViewController: UIViewController, ViewControllerMethodInjectable {
+class PostLipDetailViewController: UIViewController, ViewControllerMethodInjectable, UIGestureRecognizerDelegate {
 
     // MARK: - init process
 
@@ -32,6 +32,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     @IBOutlet private weak var backButton: UIButton!
 
     var image: UIImage?
+
+    var panGesture: UIPanGestureRecognizer?
 
     // MARK: - Properties
 
@@ -52,6 +54,12 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     private func composeUI() {
         self.lipImageView.image = self.image
+
+        self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
+        self.panGesture?.delegate = self
+        if let pan = self.panGesture {
+            self.view.addGestureRecognizer(pan)
+        }
     }
 
     private func subscribe() {
@@ -59,14 +67,36 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             self?.navigationController?.popViewController(animated: true)
         }).disposed(by: rx.disposeBag)
     }
+
+    @objc private func didPanWith(gestureRecognizer: UIPanGestureRecognizer) {
+        switch gestureRecognizer.state {
+        case .began:
+            self.transitionController.isInteractive = true
+            self.navigationController?.popViewController(animated: true)
+        case .ended:
+            if self.transitionController.isInteractive {
+                self.transitionController.isInteractive = false
+                self.transitionController.didPanWith(gestureRecognizer: gestureRecognizer)
+            }
+        default:
+            if self.transitionController.isInteractive {
+                self.transitionController.didPanWith(gestureRecognizer: gestureRecognizer)
+            }
+        }
+    }
+
 }
 
 extension PostLipDetailViewController: ZoomAnimatorDelegate {
 
     func transitionWillStartWith(zoomAnimator: TransitionManager) {
+        self.backButton.alpha = 0
     }
 
     func transitionDidEndWith(zoomAnimator: TransitionManager) {
+        UIView.animate(withDuration: 0.1) { [weak self] in
+            self?.backButton.alpha = 1.0
+        }
     }
 
     func referenceImageView(for zoomAnimator: TransitionManager) -> UIImageView? {

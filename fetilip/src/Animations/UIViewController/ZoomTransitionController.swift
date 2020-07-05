@@ -16,6 +16,10 @@ class ZoomTransitionController: NSObject {
 
     let animator: TransitionManager
 
+    let interactionController: ZoomDismissalInteractionController
+
+    var isInteractive: Bool = false
+
     weak var fromDelegate: ZoomAnimatorDelegate?
 
     weak var toDelegate: ZoomAnimatorDelegate?
@@ -24,6 +28,8 @@ class ZoomTransitionController: NSObject {
 
     override init() {
         animator = TransitionManager()
+        interactionController = ZoomDismissalInteractionController()
+        super.init()
     }
 
 }
@@ -49,6 +55,16 @@ extension ZoomTransitionController: UIViewControllerTransitioningDelegate {
 
 }
 
+// MARK: - ZoomDismissalInteractionController
+
+extension ZoomTransitionController {
+
+    func didPanWith(gestureRecognizer: UIPanGestureRecognizer) {
+        self.interactionController.didPanWith(gestureRecognizer: gestureRecognizer)
+    }
+
+}
+
 // MARK: - UINavigationControllerDelegate
 
 extension ZoomTransitionController: UINavigationControllerDelegate {
@@ -66,6 +82,14 @@ extension ZoomTransitionController: UINavigationControllerDelegate {
         }
 
         return self.animator
+    }
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if !self.isInteractive {
+            return nil
+        }
+
+        self.interactionController.animator = animator
+        return self.interactionController
     }
 
 }
