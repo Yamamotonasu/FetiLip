@@ -33,7 +33,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     var image: UIImage?
 
-    var panGesture: UIPanGestureRecognizer?
+    var panGesture: UIPanGestureRecognizer!
 
     // MARK: - Properties
 
@@ -56,10 +56,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         self.lipImageView.image = self.image
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
-        self.panGesture?.delegate = self
-        if let pan = self.panGesture {
-            self.view.addGestureRecognizer(pan)
-        }
+        self.panGesture.delegate = self
+        self.view.addGestureRecognizer(panGesture)
     }
 
     private func subscribe() {
@@ -83,6 +81,24 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
                 self.transitionController.didPanWith(gestureRecognizer: gestureRecognizer)
             }
         }
+    }
+
+    // MARK: - UIPanGestureRecognizer
+
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if let gestureRecognizer = panGesture {
+            let velocity = gestureRecognizer.velocity(in: self.view)
+            var velocityCheck = false
+            if UIDevice.current.orientation.isLandscape {
+                velocityCheck = velocity.x < 0
+            } else {
+                velocityCheck = velocity.y < 0
+            }
+            if velocityCheck {
+                return false
+            }
+        }
+        return true
     }
 
 }

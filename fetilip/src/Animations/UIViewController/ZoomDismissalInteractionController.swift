@@ -21,6 +21,7 @@ class ZoomDismissalInteractionController: NSObject {
 
     var toReferenceImageViewFrame: CGRect?
 
+    /// Called every time PanGesture si executed
     func didPanWith(gestureRecognizer: UIPanGestureRecognizer) {
         guard let transitionContext = self.transitionContext,
             let animator = animator as? TransitionManager,
@@ -30,8 +31,7 @@ class ZoomDismissalInteractionController: NSObject {
             let fromReferenceImageView = animator.fromDelegate?.referenceImageView(for: animator),
             let toReferenceImageView = animator.toDelegate?.referenceImageView(for: animator),
             let fromReferenceImageViewFrame = self.fromReferenceImageViewFrame,
-            let toReferenceImageViewFrame = self.fromReferenceImageViewFrame,
-            let tab = toVC.tabBarController as? GlobalTabBarController else {
+            let toReferenceImageViewFrame = self.fromReferenceImageViewFrame else {
                 return
         }
 
@@ -53,7 +53,7 @@ class ZoomDismissalInteractionController: NSObject {
         toReferenceImageView.isHidden = true
 
         transitionContext.updateInteractiveTransition(1 - scale)
-        tab.customTabBar.alpha = 1 - backgroundAlpha
+//        tab.customTabBar.alpha = 1 - backgroundAlpha
 
         if gestureRecognizer.state == .ended {
             let velocity = gestureRecognizer.velocity(in: fromVC.view)
@@ -66,7 +66,7 @@ class ZoomDismissalInteractionController: NSObject {
                                animations: {
                                 transitionImageView.frame = fromReferenceImageViewFrame
                                 fromVC.view.alpha = 1.0
-                                tab.customTabBar.alpha = 0
+//                                tab.customTabBar.alpha = 0
 
                 }, completion: { finished in
                     toReferenceImageView.isHidden = false
@@ -90,7 +90,7 @@ class ZoomDismissalInteractionController: NSObject {
                            animations: {
                             fromVC.view.alpha = 0
                             transitionImageView.frame = finalTransitionSize
-                            tab.customTabBar.alpha = 1
+//                            tab.customTabBar.alpha = 1
                 }, completion: { finished in
                     transitionImageView.removeFromSuperview()
                     toReferenceImageView.isHidden = false

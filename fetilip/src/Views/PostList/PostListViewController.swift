@@ -185,7 +185,7 @@ extension  PostListViewController: UIScrollViewDelegate {
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let tab = self.tabBarController as? GlobalTabBarController {
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.1) {
                 tab.customTabBar.alpha = 1.0
             }
         }

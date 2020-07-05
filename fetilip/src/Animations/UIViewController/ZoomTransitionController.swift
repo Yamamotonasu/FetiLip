@@ -53,12 +53,21 @@ extension ZoomTransitionController: UIViewControllerTransitioningDelegate {
         return self.animator
     }
 
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if !self.isInteractive {
+            return nil
+        }
+        self.interactionController.animator = animator
+        return self.interactionController
+    }
+
 }
 
 // MARK: - ZoomDismissalInteractionController
 
 extension ZoomTransitionController {
 
+    /// didPanWith wrapper function in ZoomDismissalInteractionController.
     func didPanWith(gestureRecognizer: UIPanGestureRecognizer) {
         self.interactionController.didPanWith(gestureRecognizer: gestureRecognizer)
     }
@@ -83,7 +92,8 @@ extension ZoomTransitionController: UINavigationControllerDelegate {
 
         return self.animator
     }
-    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+
+    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         if !self.isInteractive {
             return nil
         }
