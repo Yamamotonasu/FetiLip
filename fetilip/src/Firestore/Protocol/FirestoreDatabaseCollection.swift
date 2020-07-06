@@ -91,6 +91,11 @@ extension FirestoreDatabaseCollection {
         return Self.makeDocumentRef(id: id)
     }
 
+    public func makeCollectionRef() -> CollectionReference {
+        let root = AppSettings.FireStore.rootDocumentName
+        return Firestore.firestore().document(root).collection(Self.collectionName)
+    }
+
 }
 
 //extension Timestamp: TimestampType{}

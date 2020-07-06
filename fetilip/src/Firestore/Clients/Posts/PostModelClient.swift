@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 protocol PostModelClientProtocol {
 
-    func postImage(uid: String, image: String) -> Single<()>
+    func postImage(uid: String, review: String, image: String) -> Single<()>
 
     func getPostList() -> Single<[PostModel]>
 
@@ -28,9 +28,9 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
 
     public init() {}
 
-    func postImage(uid: String, image: String) -> Single<()> {
-        let fields = PostsRequests.postImage(userId: uid, image: image).parameters
-        return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeCollectionRef(), fields: fields)
+    func postImage(uid: String, review: String, image: String) -> Single<()> {
+        let fields = PostsRequests.postImage(userId: uid, review: review, image: image).parameters
+        return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeSubCollectionRef(uid: uid), fields: fields)
     }
 
     func getPostList() -> Single<[PostModel]> {

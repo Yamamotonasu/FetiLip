@@ -75,7 +75,8 @@ extension PostLipViewModel {
     private func postImage(with image: UIImage) {
         let base64imageStr = image.base64
         // TODO: fource unwrapp.
-        postModelClient.postImage(uid: LoginAccountData.uid! ,image: base64imageStr ?? "").subscribe(onSuccess: { _ in
+        // TODO: Test data.
+        postModelClient.postImage(uid: LoginAccountData.uid!, review: "これめっちゃ良かった！", image: base64imageStr ?? "").subscribe(onSuccess: { _ in
             // TODO: 投稿成功時の処理
             print("投稿成功！")
         }, onError: { error in
