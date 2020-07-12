@@ -33,7 +33,7 @@ class PostModelTests: QuickSpec, LoginFunction {
                         let uid = self.selfUid
                         let image: UIImage = #imageLiteral(resourceName: "lip_image")
                         let imageBase64: String? = image.base64
-                        expect { try self.model.postImage(uid: uid!, image: imageBase64!).toBlocking().single() }.to(beAnInstanceOf(NSObject.self))
+                        expect { try self.model.postImage(uid: uid!, review: "", image: imageBase64!).toBlocking().single() }.to(beAnInstanceOf(NSObject.self))
                     }
                 }
             }
