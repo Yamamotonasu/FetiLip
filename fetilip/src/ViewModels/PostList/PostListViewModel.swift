@@ -43,8 +43,9 @@ extension PostListViewModel {
 
     func fetchList() {
         postModel.getPostList()
+            .debug()
             .do()
-            .map { $0.filter { $0.fields != nil }.map { PostDomainModel.convert($0.fields!) } }
+            .map { $0.map { PostDomainModel.convert($0) } }
             .subscribe(onSuccess: { postDomains in
                 let newDomain = postDomains.filter { $0.image != nil }
                 self.fetchCompletionSubject.accept(newDomain)

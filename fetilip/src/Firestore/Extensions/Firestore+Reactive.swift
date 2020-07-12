@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import FirebaseFirestore
+import CodableFirebase
 
 extension Reactive where Base: Firestore {
 
@@ -65,7 +66,7 @@ extension Reactive where Base: Firestore {
     }
 
     /// Fetch data specify collection.
-    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, collectionRef: CollectionReference) -> Single<[T]> {
+    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, collectionRef: CollectionReference) -> Single<[T.FieldType]> {
         return Single.create { observer in
             collectionRef.getDocuments { snapshot, error in
                 if let e = error {
@@ -76,10 +77,11 @@ extension Reactive where Base: Firestore {
                     observer(.error(ApplicationError.unknown))
                     return
                 }
-                // compactMapでnil除去
-                let results = snap.documents.compactMap { document -> T? in
+
+                let results = snap.documents.compactMap { document -> T.FieldType? in
                     do {
-                        return try document.makeResult(id: document.documentID)
+                        let field = try FirestoreDecoder().decode(T.FieldType.self, from: document.data())
+                        return field
                     } catch {
                         // TODO: Error handler
                         log.error(error)
@@ -90,21 +92,6 @@ extension Reactive where Base: Firestore {
             }
             return Disposables.create()
         }
-    }
-
-}
-
-extension DocumentSnapshot {
-
-    func makeResult<T: FirestoreDatabaseCollection>(id: String) throws -> T {
-        guard exists else {
-            throw ApplicationError.notFoundEntity(documentId: documentID)
-        }
-        let json = data()
-        guard let j = json else {
-            throw ApplicationError.notFoundJson
-        }
-        return T(id: id, json: j)
     }
 
 }

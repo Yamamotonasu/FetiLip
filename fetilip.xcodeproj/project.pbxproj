@@ -36,6 +36,7 @@
 		0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */; };
 		0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */; };
 		0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */; };
+		0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359901324B407F3000F8A27 /* CodableFirebase.framework */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -197,6 +198,7 @@
 		0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAnimatorDelegate.swift; sourceTree = "<group>"; };
 		0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
 		0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomDismissalInteractionController.swift; sourceTree = "<group>"; };
+		0359901324B407F3000F8A27 /* CodableFirebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CodableFirebase.framework; path = Carthage/Build/iOS/CodableFirebase.framework; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				039EB662243611290016436C /* leveldb-library.framework in Frameworks */,
 				03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */,
 				03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */,
+				0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */,
 				03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */,
 				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
 				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
@@ -951,6 +954,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0359901324B407F3000F8A27 /* CodableFirebase.framework */,
 				034A988124A0ECF9009336F0 /* Nimble.framework */,
 				034A987F24A0ECE6009336F0 /* Quick.framework */,
 				034A9857249602F7009336F0 /* Differentiator.framework */,
@@ -1513,6 +1517,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CodableFirebase.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1531,6 +1536,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CodableFirebase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

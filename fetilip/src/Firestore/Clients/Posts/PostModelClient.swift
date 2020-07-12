@@ -14,10 +14,10 @@ protocol PostModelClientProtocol {
 
     func postImage(uid: String, review: String, image: String) -> Single<()>
 
-    func getPostList() -> Single<[PostModel]>
+    func getPostList() -> Single<[PostModel.FieldType]>
 
     // For test function.
-    func getImage() -> Single<[PostModel]>
+    func getImage() -> Single<[PostModel.FieldType]>
 
 }
 
@@ -33,11 +33,11 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
         return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeSubCollectionRef(uid: uid), fields: fields)
     }
 
-    func getPostList() -> Single<[PostModel]> {
+    func getPostList() -> Single<[PostModel.Fields]> {
         return Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
 
-    func getImage() -> Single<[PostModel]> {
+    func getImage() -> Single<[PostModel.Fields]> {
         Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
     

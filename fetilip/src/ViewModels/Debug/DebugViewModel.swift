@@ -144,7 +144,7 @@ extension DebugViewModel {
     private func getLatestImage() {
         postModelClient.getImage().subscribe(onSuccess: { image in
             // TODO: Safe decode
-            if let base64str = image.first?.fields?.image {
+            if let base64str = image.first?.image {
                 let imageData = Data(base64Encoded: base64str)
                 guard let data = imageData else {
                     return

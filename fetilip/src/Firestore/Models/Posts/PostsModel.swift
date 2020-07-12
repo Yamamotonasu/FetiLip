@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFirestore
+import CodableFirebase
 
 /**
  * User posts model.
@@ -32,15 +33,19 @@ public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
 
         public let review: String?
 
-        public let createdAt: Date
+        public let userRef: DocumentReference?
 
-        public let updatedAt: Date
+        public let createdAt: Timestamp
+
+        public let updatedAt: Timestamp
 
         enum Key: String, CodingKey {
 
             case userId
 
             case review
+
+            case userRef
 
             case image
 
@@ -76,3 +81,8 @@ protocol FirestoreSubCollection {
     static func makeSubCollectionRef(uid: String) -> CollectionReference
 
 }
+
+extension DocumentReference: DocumentReferenceType {}
+extension GeoPoint: GeoPointType {}
+extension FieldValue: FieldValueType {}
+extension Timestamp: TimestampType {}
