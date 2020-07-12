@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,56 +13,72 @@
             <objects>
                 <viewController storyboardIdentifier="postLipViewController" modalPresentationStyle="fullScreen" id="R9a-Tv-nQP" customClass="PostLipViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bap-td-deK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-66-6ua">
-                                <rect key="frame" x="20" y="20" width="335" height="33"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4c-d6-fFA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="75.333333333333329"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-6m-8qE">
-                                        <rect key="frame" x="0.0" y="0.0" width="193" height="33"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-66-6ua">
+                                        <rect key="frame" x="20.666666666666657" y="0.0" width="372.66666666666674" height="75.333333333333329"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-6m-8qE">
+                                                <rect key="frame" x="0.0" y="20.000000000000004" width="230.66666666666666" height="55.333333333333343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="suX-2D-B9o"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="キャンセル">
+                                                    <color key="titleColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-l8-NXn">
+                                                <rect key="frame" x="250.66666666666663" y="20.000000000000004" width="122" height="55.333333333333343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="GjE-ei-FxS"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <state key="normal" title="画像を選択する">
+                                                    <color key="titleColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="suX-2D-B9o"/>
+                                            <constraint firstItem="UWk-l8-NXn" firstAttribute="top" secondItem="Sme-66-6ua" secondAttribute="top" constant="20" id="9Jf-S7-l5i"/>
+                                            <constraint firstItem="nS0-6m-8qE" firstAttribute="top" secondItem="Sme-66-6ua" secondAttribute="top" constant="20" id="ue7-cG-m9H"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="キャンセル">
-                                            <color key="titleColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-l8-NXn">
-                                        <rect key="frame" x="213" y="0.0" width="122" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="122" id="GjE-ei-FxS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="画像を選択する">
-                                            <color key="titleColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Sme-66-6ua" secondAttribute="bottom" id="HrX-rX-aqc"/>
+                                    <constraint firstItem="Sme-66-6ua" firstAttribute="width" secondItem="c4c-d6-fFA" secondAttribute="width" multiplier="0.9" id="S2A-hz-ggV"/>
+                                    <constraint firstItem="Sme-66-6ua" firstAttribute="centerY" secondItem="c4c-d6-fFA" secondAttribute="centerY" id="VEo-8f-JxF"/>
+                                    <constraint firstItem="Sme-66-6ua" firstAttribute="centerX" secondItem="c4c-d6-fFA" secondAttribute="centerX" id="ZGf-Ce-cug"/>
+                                    <constraint firstItem="Sme-66-6ua" firstAttribute="centerX" secondItem="c4c-d6-fFA" secondAttribute="centerX" id="huJ-30-74t"/>
+                                    <constraint firstItem="Sme-66-6ua" firstAttribute="top" secondItem="c4c-d6-fFA" secondAttribute="top" id="uoG-gX-bbx"/>
+                                    <constraint firstAttribute="width" secondItem="c4c-d6-fFA" secondAttribute="height" multiplier="5.5:1" id="xr3-xX-mve"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4A-fe-XsL">
-                                <rect key="frame" x="60" y="83" width="255" height="255"/>
+                                <rect key="frame" x="60" y="95.333333333333314" width="294" height="294"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RhH-NR-iWL">
-                                        <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="294"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="0.29999999999999999"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像を選択しましょう。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dqr-Ug-sjk">
-                                        <rect key="frame" x="10" y="118.5" width="235" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像を選択してください😊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dqr-Ug-sjk">
+                                        <rect key="frame" x="10" y="138" width="274" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtA-XL-Duu">
-                                        <rect key="frame" x="210" y="15" width="30" height="30"/>
+                                        <rect key="frame" x="249" y="15" width="30" height="30"/>
                                         <color key="backgroundColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="1o2-QX-5PS"/>
@@ -108,17 +124,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BoW-aA-FJY">
-                                <rect key="frame" x="70" y="504" width="235" height="89.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BoW-aA-FJY">
+                                <rect key="frame" x="70" y="595" width="274" height="73.666666666666629"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="これは唇の画像ですか？ 唇なら投稿してみましょう！" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-cK-SB3">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="31.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿ありがとうございます！😊" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-cK-SB3">
+                                        <rect key="frame" x="0.0" y="0.0" width="274" height="15.666666666666666"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IJ-9Z-SQA">
-                                        <rect key="frame" x="0.0" y="39.5" width="235" height="50"/>
+                                        <rect key="frame" x="0.0" y="23.666666666666629" width="274" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Kfz-h2-saC"/>
@@ -138,17 +154,31 @@
                                     <constraint firstItem="3IJ-9Z-SQA" firstAttribute="width" secondItem="wBC-cK-SB3" secondAttribute="width" id="cW7-kj-tja"/>
                                 </constraints>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-Qg-v8A">
+                                <rect key="frame" x="0.0" y="409.33333333333331" width="414" height="165.66666666666669"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8KJ-Qg-v8A" secondAttribute="height" multiplier="2.5:1" id="cIw-46-46X"/>
+                                </constraints>
+                                <color key="textColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="l4A-fe-XsL" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="60" id="1BB-5n-WZK"/>
-                            <constraint firstItem="Sme-66-6ua" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="20" id="8Sm-50-J7W"/>
+                            <constraint firstItem="l4A-fe-XsL" firstAttribute="top" secondItem="c4c-d6-fFA" secondAttribute="bottom" constant="20" id="57K-rs-KyF"/>
                             <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="BoW-aA-FJY" secondAttribute="trailing" constant="70" id="BtG-i6-EmX"/>
-                            <constraint firstItem="Sme-66-6ua" firstAttribute="top" secondItem="6rx-Ae-JVp" secondAttribute="top" constant="20" id="Rl7-oS-4CI"/>
+                            <constraint firstItem="8KJ-Qg-v8A" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" id="QHd-7P-5yo"/>
+                            <constraint firstItem="8KJ-Qg-v8A" firstAttribute="trailing" secondItem="6rx-Ae-JVp" secondAttribute="trailing" id="QUV-fm-Tfd"/>
                             <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="l4A-fe-XsL" secondAttribute="trailing" constant="60" id="Say-yO-Noc"/>
-                            <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="Sme-66-6ua" secondAttribute="trailing" constant="20" id="TdC-vz-JZv"/>
                             <constraint firstItem="BoW-aA-FJY" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" constant="70" id="hIe-K5-eJe"/>
-                            <constraint firstItem="l4A-fe-XsL" firstAttribute="top" secondItem="Sme-66-6ua" secondAttribute="bottom" constant="30" id="yp4-LP-BBS"/>
+                            <constraint firstItem="c4c-d6-fFA" firstAttribute="top" secondItem="bap-td-deK" secondAttribute="top" id="n46-7T-4yV"/>
+                            <constraint firstItem="8KJ-Qg-v8A" firstAttribute="top" secondItem="l4A-fe-XsL" secondAttribute="bottom" constant="20" id="paq-ea-lgJ"/>
+                            <constraint firstItem="c4c-d6-fFA" firstAttribute="leading" secondItem="6rx-Ae-JVp" secondAttribute="leading" id="t6c-2d-63b"/>
+                            <constraint firstItem="6rx-Ae-JVp" firstAttribute="trailing" secondItem="c4c-d6-fFA" secondAttribute="trailing" id="uTi-Sv-uYv"/>
+                            <constraint firstItem="BoW-aA-FJY" firstAttribute="top" secondItem="8KJ-Qg-v8A" secondAttribute="bottom" constant="20" id="wCj-Pb-beE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6rx-Ae-JVp"/>
                     </view>
@@ -163,12 +193,13 @@
                         <outlet property="dismissButton" destination="nS0-6m-8qE" id="aat-rV-kfQ"/>
                         <outlet property="imagePosted" destination="RhH-NR-iWL" id="gIP-JS-Qz0"/>
                         <outlet property="postButton" destination="3IJ-9Z-SQA" id="b00-fr-UIc"/>
+                        <outlet property="postLipReviewTextView" destination="8KJ-Qg-v8A" id="vxD-Zo-AtQ"/>
                         <outlet property="selectedImageViewArea" destination="l4A-fe-XsL" id="lyy-cg-QBt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DA8-6e-qyU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479.71014492753625" y="-259.15178571428572"/>
+            <point key="canvasLocation" x="479.19999999999999" y="-259.52023988005999"/>
         </scene>
     </scenes>
 </document>

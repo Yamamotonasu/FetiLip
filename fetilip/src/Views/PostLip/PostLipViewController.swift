@@ -58,6 +58,9 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
     /// Sentence to post only lip image.
     @IBOutlet private weak var attentionLabel: UILabel!
 
+    /// Review selected images.
+    @IBOutlet private weak var postLipReviewTextView: UITextView!
+
     // MARK: - Properties
 
     let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
@@ -114,7 +117,8 @@ extension PostLipViewController {
     /// Bint UI from view model outputs and ViewModel.
     private func bindUI() {
         let input = ViewModel.Input(deleteButtonTapEvent: deleteImageButton.rx.tap.asObservable(),
-                                    postButtonTapEvent: postButton.rx.tap.asObservable())
+                                    postButtonTapEvent: postButton.rx.tap.asObservable(),
+                                    postLipReviewText: postLipReviewTextView.rx.text.asObservable())
         let output = viewModel.transform(input: input)
 
         output.updatedImage
