@@ -81,8 +81,3 @@ protocol FirestoreSubCollection {
     static func makeSubCollectionRef(uid: String) -> CollectionReference
 
 }
-
-extension DocumentReference: DocumentReferenceType {}
-extension GeoPoint: GeoPointType {}
-extension FieldValue: FieldValueType {}
-extension Timestamp: TimestampType {}

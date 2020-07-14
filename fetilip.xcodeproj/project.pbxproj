@@ -37,6 +37,8 @@
 		0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */; };
 		0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */; };
 		0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359901324B407F3000F8A27 /* CodableFirebase.framework */; };
+		0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */; };
+		0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -199,6 +201,8 @@
 		0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
 		0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomDismissalInteractionController.swift; sourceTree = "<group>"; };
 		0359901324B407F3000F8A27 /* CodableFirebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CodableFirebase.framework; path = Carthage/Build/iOS/CodableFirebase.framework; sourceTree = "<group>"; };
+		0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFirebaseExtensions.swift; sourceTree = "<group>"; };
+		0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -664,6 +668,23 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		0359901924BD30C9000F8A27 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0359901A24BD30D6000F8A27 /* CustomView */,
+				0359900D24B174A3000F8A27 /* Animations */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0359901A24BD30D6000F8A27 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +721,7 @@
 			children = (
 				035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */,
 				035BAFF9245ED6FD001FF6D1 /* Firestore+Reactive.swift */,
+				0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1003,7 +1025,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0359900D24B174A3000F8A27 /* Animations */,
+				0359901924BD30C9000F8A27 /* UI */,
 				034A986924964EF5009336F0 /* Domains */,
 				035BAFF4245AEC99001FF6D1 /* Models */,
 				039EB688243B5F310016436C /* Firestore */,
@@ -1665,6 +1687,7 @@
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
+				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
@@ -1676,6 +1699,7 @@
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
 				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
+				0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */,

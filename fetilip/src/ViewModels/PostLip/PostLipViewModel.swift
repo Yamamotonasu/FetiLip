@@ -24,7 +24,7 @@ struct PostLipViewModel {
     let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
 
     // When Image selected, return true. Otherwise returns false.
-    let imageExistsState: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: true)
+    let imageExistsState: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
 
     let disposeBag: DisposeBag = DisposeBag()
     

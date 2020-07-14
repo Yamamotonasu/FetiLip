@@ -138,6 +138,7 @@ extension PostLipViewController {
             self.postButton.isEnabled = exists
             self.postButton.alpha = exists ? 1.0 : 0.5
             self.imagePosted.borderColor = exists ? .white : .gray
+            self.postLipReviewTextView.isHidden = !exists
         }).disposed(by: rx.disposeBag)
 
     }
