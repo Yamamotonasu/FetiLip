@@ -34,7 +34,7 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
     }
 
     func getPostList() -> Single<[PostModel.Fields]> {
-        return Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
+        return Firestore.firestore().rx.getSubCollection(PostModel.self, subCollectionQuery: PostModel.makeSubCollectionQuery())
     }
 
     func getImage() -> Single<[PostModel.Fields]> {

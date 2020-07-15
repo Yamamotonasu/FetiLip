@@ -94,6 +94,33 @@ extension Reactive where Base: Firestore {
         }
     }
 
+    func getSubCollection<T: FirestoreDatabaseCollection>(_ type: T.Type, subCollectionQuery: Query) -> Single<[T.FieldType]> {
+        return Single.create { observer in
+            subCollectionQuery.getDocuments { (snapshot, error) in
+                if let e = error {
+                    observer(.error(e))
+                    return
+                }
+                guard let snap = snapshot else {
+                    observer(.error(ApplicationError.unknown))
+                    return
+                }
+                let results = snap.documents.compactMap { document -> T.FieldType? in
+                    do {
+                        let field = try FirestoreDecoder().decode(T.FieldType.self, from: document.data())
+                        return field
+                    } catch {
+                        // TODO: Error handler
+                        log.error(error)
+                        return nil
+                    }
+                }
+                observer(.success(results))
+            }
+            return Disposables.create()
+        }
+    }
+
 }
 
 public enum ApplicationError: Error {
