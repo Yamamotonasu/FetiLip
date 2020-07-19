@@ -33,6 +33,9 @@ public protocol FirestoreDatabaseCollection {
     /// Create collection reference.
     static func makeCollectionRef() -> CollectionReference
 
+    /// Create sub collection query.
+    static func makeSubCollectionQuery() -> Query
+
     /// Create document reference. (Use without instantiating.)
     static func makeDocumentRef(id: String) -> DocumentReference
 
@@ -52,21 +55,7 @@ extension FirestoreDatabaseCollection {
 
     public init(id: String, json: [String: Any]) {
         do {
-            var j = json
-            // Timestamp → Date変換処理
-            // あまりやりたくない処理。大体案考えたいなぁ
-            j.forEach { (key: String, value: Any) in
-                switch value {
-                case let timestamp as Timestamp:
-                    let date = timestamp.dateValue()
-                    let jsonValue = Int((date.timeIntervalSince1970 * 1000).rounded())
-                    j[key] = jsonValue
-                    break
-                default:
-                    break
-                }
-            }
-            let data = try JSONSerialization.data(withJSONObject: j)
+            let data = try JSONSerialization.data(withJSONObject: json)
             let decoded = try JSONDecoder().decode(FieldType.self, from: data)
             self.init(id: id, fields: decoded)
         } catch {
@@ -81,6 +70,10 @@ extension FirestoreDatabaseCollection {
         return Firestore.firestore().document(root).collection(collectionName)
     }
 
+    public static func makeSubCollectionQuery() -> Query {
+        return Firestore.firestore().collectionGroup(collectionName)
+    }
+
     /// Create document reference. (Use without instantiating.)
     public static func makeDocumentRef(id: String) -> DocumentReference {
         return Self.makeCollectionRef().document(id)
@@ -89,6 +82,11 @@ extension FirestoreDatabaseCollection {
     /// Create document reference. (After instantiating.)
     public func makeDocumentRef() -> DocumentReference {
         return Self.makeDocumentRef(id: id)
+    }
+
+    public func makeCollectionRef() -> CollectionReference {
+        let root = AppSettings.FireStore.rootDocumentName
+        return Firestore.firestore().document(root).collection(Self.collectionName)
     }
 
 }

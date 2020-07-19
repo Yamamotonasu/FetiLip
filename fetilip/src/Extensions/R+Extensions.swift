@@ -34,6 +34,15 @@ extension R {
 
         static let userDisabled: String = "無効なアカウントです。"
 
+        struct error {
+
+            // MARK: - PostLip
+
+            static let imageNotFound = "画像が見つかりません。再度選択してください。"
+
+            static let excessiveNumberOfInputs = "制限を超える文字数のレビューは投稿出来ません。"
+        }
+
     }
 
 }

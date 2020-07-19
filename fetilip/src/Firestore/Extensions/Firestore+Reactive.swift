@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import FirebaseFirestore
+import CodableFirebase
 
 extension Reactive where Base: Firestore {
 
@@ -65,7 +66,7 @@ extension Reactive where Base: Firestore {
     }
 
     /// Fetch data specify collection.
-    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, collectionRef: CollectionReference) -> Single<[T]> {
+    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, collectionRef: CollectionReference) -> Single<[T.FieldType]> {
         return Single.create { observer in
             collectionRef.getDocuments { snapshot, error in
                 if let e = error {
@@ -76,10 +77,11 @@ extension Reactive where Base: Firestore {
                     observer(.error(ApplicationError.unknown))
                     return
                 }
-                // compactMapでnil除去
-                let results = snap.documents.compactMap { document -> T? in
+
+                let results = snap.documents.compactMap { document -> T.FieldType? in
                     do {
-                        return try document.makeResult(id: document.documentID)
+                        let field = try FirestoreDecoder().decode(T.FieldType.self, from: document.data())
+                        return field
                     } catch {
                         // TODO: Error handler
                         log.error(error)
@@ -92,19 +94,57 @@ extension Reactive where Base: Firestore {
         }
     }
 
-}
-
-extension DocumentSnapshot {
-
-    func makeResult<T: FirestoreDatabaseCollection>(id: String) throws -> T {
-        guard exists else {
-            throw ApplicationError.notFoundEntity(documentId: documentID)
+    func getSubCollection<T: FirestoreDatabaseCollection>(_ type: T.Type, subCollectionQuery: Query) -> Single<[T.FieldType]> {
+        return Single.create { observer in
+            subCollectionQuery.getDocuments { (snapshot, error) in
+                if let e = error {
+                    observer(.error(e))
+                    return
+                }
+                guard let snap = snapshot else {
+                    observer(.error(ApplicationError.unknown))
+                    return
+                }
+                let results = snap.documents.compactMap { document -> T.FieldType? in
+                    do {
+                        let field = try FirestoreDecoder().decode(T.FieldType.self, from: document.data())
+                        return field
+                    } catch {
+                        // TODO: Error handler
+                        log.error(error)
+                        return nil
+                    }
+                }
+                observer(.success(results))
+            }
+            return Disposables.create()
         }
-        let json = data()
-        guard let j = json else {
-            throw ApplicationError.notFoundJson
+    }
+
+    /**
+     * Fetch single document using document reference.
+     */
+    func getDocument<T: FirestoreDatabaseCollection>(_ type: T.Type, documentReference: DocumentReference) -> Single<T.FieldType> {
+        return Single.create { observer in
+            documentReference.getDocument { (snapshot, error) in
+                if let e = error {
+                    observer(.error(e))
+                    return
+                }
+                guard let snap = snapshot, let data = snap.data() else {
+                    observer(.error(ApplicationError.unknown))
+                    return
+                }
+                do {
+                    let field = try FirestoreDecoder().decode(T.FieldType.self, from: data)
+                    observer(.success(field))
+                } catch {
+                    log.error(error)
+                    observer(.error(ApplicationError.failedParseResponse))
+                }
+            }
+            return Disposables.create()
         }
-        return T(id: id, json: j)
     }
 
 }
@@ -113,4 +153,5 @@ public enum ApplicationError: Error {
     case unknown
     case notFoundEntity(documentId: String)
     case notFoundJson
+    case failedParseResponse
 }

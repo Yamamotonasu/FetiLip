@@ -51,6 +51,7 @@
                     <connections>
                         <outlet property="collectionViewBottomConstraint" destination="TQW-my-zZT" id="7m0-cV-suH"/>
                         <outlet property="lipCollectionView" destination="fYI-Ez-7at" id="qrN-ug-hHA"/>
+                        <segue destination="Leu-nA-g4n" kind="show" identifier="goToPostLipDetail" id="W47-pA-PZg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liA-My-3DD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -75,6 +76,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8q-nf-dYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="125.89285714285714"/>
+        </scene>
+        <!--PostLipDetail-->
+        <scene sceneID="r7m-5G-zAg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PostLipDetail" id="Leu-nA-g4n" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fz1-7x-1sA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SL5-eU-BHF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1853" y="-288"/>
         </scene>
         <!--Transition Post Page View Controller-->
         <scene sceneID="lWL-Dk-SBN">

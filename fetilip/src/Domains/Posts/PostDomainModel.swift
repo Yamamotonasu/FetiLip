@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
 
 struct PostDomainModel: DomainModelProtocol {
 
@@ -15,16 +16,21 @@ struct PostDomainModel: DomainModelProtocol {
 
     typealias Output = Self
 
+    let userRef: DocumentReference
+
     /// Post image.
     let image: UIImage?
+
+    let review: String
 
     static func convert(_ model: PostModel.Fields) -> Self {
         if let base64 = Data(base64Encoded: model.image) {
             let image = UIImage(data: base64)
-            return self.init(image: image)
+            return self.init(userRef: model.userRef,
+                             image: image,
+                             review: model.review ?? "")
         }
-        // TODO: Failed read image handler.
-        return self.init(image: nil)
+        return self.init(userRef: model.userRef, image: nil, review: model.review ?? "")
     }
 
 }

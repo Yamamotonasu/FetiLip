@@ -27,9 +27,19 @@
 		034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989524A6F86B009336F0 /* AuthErrorHandler.swift */; };
 		034A989824A713F2009336F0 /* R+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989724A713F2009336F0 /* R+Extensions.swift */; };
 		034A989A24A72166009336F0 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989924A72165009336F0 /* TestingInformation.swift */; };
+		034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C561624C3EDE70005B6C5 /* PostLipDetailViewModel.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
+		0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900224ACD775000F8A27 /* TransitionManager.swift */; };
+		0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */; };
+		0359900924ACDE4F000F8A27 /* PostLipDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */; };
+		0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */; };
+		0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */; };
+		0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */; };
+		0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359901324B407F3000F8A27 /* CodableFirebase.framework */; };
+		0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */; };
+		0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
 		035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */; };
 		035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */; };
@@ -183,8 +193,18 @@
 		034A989524A6F86B009336F0 /* AuthErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorHandler.swift; sourceTree = "<group>"; };
 		034A989724A713F2009336F0 /* R+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Extensions.swift"; sourceTree = "<group>"; };
 		034A989924A72165009336F0 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
+		034C561624C3EDE70005B6C5 /* PostLipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostLipDetailViewModel.swift; path = fetilip/src/UI/CustomView/PostLipDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
+		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipDetailViewController.swift; sourceTree = "<group>"; };
+		0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostLipDetail.storyboard; sourceTree = "<group>"; };
+		0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAnimatorDelegate.swift; sourceTree = "<group>"; };
+		0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
+		0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomDismissalInteractionController.swift; sourceTree = "<group>"; };
+		0359901324B407F3000F8A27 /* CodableFirebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CodableFirebase.framework; path = Carthage/Build/iOS/CodableFirebase.framework; sourceTree = "<group>"; };
+		0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFirebaseExtensions.swift; sourceTree = "<group>"; };
+		0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		035BAFE0244330E8001FF6D1 /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirebaseUser+Extensions.swift"; sourceTree = "<group>"; };
@@ -439,6 +459,7 @@
 				039EB662243611290016436C /* leveldb-library.framework in Frameworks */,
 				03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */,
 				03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */,
+				0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */,
 				03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */,
 				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
 				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
@@ -614,6 +635,59 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0359900824ACDE4F000F8A27 /* PostLipDetail.storyboard */,
+				0359900624ACDDB3000F8A27 /* PostLipDetailViewController.swift */,
+			);
+			path = PostLipDetail;
+			sourceTree = "<group>";
+		};
+		0359900524ACDCCD000F8A27 /* PostLipDetail */ = {
+			isa = PBXGroup;
+			children = (
+				034C561624C3EDE70005B6C5 /* PostLipDetailViewModel.swift */,
+			);
+			path = PostLipDetail;
+			sourceTree = "<group>";
+		};
+		0359900D24B174A3000F8A27 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				0359900E24B174DB000F8A27 /* UIViewController */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		0359900E24B174DB000F8A27 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0359900224ACD775000F8A27 /* TransitionManager.swift */,
+				0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */,
+				0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */,
+				0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		0359901924BD30C9000F8A27 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0359901A24BD30D6000F8A27 /* CustomView */,
+				0359900D24B174A3000F8A27 /* Animations */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		0359901A24BD30D6000F8A27 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		035BAFDA2443302D001FF6D1 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +724,7 @@
 			children = (
 				035BAFE624597C84001FF6D1 /* FirebaseUser+Extensions.swift */,
 				035BAFF9245ED6FD001FF6D1 /* Firestore+Reactive.swift */,
+				0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -904,6 +979,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0359901324B407F3000F8A27 /* CodableFirebase.framework */,
 				034A988124A0ECF9009336F0 /* Nimble.framework */,
 				034A987F24A0ECE6009336F0 /* Quick.framework */,
 				034A9857249602F7009336F0 /* Differentiator.framework */,
@@ -952,6 +1028,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0359901924BD30C9000F8A27 /* UI */,
 				034A986924964EF5009336F0 /* Domains */,
 				035BAFF4245AEC99001FF6D1 /* Models */,
 				039EB688243B5F310016436C /* Firestore */,
@@ -971,10 +1048,11 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				034A98602496063E009336F0 /* Layouts */,
-				035BB00E2467CF58001FF6D1 /* PostLip */,
 				039EB66D2436157B0016436C /* Debug */,
+				034A98602496063E009336F0 /* Layouts */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
+				035BB00E2467CF58001FF6D1 /* PostLip */,
+				0359900424ACDCBE000F8A27 /* PostLipDetail */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
 			);
@@ -984,9 +1062,10 @@
 		03AAFB3B241F9D2B0068FB1E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				035BAFDA2443302D001FF6D1 /* Debug */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
+				035BB00F2467CF6A001FF6D1 /* PostLip */,
+				0359900524ACDCCD000F8A27 /* PostLipDetail */,
 				035BAFDB24433040001FF6D1 /* PostList */,
 				035BAFDD2443306D001FF6D1 /* TabBar */,
 			);
@@ -1420,6 +1499,7 @@
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
+				0359900924ACDE4F000F8A27 /* PostLipDetail.storyboard in Resources */,
 				03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1462,6 +1542,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CodableFirebase.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1480,6 +1561,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CodableFirebase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1595,6 +1677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */,
 				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
 				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
@@ -1607,16 +1690,19 @@
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
+				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
+				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
 				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
+				0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */,
@@ -1624,13 +1710,16 @@
 				036A45102472CC4A00DD9282 /* PostsRequests.swift in Sources */,
 				034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */,
 				034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */,
+				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
 				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
+				0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
+				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
 				035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */,
@@ -1647,6 +1736,7 @@
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
 				036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
+				0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */,
 				034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */,
 				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,

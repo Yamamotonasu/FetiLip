@@ -7,11 +7,17 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import CodableFirebase
 
 /**
  * User posts model.
  */
-public struct PostModel: FirestoreDatabaseCollection {
+public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
+
+    typealias RootCollectionModel = UserModel
+
+    static var rootCollectionName: String = RootCollectionModel.collectionName
 
     public static let collectionName = "posts"
 
@@ -22,18 +28,24 @@ public struct PostModel: FirestoreDatabaseCollection {
     // Firestore key-value fields.
     public struct Fields: Codable {
 
-        public let userId: String
-
         // base64
         public let image: String
 
-        public let createdAt: Date
+        public let review: String?
 
-        public let updatedAt: Date
+        public let userRef: DocumentReference
+
+        public let createdAt: Timestamp
+
+        public let updatedAt: Timestamp
 
         enum Key: String, CodingKey {
 
             case userId
+
+            case review
+
+            case userRef
 
             case image
 
@@ -49,5 +61,23 @@ public struct PostModel: FirestoreDatabaseCollection {
         self.id = id
         self.fields = fields
     }
+
+    /**
+     * Make collection ref sub collection of users according uid.
+     */
+    static func makeSubCollectionRef(uid: String) -> CollectionReference {
+        let root = AppSettings.FireStore.rootDocumentName
+        return Firestore.firestore().document(root).collection(Self.rootCollectionName).document(uid).collection(Self.collectionName)
+    }
+
+}
+
+protocol FirestoreSubCollection {
+
+    associatedtype RootCollectionModel
+
+    static var rootCollectionName: String { get set }
+
+    static func makeSubCollectionRef(uid: String) -> CollectionReference
 
 }
