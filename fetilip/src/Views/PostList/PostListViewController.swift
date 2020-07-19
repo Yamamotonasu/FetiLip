@@ -143,7 +143,9 @@ extension PostListViewController: UICollectionViewDataSource {
             vc.transitionController.fromDelegate = self
             vc.transitionController.toDelegate = vc
             let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
-            vc.image = cell.lipImage.image
+
+            vc.inject(with: .init(displayImage: cell.lipImage.image,
+                                  postModel: data[self.selectedIndexPath.row]))
         }
     }
 

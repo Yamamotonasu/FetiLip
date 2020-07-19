@@ -16,7 +16,6 @@ protocol PostModelClientProtocol {
 
     func getPostList() -> Single<[PostModel.FieldType]>
 
-    // For test function.
     func getImage() -> Single<[PostModel.FieldType]>
 
 }
@@ -29,12 +28,14 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
     public init() {}
 
     func postImage(uid: String, review: String, image: String) -> Single<()> {
-        let fields = PostsRequests.postImage(userId: uid, review: review, image: image).parameters
-        return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeSubCollectionRef(uid: uid), fields: fields)
+        let db = Firestore.firestore()
+        let userRef: DocumentReference = db.document("/version/1/users/\(uid)")
+        let fields = PostsRequests.postImage(userId: uid, review: review, image: image, userRef: userRef).parameters
+        return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeCollectionRef(), fields: fields)
     }
 
     func getPostList() -> Single<[PostModel.Fields]> {
-        return Firestore.firestore().rx.getSubCollection(PostModel.self, subCollectionQuery: PostModel.makeSubCollectionQuery())
+        return Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
 
     func getImage() -> Single<[PostModel.Fields]> {

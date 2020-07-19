@@ -17,6 +17,8 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var lipImage: UIImageView!
 
+    @IBOutlet weak var reviewText: UILabel!
+
     // MARK: - LifeCycle
 
     override func awakeFromNib() {
@@ -30,6 +32,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     func clear() {
         lipImage.image = nil
+        reviewText.text = nil
     }
 
     func setupCell(_ model: PostDomainModel) {
@@ -42,6 +45,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
+        reviewText.text = model.review
         setupDesign()
     }
 

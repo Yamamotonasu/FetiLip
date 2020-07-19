@@ -26,13 +26,25 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="vVH-4I-4Qn"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レビュが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-S6-zEf">
+                                <rect key="frame" x="8" y="209" width="246" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="YfO-ng-02z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="z6r-S6-zEf" secondAttribute="bottom" constant="15" id="CMq-2k-GPB"/>
+                            <constraint firstAttribute="trailing" secondItem="z6r-S6-zEf" secondAttribute="trailing" constant="8" id="OTZ-gE-uak"/>
                             <constraint firstItem="mcc-U7-Dha" firstAttribute="top" secondItem="A3t-9B-jbJ" secondAttribute="top" id="bBo-ug-osy"/>
                             <constraint firstAttribute="bottom" secondItem="mcc-U7-Dha" secondAttribute="bottom" id="hxh-ZW-c4o"/>
                             <constraint firstItem="mcc-U7-Dha" firstAttribute="leading" secondItem="A3t-9B-jbJ" secondAttribute="leading" id="mta-f6-PY4"/>
                             <constraint firstAttribute="trailing" secondItem="mcc-U7-Dha" secondAttribute="trailing" id="pFW-tS-wXa"/>
+                            <constraint firstItem="z6r-S6-zEf" firstAttribute="leading" secondItem="A3t-9B-jbJ" secondAttribute="leading" constant="8" id="z3C-6J-OhE"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -64,6 +76,7 @@
             <size key="customSize" width="262" height="244"/>
             <connections>
                 <outlet property="lipImage" destination="mcc-U7-Dha" id="k3u-2R-nEi"/>
+                <outlet property="reviewText" destination="z6r-S6-zEf" id="IuR-R7-gpT"/>
             </connections>
             <point key="canvasLocation" x="113.04347826086958" y="95.089285714285708"/>
         </collectionViewCell>

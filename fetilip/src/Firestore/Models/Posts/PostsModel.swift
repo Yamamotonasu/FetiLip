@@ -33,7 +33,7 @@ public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
 
         public let review: String?
 
-        public let userRef: DocumentReference?
+        public let userRef: DocumentReference
 
         public let createdAt: Timestamp
 

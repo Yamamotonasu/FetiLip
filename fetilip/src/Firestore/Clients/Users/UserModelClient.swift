@@ -21,6 +21,8 @@ protocol UsersModelClientProtocol {
 
     func updateUserProfile(profile: String) -> Single<()>
 
+    func getUserData(userRef: DocumentReference) -> Single<UserModel.Fields>
+
 }
 
 /**
@@ -63,6 +65,13 @@ public struct UsersModelClient: UsersModelClientProtocol {
         let fields = UsersRequests.updateProfile(userProfile: profile).parameters
         return Firestore.firestore().rx.updateData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: uid), fields: fields)
 
+    }
+
+    /**
+     * Fetch user data using user document reference.
+     */
+    public func getUserData(userRef: DocumentReference) -> Single<UserModel.Fields> {
+        Firestore.firestore().rx.getDocument(UserModel.self, documentReference: userRef)
     }
 
 }

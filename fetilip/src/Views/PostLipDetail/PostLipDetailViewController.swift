@@ -15,14 +15,22 @@ import RxCocoa
  */
 class PostLipDetailViewController: UIViewController, ViewControllerMethodInjectable, UIGestureRecognizerDelegate {
 
+    // MARK: - ViewModel
+
+    typealias ViewModel = PostLipDetailViewModel
+
+    private lazy var viewModel: ViewModel = PostLipDetailViewModel(userModel: UsersModelClient())
+
     // MARK: - init process
 
     struct Dependency {
-        // Write dependency object.
+        let displayImage: UIImage?
+        let postModel: PostDomainModel
     }
 
     func inject(with dependency: Dependency) {
-        // Write DI process.
+        image = dependency.displayImage
+        field = dependency.postModel
     }
 
     // MARK: - Outlets
@@ -31,13 +39,18 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet private weak var backButton: UIButton!
 
-    var image: UIImage?
+    @IBOutlet private weak var reviewLabel: UILabel!
 
-    var panGesture: UIPanGestureRecognizer!
 
     // MARK: - Properties
 
     let transitionController: ZoomTransitionController = ZoomTransitionController()
+
+    var field: PostDomainModel?
+
+    var image: UIImage?
+
+    var panGesture: UIPanGestureRecognizer!
 
     // MARK: - LifeCycles
 
@@ -45,6 +58,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         super.viewDidLoad()
         composeUI()
         subscribe()
+        subscribeUI()
+        viewModel.fetchUserData(documentReference: field!.userRef)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +69,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     private func composeUI() {
         self.lipImageView.image = self.image
+        self.reviewLabel.text = self.field?.review
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
         self.panGesture.delegate = self
@@ -64,6 +80,13 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         }).disposed(by: rx.disposeBag)
+    }
+
+    private func subscribeUI() {
+        let input = ViewModel.Input()
+        let output = viewModel.transform(input: input)
+
+
     }
 
     @objc private func didPanWith(gestureRecognizer: UIPanGestureRecognizer) {
@@ -132,12 +155,12 @@ final class PostLipDetailViewControllerGenerator {
 
     public init() {}
 
-    public static func generate() -> UIViewController {
+    public static func generate(displayImage: UIImage, postField: PostDomainModel) -> UIViewController {
         guard let vc = R.storyboard.postLipDetail.postLipDetailViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init())
+        vc.inject(with: .init(displayImage: displayImage, postModel: postField))
         return vc
     }
 

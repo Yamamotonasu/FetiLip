@@ -121,10 +121,37 @@ extension Reactive where Base: Firestore {
         }
     }
 
+    /**
+     * Fetch single document using document reference.
+     */
+    func getDocument<T: FirestoreDatabaseCollection>(_ type: T.Type, documentReference: DocumentReference) -> Single<T.FieldType> {
+        return Single.create { observer in
+            documentReference.getDocument { (snapshot, error) in
+                if let e = error {
+                    observer(.error(e))
+                    return
+                }
+                guard let snap = snapshot, let data = snap.data() else {
+                    observer(.error(ApplicationError.unknown))
+                    return
+                }
+                do {
+                    let field = try FirestoreDecoder().decode(T.FieldType.self, from: data)
+                    observer(.success(field))
+                } catch {
+                    log.error(error)
+                    observer(.error(ApplicationError.failedParseResponse))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
 }
 
 public enum ApplicationError: Error {
     case unknown
     case notFoundEntity(documentId: String)
     case notFoundJson
+    case failedParseResponse
 }
