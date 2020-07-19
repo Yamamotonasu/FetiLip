@@ -167,8 +167,11 @@ extension PostListViewController: UICollectionViewDelegate {
 extension PostListViewController: MasonaryLayoutDelegate {
 
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath index: IndexPath) -> CGFloat {
-        let targetImage = data[index.row]
-        return targetImage.image?.size.height ?? 0.0
+        if let cell = self.lipCollectionView.cellForItem(at: index) as? PostLipCollectionViewCell, let image = cell.lipImage.image {
+            return image.size.height
+        } else {
+            return 0.0
+        }
     }
 
 }

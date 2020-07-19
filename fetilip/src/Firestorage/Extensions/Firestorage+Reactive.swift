@@ -32,7 +32,3 @@ extension Reactive where Base: Storage {
         }
     }
 }
-
-enum FirestorageError: Error {
-    case failedUploadImage(_ message: String)
-}

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 /**
  * PostLipViewCell
@@ -36,15 +37,17 @@ class PostLipCollectionViewCell: UICollectionViewCell {
     }
 
     func setupCell(_ model: PostDomainModel) {
-        if let lip = model.image {
-            lipImage.alpha = 0
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.36) {
-                self.lipImage.image = lip
+        lipImage.alpha = 0
+        FirestorageLoader.loadImage(storagePath: model.imageRef)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onSuccess: { [weak self] image in
+                self?.lipImage.image = image
                 UIView.animate(withDuration: 0.36) {
-                    self.lipImage.alpha = 1
+                    self?.lipImage.alpha = 1
                 }
-            }
-        }
+                }, onError: { e in
+
+        }).disposed(by: rx.disposeBag)
         reviewText.text = model.review
         setupDesign()
     }
