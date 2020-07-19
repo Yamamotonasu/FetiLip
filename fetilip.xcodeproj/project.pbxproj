@@ -28,6 +28,8 @@
 		034A989824A713F2009336F0 /* R+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989724A713F2009336F0 /* R+Extensions.swift */; };
 		034A989A24A72166009336F0 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989924A72165009336F0 /* TestingInformation.swift */; };
 		034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C561624C3EDE70005B6C5 /* PostLipDetailViewModel.swift */; };
+		034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C561D24C45A100005B6C5 /* Firestorage+Reactive.swift */; };
+		034C562324C45EDE0005B6C5 /* PostsStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562224C45EDE0005B6C5 /* PostsStorageClient.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -194,6 +196,8 @@
 		034A989724A713F2009336F0 /* R+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Extensions.swift"; sourceTree = "<group>"; };
 		034A989924A72165009336F0 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
 		034C561624C3EDE70005B6C5 /* PostLipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostLipDetailViewModel.swift; path = fetilip/src/UI/CustomView/PostLipDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
+		034C561D24C45A100005B6C5 /* Firestorage+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestorage+Reactive.swift"; sourceTree = "<group>"; };
+		034C562224C45EDE0005B6C5 /* PostsStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsStorageClient.swift; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -635,6 +639,39 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		034C561C24C4599B0005B6C5 /* Firestorage */ = {
+			isa = PBXGroup;
+			children = (
+				034C562024C45EB70005B6C5 /* Clients */,
+				034C561F24C45EA10005B6C5 /* Extensions */,
+			);
+			path = Firestorage;
+			sourceTree = "<group>";
+		};
+		034C561F24C45EA10005B6C5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				034C561D24C45A100005B6C5 /* Firestorage+Reactive.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		034C562024C45EB70005B6C5 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				034C562124C45EC50005B6C5 /* Posts */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		034C562124C45EC50005B6C5 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				034C562224C45EDE0005B6C5 /* PostsStorageClient.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
 		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1028,6 +1065,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				034C561C24C4599B0005B6C5 /* Firestorage */,
 				0359901924BD30C9000F8A27 /* UI */,
 				034A986924964EF5009336F0 /* Domains */,
 				035BAFF4245AEC99001FF6D1 /* Models */,
@@ -1689,6 +1727,7 @@
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
+				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
 				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
@@ -1726,6 +1765,7 @@
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
 				035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */,
 				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,
+				034C562324C45EDE0005B6C5 /* PostsStorageClient.swift in Sources */,
 				035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */,
 				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,

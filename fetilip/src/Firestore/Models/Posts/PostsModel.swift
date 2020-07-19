@@ -28,12 +28,11 @@ public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
     // Firestore key-value fields.
     public struct Fields: Codable {
 
-        // base64
-        public let image: String
-
         public let review: String?
 
         public let userRef: DocumentReference
+
+        public let imageRef: String
 
         public let createdAt: Timestamp
 
@@ -47,7 +46,7 @@ public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
 
             case userRef
 
-            case image
+            case imageRef
 
             case createdAt
 

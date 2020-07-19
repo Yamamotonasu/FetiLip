@@ -20,7 +20,8 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     typealias ViewModel = PostLipViewModel
 
-    var viewModel: ViewModel = PostLipViewModel(postModelClient: PostModelClient())
+    var viewModel: ViewModel = PostLipViewModel(postModelClient: PostModelClient(),
+                                                postStorageClient: PostsStorageClient())
 
     // MARK: - Init process
 

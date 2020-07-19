@@ -10,15 +10,20 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import FirebaseStorage
 
 struct PostLipViewModel {
 
     /// DI init.
-    init(postModelClient: PostModelClientProtocol) {
+    init(postModelClient: PostModelClientProtocol,
+         postStorageClient: PostsStorageClientProtocol) {
         self.postModelClient = postModelClient
+        self.postStorageClient = postStorageClient
     }
 
     private let postModelClient: PostModelClientProtocol
+
+    private let postStorageClient: PostsStorageClientProtocol
 
     // Image updated observable.
     let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
@@ -62,20 +67,29 @@ extension PostLipViewModel: ViewModelType {
 
         input.postButtonTapEvent
             .withLatestFrom(postObservable)
-            .flatMapLatest { pair -> Observable<(String, String)> in
+            .flatMapLatest { pair -> Observable<(UIImage, String)> in
                 return self.validateImageAndReviewText(pair: pair)
+            }.flatMap { pair -> Observable<(StorageReference, String)> in
+                return Observable.create { observer in
+                    self.postStorageClient.uploadImage(uid: LoginAccountData.uid!, image: pair.0).subscribe(onSuccess: { ref in
+                        observer.on(.next((ref, pair.1)))
+                    }, onError: { e in
+                        observer.on(.error(e))
+                    }).disposed(by: self.disposeBag)
+                    return Disposables.create()
+                }
             }
             .subscribe(onNext: { pair in
-                self.postImage(with: pair.0, review: pair.1)
+                self.postImage(ref: pair.0, review: pair.1)
             }).disposed(by: disposeBag)
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: uploadedImage.asObservable())
     }
 
-    private func validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(String, String)> {
+    private func validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(UIImage, String)> {
         return Observable.create { observer in
-            guard let image = pair.0, let imageBase64 = image.base64 else {
+            guard let image = pair.0 else {
                 observer.on(.error(PostValidateError.imageNotFound))
                 return Disposables.create()
             }
@@ -86,7 +100,7 @@ extension PostLipViewModel: ViewModelType {
                 return Disposables.create()
             }
 
-            observer.on(.next((imageBase64, text)))
+            observer.on(.next((image, text)))
 
             return Disposables.create()
         }
@@ -100,8 +114,8 @@ extension PostLipViewModel: ViewModelType {
 extension PostLipViewModel {
 
     /// Uploaded lip image.
-    private func postImage(with base64Image: String, review: String) {
-        postModelClient.postImage(uid: LoginAccountData.uid!, review: review, image: base64Image).subscribe(onSuccess: { _ in
+    private func postImage(ref: StorageReference, review: String) {
+        postModelClient.postImage(uid: LoginAccountData.uid!, review: review, imageRef: ref).subscribe(onSuccess: { _ in
             // TODO: 投稿成功時の処理
             print("投稿成功！")
         }, onError: { error in

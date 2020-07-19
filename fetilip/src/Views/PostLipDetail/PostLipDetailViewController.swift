@@ -39,8 +39,11 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet private weak var backButton: UIButton!
 
-    @IBOutlet private weak var reviewLabel: UILabel!
+    @IBOutlet private weak var reviewTextView: UITextView!
 
+    @IBOutlet private weak var userImage: UIImageView!
+
+    @IBOutlet private weak var userName: UILabel!
 
     // MARK: - Properties
 
@@ -69,7 +72,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     private func composeUI() {
         self.lipImageView.image = self.image
-        self.reviewLabel.text = self.field?.review
+        self.reviewTextView.text = self.field?.review
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
         self.panGesture.delegate = self
@@ -86,7 +89,9 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         let input = ViewModel.Input()
         let output = viewModel.transform(input: input)
 
+        output.userDataObservable.drive(onNext: { user in
 
+        }).disposed(by: rx.disposeBag)
     }
 
     @objc private func didPanWith(gestureRecognizer: UIPanGestureRecognizer) {

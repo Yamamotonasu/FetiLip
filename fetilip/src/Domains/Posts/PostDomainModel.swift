@@ -24,12 +24,12 @@ struct PostDomainModel: DomainModelProtocol {
     let review: String
 
     static func convert(_ model: PostModel.Fields) -> Self {
-        if let base64 = Data(base64Encoded: model.image) {
-            let image = UIImage(data: base64)
-            return self.init(userRef: model.userRef,
-                             image: image,
-                             review: model.review ?? "")
-        }
+//        if let base64 = Data(base64Encoded: model.image) {
+//            let image = UIImage(data: base64)
+//            return self.init(userRef: model.userRef,
+//                             image: image,
+//                             review: model.review ?? "")
+//        }
         return self.init(userRef: model.userRef, image: nil, review: model.review ?? "")
     }
 

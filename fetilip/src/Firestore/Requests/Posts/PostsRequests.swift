@@ -8,21 +8,21 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseStorage
 
 public enum PostsRequests: FirestoreRequest {
 
     public typealias Fields = PostModel.Fields
 
-    case postImage(userId: String, review: String, image: String, userRef: DocumentReference)
+    case postImage(review: String, userRef: DocumentReference, imageRef: String)
 
     public var parameters: Parameters {
         var params: Parameters = [:]
         switch self {
-        case .postImage(let userId, let review, let image, let userRef):
-            params[Fields.Key.userId.rawValue] = userId
+        case .postImage(let review, let userRef, let imageRef):
             params[Fields.Key.review.rawValue] = review
-            params[Fields.Key.image.rawValue] = image
             params[Fields.Key.userRef.rawValue] = userRef
+            params[Fields.Key.imageRef.rawValue] = imageRef
             params[Fields.Key.createdAt.rawValue] = Date()
             params[Fields.Key.updatedAt.rawValue] = Date()
             return params
