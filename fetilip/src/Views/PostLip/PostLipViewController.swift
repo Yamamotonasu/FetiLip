@@ -149,7 +149,13 @@ extension PostLipViewController {
             log.error(e.localizedDescription)
         }).disposed(by: rx.disposeBag)
 
-        output.indicator.bind(to: NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)).rx.isAnimating).disposed(by: rx.disposeBag)
+        output.indicator.subscribe(onNext: { bool in
+            if bool {
+                AppIndicator.show()
+            } else {
+                AppIndicator.dismiss()
+            }
+        }).disposed(by: rx.disposeBag)
     }
 
     private func close() {
