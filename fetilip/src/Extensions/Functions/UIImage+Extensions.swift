@@ -31,15 +31,16 @@ extension UIImage {
         }
     }
 
-    public func jpeg(_ quality: JPEGQuality) -> Data? {
-        return self.jpegData(compressionQuality: quality.value)
+    public func jpeg(_ quality: JPEGQuality) -> Data {
+        guard let data = self.jpegData(compressionQuality: quality.value) else {
+            log.debug("Conversion from UIImage type to Data type failed")
+            return Data()
+        }
+        return data
     }
 
     var base64: String? {
-        guard let base64String = jpeg(.medium)?.base64EncodedString() else {
-            return nil
-        }
-        return base64String
+        return jpeg(.medium).base64EncodedString()
     }
 
 }

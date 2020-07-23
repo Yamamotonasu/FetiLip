@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import FirebaseStorage
+import NVActivityIndicatorView
 
 struct PostLipViewModel {
 
@@ -19,17 +20,27 @@ struct PostLipViewModel {
          postStorageClient: PostsStorageClientProtocol) {
         self.postModelClient = postModelClient
         self.postStorageClient = postStorageClient
+        indicator = activity.asObservable()
     }
 
     private let postModelClient: PostModelClientProtocol
 
     private let postStorageClient: PostsStorageClientProtocol
 
-    // Image updated observable.
+    /// Image updated observable.
     let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
 
-    // When Image selected, return true. Otherwise returns false.
+    /// When Image selected, return true. Otherwise returns false.
     let imageExistsState: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+
+    /// Post request result notification.
+    /// return true: success post request, return false: failed post request.
+    private let resultPostSubject: PublishSubject<Bool> = PublishSubject<Bool>()
+
+    let activity: ActivityIndicator = ActivityIndicator()
+
+    /// Bool loading state.
+    let indicator: Observable<Bool>
 
     let disposeBag: DisposeBag = DisposeBag()
     
@@ -51,6 +62,10 @@ extension PostLipViewModel: ViewModelType {
         let closeButtonHiddenEvent: Driver<Bool>
         // Image observable
         let updatedImage: Observable<UIImage?>
+
+        let postResult: Observable<()>
+
+        let indicator: Observable<Bool>
     }
 
     func transform(input: Input) -> Output {
@@ -65,11 +80,12 @@ extension PostLipViewModel: ViewModelType {
             (uploadedImage: $0, reviewText: $1)
         }
 
-        input.postButtonTapEvent
+        let postSequence = input.postButtonTapEvent
+            .printDebug()
             .withLatestFrom(postObservable)
             .flatMapLatest { pair -> Observable<(UIImage, String)> in
                 return self.validateImageAndReviewText(pair: pair)
-            }.flatMap { pair -> Observable<(StorageReference, String)> in
+            }.flatMapLatest { pair -> Observable<(StorageReference, String)> in
                 return Observable.create { observer in
                     self.postStorageClient.uploadImage(uid: LoginAccountData.uid!, image: pair.0).subscribe(onSuccess: { ref in
                         observer.on(.next((ref, pair.1)))
@@ -77,16 +93,18 @@ extension PostLipViewModel: ViewModelType {
                         observer.on(.error(e))
                     }).disposed(by: self.disposeBag)
                     return Disposables.create()
-                }
             }
-            .subscribe(onNext: { pair in
-                self.postImage(ref: pair.0, review: pair.1)
-            }).disposed(by: disposeBag)
+        }.flatMapLatest { pair -> Single<()> in
+            return self.postImage(ref: pair.0, review: pair.1)
+        }.trackActivity(activity)
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
-                      updatedImage: uploadedImage.asObservable())
+                      updatedImage: uploadedImage.asObservable(),
+                      postResult: postSequence,
+                      indicator: indicator)
     }
 
+    /// Validate posted images and reviews.
     private func validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(UIImage, String)> {
         return Observable.create { observer in
             guard let image = pair.0 else {
@@ -114,14 +132,8 @@ extension PostLipViewModel: ViewModelType {
 extension PostLipViewModel {
 
     /// Uploaded lip image.
-    private func postImage(ref: StorageReference, review: String) {
-        postModelClient.postImage(uid: LoginAccountData.uid!, review: review, imageRef: ref).subscribe(onSuccess: { _ in
-            // TODO: 投稿成功時の処理
-            print("投稿成功！")
-        }, onError: { error in
-            // TODO: 投稿失敗時の処理
-            print("**\(error)")
-        }).disposed(by: disposeBag)
+    private func postImage(ref: StorageReference, review: String) -> Single<()> {
+        return postModelClient.postImage(uid: LoginAccountData.uid!, review: review, imageRef: ref)
     }
 
 }
@@ -138,6 +150,92 @@ fileprivate enum PostValidateError: Error {
             return R._string.error.imageNotFound
         case .excessiveNumberOfInputs:
             return R._string.error.excessiveNumberOfInputs
+        }
+    }
+
+}
+
+
+private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
+    private let _source: Observable<E>
+    private let _dispose: Cancelable
+
+    init(source: Observable<E>, disposeAction: @escaping () -> ()) {
+        _source = source
+        _dispose = Disposables.create(with: disposeAction)
+    }
+
+    func dispose() {
+        _dispose.dispose()
+    }
+
+    func asObservable() -> Observable<E> {
+        return _source
+    }
+}
+
+/**
+ Enables monitoring of sequence computation.
+
+ If there is at least one sequence computation in progress, `true` will be sent.
+ When all activities complete `false` will be sent.
+ */
+public class ActivityIndicator : SharedSequenceConvertibleType {
+
+    public typealias Element = Bool
+    public typealias SharingStrategy = DriverSharingStrategy
+
+    private let _lock = NSRecursiveLock()
+    private let _relay = BehaviorRelay(value: 0)
+    private let _loading: SharedSequence<SharingStrategy, Bool>
+
+    public init() {
+        _loading = _relay.asDriver()
+            .map { $0 > 0 }
+            .distinctUntilChanged()
+    }
+
+    fileprivate func trackActivityOfObservable<O: ObservableConvertibleType>(_ source: O) -> Observable<O.Element> {
+        return Observable.using({ () -> ActivityToken<O.Element> in
+            self.increment()
+            return ActivityToken(source: source.asObservable(), disposeAction: self.decrement)
+        }) { t in
+            return t.asObservable()
+        }
+    }
+
+    private func increment() {
+        _lock.lock()
+        _relay.accept(_relay.value + 1)
+        _lock.unlock()
+    }
+
+    private func decrement() {
+        _lock.lock()
+        _relay.accept(_relay.value - 1)
+        _lock.unlock()
+    }
+
+    public func asSharedSequence() -> SharedSequence<SharingStrategy, Element> {
+        return _loading
+    }
+}
+
+extension ObservableConvertibleType {
+    public func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<Element> {
+        return activityIndicator.trackActivityOfObservable(self)
+    }
+}
+
+extension Reactive where Base: NVActivityIndicatorView {
+
+    var isAnimating: Binder<Bool> {
+        return Binder(self.base) { indicator, flag in
+            if flag {
+                AppIndicator.show()
+            } else {
+                AppIndicator.dismiss()
+            }
         }
     }
 

@@ -38,16 +38,21 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     func setupCell(_ model: PostDomainModel) {
         lipImage.alpha = 0
+
+        // Load post image from firestorage with storage path in model.
         FirestorageLoader.loadImage(storagePath: model.imageRef)
             .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] image in
-                self?.lipImage.image = image
-                UIView.animate(withDuration: 0.36) {
-                    self?.lipImage.alpha = 1
-                }
-                }, onError: { e in
+            .subscribe(
+                onSuccess: { [weak self] image in
+                    self?.lipImage.image = image
+                    UIView.animate(withDuration: 0.36) {
+                        self?.lipImage.alpha = 1
+                    }
 
-        }).disposed(by: rx.disposeBag)
+                }, onError: { e in
+                    log.error(e.localizedDescription)
+                }).disposed(by: rx.disposeBag)
+
         reviewText.text = model.review
         setupDesign()
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 import NVActivityIndicatorView
+import UIKit
 
 /**
  * アプリ内で使用するNVActivityIndicatorViewの設定を纏めた構造体
