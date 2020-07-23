@@ -86,17 +86,15 @@ extension PostLipViewModel: ViewModelType {
             .flatMapLatest { pair -> Observable<(UIImage, String)> in
                 return self.validateImageAndReviewText(pair: pair)
             }.flatMapLatest { pair -> Observable<(StorageReference, String)> in
-                return Observable.create { observer in
-                    self.postStorageClient.uploadImage(uid: LoginAccountData.uid!, image: pair.0).subscribe(onSuccess: { ref in
-                        observer.on(.next((ref, pair.1)))
-                    }, onError: { e in
-                        observer.on(.error(e))
-                    }).disposed(by: self.disposeBag)
-                    return Disposables.create()
+                return self.postStorageClient.uploadImage(uid: LoginAccountData.uid!, image: pair.0).flatMap { s -> Single<(StorageReference, String)>in
+                        return Single.create { observer in
+                            observer(.success((s, pair.1)))
+                            return Disposables.create()
+                        }
+                    }.trackActivity(self.activity)
+            }.flatMapLatest { pair -> Observable<()> in
+                return self.postImage(ref: pair.0, review: pair.1).trackActivity(self.activity)
             }
-        }.flatMapLatest { pair -> Single<()> in
-            return self.postImage(ref: pair.0, review: pair.1)
-        }.trackActivity(activity)
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: uploadedImage.asObservable(),
@@ -232,9 +230,11 @@ extension Reactive where Base: NVActivityIndicatorView {
     var isAnimating: Binder<Bool> {
         return Binder(self.base) { indicator, flag in
             if flag {
-                AppIndicator.show()
+                indicator.isHidden = false
+                indicator.startAnimating()
             } else {
-                AppIndicator.dismiss()
+                indicator.isHidden = true
+                indicator.stopAnimating()
             }
         }
     }

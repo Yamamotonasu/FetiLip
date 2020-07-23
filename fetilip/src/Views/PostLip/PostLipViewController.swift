@@ -67,12 +67,19 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
 
+    var observable: Observable<Bool>?
+
     // MARK: - LifeCycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribe()
         bindUI()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        observable?.bind(to: NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)).rx.isAnimating).disposed(by: rx.disposeBag)
     }
 
 }
