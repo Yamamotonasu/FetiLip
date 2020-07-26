@@ -37,13 +37,4 @@ extension ObservableType {
         }
     }
 
-    public func dismissIndicator(off: @escaping () -> Void = { AppIndicator.dismiss() }) -> RxSwift.Observable<Self.Element> {
-        return self.do(
-            onError: { _ in
-                off()
-        }, onCompleted: {
-            off()
-        })
-    }
-
 }
