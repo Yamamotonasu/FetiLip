@@ -6,39 +6,38 @@ service cloud.firestore {
       allow create: if true;
     }
     match /version/1/users/{userID} {
-    	allow create: if isAnyAuthenticated()
-      	&& (!('userName' in request.resource.data) || validateString(request.resource.data.userName, 2, 12));
+      allow create: if isAnyAuthenticated() && (!('userName' in request.resource.data) || validateString(request.resource.data.userName, 2, 12));
       allow update: if isUserAuthenticated(userID) && request.resource.data.updatedAt == request.time;
       allow get: if isAnyAuthenticated();
       allow read: if isAnyAuthenticated();
     }
     match /version/1/posts/{postID} {
-    	allow create: if isAnyAuthenticated();
+      allow create: if isAnyAuthenticated();
       allow update: if isUserAuthenticated(userID);
       allow get: if isAnyAuthenticated();
       allow read: if isAnyAuthenticated();
     }
     match /{path=**}/posts/{postID} {
-    	allow create: if isAnyAuthenticated();
+      allow create: if isAnyAuthenticated();
       allow get: if isAnyAuthenticated();
       allow update: if isUserAuthenticated(userID);
       allow read: if isAnyAuthenticated();
 		}
     
     function isAnyAuthenticated() {
-    	return request.auth != null;
+      return request.auth != null;
     }
     
     function isUserAuthenticated(userID) {
-    	return isAnyAuthenticated() && userID == request.auth.uid;
+      return isAnyAuthenticated() && userID == request.auth.uid;
     }
     
     function existingData() {
-    	return resource.data;
+      return resource.data;
 		}
     
     function incomingData() {
-    	return request.resource.data;
+      return request.resource.data;
     }
     
     function validateString(text, min, max) {

@@ -48,7 +48,6 @@ class PostLipCollectionViewCell: UICollectionViewCell {
                     UIView.animate(withDuration: 0.36) {
                         self?.lipImage.alpha = 1
                     }
-
                 }, onError: { e in
                     log.error(e.localizedDescription)
                 }).disposed(by: rx.disposeBag)
