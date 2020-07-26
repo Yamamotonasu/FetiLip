@@ -17,7 +17,7 @@ public struct AppInitialization {
 
     /// アプリ起動後の画面をログイン状態によって振り分ける
     public static func settingStartScreen() {
-    let tab = GlobalTabBarControllerGenerator.generate()
+        let tab = GlobalTabBarControllerGenerator.generate()
         let app = AppDelegate.shared
 
         // もしViewControllerのインスタンスが生成されていない時はUIWindowを初期化する

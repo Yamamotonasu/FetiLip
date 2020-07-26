@@ -33,6 +33,8 @@
 		034C562624C47CA10005B6C5 /* FirestorageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562524C47CA10005B6C5 /* FirestorageLoader.swift */; };
 		034C562824C490410005B6C5 /* FirestorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562724C490410005B6C5 /* FirestorageError.swift */; };
 		034C562A24C9504D0005B6C5 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */; };
+		034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */; };
+		034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -204,6 +206,8 @@
 		034C562524C47CA10005B6C5 /* FirestorageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageLoader.swift; sourceTree = "<group>"; };
 		034C562724C490410005B6C5 /* FirestorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageError.swift; sourceTree = "<group>"; };
 		034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
+		034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binder+Extensions.swift"; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -883,6 +887,7 @@
 			children = (
 				036A45042471408000DD9282 /* Reactive+Extentions.swift */,
 				034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */,
+				034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1181,6 +1186,7 @@
 				03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */,
 				035BB00124666121001FF6D1 /* AppSettings.swift */,
 				035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */,
+				034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1755,6 +1761,7 @@
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
+				034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */,
 				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
@@ -1778,6 +1785,7 @@
 				0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */,
 				034C562A24C9504D0005B6C5 /* ObservableType+Extensions.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
+				034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */,
 				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
