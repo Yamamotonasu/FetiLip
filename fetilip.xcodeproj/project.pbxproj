@@ -28,6 +28,13 @@
 		034A989824A713F2009336F0 /* R+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989724A713F2009336F0 /* R+Extensions.swift */; };
 		034A989A24A72166009336F0 /* TestingInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989924A72165009336F0 /* TestingInformation.swift */; };
 		034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C561624C3EDE70005B6C5 /* PostLipDetailViewModel.swift */; };
+		034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C561D24C45A100005B6C5 /* Firestorage+Reactive.swift */; };
+		034C562324C45EDE0005B6C5 /* PostsStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562224C45EDE0005B6C5 /* PostsStorageClient.swift */; };
+		034C562624C47CA10005B6C5 /* FirestorageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562524C47CA10005B6C5 /* FirestorageLoader.swift */; };
+		034C562824C490410005B6C5 /* FirestorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562724C490410005B6C5 /* FirestorageError.swift */; };
+		034C562A24C9504D0005B6C5 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */; };
+		034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */; };
+		034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -194,6 +201,13 @@
 		034A989724A713F2009336F0 /* R+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Extensions.swift"; sourceTree = "<group>"; };
 		034A989924A72165009336F0 /* TestingInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingInformation.swift; sourceTree = "<group>"; };
 		034C561624C3EDE70005B6C5 /* PostLipDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostLipDetailViewModel.swift; path = fetilip/src/UI/CustomView/PostLipDetailViewModel.swift; sourceTree = SOURCE_ROOT; };
+		034C561D24C45A100005B6C5 /* Firestorage+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestorage+Reactive.swift"; sourceTree = "<group>"; };
+		034C562224C45EDE0005B6C5 /* PostsStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsStorageClient.swift; sourceTree = "<group>"; };
+		034C562524C47CA10005B6C5 /* FirestorageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageLoader.swift; sourceTree = "<group>"; };
+		034C562724C490410005B6C5 /* FirestorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageError.swift; sourceTree = "<group>"; };
+		034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
+		034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binder+Extensions.swift"; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -635,6 +649,49 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		034C561C24C4599B0005B6C5 /* Firestorage */ = {
+			isa = PBXGroup;
+			children = (
+				034C562424C47C6C0005B6C5 /* Utils */,
+				034C562024C45EB70005B6C5 /* Clients */,
+				034C561F24C45EA10005B6C5 /* Extensions */,
+			);
+			path = Firestorage;
+			sourceTree = "<group>";
+		};
+		034C561F24C45EA10005B6C5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				034C561D24C45A100005B6C5 /* Firestorage+Reactive.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		034C562024C45EB70005B6C5 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				034C562124C45EC50005B6C5 /* Posts */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		034C562124C45EC50005B6C5 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				034C562224C45EDE0005B6C5 /* PostsStorageClient.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		034C562424C47C6C0005B6C5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				034C562524C47CA10005B6C5 /* FirestorageLoader.swift */,
+				034C562724C490410005B6C5 /* FirestorageError.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,6 +886,8 @@
 			isa = PBXGroup;
 			children = (
 				036A45042471408000DD9282 /* Reactive+Extentions.swift */,
+				034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */,
+				034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -1028,6 +1087,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				034C561C24C4599B0005B6C5 /* Firestorage */,
 				0359901924BD30C9000F8A27 /* UI */,
 				034A986924964EF5009336F0 /* Domains */,
 				035BAFF4245AEC99001FF6D1 /* Models */,
@@ -1126,6 +1186,7 @@
 				03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */,
 				035BB00124666121001FF6D1 /* AppSettings.swift */,
 				035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */,
+				034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1687,16 +1748,20 @@
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
 				036A45022471212A00DD9282 /* PostsModel.swift in Sources */,
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
+				034C562824C490410005B6C5 /* FirestorageError.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
+				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
 				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
+				034C562624C47CA10005B6C5 /* FirestorageLoader.swift in Sources */,
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
+				034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */,
 				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
@@ -1718,7 +1783,9 @@
 				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */,
+				034C562A24C9504D0005B6C5 /* ObservableType+Extensions.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
+				034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */,
 				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
@@ -1726,6 +1793,7 @@
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
 				035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */,
 				03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */,
+				034C562324C45EDE0005B6C5 /* PostsStorageClient.swift in Sources */,
 				035BAFE724597C84001FF6D1 /* FirebaseUser+Extensions.swift in Sources */,
 				03AAFBB3243097660068FB1E /* CGPoint+Extensions.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,

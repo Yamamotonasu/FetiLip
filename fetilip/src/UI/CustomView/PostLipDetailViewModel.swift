@@ -52,10 +52,10 @@ extension PostLipDetailViewModel: ViewModelType {
     }
 
     struct Output {
-        let userDataObservable: Observable<UserModel.Fields>
+        let userDataObservable: Driver<UserModel.Fields>
     }
 
     func transform(input: Self.Input) -> Self.Output {
-        return Output(userDataObservable: userDataRalay.asObservable())
+        return Output(userDataObservable: userDataRalay.asDriver(onErrorDriveWith: Driver.empty()))
     }
 }

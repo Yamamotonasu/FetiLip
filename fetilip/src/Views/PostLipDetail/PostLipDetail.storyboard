@@ -54,21 +54,25 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="back_image"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reviewが入るよ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpr-mg-gl2">
-                                <rect key="frame" x="18" y="461" width="339" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-4F-OM8">
                                 <rect key="frame" x="20" y="395" width="335" height="52"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqM-g8-0Zd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_icon_female" translatesAutoresizingMaskIntoConstraints="NO" id="vqM-g8-0Zd">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vqM-g8-0Zd" secondAttribute="height" multiplier="1:1" id="GK1-j1-ptq"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="26"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.84597067640000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="0.29999999999999999"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yu-min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZE-2G-wtt">
                                         <rect key="frame" x="62" y="0.0" width="273" height="52"/>
@@ -81,17 +85,28 @@
                                     <constraint firstAttribute="height" constant="52" id="uc6-us-o88"/>
                                 </constraints>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sv4-kT-ni0">
+                                <rect key="frame" x="20" y="467" width="335" height="180"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="sv4-kT-ni0" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" constant="20" id="1h1-sZ-6wI"/>
+                            <constraint firstItem="bJv-GG-Gcg" firstAttribute="bottom" secondItem="sv4-kT-ni0" secondAttribute="bottom" constant="20" id="1wv-Wx-4Yo"/>
                             <constraint firstItem="Z8e-1C-CNC" firstAttribute="top" secondItem="bJv-GG-Gcg" secondAttribute="top" constant="20" id="7nP-N9-7Ju"/>
                             <constraint firstItem="Z8e-1C-CNC" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" constant="20" id="BP2-cK-2tS"/>
                             <constraint firstItem="A42-uA-tdc" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" id="EKg-gI-RAn"/>
                             <constraint firstItem="oOb-4F-OM8" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" constant="20" id="IL7-5e-k0j"/>
+                            <constraint firstItem="sv4-kT-ni0" firstAttribute="top" secondItem="oOb-4F-OM8" secondAttribute="bottom" constant="20" id="PO3-PZ-yEs"/>
                             <constraint firstItem="A42-uA-tdc" firstAttribute="top" secondItem="Afe-8F-u6b" secondAttribute="top" id="Wlo-ow-byz"/>
                             <constraint firstItem="A42-uA-tdc" firstAttribute="trailing" secondItem="bJv-GG-Gcg" secondAttribute="trailing" id="XJT-bN-MaI"/>
                             <constraint firstItem="bJv-GG-Gcg" firstAttribute="trailing" secondItem="oOb-4F-OM8" secondAttribute="trailing" constant="20" id="eNO-ma-hLO"/>
                             <constraint firstItem="oOb-4F-OM8" firstAttribute="top" secondItem="A42-uA-tdc" secondAttribute="bottom" constant="20" id="pAL-uH-Nyf"/>
+                            <constraint firstItem="bJv-GG-Gcg" firstAttribute="trailing" secondItem="sv4-kT-ni0" secondAttribute="trailing" constant="20" id="w46-BN-blo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bJv-GG-Gcg"/>
                     </view>
@@ -99,7 +114,9 @@
                     <connections>
                         <outlet property="backButton" destination="Z8e-1C-CNC" id="c5h-oj-GoS"/>
                         <outlet property="lipImageView" destination="A42-uA-tdc" id="QSR-ew-bUk"/>
-                        <outlet property="reviewLabel" destination="cpr-mg-gl2" id="uKr-uG-3L4"/>
+                        <outlet property="reviewTextView" destination="sv4-kT-ni0" id="s7t-uR-vs6"/>
+                        <outlet property="userImage" destination="vqM-g8-0Zd" id="OIx-LX-2vz"/>
+                        <outlet property="userName" destination="kZE-2G-wtt" id="Js1-uj-tAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcy-GJ-zfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -109,5 +126,6 @@
     </scenes>
     <resources>
         <image name="back_image" width="13.5" height="13.5"/>
+        <image name="default_icon_female" width="125" height="125"/>
     </resources>
 </document>

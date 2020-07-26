@@ -26,18 +26,19 @@ class PostModelTests: QuickSpec, LoginFunction {
 
     override func spec() {
 
-        describe("PostModelClient") {
-            describe("postImage") {
-                xit("Expect succeed") {
-                    self.login(email: self.email, password: self.password) { _ in
-                        let uid = self.selfUid
-                        let image: UIImage = #imageLiteral(resourceName: "lip_image")
-                        let imageBase64: String? = image.base64
-                        expect { try self.model.postImage(uid: uid!, review: "", image: imageBase64!).toBlocking().single() }.to(beAnInstanceOf(NSObject.self))
-                    }
-                }
-            }
-        }
+        // 画像保存とFirestoreへのデータ保存出来る方法を考える
+//        describe("PostModelClient") {
+//            describe("postImage") {
+//                xit("Expect succeed") {
+//                    self.login(email: self.email, password: self.password) { _ in
+//                        let uid = self.selfUid
+//                        let image: UIImage = #imageLiteral(resourceName: "lip_image")
+//                        let imageBase64: String? = image.base64
+//                        expect { try self.model.postImage(uid: uid!, review: "", imageRef: imageBase64!).toBlocking().single() }.to(beAnInstanceOf(NSObject.self))
+//                    }
+//                }
+//            }
+//        }
     }
 
 }

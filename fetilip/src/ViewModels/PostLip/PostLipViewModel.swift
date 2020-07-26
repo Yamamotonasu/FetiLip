@@ -10,21 +10,37 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import FirebaseStorage
+import NVActivityIndicatorView
 
 struct PostLipViewModel {
 
     /// DI init.
-    init(postModelClient: PostModelClientProtocol) {
+    init(postModelClient: PostModelClientProtocol,
+         postStorageClient: PostsStorageClientProtocol) {
         self.postModelClient = postModelClient
+        self.postStorageClient = postStorageClient
+        indicator = activity.asObservable()
     }
 
     private let postModelClient: PostModelClientProtocol
 
-    // Image updated observable.
+    private let postStorageClient: PostsStorageClientProtocol
+
+    /// Image updated observable.
     let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
 
-    // When Image selected, return true. Otherwise returns false.
+    /// When Image selected, return true. Otherwise returns false.
     let imageExistsState: BehaviorRelay<Bool> = BehaviorRelay<Bool>(value: false)
+
+    /// Post request result notification.
+    /// return true: success post request, return false: failed post request.
+    private let resultPostSubject: PublishSubject<Bool> = PublishSubject<Bool>()
+
+    let activity: ActivityIndicator = ActivityIndicator()
+
+    /// Bool loading state.
+    let indicator: Observable<Bool>
 
     let disposeBag: DisposeBag = DisposeBag()
     
@@ -46,6 +62,10 @@ extension PostLipViewModel: ViewModelType {
         let closeButtonHiddenEvent: Driver<Bool>
         // Image observable
         let updatedImage: Observable<UIImage?>
+
+        let postResult: Observable<()>
+
+        let indicator: Observable<Bool>
     }
 
     func transform(input: Input) -> Output {
@@ -60,22 +80,33 @@ extension PostLipViewModel: ViewModelType {
             (uploadedImage: $0, reviewText: $1)
         }
 
-        input.postButtonTapEvent
+        let postSequence = input.postButtonTapEvent
+            .printDebug()
             .withLatestFrom(postObservable)
-            .flatMapLatest { pair -> Observable<(String, String)> in
+            .flatMapLatest { pair -> Observable<(UIImage, String)> in
                 return self.validateImageAndReviewText(pair: pair)
-            }
-            .subscribe(onNext: { pair in
-                self.postImage(with: pair.0, review: pair.1)
-            }).disposed(by: disposeBag)
+            }.flatMapLatest { pair -> Observable<(StorageReference, String)> in
+                return self.postStorageClient.uploadImage(uid: LoginAccountData.uid!, image: pair.0).flatMap { s -> Single<(StorageReference, String)>in
+                        return Single.create { observer in
+                            observer(.success((s, pair.1)))
+                            return Disposables.create()
+                        }
+                    }.trackActivity(self.activity)
+            }.flatMapLatest { pair -> Observable<()> in
+                return self.postImage(ref: pair.0, review: pair.1).trackActivity(self.activity)
+            }.retry()
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
-                      updatedImage: uploadedImage.asObservable())
+                      updatedImage: uploadedImage.asObservable(),
+                      postResult: postSequence,
+                      indicator: indicator)
     }
 
-    private func validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(String, String)> {
+    /// Validate posted images and reviews.
+    private func
+        validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(UIImage, String)> {
         return Observable.create { observer in
-            guard let image = pair.0, let imageBase64 = image.base64 else {
+            guard let image = pair.0 else {
                 observer.on(.error(PostValidateError.imageNotFound))
                 return Disposables.create()
             }
@@ -86,7 +117,7 @@ extension PostLipViewModel: ViewModelType {
                 return Disposables.create()
             }
 
-            observer.on(.next((imageBase64, text)))
+            observer.on(.next((image, text)))
 
             return Disposables.create()
         }
@@ -100,14 +131,8 @@ extension PostLipViewModel: ViewModelType {
 extension PostLipViewModel {
 
     /// Uploaded lip image.
-    private func postImage(with base64Image: String, review: String) {
-        postModelClient.postImage(uid: LoginAccountData.uid!, review: review, image: base64Image).subscribe(onSuccess: { _ in
-            // TODO: 投稿成功時の処理
-            print("投稿成功！")
-        }, onError: { error in
-            // TODO: 投稿失敗時の処理
-            print("**\(error)")
-        }).disposed(by: disposeBag)
+    private func postImage(ref: StorageReference, review: String) -> Single<()> {
+        return postModelClient.postImage(uid: LoginAccountData.uid!, review: review, imageRef: ref)
     }
 
 }

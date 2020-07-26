@@ -51,6 +51,8 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
+                } else {
+
                 }
             }
             return Disposables.create()

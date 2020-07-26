@@ -10,6 +10,7 @@ import UIKit
 import FMPhotoPicker
 import RxSwift
 import RxCocoa
+import NVActivityIndicatorView
 
 /**
  * ViewController for posting lips.
@@ -20,7 +21,8 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     typealias ViewModel = PostLipViewModel
 
-    var viewModel: ViewModel = PostLipViewModel(postModelClient: PostModelClient())
+    var viewModel: ViewModel = PostLipViewModel(postModelClient: PostModelClient(),
+                                                postStorageClient: PostsStorageClient())
 
     // MARK: - Init process
 
@@ -141,6 +143,20 @@ extension PostLipViewController {
             self.postLipReviewTextView.isHidden = !exists
         }).disposed(by: rx.disposeBag)
 
+        output.postResult.subscribe(onNext: {
+            self.dismiss(animated: true)
+        }, onError: { e in
+            // TODO: Error handling
+            log.error(e.localizedDescription)
+        }).disposed(by: rx.disposeBag)
+
+        output.indicator.subscribe(onNext: { bool in
+            if bool {
+                AppIndicator.show()
+            } else {
+                AppIndicator.dismiss()
+            }
+        }).disposed(by: rx.disposeBag)
     }
 
     private func close() {
