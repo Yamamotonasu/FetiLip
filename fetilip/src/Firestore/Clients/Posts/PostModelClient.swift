@@ -42,5 +42,5 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
     func getImage() -> Single<[PostModel.FieldType]> {
         Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
-    
+
 }

@@ -40,7 +40,7 @@ extension PostLipDetailViewModel {
     public func fetchUserData(documentReference: DocumentReference) {
         userModel.getUserData(userRef: documentReference).subscribe(onSuccess: { data in
                 self.userDataRalay.accept(data)
-            }, onError: { error in
+            }, onError: { _ in
                 // TODO:
             }).disposed(by: disposeBag)
     }
@@ -48,7 +48,7 @@ extension PostLipDetailViewModel {
 
 extension PostLipDetailViewModel: ViewModelType {
 
-    struct Input{
+    struct Input {
     }
 
     struct Output {

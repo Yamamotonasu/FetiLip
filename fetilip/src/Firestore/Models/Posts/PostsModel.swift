@@ -16,7 +16,6 @@ import CodableFirebase
 public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
     public typealias FieldType = PostEntity
 
-
     typealias RootCollectionModel = UserModel
 
     static var rootCollectionName: String = RootCollectionModel.collectionName

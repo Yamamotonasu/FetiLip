@@ -48,7 +48,7 @@ extension TransitionPostPageViewController {
         self.present(vc, animated: true)
     }
 
-    private func touchStartAnimation(){
+    private func touchStartAnimation() {
         UIView.animate(withDuration: 0.1,
             delay: 0.0,
             options: UIView.AnimationOptions.curveEaseIn,
@@ -59,7 +59,7 @@ extension TransitionPostPageViewController {
             completion: nil
         )
     }
-    private func touchEndAnimation(){
+    private func touchEndAnimation() {
         UIView.animate(withDuration: 0.1,
             delay: 0.0,
             options: UIView.AnimationOptions.curveEaseIn,

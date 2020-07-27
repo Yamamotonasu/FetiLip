@@ -16,7 +16,7 @@ import RxCocoa
  If there is at least one sequence computation in progress, `true` will be sent.
  When all activities complete `false` will be sent.
  */
-public class ActivityIndicator : SharedSequenceConvertibleType {
+public class ActivityIndicator: SharedSequenceConvertibleType {
 
     public typealias Element = Bool
     public typealias SharingStrategy = DriverSharingStrategy
@@ -57,11 +57,11 @@ public class ActivityIndicator : SharedSequenceConvertibleType {
     }
 }
 
-private struct ActivityToken<E> : ObservableConvertibleType, Disposable {
+private struct ActivityToken<E>: ObservableConvertibleType, Disposable {
     private let _source: Observable<E>
     private let _dispose: Cancelable
 
-    init(source: Observable<E>, disposeAction: @escaping () -> ()) {
+    init(source: Observable<E>, disposeAction: @escaping () -> Void) {
         _source = source
         _dispose = Disposables.create(with: disposeAction)
     }

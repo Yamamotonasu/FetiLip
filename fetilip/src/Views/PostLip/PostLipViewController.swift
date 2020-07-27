@@ -215,7 +215,7 @@ extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEdi
 extension PostLipViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     /// Called after selecting an image with the camera.
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.dismiss(animated: true) {
                 self.launchEditor(selectedImage: image)

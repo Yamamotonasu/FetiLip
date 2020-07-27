@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 extension NSObjectProtocol {
 
     // クラス名を返す変数"className"を返す
