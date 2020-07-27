@@ -14,6 +14,8 @@ import CodableFirebase
  * User posts model.
  */
 public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
+    public typealias FieldType = PostEntity
+
 
     typealias RootCollectionModel = UserModel
 
@@ -23,40 +25,11 @@ public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
 
     public let id: String
 
-    public let fields: Fields?
+    public let fields: FieldType?
 
     // Firestore key-value fields.
-    public struct Fields: Codable {
 
-        public let review: String?
-
-        public let userRef: DocumentReference
-
-        public let imageRef: String
-
-        public let createdAt: Timestamp
-
-        public let updatedAt: Timestamp
-
-        enum Key: String, CodingKey {
-
-            case userId
-
-            case review
-
-            case userRef
-
-            case imageRef
-
-            case createdAt
-
-            case updatedAt
-
-        }
-
-    }
-
-    public init(id: String, fields: Fields?) {
+    public init(id: String, fields: FieldType?) {
         self.id = id
         self.fields = fields
     }

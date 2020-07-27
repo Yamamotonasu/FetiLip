@@ -35,6 +35,8 @@
 		034C562A24C9504D0005B6C5 /* ObservableType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */; };
 		034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */; };
 		034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */; };
+		034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563124CE4E7C0005B6C5 /* PostEntity.swift */; };
+		034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563424CE4EA90005B6C5 /* UserEntity.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -208,6 +210,8 @@
 		034C562924C9504D0005B6C5 /* ObservableType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extensions.swift"; sourceTree = "<group>"; };
 		034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binder+Extensions.swift"; sourceTree = "<group>"; };
+		034C563124CE4E7C0005B6C5 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
+		034C563424CE4EA90005B6C5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -692,6 +696,31 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		034C562F24CE4E230005B6C5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				034C563324CE4E910005B6C5 /* User */,
+				034C563024CE4E690005B6C5 /* Post */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		034C563024CE4E690005B6C5 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				034C563124CE4E7C0005B6C5 /* PostEntity.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		034C563324CE4E910005B6C5 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				034C563424CE4EA90005B6C5 /* UserEntity.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -947,13 +976,14 @@
 		039EB688243B5F310016436C /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
-				034A989424A6F853009336F0 /* Utils */,
-				035BAFFB246035B7001FF6D1 /* Requests */,
-				035BAFEE2459AD3C001FF6D1 /* Clients */,
-				035BAFEB24598FD2001FF6D1 /* Protocol */,
-				035BAFE524597C56001FF6D1 /* Extensions */,
 				039EB68C243B648D0016436C /* Auth */,
+				035BAFEE2459AD3C001FF6D1 /* Clients */,
+				034C562F24CE4E230005B6C5 /* Entity */,
+				035BAFE524597C56001FF6D1 /* Extensions */,
 				039EB689243B5F570016436C /* Models */,
+				035BAFEB24598FD2001FF6D1 /* Protocol */,
+				035BAFFB246035B7001FF6D1 /* Requests */,
+				034A989424A6F853009336F0 /* Utils */,
 			);
 			path = Firestore;
 			sourceTree = "<group>";
@@ -1746,8 +1776,10 @@
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
+				034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */,
 				036A45022471212A00DD9282 /* PostsModel.swift in Sources */,
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
+				034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */,
 				034C562824C490410005B6C5 /* FirestorageError.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,

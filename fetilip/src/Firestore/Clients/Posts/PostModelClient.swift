@@ -35,11 +35,11 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
         return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeCollectionRef(), fields: fields)
     }
 
-    func getPostList() -> Single<[PostModel.Fields]> {
+    func getPostList() -> Single<[PostModel.FieldType]> {
         return Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
 
-    func getImage() -> Single<[PostModel.Fields]> {
+    func getImage() -> Single<[PostModel.FieldType]> {
         Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
     }
     

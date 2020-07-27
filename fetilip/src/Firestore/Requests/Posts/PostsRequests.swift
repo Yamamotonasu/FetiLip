@@ -12,7 +12,7 @@ import FirebaseStorage
 
 public enum PostsRequests: FirestoreRequest {
 
-    public typealias Fields = PostModel.Fields
+    public typealias Fields = PostModel.FieldType
 
     case postImage(review: String, userRef: DocumentReference, imageRef: String)
 
