@@ -29,7 +29,7 @@ struct PostLipDetailViewModel: PostLipDetailViewModelProtocol {
     private let userModel: UsersModelClientProtocol
 
     /// Relay user data.
-    private let userDataRalay: PublishRelay<UserModel.Fields> = PublishRelay<UserModel.Fields>()
+    private let userDataRalay: PublishRelay<UserModel.FieldType> = PublishRelay<UserModel.FieldType>()
 
     private let disposeBag: DisposeBag = DisposeBag()
 
@@ -40,7 +40,7 @@ extension PostLipDetailViewModel {
     public func fetchUserData(documentReference: DocumentReference) {
         userModel.getUserData(userRef: documentReference).subscribe(onSuccess: { data in
                 self.userDataRalay.accept(data)
-            }, onError: { error in
+            }, onError: { _ in
                 // TODO:
             }).disposed(by: disposeBag)
     }
@@ -48,11 +48,11 @@ extension PostLipDetailViewModel {
 
 extension PostLipDetailViewModel: ViewModelType {
 
-    struct Input{
+    struct Input {
     }
 
     struct Output {
-        let userDataObservable: Driver<UserModel.Fields>
+        let userDataObservable: Driver<UserModel.FieldType>
     }
 
     func transform(input: Self.Input) -> Self.Output {

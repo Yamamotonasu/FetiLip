@@ -13,7 +13,7 @@ import Foundation
  */
 enum UsersRequests: FirestoreRequest {
 
-    typealias Fields = UserModel.Fields
+    typealias Fields = UserModel.FieldType
 
     /// First commit request parametes.
     case initialCommit(email: String, uid: String)

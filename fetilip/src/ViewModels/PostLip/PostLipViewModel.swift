@@ -43,7 +43,7 @@ struct PostLipViewModel {
     let indicator: Observable<Bool>
 
     let disposeBag: DisposeBag = DisposeBag()
-    
+
 }
 
 extension PostLipViewModel: ViewModelType {
@@ -137,7 +137,7 @@ extension PostLipViewModel {
 
 }
 
-fileprivate enum PostValidateError: Error {
+private enum PostValidateError: Error {
 
     case imageNotFound
 

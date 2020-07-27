@@ -89,7 +89,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         let input = ViewModel.Input()
         let output = viewModel.transform(input: input)
 
-        output.userDataObservable.drive(onNext: { user in
+        output.userDataObservable.drive(onNext: { _ in
 
         }).disposed(by: rx.disposeBag)
     }

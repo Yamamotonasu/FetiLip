@@ -13,7 +13,7 @@ import UIKit
 
 extension Reactive where Base: Storage {
 
-    func uploadPostImage(image: UIImage, uid: String) -> Single<StorageReference>{
+    func uploadPostImage(image: UIImage, uid: String) -> Single<StorageReference> {
         return Single.create { observer in
             let uuid = NSUUID().uuidString
             let storageRef: StorageReference = Storage.storage().reference().child("posts/\(uid)").child("\(uid)_\(uuid).jpeg")

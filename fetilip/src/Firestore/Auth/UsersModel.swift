@@ -91,7 +91,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     /// Sign up with email and password.
     public func loginWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
         return Single.create { observer in
-            Auth.auth().signIn(withEmail: email, password: password, completion: { (result, error) in
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (_, error) in
                 if let e = error {
                     observer(.error(e))
                 }
@@ -108,7 +108,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     /// Login
     public func signInWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser> {
         return Single.create { observer in
-            Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
                 if let e = error {
                     observer(.error(e))
                 }

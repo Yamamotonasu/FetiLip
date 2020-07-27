@@ -92,7 +92,7 @@ extension TransitionManager {
                         if let tab = fromVC.tabBarController as? GlobalTabBarController {
                             tab.customTabBar.isHidden = true
                         }
-        }, completion: { completed in
+        }, completion: { _ in
             self.transitioningImageView?.removeFromSuperview()
             toReferenceImageView.isHidden = false
             fromReferenceImageView.isHidden = false
@@ -150,7 +150,7 @@ extension TransitionManager {
                         if let tab = fromVC.tabBarController as? GlobalTabBarController {
                             tab.customTabBar.isHidden = false
                         }
-        }, completion: { completed in
+        }, completion: { _ in
             self.transitioningImageView?.removeFromSuperview()
             toReferenceImageView.isHidden = false
             fromReferenceImageView.isHidden = false

@@ -11,20 +11,25 @@ import UIKit
 import FirebaseFirestore
 import FirebaseStorage
 
+/**
+ * Convert entity to domain model.
+ */
 struct PostDomainModel: DomainModelProtocol {
 
-    typealias Input = PostModel
+    typealias Input = PostEntity
 
     typealias Output = Self
 
+    /// Reference of user document associated with document.
     let userRef: DocumentReference
 
     /// Post image.
     let imageRef: String
 
+    /// Review lip image.
     let review: String
 
-    static func convert(_ model: PostModel.Fields) -> Self {
+    static func convert(_ model: Input) -> Output {
         return self.init(userRef: model.userRef, imageRef: model.imageRef, review: model.review ?? "")
     }
 

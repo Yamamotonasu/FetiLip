@@ -68,7 +68,7 @@ class ZoomDismissalInteractionController: NSObject {
                                 fromVC.view.alpha = 1.0
                                 tab.customTabBar.isHidden = true
 
-                }, completion: { finished in
+                }, completion: { _ in
                     toReferenceImageView.isHidden = false
                     fromReferenceImageView.isHidden = false
                     transitionImageView.removeFromSuperview()
@@ -91,7 +91,7 @@ class ZoomDismissalInteractionController: NSObject {
                             fromVC.view.alpha = 0
                             transitionImageView.frame = finalTransitionSize
                             tab.customTabBar.isHidden = false
-                }, completion: { finished in
+                }, completion: { _ in
                     transitionImageView.removeFromSuperview()
                     toReferenceImageView.isHidden = false
                     fromReferenceImageView.isHidden = false

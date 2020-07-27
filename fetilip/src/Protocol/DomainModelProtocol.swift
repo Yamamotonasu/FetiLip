@@ -14,12 +14,12 @@ import Foundation
 protocol DomainModelProtocol {
 
     /// Inut entity. (must conform FirestoreDatabaseCollection)
-    associatedtype Input: FirestoreDatabaseCollection
+    associatedtype Input
 
     /// Output entity. (must conform self protocol)
     associatedtype Output: DomainModelProtocol
 
     /// Function convert input entity to output domain model.
-    static func convert(_ model: Input.FieldType) -> Output
+    static func convert(_ model: Input) -> Output
 
 }
