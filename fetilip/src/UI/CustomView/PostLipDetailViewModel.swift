@@ -13,8 +13,6 @@ import FirebaseFirestore
 
 protocol PostLipDetailViewModelProtocol {
 
-    func fetchUserData(documentReference: DocumentReference)
-
 }
 
 /**
@@ -28,34 +26,29 @@ struct PostLipDetailViewModel: PostLipDetailViewModelProtocol {
 
     private let userModel: UsersModelClientProtocol
 
-    /// Relay user data.
-    private let userDataRalay: PublishRelay<UserModel.FieldType> = PublishRelay<UserModel.FieldType>()
-
-    private let disposeBag: DisposeBag = DisposeBag()
-
-}
-
-extension PostLipDetailViewModel {
-
-    public func fetchUserData(documentReference: DocumentReference) {
-        userModel.getUserData(userRef: documentReference).subscribe(onSuccess: { data in
-                self.userDataRalay.accept(data)
-            }, onError: { _ in
-                // TODO:
-            }).disposed(by: disposeBag)
-    }
 }
 
 extension PostLipDetailViewModel: ViewModelType {
 
     struct Input {
+        let firstLoadEvent: Observable<PostDomainModel>
     }
 
     struct Output {
-        let userDataObservable: Driver<UserModel.FieldType>
+        let userDataObservable: Driver<UserDomainModel>
     }
 
     func transform(input: Self.Input) -> Self.Output {
-        return Output(userDataObservable: userDataRalay.asDriver(onErrorDriveWith: Driver.empty()))
+        let userLoadSequence = input.firstLoadEvent.flatMapLatest { postDomain -> Observable<UserModel.FieldType> in
+            return self.userModel.getUserData(userRef: postDomain.userRef).asObservable()
+        }.flatMapLatest { userEntity -> Single<UserDomainModel> in
+            return Single.create { observer in
+                observer(.success(UserDomainModel.convert(userEntity)))
+                return Disposables.create()
+            }
+        }
+
+        return Output(userDataObservable: userLoadSequence.asDriver(onErrorDriveWith: Driver.empty()))
     }
+
 }
