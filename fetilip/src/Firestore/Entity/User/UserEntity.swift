@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 /**
  * User entity from firestore.
@@ -21,11 +22,11 @@ public struct UserEntity: Codable {
 
     public let userName: String
 
-    public let userImage: String?
+    public let userImageRef: String?
 
-    public let createdAt: Date
+    public let createdAt: Timestamp
 
-    public let updatedAt: Date
+    public let updatedAt: Timestamp
 
     enum Key: String, CodingKey {
 
@@ -37,11 +38,12 @@ public struct UserEntity: Codable {
 
         case userName
 
-        case phoneNumber
+        case userImageRef
 
         case createdAt
 
         case updatedAt
 
     }
+
 }

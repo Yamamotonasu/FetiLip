@@ -23,7 +23,7 @@ exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCrea
     userName: generatedName,
     email: '',
     profile: '',
-    userImage: '',
+    userImageRef: '',
     updatedAt: new Date(),
     createdAt: new Date()
   };

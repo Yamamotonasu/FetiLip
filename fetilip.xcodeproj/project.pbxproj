@@ -37,6 +37,7 @@
 		034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */; };
 		034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563124CE4E7C0005B6C5 /* PostEntity.swift */; };
 		034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563424CE4EA90005B6C5 /* UserEntity.swift */; };
+		034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563724CF23D40005B6C5 /* UserDomainModel.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -212,6 +213,7 @@
 		034C562D24CA4C110005B6C5 /* Binder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binder+Extensions.swift"; sourceTree = "<group>"; };
 		034C563124CE4E7C0005B6C5 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		034C563424CE4EA90005B6C5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		034C563724CF23D40005B6C5 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 		034A986924964EF5009336F0 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
+				034C563624CF23BC0005B6C5 /* Users */,
 				034A986D24983FE8009336F0 /* RxDatasource */,
 				034A986A24964EFE009336F0 /* Posts */,
 			);
@@ -719,6 +722,14 @@
 				034C563424CE4EA90005B6C5 /* UserEntity.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		034C563624CF23BC0005B6C5 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				034C563724CF23D40005B6C5 /* UserDomainModel.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
@@ -1832,6 +1843,7 @@
 				034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
 				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,
+				034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */,
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
 				036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */,

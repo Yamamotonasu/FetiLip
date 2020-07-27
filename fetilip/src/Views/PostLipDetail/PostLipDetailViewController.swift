@@ -55,6 +55,9 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     var panGesture: UIPanGestureRecognizer!
 
+    /// Load event
+    let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
+
     // MARK: - LifeCycles
 
     override func viewDidLoad() {
@@ -62,13 +65,19 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         composeUI()
         subscribe()
         subscribeUI()
-        viewModel.fetchUserData(documentReference: field!.userRef)
+        if let model = field {
+            firstLoadEvent.onNext(model)
+        } else {
+            assertionFailure()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+
+    // MARK: - Private functions
 
     private func composeUI() {
         self.lipImageView.image = self.image
@@ -86,13 +95,36 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input()
+        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable())
         let output = viewModel.transform(input: input)
 
-        output.userDataObservable.drive(onNext: { _ in
-
+        output.userDataObservable.drive(onNext: { [weak self] domain in
+            self?.drawUserData(domain)
         }).disposed(by: rx.disposeBag)
     }
+
+    /**
+     * Draw user data.
+     *
+     * - Parameters
+     *  - userDomain : UserDomainModel
+     */
+    private func drawUserData(_ userDomain: UserDomainModel) {
+        if userDomain.hasImage {
+            FirestorageLoader.loadImage(storagePath: userDomain.imageRef)
+                .observeOn(MainScheduler.instance)
+                .subscribe(onSuccess: { [weak self] image in
+                    self?.userImage.image = image
+                }, onError: { [weak self] e in
+                    self?.userImage.image = R.image.default_icon_female()
+                }).disposed(by: rx.disposeBag)
+        } else {
+            userImage.image = R.image.default_icon_female()
+        }
+        userName.text = userDomain.userName
+    }
+
+    // MARK: - UIPanGestureRecognizer
 
     @objc private func didPanWith(gestureRecognizer: UIPanGestureRecognizer) {
         switch gestureRecognizer.state {
@@ -110,8 +142,6 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             }
         }
     }
-
-    // MARK: - UIPanGestureRecognizer
 
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if let gestureRecognizer = panGesture {
