@@ -12,9 +12,6 @@ import RxCocoa
 
 protocol PostListViewModelProtocol {
 
-    /// Fetch lip list.
-    func fetchList()
-
 }
 
 class PostListViewModel: PostListViewModelProtocol {
@@ -25,9 +22,6 @@ class PostListViewModel: PostListViewModelProtocol {
     }
 
     private let postModel: PostModelClientProtocol
-
-    /// Event to transition to the lip posting page.
-    private let transitionToPostLipEvent: PublishRelay<()> = PublishRelay<()>()
 
     private let fetchCompletionSubject: PublishRelay<[PostDomainModel]> = PublishRelay<[PostDomainModel]>()
 
@@ -41,34 +35,31 @@ class PostListViewModel: PostListViewModelProtocol {
 
 extension PostListViewModel {
 
-    func fetchList() {
-        postModel.getPostList()
-            .debug()
-            .do()
-            .map { $0.map { PostDomainModel.convert($0) } }
-            .subscribe(onSuccess: { postDomains in
-                self.fetchCompletionSubject.accept(postDomains)
-            }) { e in
-                log.error(e.localizedDescription)
-        }.disposed(by: disposeBag)
-
-    }
-
 }
 
 extension PostListViewModel: ViewModelType {
 
     struct Input {
-        let tapPostLipButtonSignal: Signal<()>
+        let firstLoadEvent: Observable<()>
     }
 
     struct Output {
-        let tapPostLipButtonEvent: Signal<()>
+        let loadResult: Observable<PostListSectionDomainModel>
     }
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
-        input.tapPostLipButtonSignal.emit(to: transitionToPostLipEvent).disposed(by: disposeBag)
-        return Output(tapPostLipButtonEvent: transitionToPostLipEvent.asSignal())
+        let listLoadSequence = input.firstLoadEvent.flatMap { _ in
+            return self.postModel.getPostList().flatMap { list -> Single<PostListSectionDomainModel> in
+                return Single.create { observer in
+                    let domains = list.map { PostDomainModel.convert($0) }
+                    let sections = PostListSectionDomainModel(items: domains)
+                    observer(.success(sections))
+                    return Disposables.create()
+                }
+            }.asObservable()
+        }
+
+        return Output(loadResult: listLoadSequence)
     }
 
 }

@@ -31,6 +31,13 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         self.isHiddenBottomBar = dependency.isHiddenBottomBar
     }
 
+    // MARK: - Outlets
+
+    /// Collection view displaying post list.
+    @IBOutlet weak var lipCollectionView: UICollectionView!
+
+    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
+
     // MARK: - Properties
 
     private let cellMargin: CGFloat = 12.0
@@ -46,12 +53,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     var selectedIndexPath: IndexPath!
 
-    // MARK: - Outlets
-
-    /// Collection view displaying post list.
-    @IBOutlet weak var lipCollectionView: UICollectionView!
-
-    @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
+    let firstLoadEvent: PublishSubject<()> = PublishSubject()
 
     // MARK: - Lifecycle
 
@@ -59,8 +61,9 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         super.viewDidLoad()
         composeUI()
         subscribe()
+        subscribeUI()
         setupCollectionView()
-        viewModel.fetchList()
+        firstLoadEvent.onNext(())
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -94,6 +97,10 @@ extension PostListViewController {
             .subscribe(onNext: { [weak self] domains in
                 self?.data = domains
             }).disposed(by: rx.disposeBag)
+    }
+
+    private func subscribeUI() {
+
     }
 
     /// Transition post lip page.
