@@ -19,7 +19,7 @@ extension PostListSectionDomainModel: SectionModelType {
 
     typealias Item = PostDomainModel
 
-    init(original: PostListSectionDomainModel, items: [PostDomainModel]) {
+    init(original: PostListSectionDomainModel, items: [Item]) {
         self = original
         self.items = items
     }

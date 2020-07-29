@@ -18,16 +18,9 @@ class PostListViewModel: PostListViewModelProtocol {
 
     init(postModel: PostModelClientProtocol) {
         self.postModel = postModel
-        fetchCompletionObservable = fetchCompletionSubject.asObservable()
     }
 
     private let postModel: PostModelClientProtocol
-
-    private let fetchCompletionSubject: PublishRelay<[PostDomainModel]> = PublishRelay<[PostDomainModel]>()
-
-    let fetchCompletionObservable: Observable<[PostDomainModel]>
-
-    private let disposeBag = DisposeBag()
 
 }
 
@@ -44,15 +37,15 @@ extension PostListViewModel: ViewModelType {
     }
 
     struct Output {
-        let loadResult: Observable<PostListSectionDomainModel>
+        let loadResult: Observable<[PostListSectionDomainModel]>
     }
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
         let listLoadSequence = input.firstLoadEvent.flatMap { _ in
-            return self.postModel.getPostList().flatMap { list -> Single<PostListSectionDomainModel> in
+            return self.postModel.getPostList().flatMap { list -> Single<[PostListSectionDomainModel]> in
                 return Single.create { observer in
                     let domains = list.map { PostDomainModel.convert($0) }
-                    let sections = PostListSectionDomainModel(items: domains)
+                    let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: domains)]
                     observer(.success(sections))
                     return Disposables.create()
                 }
