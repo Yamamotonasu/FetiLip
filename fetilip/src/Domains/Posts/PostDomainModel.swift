@@ -32,11 +32,17 @@ struct PostDomainModel: DomainModelProtocol {
     /// Date posted.
     let createdAt: Timestamp
 
+    /// Date posted display user.
+    let displayCreatedAt: String
+
     static func convert(_ model: Input) -> Output {
+        let f = DateFormatter()
+        f.setTemplate(.full)
         return self.init(userRef: model.userRef,
                          imageRef: model.imageRef,
                          review: model.review ?? "",
-                         createdAt: model.createdAt)
+                         createdAt: model.createdAt,
+                         displayCreatedAt: f.string(from: model.createdAt.dateValue()))
     }
 
 }

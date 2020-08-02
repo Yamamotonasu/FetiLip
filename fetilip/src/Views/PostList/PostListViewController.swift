@@ -58,6 +58,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private lazy var dataSource: RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> = setupDataSource()
 
+    private var isLoading: Bool = false
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -109,6 +111,10 @@ extension PostListViewController {
             .subscribe(onNext: { [unowned self] indexPath in
                 self.selectedIndexPath = indexPath
             }).disposed(by: rx.disposeBag)
+
+        output.loadingObservable.subscribe(onNext: {
+            self.isLoading = $0
+        }).disposed(by: rx.disposeBag)
 
     }
 
@@ -165,6 +171,14 @@ extension PostListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
         self.performSegue(withIdentifier: R.segue.postListViewController.goToPostLipDetail.identifier, sender: self)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastElement = data.first!.items.count - 5
+        print("\(indexPath.row)")
+        if indexPath.row == lastElement && !self.isLoading {
+            nextLoadEvent.onNext(())
+        }
     }
 
 }
