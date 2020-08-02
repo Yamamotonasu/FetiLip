@@ -12,7 +12,7 @@ import Firebase
 /**
  * User entity from firestore.
  */
-public struct UserEntity: Codable {
+public struct UserEntity: Codable, FirestoreEntity {
 
     public let uid: String
 

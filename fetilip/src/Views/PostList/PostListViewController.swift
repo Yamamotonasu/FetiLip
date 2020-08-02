@@ -52,6 +52,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private let firstLoadEvent: PublishSubject<()> = PublishSubject()
 
+    private let nextLoadEvent: PublishSubject<()> = PublishSubject()
+
     private var result: Observable<[PostListSectionDomainModel]> = Observable.empty()
 
     private lazy var dataSource: RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> = setupDataSource()
@@ -92,7 +94,7 @@ extension PostListViewController {
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable())
+        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable(), nextPageEvent: nextLoadEvent.asObservable())
         let output = viewModel.transform(input: input)
 
         result = output.loadResult
@@ -123,7 +125,6 @@ extension PostListViewController {
         lipCollectionView.registerCustomCell(PostLipCollectionViewCell.self)
         if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonryCollectionViewLayout {
             collectionViewLayout.delegate = self
-
         }
     }
     
