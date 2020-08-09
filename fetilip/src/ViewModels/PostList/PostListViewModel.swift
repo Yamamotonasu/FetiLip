@@ -65,7 +65,7 @@ extension PostListViewModel: ViewModelType {
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
         let listLoadSequence = input.firstLoadEvent
-            .filter{ _ in self.loadedCount == self.data.count }
+            .filter{ type in self.loadedCount == self.data.count || type == .refresh}
             .flatMap { type -> Observable<[PostListSectionDomainModel]> in
             switch type {
             case .firstLoad:
@@ -73,9 +73,8 @@ extension PostListViewModel: ViewModelType {
                     return Single.create { observer in
                         let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
                         // Sort by dat created.
-                        let sorted = domains.sorted(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
 
-                        self.data.append(contentsOf: sorted)
+                        self.data.append(contentsOf: domains)
                         self.loadedCount += self.limit
                         // Save createdAt.
                         self.lastDocument = lastDoc
@@ -84,18 +83,15 @@ extension PostListViewModel: ViewModelType {
                         observer(.success(sections))
                         return Disposables.create()
                     }
-                }.asObservable().share().trackActivity(self.activity)
+                }.asObservable().trackActivity(self.activity)
             case .paging:
                 return self.postModel.getPostList(limit: self.limit, startAfter: self.lastDocument).flatMap { (list, lastDoc) in
                     return Single.create { observer in
                         let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
-                        let sorted = domains.sorted(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
 
-                        self.data.append(contentsOf: sorted)
-                        if !sorted.isEmpty {
-                            self.lastDocument = lastDoc
-                        }
-
+                        self.data.append(contentsOf: domains)
+                        self.lastDocument = lastDoc
+                    
                         self.loadedCount += self.limit
 
                         let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
@@ -104,7 +100,30 @@ extension PostListViewModel: ViewModelType {
                     }
                 }.trackActivity(self.activity)
             case .refresh:
-                return Observable.empty()
+                self.data.removeAll()
+                self.lastDocument = nil
+                self.loadedCount = 0
+                return self.postModel.getPostList(limit: self.limit, startAfter: nil).flatMap { (list, lastDoc) -> Single<[PostListSectionDomainModel]> in
+                    return Single.create { observer in
+                        // Clear properties
+                        self.data.removeAll()
+                        self.lastDocument = nil
+                        self.loadedCount = 0
+
+                        let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+                        // Sort by dat created.
+
+                        self.data.append(contentsOf: domains)
+                        self.loadedCount += self.limit
+                        // Save createdAt.
+                        self.lastDocument = lastDoc
+                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+
+                        observer(.success(sections))
+                        return Disposables.create()
+                    }
+                }.asObservable().trackActivity(self.activity)
+
             }
         }
 

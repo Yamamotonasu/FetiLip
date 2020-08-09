@@ -58,6 +58,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private var isLoading: Bool = false
 
+    private let refreshControl = UIRefreshControl()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -91,6 +93,10 @@ extension PostListViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         let item = UIImageView(image: R.image.feti_word())
         self.navigationItem.titleView = item
+
+        // Setup refresh control
+        lipCollectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
     private func subscribeUI() {
@@ -99,9 +105,12 @@ extension PostListViewController {
 
         result = output.loadResult
 
-        output.loadResult.do(onNext: { data in
-            self.data = data
-        })
+        output.loadResult.do(onNext: { [weak self] data in
+                self?.data = data
+                self?.refreshControl.endRefreshing()
+            }, onError: { [weak self] e in
+                self?.refreshControl.endRefreshing()
+            })
             .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
             .disposed(by: rx.disposeBag)
 
@@ -158,6 +167,10 @@ extension PostListViewController {
                 assertionFailure()
             }
         }
+    }
+
+    @objc private func refresh() {
+        loadEvent.onNext(.refresh)
     }
 
 }
