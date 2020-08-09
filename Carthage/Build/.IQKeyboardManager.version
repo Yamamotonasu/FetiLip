@@ -3,11 +3,13 @@
   "iOS" : [
     {
       "name" : "IQKeyboardManager",
-      "hash" : "7655f1e0ac10a83e0ae2f1498626f4f6666758760cbb4c8dd669a86def3f16cb"
+      "hash" : "905256e8cdfefa79355c6d1f91a2b3cb171b9c0ad204ed28115c4dece179385e",
+      "linking" : "dynamic"
     },
     {
+      "hash" : "6ea85aff847a70db6a5ca570e882b1772014cc9be7dd47efdb2282e2b2f983e9",
       "name" : "IQKeyboardManagerSwift",
-      "hash" : "f129f59427176840a18dd97c40b8480878b25c5114557180d0b0e959dd4ebcb0",
+      "linking" : "dynamic",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
     }
   ]

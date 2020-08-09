@@ -2,8 +2,9 @@
   "commitish" : "5.1.1",
   "iOS" : [
     {
+      "hash" : "de6939abb1b62f21cda56f8060cb013aa9454be301016e151ecb9fbd11a92858",
       "name" : "NSObject_Rx",
-      "hash" : "9444a0898c7b3ceffa33657a34a39c0db5d4c1e98df7be836fe011b3a44a9f77",
+      "linking" : "dynamic",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
     }
   ]
