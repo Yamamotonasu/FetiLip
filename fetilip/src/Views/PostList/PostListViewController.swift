@@ -50,9 +50,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
     // あんまりやりたくないけど。prepareのためにやる
     var data: [PostListSectionDomainModel] = []
 
-    private let firstLoadEvent: PublishSubject<()> = PublishSubject()
-
-    private let nextLoadEvent: PublishSubject<()> = PublishSubject()
+    private let loadEvent: PublishSubject<LoadType> = PublishSubject()
 
     private var result: Observable<[PostListSectionDomainModel]> = Observable.empty()
 
@@ -67,7 +65,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         composeUI()
         subscribeUI()
         setupCollectionView()
-        firstLoadEvent.onNext(())
+        loadEvent.onNext(.firstLoad)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -96,7 +94,7 @@ extension PostListViewController {
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable(), nextPageEvent: nextLoadEvent.asObservable())
+        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable())
         let output = viewModel.transform(input: input)
 
         result = output.loadResult
@@ -177,7 +175,7 @@ extension PostListViewController: UICollectionViewDelegate {
         let lastElement = data.first!.items.count - 5
         print("\(indexPath.row)")
         if indexPath.row == lastElement && !self.isLoading {
-            nextLoadEvent.onNext(())
+            loadEvent.onNext(.paging)
         }
     }
 

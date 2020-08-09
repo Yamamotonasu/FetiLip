@@ -65,7 +65,7 @@ extension Reactive where Base: Firestore {
         }
     }
 
-    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, query: Query) -> Single<[T.FieldType]> {
+    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, query: Query) -> Single<([T.FieldType], DocumentSnapshot?)> {
         return Single.create { observer in
             query.getDocuments { snapshot, error in
                 if let e = error {
@@ -87,7 +87,9 @@ extension Reactive where Base: Firestore {
                         return nil
                     }
                 }
-                observer(.success(results))
+                let returns: ([T.FieldType], DocumentSnapshot?) = (results, snap.documents.last)
+
+                observer(.success(returns))
             }
             return Disposables.create()
         }

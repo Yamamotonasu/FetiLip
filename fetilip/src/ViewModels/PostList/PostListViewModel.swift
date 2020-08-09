@@ -37,7 +37,7 @@ class PostListViewModel: PostListViewModelProtocol {
     private var loadedCount: Int = 0
 
     /// Store the lastv created date of the array of posts retrieved for paging.
-    private var startAfter: Timestamp = Timestamp()
+    private var lastDocument: DocumentSnapshot?
 
     /// Tracking observable.
     private let activity: ActivityIndicator = ActivityIndicator()
@@ -55,8 +55,7 @@ extension PostListViewModel {
 extension PostListViewModel: ViewModelType {
 
     struct Input {
-        let firstLoadEvent: Observable<()>
-        let nextPageEvent: Observable<()>
+        let firstLoadEvent: Observable<LoadType>
     }
 
     struct Output {
@@ -65,56 +64,57 @@ extension PostListViewModel: ViewModelType {
     }
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
-        let listLoadSequence = input.firstLoadEvent.flatMap { _ in
-            return self.postModel.getPostList(limit: self.limit, startAfter: nil).flatMap { list -> Single<[PostListSectionDomainModel]> in
-                return Single.create { observer in
-                    let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
-                    // Sort by dat created.
-                    let sorted = domains.sorted(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
+        let listLoadSequence = input.firstLoadEvent
+            .filter{ _ in self.loadedCount == self.data.count }
+            .flatMap { type -> Observable<[PostListSectionDomainModel]> in
+            switch type {
+            case .firstLoad:
+                return self.postModel.getPostList(limit: self.limit, startAfter: nil).flatMap { (list, lastDoc) -> Single<[PostListSectionDomainModel]> in
+                    return Single.create { observer in
+                        let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+                        // Sort by dat created.
+                        let sorted = domains.sorted(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
 
-                    self.data.append(contentsOf: sorted)
-                    self.loadedCount += self.limit
-                    // Save createdAt.
-                    self.startAfter = sorted.last!.createdAt
-                    let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+                        self.data.append(contentsOf: sorted)
+                        self.loadedCount += self.limit
+                        // Save createdAt.
+                        self.lastDocument = lastDoc
+                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
 
-                    observer(.success(sections))
-                    return Disposables.create()
-                }
-            }.asObservable().share().trackActivity(self.activity)
-        }
-
-        // Load next page sequence.
-        let nextLoadSequence: Observable<[PostListSectionDomainModel]> = input.nextPageEvent.flatMap { _ -> Observable<[PostListSectionDomainModel]> in
-            guard self.loadedCount == self.data.count else {
-                return Single.create { observer in
-                    let sections = [PostListSectionDomainModel(items: self.data)]
-                    observer(.success(sections))
-                    return Disposables.create()
-                }.trackActivity(self.activity)
-            }
-            return self.postModel.getPostList(limit: self.limit, startAfter: self.startAfter).flatMap { list in
-                return Single.create { observer in
-                    let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
-                    let sorted = domains.sorted(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
-
-                    self.data.append(contentsOf: sorted)
-                    if !sorted.isEmpty {
-                        self.startAfter = sorted.last!.createdAt
+                        observer(.success(sections))
+                        return Disposables.create()
                     }
+                }.asObservable().share().trackActivity(self.activity)
+            case .paging:
+                return self.postModel.getPostList(limit: self.limit, startAfter: self.lastDocument).flatMap { (list, lastDoc) in
+                    return Single.create { observer in
+                        let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+                        let sorted = domains.sorted(by: { $0.createdAt.compare($1.createdAt) == .orderedDescending })
 
-                    self.loadedCount += self.limit
+                        self.data.append(contentsOf: sorted)
+                        if !sorted.isEmpty {
+                            self.lastDocument = lastDoc
+                        }
 
-                    let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
-                    observer(.success(sections))
-                    return Disposables.create()
-                }
-            }.trackActivity(self.activity)
+                        self.loadedCount += self.limit
+
+                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+                        observer(.success(sections))
+                        return Disposables.create()
+                    }
+                }.trackActivity(self.activity)
+            case .refresh:
+                return Observable.empty()
+            }
         }
 
-        let combined = Observable.merge(listLoadSequence, nextLoadSequence)
-
-        return Output(loadResult: combined, loadingObservable: self.isLoading)
+        return Output(loadResult: listLoadSequence, loadingObservable: self.isLoading)
     }
 
+}
+
+enum LoadType {
+    case firstLoad
+    case paging
+    case refresh
 }

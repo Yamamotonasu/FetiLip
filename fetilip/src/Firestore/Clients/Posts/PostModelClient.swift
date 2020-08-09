@@ -15,7 +15,7 @@ protocol PostModelClientProtocol {
 
     func postImage(uid: String, review: String, imageRef: StorageReference) -> Single<()>
 
-    func getPostList(limit: Int, startAfter: Timestamp?) -> Single<[PostModel.FieldType]>
+    func getPostList(limit: Int, startAfter: DocumentSnapshot?) -> Single<([PostModel.FieldType], DocumentSnapshot?)>
 
     func getImage() -> Single<[PostModel.FieldType]>
 
@@ -35,7 +35,7 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
         return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeCollectionRef(), fields: fields)
     }
 
-    func getPostList(limit: Int, startAfter: Timestamp? = nil) -> Single<[PostModel.FieldType]> {
+    func getPostList(limit: Int, startAfter: DocumentSnapshot? = nil) -> Single<([PostModel.FieldType], DocumentSnapshot?)> {
         if let start = startAfter {
             return Firestore.firestore().rx.get(PostModel.self, query: PostModel.pagingCollectionRef(limit: limit, startAfter: start))
         } else {
