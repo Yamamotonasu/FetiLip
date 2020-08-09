@@ -52,7 +52,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
                     log.error(e.localizedDescription)
                 }).disposed(by: rx.disposeBag)
 
-        reviewText.text = model.displayCreatedAt
+        reviewText.text = model.review
         setupDesign()
     }
 
