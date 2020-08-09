@@ -146,7 +146,6 @@
 		03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC362434C7130068FB1E /* PromisesObjC.framework */; };
 		03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */; };
 		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
-		03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */; };
 		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
@@ -508,7 +507,6 @@
 				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
 				03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */,
 				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
-				03AAFC512434C7140068FB1E /* GoogleDataTransportCCTSupport.framework in Frameworks */,
 				039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */,
 				034A9859249602F7009336F0 /* Nuke.framework in Frameworks */,
 				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
