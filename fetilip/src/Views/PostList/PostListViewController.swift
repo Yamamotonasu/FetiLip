@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 /**
  * PostListViewController,
@@ -31,21 +32,6 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         self.isHiddenBottomBar = dependency.isHiddenBottomBar
     }
 
-    // MARK: - Properties
-
-    private let cellMargin: CGFloat = 12.0
-
-    private var isHiddenBottomBar: Bool? = true
-
-    private var data: [PostDomainModel] = [] {
-        didSet {
-            // TODO: 動作確認用
-            self.lipCollectionView.reloadData()
-        }
-    }
-
-    var selectedIndexPath: IndexPath!
-
     // MARK: - Outlets
 
     /// Collection view displaying post list.
@@ -53,14 +39,35 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     @IBOutlet weak var collectionViewBottomConstraint: NSLayoutConstraint!
 
+    // MARK: - Properties
+
+    private let cellMargin: CGFloat = 12.0
+
+    private var isHiddenBottomBar: Bool? = true
+
+    var selectedIndexPath: IndexPath!
+
+    // あんまりやりたくないけど。prepareのためにやる
+    var data: [PostListSectionDomainModel] = []
+
+    private let loadEvent: PublishSubject<LoadType> = PublishSubject()
+
+    private var result: Observable<[PostListSectionDomainModel]> = Observable.empty()
+
+    private lazy var dataSource: RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> = setupDataSource()
+
+    private var isLoading: Bool = false
+
+    private let refreshControl = UIRefreshControl()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         composeUI()
-        subscribe()
+        subscribeUI()
         setupCollectionView()
-        viewModel.fetchList()
+        loadEvent.onNext(.firstLoad)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -86,14 +93,36 @@ extension PostListViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         let item = UIImageView(image: R.image.feti_word())
         self.navigationItem.titleView = item
+
+        // Setup refresh control
+        lipCollectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
-    /// Bind UI from view model outputs.
-    private func subscribe() {
-        viewModel.fetchCompletionObservable
-            .subscribe(onNext: { [weak self] domains in
-                self?.data = domains
+    private func subscribeUI() {
+        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable())
+        let output = viewModel.transform(input: input)
+
+        result = output.loadResult
+
+        output.loadResult.do(onNext: { [weak self] data in
+                self?.data = data
+                self?.refreshControl.endRefreshing()
+            }, onError: { [weak self] _ in
+                self?.refreshControl.endRefreshing()
+            })
+            .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
+            .disposed(by: rx.disposeBag)
+
+        lipCollectionView.rx.itemSelected
+            .subscribe(onNext: { [unowned self] indexPath in
+                self.selectedIndexPath = indexPath
             }).disposed(by: rx.disposeBag)
+
+        output.loadingObservable.subscribe(onNext: {
+            self.isLoading = $0
+        }).disposed(by: rx.disposeBag)
+
     }
 
     /// Transition post lip page.
@@ -104,35 +133,21 @@ extension PostListViewController {
 
     /// Setup collection view and set delegate masonary collection view layout.
     private func setupCollectionView() {
-        lipCollectionView.dataSource = self
         lipCollectionView.delegate = self
         lipCollectionView.contentInset = UIEdgeInsets(top: cellMargin, left: cellMargin, bottom: cellMargin, right: cellMargin)
         lipCollectionView.registerCustomCell(PostLipCollectionViewCell.self)
         if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonryCollectionViewLayout {
             collectionViewLayout.delegate = self
-
         }
     }
 
-}
-
-// MARK: - CollectionView
-
-extension PostListViewController: UICollectionViewDataSource {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCustomCell(PostLipCollectionViewCell.self, indexPath: indexPath)
-        cell.setupCell(data[indexPath.row])
-        return cell
-
-    }
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    private func setupDataSource() -> RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> {
+        let dataSource = RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel>(configureCell: { (_, collectionView, indexPath, item) in
+            let cell = collectionView.dequeueReusableCustomCell(PostLipCollectionViewCell.self, indexPath: indexPath)
+            cell.setupCell(item)
+            return cell
+        })
+        return dataSource
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -144,9 +159,18 @@ extension PostListViewController: UICollectionViewDataSource {
             vc.transitionController.toDelegate = vc
             let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
 
-            vc.inject(with: .init(displayImage: cell.lipImage.image,
-                                  postModel: data[self.selectedIndexPath.row]))
+            if let domain = data.first?.items[self.selectedIndexPath.row] {
+                vc.inject(with: .init(displayImage: cell.lipImage.image,
+                                      postModel: domain ))
+            } else {
+                // ここで取れなかったらバグになるので、開発環境のみクラッシュさせる。
+                assertionFailure()
+            }
         }
+    }
+
+    @objc private func refresh() {
+        loadEvent.onNext(.refresh)
     }
 
 }
@@ -158,6 +182,14 @@ extension PostListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedIndexPath = indexPath
         self.performSegue(withIdentifier: R.segue.postListViewController.goToPostLipDetail.identifier, sender: self)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastElement = data.first!.items.count - 5
+        print("\(indexPath.row)")
+        if indexPath.row == lastElement && !self.isLoading {
+            loadEvent.onNext(.paging)
+        }
     }
 
 }

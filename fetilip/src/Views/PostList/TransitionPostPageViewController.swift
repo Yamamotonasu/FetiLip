@@ -32,10 +32,7 @@ extension TransitionPostPageViewController {
 
     /// Bind UI from view model outputs.
     private func subscribeUI() {
-        let input = ViewModel.Input(tapPostLipButtonSignal: transitionPostPageButton.rx.tap.asSignal())
-        let output = viewModel.transform(input: input)
-
-        output.tapPostLipButtonEvent.emit(onNext: { [unowned self] _ in
+        transitionPostPageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.transitionPostLipScene()
         }).disposed(by: rx.disposeBag)
     }

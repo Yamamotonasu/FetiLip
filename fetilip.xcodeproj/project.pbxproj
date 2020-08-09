@@ -38,6 +38,9 @@
 		034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563124CE4E7C0005B6C5 /* PostEntity.swift */; };
 		034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563424CE4EA90005B6C5 /* UserEntity.swift */; };
 		034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563724CF23D40005B6C5 /* UserDomainModel.swift */; };
+		034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */; };
+		034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563B24D245270005B6C5 /* FirestoreEntity.swift */; };
+		034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -213,6 +216,9 @@
 		034C563124CE4E7C0005B6C5 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		034C563424CE4EA90005B6C5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		034C563724CF23D40005B6C5 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
+		034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListSectionDomainModel.swift; path = fetilip/src/Domains/Users/PostListSectionDomainModel.swift; sourceTree = SOURCE_ROOT; };
+		034C563B24D245270005B6C5 /* FirestoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEntity.swift; sourceTree = "<group>"; };
+		034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -576,6 +582,7 @@
 		034A986D24983FE8009336F0 /* RxDatasource */ = {
 			isa = PBXGroup;
 			children = (
+				034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */,
 			);
 			path = RxDatasource;
 			sourceTree = "<group>";
@@ -838,6 +845,7 @@
 				035BAFEC2459922C001FF6D1 /* FirestoreDatabaseCollection.swift */,
 				036A45112472CD3900DD9282 /* FirestoreRequest.swift */,
 				036A45132472D13800DD9282 /* LoginRequired.swift */,
+				034C563B24D245270005B6C5 /* FirestoreEntity.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1250,6 +1258,7 @@
 				03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */,
 				036A45152472D96000DD9282 /* UIImage+Extensions.swift */,
 				034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */,
+				034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1786,6 +1795,7 @@
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
 				034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */,
+				034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */,
 				036A45022471212A00DD9282 /* PostsModel.swift in Sources */,
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
 				034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */,
@@ -1825,6 +1835,7 @@
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */,
 				034C562A24C9504D0005B6C5 /* ObservableType+Extensions.swift in Sources */,
+				034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */,
 				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
@@ -1849,6 +1860,7 @@
 				0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */,
 				034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */,
 				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
+				034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,
 				036A450D2472CB8C00DD9282 /* PostModelClient.swift in Sources */,
 			);
