@@ -87,6 +87,7 @@ extension Reactive where Base: Firestore {
                         return nil
                     }
                 }
+
                 let returns: ([T.FieldType], DocumentSnapshot?) = (results, snap.documents.last)
 
                 observer(.success(returns))
@@ -184,4 +185,10 @@ public enum ApplicationError: Error {
     case notFoundEntity(documentId: String)
     case notFoundJson
     case failedParseResponse
+}
+
+enum SortType {
+    case ascending
+    case descending
+    case outOfOrder
 }

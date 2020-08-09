@@ -29,7 +29,7 @@ class PostListViewModel: PostListViewModelProtocol {
     /// Post model.
     private let postModel: PostModelClientProtocol
 
-    let isLoading: Observable<Bool>
+    private let isLoading: Observable<Bool>
 
     /// Number of posts to retrieve at one time.
     private let limit: Int = 20

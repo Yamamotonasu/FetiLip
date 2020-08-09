@@ -76,9 +76,9 @@ extension FirestoreDatabaseCollection {
         let root = AppSettings.FireStore.rootDocumentName
         let collectionRef = Firestore.firestore().document(root).collection(collectionName)
         if let start = startAfter {
-            return collectionRef.order(by: "createdAt", descending: true).start(atDocument: start).limit(to: limit)
+            return collectionRef.order(by: "createdAt", descending: true).start(afterDocument: start).limit(to: limit)
         } else {
-            return collectionRef.limit(to: limit)
+            return collectionRef.order(by: "createdAt", descending: true).limit(to: limit)
         }
     }
 
