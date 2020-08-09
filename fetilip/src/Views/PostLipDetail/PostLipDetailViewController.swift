@@ -115,7 +115,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
                 .observeOn(MainScheduler.instance)
                 .subscribe(onSuccess: { [weak self] image in
                     self?.userImage.image = image
-                }, onError: { [weak self] e in
+                }, onError: { [weak self] _ in
                     self?.userImage.image = R.image.default_icon_female()
                 }).disposed(by: rx.disposeBag)
         } else {

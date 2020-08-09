@@ -108,7 +108,7 @@ extension PostListViewController {
         output.loadResult.do(onNext: { [weak self] data in
                 self?.data = data
                 self?.refreshControl.endRefreshing()
-            }, onError: { [weak self] e in
+            }, onError: { [weak self] _ in
                 self?.refreshControl.endRefreshing()
             })
             .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
@@ -140,7 +140,7 @@ extension PostListViewController {
             collectionViewLayout.delegate = self
         }
     }
-    
+
     private func setupDataSource() -> RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> {
         let dataSource = RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel>(configureCell: { (_, collectionView, indexPath, item) in
             let cell = collectionView.dequeueReusableCustomCell(PostLipCollectionViewCell.self, indexPath: indexPath)

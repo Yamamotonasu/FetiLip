@@ -65,7 +65,7 @@ extension PostListViewModel: ViewModelType {
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
         let listLoadSequence = input.firstLoadEvent
-            .filter{ type in self.loadedCount == self.data.count || type == .refresh}
+            .filter { type in self.loadedCount == self.data.count || type == .refresh}
             .flatMap { type -> Observable<[PostListSectionDomainModel]> in
             switch type {
             case .firstLoad:
@@ -91,7 +91,7 @@ extension PostListViewModel: ViewModelType {
 
                         self.data.append(contentsOf: domains)
                         self.lastDocument = lastDoc
-                    
+
                         self.loadedCount += self.limit
 
                         let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
