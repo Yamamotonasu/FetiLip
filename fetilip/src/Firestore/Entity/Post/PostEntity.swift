@@ -12,7 +12,7 @@ import Firebase
 /**
  * Entity that 
  */
-public struct PostEntity: Codable {
+public struct PostEntity: Codable, FirestoreEntity {
 
     public let review: String?
 

@@ -9,31 +9,40 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Firebase
 
 protocol PostListViewModelProtocol {
-
-    /// Fetch lip list.
-    func fetchList()
 
 }
 
 class PostListViewModel: PostListViewModelProtocol {
 
+    // MARK: - init
+
     init(postModel: PostModelClientProtocol) {
         self.postModel = postModel
-        fetchCompletionObservable = fetchCompletionSubject.asObservable()
+        isLoading = activity.asObservable()
     }
 
+    // MARK: - Properties
+
+    /// Post model.
     private let postModel: PostModelClientProtocol
 
-    /// Event to transition to the lip posting page.
-    private let transitionToPostLipEvent: PublishRelay<()> = PublishRelay<()>()
+    private let isLoading: Observable<Bool>
 
-    private let fetchCompletionSubject: PublishRelay<[PostDomainModel]> = PublishRelay<[PostDomainModel]>()
+    /// Number of posts to retrieve at one time.
+    private let limit: Int = 20
 
-    let fetchCompletionObservable: Observable<[PostDomainModel]>
+    private var loadedCount: Int = 0
 
-    private let disposeBag = DisposeBag()
+    /// Store the lastv created date of the array of posts retrieved for paging.
+    private var lastDocument: DocumentSnapshot?
+
+    /// Tracking observable.
+    private let activity: ActivityIndicator = ActivityIndicator()
+
+    private var data: [PostDomainModel] = []
 
 }
 
@@ -41,34 +50,90 @@ class PostListViewModel: PostListViewModelProtocol {
 
 extension PostListViewModel {
 
-    func fetchList() {
-        postModel.getPostList()
-            .debug()
-            .do()
-            .map { $0.map { PostDomainModel.convert($0) } }
-            .subscribe(onSuccess: { postDomains in
-                self.fetchCompletionSubject.accept(postDomains)
-            }) { e in
-                log.error(e.localizedDescription)
-        }.disposed(by: disposeBag)
-
-    }
-
 }
 
 extension PostListViewModel: ViewModelType {
 
     struct Input {
-        let tapPostLipButtonSignal: Signal<()>
+        let firstLoadEvent: Observable<LoadType>
     }
 
     struct Output {
-        let tapPostLipButtonEvent: Signal<()>
+        let loadResult: Observable<[PostListSectionDomainModel]>
+        let loadingObservable: Observable<Bool>
     }
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
-        input.tapPostLipButtonSignal.emit(to: transitionToPostLipEvent).disposed(by: disposeBag)
-        return Output(tapPostLipButtonEvent: transitionToPostLipEvent.asSignal())
+        let listLoadSequence = input.firstLoadEvent
+            .filter { type in self.loadedCount == self.data.count || type == .refresh}
+            .flatMap { type -> Observable<[PostListSectionDomainModel]> in
+            switch type {
+            case .firstLoad:
+                return self.postModel.getPostList(limit: self.limit, startAfter: nil).flatMap { (list, lastDoc) -> Single<[PostListSectionDomainModel]> in
+                    return Single.create { observer in
+                        let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+                        // Sort by dat created.
+
+                        self.data.append(contentsOf: domains)
+                        self.loadedCount += self.limit
+                        // Save createdAt.
+                        self.lastDocument = lastDoc
+                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+
+                        observer(.success(sections))
+                        return Disposables.create()
+                    }
+                }.asObservable().trackActivity(self.activity)
+            case .paging:
+                return self.postModel.getPostList(limit: self.limit, startAfter: self.lastDocument).flatMap { (list, lastDoc) in
+                    return Single.create { observer in
+                        let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+
+                        self.data.append(contentsOf: domains)
+                        self.lastDocument = lastDoc
+
+                        self.loadedCount += self.limit
+
+                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+                        observer(.success(sections))
+                        return Disposables.create()
+                    }
+                }.trackActivity(self.activity)
+            case .refresh:
+                self.data.removeAll()
+                self.lastDocument = nil
+                self.loadedCount = 0
+                return self.postModel.getPostList(limit: self.limit, startAfter: nil).flatMap { (list, lastDoc) -> Single<[PostListSectionDomainModel]> in
+                    return Single.create { observer in
+                        // Clear properties
+                        self.data.removeAll()
+                        self.lastDocument = nil
+                        self.loadedCount = 0
+
+                        let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+                        // Sort by dat created.
+
+                        self.data.append(contentsOf: domains)
+                        self.loadedCount += self.limit
+                        // Save createdAt.
+                        self.lastDocument = lastDoc
+                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+
+                        observer(.success(sections))
+                        return Disposables.create()
+                    }
+                }.asObservable().trackActivity(self.activity)
+
+            }
+        }
+
+        return Output(loadResult: listLoadSequence, loadingObservable: self.isLoading)
     }
 
+}
+
+enum LoadType {
+    case firstLoad
+    case paging
+    case refresh
 }

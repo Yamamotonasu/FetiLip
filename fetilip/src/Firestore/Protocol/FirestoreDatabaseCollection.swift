@@ -16,7 +16,7 @@ import FirebaseFirestore
  */
 public protocol FirestoreDatabaseCollection {
 
-    associatedtype FieldType: Codable
+    associatedtype FieldType: Codable, FirestoreEntity
 
     /// Collection name.
     static var collectionName: String { get }
@@ -68,6 +68,18 @@ extension FirestoreDatabaseCollection {
     public static func makeCollectionRef() -> CollectionReference {
         let root = AppSettings.FireStore.rootDocumentName
         return Firestore.firestore().document(root).collection(collectionName)
+    }
+
+    /// Create query with query cursor.
+    /// TODO: FIx hard cording.
+    public static func pagingCollectionRef(limit: Int, startAfter: DocumentSnapshot? = nil) -> Query {
+        let root = AppSettings.FireStore.rootDocumentName
+        let collectionRef = Firestore.firestore().document(root).collection(collectionName)
+        if let start = startAfter {
+            return collectionRef.order(by: "createdAt", descending: true).start(afterDocument: start).limit(to: limit)
+        } else {
+            return collectionRef.order(by: "createdAt", descending: true).limit(to: limit)
+        }
     }
 
     public static func makeSubCollectionQuery() -> Query {

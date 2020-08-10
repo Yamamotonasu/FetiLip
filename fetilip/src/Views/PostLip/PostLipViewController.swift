@@ -11,6 +11,7 @@ import FMPhotoPicker
 import RxSwift
 import RxCocoa
 import NVActivityIndicatorView
+import Firebase
 
 /**
  * ViewController for posting lips.
