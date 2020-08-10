@@ -21,10 +21,10 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
         let viewModel: MyPageViewController.ViewModel
     }
 
-    typealias ViewModel = MyPageViewModelProtocol
+    typealias ViewModel = MyPageViewModel
 
     // Memo: TabBarのルートビューなので初期値を代入
-    var viewModel: MyPageViewModelProtocol? = MyPageViewModel()
+    var viewModel: ViewModel = MyPageViewModel(userModel: UsersModelClient())
 
     func inject(with dependency: Dependency) {
         self.viewModel = dependency.viewModel
@@ -32,8 +32,18 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
 
     // MARK: Outlets
 
-    /// デバッグ用画面へ遷移する為の
+    /// Transition to debug view controller
     @IBOutlet private weak var debugButton: UIButton!
+
+    /// User image
+    @IBOutlet private weak var userImage: UIImageView!
+
+    /// Transition to edit profile button.
+    @IBOutlet private weak var transitionToEditProfileButton: UIButton!
+
+    // MARK: Properties
+
+    let userLoadEvent: PublishSubject<()> = PublishSubject<()>()
 
     // MARK: LifeCycle
 
@@ -41,6 +51,8 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
         super.viewDidLoad()
         composeUI()
         subscribe()
+        subscribeUI()
+        userLoadEvent.onNext(())
     }
 
 }
@@ -53,19 +65,36 @@ extension MyPageViewController {
         if FetilipBuildScheme.PRODUCTION {
             debugButton.isHidden = true
         }
+        navigationItem.title = "yuuta"
+        userImage.clipsToBounds = true
     }
 
     /// Rx subscribe
     private func subscribe() {
-        debugButton.rx.tap.asDriver().drive(onNext: { [weak self] in
-            self?.transitionDebugScreen()
+        debugButton.rx.tap.asDriver().drive(onNext: { [unowned self] in
+            self.transitionDebugScreen()
         }).disposed(by: rx.disposeBag)
+
+        transitionToEditProfileButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
+            self.transitionToEditProfileScreen()
+        }).disposed(by: rx.disposeBag)
+    }
+
+    private func subscribeUI() {
+        let input = ViewModel.Input(userLoadEvent: userLoadEvent.asObservable())
+        let output = viewModel.transform(input: input)
+
+
     }
 
     /// デバッグ画面へ遷移する
     private func transitionDebugScreen() {
         let vc = DebugViewControllerGenerator.generate()
         self.present(vc, animated: true)
+    }
+
+    private func transitionToEditProfileScreen() {
+        // TODO:
     }
 
 }

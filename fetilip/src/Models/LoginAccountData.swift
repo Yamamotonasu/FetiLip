@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 /**
  * Login account data. (Singleton object)
@@ -33,6 +34,8 @@ struct LoginAccountData {
             self.ud.synchronize()
         }
     }
+
+    static let userDocumentReference: DocumentReference = Firestore.firestore().document("/version/1/users/\(String(describing: uid))")
 
     /// Reset login user data
     static func resetUserData() {
