@@ -53,7 +53,8 @@ extension TransitionManager {
             let fromVC = transitionContext.viewController(forKey: .from),
             let fromReferenceImageView = self.fromDelegate?.referenceImageView(for: self),
             let toReferenceImageView = self.toDelegate?.referenceImageView(for: self),
-            let fromReferenceImageViewFrame = self.fromDelegate?.referenceImageViewFrameInTransitioningView(for: self) else {
+            let fromReferenceImageViewFrame = self.fromDelegate?.referenceImageViewFrameInTransitioningView(for: self),
+            let fromImage = fromReferenceImageView.image else {
                 return
         }
 
@@ -66,7 +67,7 @@ extension TransitionManager {
         containerView.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(toVC.view)
 
-        let referenceImage = fromReferenceImageView.image!
+        let referenceImage = fromImage
 
         if self.transitioningImageView == nil {
             let transitionImageView = UIImageView(image: referenceImage)
@@ -114,7 +115,8 @@ extension TransitionManager {
             let fromReferenceImageView = self.fromDelegate?.referenceImageView(for: self),
             let toReferenceImageView = self.toDelegate?.referenceImageView(for: self),
             let fromReferenceImageViewFrame = self.fromDelegate?.referenceImageViewFrameInTransitioningView(for: self),
-            let toReferenceImageViewFrame = self.toDelegate?.referenceImageViewFrameInTransitioningView(for: self) else {
+            let toReferenceImageViewFrame = self.toDelegate?.referenceImageViewFrameInTransitioningView(for: self),
+            let fromImage = fromReferenceImageView.image else {
                 return
         }
 
@@ -123,7 +125,7 @@ extension TransitionManager {
 
         toReferenceImageView.isHidden = true
 
-        let referenceImage = fromReferenceImageView.image!
+        let referenceImage = fromImage
 
         if self.transitioningImageView == nil {
             let transitionImageView = UIImageView(image: referenceImage)

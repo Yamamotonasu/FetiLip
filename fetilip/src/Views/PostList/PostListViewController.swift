@@ -41,7 +41,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     // MARK: - Properties
 
-    private let cellMargin: CGFloat = 12.0
+    private let cellMargin: CGFloat = 15.0
 
     private var isHiddenBottomBar: Bool? = true
 
@@ -146,6 +146,12 @@ extension PostListViewController {
         if let collectionViewLayout = lipCollectionView.collectionViewLayout as? MasonryCollectionViewLayout {
             collectionViewLayout.delegate = self
         }
+
+        let layout = UICollectionViewFlowLayout()
+        let width = (UIScreen.main.bounds.size.width / 2) - cellMargin * 2
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.minimumLineSpacing = cellMargin
+        lipCollectionView.collectionViewLayout = layout
     }
 
     private func setupDataSource() -> RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> {

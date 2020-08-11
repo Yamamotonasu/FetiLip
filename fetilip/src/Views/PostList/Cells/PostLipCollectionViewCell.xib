@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="vVH-4I-4Qn"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レビュが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-S6-zEf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-S6-zEf">
                                 <rect key="frame" x="8" y="209" width="246" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="YfO-ng-02z"/>
