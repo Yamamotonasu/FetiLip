@@ -49,10 +49,11 @@ class PostLipCollectionViewCell: UICollectionViewCell {
                         self?.lipImage.alpha = 1
                     }
                 }, onError: { e in
+                    // TODO: Set image when failed load image from fire storage.
                     log.error(e.localizedDescription)
                 }).disposed(by: rx.disposeBag)
 
-        reviewText.text = model.review
+//        reviewText.text = model.review
         setupDesign()
     }
 
