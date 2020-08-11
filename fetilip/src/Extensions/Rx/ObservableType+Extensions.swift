@@ -17,23 +17,23 @@ extension ObservableType {
     public func printDebug(on: @escaping () -> Void = { AppIndicator.show() },
                           off: @escaping () -> Void = { AppIndicator.dismiss() }) -> RxSwift.Observable<Self.Element> {
         return self.do(onNext: { _ in
-            print("**onNext")
+            log.debug("**onNext")
         }, afterNext: { _ in
-            print("**afterNext")
+            log.debug("**afterNext")
         }, onError: { _ in
-            print("**onError")
+            log.debug("**onError")
         }, afterError: { _ in
-            print("**afterError")
+            log.debug("**afterError")
         }, onCompleted: {
-            print("**onCompleted")
+            log.debug("**onCompleted")
         }, afterCompleted: {
-            print("**afterCompleted")
+            log.debug("**afterCompleted")
         }, onSubscribe: {
-            print("**onSubscribe")
+            log.debug("**onSubscribe")
         }, onSubscribed: {
-            print("**onSubscribed")
+            log.debug("**onSubscribed")
         }) {
-            print("**disposed")
+            log.debug("**disposed")
         }
     }
 

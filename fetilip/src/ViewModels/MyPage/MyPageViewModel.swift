@@ -7,11 +7,54 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol MyPageViewModelProtocol {
 
 }
 
+/**
+ * MyPageViewController ViewModel
+ */
 struct MyPageViewModel: MyPageViewModelProtocol {
+
+    // MARK: - init
+
+    init(userModel: UsersModelClientProtocol) {
+        self.userModel = userModel
+    }
+
+    // MARK: - properties
+
+    private let userModel: UsersModelClientProtocol
+
+}
+
+// MARK: - ViewModelType
+
+extension MyPageViewModel: ViewModelType {
+
+    struct Input {
+        let userLoadEvent: Observable<()>
+    }
+
+    struct Output {
+        let userLoadResult: Observable<UserDomainModel>
+    }
+
+    func transform(input: Input) -> Output {
+        let userLoadResult = input.userLoadEvent.retry().flatMap { _ in
+            return self.userModel.getUserData(userRef: LoginAccountData.userDocumentReference).flatMap { data -> Single<UserDomainModel> in
+                return Single.create { observer in
+                    let domain = UserDomainModel.convert(data)
+                    observer(.success(domain))
+                    return Disposables.create()
+                }
+            }
+        }
+
+        return Output(userLoadResult: userLoadResult)
+    }
 
 }

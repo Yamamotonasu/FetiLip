@@ -94,6 +94,13 @@ extension PostListViewController {
         let item = UIImageView(image: R.image.feti_word())
         self.navigationItem.titleView = item
 
+        // TODO: Make common.
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 2
+
         // Setup refresh control
         lipCollectionView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -185,8 +192,8 @@ extension PostListViewController: UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // TODO: Unwrap
         let lastElement = data.first!.items.count - 5
-        print("\(indexPath.row)")
         if indexPath.row == lastElement && !self.isLoading {
             loadEvent.onNext(.paging)
         }
@@ -242,8 +249,12 @@ extension PostListViewController: ZoomAnimatorDelegate {
     }
 
     func referenceImageView(for zoomAnimator: TransitionManager) -> UIImageView? {
-        let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
-        return cell.lipImage
+        if let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as? PostLipCollectionViewCell {
+            return cell.lipImage
+        } else {
+            assertionFailure()
+            return UIImageView()
+        }
     }
 
     func referenceImageViewFrameInTransitioningView(for zoomAnimator: TransitionManager) -> CGRect? {
