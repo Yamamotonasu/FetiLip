@@ -65,8 +65,15 @@ extension MyPageViewController {
         if FetilipBuildScheme.PRODUCTION {
             debugButton.isHidden = true
         }
-        navigationItem.title = "yuuta"
         userImage.clipsToBounds = true
+
+        // TODO: Make common.
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 2
     }
 
     /// Rx subscribe
@@ -84,17 +91,35 @@ extension MyPageViewController {
         let input = ViewModel.Input(userLoadEvent: userLoadEvent.asObservable())
         let output = viewModel.transform(input: input)
 
-
+        output.userLoadResult.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] domain in
+            self?.drawUserData(domain)
+        }, onError: { _ in
+            log.debug("Failed fetch user data.")
+        }).disposed(by: rx.disposeBag)
     }
 
-    /// デバッグ画面へ遷移する
+    /// Transition to debug screen.
     private func transitionDebugScreen() {
         let vc = DebugViewControllerGenerator.generate()
         self.present(vc, animated: true)
     }
 
+    /// Transition to edit prodile screen.
     private func transitionToEditProfileScreen() {
-        // TODO:
+        // TODO: Implement
+    }
+
+    /// Draw user information on screen.
+    private func drawUserData(_ userDomain: UserDomainModel) {
+        navigationItem.title = userDomain.userName
+
+        if userDomain.hasImage {
+            FirestorageLoader.loadImage(storagePath: userDomain.imageRef).subscribe(onSuccess: { [weak self] image in
+                self?.userImage.image = image
+            }, onError: { _ in
+                    // TODO: Error handling
+            }).disposed(by: rx.disposeBag)
+        }
     }
 
 }

@@ -14,15 +14,20 @@ import Firebase
  */
 struct LoginAccountData {
 
+    // MARK: - init
+
     private init() {}
 
     private static let ud = UserDefaults.standard
 
     /// User Defaults keys
     private enum DataType: String {
-        // uid
+        /// Firebase authentication uid.
         case uid = "uid"
+
     }
+
+    // MARK: - properties
 
     /// Unique id for each Users
     static var uid: String? {
@@ -35,7 +40,8 @@ struct LoginAccountData {
         }
     }
 
-    static let userDocumentReference: DocumentReference = Firestore.firestore().document("/version/1/users/\(String(describing: uid))")
+    // TODO: Unwrapp
+    static let userDocumentReference: DocumentReference = Firestore.firestore().document("/\(AppSettings.FireStore.rootDocumentName)/\(UserModel.collectionName)/\(String(describing: uid!))")
 
     /// Reset login user data
     static func resetUserData() {
