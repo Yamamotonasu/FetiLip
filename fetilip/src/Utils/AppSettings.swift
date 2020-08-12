@@ -24,7 +24,7 @@ public struct AppSettings {
     struct FireStore {
 
         /// Root document reference.
-        static let rootDocumentName: String = "version/\(Self.version)"
+        static let rootDocumentName: String = "/version/\(Self.version)"
 
         /// Version control reference.
         static let version: String = "1"

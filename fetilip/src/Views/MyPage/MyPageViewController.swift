@@ -93,8 +93,8 @@ extension MyPageViewController {
 
         output.userLoadResult.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] domain in
             self?.drawUserData(domain)
-        }, onError: { _ in
-            log.debug("Failed fetch user data.")
+        }, onError: { e in
+            log.debug(e.localizedDescription)
         }).disposed(by: rx.disposeBag)
     }
 
