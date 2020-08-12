@@ -41,7 +41,7 @@ struct LoginAccountData {
     }
 
     // TODO: Unwrapp
-    static let userDocumentReference: DocumentReference = Firestore.firestore().document("/\(AppSettings.FireStore.rootDocumentName)/\(UserModel.collectionName)/\(String(describing: uid!))")
+    static let userDocumentReference: DocumentReference = Firestore.firestore().document("\(AppSettings.FireStore.rootDocumentName)/\(UserModel.collectionName)/\(String(describing: uid!))")
 
     /// Reset login user data
     static func resetUserData() {
