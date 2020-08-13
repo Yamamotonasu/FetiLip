@@ -38,12 +38,14 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
     /// User image
     @IBOutlet private weak var userImage: UIImageView!
 
-    /// Transition to edit profile button.
+    /// Transition button to edit profile screen.
     @IBOutlet private weak var transitionToEditProfileButton: UIButton!
 
     // MARK: Properties
 
     let userLoadEvent: PublishSubject<()> = PublishSubject<()>()
+
+    var userDomainModel: UserDomainModel?
 
     // MARK: LifeCycle
 
@@ -92,6 +94,7 @@ extension MyPageViewController {
         let output = viewModel.transform(input: input)
 
         output.userLoadResult.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] domain in
+            self?.userDomainModel = domain
             self?.drawUserData(domain)
         }, onError: { e in
             log.debug(e.localizedDescription)
@@ -106,7 +109,9 @@ extension MyPageViewController {
 
     /// Transition to edit prodile screen.
     private func transitionToEditProfileScreen() {
-        // TODO: Implement
+        guard let domain = self.userDomainModel else { return }
+        let vc = EditProfileViewControllerGenerator.generate(userDomainModel: domain)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /// Draw user information on screen.

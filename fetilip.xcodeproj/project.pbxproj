@@ -148,6 +148,9 @@
 		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
 		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
+		03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */; };
+		03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */; };
+		03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */; };
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
@@ -460,6 +463,9 @@
 		03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
 		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
+		03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -1156,6 +1162,7 @@
 			isa = PBXGroup;
 			children = (
 				039EB66D2436157B0016436C /* Debug */,
+				03B50B5724E4ADAD00C7A14F /* EditProfile */,
 				034A98602496063E009336F0 /* Layouts */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
 				035BB00E2467CF58001FF6D1 /* PostLip */,
@@ -1170,6 +1177,7 @@
 			isa = PBXGroup;
 			children = (
 				035BAFDA2443302D001FF6D1 /* Debug */,
+				03B50B5824E4ADC300C7A14F /* EditProfile */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
 				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				0359900524ACDCCD000F8A27 /* PostLipDetail */,
@@ -1471,6 +1479,23 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		03B50B5724E4ADAD00C7A14F /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */,
+				03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
+		03B50B5824E4ADC300C7A14F /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		86210B9D74CAD08855592760 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1599,6 +1624,7 @@
 				039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */,
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
+				03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */,
 				034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */,
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
@@ -1812,6 +1838,7 @@
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
+				03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */,
 				034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */,
 				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
@@ -1855,6 +1882,7 @@
 				034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */,
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
+				03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */,
 				036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
 				0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */,
