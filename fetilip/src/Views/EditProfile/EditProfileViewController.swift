@@ -14,6 +14,7 @@ import FMPhotoPicker
 /**
  * Edit profile screen view controller.
  */
+// TODO: Edit profile function.
 class EditProfileViewController: UIViewController, ViewControllerMethodInjectable {
 
     // MARK: Init process
@@ -24,7 +25,7 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     typealias ViewModel = EditProfileViewModel
 
-    let viewModel: ViewModel = EditProfileViewModel(userModel: UsersModelClient())
+    let viewModel: ViewModel = EditProfileViewModel(userModel: UsersModelClient(), userStorageClient: UsersStorageClient())
 
     func inject(with dependency: Dependency) {
         self.userDomainModel = dependency.userDomainModel
@@ -42,7 +43,9 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     private let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
 
-    private var profileImageRelay: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
+    private let profileImageSubject: PublishSubject<UIImage?> = PublishSubject<UIImage?>()
+
+    private let updateProfileImageSubject: PublishSubject<()> = PublishSubject<()>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,13 +77,13 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     private func composeUI() {
         // Setup navigation bar.
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        self.navigationItem.title = "プロフィールを編集する"
+        self.navigationItem.title = R._string.profileScreenTitle
         let item = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = item
 
         // Setup base information
         if self.userDomainModel?.hasImage == true {
-            FirestorageLoader.loadImage(storagePath: self.userDomainModel?.imageRef ?? "").subscribe(onSuccess: { [weak self] image in
+            FirestorageLoader.loadImage(storagePath: self.userDomainModel!.imageRef).subscribe(onSuccess: { [weak self] image in
                 self?.profileImage.image = image
             }).disposed(by: rx.disposeBag)
         } else {
@@ -109,8 +112,22 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(profileImageObservable: profileImageRelay.asObservable())
+        let input = ViewModel.Input(updateProfileImageEvent: updateProfileImageSubject.asObservable(), profileImageObservable: profileImageSubject.asObservable())
         let output = viewModel.transform(input: input)
+
+        output.updateUserImageResult.subscribe(onNext: { [weak self] _ in
+                log.debug("Success update image")
+            }, onError: { e in
+                log.error("\(e.localizedDescription)")
+        }).disposed(by: rx.disposeBag)
+
+        output.loading.subscribe(onNext: { bool in
+            if bool {
+                AppIndicator.show()
+            } else {
+                AppIndicator.dismiss()
+            }
+        }).disposed(by: rx.disposeBag)
 
         output.profileImageDriver.drive(profileImage.rx.image).disposed(by: rx.disposeBag)
     }
@@ -127,15 +144,19 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 extension EditProfileViewController: FMPhotoPickerViewControllerDelegate, FMImageEditorViewControllerDelegate {
 
     func fmImageEditorViewController(_ editor: FMImageEditorViewController, didFinishEdittingPhotoWith photo: UIImage) {
-        profileImageRelay.accept(photo)
-        self.dismiss(animated: true)
+        profileImageSubject.onNext(photo)
+        self.dismiss(animated: true) {
+            self.updateProfileImageSubject.onNext(())
+        }
     }
 
     func fmPhotoPickerController(_ picker: FMPhotoPickerViewController, didFinishPickingPhotoWith photos: [UIImage]) {
         if let image = photos.first {
-            profileImageRelay.accept(image)
+            profileImageSubject.onNext(image)
         }
-        self.dismiss(animated: true)
+        self.dismiss(animated: true) {
+            self.updateProfileImageSubject.onNext(())
+        }
     }
 
     /// Launch library with app setting.
@@ -146,34 +167,9 @@ extension EditProfileViewController: FMPhotoPickerViewControllerDelegate, FMImag
         self.present(picker, animated: true)
     }
 
-//    /// /// Launch Editor with app setting.
-//    private func launchEditor(selectedImage: UIImage? = nil) {
-//        // TODO: refector
-//        if let image = imagePosted.image {
-//            let config = AppSettings.FMPhotoPickerSetting.setup()
-//            let picker = FMImageEditorViewController(config: config, sourceImage: image)
-//            picker.delegate = self
-//            self.present(picker, animated: true)
-//        } else if let selected = selectedImage {
-//            let config = AppSettings.FMPhotoPickerSetting.setup()
-//            let picker = FMImageEditorViewController(config: config, sourceImage: selected)
-//            picker.delegate = self
-//            self.present(picker, animated: true)
-//        }
-//    }
-
 }
 
 extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-//    /// Called after selecting an image with the camera.
-//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-//        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//            self.dismiss(animated: true) {
-//                self.launchEditor(selectedImage: image)
-//            }
-//        }
-//    }
 
     /// Launch camera.
     private func launchCamera() {
@@ -200,4 +196,5 @@ final class EditProfileViewControllerGenerator {
         vc.inject(with: .init(userDomainModel: userDomainModel))
         return vc
     }
+
 }

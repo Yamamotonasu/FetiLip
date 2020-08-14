@@ -12,6 +12,10 @@ extension R {
 
     struct _string {
 
+        // MARK: - Title
+
+        static let profileScreenTitle: String = "プロフィールを編集する"
+
         // MARK: - User message
 
         static let errorOccurred: String = "エラーが発生しました。時間を置いて再度お試しください。"

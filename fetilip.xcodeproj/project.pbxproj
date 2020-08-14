@@ -71,6 +71,7 @@
 		035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */; };
 		035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0142467D080001FF6D1 /* PostLipViewModel.swift */; };
 		035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */; };
+		035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CED24E6B41C0047B4AA /* UsersStorageClient.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -251,6 +252,7 @@
 		035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewController.swift; sourceTree = "<group>"; };
 		035BB0142467D080001FF6D1 /* PostLipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewModel.swift; sourceTree = "<group>"; };
 		035BB0162467DC33001FF6D1 /* TransitionPostPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPostPageViewController.swift; sourceTree = "<group>"; };
+		035D5CED24E6B41C0047B4AA /* UsersStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStorageClient.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 			isa = PBXGroup;
 			children = (
 				034C562124C45EC50005B6C5 /* Posts */,
+				035D5CEC24E6B3F50047B4AA /* Users */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -924,6 +927,14 @@
 				035BB0142467D080001FF6D1 /* PostLipViewModel.swift */,
 			);
 			path = PostLip;
+			sourceTree = "<group>";
+		};
+		035D5CEC24E6B3F50047B4AA /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				035D5CED24E6B41C0047B4AA /* UsersStorageClient.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		036A450024711D9500DD9282 /* Posts */ = {
@@ -1853,6 +1864,7 @@
 				036A45102472CC4A00DD9282 /* PostsRequests.swift in Sources */,
 				034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */,
 				034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */,
+				035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,

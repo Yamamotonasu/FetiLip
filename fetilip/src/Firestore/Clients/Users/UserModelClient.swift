@@ -21,7 +21,25 @@ protocol UsersModelClientProtocol {
 
     func updateUserProfile(profile: String) -> Single<()>
 
+    /**
+     * Fetch user data using user document reference.
+     *
+     * - Parameters:
+     *  - userRef: User document reference.
+     *
+     * - Returns: Single<UserEntity>
+     */
     func getUserData(userRef: DocumentReference) -> Single<UserModel.FieldType>
+
+    /**
+     * Update user profile image reference.
+     *
+     * - Parameters:
+     *  - userRef: User document reference.
+     *
+     * - Returns: Single<UserEntity>
+     */
+    func updateUserProfileReference(userRef: DocumentReference, storagePath: String) -> Single<()>
 
 }
 
@@ -69,9 +87,27 @@ public struct UsersModelClient: UsersModelClientProtocol {
 
     /**
      * Fetch user data using user document reference.
+     *
+     * - Parameters:
+     *  - userRef: User document reference.
+     *
+     * - Returns: Single<UserEntity>
      */
     public func getUserData(userRef: DocumentReference) -> Single<UserModel.FieldType> {
-        Firestore.firestore().rx.getDocument(UserModel.self, documentReference: userRef)
+        return Firestore.firestore().rx.getDocument(UserModel.self, documentReference: userRef)
+    }
+
+    /**
+     * Update user profile image reference.
+     *
+     * - Parameters:
+     *  - userRef: User document reference.
+     *
+     * - Returns: Single<UserEntity>
+     */
+    public func updateUserProfileReference(userRef: DocumentReference, storagePath: String) -> Single<()> {
+        let fields = UsersRequests.updateUserProfileStoragePath(storagePath: storagePath).parameters
+        return Firestore.firestore().rx.updateData(UserModel.self, documentRef: userRef, fields: fields)
     }
 
 }

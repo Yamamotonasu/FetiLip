@@ -24,6 +24,9 @@ enum UsersRequests: FirestoreRequest {
     /// Update user profile.
     case updateProfile(userProfile: String)
 
+    /// Update user profile strage reference.
+    case updateUserProfileStoragePath(storagePath: String)
+
     var parameters: Parameters {
         var params: Parameters = [:]
         switch self {
@@ -42,6 +45,9 @@ enum UsersRequests: FirestoreRequest {
         case .updateProfile(let profile):
             params[Fields.Key.profile.rawValue] = profile
             params[Fields.Key.updatedAt.rawValue] = Date()
+            return params
+        case .updateUserProfileStoragePath(let storagePath):
+            params[Fields.Key.userImageRef.rawValue] = storagePath
             return params
         }
     }
