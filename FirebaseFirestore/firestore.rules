@@ -6,7 +6,7 @@ service cloud.firestore {
     }
     match /version/1/users/{userID} {
       allow create: if isAnyAuthenticated() && (!('userName' in request.resource.data) || validateString(request.resource.data.userName, 2, 12));
-      allow update: if isUserAuthenticated(userID) && request.resource.data.updatedAt == request.time;
+      allow update: if isUserAuthenticated(userID)
       allow get: if isAnyAuthenticated();
       allow read: if isAnyAuthenticated();
     }
