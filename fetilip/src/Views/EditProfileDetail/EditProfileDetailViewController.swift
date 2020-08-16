@@ -67,7 +67,10 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     private func composeUI() {
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.rightBarButtonItem = rightSaveButton
+
+        editInformationTextView.textContainerInset = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
 
         switch editProfileDetailType {
         case .userName(let defaults):

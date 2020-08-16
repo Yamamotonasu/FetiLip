@@ -16,6 +16,8 @@ extension R {
 
         static let profileScreenTitle: String = "プロフィールを編集する"
 
+        static let registerUserScreentTitle: String = "正式登録する"
+
         // MARK: - User message
 
         static let errorOccurred: String = "エラーが発生しました。時間を置いて再度お試しください。"

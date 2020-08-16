@@ -76,6 +76,9 @@
 		035D5CF324E8F55C0047B4AA /* EditProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CF224E8F55C0047B4AA /* EditProfileDetailViewController.swift */; };
 		035D5CF624E911200047B4AA /* EditProfileDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CF524E911200047B4AA /* EditProfileDetailViewModel.swift */; };
 		035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CF824E929B20047B4AA /* ValidationError.swift */; };
+		035D5CFD24E9515B0047B4AA /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CFC24E9515B0047B4AA /* RegisterUserViewModel.swift */; };
+		035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035D5CFE24E952A50047B4AA /* RegisterUser.storyboard */; };
+		035D5D0124E952B70047B4AA /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0024E952B70047B4AA /* RegisterUserViewController.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -261,6 +264,9 @@
 		035D5CF224E8F55C0047B4AA /* EditProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileDetailViewController.swift; sourceTree = "<group>"; };
 		035D5CF524E911200047B4AA /* EditProfileDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileDetailViewModel.swift; sourceTree = "<group>"; };
 		035D5CF824E929B20047B4AA /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		035D5CFC24E9515B0047B4AA /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
+		035D5CFE24E952A50047B4AA /* RegisterUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterUser.storyboard; sourceTree = "<group>"; };
+		035D5D0024E952B70047B4AA /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -970,6 +976,23 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		035D5CFA24E951000047B4AA /* RegisterUser */ = {
+			isa = PBXGroup;
+			children = (
+				035D5CFE24E952A50047B4AA /* RegisterUser.storyboard */,
+				035D5D0024E952B70047B4AA /* RegisterUserViewController.swift */,
+			);
+			path = RegisterUser;
+			sourceTree = "<group>";
+		};
+		035D5CFB24E951120047B4AA /* RegisterUser */ = {
+			isa = PBXGroup;
+			children = (
+				035D5CFC24E9515B0047B4AA /* RegisterUserViewModel.swift */,
+			);
+			path = RegisterUser;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1214,6 +1237,7 @@
 				035BB00E2467CF58001FF6D1 /* PostLip */,
 				0359900424ACDCBE000F8A27 /* PostLipDetail */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
+				035D5CFA24E951000047B4AA /* RegisterUser */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
 			);
 			path = Views;
@@ -1229,6 +1253,7 @@
 				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				0359900524ACDCCD000F8A27 /* PostLipDetail */,
 				035BAFDB24433040001FF6D1 /* PostList */,
+				035D5CFB24E951120047B4AA /* RegisterUser */,
 				035BAFDD2443306D001FF6D1 /* TabBar */,
 			);
 			path = ViewModels;
@@ -1679,6 +1704,7 @@
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
+				035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */,
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
@@ -1890,6 +1916,7 @@
 				034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */,
 				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
 				03AAFBA32428D5B60068FB1E /* PostListViewController.swift in Sources */,
+				035D5CFD24E9515B0047B4AA /* RegisterUserViewModel.swift in Sources */,
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
 				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
@@ -1909,6 +1936,7 @@
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
 				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
+				035D5D0124E952B70047B4AA /* RegisterUserViewController.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */,
 				034C562A24C9504D0005B6C5 /* ObservableType+Extensions.swift in Sources */,

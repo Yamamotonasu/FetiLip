@@ -39,9 +39,9 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     @IBOutlet private weak var userNameLabel: UILabel!
 
-    @IBOutlet private weak var registerUserButton: UIButton!
-
     @IBOutlet private weak var userNameView: UIStackView!
+
+    @IBOutlet private weak var registerUserButton: UIButton!
 
     // MARK: - Properties
 
@@ -79,6 +79,7 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     private func composeUI() {
         // Setup navigation bar.
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.title = R._string.profileScreenTitle
 
         // Setup base information
@@ -116,13 +117,17 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
                 break
             }
         }).disposed(by: rx.disposeBag)
+
+        registerUserButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            self.presentingRegisterUser()
+        }).disposed(by: rx.disposeBag)
     }
 
     private func subscribeUI() {
         let input = ViewModel.Input(updateProfileImageEvent: updateProfileImageSubject.asObservable(), profileImageObservable: profileImageSubject.asObservable())
         let output = viewModel.transform(input: input)
 
-        output.updateUserImageResult.subscribe(onNext: { [weak self] _ in
+        output.updateUserImageResult.subscribe(onNext: { _ in
                 log.debug("Success update image")
             }, onError: { e in
                 log.error("\(e.localizedDescription)")
@@ -147,6 +152,11 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     private func presentingEditProfileDetail(editProfileType: EditProfileDetailType) {
         let vc = EditProfileDetailViewControllerGenerator.generate(editProfileType: editProfileType)
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func presentingRegisterUser() {
+        let vc = RegisterUserViewControllerGenerator.generate()
+        self.present(vc, animated: true)
     }
 
 }
