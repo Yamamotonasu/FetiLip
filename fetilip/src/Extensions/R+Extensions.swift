@@ -51,6 +51,16 @@ extension R {
             static let updateImageNotFound = "更新する画像が見つかりません。"
         }
 
+        struct validation {
+
+            static let emptyInput: String = "入力してください。"
+
+            static func tooLongInput(maximum: Int) -> String {
+                return "入力出来るのは\(maximum)文字までです。"
+            }
+
+        }
+
     }
 
 }

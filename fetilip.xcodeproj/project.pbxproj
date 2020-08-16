@@ -74,6 +74,8 @@
 		035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CED24E6B41C0047B4AA /* UsersStorageClient.swift */; };
 		035D5CF124E8F5470047B4AA /* EditProfileDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035D5CF024E8F5470047B4AA /* EditProfileDetail.storyboard */; };
 		035D5CF324E8F55C0047B4AA /* EditProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CF224E8F55C0047B4AA /* EditProfileDetailViewController.swift */; };
+		035D5CF624E911200047B4AA /* EditProfileDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CF524E911200047B4AA /* EditProfileDetailViewModel.swift */; };
+		035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CF824E929B20047B4AA /* ValidationError.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -257,6 +259,8 @@
 		035D5CED24E6B41C0047B4AA /* UsersStorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStorageClient.swift; sourceTree = "<group>"; };
 		035D5CF024E8F5470047B4AA /* EditProfileDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfileDetail.storyboard; sourceTree = "<group>"; };
 		035D5CF224E8F55C0047B4AA /* EditProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileDetailViewController.swift; sourceTree = "<group>"; };
+		035D5CF524E911200047B4AA /* EditProfileDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileDetailViewModel.swift; sourceTree = "<group>"; };
+		035D5CF824E929B20047B4AA /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -950,6 +954,22 @@
 			path = EditProfileDetail;
 			sourceTree = "<group>";
 		};
+		035D5CF424E910F40047B4AA /* EditProfileDetail */ = {
+			isa = PBXGroup;
+			children = (
+				035D5CF524E911200047B4AA /* EditProfileDetailViewModel.swift */,
+			);
+			path = EditProfileDetail;
+			sourceTree = "<group>";
+		};
+		035D5CF724E929A00047B4AA /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				035D5CF824E929B20047B4AA /* ValidationError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1164,6 +1184,7 @@
 		03AAFB39241F9D0B0068FB1E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				035D5CF724E929A00047B4AA /* Enums */,
 				034C561C24C4599B0005B6C5 /* Firestorage */,
 				0359901924BD30C9000F8A27 /* UI */,
 				034A986924964EF5009336F0 /* Domains */,
@@ -1203,6 +1224,7 @@
 			children = (
 				035BAFDA2443302D001FF6D1 /* Debug */,
 				03B50B5824E4ADC300C7A14F /* EditProfile */,
+				035D5CF424E910F40047B4AA /* EditProfileDetail */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
 				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				0359900524ACDCCD000F8A27 /* PostLipDetail */,
@@ -1880,6 +1902,7 @@
 				034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */,
 				034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */,
 				035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */,
+				035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
@@ -1894,6 +1917,7 @@
 				034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */,
 				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
+				035D5CF624E911200047B4AA /* EditProfileDetailViewModel.swift in Sources */,
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
 				035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,

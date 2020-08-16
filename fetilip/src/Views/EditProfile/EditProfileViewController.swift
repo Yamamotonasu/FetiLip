@@ -80,8 +80,6 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
         // Setup navigation bar.
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationItem.title = R._string.profileScreenTitle
-        let item = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.navigationItem.backBarButtonItem = item
 
         // Setup base information
         if self.userDomainModel?.hasImage == true {

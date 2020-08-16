@@ -17,9 +17,17 @@ protocol UsersModelClientProtocol {
 
     func setInitialData(params: (email: String, uid: String)) -> Single<()>
 
-    func updateUserName(userName: String) -> Single<()>
-
     func updateUserProfile(profile: String) -> Single<()>
+
+    /**
+     * Update user name.
+     *
+     * - Parameters:
+     *  - uid: UID
+     *  - userName: update user name.
+     * - Returns: Single<()>
+     */
+    func updateUserName(uid: String, userName: String) -> Single<()>
 
     /**
      * Fetch user data using user document reference.
@@ -58,15 +66,7 @@ public struct UsersModelClient: UsersModelClientProtocol {
         return Firestore.firestore().rx.setData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: params.uid), fields: fields)
     }
 
-    // TODO: Unuse
-    public func updateUserName(userName: String) -> Single<()> {
-        // TODO: Make common.
-        guard let uid = LoginAccountData.uid else {
-            return Single.create { observer in
-                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
-                return Disposables.create()
-            }
-        }
+    public func updateUserName(uid: String, userName: String) -> Single<()> {
         let fields = UsersRequests.updateUserName(userName: userName).parameters
         return Firestore.firestore().rx.updateData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: uid), fields: fields)
     }

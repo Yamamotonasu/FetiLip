@@ -36,7 +36,7 @@
                         <viewLayoutGuide key="safeArea" id="aGq-KA-b02"/>
                     </view>
                     <connections>
-                        <outlet property="userNameTextView" destination="RDd-Yj-j9t" id="VkJ-OW-d9f"/>
+                        <outlet property="editInformationTextView" destination="RDd-Yj-j9t" id="VkJ-OW-d9f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaP-8n-6R6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
