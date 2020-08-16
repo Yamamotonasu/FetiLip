@@ -37,6 +37,12 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     @IBOutlet private weak var profileImage: UIImageView!
 
+    @IBOutlet private weak var userNameLabel: UILabel!
+
+    @IBOutlet private weak var registerUserButton: UIButton!
+
+    @IBOutlet private weak var userNameView: UIStackView!
+
     // MARK: - Properties
 
     private var userDomainModel: UserDomainModel?
@@ -57,18 +63,14 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let tab = self.tabBarController as? GlobalTabBarController {
-            UIView.animate(withDuration: 0.1) {
-                tab.customTabBar.alpha = 0
-            }
+            tab.customTabBar.alpha = 0
         }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let tab = self.tabBarController as? GlobalTabBarController {
-            UIView.animate(withDuration: 0.1) {
-                tab.customTabBar.alpha = 1
-            }
+            tab.customTabBar.alpha = 1
         }
     }
 
@@ -89,14 +91,21 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
         } else {
             self.profileImage.image = R.image.default_icon_female()
         }
+
+        userNameLabel.text = userDomainModel?.userName
     }
 
     private func subscribe() {
         let tapGesture = UITapGestureRecognizer()
         editProfileStackView.addGestureRecognizer(tapGesture)
-
         tapGesture.rx.event.bind(onNext: { [unowned self] _ in
             self.presentingSelectMode()
+        }).disposed(by: rx.disposeBag)
+
+        let userNameTapGesture = UITapGestureRecognizer()
+        userNameView.addGestureRecognizer(userNameTapGesture)
+        userNameTapGesture.rx.event.bind(onNext: { [unowned self] _ in
+            self.presentingEditProfileDetail(editProfileType: .userName(default: self.userDomainModel?.userName ?? ""))
         }).disposed(by: rx.disposeBag)
 
         selectModeSuject.asObservable().subscribe(onNext: { [unowned self] mode in
@@ -135,6 +144,11 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     private func presentingSelectMode() {
         let vc = SelectModeViewControllerGenerator.generate(selectSubject: self.selectModeSuject)
         self.present(vc, animated: true)
+    }
+
+    private func presentingEditProfileDetail(editProfileType: EditProfileDetailType) {
+        let vc = EditProfileDetailViewControllerGenerator.generate(editProfileType: editProfileType)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

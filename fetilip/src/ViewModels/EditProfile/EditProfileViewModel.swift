@@ -90,7 +90,7 @@ extension EditProfileViewModel {
             if let i = image {
                 observer(.success(i))
             } else {
-                observer(.error(EditProfileViewModelError.imageNotFount(message: "更新する画像が見つかりません。")))
+                observer(.error(EditProfileViewModelError.imageNotFount(message: R._string.error.updateImageNotFound)))
             }
             return Disposables.create()
         }

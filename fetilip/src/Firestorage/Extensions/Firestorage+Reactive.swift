@@ -13,25 +13,6 @@ import UIKit
 
 extension Reactive where Base: Storage {
 
-    func uploadPostImage(image: UIImage, uid: String) -> Single<StorageReference> {
-        return Single.create { observer in
-            let uuid = NSUUID().uuidString
-            let storageRef: StorageReference = Storage.storage().reference().child("posts/\(uid)").child("\(uid)_\(uuid).jpeg")
-            let imageData = image.jpeg(.medium)
-            storageRef.putData(imageData, metadata: nil) { (metaData, error) in
-                if let e = error {
-                    observer(.error(FirestorageError.failedUploadImage("Failed uploading image at firestorage. reason: \(e.localizedDescription)")))
-                }
-                if let _ = metaData {
-                    observer(.success(storageRef))
-                } else {
-                    observer(.error(FirestorageError.failedUploadImage("Unexpected error occured.")))
-                }
-            }
-            return Disposables.create()
-        }
-    }
-
     /**
      * Upload image to Firebase storage.
      *
