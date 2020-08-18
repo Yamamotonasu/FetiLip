@@ -18,6 +18,8 @@ extension R {
 
         static let registerUserScreentTitle: String = "正式登録する"
 
+        static let editUserNameScreenTitle: String = "ユーザー名を更新する"
+
         // MARK: - User message
 
         static let errorOccurred: String = "エラーが発生しました。時間を置いて再度お試しください。"
@@ -60,6 +62,8 @@ extension R {
             static func tooLongInput(maximum: Int) -> String {
                 return "入力出来るのは\(maximum)文字までです。"
             }
+
+            static let invalidEmailFormat = "正しいメールアドレスを入力してください。"
 
         }
 

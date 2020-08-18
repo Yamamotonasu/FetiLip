@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RegisterUserViewController: UIViewController, ViewControllerMethodInjectable {
 
@@ -22,7 +24,19 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
 
     typealias ViewModel = RegisterUserViewModel
 
-    let viewModel: ViewModel = RegisterUserViewModel()
+    private let viewModel: ViewModel = RegisterUserViewModel(userAuthModel: UsersAuthModel())
+
+    // MARK: - Outlets
+
+    @IBOutlet private weak var emailTextView: UITextView!
+
+    @IBOutlet private weak var emailErrorLabel: UILabel!
+
+    @IBOutlet private weak var passwordTextView: UITextView!
+
+    @IBOutlet private weak var passwordErrorLabel: UILabel!
+
+    @IBOutlet private weak var registerButton: UIButton!
 
     // MARK: - Properties
 
@@ -33,23 +47,45 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
     override func viewDidLoad() {
         super.viewDidLoad()
         composeUI()
+        subscribeUI()
     }
 
     // MARK: - Functions
 
     private func composeUI() {
         // Setup navigation controller
-        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.leftBarButtonItem = leftBarButton
         self.navigationItem.title = R._string.registerUserScreentTitle
 
-        // TODO: Make common.
-        self.navigationController?.navigationBar.backgroundColor = FetiLipColors.theme()
+        self.navigationController?.navigationBar.barTintColor = FetiLipColors.theme()
         self.navigationController?.navigationBar.layer.masksToBounds = false
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 2
+    }
+
+    private func subscribeUI() {
+        let input = ViewModel.Input(passwordTextObservable: passwordTextView.rx.text.asObservable(),
+                                    emailTextObservable: emailTextView.rx.text.asObservable(),
+                                    registerTapEvent: registerButton.rx.tap.asSignal())
+        let output = viewModel.transform(input: input)
+
+        output.emailValidatedDriver.drive(emailErrorLabel.rx.text).disposed(by: rx.disposeBag)
+
+        output.passwordValidatedDriver.drive(passwordErrorLabel.rx.text).disposed(by: rx.disposeBag)
+
+        output.enableRegisterButtonDriver.drive(onNext: { [unowned self] enabled in
+            self.registerButton.isEnabled = enabled
+            self.registerButton.alpha = enabled ? 1 : 0.5
+        }).disposed(by: rx.disposeBag)
+
+        output.registerResult.subscribe(onNext: { _ in
+            self.close()
+        }, onError: { e in
+            log.error(e.localizedDescription)
+        }).disposed(by: rx.disposeBag)
     }
 
     @objc private func close() {

@@ -43,8 +43,8 @@
                                             <constraint firstAttribute="height" constant="40" id="XTa-B8-q8h"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="5"/>
@@ -66,16 +66,16 @@
                                 <rect key="frame" x="30" y="226.5" width="354" height="102.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1r0-5L-fLq">
-                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aty-p0-PcY">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" パスワード(6文字から32文字)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aty-p0-PcY">
+                                                <rect key="frame" x="0.0" y="0.0" width="238" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-R0-5Pq">
-                                                <rect key="frame" x="106.5" y="0.0" width="35" height="20.5"/>
+                                                <rect key="frame" x="253" y="0.0" width="35" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.93725490196078431" green="0.27058823529411763" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                                             <constraint firstAttribute="height" constant="40" id="ybL-Ci-9YJ"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -114,6 +114,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="SWn-EM-pKI"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="登録する">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -159,6 +160,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YVE-Dc-mzO"/>
                     </view>
+                    <connections>
+                        <outlet property="emailErrorLabel" destination="BZR-VU-1bY" id="GYO-RN-TyL"/>
+                        <outlet property="emailTextView" destination="cAR-Gs-eMk" id="Ljo-hg-grr"/>
+                        <outlet property="passwordErrorLabel" destination="prU-gU-oFL" id="kZz-LP-yZu"/>
+                        <outlet property="passwordTextView" destination="zcw-Z9-Lgw" id="Lae-e8-hVG"/>
+                        <outlet property="registerButton" destination="WD0-mO-erA" id="trY-nJ-m1x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2J-m4-637" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

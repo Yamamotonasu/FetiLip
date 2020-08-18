@@ -79,6 +79,10 @@
 		035D5CFD24E9515B0047B4AA /* RegisterUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5CFC24E9515B0047B4AA /* RegisterUserViewModel.swift */; };
 		035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035D5CFE24E952A50047B4AA /* RegisterUser.storyboard */; };
 		035D5D0124E952B70047B4AA /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0024E952B70047B4AA /* RegisterUserViewController.swift */; };
+		035D5D0424E964640047B4AA /* ValidationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0324E964640047B4AA /* ValidationContainer.swift */; };
+		035D5D0724E9655E0047B4AA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0624E9655E0047B4AA /* EmailValidation.swift */; };
+		035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */; };
+		035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -267,6 +271,10 @@
 		035D5CFC24E9515B0047B4AA /* RegisterUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewModel.swift; sourceTree = "<group>"; };
 		035D5CFE24E952A50047B4AA /* RegisterUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterUser.storyboard; sourceTree = "<group>"; };
 		035D5D0024E952B70047B4AA /* RegisterUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
+		035D5D0324E964640047B4AA /* ValidationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationContainer.swift; sourceTree = "<group>"; };
+		035D5D0624E9655E0047B4AA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
+		035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
+		035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCharacters.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -993,6 +1001,33 @@
 			path = RegisterUser;
 			sourceTree = "<group>";
 		};
+		035D5D0224E9643D0047B4AA /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				035D5D0A24E9FCD50047B4AA /* Enum */,
+				035D5D0524E965490047B4AA /* Body */,
+				035D5D0324E964640047B4AA /* ValidationContainer.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		035D5D0524E965490047B4AA /* Body */ = {
+			isa = PBXGroup;
+			children = (
+				035D5D0624E9655E0047B4AA /* EmailValidation.swift */,
+				035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */,
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
+		035D5D0A24E9FCD50047B4AA /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1308,6 +1343,7 @@
 		03AAFB5A2425E8660068FB1E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				035D5D0224E9643D0047B4AA /* Validation */,
 				03AAFB5B2425E8770068FB1E /* GCD.swift */,
 				03AAFB5D2425E9FF0068FB1E /* Typealias.swift */,
 				03AAFB5F2425EB0B0068FB1E /* FetiLipColors.swift */,
@@ -1893,6 +1929,7 @@
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
+				035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
 				034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */,
 				034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */,
@@ -1910,6 +1947,8 @@
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
+				035D5D0424E964640047B4AA /* ValidationContainer.swift in Sources */,
+				035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
 				03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */,
@@ -1957,6 +1996,7 @@
 				035D5CF324E8F55C0047B4AA /* EditProfileDetailViewController.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,
 				034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */,
+				035D5D0724E9655E0047B4AA /* EmailValidation.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
 				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,
 				034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */,

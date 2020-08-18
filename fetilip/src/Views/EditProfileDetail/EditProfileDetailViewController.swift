@@ -75,7 +75,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         switch editProfileDetailType {
         case .userName(let defaults):
             editInformationTextView.text = defaults
-            self.navigationItem.title = R._string.profileScreenTitle
+            self.navigationItem.title = R._string.editUserNameScreenTitle
         default:
             break
         }
