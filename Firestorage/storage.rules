@@ -5,6 +5,11 @@ service firebase.storage {
       allow read: if true; 
     }
 
+    match /users/{userID}/{allPaths=**} {
+      allow write: if isUserAuthenticated(userID);
+      allow read: if true;
+    }
+
     function isAnyAuthenticated() {
       return request.auth != null;
     }

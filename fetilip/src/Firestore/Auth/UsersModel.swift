@@ -33,6 +33,15 @@ protocol UserAuthModelProtocol {
     /// Sign in with email and password.
     func signInWithEmailAndPassword(email: String, password: String) -> Single<FirebaseUser>
 
+    /**
+     * Upgrade perpetual accoutn with email and password from anonymous user.
+     *
+     * - Parameters:
+     *  - email: Email adress
+     *  - password: Password
+     * - Returns: Single<FirebaseUser>
+     */
+    func upgradePerpetualAccountFromAnonymous(email: String, password: String, linkingUser user: FirebaseUser) -> Single<FirebaseUser>
 }
 
 /**
@@ -131,6 +140,21 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 observer(.success(()))
             } catch {
                 observer(.error(User.AuthError.failedLogout))
+            }
+            return Disposables.create()
+        }
+    }
+
+    public func upgradePerpetualAccountFromAnonymous(email: String, password: String, linkingUser user: FirebaseUser) -> Single<FirebaseUser> {
+        return Single.create { observer in
+            let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+            user.link(with: credential) { (result, error) in
+                if let e = error {
+                    observer(.error(e))
+                }
+                if let user = Auth.auth().currentUser {
+                    observer(.success(user))
+                }
             }
             return Disposables.create()
         }

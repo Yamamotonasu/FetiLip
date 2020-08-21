@@ -121,16 +121,6 @@ extension DebugViewModel {
         }
     }
 
-    /// Commit user name
-    private func commitUserName(with userName: String) {
-        usersModelClient.updateUserName(userName: userName).subscribe(onSuccess: { _ in
-            self.notifySubject.onNext("名前を更新しました。")
-        }, onError: { e in
-            log.error(e)
-            self.notifySubject.onNext("名前の更新に失敗しました。")
-        }).disposed(by: disposeBag)
-    }
-
     /// Commit user profile.
     private func commitUserProfile(with userProfile: String) {
         usersModelClient.updateUserProfile(profile: userProfile).subscribe(onSuccess: { _ in
@@ -193,7 +183,7 @@ extension DebugViewModel: ViewModelType {
 
         // Reaction to the tap of the save user name button.
         input.tapSaveNameButton.withLatestFrom(input.userNameObservable).subscribe(onNext: { userName in
-            self.commitUserName(with: userName)
+//            self.commitUserName(with: userName)
         }).disposed(by: disposeBag)
 
         // Reaction to the tap of the save user profile button.

@@ -12,6 +12,14 @@ extension R {
 
     struct _string {
 
+        // MARK: - Title
+
+        static let profileScreenTitle: String = "プロフィールを編集する"
+
+        static let registerUserScreentTitle: String = "正式登録する"
+
+        static let editUserNameScreenTitle: String = "ユーザー名を更新する"
+
         // MARK: - User message
 
         static let errorOccurred: String = "エラーが発生しました。時間を置いて再度お試しください。"
@@ -41,6 +49,22 @@ extension R {
             static let imageNotFound = "画像が見つかりません。再度選択してください。"
 
             static let excessiveNumberOfInputs = "制限を超える文字数のレビューは投稿出来ません。"
+
+            // MARK: - EditProfile
+
+            static let updateImageNotFound = "更新する画像が見つかりません。"
+        }
+
+        struct validation {
+
+            static let emptyInput: String = "入力してください。"
+
+            static func tooLongInput(maximum: Int) -> String {
+                return "入力出来るのは\(maximum)文字までです。"
+            }
+
+            static let invalidEmailFormat = "正しいメールアドレスを入力してください。"
+
         }
 
     }
