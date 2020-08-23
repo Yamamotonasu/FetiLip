@@ -42,6 +42,27 @@ protocol UserAuthModelProtocol {
      * - Returns: Single<FirebaseUser>
      */
     func upgradePerpetualAccountFromAnonymous(email: String, password: String, linkingUser user: FirebaseUser) -> Single<FirebaseUser>
+
+    /**
+     * Update user email adress associated with authentication.
+     *
+     * - Parameters:
+     *  - email: Email adress
+     * - Returns: Single<()>
+     */
+    func updateUserEmail(email: String) -> Single<()>
+
+    /**
+     * Authenticate again.
+     *
+     * - Parameters:
+     *  - email: Email adress already registered.
+     *  - password: Password already registerd.
+     * - Returns: Signal<credential>
+     *
+     */
+    func reauthenticateUser(email: String, password: String) -> Single<()>
+
 }
 
 /**
@@ -157,6 +178,45 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 }
             }
             return Disposables.create()
+        }
+    }
+
+    public func updateUserEmail(email: String) -> Single<()> {
+        return Single.create { observer in
+            guard let user = Auth.auth().currentUser else {
+                observer(.error(User.AuthError.currentUserNotFound))
+                return Disposables.create()
+            }
+
+
+            if user.isAnonymous {
+                observer(.error(User.AuthError.needToUpdateFromAnonymousUser))
+            } else {
+                user.updateEmail(to: email) { error in
+                    if let e = error {
+                        observer(.error(User.AuthError.failedUpdateEmail(reason: e.localizedDescription)))
+                    } else {
+                        observer(.success(()))
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    public func reauthenticateUser(email: String, password: String) -> Single<()> {
+        return checkLogin().flatMap { user in
+            return Single.create { observer in
+                let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+                user.reauthenticate(with: credential) { (result, error) in
+                    if let e = error {
+                        observer(.error(e))
+                    } else {
+                        observer(.success(()))
+                    }
+                 }
+                return Disposables.create()
+            }
         }
     }
 

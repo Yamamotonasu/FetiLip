@@ -64,6 +64,10 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 2
+
+        self.emailTextView.keyboardType = .emailAddress
+        self.passwordTextView.isSecureTextEntry = true
+        self.passwordTextView.keyboardType = .emailAddress
     }
 
     private func subscribeUI() {
@@ -81,8 +85,8 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
             self.registerButton.alpha = enabled ? 1 : 0.5
         }).disposed(by: rx.disposeBag)
 
-        output.registerResult.subscribe(onNext: { _ in
-            self.close()
+        output.registerResult.subscribe(onNext: { [weak self] _ in
+            self?.close()
         }, onError: { e in
             log.error(e.localizedDescription)
         }).disposed(by: rx.disposeBag)

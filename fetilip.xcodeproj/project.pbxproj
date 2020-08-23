@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */; };
 		034A9859249602F7009336F0 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9856249602F7009336F0 /* Nuke.framework */; };
 		034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9857249602F7009336F0 /* Differentiator.framework */; };
 		034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9858249602F7009336F0 /* RxDataSources.framework */; };
@@ -83,6 +84,9 @@
 		035D5D0724E9655E0047B4AA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0624E9655E0047B4AA /* EmailValidation.swift */; };
 		035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */; };
 		035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */; };
+		035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* SecureUser.swift */; };
+		035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */; };
+		035F6D9124F29ADD00991231 /* UserNameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D9024F29ADD00991231 /* UserNameValidation.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -160,6 +164,9 @@
 		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
 		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
+		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
+		03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */; };
+		03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */; };
 		03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */; };
 		03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */; };
 		03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */; };
@@ -200,6 +207,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewModel.swift; sourceTree = "<group>"; };
 		034A9856249602F7009336F0 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		034A9857249602F7009336F0 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		034A9858249602F7009336F0 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -275,6 +283,9 @@
 		035D5D0624E9655E0047B4AA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
 		035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCharacters.swift; sourceTree = "<group>"; };
+		035D5D0E24EE07BA0047B4AA /* SecureUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUser.swift; sourceTree = "<group>"; };
+		035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserEntity.swift; sourceTree = "<group>"; };
+		035F6D9024F29ADD00991231 /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -487,6 +498,9 @@
 		03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
 		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
+		03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
+		03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
+		03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputPassword.storyboard; sourceTree = "<group>"; };
 		03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
@@ -525,6 +539,7 @@
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
 				034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */,
+				03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
 				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
@@ -738,8 +753,8 @@
 		034C562F24CE4E230005B6C5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				034C563324CE4E910005B6C5 /* User */,
 				034C563024CE4E690005B6C5 /* Post */,
+				034C563324CE4E910005B6C5 /* User */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -755,6 +770,7 @@
 		034C563324CE4E910005B6C5 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				035D5D1024EE08640047B4AA /* Secure */,
 				034C563424CE4EA90005B6C5 /* UserEntity.swift */,
 			);
 			path = User;
@@ -865,6 +881,7 @@
 		035BAFE824598A31001FF6D1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				035D5D0D24EE07940047B4AA /* Secure */,
 				035BAFE924598A73001FF6D1 /* UserModel.swift */,
 			);
 			path = Users;
@@ -962,6 +979,7 @@
 		035D5CEF24E8F5230047B4AA /* EditProfileDetail */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B28D24F261B100E0D1DE /* InputPassword */,
 				035D5CF024E8F5470047B4AA /* EditProfileDetail.storyboard */,
 				035D5CF224E8F55C0047B4AA /* EditProfileDetailViewController.swift */,
 			);
@@ -971,6 +989,7 @@
 		035D5CF424E910F40047B4AA /* EditProfileDetail */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B28C24F261A400E0D1DE /* InputPassword */,
 				035D5CF524E911200047B4AA /* EditProfileDetailViewModel.swift */,
 			);
 			path = EditProfileDetail;
@@ -1016,6 +1035,7 @@
 			children = (
 				035D5D0624E9655E0047B4AA /* EmailValidation.swift */,
 				035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */,
+				035F6D9024F29ADD00991231 /* UserNameValidation.swift */,
 			);
 			path = Body;
 			sourceTree = "<group>";
@@ -1026,6 +1046,22 @@
 				035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		035D5D0D24EE07940047B4AA /* Secure */ = {
+			isa = PBXGroup;
+			children = (
+				035D5D0E24EE07BA0047B4AA /* SecureUser.swift */,
+			);
+			path = Secure;
+			sourceTree = "<group>";
+		};
+		035D5D1024EE08640047B4AA /* Secure */ = {
+			isa = PBXGroup;
+			children = (
+				035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */,
+			);
+			path = Secure;
 			sourceTree = "<group>";
 		};
 		036A450024711D9500DD9282 /* Posts */ = {
@@ -1193,6 +1229,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */,
 				0359901324B407F3000F8A27 /* CodableFirebase.framework */,
 				034A988124A0ECF9009336F0 /* Nimble.framework */,
 				034A987F24A0ECE6009336F0 /* Quick.framework */,
@@ -1587,6 +1624,23 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		03B1B28C24F261A400E0D1DE /* InputPassword */ = {
+			isa = PBXGroup;
+			children = (
+				0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */,
+			);
+			path = InputPassword;
+			sourceTree = "<group>";
+		};
+		03B1B28D24F261B100E0D1DE /* InputPassword */ = {
+			isa = PBXGroup;
+			children = (
+				03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */,
+				03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */,
+			);
+			path = InputPassword;
+			sourceTree = "<group>";
+		};
 		03B50B5724E4ADAD00C7A14F /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1739,6 +1793,7 @@
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
+				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
 				035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */,
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
@@ -1788,6 +1843,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CodableFirebase.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1807,6 +1863,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CodableFirebase.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FloatingPanel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1929,13 +1986,16 @@
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
+				0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */,
 				035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
 				034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */,
+				035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */,
 				034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */,
 				036A45022471212A00DD9282 /* PostsModel.swift in Sources */,
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
 				034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */,
+				035F6D9124F29ADD00991231 /* UserNameValidation.swift in Sources */,
 				034C562824C490410005B6C5 /* FirestorageError.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
@@ -1971,6 +2031,7 @@
 				035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
+				035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
@@ -1982,6 +2043,7 @@
 				034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */,
+				03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */,
 				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				035D5CF624E911200047B4AA /* EditProfileDetailViewModel.swift in Sources */,
