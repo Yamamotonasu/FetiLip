@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import FloatingPanel
 
 /**
  * Edit profile detail view controller.
@@ -31,11 +32,17 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     private var editProfileDetailType: EditProfileDetailType!
 
+    private var floatingPanelController: FloatingPanelController!
+
     private lazy var rightSaveButton: UIBarButtonItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: #selector(saveProfile))
 
     // MARK: - Rx
 
-    private let updateProfileSubject: PublishSubject<EditProfileDetailType> = PublishSubject<EditProfileDetailType>()
+    private var updateProfileSubject: BehaviorSubject<EditProfileDetailType>? = nil
+
+    private let inputPasswordSubject: PublishSubject<String> = PublishSubject<String>()
+
+    private let saveInputInformationEvent: PublishSubject<()> = PublishSubject<()>()
 
     // MARK: - Outlets
 
@@ -45,6 +52,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateProfileSubject = BehaviorSubject<EditProfileDetailType>(value: editProfileDetailType)
         composeUI()
         subscribeUI()
     }
@@ -54,6 +62,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         if let tab = self.tabBarController as? GlobalTabBarController {
             tab.customTabBar.alpha = 0
         }
+        setupHalfModal()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -61,17 +70,30 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         if let tab = self.tabBarController as? GlobalTabBarController {
             tab.customTabBar.alpha = 1
         }
+        floatingPanelController.dismiss(animated: true)
+    }
+
+    private func setupHalfModal() {
+        floatingPanelController = FloatingPanelController()
+
+        let modalViewController = InputPasswordViewControllerGenerator.generate(inputPasswordSubject: inputPasswordSubject, saveInformationSubject: saveInputInformationEvent)
+        floatingPanelController.set(contentViewController: modalViewController)
+        floatingPanelController.isRemovalInteractionEnabled = true
+
+        floatingPanelController.delegate = self
     }
 
     // MARK: - Functions
 
     private func composeUI() {
+        // Setup navigation bar
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationItem.rightBarButtonItem = rightSaveButton
 
         editInformationTextView.textContainerInset = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 8)
 
+        // Setup edit mode
         switch editProfileDetailType {
         case .userName(let defaults):
             editInformationTextView.text = defaults
@@ -85,7 +107,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(textFieldObservable: editInformationTextView.rx.text.asObservable(), updateProfileEvent: updateProfileSubject.asObservable())
+        let input = ViewModel.Input(textFieldObservable: editInformationTextView.rx.text.asObservable(), passwordTextObservable: inputPasswordSubject.asObservable(), updateProfileEvent: updateProfileSubject?.asObservable() ?? Observable.empty())
         let output = viewModel.transform(input: input)
 
         output.updateResult.subscribe(onNext: { [weak self] _ in
@@ -98,7 +120,35 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
     }
 
     @objc private func saveProfile() {
-        updateProfileSubject.onNext(editProfileDetailType)
+        switch editProfileDetailType {
+        case .userName:
+            saveInputInformationEvent.onNext(())
+        case .email:
+            self.present(floatingPanelController, animated: true)
+        default:
+            break
+        }
+    }
+
+}
+
+// MARK: - Floating panel delegate methods
+
+extension EditProfileDetailViewController: FloatingPanelControllerDelegate {
+
+    func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: FloatingPanelPosition) {
+        switch targetPosition {
+        case .tip:
+            vc.dismiss(animated: true)
+        case .half:
+            log.debug("half dragging.")
+        case .full:
+            log.debug("full dragging")
+        case .hidden:
+            log.debug("hidden dragging")
+        @unknown default:
+            break
+        }
     }
 
 }

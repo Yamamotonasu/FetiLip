@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */; };
 		034A9859249602F7009336F0 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9856249602F7009336F0 /* Nuke.framework */; };
 		034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9857249602F7009336F0 /* Differentiator.framework */; };
 		034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9858249602F7009336F0 /* RxDataSources.framework */; };
@@ -163,6 +164,8 @@
 		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
 		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
+		03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */; };
+		03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */; };
 		03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */; };
 		03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */; };
 		03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */; };
@@ -203,6 +206,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewModel.swift; sourceTree = "<group>"; };
 		034A9856249602F7009336F0 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		034A9857249602F7009336F0 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		034A9858249602F7009336F0 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -493,6 +497,8 @@
 		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
 		03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
+		03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
+		03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputPassword.storyboard; sourceTree = "<group>"; };
 		03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
@@ -971,6 +977,7 @@
 		035D5CEF24E8F5230047B4AA /* EditProfileDetail */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B28D24F261B100E0D1DE /* InputPassword */,
 				035D5CF024E8F5470047B4AA /* EditProfileDetail.storyboard */,
 				035D5CF224E8F55C0047B4AA /* EditProfileDetailViewController.swift */,
 			);
@@ -1617,6 +1624,7 @@
 		03B1B28C24F261A400E0D1DE /* InputPassword */ = {
 			isa = PBXGroup;
 			children = (
+				0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */,
 			);
 			path = InputPassword;
 			sourceTree = "<group>";
@@ -1624,6 +1632,8 @@
 		03B1B28D24F261B100E0D1DE /* InputPassword */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */,
+				03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */,
 			);
 			path = InputPassword;
 			sourceTree = "<group>";
@@ -1631,7 +1641,6 @@
 		03B50B5724E4ADAD00C7A14F /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
-				03B1B28D24F261B100E0D1DE /* InputPassword */,
 				03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */,
 				03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */,
 			);
@@ -1781,6 +1790,7 @@
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
+				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
 				035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */,
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
@@ -1973,6 +1983,7 @@
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
+				0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */,
 				035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
 				034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */,
@@ -2028,6 +2039,7 @@
 				034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */,
 				03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */,
 				034C562C24CA4BA50005B6C5 /* ActivityIndicator.swift in Sources */,
+				03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */,
 				0359900724ACDDB3000F8A27 /* PostLipDetailViewController.swift in Sources */,
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				035D5CF624E911200047B4AA /* EditProfileDetailViewModel.swift in Sources */,

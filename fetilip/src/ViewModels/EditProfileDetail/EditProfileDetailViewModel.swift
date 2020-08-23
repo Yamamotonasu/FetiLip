@@ -81,6 +81,7 @@ extension EditProfileDetailViewModel: ViewModelType {
 
     struct Input {
         let textFieldObservable: Observable<String?>
+        let passwordTextObservable: Observable<String>
         let updateProfileEvent: Observable<EditProfileDetailType>
     }
 
@@ -89,8 +90,8 @@ extension EditProfileDetailViewModel: ViewModelType {
     }
 
     func transform(input: Input) -> Output {
-        let combine = Observable.combineLatest(input.textFieldObservable, input.updateProfileEvent) {
-            (text: $0, type: $1)
+        let combine = Observable.combineLatest(input.textFieldObservable, input.updateProfileEvent, input.passwordTextObservable) {
+            (text: $0, type: $1, password: $2)
         }
 
         let updateSequence = input.updateProfileEvent.retry().withLatestFrom(combine).flatMap { pair -> Single<()> in
