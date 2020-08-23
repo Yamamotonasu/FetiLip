@@ -19,11 +19,18 @@ struct EditProfileDetailViewModel: EditProfileDetailViewModelProtocol {
     init(userModelClient: UsersModelClientProtocol, userAuthModel: UserAuthModelProtocol) {
         self.userModelClient = userModelClient
         self.userAuthModel = userAuthModel
+        indicator = self.activity.asObservable()
     }
+
+    // MARK: - Properties
 
     private let userModelClient: UsersModelClientProtocol
 
     private let userAuthModel: UserAuthModelProtocol
+
+    private let activity: ActivityIndicator = ActivityIndicator()
+
+    private let indicator: Observable<Bool>
 
     private let maxUserNameLength = 12
 
@@ -31,15 +38,17 @@ struct EditProfileDetailViewModel: EditProfileDetailViewModelProtocol {
 
 extension EditProfileDetailViewModel {
 
-    private func updateEvent(editProfileDetailType: EditProfileDetailType, input: String?) -> Single<()>{
+    private func updateEvent(editProfileDetailType: EditProfileDetailType, input: String?, password: String = "") -> Single<()>{
         switch editProfileDetailType {
         case .userName:
             return validateUserName(userName: input).flatMap { name -> Single<()> in
                 return self.userModelClient.updateUserName(uid: LoginAccountData.uid!, userName: name)
             }
-        case .email:
-            return validateEmail(email: input).flatMap { email -> Single<()> in
-                self.userAuthModel.updateUserEmail(email: email)
+        case .email(let defaults):
+            return self.userAuthModel.reauthenticateUser(email: defaults, password: password).flatMap { _ in
+                self.validateEmail(email: input).flatMap { email in
+                    self.userAuthModel.updateUserEmail(email: email)
+                }
             }
         default:
             return Observable.empty().asSingle()
@@ -83,22 +92,24 @@ extension EditProfileDetailViewModel: ViewModelType {
         let textFieldObservable: Observable<String?>
         let passwordTextObservable: Observable<String>
         let updateProfileEvent: Observable<EditProfileDetailType>
+        let saveProfileEvent: Observable<()>
     }
 
     struct Output {
         let updateResult: Observable<()>
+        let indicator: Observable<Bool>
     }
 
     func transform(input: Input) -> Output {
         let combine = Observable.combineLatest(input.textFieldObservable, input.updateProfileEvent, input.passwordTextObservable) {
-            (text: $0, type: $1, password: $2)
+            (input: $0, type: $1, password: $2)
         }
 
-        let updateSequence = input.updateProfileEvent.retry().withLatestFrom(combine).flatMap { pair -> Single<()> in
-            return self.updateEvent(editProfileDetailType: pair.type, input: pair.text)
-        }
+        let updateSequence = input.saveProfileEvent.asObservable().withLatestFrom(combine).flatMapLatest { stream -> Observable<()> in
+            return self.updateEvent(editProfileDetailType: stream.type, input: stream.input, password: stream.password).trackActivity(self.activity)
+        }.retry()
 
-        return Output(updateResult: updateSequence)
+        return Output(updateResult: updateSequence, indicator: indicator)
     }
 
 }

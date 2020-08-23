@@ -14,10 +14,12 @@ class InputPasswordViewController: UIViewController, ViewControllerMethodInjecta
 
     struct Dependency {
         let inputPasswordSubject: PublishSubject<String>
+        let saveInformationSubject: PublishSubject<()>
     }
 
     func inject(with dependency: Dependency) {
         self.inputPasswordSubject = dependency.inputPasswordSubject
+        self.saveInformationSubject = dependency.saveInformationSubject
     }
 
     typealias ViewModel = InputPasswordViewModel
@@ -34,16 +36,26 @@ class InputPasswordViewController: UIViewController, ViewControllerMethodInjecta
 
     private var inputPasswordSubject: PublishSubject<String>?
 
+    private var saveInformationSubject: PublishSubject<()>?
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribe()
         subscribeUI()
     }
 
     // MARK: - Functions
 
-    func subscribeUI() {
+    private func subscribe() {
+        authenticationButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
+            self.saveInformationSubject?.onNext(())
+            self.dismiss(animated: true)
+        }).disposed(by: rx.disposeBag)
+    }
+
+    private func subscribeUI() {
         let passwordTextObservable = passwordTextField.rx.text.asObservable()
         let input = ViewModel.Input(passwordText: passwordTextObservable)
         let output = viewModel.transform(input: input)
@@ -70,7 +82,8 @@ final class InputPasswordViewControllerGenerator {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(inputPasswordSubject: inputPasswordSubject))
+        vc.inject(with: .init(inputPasswordSubject: inputPasswordSubject,
+                              saveInformationSubject: saveInformationSubject))
         return vc
     }
 

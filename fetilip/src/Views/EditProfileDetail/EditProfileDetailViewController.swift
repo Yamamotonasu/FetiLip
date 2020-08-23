@@ -40,6 +40,8 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     private var updateProfileSubject: BehaviorSubject<EditProfileDetailType>? = nil
 
+    private var defaultInformationSubject: BehaviorSubject<String>? = nil
+
     private let inputPasswordSubject: PublishSubject<String> = PublishSubject<String>()
 
     private let saveInputInformationEvent: PublishSubject<()> = PublishSubject<()>()
@@ -54,6 +56,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         super.viewDidLoad()
         updateProfileSubject = BehaviorSubject<EditProfileDetailType>(value: editProfileDetailType)
         composeUI()
+        subscribe()
         subscribeUI()
     }
 
@@ -106,8 +109,19 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         }
     }
 
+    private func subscribe() {
+        let tapGesture = UITapGestureRecognizer()
+        self.view.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event.bind(onNext: { [unowned self] _ in
+            self.floatingPanelController.dismiss(animated: true)
+        }).disposed(by: rx.disposeBag)
+    }
+
     private func subscribeUI() {
-        let input = ViewModel.Input(textFieldObservable: editInformationTextView.rx.text.asObservable(), passwordTextObservable: inputPasswordSubject.asObservable(), updateProfileEvent: updateProfileSubject?.asObservable() ?? Observable.empty())
+        let input = ViewModel.Input(textFieldObservable: editInformationTextView.rx.text.asObservable(),
+                                    passwordTextObservable: inputPasswordSubject.asObservable(),
+                                    updateProfileEvent: updateProfileSubject?.asObservable() ?? Observable.empty(),
+                                    saveProfileEvent: saveInputInformationEvent)
         let output = viewModel.transform(input: input)
 
         output.updateResult.subscribe(onNext: { [weak self] _ in
@@ -117,6 +131,13 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
             log.error("Failed update. reason: \(e.localizedDescription)")
         }).disposed(by: rx.disposeBag)
 
+        output.indicator.subscribe(onNext: { bool in
+            if bool {
+                AppIndicator.show()
+            } else {
+                AppIndicator.dismiss()
+            }
+        }).disposed(by: rx.disposeBag)
     }
 
     @objc private func saveProfile() {

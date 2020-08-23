@@ -52,6 +52,17 @@ protocol UserAuthModelProtocol {
      */
     func updateUserEmail(email: String) -> Single<()>
 
+    /**
+     * Authenticate again.
+     *
+     * - Parameters:
+     *  - email: Email adress already registered.
+     *  - password: Password already registerd.
+     * - Returns: Signal<credential>
+     *
+     */
+    func reauthenticateUser(email: String, password: String) -> Single<()>
+
 }
 
 /**
@@ -190,6 +201,22 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 }
             }
             return Disposables.create()
+        }
+    }
+
+    public func reauthenticateUser(email: String, password: String) -> Single<()> {
+        return checkLogin().flatMap { user in
+            return Single.create { observer in
+                let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+                user.reauthenticate(with: credential) { (result, error) in
+                    if let e = error {
+                        observer(.error(e))
+                    } else {
+                        observer(.success(()))
+                    }
+                 }
+                return Disposables.create()
+            }
         }
     }
 
