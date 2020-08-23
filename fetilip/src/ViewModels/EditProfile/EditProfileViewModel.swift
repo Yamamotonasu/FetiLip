@@ -26,9 +26,10 @@ struct EditProfileViewModel: EditProfileViewModelProtocol {
 
     // MARK: - init
 
-    init(userModel: UsersModelClientProtocol, userStorageClient: UsersStorageClientProtocol) {
+    init(userModel: UsersModelClientProtocol, userStorageClient: UsersStorageClientProtocol, userAuthModel: UserAuthModelProtocol) {
         self.userModel = userModel
         self.userStorageClient = userStorageClient
+        self.userAuthModel = userAuthModel
         self.indicator = activity.asObservable()
     }
 
@@ -38,9 +39,17 @@ struct EditProfileViewModel: EditProfileViewModelProtocol {
 
     private let userStorageClient: UsersStorageClientProtocol
 
+    private let userAuthModel: UserAuthModelProtocol
+
     private let activity: ActivityIndicator = ActivityIndicator()
 
+    // MARK: - Rx
+
     private let indicator: Observable<Bool>
+
+    private let emailSubject: BehaviorSubject<String?> = BehaviorSubject<String?>(value: nil)
+
+    private let registerHiddenSubject: BehaviorSubject = BehaviorSubject<Bool>(value: true)
 
 }
 
@@ -54,6 +63,8 @@ extension EditProfileViewModel: ViewModelType {
     struct Output {
         let updateUserImageResult: Observable<()>
         let profileImageDriver: Driver<UIImage?>
+        let emailDriver: Driver<String?>
+        let registerButtonDriver: Driver<Bool>
         let loading: Observable<Bool>
     }
 
@@ -74,8 +85,15 @@ extension EditProfileViewModel: ViewModelType {
             return self.userModel.updateUserProfileReference(userRef: UserModel.makeDocumentRef(id: LoginAccountData.uid!), storagePath: storageRef.fullPath).trackActivity(self.activity)
         }
 
+        let _ = userAuthModel.checkLogin().subscribe(onSuccess: { user in
+            self.emailSubject.onNext(user.email)
+            self.registerHiddenSubject.onNext(!user.isAnonymous)
+        })
+
         return Output(updateUserImageResult: updateUserImageSequence,
                       profileImageDriver: input.profileImageObservable.asDriver(onErrorJustReturn: nil),
+                      emailDriver: emailSubject.asDriver(onErrorJustReturn: ""),
+                      registerButtonDriver: registerHiddenSubject.asDriver(onErrorJustReturn: true),
                       loading: indicator)
     }
 

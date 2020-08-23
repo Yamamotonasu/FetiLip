@@ -16,7 +16,7 @@ import FirebaseFirestore
  */
 public protocol FirestoreDatabaseCollection {
 
-    associatedtype FieldType: Codable, FirestoreEntity
+    associatedtype FieldType: Codable
 
     /// Collection name.
     static var collectionName: String { get }

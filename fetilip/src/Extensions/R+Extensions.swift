@@ -20,6 +20,8 @@ extension R {
 
         static let editUserNameScreenTitle: String = "ユーザー名を更新する"
 
+        static let editEmailScreenTitle: String = "メールアドレスを更新する"
+
         // MARK: - User message
 
         static let errorOccurred: String = "エラーが発生しました。時間を置いて再度お試しください。"

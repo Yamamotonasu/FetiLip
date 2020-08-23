@@ -25,7 +25,7 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     typealias ViewModel = EditProfileViewModel
 
-    let viewModel: ViewModel = EditProfileViewModel(userModel: UsersModelClient(), userStorageClient: UsersStorageClient())
+    let viewModel: ViewModel = EditProfileViewModel(userModel: UsersModelClient(), userStorageClient: UsersStorageClient(), userAuthModel: UsersAuthModel())
 
     func inject(with dependency: Dependency) {
         self.userDomainModel = dependency.userDomainModel
@@ -42,6 +42,10 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     @IBOutlet private weak var userNameView: UIStackView!
 
     @IBOutlet private weak var registerUserButton: UIButton!
+
+    @IBOutlet private weak var displayEmailField: UIStackView!
+
+    @IBOutlet private weak var emailLabel: UILabel!
 
     // MARK: - Properties
 
@@ -107,6 +111,13 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             self.presentingEditProfileDetail(editProfileType: .userName(default: self.userDomainModel?.userName ?? ""))
         }).disposed(by: rx.disposeBag)
 
+        let emailTapGesture = UITapGestureRecognizer()
+        displayEmailField.addGestureRecognizer(emailTapGesture)
+        emailTapGesture.rx.event.bind(onNext: { [unowned self] _ in
+            guard let email = self.emailLabel.text else { return }
+            self.presentingEditProfileDetail(editProfileType: .email(default: email))
+        }).disposed(by: rx.disposeBag)
+
         selectModeSuject.asObservable().subscribe(onNext: { [unowned self] mode in
             switch mode {
             case .libary:
@@ -132,6 +143,10 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             }, onError: { e in
                 log.error("\(e.localizedDescription)")
         }).disposed(by: rx.disposeBag)
+
+        output.emailDriver.drive(emailLabel.rx.text).disposed(by: rx.disposeBag)
+
+        output.registerButtonDriver.drive(registerUserButton.rx.isHidden).disposed(by: rx.disposeBag)
 
         output.loading.subscribe(onNext: { bool in
             if bool {

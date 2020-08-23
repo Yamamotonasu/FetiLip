@@ -44,3 +44,5 @@ exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCrea
   }
 
 })
+
+exports.updateEmailAdress = functions.region('asia-northeast1').auth.user()

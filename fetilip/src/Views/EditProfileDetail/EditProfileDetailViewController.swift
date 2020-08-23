@@ -25,7 +25,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     typealias ViewModel = EditProfileDetailViewModel
 
-    private let viewModel: ViewModel = EditProfileDetailViewModel(userModelClient: UsersModelClient())
+    private let viewModel: ViewModel = EditProfileDetailViewModel(userModelClient: UsersModelClient(), userAuthModel: UsersAuthModel())
 
     // MARK: - Properties
 
@@ -76,6 +76,9 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         case .userName(let defaults):
             editInformationTextView.text = defaults
             self.navigationItem.title = R._string.editUserNameScreenTitle
+        case .email(let defaults):
+            editInformationTextView.text = defaults
+            self.navigationItem.title = R._string.editEmailScreenTitle
         default:
             break
         }
@@ -95,7 +98,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
     }
 
     @objc private func saveProfile() {
-        updateProfileSubject.onNext(.userName(default: ""))
+        updateProfileSubject.onNext(editProfileDetailType)
     }
 
 }
@@ -119,5 +122,8 @@ public enum EditProfileDetailType {
 
     case userName(default: String)
 
+    case email(default: String)
+
     case none
+
 }

@@ -18,8 +18,6 @@ public struct UserEntity: Codable, FirestoreEntity {
 
     public let profile: String
 
-    public let email: String
-
     public let userName: String
 
     public let userImageRef: String?

@@ -42,6 +42,16 @@ protocol UserAuthModelProtocol {
      * - Returns: Single<FirebaseUser>
      */
     func upgradePerpetualAccountFromAnonymous(email: String, password: String, linkingUser user: FirebaseUser) -> Single<FirebaseUser>
+
+    /**
+     * Update user email adress associated with authentication.
+     *
+     * - Parameters:
+     *  - email: Email adress
+     * - Returns: Single<()>
+     */
+    func updateUserEmail(email: String) -> Single<()>
+
 }
 
 /**
@@ -154,6 +164,29 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    public func updateUserEmail(email: String) -> Single<()> {
+        return Single.create { observer in
+            guard let user = Auth.auth().currentUser else {
+                observer(.error(User.AuthError.currentUserNotFound))
+                return Disposables.create()
+            }
+
+
+            if user.isAnonymous {
+                observer(.error(User.AuthError.needToUpdateFromAnonymousUser))
+            } else {
+                user.updateEmail(to: email) { error in
+                    if let e = error {
+                        observer(.error(User.AuthError.failedUpdateEmail(reason: e.localizedDescription)))
+                    } else {
+                        observer(.success(()))
+                    }
                 }
             }
             return Disposables.create()

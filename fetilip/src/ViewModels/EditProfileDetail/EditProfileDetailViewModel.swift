@@ -16,11 +16,14 @@ protocol EditProfileDetailViewModelProtocol {
 
 struct EditProfileDetailViewModel: EditProfileDetailViewModelProtocol {
 
-    init(userModelClient: UsersModelClientProtocol) {
+    init(userModelClient: UsersModelClientProtocol, userAuthModel: UserAuthModelProtocol) {
         self.userModelClient = userModelClient
+        self.userAuthModel = userAuthModel
     }
 
-    let userModelClient: UsersModelClientProtocol
+    private let userModelClient: UsersModelClientProtocol
+
+    private let userAuthModel: UserAuthModelProtocol
 
     private let maxUserNameLength = 12
 
@@ -28,11 +31,15 @@ struct EditProfileDetailViewModel: EditProfileDetailViewModelProtocol {
 
 extension EditProfileDetailViewModel {
 
-    private func updateEvent(editProfileDetailType: EditProfileDetailType, userName: String?) -> Single<()>{
+    private func updateEvent(editProfileDetailType: EditProfileDetailType, input: String?) -> Single<()>{
         switch editProfileDetailType {
         case .userName:
-            return validateUserName(userName: userName).flatMap { name -> Single<()> in
+            return validateUserName(userName: input).flatMap { name -> Single<()> in
                 return self.userModelClient.updateUserName(uid: LoginAccountData.uid!, userName: name)
+            }
+        case .email:
+            return validateEmail(email: input).flatMap { email -> Single<()> in
+                self.userAuthModel.updateUserEmail(email: email)
             }
         default:
             return Observable.empty().asSingle()
@@ -41,6 +48,7 @@ extension EditProfileDetailViewModel {
 
     private func validateUserName(userName: String?) -> Single<String> {
         return Single.create { observer in
+            // TODO: Use validate container.
             if let name = userName {
                 if name.count > self.maxUserNameLength {
                     observer(.error(ValidationError.tooLongCharacters(maximum: self.maxUserNameLength)))
@@ -49,6 +57,19 @@ extension EditProfileDetailViewModel {
                 }
             } else {
                 observer(.error(ValidationError.emptyInput))
+            }
+            return Disposables.create()
+        }
+    }
+
+    private func validateEmail(email: String?) -> Single<String> {
+        return Single.create { observer in
+            let validator = EmailValidator.validate(email) { $0.isNotEmpty().validFormat() }
+            switch validator {
+            case .invalid(let status):
+                observer(.error(status))
+            case .valid:
+                observer(.success(email!))
             }
             return Disposables.create()
         }
@@ -72,8 +93,8 @@ extension EditProfileDetailViewModel: ViewModelType {
             (text: $0, type: $1)
         }
 
-        let updateSequence = combine.retry().flatMap { pair -> Single<()> in
-            return self.updateEvent(editProfileDetailType: pair.type, userName: pair.text)
+        let updateSequence = input.updateProfileEvent.retry().withLatestFrom(combine).flatMap { pair -> Single<()> in
+            return self.updateEvent(editProfileDetailType: pair.type, input: pair.text)
         }
 
         return Output(updateResult: updateSequence)
