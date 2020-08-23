@@ -162,6 +162,7 @@
 		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
 		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
+		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
 		03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */; };
 		03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */; };
 		03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */; };
@@ -491,6 +492,7 @@
 		03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
 		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
+		03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
 				034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */,
+				03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
 				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
@@ -977,6 +980,7 @@
 		035D5CF424E910F40047B4AA /* EditProfileDetail */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B28C24F261A400E0D1DE /* InputPassword */,
 				035D5CF524E911200047B4AA /* EditProfileDetailViewModel.swift */,
 			);
 			path = EditProfileDetail;
@@ -1215,6 +1219,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */,
 				0359901324B407F3000F8A27 /* CodableFirebase.framework */,
 				034A988124A0ECF9009336F0 /* Nimble.framework */,
 				034A987F24A0ECE6009336F0 /* Quick.framework */,
@@ -1609,9 +1614,24 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		03B1B28C24F261A400E0D1DE /* InputPassword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InputPassword;
+			sourceTree = "<group>";
+		};
+		03B1B28D24F261B100E0D1DE /* InputPassword */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InputPassword;
+			sourceTree = "<group>";
+		};
 		03B50B5724E4ADAD00C7A14F /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
+				03B1B28D24F261B100E0D1DE /* InputPassword */,
 				03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */,
 				03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */,
 			);
@@ -1810,6 +1830,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CodableFirebase.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1829,6 +1850,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CodableFirebase.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FloatingPanel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
