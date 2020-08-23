@@ -65,8 +65,21 @@ extension R {
                 return "入力出来るのは\(maximum)文字までです。"
             }
 
+            // MARK: - Email
+
             static let invalidEmailFormat = "正しいメールアドレスを入力してください。"
 
+            // MARK: - UserName
+
+            static let emptyUserName: String = "ユーザー名が入力されていません。"
+
+            static func tooShortName(minimum: Int) -> String {
+                return "ユーザー名は\(minimum)文字以上にする必要があります。"
+            }
+
+            static func tooLongName(maximum: Int) -> String {
+                return "ユーザー名は最大\(maximum)文字までです。"
+            }
         }
 
     }

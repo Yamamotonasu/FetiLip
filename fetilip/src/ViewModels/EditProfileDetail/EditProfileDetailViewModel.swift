@@ -57,15 +57,12 @@ extension EditProfileDetailViewModel {
 
     private func validateUserName(userName: String?) -> Single<String> {
         return Single.create { observer in
-            // TODO: Use validate container.
-            if let name = userName {
-                if name.count > self.maxUserNameLength {
-                    observer(.error(ValidationError.tooLongCharacters(maximum: self.maxUserNameLength)))
-                } else {
-                    observer(.success(name))
-                }
-            } else {
-                observer(.error(ValidationError.emptyInput))
+            let validator = UserNameValidator.validate(userName) { $0.isNotEmpty().lessThanDigits().greaterThanDigits() }
+            switch validator {
+            case .invalid(let status):
+                observer(.error(status))
+            case .valid:
+                observer(.success(userName!))
             }
             return Disposables.create()
         }
