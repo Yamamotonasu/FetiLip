@@ -87,6 +87,14 @@
 		035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* SecureUser.swift */; };
 		035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */; };
 		035F6D9124F29ADD00991231 /* UserNameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D9024F29ADD00991231 /* UserNameValidation.swift */; };
+		035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9224F342F500991231 /* SourceHanSans-Regular.otf */; };
+		035F6D9A24F3432600991231 /* SourceHanSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9424F3431E00991231 /* SourceHanSans-Medium.otf */; };
+		035F6D9B24F3432600991231 /* SourceHanSans-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9524F3431F00991231 /* SourceHanSans-Normal.otf */; };
+		035F6D9C24F3432600991231 /* SourceHanSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9624F3432100991231 /* SourceHanSans-Light.otf */; };
+		035F6D9D24F3432600991231 /* SourceHanSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9724F3432200991231 /* SourceHanSans-Bold.otf */; };
+		035F6D9E24F3432600991231 /* SourceHanSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */; };
+		035F6D9F24F3432600991231 /* SourceHanSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */; };
+		035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA024F348FF00991231 /* UIFont+Extensions.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -286,6 +294,14 @@
 		035D5D0E24EE07BA0047B4AA /* SecureUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUser.swift; sourceTree = "<group>"; };
 		035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserEntity.swift; sourceTree = "<group>"; };
 		035F6D9024F29ADD00991231 /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
+		035F6D9224F342F500991231 /* SourceHanSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Regular.otf"; sourceTree = "<group>"; };
+		035F6D9424F3431E00991231 /* SourceHanSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Medium.otf"; sourceTree = "<group>"; };
+		035F6D9524F3431F00991231 /* SourceHanSans-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Normal.otf"; sourceTree = "<group>"; };
+		035F6D9624F3432100991231 /* SourceHanSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Light.otf"; sourceTree = "<group>"; };
+		035F6D9724F3432200991231 /* SourceHanSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Bold.otf"; sourceTree = "<group>"; };
+		035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-ExtraLight.otf"; sourceTree = "<group>"; };
+		035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Heavy.otf"; sourceTree = "<group>"; };
+		035F6DA024F348FF00991231 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -1354,6 +1370,13 @@
 		03AAFB4A2420FB560068FB1E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				035F6D9724F3432200991231 /* SourceHanSans-Bold.otf */,
+				035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */,
+				035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */,
+				035F6D9624F3432100991231 /* SourceHanSans-Light.otf */,
+				035F6D9424F3431E00991231 /* SourceHanSans-Medium.otf */,
+				035F6D9524F3431F00991231 /* SourceHanSans-Normal.otf */,
+				035F6D9224F342F500991231 /* SourceHanSans-Regular.otf */,
 				03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */,
 				03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */,
 			);
@@ -1412,6 +1435,7 @@
 				036A45152472D96000DD9282 /* UIImage+Extensions.swift */,
 				034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */,
 				034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */,
+				035F6DA024F348FF00991231 /* UIFont+Extensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -1794,11 +1818,18 @@
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
+				035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */,
+				035F6D9C24F3432600991231 /* SourceHanSans-Light.otf in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
 				035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */,
+				035F6D9E24F3432600991231 /* SourceHanSans-ExtraLight.otf in Resources */,
+				035F6D9D24F3432600991231 /* SourceHanSans-Bold.otf in Resources */,
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
+				035F6D9F24F3432600991231 /* SourceHanSans-Heavy.otf in Resources */,
+				035F6D9B24F3432600991231 /* SourceHanSans-Normal.otf in Resources */,
+				035F6D9A24F3432600991231 /* SourceHanSans-Medium.otf in Resources */,
 				0359900924ACDE4F000F8A27 /* PostLipDetail.storyboard in Resources */,
 				03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */,
 			);
@@ -2007,6 +2038,7 @@
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
+				035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */,
 				035D5D0424E964640047B4AA /* ValidationContainer.swift in Sources */,
 				035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
