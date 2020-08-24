@@ -7,6 +7,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceHanSans-Normal.otf">
+            <string>SourceHanSans-Normal</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--My Page View Controller-->
         <scene sceneID="pZS-3W-h14">
@@ -52,6 +57,7 @@
                                     <constraint firstAttribute="height" constant="45" id="UZJ-jP-yWB"/>
                                     <constraint firstAttribute="width" secondItem="MUb-Qs-Hgt" secondAttribute="height" multiplier="5:1" id="gz9-Wk-lZL"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                 <state key="normal" title="プロフィールを編集する">
                                     <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -87,6 +93,7 @@
                                     <constraint firstAttribute="height" constant="40" id="9H6-ZA-O0X"/>
                                     <constraint firstAttribute="width" secondItem="RjR-DO-RiC" secondAttribute="height" multiplier="1.5:1" id="vkc-i3-35T"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                 <state key="normal" title="Debug">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
