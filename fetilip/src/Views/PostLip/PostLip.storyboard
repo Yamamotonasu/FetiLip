@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceHanSans-Bold.otf">
+            <string>SourceHanSans-Bold</string>
+        </array>
+        <array key="SourceHanSans-Normal.otf">
+            <string>SourceHanSans-Normal</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Post Lip View Controller-->
         <scene sceneID="sCq-wZ-J6X">
             <objects>
                 <viewController storyboardIdentifier="postLipViewController" modalPresentationStyle="fullScreen" id="R9a-Tv-nQP" customClass="PostLipViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bap-td-deK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4c-d6-fFA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-66-6ua">
-                                        <rect key="frame" x="19" y="0.0" width="337.5" height="68"/>
+                                        <rect key="frame" x="16" y="0.0" width="288" height="58"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-6m-8qE">
-                                                <rect key="frame" x="0.0" y="20" width="195.5" height="48"/>
+                                                <rect key="frame" x="0.0" y="20" width="148" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="suX-2D-B9o"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                                 <state key="normal" title="キャンセル">
                                                     <color key="titleColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWk-l8-NXn">
-                                                <rect key="frame" x="215.5" y="20" width="122" height="48"/>
+                                                <rect key="frame" x="168" y="20" width="120" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="GjE-ei-FxS"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                                 <state key="normal" title="画像を選択する">
                                                     <color key="titleColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
@@ -61,13 +69,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fGO-a8-MAc">
-                                <rect key="frame" x="0.0" y="88" width="375" height="451.5"/>
+                                <rect key="frame" x="0.0" y="78" width="320" height="388"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l4A-fe-XsL">
-                                        <rect key="frame" x="47" y="0.0" width="281" height="281.5"/>
+                                        <rect key="frame" x="40" y="0.0" width="240" height="240"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RhH-NR-iWL">
-                                                <rect key="frame" x="0.0" y="0.0" width="281" height="281.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <real key="value" value="10"/>
@@ -75,13 +83,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像を選択してください😊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Dqr-Ug-sjk">
-                                                <rect key="frame" x="10" y="132" width="261" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <rect key="frame" x="10" y="107.5" width="220" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtA-XL-Duu">
-                                                <rect key="frame" x="236" y="15" width="30" height="30"/>
+                                                <rect key="frame" x="195" y="15" width="30" height="30"/>
                                                 <color key="backgroundColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="1o2-QX-5PS"/>
@@ -128,7 +136,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KJ-Qg-v8A" customClass="PlaceHolderTextView" customModule="fetilip" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="301.5" width="375" height="150"/>
+                                        <rect key="frame" x="0.0" y="260" width="320" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8KJ-Qg-v8A" secondAttribute="height" multiplier="2.5:1" id="cIw-46-46X"/>
@@ -147,21 +155,21 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BoW-aA-FJY">
-                                <rect key="frame" x="70" y="559.5" width="235" height="74"/>
+                                <rect key="frame" x="70" y="486" width="180" height="107.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿ありがとうございます！😊" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-cK-SB3">
-                                        <rect key="frame" x="0.0" y="0.0" width="235" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="49.5"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IJ-9Z-SQA">
-                                        <rect key="frame" x="0.0" y="24" width="235" height="50"/>
+                                        <rect key="frame" x="0.0" y="57.5" width="180" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Kfz-h2-saC"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Bold" family="Source Han Sans" pointSize="17"/>
                                         <state key="normal" title="投稿">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>

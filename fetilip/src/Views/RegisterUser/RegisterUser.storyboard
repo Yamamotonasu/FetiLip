@@ -8,14 +8,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SourceHanSans-Bold.otf">
+            <string>SourceHanSans-Bold</string>
+        </array>
         <array key="SourceHanSans-Normal.otf">
             <string>SourceHanSans-Normal</string>
         </array>
-        <array key="YuGothic-Bold.otf">
-            <string>YuGo-Bold</string>
-        </array>
-        <array key="YuGothic-Medium.otf">
-            <string>YuGo-Medium</string>
+        <array key="SourceHanSans-Regular.otf">
+            <string>SourceHanSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="P2V-Sj-oBo">
-                                <rect key="frame" x="30" y="94" width="354" height="106"/>
+                                <rect key="frame" x="30" y="94" width="354" height="114"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SQA-tQ-hng">
                                         <rect key="frame" x="0.0" y="0.0" width="168" height="25"/>
@@ -54,7 +54,7 @@
                                             <constraint firstAttribute="height" constant="40" id="XTa-B8-q8h"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -63,8 +63,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラー時のメッセージが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-VU-1bY">
-                                        <rect key="frame" x="0.0" y="89" width="269.5" height="17"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="89" width="270" height="25"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.27058823529999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -74,33 +74,33 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-yg-jQq">
-                                <rect key="frame" x="30" y="230" width="354" height="98"/>
+                                <rect key="frame" x="30" y="238" width="354" height="114"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1r0-5L-fLq">
-                                        <rect key="frame" x="0.0" y="0.0" width="282.5" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="279.5" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" パスワード(6文字から32文字)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aty-p0-PcY">
-                                                <rect key="frame" x="0.0" y="0.0" width="233.5" height="17"/>
-                                                <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="230.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-R0-5Pq">
-                                                <rect key="frame" x="248.5" y="0.0" width="34" height="17"/>
-                                                <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                                <rect key="frame" x="245.5" y="0.0" width="34" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                                 <color key="textColor" red="0.93725490196078431" green="0.27058823529411763" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zcw-Z9-Lgw">
-                                        <rect key="frame" x="0.0" y="29" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="37" width="354" height="40"/>
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ybL-Ci-9YJ"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES" textContentType="password"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -109,8 +109,8 @@
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラー時のメッセージが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prU-gU-oFL">
-                                        <rect key="frame" x="0.0" y="81" width="269.5" height="17"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="89" width="270" height="25"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.27058823529999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -120,12 +120,12 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD0-mO-erA">
-                                <rect key="frame" x="30" y="368" width="354" height="45"/>
+                                <rect key="frame" x="30" y="392" width="354" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="SWn-EM-pKI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="YuGo-Bold" family="YuGothic" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="SourceHanSans-Bold" family="Source Han Sans" pointSize="17"/>
                                 <state key="normal" title="登録する">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -136,17 +136,17 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="lpq-66-oGA">
-                                <rect key="frame" x="50" y="443" width="314" height="41"/>
+                                <rect key="frame" x="50" y="467" width="314" height="57"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたのアカウントを守るために" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU1-5R-5CM">
-                                        <rect key="frame" x="29.5" y="0.0" width="255" height="17"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Bold" family="YuGothic" pointSize="17"/>
+                                        <rect key="frame" x="29.5" y="0.0" width="255" height="25"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Bold" family="Source Han Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正式登録をお願いします😊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34r-Tw-40I">
-                                        <rect key="frame" x="52.5" y="24" width="209" height="17"/>
-                                        <fontDescription key="fontDescription" name="YuGo-Bold" family="YuGothic" pointSize="17"/>
+                                        <rect key="frame" x="52.5" y="32" width="209" height="25"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Bold" family="Source Han Sans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>

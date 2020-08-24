@@ -94,6 +94,7 @@
 		035F6D9D24F3432600991231 /* SourceHanSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9724F3432200991231 /* SourceHanSans-Bold.otf */; };
 		035F6D9E24F3432600991231 /* SourceHanSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */; };
 		035F6D9F24F3432600991231 /* SourceHanSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */; };
+		035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA024F348FF00991231 /* UIFont+Extensions.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -300,6 +301,7 @@
 		035F6D9724F3432200991231 /* SourceHanSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Bold.otf"; sourceTree = "<group>"; };
 		035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-ExtraLight.otf"; sourceTree = "<group>"; };
 		035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Heavy.otf"; sourceTree = "<group>"; };
+		035F6DA024F348FF00991231 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -1433,6 +1435,7 @@
 				036A45152472D96000DD9282 /* UIImage+Extensions.swift */,
 				034A98702498FFA1009336F0 /* UICollectionView+Extensions.swift */,
 				034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */,
+				035F6DA024F348FF00991231 /* UIFont+Extensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -2035,6 +2038,7 @@
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
 				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
+				035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */,
 				035D5D0424E964640047B4AA /* ValidationContainer.swift in Sources */,
 				035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
