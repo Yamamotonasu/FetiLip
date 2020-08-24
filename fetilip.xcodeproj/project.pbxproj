@@ -87,6 +87,8 @@
 		035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* SecureUser.swift */; };
 		035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */; };
 		035F6D9124F29ADD00991231 /* UserNameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D9024F29ADD00991231 /* UserNameValidation.swift */; };
+		035F6DA324F47FF000991231 /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035F6DA224F47FF000991231 /* SwiftMessages.framework */; };
+		035F6DA824F481D500991231 /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA724F481D500991231 /* AppAlert.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -286,6 +288,8 @@
 		035D5D0E24EE07BA0047B4AA /* SecureUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUser.swift; sourceTree = "<group>"; };
 		035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserEntity.swift; sourceTree = "<group>"; };
 		035F6D9024F29ADD00991231 /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
+		035F6DA224F47FF000991231 /* SwiftMessages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMessages.framework; path = Carthage/Build/iOS/SwiftMessages.framework; sourceTree = "<group>"; };
+		035F6DA724F481D500991231 /* AppAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlert.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -547,6 +551,7 @@
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
 				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
+				035F6DA324F47FF000991231 /* SwiftMessages.framework in Frameworks */,
 				039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */,
 				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
 				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
@@ -1064,6 +1069,14 @@
 			path = Secure;
 			sourceTree = "<group>";
 		};
+		035F6DA624F481BD00991231 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				035F6DA724F481D500991231 /* AppAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1229,6 +1242,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				035F6DA224F47FF000991231 /* SwiftMessages.framework */,
 				03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */,
 				0359901324B407F3000F8A27 /* CodableFirebase.framework */,
 				034A988124A0ECF9009336F0 /* Nimble.framework */,
@@ -1394,6 +1408,7 @@
 		03AAFB6324272C250068FB1E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				035F6DA624F481BD00991231 /* Alert */,
 				039EB6852439BE7F0016436C /* Indicator */,
 				03AAFB672427330F0068FB1E /* CustomViews */,
 			);
@@ -1844,6 +1859,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CodableFirebase.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftMessages.framework",
 			);
 			name = "Carthage Run Script";
 			outputFileListPaths = (
@@ -1864,6 +1880,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CodableFirebase.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FloatingPanel.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftMessages.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2072,6 +2089,7 @@
 				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
 				034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,
+				035F6DA824F481D500991231 /* AppAlert.swift in Sources */,
 				036A450D2472CB8C00DD9282 /* PostModelClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

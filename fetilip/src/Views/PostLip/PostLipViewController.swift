@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 import NVActivityIndicatorView
 import Firebase
+import SwiftMessages
 
 /**
  * ViewController for posting lips.
@@ -74,6 +75,7 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
         super.viewDidLoad()
         subscribe()
         bindUI()
+        AppAlert.show()
     }
 
 }
