@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SourceHanSans-Normal.otf">
+            <string>SourceHanSans-Normal</string>
+        </array>
         <array key="YuGothic-Bold.otf">
             <string>YuGo-Bold</string>
         </array>
@@ -25,27 +28,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="P2V-Sj-oBo">
-                                <rect key="frame" x="30" y="94" width="354" height="98"/>
+                                <rect key="frame" x="30" y="94" width="354" height="106"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SQA-tQ-hng">
-                                        <rect key="frame" x="0.0" y="0.0" width="168" height="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVF-Xg-A3T">
-                                                <rect key="frame" x="0.0" y="0.0" width="119" height="17"/>
-                                                <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-9F-0DU">
-                                                <rect key="frame" x="134" y="0.0" width="34" height="17"/>
-                                                <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
+                                                <rect key="frame" x="134" y="0.0" width="34" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
                                                 <color key="textColor" red="0.93725490196078431" green="0.27058823529411763" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cAR-Gs-eMk">
-                                        <rect key="frame" x="0.0" y="29" width="354" height="40"/>
+                                        <rect key="frame" x="0.0" y="37" width="354" height="40"/>
                                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="XTa-B8-q8h"/>
@@ -60,7 +63,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラー時のメッセージが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-VU-1bY">
-                                        <rect key="frame" x="0.0" y="81" width="269.5" height="17"/>
+                                        <rect key="frame" x="0.0" y="89" width="269.5" height="17"/>
                                         <fontDescription key="fontDescription" name="YuGo-Medium" family="YuGothic" pointSize="17"/>
                                         <color key="textColor" red="0.93725490199999995" green="0.27058823529999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -71,7 +74,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-yg-jQq">
-                                <rect key="frame" x="30" y="222" width="354" height="98"/>
+                                <rect key="frame" x="30" y="230" width="354" height="98"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1r0-5L-fLq">
                                         <rect key="frame" x="0.0" y="0.0" width="282.5" height="17"/>
@@ -117,7 +120,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD0-mO-erA">
-                                <rect key="frame" x="30" y="360" width="354" height="45"/>
+                                <rect key="frame" x="30" y="368" width="354" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="SWn-EM-pKI"/>
@@ -133,7 +136,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="lpq-66-oGA">
-                                <rect key="frame" x="50" y="435" width="314" height="41"/>
+                                <rect key="frame" x="50" y="443" width="314" height="41"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたのアカウントを守るために" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU1-5R-5CM">
                                         <rect key="frame" x="29.5" y="0.0" width="255" height="17"/>

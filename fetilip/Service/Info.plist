@@ -28,6 +28,13 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>SourceHanSans-Regular.otf</string>
+		<string>SourceHanSans-Normal.otf</string>
+		<string>SourceHanSans-Medium.otf</string>
+		<string>SourceHanSans-Light.otf</string>
+		<string>SourceHanSans-Heavy.otf</string>
+		<string>SourceHanSans-ExtraLight.otf</string>
+		<string>SourceHanSans-Bold.otf</string>
 		<string>YuGothic-Medium.otf</string>
 		<string>YuGothic-Bold.otf</string>
 	</array>
