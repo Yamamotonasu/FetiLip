@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 import NVActivityIndicatorView
 import Firebase
+import SwiftMessages
 
 /**
  * ViewController for posting lips.
