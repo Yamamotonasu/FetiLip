@@ -64,6 +64,12 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // TODO: delete
+        AppAlert.show(message: "Fetilipへようこそ！", alertType: .info) {
+            log.debug("did show.")
+        }
+
         composeUI()
         subscribeUI()
         setupCollectionView()

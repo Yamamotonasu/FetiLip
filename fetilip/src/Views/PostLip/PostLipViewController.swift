@@ -75,7 +75,6 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
         super.viewDidLoad()
         subscribe()
         bindUI()
-        AppAlert.show()
     }
 
 }

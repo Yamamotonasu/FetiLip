@@ -29,4 +29,14 @@ public struct FetiLipColors {
         return UIColor.ex.hex("#030303", alpha: alpha)
     }
 
+    /// エラー色
+    static func error(alpha: CGFloat = 1.0) -> UIColor {
+        return UIColor.ex.hex("#FFB4A8", alpha: alpha)
+    }
+
+    /// 成功
+    static func success(alpha: CGFloat = 1.0) -> UIColor {
+        return UIColor.ex.hex("#3AB483", alpha: alpha)
+    }
+
 }
