@@ -138,7 +138,7 @@ extension PostLipViewController {
             self.deleteImageButton.isHidden = !exists
             self.attentionLabel.isHidden = !exists
             self.descriptionLabel.isHidden = exists
-            self.addImageButton.titleLabel?.text = exists ? "画像を編集する" : "画像を選択する"
+            self.addImageButton.titleLabel?.text = exists ? R._string.view_message.editImage : R._string.view_message.selectImage
             self.postButton.isEnabled = exists
             self.postButton.alpha = exists ? 1.0 : 0.5
             self.imagePosted.borderColor = exists ? .white : .gray
@@ -146,10 +146,11 @@ extension PostLipViewController {
         }).disposed(by: rx.disposeBag)
 
         output.postResult.subscribe(onNext: {
-            self.dismiss(animated: true)
+            self.dismiss(animated: true) {
+                AppAlert.show(message: R._string.success.postSucceed, alertType: .success)
+            }
         }, onError: { e in
-            // TODO: Error handling
-            log.error(e.localizedDescription)
+            AppAlert.show(message: e.localizedDescription, alertType: .error)
         }).disposed(by: rx.disposeBag)
 
         output.indicator.subscribe(onNext: { bool in

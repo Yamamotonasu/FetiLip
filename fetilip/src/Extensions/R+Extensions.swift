@@ -57,6 +57,13 @@ extension R {
             static let updateImageNotFound = "更新する画像が見つかりません。"
         }
 
+        struct success {
+
+            // MARK: - PostLip
+            static let postSucceed = "投稿しました！\nありがとうございます😃"
+
+        }
+
         struct validation {
 
             static let emptyInput: String = "入力してください。"
@@ -80,6 +87,15 @@ extension R {
             static func tooLongName(maximum: Int) -> String {
                 return "ユーザー名は最大\(maximum)文字までです。"
             }
+        }
+
+        struct view_message {
+
+            // MARK: - Postlip
+
+            static let editImage = "画像を編集する"
+
+            static let selectImage = "画像を選択する"
         }
 
     }
