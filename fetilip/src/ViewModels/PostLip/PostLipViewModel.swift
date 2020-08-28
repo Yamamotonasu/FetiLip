@@ -94,7 +94,7 @@ extension PostLipViewModel: ViewModelType {
                     }.trackActivity(self.activity)
             }.flatMapLatest { pair -> Observable<()> in
                 return self.postImage(ref: pair.0, review: pair.1).trackActivity(self.activity)
-            }
+        }.share()
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: uploadedImage.asObservable(),

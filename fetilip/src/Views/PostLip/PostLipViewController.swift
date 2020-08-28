@@ -145,12 +145,10 @@ extension PostLipViewController {
             self.postLipReviewTextView.isHidden = !exists
         }).disposed(by: rx.disposeBag)
 
-        output.postResult.subscribe(onNext: {
+        output.postResult.retryWithAlert().subscribe(onNext: {
             self.dismiss(animated: true) {
                 AppAlert.show(message: R._string.success.postSucceed, alertType: .success)
             }
-        }, onError: { e in
-            AppAlert.show(message: e.localizedDescription, alertType: .error)
         }).disposed(by: rx.disposeBag)
 
         output.indicator.subscribe(onNext: { bool in

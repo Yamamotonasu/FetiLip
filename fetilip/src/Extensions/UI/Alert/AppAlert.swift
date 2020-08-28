@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftMessages
+import RxSwift
 
 /**
  * App default alert struct.
@@ -45,6 +46,14 @@ public struct AppAlert {
 
         // Show alert 🎉
         SwiftMessages.show(config: config, view: view)
+    }
+
+    static func errorObservable(_ error: Error) -> Observable<()> {
+        return Observable.create { observer in
+            Self.show(message: error.localizedDescription, alertType: .error)
+            observer.on(.next(()))
+            return Disposables.create()
+        }
     }
 
 }
