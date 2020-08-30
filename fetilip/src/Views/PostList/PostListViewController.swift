@@ -66,9 +66,14 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         super.viewDidLoad()
 
         // TODO: delete
-        AppAlert.show(message: "Fetilipへようこそ！", alertType: .info) {
-            log.debug("did show.")
-        }
+//        AppAlert.show(message: "Fetilipへようこそ！", alertType: .info) {
+//            log.debug("did show.")
+//        }
+
+        AppAlert.showWithButton(duration: .forever, message: "通信エラーが発生しました。もう一度お試しください。", buttonTitle: "リトライ", alertType: .error, buttonAction: { _ in
+            log.debug("tap")
+            AppAlert.dismiss()
+        })
 
         composeUI()
         subscribeUI()

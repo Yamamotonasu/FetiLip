@@ -42,7 +42,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     private var defaultInformationSubject: BehaviorSubject<String>? = nil
 
-    private let inputPasswordSubject: PublishSubject<String> = PublishSubject<String>()
+    private let inputPasswordSubject: BehaviorSubject<String> = BehaviorSubject<String>(value: "")
 
     private let saveInputInformationEvent: PublishSubject<()> = PublishSubject<()>()
 
@@ -125,6 +125,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         let output = viewModel.transform(input: input)
 
         output.updateResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
+            ApplicationFlag.shared.updateNeedProfileUpdate(true)
             AppAlert.show(message: R._string.success.updateInformation, alertType: .success)
             self?.navigationController?.popViewController(animated: true)
         }).disposed(by: rx.disposeBag)

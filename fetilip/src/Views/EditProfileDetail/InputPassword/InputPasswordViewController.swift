@@ -13,7 +13,7 @@ import RxCocoa
 class InputPasswordViewController: UIViewController, ViewControllerMethodInjectable {
 
     struct Dependency {
-        let inputPasswordSubject: PublishSubject<String>
+        let inputPasswordSubject: BehaviorSubject<String>
         let saveInformationSubject: PublishSubject<()>
     }
 
@@ -34,7 +34,7 @@ class InputPasswordViewController: UIViewController, ViewControllerMethodInjecta
 
     // MARK: - Properties
 
-    private var inputPasswordSubject: PublishSubject<String>?
+    private var inputPasswordSubject: BehaviorSubject<String>?
 
     private var saveInformationSubject: PublishSubject<()>?
 
@@ -77,7 +77,7 @@ final class InputPasswordViewControllerGenerator {
 
     private init() {}
 
-    static func generate(inputPasswordSubject: PublishSubject<String>, saveInformationSubject: PublishSubject<()>) -> UIViewController {
+    static func generate(inputPasswordSubject: BehaviorSubject<String>, saveInformationSubject: PublishSubject<()>) -> UIViewController {
         guard let vc = R.storyboard.inputPassword.inputPasswordViewController() else {
             assertionFailure()
             return UIViewController()
