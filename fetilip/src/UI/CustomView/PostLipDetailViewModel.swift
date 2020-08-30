@@ -35,7 +35,7 @@ extension PostLipDetailViewModel: ViewModelType {
     }
 
     struct Output {
-        let userDataObservable: Driver<UserDomainModel>
+        let userDataObservable: Observable<UserDomainModel>
     }
 
     func transform(input: Self.Input) -> Self.Output {
@@ -46,9 +46,9 @@ extension PostLipDetailViewModel: ViewModelType {
                 observer(.success(UserDomainModel.convert(userEntity)))
                 return Disposables.create()
             }
-        }
+        }.share()
 
-        return Output(userDataObservable: userLoadSequence.asDriver(onErrorDriveWith: Driver.empty()))
+        return Output(userDataObservable: userLoadSequence)
     }
 
 }

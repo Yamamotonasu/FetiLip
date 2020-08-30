@@ -49,7 +49,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     let transitionController: ZoomTransitionController = ZoomTransitionController()
 
-    var field: PostDomainModel?
+    var field: PostDomainModel!
 
     var image: UIImage?
 
@@ -65,11 +65,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         composeUI()
         subscribe()
         subscribeUI()
-        if let model = field {
-            firstLoadEvent.onNext(model)
-        } else {
-            assertionFailure()
-        }
+        firstLoadEvent.onNext(field)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -98,9 +94,12 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable())
         let output = viewModel.transform(input: input)
 
-        output.userDataObservable.drive(onNext: { [weak self] domain in
-            self?.drawUserData(domain)
-        }).disposed(by: rx.disposeBag)
+        output.userDataObservable.retryWithRetryAlert { [weak self] _ in
+            self?.firstLoadEvent.onNext(field)
+        }.observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] domain in
+                self?.drawUserData(domain)
+            }).disposed(by: rx.disposeBag)
     }
 
     /**

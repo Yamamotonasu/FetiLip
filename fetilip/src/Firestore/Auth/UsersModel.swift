@@ -77,7 +77,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().signInAnonymously { _, error in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -94,7 +94,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -123,7 +123,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().signIn(withEmail: email, password: password, completion: { (_, error) in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -140,7 +140,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -171,7 +171,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
             let credential = EmailAuthProvider.credential(withEmail: email, password: password)
             user.link(with: credential) { (result, error) in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -210,7 +210,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 let credential = EmailAuthProvider.credential(withEmail: email, password: password)
                 user.reauthenticate(with: credential) { (result, error) in
                     if let e = error {
-                        observer(.error(e))
+                        observer(.error(AuthErrorHandler.errorCode(e)))
                     } else {
                         observer(.success(()))
                     }

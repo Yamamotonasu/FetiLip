@@ -32,8 +32,6 @@ struct EditProfileDetailViewModel: EditProfileDetailViewModelProtocol {
 
     private let indicator: Observable<Bool>
 
-    private let maxUserNameLength = 12
-
 }
 
 extension EditProfileDetailViewModel {
@@ -89,7 +87,7 @@ extension EditProfileDetailViewModel: ViewModelType {
         let textFieldObservable: Observable<String?>
         let passwordTextObservable: Observable<String>
         let updateProfileEvent: Observable<EditProfileDetailType>
-        let saveProfileEvent: Observable<()>
+        let saveProfileEvent: PublishSubject<()>
     }
 
     struct Output {
@@ -102,9 +100,9 @@ extension EditProfileDetailViewModel: ViewModelType {
             (input: $0, type: $1, password: $2)
         }
 
-        let updateSequence = input.saveProfileEvent.asObservable().withLatestFrom(combine).flatMapLatest { stream -> Observable<()> in
+        let updateSequence = input.saveProfileEvent.withLatestFrom(combine).flatMapLatest { stream -> Observable<()> in
             return self.updateEvent(editProfileDetailType: stream.type, input: stream.input, password: stream.password).trackActivity(self.activity)
-        }.retry()
+        }
 
         return Output(updateResult: updateSequence, indicator: indicator)
     }

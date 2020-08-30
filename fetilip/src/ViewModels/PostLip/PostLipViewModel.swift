@@ -94,7 +94,7 @@ extension PostLipViewModel: ViewModelType {
                     }.trackActivity(self.activity)
             }.flatMapLatest { pair -> Observable<()> in
                 return self.postImage(ref: pair.0, review: pair.1).trackActivity(self.activity)
-            }.retry()
+        }.share()
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: uploadedImage.asObservable(),
@@ -103,25 +103,21 @@ extension PostLipViewModel: ViewModelType {
     }
 
     /// Validate posted images and reviews.
-    private func
-        validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(UIImage, String)> {
+    private func validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(UIImage, String)> {
         return Observable.create { observer in
-            guard let image = pair.0 else {
-                observer.on(.error(PostValidateError.imageNotFound))
-                return Disposables.create()
+            let validator = ReviewValidator.validate(pair) {
+                $0.imageNotEmpty().lessThanDigits()
             }
-
-            // とりあえず雑に500文字以下でバリデーション
-            guard let text = pair.1, text.count < 500 else {
-                observer.on(.error(PostValidateError.excessiveNumberOfInputs))
-                return Disposables.create()
+            switch validator {
+            case .invalid(let status):
+                observer.on(.error(status))
+            case .valid:
+                let review = pair.1 == nil ? "" : pair.1!
+                observer.on(.next((pair.0!, review)))
             }
-
-            observer.on(.next((image, text)))
 
             return Disposables.create()
         }
-
     }
 
 }
@@ -143,12 +139,16 @@ private enum PostValidateError: Error {
 
     case excessiveNumberOfInputs
 
-    var message: String {
+}
+
+extension PostValidateError: LocalizedError {
+
+    var errorDescription: String? {
         switch self {
-        case .imageNotFound:
-            return R._string.error.imageNotFound
-        case .excessiveNumberOfInputs:
-            return R._string.error.excessiveNumberOfInputs
+            case .imageNotFound:
+                return R._string.error.imageNotFound
+            case .excessiveNumberOfInputs:
+                return R._string.error.excessiveNumberOfInputs
         }
     }
 

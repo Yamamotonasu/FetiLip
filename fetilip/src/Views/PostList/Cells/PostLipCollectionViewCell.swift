@@ -34,6 +34,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
     func clear() {
         lipImage.image = nil
         reviewText.text = nil
+        updateState()
     }
 
     func setupCell(_ model: PostDomainModel) {
@@ -45,15 +46,13 @@ class PostLipCollectionViewCell: UICollectionViewCell {
             .subscribe(
                 onSuccess: { [weak self] image in
                     self?.lipImage.image = image
+                    self?.updateState()
                     UIView.animate(withDuration: 0.36) {
                         self?.lipImage.alpha = 1
                     }
                 }, onError: { e in
-                    // TODO: Set image when failed load image from fire storage.
                     log.error(e.localizedDescription)
                 }).disposed(by: rx.disposeBag)
-
-//        reviewText.text = model.review
         setupDesign()
     }
 
@@ -71,6 +70,10 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
         // ドロップシャドウの形状をcontentViewに付与した角丸を考慮するようにする
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+    }
+
+    func updateState() {
+        self.isUserInteractionEnabled = lipImage.image != nil
     }
 
 }

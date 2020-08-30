@@ -49,13 +49,15 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     // MARK: - Properties
 
-    private var userDomainModel: UserDomainModel?
+    private var userDomainModel: UserDomainModel!
 
     private let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
 
     private let profileImageSubject: PublishSubject<UIImage?> = PublishSubject<UIImage?>()
 
     private let updateProfileImageSubject: PublishSubject<()> = PublishSubject<()>()
+
+    private let userLoadEvent: PublishSubject<()> = PublishSubject<()>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +70,9 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
         super.viewWillAppear(animated)
         if let tab = self.tabBarController as? GlobalTabBarController {
             tab.customTabBar.alpha = 0
+        }
+        if ApplicationFlag.shared.needProfileUpdate {
+            userLoadEvent.onNext(())
         }
     }
 
@@ -87,15 +92,13 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
         self.navigationItem.title = R._string.profileScreenTitle
 
         // Setup base information
-        if self.userDomainModel?.hasImage == true {
-            FirestorageLoader.loadImage(storagePath: self.userDomainModel!.imageRef).subscribe(onSuccess: { [weak self] image in
-                self?.profileImage.image = image
-            }).disposed(by: rx.disposeBag)
+        if self.userDomainModel.hasImage {
+            loadUserImage(storagePath: self.userDomainModel.imageRef)
         } else {
             self.profileImage.image = R.image.default_icon_female()
         }
 
-        userNameLabel.text = userDomainModel?.userName
+        userNameLabel.text = userDomainModel.userName
     }
 
     private func subscribe() {
@@ -135,18 +138,29 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(updateProfileImageEvent: updateProfileImageSubject.asObservable(), profileImageObservable: profileImageSubject.asObservable())
+        let input = ViewModel.Input(updateProfileImageEvent: updateProfileImageSubject.asObservable(),
+                                    profileImageObservable: profileImageSubject.asObservable(),
+                                    userLoadEvent: userLoadEvent)
         let output = viewModel.transform(input: input)
 
-        output.updateUserImageResult.subscribe(onNext: { _ in
-                log.debug("Success update image")
-            }, onError: { e in
-                log.error("\(e.localizedDescription)")
-        }).disposed(by: rx.disposeBag)
+        output.updateUserImageResult
+            .retryWithAlert()
+            .subscribe(onNext: { _ in
+                AppAlert.show(message: R._string.success.updateUserImageSuccess, alertType: .success)
+            }).disposed(by: rx.disposeBag)
 
-        output.emailDriver.drive(emailLabel.rx.text).disposed(by: rx.disposeBag)
+        output.emailDriver
+            .drive(emailLabel.rx.text)
+            .disposed(by: rx.disposeBag)
 
-        output.registerButtonDriver.drive(registerUserButton.rx.isHidden).disposed(by: rx.disposeBag)
+        output.registerButtonDriver
+            .map { !$0 }
+            .drive(registerUserButton.rx.isHidden)
+            .disposed(by: rx.disposeBag)
+
+        output.registerButtonDriver
+            .drive(displayEmailField.rx.isHidden)
+            .disposed(by: rx.disposeBag)
 
         output.loading.subscribe(onNext: { bool in
             if bool {
@@ -156,7 +170,22 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             }
         }).disposed(by: rx.disposeBag)
 
-        output.profileImageDriver.drive(profileImage.rx.image).disposed(by: rx.disposeBag)
+        output.profileImageDriver
+            .drive(profileImage.rx.image)
+            .disposed(by: rx.disposeBag)
+
+        output.userLoadResult.drive(onNext: { [weak self] user in
+            ApplicationFlag.shared.updateNeedProfileUpdate(false)
+            self?.userNameLabel.text = user.userName
+            self?.loadUserImage(storagePath: user.imageRef)
+        }).disposed(by: rx.disposeBag)
+
+    }
+
+    private func loadUserImage(storagePath: String) {
+        FirestorageLoader.loadImage(storagePath: storagePath).subscribe(onSuccess: { [weak self] image in
+            self?.profileImage.image = image
+        }).disposed(by: rx.disposeBag)
     }
 
     private func presentingSelectMode() {

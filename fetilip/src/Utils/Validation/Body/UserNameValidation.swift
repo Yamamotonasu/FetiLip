@@ -18,7 +18,11 @@ enum InvalidUserName: InvalidStatus, Error {
 
     case tooLong(maxCount: Int)
 
-    var message: String {
+}
+
+extension InvalidUserName: LocalizedError {
+
+    var errorDescription: String? {
         switch self {
         case .empty:
             return R._string.validation.emptyUserName

@@ -118,7 +118,7 @@ extension PostLipViewController {
         }).disposed(by: rx.disposeBag)
     }
 
-    /// Bint UI from view model outputs and ViewModel.
+    /// Bind UI from view model outputs and ViewModel.
     private func bindUI() {
         let input = ViewModel.Input(deleteButtonTapEvent: deleteImageButton.rx.tap.asObservable(),
                                     postButtonTapEvent: postButton.rx.tap.asObservable(),
@@ -138,18 +138,16 @@ extension PostLipViewController {
             self.deleteImageButton.isHidden = !exists
             self.attentionLabel.isHidden = !exists
             self.descriptionLabel.isHidden = exists
-            self.addImageButton.titleLabel?.text = exists ? "画像を編集する" : "画像を選択する"
-            self.postButton.isEnabled = exists
+            self.addImageButton.titleLabel?.text = exists ? R._string.view_message.editImage : R._string.view_message.selectImage
             self.postButton.alpha = exists ? 1.0 : 0.5
             self.imagePosted.borderColor = exists ? .white : .gray
             self.postLipReviewTextView.isHidden = !exists
         }).disposed(by: rx.disposeBag)
 
-        output.postResult.subscribe(onNext: {
-            self.dismiss(animated: true)
-        }, onError: { e in
-            // TODO: Error handling
-            log.error(e.localizedDescription)
+        output.postResult.retryWithAlert().subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true) {
+                AppAlert.show(message: R._string.success.postSucceed, alertType: .success)
+            }
         }).disposed(by: rx.disposeBag)
 
         output.indicator.subscribe(onNext: { bool in

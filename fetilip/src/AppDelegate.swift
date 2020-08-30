@@ -100,6 +100,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AppInitialization.settingStartScreen()
         }
 
+        ApplicationFlag.shared.clearFlags()
+
         return true
     }
 

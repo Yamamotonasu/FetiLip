@@ -58,6 +58,7 @@ extension EditProfileViewModel: ViewModelType {
     struct Input {
         let updateProfileImageEvent: Observable<()>
         let profileImageObservable: Observable<UIImage?>
+        let userLoadEvent: PublishSubject<()>
     }
 
     struct Output {
@@ -65,13 +66,14 @@ extension EditProfileViewModel: ViewModelType {
         let profileImageDriver: Driver<UIImage?>
         let emailDriver: Driver<String?>
         let registerButtonDriver: Driver<Bool>
+        let userLoadResult: Driver<UserDomainModel>
         let loading: Observable<Bool>
     }
 
     func transform(input: Input) -> Output {
         let updateUserImageSequence = input.updateProfileImageEvent
             .withLatestFrom(input.profileImageObservable)
-            .retry()
+            .retry(5)
             .flatMap { image -> Single<UIImage> in
                 return self.validateProfileImage(image: image)
             }.flatMap { image -> Observable<StorageReference> in
@@ -87,13 +89,24 @@ extension EditProfileViewModel: ViewModelType {
 
         let _ = userAuthModel.checkLogin().subscribe(onSuccess: { user in
             self.emailSubject.onNext(user.email)
-            self.registerHiddenSubject.onNext(!user.isAnonymous)
+            self.registerHiddenSubject.onNext(user.isAnonymous)
         })
+
+        let userLoadResult = input.userLoadEvent.flatMap { _ in
+            return self.userModel.getUserData(userRef: LoginAccountData.userDocumentReference).flatMap { data -> Single<UserDomainModel> in
+                return Single.create { observer in
+                    let domain = UserDomainModel.convert(data)
+                    observer(.success(domain))
+                    return Disposables.create()
+                }
+            }
+        }
 
         return Output(updateUserImageResult: updateUserImageSequence,
                       profileImageDriver: input.profileImageObservable.asDriver(onErrorJustReturn: nil),
                       emailDriver: emailSubject.asDriver(onErrorJustReturn: ""),
                       registerButtonDriver: registerHiddenSubject.asDriver(onErrorJustReturn: true),
+                      userLoadResult: userLoadResult.asDriver(onErrorDriveWith: Driver.empty()),
                       loading: indicator)
     }
 

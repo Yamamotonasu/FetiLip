@@ -44,7 +44,7 @@ extension MyPageViewModel: ViewModelType {
     }
 
     func transform(input: Input) -> Output {
-        let userLoadResult = input.userLoadEvent.retry().flatMap { _ in
+        let userLoadResult = input.userLoadEvent.flatMap { _ in
             return self.userModel.getUserData(userRef: LoginAccountData.userDocumentReference).flatMap { data -> Single<UserDomainModel> in
                 return Single.create { observer in
                     let domain = UserDomainModel.convert(data)
