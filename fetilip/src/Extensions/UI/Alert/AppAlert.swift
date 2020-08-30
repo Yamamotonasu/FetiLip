@@ -48,6 +48,12 @@ public struct AppAlert {
         SwiftMessages.show(config: config, view: view)
     }
 
+    /**
+     * When an error comes from stream, alert an retry.
+     *
+     * - Parameters:
+     *  - error: Enum conform Error type.
+     */
     static func errorObservable(_ error: Error) -> Observable<()> {
         return Observable.create { observer in
             Self.show(message: error.localizedDescription, alertType: .error)

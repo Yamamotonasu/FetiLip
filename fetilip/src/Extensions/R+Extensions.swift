@@ -87,6 +87,14 @@ extension R {
             static func tooLongName(maximum: Int) -> String {
                 return "ユーザー名は最大\(maximum)文字までです。"
             }
+
+            // MARK: - Review
+
+            static let reviewImageNotFound = "レビューを投稿するには画像が必要です。"
+
+            static func tooLongReview(maximum: Int) -> String {
+                return "レビューは最大\(maximum)文字までです。"
+            }
         }
 
         struct view_message {

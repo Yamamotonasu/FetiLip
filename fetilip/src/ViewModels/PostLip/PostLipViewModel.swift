@@ -105,18 +105,16 @@ extension PostLipViewModel: ViewModelType {
     /// Validate posted images and reviews.
     private func validateImageAndReviewText(pair: (UIImage?, String?)) -> Observable<(UIImage, String)> {
         return Observable.create { observer in
-            guard let image = pair.0 else {
-                observer.on(.error(PostValidateError.imageNotFound))
-                return Disposables.create()
+            let validator = ReviewValidator.validate(pair) {
+                $0.imageNotEmpty().lessThanDigits()
             }
-
-            // とりあえず雑に500文字以下でバリデーション
-            guard let text = pair.1, text.count < 20 else {
-                observer.on(.error(PostValidateError.excessiveNumberOfInputs))
-                return Disposables.create()
+            switch validator {
+            case .invalid(let status):
+                observer.on(.error(status))
+            case .valid:
+                let review = pair.1 == nil ? "" : pair.1!
+                observer.on(.next((pair.0!, review)))
             }
-
-            observer.on(.next((image, text)))
 
             return Disposables.create()
         }
