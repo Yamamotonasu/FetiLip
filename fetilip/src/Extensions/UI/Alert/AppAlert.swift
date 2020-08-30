@@ -119,6 +119,14 @@ public struct AppAlert {
         }
     }
 
+    static func errorObservable(error: Error, buttonAction: ((UIButton?) -> Void)?) -> Observable<()> {
+        return Observable.create { observer in
+            Self.showWithButton(message: "通信エラーが発生しました。再度お試しください。", buttonTitle: "リトライ", alertType: .error, buttonAction: buttonAction)
+            observer.on(.next(()))
+            return Disposables.create()
+        }
+    }
+
 }
 
 /**
