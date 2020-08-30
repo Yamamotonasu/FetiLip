@@ -59,8 +59,20 @@ extension R {
 
         struct success {
 
+            // MARK: - Common
+
+            static let updateInformation = "情報を更新しました。"
+
             // MARK: - PostLip
             static let postSucceed = "投稿しました！\nありがとうございます😃"
+
+            // MARK: - RegisterUser
+
+            static let registerUserSuccess = "ユーザー登録しました🎉"
+
+            // MARK: - EditProfile
+
+            static let updateUserImageSuccess = "プロフィール画像を更新しました😃"
 
         }
 

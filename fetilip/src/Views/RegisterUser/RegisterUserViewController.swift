@@ -59,6 +59,7 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
         self.navigationItem.title = R._string.registerUserScreentTitle
 
         self.navigationController?.navigationBar.barTintColor = FetiLipColors.theme()
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.layer.masksToBounds = false
         self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
@@ -81,14 +82,13 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
         output.passwordValidatedDriver.drive(passwordErrorLabel.rx.text).disposed(by: rx.disposeBag)
 
         output.enableRegisterButtonDriver.drive(onNext: { [unowned self] enabled in
-            self.registerButton.isEnabled = enabled
             self.registerButton.alpha = enabled ? 1 : 0.5
         }).disposed(by: rx.disposeBag)
 
-        output.registerResult.subscribe(onNext: { [weak self] _ in
-            self?.close()
-        }, onError: { e in
-            log.error(e.localizedDescription)
+        output.registerResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
+            self?.dismiss(animated: true) {
+                AppAlert.show(message: R._string.success.registerUserSuccess, alertType: .success)
+            }
         }).disposed(by: rx.disposeBag)
     }
 

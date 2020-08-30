@@ -87,7 +87,7 @@ extension EditProfileViewModel: ViewModelType {
 
         let _ = userAuthModel.checkLogin().subscribe(onSuccess: { user in
             self.emailSubject.onNext(user.email)
-            self.registerHiddenSubject.onNext(!user.isAnonymous)
+            self.registerHiddenSubject.onNext(user.isAnonymous)
         })
 
         return Output(updateUserImageResult: updateUserImageSequence,

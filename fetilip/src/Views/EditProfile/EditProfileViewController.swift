@@ -138,15 +138,24 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
         let input = ViewModel.Input(updateProfileImageEvent: updateProfileImageSubject.asObservable(), profileImageObservable: profileImageSubject.asObservable())
         let output = viewModel.transform(input: input)
 
-        output.updateUserImageResult.subscribe(onNext: { _ in
-                log.debug("Success update image")
-            }, onError: { e in
-                log.error("\(e.localizedDescription)")
-        }).disposed(by: rx.disposeBag)
+        output.updateUserImageResult
+            .retryWithAlert()
+            .subscribe(onNext: { _ in
+                AppAlert.show(message: R._string.success.updateUserImageSuccess, alertType: .success)
+            }).disposed(by: rx.disposeBag)
 
-        output.emailDriver.drive(emailLabel.rx.text).disposed(by: rx.disposeBag)
+        output.emailDriver
+            .drive(emailLabel.rx.text)
+            .disposed(by: rx.disposeBag)
 
-        output.registerButtonDriver.drive(registerUserButton.rx.isHidden).disposed(by: rx.disposeBag)
+        output.registerButtonDriver
+            .map { !$0 }
+            .drive(registerUserButton.rx.isHidden)
+            .disposed(by: rx.disposeBag)
+
+        output.registerButtonDriver
+            .drive(displayEmailField.rx.isHidden)
+            .disposed(by: rx.disposeBag)
 
         output.loading.subscribe(onNext: { bool in
             if bool {
@@ -156,7 +165,9 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             }
         }).disposed(by: rx.disposeBag)
 
-        output.profileImageDriver.drive(profileImage.rx.image).disposed(by: rx.disposeBag)
+        output.profileImageDriver
+            .drive(profileImage.rx.image)
+            .disposed(by: rx.disposeBag)
     }
 
     private func presentingSelectMode() {

@@ -36,7 +36,7 @@ extension RegisterUserViewModel: ViewModelType {
         let passwordValidatedDriver: Driver<String>
         let emailValidatedDriver: Driver<String>
         let enableRegisterButtonDriver: Driver<Bool>
-        let registerResult: Observable<FirebaseUser>
+        let registerResult: Observable<()>
     }
 
     func transform(input: Input) -> Output {
@@ -45,7 +45,7 @@ extension RegisterUserViewModel: ViewModelType {
                 let validator = PasswordValidator.validate(password) { $0.isNotEmpty().lessThanDigits().greaterThanDigits() }
                 switch validator {
                 case .invalid(let status):
-                    observer.on(.next(status.message))
+                    observer.on(.next(status.errorDescription ?? ""))
                 case .valid:
                     observer.on(.next(""))
                 }
@@ -58,7 +58,7 @@ extension RegisterUserViewModel: ViewModelType {
                 let validator = EmailValidator.validate(email) { $0.isNotEmpty().validFormat() }
                 switch validator {
                 case .invalid(let status):
-                    observer.on(.next(status.message))
+                    observer.on(.next(status.errorDescription ?? ""))
                 case .valid:
                     observer.on(.next(""))
                 }
@@ -81,10 +81,15 @@ extension RegisterUserViewModel: ViewModelType {
             }
         }
 
-        let registerSequence = input.registerTapEvent.asObservable().withLatestFrom(combineText).flatMapLatest { pair -> Single<FirebaseUser> in
+        let registerSequence = input.registerTapEvent.asObservable().withLatestFrom(combineText).flatMapLatest { pair in
             self.userAuthModel.checkLogin().flatMap { user -> Single<FirebaseUser> in
                 return self.userAuthModel.upgradePerpetualAccountFromAnonymous(email: pair.email, password: pair.password, linkingUser: user)
-            }
+            }.flatMap { user -> Single<()> in
+                return Single.create { observer in
+                    observer(.success(()))
+                    return Disposables.create()
+                }
+            }.asObservable()
         }
 
         return Output(passwordValidatedDriver: validatePassword.asDriver(onErrorJustReturn: ""),

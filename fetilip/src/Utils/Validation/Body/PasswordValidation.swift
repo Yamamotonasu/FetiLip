@@ -13,10 +13,16 @@ typealias PasswordValidator = ValidationContainer<String?, InvalidPassword>
 enum InvalidPassword: InvalidStatus, Error {
 
     case empty
+
     case tooShort(minCount: Int)
+
     case tooLong(maxCount: Int)
 
-    var message: String {
+}
+
+extension InvalidPassword: LocalizedError {
+
+    var errorDescription: String? {
         switch self {
         case .empty:
             return "パスワードが入力されていません。"

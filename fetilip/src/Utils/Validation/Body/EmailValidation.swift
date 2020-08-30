@@ -13,10 +13,16 @@ typealias EmailValidator = ValidationContainer<String?, InvalidEmail>
 let EMAIL_REGEX = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
 
 enum InvalidEmail: InvalidStatus, Error {
+
     case empty
+
     case invalidFormat
 
-    var message: String {
+}
+
+extension InvalidEmail: LocalizedError {
+
+    var errorDescription: String? {
         switch self {
         case .empty:
             return R._string.validation.emptyInput

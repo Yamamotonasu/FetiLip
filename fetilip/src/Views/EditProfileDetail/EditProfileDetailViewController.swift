@@ -124,11 +124,9 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
                                     saveProfileEvent: saveInputInformationEvent)
         let output = viewModel.transform(input: input)
 
-        output.updateResult.subscribe(onNext: { [weak self] _ in
-            log.debug("Success update information.")
+        output.updateResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
+            AppAlert.show(message: R._string.success.updateInformation, alertType: .success)
             self?.navigationController?.popViewController(animated: true)
-        }, onError: { e in
-            log.error("Failed update. reason: \(e.localizedDescription)")
         }).disposed(by: rx.disposeBag)
 
         output.indicator.subscribe(onNext: { bool in

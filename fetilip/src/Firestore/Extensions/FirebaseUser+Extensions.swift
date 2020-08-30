@@ -22,17 +22,22 @@ extension User {
 
         case failedUpdateEmail(reason: String)
 
-        var message: String {
-            switch self {
-            case .currentUserNotFound:
-                return "ユーザーが見つかりません。再度ログインしてください。"
-            case .failedLogout:
-                return "ログアウトに失敗しました。再度お試しください。"
-            case .needToUpdateFromAnonymousUser:
-                return "正式な登録を行う必要があります。"
-            case .failedUpdateEmail:
-                return "メールアドレスの更新に失敗しました。時間を置いてからお試しください。"
-            }
+    }
+
+}
+
+extension User.AuthError: LocalizedError {
+
+    public var errorDescription: String? {
+        switch self {
+        case .currentUserNotFound:
+            return "ユーザーが見つかりません。再度ログインしてください。"
+        case .failedLogout:
+            return "ログアウトに失敗しました。再度お試しください。"
+        case .needToUpdateFromAnonymousUser:
+            return "正式な登録を行う必要があります。"
+        case .failedUpdateEmail:
+            return "メールアドレスの更新に失敗しました。時間を置いてからお試しください。"
         }
     }
 
