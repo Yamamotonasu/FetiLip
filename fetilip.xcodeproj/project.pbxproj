@@ -101,6 +101,10 @@
 		035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAB24F9CC0100991231 /* Observable+extensions.swift */; };
 		035F6DAE24FB34DB00991231 /* ReviewValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAD24FB34DB00991231 /* ReviewValidation.swift */; };
 		035F6DB024FB8CAE00991231 /* ApplicationFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAF24FB8CAE00991231 /* ApplicationFlag.swift */; };
+		035F6DB224FD2EBA00991231 /* GlobalTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */; };
+		035F6DB824FD378500991231 /* MainModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DB724FD378500991231 /* MainModalViewController.swift */; };
+		035F6DBA24FD37A900991231 /* MainModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DB924FD37A900991231 /* MainModalViewModel.swift */; };
+		035F6DBC24FD37DB00991231 /* MainModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035F6DBB24FD37DB00991231 /* MainModal.storyboard */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -314,6 +318,10 @@
 		035F6DAB24F9CC0100991231 /* Observable+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+extensions.swift"; sourceTree = "<group>"; };
 		035F6DAD24FB34DB00991231 /* ReviewValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewValidation.swift; sourceTree = "<group>"; };
 		035F6DAF24FB8CAE00991231 /* ApplicationFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlag.swift; sourceTree = "<group>"; };
+		035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlobalTabBarViewModel.swift; path = fetilip/src/Utils/GlobalTabBarViewModel.swift; sourceTree = SOURCE_ROOT; };
+		035F6DB724FD378500991231 /* MainModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModalViewController.swift; sourceTree = "<group>"; };
+		035F6DB924FD37A900991231 /* MainModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModalViewModel.swift; sourceTree = "<group>"; };
+		035F6DBB24FD37DB00991231 /* MainModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainModal.storyboard; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -893,6 +901,7 @@
 		035BAFDD2443306D001FF6D1 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -1100,6 +1109,23 @@
 				035F6DA724F481D500991231 /* AppAlert.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		035F6DB324FD36F200991231 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				035F6DB924FD37A900991231 /* MainModalViewModel.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		035F6DB424FD371F00991231 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				035F6DBB24FD37DB00991231 /* MainModal.storyboard */,
+				035F6DB724FD378500991231 /* MainModalViewController.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		036A450024711D9500DD9282 /* Posts */ = {
@@ -1346,6 +1372,7 @@
 				035D5CEF24E8F5230047B4AA /* EditProfileDetail */,
 				034A98602496063E009336F0 /* Layouts */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
+				035F6DB424FD371F00991231 /* OnBoarding */,
 				035BB00E2467CF58001FF6D1 /* PostLip */,
 				0359900424ACDCBE000F8A27 /* PostLipDetail */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
@@ -1362,6 +1389,7 @@
 				03B50B5824E4ADC300C7A14F /* EditProfile */,
 				035D5CF424E910F40047B4AA /* EditProfileDetail */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
+				035F6DB324FD36F200991231 /* OnBoarding */,
 				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				0359900524ACDCCD000F8A27 /* PostLipDetail */,
 				035BAFDB24433040001FF6D1 /* PostList */,
@@ -1854,6 +1882,7 @@
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
+				035F6DBC24FD37DB00991231 /* MainModal.storyboard in Resources */,
 				035F6D9F24F3432600991231 /* SourceHanSans-Heavy.otf in Resources */,
 				035F6D9B24F3432600991231 /* SourceHanSans-Normal.otf in Resources */,
 				035F6D9A24F3432600991231 /* SourceHanSans-Medium.otf in Resources */,
@@ -2074,6 +2103,7 @@
 				035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
+				035F6DB224FD2EBA00991231 /* GlobalTabBarViewModel.swift in Sources */,
 				03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */,
 				034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */,
 				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
@@ -2093,6 +2123,7 @@
 				035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */,
 				035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
+				035F6DBA24FD37A900991231 /* MainModalViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
@@ -2121,6 +2152,7 @@
 				035D5CF324E8F55C0047B4AA /* EditProfileDetailViewController.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,
 				034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */,
+				035F6DB824FD378500991231 /* MainModalViewController.swift in Sources */,
 				035D5D0724E9655E0047B4AA /* EmailValidation.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
 				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,
