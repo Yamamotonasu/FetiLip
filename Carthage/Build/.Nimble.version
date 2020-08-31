@@ -2,7 +2,7 @@
   "commitish" : "v8.1.1",
   "iOS" : [
     {
-      "hash" : "3bac317b4acba3398f06b0e524ab750c75f34a2202913ecb337f332b4a852b65",
+      "hash" : "85b6d9a81f50c2e9af8b5eaa757dd35826e7f65e554d4e44214d943d623a3861",
       "name" : "Nimble",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
