@@ -2,7 +2,7 @@
   "commitish" : "0.9.1",
   "iOS" : [
     {
-      "hash" : "fe9abf1710aaaab484bb4e7d7142fe111f13eb3e6a2674429e269cefeb5e8013",
+      "hash" : "fb45806683d6170af13036fcf783de162dd8e28950a6e4c6529087d57ac98d36",
       "name" : "FMPhotoPicker",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"

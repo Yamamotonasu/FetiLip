@@ -3,11 +3,11 @@
   "iOS" : [
     {
       "name" : "ObjcExceptionBridging",
-      "hash" : "fcfa01dd725aa87717321c228b73d38fb0e96329e8dfa63ccfe3777fa3bf4474",
+      "hash" : "f9ca2a30db7b56d9beb2bef612c51c828b8c0c4a37c68091c3cbb0bdc33febe0",
       "linking" : "dynamic"
     },
     {
-      "hash" : "6ea9b9909b25b036d5b1b839741f4fd938e5a0e70ce99f74b8e791075d3b6dc1",
+      "hash" : "4546b8fdc007de30ccc7c43098c241a3544b66d5c50ad7bfe5f865beddd45f6f",
       "name" : "XCGLogger",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"

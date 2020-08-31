@@ -547,7 +547,7 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift10IQTextView")
 @property (nonatomic, strong) NSAttributedString * _Null_unspecified attributedText;
 @property (nonatomic, strong) UIFont * _Nullable font;
 @property (nonatomic) NSTextAlignment textAlignment;
-@property (nonatomic, strong) id <UITextViewDelegate> _Nullable delegate;
+@property (nonatomic, weak) id <UITextViewDelegate> _Nullable delegate;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 @end
 
@@ -1257,7 +1257,7 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift10IQTextView")
 @property (nonatomic, strong) NSAttributedString * _Null_unspecified attributedText;
 @property (nonatomic, strong) UIFont * _Nullable font;
 @property (nonatomic) NSTextAlignment textAlignment;
-@property (nonatomic, strong) id <UITextViewDelegate> _Nullable delegate;
+@property (nonatomic, weak) id <UITextViewDelegate> _Nullable delegate;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 @end
 
@@ -1971,7 +1971,7 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift10IQTextView")
 @property (nonatomic, strong) NSAttributedString * _Null_unspecified attributedText;
 @property (nonatomic, strong) UIFont * _Nullable font;
 @property (nonatomic) NSTextAlignment textAlignment;
-@property (nonatomic, strong) id <UITextViewDelegate> _Nullable delegate;
+@property (nonatomic, weak) id <UITextViewDelegate> _Nullable delegate;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 @end
 
@@ -2681,7 +2681,7 @@ SWIFT_CLASS("_TtC22IQKeyboardManagerSwift10IQTextView")
 @property (nonatomic, strong) NSAttributedString * _Null_unspecified attributedText;
 @property (nonatomic, strong) UIFont * _Nullable font;
 @property (nonatomic) NSTextAlignment textAlignment;
-@property (nonatomic, strong) id <UITextViewDelegate> _Nullable delegate;
+@property (nonatomic, weak) id <UITextViewDelegate> _Nullable delegate;
 @property (nonatomic, readonly) CGSize intrinsicContentSize;
 @end
 
