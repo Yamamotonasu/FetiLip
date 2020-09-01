@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -21,45 +21,35 @@
             <objects>
                 <viewController storyboardIdentifier="MainModalViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="lby-Uj-jXn" customClass="MainModalViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kM1-0y-W1t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSG-jM-nOq">
-                                <rect key="frame" x="30" y="89" width="260" height="390"/>
+                                <rect key="frame" x="30" y="159" width="315" height="504"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetilip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Da9-bZ-c1v">
-                                        <rect key="frame" x="30" y="20" width="200" height="64.5"/>
-                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="19"/>
+                                        <rect key="frame" x="30" y="20" width="255" height="67.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fii-Pp-me1">
-                                        <rect key="frame" x="20" y="91" width="220" height="208"/>
+                                        <rect key="frame" x="20" y="153.33333333333331" width="275" height="137.33333333333331"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Fetilipは自分のお気に入りの口紅の画像を投稿したり、自分に合った口紅を探すアプリです♪" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zsW-w6-nBD">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="110"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="137.33333333333334"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zsW-w6-nBD" secondAttribute="height" multiplier="2:1" id="nWG-BL-LnT"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="18"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="利用規約、プライバシーポリシーに同意の上、ご利用下さい。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1XJ-zA-qZE">
-                                                <rect key="frame" x="0.0" y="120" width="220" height="88"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="1XJ-zA-qZE" secondAttribute="height" multiplier="2.5:1" id="DfJ-9u-GqO"/>
-                                                </constraints>
-                                                <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="18"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kC1-WZ-cc4">
-                                        <rect key="frame" x="30" y="320" width="200" height="50"/>
+                                        <rect key="frame" x="30" y="434" width="255" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cJh-3y-Co5"/>
@@ -74,19 +64,51 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b2j-ZC-uZz">
+                                        <rect key="frame" x="30" y="344" width="255" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSK-2J-ZD4">
+                                                <rect key="frame" x="0.0" y="22.666666666666629" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="QSK-2J-ZD4" secondAttribute="height" multiplier="1:1" id="Qna-NL-u48"/>
+                                                    <constraint firstAttribute="height" constant="25" id="jNv-u6-qyU"/>
+                                                    <constraint firstAttribute="width" constant="25" id="joG-2S-GcT"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" image="square"/>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="利用規約、プライバシーポリシーに同意の上、ご利用下さい。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1XJ-zA-qZE">
+                                                <rect key="frame" x="25" y="0.0" width="230" height="70"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="1zg-0e-tQZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="1XJ-zA-qZE" secondAttribute="trailing" id="Yd9-0U-wiJ"/>
+                                            <constraint firstItem="1XJ-zA-qZE" firstAttribute="top" secondItem="b2j-ZC-uZz" secondAttribute="top" id="aZn-y9-V00"/>
+                                            <constraint firstAttribute="bottom" secondItem="1XJ-zA-qZE" secondAttribute="bottom" id="gAm-GI-Twn"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="b2j-ZC-uZz" secondAttribute="trailing" constant="30" id="3va-f9-vPu"/>
+                                    <constraint firstItem="kC1-WZ-cc4" firstAttribute="top" secondItem="b2j-ZC-uZz" secondAttribute="bottom" constant="20" id="9Au-dB-tF2"/>
                                     <constraint firstItem="Da9-bZ-c1v" firstAttribute="top" secondItem="LSG-jM-nOq" secondAttribute="top" constant="20" id="Dfu-UJ-wpr"/>
-                                    <constraint firstAttribute="width" secondItem="LSG-jM-nOq" secondAttribute="height" multiplier="1:1.5" id="QK2-hn-o7W"/>
+                                    <constraint firstAttribute="width" secondItem="LSG-jM-nOq" secondAttribute="height" multiplier="1:1.6" id="QK2-hn-o7W"/>
                                     <constraint firstItem="Da9-bZ-c1v" firstAttribute="leading" secondItem="LSG-jM-nOq" secondAttribute="leading" constant="30" id="Shn-Lv-9fU"/>
                                     <constraint firstItem="kC1-WZ-cc4" firstAttribute="leading" secondItem="LSG-jM-nOq" secondAttribute="leading" constant="30" id="So2-nt-yb2"/>
                                     <constraint firstAttribute="trailing" secondItem="Da9-bZ-c1v" secondAttribute="trailing" constant="30" id="TOh-5L-ll8"/>
                                     <constraint firstItem="Fii-Pp-me1" firstAttribute="leading" secondItem="LSG-jM-nOq" secondAttribute="leading" constant="20" id="Td2-TA-Gdd"/>
                                     <constraint firstItem="Fii-Pp-me1" firstAttribute="centerX" secondItem="LSG-jM-nOq" secondAttribute="centerX" id="UhV-xS-YJj"/>
-                                    <constraint firstItem="Fii-Pp-me1" firstAttribute="centerY" secondItem="LSG-jM-nOq" secondAttribute="centerY" id="YbU-Y1-LkQ"/>
+                                    <constraint firstItem="Fii-Pp-me1" firstAttribute="centerY" secondItem="LSG-jM-nOq" secondAttribute="centerY" constant="-30" id="YbU-Y1-LkQ"/>
                                     <constraint firstAttribute="bottom" secondItem="kC1-WZ-cc4" secondAttribute="bottom" constant="20" id="kPz-RG-7qW"/>
                                     <constraint firstAttribute="trailing" secondItem="kC1-WZ-cc4" secondAttribute="trailing" constant="30" id="nsW-4B-WFr"/>
+                                    <constraint firstItem="b2j-ZC-uZz" firstAttribute="leading" secondItem="LSG-jM-nOq" secondAttribute="leading" constant="30" id="oIb-CH-bWi"/>
                                     <constraint firstAttribute="trailing" secondItem="Fii-Pp-me1" secondAttribute="trailing" constant="20" id="wRH-aU-qQf"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -112,13 +134,17 @@
                         <viewLayoutGuide key="safeArea" id="AJ1-8Z-gMl"/>
                     </view>
                     <connections>
+                        <outlet property="checkBoxButton" destination="QSK-2J-ZD4" id="fGt-Ni-W9c"/>
                         <outlet property="startFetilipButton" destination="kC1-WZ-cc4" id="Lm3-Qt-D1N"/>
                         <outlet property="termAndPrivacyPolicyTextView" destination="1XJ-zA-qZE" id="F6U-Jk-GYo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JK-lL-weo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166.875" y="135.21126760563379"/>
+            <point key="canvasLocation" x="165" y="134.1549295774648"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square" width="29.666666030883789" height="29.666666030883789"/>
+    </resources>
 </document>
