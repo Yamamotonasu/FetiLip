@@ -105,6 +105,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rGq-ff-Kuv"/>
                     </view>
+                    <connections>
+                        <outlet property="alreadyExistAccountButton" destination="2QN-QC-bqr" id="XzM-m6-Xv1"/>
+                        <outlet property="startAnonymousButton" destination="Jqz-fL-Zvm" id="X2v-cd-5I6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoB-MC-PoD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

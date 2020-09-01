@@ -184,6 +184,7 @@
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
 		03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */; };
 		03AD487824FDDD5C006BABDF /* LoginConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */; };
+		03AD487A24FE8A4A006BABDF /* LoginConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487924FE8A4A006BABDF /* LoginConfirmViewModel.swift */; };
 		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
 		03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */; };
 		03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */; };
@@ -538,6 +539,7 @@
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
 		03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginConfirmViewController.storyboard; sourceTree = "<group>"; };
 		03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewController.swift; sourceTree = "<group>"; };
+		03AD487924FE8A4A006BABDF /* LoginConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewModel.swift; sourceTree = "<group>"; };
 		03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
 		03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputPassword.storyboard; sourceTree = "<group>"; };
@@ -1119,6 +1121,7 @@
 			isa = PBXGroup;
 			children = (
 				035F6DB924FD37A900991231 /* MainModalViewModel.swift */,
+				03AD487924FE8A4A006BABDF /* LoginConfirmViewModel.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -2120,6 +2123,7 @@
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
 				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
+				03AD487A24FE8A4A006BABDF /* LoginConfirmViewModel.swift in Sources */,
 				0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
