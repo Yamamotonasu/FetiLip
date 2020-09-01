@@ -71,7 +71,11 @@ class MainModalViewController: UIViewController {
             }).disposed(by: rx.disposeBag)
 
         startFetilipButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
-            self.dismiss(animated: true)
+            let vc = LoginConfirmViewControllerGenerator.generate()
+            let previousVC = self.presentingViewController
+            self.dismiss(animated: true) {
+                previousVC?.present(vc, animated: true)
+            }
         }).disposed(by: rx.disposeBag)
     }
 

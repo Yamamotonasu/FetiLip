@@ -182,6 +182,8 @@
 		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
 		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
+		03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */; };
+		03AD487824FDDD5C006BABDF /* LoginConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */; };
 		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
 		03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */; };
 		03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */; };
@@ -534,6 +536,8 @@
 		03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
 		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
+		03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginConfirmViewController.storyboard; sourceTree = "<group>"; };
+		03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewController.swift; sourceTree = "<group>"; };
 		03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
 		03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputPassword.storyboard; sourceTree = "<group>"; };
@@ -1124,6 +1128,8 @@
 			children = (
 				035F6DBB24FD37DB00991231 /* MainModal.storyboard */,
 				035F6DB724FD378500991231 /* MainModalViewController.swift */,
+				03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */,
+				03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -1871,6 +1877,7 @@
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
+				03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
 				035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */,
@@ -2078,6 +2085,7 @@
 				0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */,
 				035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
+				03AD487824FDDD5C006BABDF /* LoginConfirmViewController.swift in Sources */,
 				034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */,
 				035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */,
 				034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */,
