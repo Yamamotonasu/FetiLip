@@ -18,6 +18,8 @@ extension R {
 
         static let registerUserScreentTitle: String = "正式登録する"
 
+        static let loginScreenTitle: String = "ログインする"
+
         static let editUserNameScreenTitle: String = "ユーザー名を更新する"
 
         static let editEmailScreenTitle: String = "メールアドレスを更新する"

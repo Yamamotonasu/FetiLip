@@ -36,6 +36,13 @@ class LoginConfirmViewController: UIViewController {
         subscribeUI()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if LoginAccountData.uid != nil {
+            self.dismiss(animated: animated)
+        }
+    }
+
     private func subscribe() {
         alreadyExistAccountButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.transitionToLoginScreen()
@@ -64,7 +71,8 @@ class LoginConfirmViewController: UIViewController {
     }
 
     private func transitionToLoginScreen() {
-
+        let vc = LoginViewControllerGenerator.generate()
+        self.present(vc, animated: true)
     }
 
 }
