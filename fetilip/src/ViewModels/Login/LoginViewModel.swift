@@ -78,7 +78,6 @@ extension LoginViewModel: ViewModelType {
     }
 
     struct Output {
-        let enableLoginButton: Driver<Bool>
         let loginResult: Observable<()>
         let isLoading: Driver<Bool>
     }
@@ -88,16 +87,6 @@ extension LoginViewModel: ViewModelType {
         let combine = Observable.combineLatest(input.inputEmail, input.inputPassword) {
             (email: $0, password: $1)
         }
-
-        let enableLoginButtonSequence = combine.flatMapLatest { pair in
-            return Observable.zip(self.emailValidate(email: pair.email), self.passwordValidator(password: pair.password))
-        }.flatMapLatest { pair in
-            Observable.create { observer in
-                observer.on(.next(true))
-                return Disposables.create()
-            }
-        }
-            .asDriver(onErrorJustReturn: false)
 
         let loginSequenece: Observable<()> = input.tapLogin.asObservable().withLatestFrom(combine).flatMapLatest { pair in
             return Observable.zip(self.emailValidate(email: pair.email), self.passwordValidator(password: pair.password))
@@ -111,8 +100,7 @@ extension LoginViewModel: ViewModelType {
             }
         }
 
-        return Output(enableLoginButton: enableLoginButtonSequence,
-                      loginResult: loginSequenece,
+        return Output(loginResult: loginSequenece,
                       isLoading: indicator.asDriver(onErrorJustReturn: false))
     }
 

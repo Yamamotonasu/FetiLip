@@ -59,12 +59,10 @@ class LoginViewController: UIViewController {
                                     tapLogin: loginButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
 
-        output.enableLoginButton.drive(onNext: { [unowned self] enable in
-            self.loginButton.alpha = enable ? 1.0 : 0.5
-        }).disposed(by: rx.disposeBag)
-
         output.loginResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
-            self?.dismiss(animated: true)
+            self?.dismiss(animated: true) {
+                AppAlert.show(message: "ログインしました", alertType: .info)
+            }
         }).disposed(by: rx.disposeBag)
     }
 
