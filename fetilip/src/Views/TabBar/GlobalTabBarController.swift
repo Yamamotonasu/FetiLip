@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 /**
  * メイン表示するタブバー
  */
 class GlobalTabBarController: UITabBarController {
+
+    // MARK: - ViewModel
+
+    typealias ViewModel = GlobalTabBarViewModel
+
+    private let viewModel = GlobalTabBarViewModel(userAuthModel: UsersAuthModel())
 
     // MARK: Desinable properties
 
@@ -72,6 +80,10 @@ class GlobalTabBarController: UITabBarController {
         }
     }
 
+    // MARK: - Rx
+
+    private let checkLoginEvent: PublishRelay<()> = PublishRelay<()>()
+
     // MARK: LifeCycle
 
     override open func viewDidLoad() {
@@ -86,6 +98,15 @@ class GlobalTabBarController: UITabBarController {
         setupTabBarItems()
         customTabBar.items = tabBar.items!
         customTabBar.select(at: selectedIndex)
+
+        subscribeUI()
+        checkLoginEvent.accept(())
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if LoginAccountData.uid == nil {
+            self.transitionToFirstModal()
+        }
     }
 
     private func addAnotherSmallView() {
@@ -106,6 +127,16 @@ class GlobalTabBarController: UITabBarController {
 
         smallBottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         smallBottomView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+
+    private func subscribeUI() {
+        let input = ViewModel.Input(checkLoginEvent: checkLoginEvent)
+        let output = viewModel.transform(input: input)
+    }
+
+    private func transitionToFirstModal() {
+        let vc = MainModalViewControllerGenerator.generate()
+        self.present(vc, animated: true)
     }
 
 }

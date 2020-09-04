@@ -101,6 +101,9 @@
 		035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAB24F9CC0100991231 /* Observable+extensions.swift */; };
 		035F6DAE24FB34DB00991231 /* ReviewValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAD24FB34DB00991231 /* ReviewValidation.swift */; };
 		035F6DB024FB8CAE00991231 /* ApplicationFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAF24FB8CAE00991231 /* ApplicationFlag.swift */; };
+		035F6DB224FD2EBA00991231 /* GlobalTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */; };
+		035F6DB824FD378500991231 /* MainModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DB724FD378500991231 /* MainModalViewController.swift */; };
+		035F6DBC24FD37DB00991231 /* MainModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035F6DBB24FD37DB00991231 /* MainModal.storyboard */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -178,6 +181,12 @@
 		03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC392434C7140068FB1E /* GoogleUtilities.framework */; };
 		03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */; };
 		03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */; };
+		03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */; };
+		03AD487824FDDD5C006BABDF /* LoginConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */; };
+		03AD487A24FE8A4A006BABDF /* LoginConfirmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487924FE8A4A006BABDF /* LoginConfirmViewModel.swift */; };
+		03AD487D24FEA024006BABDF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AD487C24FEA024006BABDF /* Login.storyboard */; };
+		03AD487F24FEA03B006BABDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487E24FEA03B006BABDF /* LoginViewController.swift */; };
+		03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD488124FF20F4006BABDF /* LoginViewModel.swift */; };
 		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
 		03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */; };
 		03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */; };
@@ -314,6 +323,9 @@
 		035F6DAB24F9CC0100991231 /* Observable+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+extensions.swift"; sourceTree = "<group>"; };
 		035F6DAD24FB34DB00991231 /* ReviewValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewValidation.swift; sourceTree = "<group>"; };
 		035F6DAF24FB8CAE00991231 /* ApplicationFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlag.swift; sourceTree = "<group>"; };
+		035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlobalTabBarViewModel.swift; path = fetilip/src/Utils/GlobalTabBarViewModel.swift; sourceTree = SOURCE_ROOT; };
+		035F6DB724FD378500991231 /* MainModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModalViewController.swift; sourceTree = "<group>"; };
+		035F6DBB24FD37DB00991231 /* MainModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainModal.storyboard; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -526,6 +538,12 @@
 		03AAFCD82434C9640068FB1E /* .IQKeyboardManager.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .IQKeyboardManager.version; sourceTree = "<group>"; };
 		03AAFCD92434C9640068FB1E /* .FirebaseAnalyticsBinary.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .FirebaseAnalyticsBinary.version; sourceTree = "<group>"; };
 		03AAFCDA2434C9640068FB1E /* .XCGLogger.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = .XCGLogger.version; sourceTree = "<group>"; };
+		03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginConfirmViewController.storyboard; sourceTree = "<group>"; };
+		03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewController.swift; sourceTree = "<group>"; };
+		03AD487924FE8A4A006BABDF /* LoginConfirmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginConfirmViewModel.swift; sourceTree = "<group>"; };
+		03AD487C24FEA024006BABDF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		03AD487E24FEA03B006BABDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		03AD488124FF20F4006BABDF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
 		03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputPassword.storyboard; sourceTree = "<group>"; };
@@ -893,6 +911,7 @@
 		035BAFDD2443306D001FF6D1 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -1100,6 +1119,25 @@
 				035F6DA724F481D500991231 /* AppAlert.swift */,
 			);
 			path = Alert;
+			sourceTree = "<group>";
+		};
+		035F6DB324FD36F200991231 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				03AD487924FE8A4A006BABDF /* LoginConfirmViewModel.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		035F6DB424FD371F00991231 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				035F6DBB24FD37DB00991231 /* MainModal.storyboard */,
+				035F6DB724FD378500991231 /* MainModalViewController.swift */,
+				03AD487324FDDD12006BABDF /* LoginConfirmViewController.storyboard */,
+				03AD487724FDDD5C006BABDF /* LoginConfirmViewController.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		036A450024711D9500DD9282 /* Posts */ = {
@@ -1345,7 +1383,9 @@
 				03B50B5724E4ADAD00C7A14F /* EditProfile */,
 				035D5CEF24E8F5230047B4AA /* EditProfileDetail */,
 				034A98602496063E009336F0 /* Layouts */,
+				03AD487B24FE9FEE006BABDF /* Login */,
 				03AAFB9A2428D1AF0068FB1E /* MyPage */,
+				035F6DB424FD371F00991231 /* OnBoarding */,
 				035BB00E2467CF58001FF6D1 /* PostLip */,
 				0359900424ACDCBE000F8A27 /* PostLipDetail */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
@@ -1361,7 +1401,9 @@
 				035BAFDA2443302D001FF6D1 /* Debug */,
 				03B50B5824E4ADC300C7A14F /* EditProfile */,
 				035D5CF424E910F40047B4AA /* EditProfileDetail */,
+				03AD488024FF20D2006BABDF /* Login */,
 				035BAFDC2443305D001FF6D1 /* MyPage */,
+				035F6DB324FD36F200991231 /* OnBoarding */,
 				035BB00F2467CF6A001FF6D1 /* PostLip */,
 				0359900524ACDCCD000F8A27 /* PostLipDetail */,
 				035BAFDB24433040001FF6D1 /* PostList */,
@@ -1675,6 +1717,23 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		03AD487B24FE9FEE006BABDF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				03AD487C24FEA024006BABDF /* Login.storyboard */,
+				03AD487E24FEA03B006BABDF /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		03AD488024FF20D2006BABDF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				03AD488124FF20F4006BABDF /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		03B1B28C24F261A400E0D1DE /* InputPassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -1843,6 +1902,7 @@
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
+				03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
 				035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */,
@@ -1854,7 +1914,9 @@
 				036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */,
 				039EB66F243615990016436C /* Debug.storyboard in Resources */,
 				03AAFB9F2428D4610068FB1E /* MyPage.storyboard in Resources */,
+				035F6DBC24FD37DB00991231 /* MainModal.storyboard in Resources */,
 				035F6D9F24F3432600991231 /* SourceHanSans-Heavy.otf in Resources */,
+				03AD487D24FEA024006BABDF /* Login.storyboard in Resources */,
 				035F6D9B24F3432600991231 /* SourceHanSans-Normal.otf in Resources */,
 				035F6D9A24F3432600991231 /* SourceHanSans-Medium.otf in Resources */,
 				0359900924ACDE4F000F8A27 /* PostLipDetail.storyboard in Resources */,
@@ -2049,6 +2111,7 @@
 				0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */,
 				035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */,
 				035BAFED2459922C001FF6D1 /* FirestoreDatabaseCollection.swift in Sources */,
+				03AD487824FDDD5C006BABDF /* LoginConfirmViewController.swift in Sources */,
 				034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */,
 				035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */,
 				034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */,
@@ -2074,6 +2137,7 @@
 				035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */,
 				03AAFB5E2425E9FF0068FB1E /* Typealias.swift in Sources */,
 				03AAFB6624272C630068FB1E /* DesignableUIView.swift in Sources */,
+				035F6DB224FD2EBA00991231 /* GlobalTabBarViewModel.swift in Sources */,
 				03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */,
 				034C562E24CA4C110005B6C5 /* Binder+Extensions.swift in Sources */,
 				0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */,
@@ -2082,6 +2146,7 @@
 				035BAFF6245BC0B2001FF6D1 /* ViewModelType.swift in Sources */,
 				03AAFAEB241E2FD70068FB1E /* SceneDelegate.swift in Sources */,
 				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
+				03AD487A24FE8A4A006BABDF /* LoginConfirmViewModel.swift in Sources */,
 				0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
@@ -2096,9 +2161,11 @@
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
+				03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
 				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
+				03AD487F24FEA03B006BABDF /* LoginViewController.swift in Sources */,
 				035D5D0124E952B70047B4AA /* RegisterUserViewController.swift in Sources */,
 				03AAFBAF243096480068FB1E /* IndicatorView.swift in Sources */,
 				0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */,
@@ -2121,6 +2188,7 @@
 				035D5CF324E8F55C0047B4AA /* EditProfileDetailViewController.swift in Sources */,
 				039EB68B243B641B0016436C /* UsersModel.swift in Sources */,
 				034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */,
+				035F6DB824FD378500991231 /* MainModalViewController.swift in Sources */,
 				035D5D0724E9655E0047B4AA /* EmailValidation.swift in Sources */,
 				03AAFBB1243096B20068FB1E /* CustomTabBarButton.swift in Sources */,
 				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,

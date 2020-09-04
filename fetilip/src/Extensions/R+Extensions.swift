@@ -18,6 +18,8 @@ extension R {
 
         static let registerUserScreentTitle: String = "正式登録する"
 
+        static let loginScreenTitle: String = "ログインする"
+
         static let editUserNameScreenTitle: String = "ユーザー名を更新する"
 
         static let editEmailScreenTitle: String = "メールアドレスを更新する"
@@ -36,7 +38,7 @@ extension R {
 
         static let wrongPassword: String = "メールアドレス、またはパスワードが異なります。"
 
-        static let userNotFound: String = "ユーザーが見つかりません。管理者にお問い合わせください。"
+        static let userNotFound: String = "ユーザーが見つかりません。"
 
         static let internalError: String = "サーバーで問題が発生しています。\n管理者にお問い合わせ頂くか、時間を置いてお試しください。"
 
