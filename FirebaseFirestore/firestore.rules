@@ -10,30 +10,16 @@ service cloud.firestore {
       if isAnyAuthenticated()
       && isValidateUser(incomingData())
       && (!('userName' in request.resource.data) || validateString(incomingData().userName, 2, 12));
-
-      allow update: if isUserAuthenticated(userID)
-
+      allow update: if isUserAuthenticated(userID);
       allow get: if isAnyAuthenticated();
-
       allow read: if isAnyAuthenticated();
-
     }
     match /version/1/posts/{postID} {
-
       allow create:
-      // 認証済みである
       if isAnyAuthenticated()
-      // ユーザーのReferenceが存在している
       && incomingData().userRef == userDocumentPath(request.auth.uid)
-      // レビューはnull又はStringである
       && isNullOrString(incomingData().review);
-
-      allow update: if isUserAuthenticated(userID);
-
-      allow get: if isAnyAuthenticated();
-
       allow read: if isAnyAuthenticated();
-
     }
 
     // - region auth functions
@@ -47,10 +33,6 @@ service cloud.firestore {
     }
 
     // - region validate functions common
-
-    function existingData() {
-      return resource.data;
-		}
     
     // request.resource.dataへのアクセス簡略化
     function incomingData() {
@@ -92,6 +74,7 @@ service cloud.firestore {
       && 'createdAt' in user && user.createdAr is timestamp;
     }
 
+    // usersのドキュメントReferenceを作成
     function userDocumentPath(uid) {
       return /databases/{database}/documents/version/1/users/$(uid);
     }

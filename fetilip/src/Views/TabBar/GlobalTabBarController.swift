@@ -103,7 +103,8 @@ class GlobalTabBarController: UITabBarController {
         checkLoginEvent.accept(())
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if LoginAccountData.uid == nil {
             self.transitionToFirstModal()
         }
