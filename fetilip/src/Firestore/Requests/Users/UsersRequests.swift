@@ -16,7 +16,7 @@ enum UsersRequests: FirestoreRequest {
     typealias Fields = UserModel.FieldType
 
     /// First commit request parametes.
-    case initialCommit(email: String, uid: String)
+    case initialCommit(email: String)
 
     /// Update user name.
     case updateUserName(userName: String)
@@ -30,9 +30,8 @@ enum UsersRequests: FirestoreRequest {
     var parameters: Parameters {
         var params: Parameters = [:]
         switch self {
-        case .initialCommit(let email, let uid):
+        case .initialCommit(let email):
             params[Fields.Key.email.rawValue] = email
-            params[Fields.Key.uid.rawValue] = uid
             params[Fields.Key.createdAt.rawValue] = Date()
             params[Fields.Key.updatedAt.rawValue] = Date()
             params[Fields.Key.userName.rawValue] = ""

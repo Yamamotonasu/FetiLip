@@ -61,8 +61,7 @@ public struct UsersModelClient: UsersModelClientProtocol {
     /// Initial commit users document.
     // TODO: Unuse
     func setInitialData(params: (email: String, uid: String)) -> Single<()> {
-        let fields = UsersRequests.initialCommit(email: params.email,
-                                                 uid: params.uid).parameters
+        let fields = UsersRequests.initialCommit(email: params.email).parameters
         return Firestore.firestore().rx.setData(UserModel.self, documentRef: UserModel.makeDocumentRef(id: params.uid), fields: fields)
     }
 

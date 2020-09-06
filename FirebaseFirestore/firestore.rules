@@ -5,24 +5,39 @@ service cloud.firestore {
       allow create: if true;
     }
     match /version/1/users/{userID} {
-      allow create: if isAnyAuthenticated() && (!('userName' in request.resource.data) || validateString(request.resource.data.userName, 2, 12));
+      allow create:
+      // 認証済みである
+      if isAnyAuthenticated()
+      && isValidateUser(incomingData())
+      && (!('userName' in request.resource.data) || validateString(incomingData().userName, 2, 12));
+
       allow update: if isUserAuthenticated(userID)
+
       allow get: if isAnyAuthenticated();
+
       allow read: if isAnyAuthenticated();
+
     }
     match /version/1/posts/{postID} {
-      allow create: if isAnyAuthenticated();
+
+      allow create:
+      // 認証済みである
+      if isAnyAuthenticated()
+      // ユーザーのReferenceが存在している
+      && incomingData().userRef == userDocumentPath(request.auth.uid)
+      // レビューはnull又はStringである
+      && isNullOrString(incomingData().review);
+
       allow update: if isUserAuthenticated(userID);
+
       allow get: if isAnyAuthenticated();
+
       allow read: if isAnyAuthenticated();
+
     }
-    match /{path=**}/posts/{postID} {
-      allow create: if isAnyAuthenticated();
-      allow get: if isAnyAuthenticated();
-      allow update: if isUserAuthenticated(userID);
-      allow read: if isAnyAuthenticated();
-		}
-    
+
+    // - region auth functions
+
     function isAnyAuthenticated() {
       return request.auth != null;
     }
@@ -30,11 +45,14 @@ service cloud.firestore {
     function isUserAuthenticated(userID) {
       return isAnyAuthenticated() && userID == request.auth.uid;
     }
-    
+
+    // - region validate functions common
+
     function existingData() {
       return resource.data;
 		}
     
+    // request.resource.dataへのアクセス簡略化
     function incomingData() {
       return request.resource.data;
     }
@@ -43,8 +61,39 @@ service cloud.firestore {
       return text is string && min <= text.size() && text.size() <= max;
     }
     
-    function validateInt(num, min, max) {
-      return num is int && min <= num && num <= max;
+    // Integer型のフィールドの値ののValidationを設定する
+    //
+    // @param num 検証する値
+    // @param min 最小値
+    // @param max 最大値
+    function validateInt(value, min, max) {
+      return value is int && min <= value && value <= max;
+    }
+
+    // null 又は stringならtrueを返す
+    //
+    // @param value 検証する値
+    function isNullOrString(value) {
+      return value == null || value is string
+    }
+
+    // - region users
+
+    // users collectionのスキーマ検証用関数
+    //
+    // Schemeの数は3つである
+    // userNameは必須 && String型
+    // updatedAtは必須 && Timestamp型
+    // createdAtは必須 && Timestamp型
+    function isValidateUser(user) {
+      return user.size() == 3
+      && 'userName' in user && user.userName is string
+      && 'updatedAt' in user && user.updatedAt is timestamp
+      && 'createdAt' in user && user.createdAr is timestamp;
+    }
+
+    function userDocumentPath(uid) {
+      return /databases/{database}/documents/version/1/users/$(uid);
     }
   }
 }
