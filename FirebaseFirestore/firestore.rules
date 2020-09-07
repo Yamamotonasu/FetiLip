@@ -17,13 +17,14 @@ service cloud.firestore {
     match /version/1/posts/{postID} {
       allow create:
       if isAnyAuthenticated()
-      && incomingData().userRef == userDocumentPath(request.auth.uid)
-      && isNullOrString(incomingData().review);
+      && isValidatePost(incomingData())
+      && incomingData().userRef == userDocumentPath(request.auth.uid);
       allow read: if isAnyAuthenticated();
     }
 
     // - region auth functions
 
+    // 認証されていればtrue
     function isAnyAuthenticated() {
       return request.auth != null;
     }
@@ -71,12 +72,31 @@ service cloud.firestore {
       return user.size() == 3
       && 'userName' in user && user.userName is string
       && 'updatedAt' in user && user.updatedAt is timestamp
-      && 'createdAt' in user && user.createdAr is timestamp;
+      && 'createdAt' in user && user.createdAt is timestamp;
     }
 
     // usersのドキュメントReferenceを作成
     function userDocumentPath(uid) {
-      return /databases/{database}/documents/version/1/users/$(uid);
+      return /databases/$(database)/documents/version/1/users/$(uid);
+    }
+
+    // - region posts
+
+    // posts collection スキーマ検証
+    //
+    // Schemaの数は5つ 又は 4つである
+    // imageRefは必須 && String型
+    // userRefは必須 && Reference型
+    // reviewは任意 && String or null
+    // updatedAtは必須 && Timestamp型
+    // createdAtは必須 && Timestamp型
+    function isValidatePost(postLip) {
+      return (postLip.size() == 5 || postLip.size() == 4)
+      && 'imageRef' in postLip && postLip.imageRef is string
+      && 'userRef' in postLip && postLip.userRef is path
+      && isNullOrString(postLip.review)
+      && 'updatedAt' in postLip && postLip.updatedAt is timestamp
+      && 'createdAt' in postLip && postLip.createdAt is timestamp;
     }
   }
 }

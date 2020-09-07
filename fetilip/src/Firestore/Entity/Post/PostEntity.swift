@@ -26,8 +26,6 @@ public struct PostEntity: Codable, FirestoreEntity {
 
     enum Key: String, CodingKey {
 
-        case userId
-
         case review
 
         case userRef
