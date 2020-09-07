@@ -108,6 +108,7 @@ class GlobalTabBarController: UITabBarController {
         if LoginAccountData.uid == nil {
             self.transitionToFirstModal()
         }
+        // TODO: ここでユーザーが作成されていなかった時のリカバリは考えた方がいいかも。
     }
 
     private func addAnotherSmallView() {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 /**
  * Data change request parameters to users document.
@@ -32,18 +33,18 @@ enum UsersRequests: FirestoreRequest {
         switch self {
         case .initialCommit(let email):
             params[Fields.Key.email.rawValue] = email
-            params[Fields.Key.createdAt.rawValue] = Date()
-            params[Fields.Key.updatedAt.rawValue] = Date()
+            params[Fields.Key.createdAt.rawValue] = FieldValue.serverTimestamp()
+            params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
             params[Fields.Key.userName.rawValue] = ""
             params[Fields.Key.profile.rawValue] = ""
             return params
         case .updateUserName(let userName):
             params[Fields.Key.userName.rawValue] = userName
-            params[Fields.Key.updatedAt.rawValue] = Date()
+            params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
             return params
         case .updateProfile(let profile):
             params[Fields.Key.profile.rawValue] = profile
-            params[Fields.Key.updatedAt.rawValue] = Date()
+            params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
             return params
         case .updateUserProfileStoragePath(let storagePath):
             params[Fields.Key.userImageRef.rawValue] = storagePath

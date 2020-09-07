@@ -6,7 +6,6 @@ service cloud.firestore {
     }
     match /version/1/users/{userID} {
       allow create:
-      // 認証済みである
       if isAnyAuthenticated()
       && isValidateUser(incomingData())
       && (!('userName' in request.resource.data) || validateString(incomingData().userName, 2, 12));
@@ -18,7 +17,8 @@ service cloud.firestore {
       allow create:
       if isAnyAuthenticated()
       && isValidatePost(incomingData())
-      && incomingData().userRef == userDocumentPath(request.auth.uid);
+      && incomingData().userRef == userDocumentPath(request.auth.uid) 
+      && validateRequestTime(incomingData());
       allow read: if isAnyAuthenticated();
     }
 
@@ -29,6 +29,9 @@ service cloud.firestore {
       return request.auth != null;
     }
     
+    // 認証されている && uidが同一なものか検証する。DocumentID = uidの時に自分のDocumentかどうか判定する時等に使う
+    //
+    // @param userID UID
     function isUserAuthenticated(userID) {
       return isAnyAuthenticated() && userID == request.auth.uid;
     }
@@ -40,17 +43,29 @@ service cloud.firestore {
       return request.resource.data;
     }
     
+    // String型のフィールド値のバリデーションを設定する
+    //
+    // @param text 検証する文字列
+    // @param min 最小値
+    // @param max 最大値
     function validateString(text, min, max) {
       return text is string && min <= text.size() && text.size() <= max;
     }
     
-    // Integer型のフィールドの値ののValidationを設定する
+    // Integer型のフィールド値のバリデーションを設定する
     //
     // @param num 検証する値
     // @param min 最小値
     // @param max 最大値
     function validateInt(value, min, max) {
       return value is int && min <= value && value <= max;
+    }
+
+    // タイムスタンプの値がサーバー側でリクエストを受け取った時刻と一致するかどうか検証する。createdAtとupdatedAtが含まれている場合のみ検証可能なので基本はcreate用。
+    //
+    // @param data リクエストのデータ
+    function validateRequestTime(data) {
+      return data.createdAt == request.time && data.updatedAt == request.time
     }
 
     // null 又は stringならtrueを返す
@@ -75,9 +90,11 @@ service cloud.firestore {
       && 'createdAt' in user && user.createdAt is timestamp;
     }
 
-    // usersのドキュメントReferenceを作成
-    function userDocumentPath(uid) {
-      return /databases/$(database)/documents/version/1/users/$(uid);
+    // usersのドキュメントReferenceを作成して返す
+    //
+    // @param uid UID
+    function userDocumentPath(userID) {
+      return /databases/$(database)/documents/version/1/users/$(userID);
     }
 
     // - region posts
