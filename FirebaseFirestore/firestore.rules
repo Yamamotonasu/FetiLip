@@ -14,6 +14,7 @@ service cloud.firestore {
       && validateUpdateTime(incomingData());
       allow get: if isAnyAuthenticated();
       allow read: if isAnyAuthenticated();
+      allow delete: if false;
     }
     match /version/1/posts/{postID} {
       allow create:
@@ -78,11 +79,16 @@ service cloud.firestore {
       return data.updatedAt == request.time && data.createdAt == resource.data.createdAt
     }
 
-    // null 又は stringならtrueを返す
+    // null 又は string 又は空文字ならtrueを返す
     //
     // @param value 検証する値
-    function isNullOrString(value) {
-      return value == null || value is string
+    function isNullOrString(value, field) {
+      return value == null || value is string || value.empty()
+    }
+
+    // undefinedかどうかを検証する
+    function isUndefined(data, field) {
+      return !data.keys().hasAll([field]);
     }
 
     // - region users
@@ -111,17 +117,17 @@ service cloud.firestore {
 
     // posts collection スキーマ検証
     //
-    // Schemaの数は5つ 又は 4つである
+    // Schemaの数は5つ
     // imageRefは必須 && String型
     // userRefは必須 && Reference型
     // reviewは任意 && String or null
     // updatedAtは必須 && Timestamp型
     // createdAtは必須 && Timestamp型
     function isValidatePost(postLip) {
-      return (postLip.size() == 5 || postLip.size() == 4)
+      return postLip.size() == 5
       && 'imageRef' in postLip && postLip.imageRef is string
       && 'userRef' in postLip && postLip.userRef is path
-      && isNullOrString(postLip.review)
+      && 'review' in postLip && isNullOrString(postLip.review, 'review')
       && 'updatedAt' in postLip && postLip.updatedAt is timestamp
       && 'createdAt' in postLip && postLip.createdAt is timestamp;
     }

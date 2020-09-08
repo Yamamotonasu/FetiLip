@@ -33,8 +33,11 @@ describe("Firestoreセキュリティルール", () => {
     updatedAt: firestore.FieldValue.serverTimestamp()
   };
   
-  describe("Users collection", () => {
+  describe(constant.usersCollectionPath, () => {
     describe("create", () => {
+      afterEach(async () => {
+        await firebase.clearFirestoreData({ projectId: constant.PROJECT_ID });
+      });
       test("データのサイズが3なら作成出来る", async () => {
         const db = testModules.createAuthApp({ uid: testDocumentID });
         const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
@@ -60,7 +63,7 @@ describe("Firestoreセキュリティルール", () => {
         };
         await firebase.assertFails(userDocumentRef.set(invalidUserData));
       });
-      test("ユーザー名のバリデーション", async () => {
+      test("ユーザー名のバリデーション 失敗", async () => {
         const db = testModules.createAuthApp({ uid: testDocumentID });
         const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
         // ユーザー名0文字
@@ -75,14 +78,18 @@ describe("Firestoreセキュリティルール", () => {
           createdAt: firestore.FieldValue.serverTimestamp(),
           updatedAt: firestore.FieldValue.serverTimestamp()
         };
+        await firebase.assertFails(userDocumentRef.set(invalidUserData));
+        await firebase.assertFails(userDocumentRef.set(invalidUserData2));
+      });
+      test("ユーザー名のバリデーション 成功", async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
         // ユーザー名12文字
         const validUserData2 = {
           userName: "a".repeat(12),
           createdAt: firestore.FieldValue.serverTimestamp(),
           updatedAt: firestore.FieldValue.serverTimestamp()
         };
-        await firebase.assertFails(userDocumentRef.set(invalidUserData));
-        await firebase.assertFails(userDocumentRef.set(invalidUserData2));
         await firebase.assertSucceeds(userDocumentRef.set(validUserData2));
       });
     });
@@ -121,6 +128,27 @@ describe("Firestoreセキュリティルール", () => {
         const db = testModules.createAuthApp({ uid: "otherTest" });
         const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
         await firebase.assertFails(userDocumentRef.update(validUpdateUserName))
+      });
+    });
+
+    describe("read", () => {
+      beforeEach(async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        await userDocumentRef.set(correctUserData);
+      });
+      afterEach(async () => {
+        await firebase.clearFirestoreData({ projectId: constant.PROJECT_ID });
+      });
+      test("他のユーザーでも取得出来る", async () => {
+        const db = testModules.createAuthApp({ uid: "otherUser" });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        await firebase.assertSucceeds(userDocumentRef.get());
+      });
+      test("未認証でも取得出来る", async () => {
+        const db = testModules.createAuthApp({auth: null, uid: testDocumentID});
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        await firebase.assertSucceeds(userDocumentRef.get());
       });
     });
   });
