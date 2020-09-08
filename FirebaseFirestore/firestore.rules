@@ -8,8 +8,11 @@ service cloud.firestore {
       allow create:
       if isAnyAuthenticated()
       && isValidateUser(incomingData())
-      && (!('userName' in request.resource.data) || validateString(incomingData().userName, 2, 12));
-      allow update: if isUserAuthenticated(userID);
+      && validateString(incomingData().userName, 2, 12)
+      && validateRequestTime(incomingData());
+      allow update: 
+      if isUserAuthenticated(userID) 
+      && validateUpdateTime(incomingData());
       allow get: if isAnyAuthenticated();
       allow read: if isAnyAuthenticated();
     }
@@ -17,6 +20,7 @@ service cloud.firestore {
       allow create:
       if isAnyAuthenticated()
       && isValidatePost(incomingData())
+      && validateString(incomingData().review, 0, 1000)
       && incomingData().userRef == userDocumentPath(request.auth.uid) 
       && validateRequestTime(incomingData());
       allow read: if isAnyAuthenticated();
@@ -36,7 +40,7 @@ service cloud.firestore {
       return isAnyAuthenticated() && userID == request.auth.uid;
     }
 
-    // - region validate functions common
+    // - region common validate function
     
     // request.resource.dataへのアクセス簡略化
     function incomingData() {
@@ -66,6 +70,10 @@ service cloud.firestore {
     // @param data リクエストのデータ
     function validateRequestTime(data) {
       return data.createdAt == request.time && data.updatedAt == request.time
+    }
+
+    function validateUpdateTime(data) {
+      return data.updatedAt == request.time && data.createdAt == resource.data.createdAt
     }
 
     // null 又は stringならtrueを返す
