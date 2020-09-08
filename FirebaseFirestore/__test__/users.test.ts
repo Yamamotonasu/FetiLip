@@ -44,6 +44,6 @@ describe("Firestoreセキュリティルール", () => {
   test("Firebase test", async () => {
     const db = createAuthApp();
     const user = usersRef(db).doc("test");
-    await firebase.assertSucceeds(user.get()); 
+    await firebase.assertFails(user.get());
   });
 });

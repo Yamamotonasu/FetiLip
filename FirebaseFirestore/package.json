@@ -14,6 +14,7 @@
     "test": "jest"
   },
   "jest": {
+    "testEnvironment": "./__test-utils__/custom-jest-environment.js",
     "moduleFileExtensions": [
       "ts",
       "js"
@@ -30,5 +31,8 @@
       "**/tests/**/*.test.ts",
       "**/__test__/**/*.test.ts"
     ]
+  },
+  "dependencies": {
+    "jest-environment-node": "^26.3.0"
   }
 }
