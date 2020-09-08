@@ -10,7 +10,7 @@ import Foundation
 
 struct TestingInformation {
 
-    static let testUserEmail = "test@example.com"
+    static let testUserEmail = "register@app.com"
 
     static let testUserPassword = "password"
 
