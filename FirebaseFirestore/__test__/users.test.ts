@@ -1,37 +1,21 @@
+import { firestore } from 'firebase';
 import * as firebase from "@firebase/testing";
 import * as fs from "fs";
-import { create } from "domain";
-
-const PROJECT_ID = "fetilip";
-const RULES_PATH = "firestore.rules";
-
-// 認証付きのFreistore appを作成する
-const createAuthApp = (auth?: object): firebase.firestore.Firestore => {
-  return firebase
-    .initializeTestApp({ projectId: PROJECT_ID, auth: auth })
-    .firestore();
-};
-
-// 管理者権限で操作できるFreistore appを作成する
-const createAdminApp = (): firebase.firestore.Firestore => {
-  return firebase.initializeAdminApp({ projectId: PROJECT_ID }).firestore();
-};
-
-// user情報への参照を作る
-const usersRef = (db: firebase.firestore.Firestore) => db.collection("/version/1/users");
+import * as testModules from "./test_utils/test_module"
+import * as constant from "./test_utils/constants"
 
 describe("Firestoreセキュリティルール", () => {
   // ルールファイルの読み込み
   beforeAll(async () => {
     await firebase.loadFirestoreRules({
-      projectId: PROJECT_ID,
-      rules: fs.readFileSync(RULES_PATH, "utf8")
+      projectId: constant.PROJECT_ID,
+      rules: fs.readFileSync(constant.RULES_PATH, "utf8")
     });
   });
 
   // Firestoreデータのクリーンアップ
   afterEach(async () => {
-    await firebase.clearFirestoreData({ projectId: PROJECT_ID });
+    await firebase.clearFirestoreData({ projectId: constant.PROJECT_ID });
   });
 
   // Firestoreアプリの削除
@@ -40,10 +24,104 @@ describe("Firestoreセキュリティルール", () => {
   });
 
   // 以降にテストを記載
+
+  const testDocumentID = "testUser"
+
+  const correctUserData = {
+    userName: "testuser",
+    createdAt: firestore.FieldValue.serverTimestamp(),
+    updatedAt: firestore.FieldValue.serverTimestamp()
+  };
   
-  test("Firebase test", async () => {
-    const db = createAuthApp();
-    const user = usersRef(db).doc("test");
-    await firebase.assertFails(user.get());
+  describe("Users collection", () => {
+    describe("create", () => {
+      test("データのサイズが3なら作成出来る", async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        await firebase.assertSucceeds(userDocumentRef.set(correctUserData));
+      });
+      test("データのサイズが4だと作成出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        const invalidUserData = {
+          userName: "testuser",
+          age: 1,
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        await firebase.assertFails(userDocumentRef.set(invalidUserData));
+      });
+      test("データのサイズが2だと作成出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        const invalidUserData = {
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        await firebase.assertFails(userDocumentRef.set(invalidUserData));
+      });
+      test("ユーザー名のバリデーション", async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        // ユーザー名0文字
+        const invalidUserData = {
+          userName: "a".repeat(0),
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        // ユーザー名13文字
+        const invalidUserData2 = {
+          userName: "a".repeat(13),
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        // ユーザー名12文字
+        const validUserData2 = {
+          userName: "a".repeat(12),
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        await firebase.assertFails(userDocumentRef.set(invalidUserData));
+        await firebase.assertFails(userDocumentRef.set(invalidUserData2));
+        await firebase.assertSucceeds(userDocumentRef.set(validUserData2));
+      });
+    });
+
+    describe("update", () => {
+      beforeEach(async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        await userDocumentRef.set(correctUserData);
+      });
+      afterEach(async () => {
+        await firebase.clearFirestoreData({ projectId: constant.PROJECT_ID });
+      });
+
+      const validUpdateUserName = {
+        userName: 'a'.repeat(12),
+        updatedAt: firestore.FieldValue.serverTimestamp()
+      }
+
+      test("userNameの更新バリデーション", async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        const invalidUpdateUserName = {
+          userName: 'a'.repeat(13),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const invalidUpdateUserName2 = {
+          userName: 'a'.repeat(0),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        await firebase.assertFails(userDocumentRef.update(invalidUpdateUserName))
+        await firebase.assertFails(userDocumentRef.update(invalidUpdateUserName2))
+        await firebase.assertSucceeds(userDocumentRef.update(validUpdateUserName))
+      });
+      test("他のユーザーのuserNameは更新出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: "otherTest" });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(userDocumentRef.update(validUpdateUserName))
+      });
+    });
   });
 });

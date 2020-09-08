@@ -1,17 +1,16 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /users/{user} {
-      allow create: if true;
-    }
     match /version/1/users/{userID} {
       allow create:
       if isAnyAuthenticated()
       && isValidateUser(incomingData())
-      && validateString(incomingData().userName, 2, 12)
+      && validateString(incomingData().userName, 1, 12)
       && validateRequestTime(incomingData());
       allow update: 
       if isUserAuthenticated(userID) 
+      && isValidateUser(incomingData())
+      && validateString(incomingData().userName, 1, 12)
       && validateUpdateTime(incomingData());
       allow get: if isAnyAuthenticated();
       allow read: if isAnyAuthenticated();
@@ -72,6 +71,9 @@ service cloud.firestore {
       return data.createdAt == request.time && data.updatedAt == request.time
     }
 
+    // updateアクションでupdateだけがリクエストを受け取った時刻へ更新されているかどうか検証する
+    //
+    // @param data リクエストのデータ
     function validateUpdateTime(data) {
       return data.updatedAt == request.time && data.createdAt == resource.data.createdAt
     }
