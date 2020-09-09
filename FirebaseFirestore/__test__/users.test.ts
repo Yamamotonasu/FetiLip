@@ -109,7 +109,7 @@ describe("Firestoreセキュリティルール", () => {
         updatedAt: firestore.FieldValue.serverTimestamp()
       }
 
-      test("userNameの更新バリデーション", async () => {
+      test("userNameの更新バリデーション 失敗", async () => {
         const db = testModules.createAuthApp({ uid: testDocumentID });
         const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
         const invalidUpdateUserName = {
@@ -122,7 +122,20 @@ describe("Firestoreセキュリティルール", () => {
         }
         await firebase.assertFails(userDocumentRef.update(invalidUpdateUserName))
         await firebase.assertFails(userDocumentRef.update(invalidUpdateUserName2))
+      });
+      test("userNameの更新バリデーション 成功", async () => {
+        const db = testModules.createAuthApp({ uid: testDocumentID });
+        const userDocumentRef: firestore.DocumentReference = db.collection(constant.usersCollectionPath).doc(testDocumentID);
+        const validUpdateUserName = {
+          userName: 'a'.repeat(1),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const validUpdateUserName2 = {
+          userName: 'a'.repeat(12),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
         await firebase.assertSucceeds(userDocumentRef.update(validUpdateUserName))
+        await firebase.assertSucceeds(userDocumentRef.update(validUpdateUserName2))
       });
       test("他のユーザーのuserNameは更新出来ない", async () => {
         const db = testModules.createAuthApp({ uid: "otherTest" });

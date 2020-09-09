@@ -99,8 +99,37 @@ describe("Firestoreセキュリティルール", () => {
         const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
         await firebase.assertSucceeds(postDocumentRef.set(invalidPostData));
       });
+      test("imageRefがposts/以下で指定されていなければ作成出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const invalidPostData = {
+          userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          imageRef: `post/${constant.testUserDocumentID}/aaa.jpeg`,
+          review: 'a'.repeat(500),
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.set(invalidPostData));
+      });
+      test("userRefが /version/v1/users/${uid} 以下で指定されていなければ作成出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const invalidPostData = {
+          userRef: db.collection(constant.postsCollectionPath).doc(constant.testUserDocumentID),
+          imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
+          review: 'a'.repeat(500),
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.set(invalidPostData));
+      });
     });
     describe("read", () => {
+      test("認証されていなくても表示出来る", async () => {
+        const db = testModules.createAuthApp({ auth: null, uid: constant.testUserDocumentID });
+        const postCollectionRef: firestore.CollectionReference = db.collection(constant.postsCollectionPath)
+        await firebase.assertSucceeds(postCollectionRef.get());
+      });
     });
     describe("update", () => {
     });

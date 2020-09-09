@@ -22,6 +22,7 @@ service cloud.firestore {
       && isValidatePost(incomingData())
       && validateString(incomingData().review, 0, 1000)
       && incomingData().userRef == userDocumentPath(request.auth.uid) 
+      && incomingData().imageRef.matches('^posts/.+$')
       && validateRequestTime(incomingData());
       allow read: if isAnyAuthenticated();
     }
