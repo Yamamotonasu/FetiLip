@@ -23,8 +23,8 @@ public enum PostsRequests: FirestoreRequest {
             params[Fields.Key.review.rawValue] = review
             params[Fields.Key.userRef.rawValue] = userRef
             params[Fields.Key.imageRef.rawValue] = imageRef
-            params[Fields.Key.createdAt.rawValue] = Date()
-            params[Fields.Key.updatedAt.rawValue] = Date()
+            params[Fields.Key.createdAt.rawValue] = FieldValue.serverTimestamp()
+            params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
             return params
         }
     }

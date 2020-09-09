@@ -19,11 +19,7 @@ exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCrea
   const generatedName: String = `user${getRandom(10000000)}`
 
   const requestData = {
-    uid: `${user.uid}`,
     userName: generatedName,
-    email: '',
-    profile: '',
-    userImageRef: '',
     updatedAt: new Date(),
     createdAt: new Date()
   };
@@ -44,5 +40,3 @@ exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCrea
   }
 
 })
-
-exports.updateEmailAdress = functions.region('asia-northeast1').auth.user()

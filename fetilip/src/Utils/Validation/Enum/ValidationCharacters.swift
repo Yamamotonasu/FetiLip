@@ -16,11 +16,11 @@ enum ValidationCharacters {
     var max: Int {
         switch self {
         case .userName:
-            return 10
+            return 12
         case .password:
             return 32
         case .review:
-            return 500
+            return 1000
         }
     }
 

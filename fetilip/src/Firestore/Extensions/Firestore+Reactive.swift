@@ -21,7 +21,7 @@ extension Reactive where Base: Firestore {
             collectionRef.addDocument(data: fields) { error in
                 if let error = error {
                     log.error(error)
-                    observer(.error(error))
+                    observer(.error(AuthErrorHandler.errorCode(error)))
                 } else {
                     observer(.success(()))
                 }
@@ -39,7 +39,7 @@ extension Reactive where Base: Firestore {
             documentRef.setData(fields) { error in
                 if let error = error {
                     log.error(error)
-                    observer(.error(error))
+                    observer(.error(AuthErrorHandler.errorCode(error)))
                 } else {
                     observer(.success(()))
                 }
@@ -56,7 +56,7 @@ extension Reactive where Base: Firestore {
             documentRef.updateData(fields) { error in
                 if let error = error {
                     log.error(error)
-                    observer(.error(error))
+                    observer(.error(AuthErrorHandler.errorCode(error)))
                 } else {
                     observer(.success(()))
                 }
@@ -69,7 +69,7 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             query.getDocuments { snapshot, error in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot else {
@@ -101,7 +101,7 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             collectionRef.getDocuments { snapshot, error in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot else {
@@ -129,7 +129,7 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             subCollectionQuery.getDocuments { (snapshot, error) in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot else {
@@ -159,7 +159,7 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             documentReference.getDocument { (snapshot, error) in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.error(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot, let data = snap.data() else {
@@ -185,6 +185,14 @@ public enum ApplicationError: Error {
     case notFoundEntity(documentId: String)
     case notFoundJson
     case failedParseResponse
+}
+
+extension ApplicationError: LocalizedError {
+
+    public var errorDescription: String? {
+        return R._string.internalError
+    }
+
 }
 
 enum SortType {

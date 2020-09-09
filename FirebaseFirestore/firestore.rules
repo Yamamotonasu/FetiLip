@@ -1,50 +1,136 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /users/{user} {
-      allow create: if true;
-    }
     match /version/1/users/{userID} {
-      allow create: if isAnyAuthenticated() && (!('userName' in request.resource.data) || validateString(request.resource.data.userName, 2, 12));
-      allow update: if isUserAuthenticated(userID)
+      allow create:
+      if isAnyAuthenticated()
+      && isValidateUser(incomingData())
+      && validateString(incomingData().userName, 1, 12)
+      && validateRequestTime(incomingData());
+      allow update: 
+      if isUserAuthenticated(userID) 
+      && isValidateUser(incomingData())
+      && validateString(incomingData().userName, 1, 12)
+      && validateUpdateTime(incomingData());
       allow get: if isAnyAuthenticated();
       allow read: if isAnyAuthenticated();
+      allow delete: if false;
     }
     match /version/1/posts/{postID} {
-      allow create: if isAnyAuthenticated();
-      allow update: if isUserAuthenticated(userID);
-      allow get: if isAnyAuthenticated();
+      allow create:
+      if isAnyAuthenticated()
+      && isValidatePost(incomingData())
+      && validateString(incomingData().review, 0, 1000)
+      && incomingData().userRef == userDocumentPath(request.auth.uid) 
+      && incomingData().imageRef.matches('^posts/.+$')
+      && validateRequestTime(incomingData());
       allow read: if isAnyAuthenticated();
     }
-    match /{path=**}/posts/{postID} {
-      allow create: if isAnyAuthenticated();
-      allow get: if isAnyAuthenticated();
-      allow update: if isUserAuthenticated(userID);
-      allow read: if isAnyAuthenticated();
-		}
-    
+
+    // - region auth functions
+
+    // 認証されていればtrue
     function isAnyAuthenticated() {
       return request.auth != null;
     }
     
+    // 認証されている && uidが同一なものか検証する。DocumentID = uidの時に自分のDocumentかどうか判定する時等に使う
+    //
+    // @param userID UID
     function isUserAuthenticated(userID) {
       return isAnyAuthenticated() && userID == request.auth.uid;
     }
+
+    // - region common validate function
     
-    function existingData() {
-      return resource.data;
-		}
-    
+    // request.resource.dataへのアクセス簡略化
     function incomingData() {
       return request.resource.data;
     }
     
+    // String型のフィールド値のバリデーションを設定する
+    //
+    // @param text 検証する文字列
+    // @param min 最小値
+    // @param max 最大値
     function validateString(text, min, max) {
       return text is string && min <= text.size() && text.size() <= max;
     }
     
-    function validateInt(num, min, max) {
-      return num is int && min <= num && num <= max;
+    // Integer型のフィールド値のバリデーションを設定する
+    //
+    // @param num 検証する値
+    // @param min 最小値
+    // @param max 最大値
+    function validateInt(value, min, max) {
+      return value is int && min <= value && value <= max;
+    }
+
+    // タイムスタンプの値がサーバー側でリクエストを受け取った時刻と一致するかどうか検証する。createdAtとupdatedAtが含まれている場合のみ検証可能なので基本はcreate用。
+    //
+    // @param data リクエストのデータ
+    function validateRequestTime(data) {
+      return data.createdAt == request.time && data.updatedAt == request.time
+    }
+
+    // updateアクションでupdateだけがリクエストを受け取った時刻へ更新されているかどうか検証する
+    //
+    // @param data リクエストのデータ
+    function validateUpdateTime(data) {
+      return data.updatedAt == request.time && data.createdAt == resource.data.createdAt
+    }
+
+    // null 又は string 又は空文字ならtrueを返す
+    //
+    // @param value 検証する値
+    function isNullOrString(value, field) {
+      return value == null || value is string || value.empty()
+    }
+
+    // undefinedかどうかを検証する
+    function isUndefined(data, field) {
+      return !data.keys().hasAll([field]);
+    }
+
+    // - region users
+
+    // users collectionのスキーマ検証用関数
+    //
+    // Schemeの数は3つである
+    // userNameは必須 && String型
+    // updatedAtは必須 && Timestamp型
+    // createdAtは必須 && Timestamp型
+    function isValidateUser(user) {
+      return user.size() == 3
+      && 'userName' in user && user.userName is string
+      && 'updatedAt' in user && user.updatedAt is timestamp
+      && 'createdAt' in user && user.createdAt is timestamp;
+    }
+
+    // usersのドキュメントReferenceを作成して返す
+    //
+    // @param uid UID
+    function userDocumentPath(userID) {
+      return /databases/$(database)/documents/version/1/users/$(userID);
+    }
+
+    // - region posts
+
+    // posts collection スキーマ検証
+    //
+    // Schemaの数は5つ
+    // imageRefは必須 && String型
+    // userRefは必須 && Reference型
+    // reviewは任意 && String or null
+    // updatedAtは必須 && Timestamp型
+    // createdAtは必須 && Timestamp型
+    function isValidatePost(postLip) {
+      return postLip.size() == 5
+      && 'imageRef' in postLip && postLip.imageRef is string
+      && 'userRef' in postLip && postLip.userRef is path
+      && 'review' in postLip && isNullOrString(postLip.review, 'review')
+      && 'updatedAt' in postLip && postLip.updatedAt is timestamp
+      && 'createdAt' in postLip && postLip.createdAt is timestamp;
     }
   }
 }

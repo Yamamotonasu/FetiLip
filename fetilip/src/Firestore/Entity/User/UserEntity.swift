@@ -14,9 +14,7 @@ import Firebase
  */
 public struct UserEntity: Codable, FirestoreEntity {
 
-    public let uid: String
-
-    public let profile: String
+    public let profile: String?
 
     public let userName: String
 
@@ -27,8 +25,6 @@ public struct UserEntity: Codable, FirestoreEntity {
     public let updatedAt: Timestamp
 
     enum Key: String, CodingKey {
-
-        case uid
 
         case profile
 

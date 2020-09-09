@@ -71,8 +71,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         loadEvent.onNext(.firstLoad)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
@@ -81,6 +81,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         if isHiddenBottomBar == true {
             self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
         }
+        loadViewIfNeeded()
     }
 
 }
@@ -101,6 +102,8 @@ extension PostListViewController {
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 2
+
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
 
         // Setup refresh control
         lipCollectionView.refreshControl = refreshControl
@@ -168,11 +171,7 @@ extension PostListViewController {
         if segue.identifier == R.segue.postListViewController.goToPostLipDetail.identifier {
             let nav = self.navigationController
             let vc = segue.destination as! PostLipDetailViewController
-            nav?.delegate = vc.transitionController
-            vc.transitionController.fromDelegate = self
-            vc.transitionController.toDelegate = vc
             let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
-
             if let domain = data.first?.items[self.selectedIndexPath.row] {
                 vc.inject(with: .init(displayImage: cell.lipImage.image,
                                       postModel: domain ))
@@ -180,6 +179,9 @@ extension PostListViewController {
                 // ここで取れなかったらバグになるので、開発環境のみクラッシュさせる。
                 assertionFailure()
             }
+            nav?.delegate = vc.transitionController
+            vc.transitionController.fromDelegate = self
+            vc.transitionController.toDelegate = vc
         }
     }
 
