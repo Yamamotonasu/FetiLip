@@ -59,9 +59,6 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
     /// Where to display the selected image.
     @IBOutlet private weak var selectedImageViewArea: UIView!
 
-    /// Sentence to post only lip image.
-    @IBOutlet private weak var attentionLabel: UILabel!
-
     /// Review selected images.
     @IBOutlet private weak var postLipReviewTextView: UITextView!
 
@@ -136,7 +133,6 @@ extension PostLipViewController {
         .observeOn(MainScheduler.instance)
         .subscribe(onNext: { [unowned self] exists in
             self.deleteImageButton.isHidden = !exists
-            self.attentionLabel.isHidden = !exists
             self.descriptionLabel.isHidden = exists
             self.addImageButton.titleLabel?.text = exists ? R._string.view_message.editImage : R._string.view_message.selectImage
             self.postButton.alpha = exists ? 1.0 : 0.5
