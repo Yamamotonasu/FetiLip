@@ -35,6 +35,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     // MARK: - Outlets
 
+    @IBOutlet private weak var contentView: UIView!
+
     @IBOutlet weak var lipImageView: UIImageView!
 
     @IBOutlet private weak var backButton: UIButton!
@@ -81,7 +83,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
         self.panGesture.delegate = self
-        self.view.addGestureRecognizer(panGesture)
+        contentView.addGestureRecognizer(panGesture)
     }
 
     private func subscribe() {
