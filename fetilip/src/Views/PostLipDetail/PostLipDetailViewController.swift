@@ -35,6 +35,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     // MARK: - Outlets
 
+    @IBOutlet weak var scrollView: UIScrollView!
+
     @IBOutlet private weak var contentView: UIView!
 
     @IBOutlet weak var lipImageView: UIImageView!
