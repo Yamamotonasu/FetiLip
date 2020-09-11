@@ -35,7 +35,7 @@ extension InvalidReview: LocalizedError {
 extension ValidationContainer where Target == (UIImage?, String?), Invalid == InvalidReview {
 
     func imageNotEmpty() -> Self {
-        return guarantee({ (image, review) in
+        return guarantee({ (image, _) in
             if let _ = image {
                 return true
             } else {
@@ -46,7 +46,7 @@ extension ValidationContainer where Target == (UIImage?, String?), Invalid == In
 
     func lessThanDigits() -> Self {
         let maxDigits = ValidationCharacters.review.max
-        return guarantee({ (image, review) in
+        return guarantee({ (_, review) in
             if let input = review {
                 return  input.count <= maxDigits
             } else {

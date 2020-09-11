@@ -36,7 +36,7 @@ struct EditProfileDetailViewModel: EditProfileDetailViewModelProtocol {
 
 extension EditProfileDetailViewModel {
 
-    private func updateEvent(editProfileDetailType: EditProfileDetailType, input: String?, password: String = "") -> Single<()>{
+    private func updateEvent(editProfileDetailType: EditProfileDetailType, input: String?, password: String = "") -> Single<()> {
         switch editProfileDetailType {
         case .userName:
             return validateUserName(userName: input).flatMap { name -> Single<()> in

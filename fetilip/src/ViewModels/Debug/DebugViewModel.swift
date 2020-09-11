@@ -182,7 +182,7 @@ extension DebugViewModel: ViewModelType {
         }).disposed(by: disposeBag)
 
         // Reaction to the tap of the save user name button.
-        input.tapSaveNameButton.withLatestFrom(input.userNameObservable).subscribe(onNext: { userName in
+        input.tapSaveNameButton.withLatestFrom(input.userNameObservable).subscribe(onNext: { _ in
 //            self.commitUserName(with: userName)
         }).disposed(by: disposeBag)
 

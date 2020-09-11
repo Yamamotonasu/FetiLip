@@ -37,6 +37,8 @@ struct PostLipViewModel {
     /// return true: success post request, return false: failed post request.
     private let resultPostSubject: PublishSubject<Bool> = PublishSubject<Bool>()
 
+    private let templateTextRelay: PublishRelay<String?> = PublishRelay<String?>()
+
     let activity: ActivityIndicator = ActivityIndicator()
 
     /// Bool loading state.
@@ -55,6 +57,8 @@ extension PostLipViewModel: ViewModelType {
         let postButtonTapEvent: Observable<Void>
         // Reviewing text.
         let postLipReviewText: Observable<String?>
+        // Segmented controll value change event
+        let segumentedControlValueObservable: Observable<Int>
     }
 
     struct Output {
@@ -62,6 +66,8 @@ extension PostLipViewModel: ViewModelType {
         let closeButtonHiddenEvent: Driver<Bool>
         // Image observable
         let updatedImage: Observable<UIImage?>
+
+        let templateTextDriver: Driver<String?>
 
         let postResult: Observable<()>
 
@@ -75,6 +81,17 @@ extension PostLipViewModel: ViewModelType {
                 self.imageExistsState.accept(image == nil)
                 self.uploadedImage.accept(nil)
             }).disposed(by: disposeBag)
+
+        _ = input.segumentedControlValueObservable.subscribe(onNext: { num in
+            switch num {
+            case 0:
+                self.templateTextRelay.accept("")
+            case 1:
+                self.templateTextRelay.accept(R._string.view_message.postTemplate)
+            default:
+                break
+            }
+        })
 
         let postObservable = Observable.combineLatest(self.uploadedImage, input.postLipReviewText) {
             (uploadedImage: $0, reviewText: $1)
@@ -98,6 +115,7 @@ extension PostLipViewModel: ViewModelType {
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: uploadedImage.asObservable(),
+                      templateTextDriver: self.templateTextRelay.asDriver(onErrorJustReturn: ""),
                       postResult: postSequence,
                       indicator: indicator)
     }

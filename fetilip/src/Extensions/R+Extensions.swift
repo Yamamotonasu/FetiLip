@@ -118,6 +118,8 @@ extension R {
             static let editImage = "画像を編集する"
 
             static let selectImage = "画像を選択する"
+
+            static let postTemplate = "使用した口紅: \n\n使用した感想:\n"
         }
 
     }

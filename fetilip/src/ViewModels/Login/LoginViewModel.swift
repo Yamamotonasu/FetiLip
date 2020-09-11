@@ -104,5 +104,4 @@ extension LoginViewModel: ViewModelType {
                       isLoading: indicator.asDriver(onErrorJustReturn: false))
     }
 
-
 }

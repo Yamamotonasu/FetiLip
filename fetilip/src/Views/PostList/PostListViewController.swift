@@ -81,7 +81,6 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         if isHiddenBottomBar == true {
             self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
         }
-        loadViewIfNeeded()
     }
 
 }
