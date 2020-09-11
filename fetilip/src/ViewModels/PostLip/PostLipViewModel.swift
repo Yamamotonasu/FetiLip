@@ -82,7 +82,7 @@ extension PostLipViewModel: ViewModelType {
                 self.uploadedImage.accept(nil)
             }).disposed(by: disposeBag)
 
-        let _ = input.segumentedControlValueObservable.subscribe(onNext: { num in
+        _ = input.segumentedControlValueObservable.subscribe(onNext: { num in
             switch num {
             case 0:
                 self.templateTextRelay.accept("")

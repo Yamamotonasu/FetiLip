@@ -38,9 +38,9 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     // MARK: - Rx
 
-    private var updateProfileSubject: BehaviorSubject<EditProfileDetailType>? = nil
+    private var updateProfileSubject: BehaviorSubject<EditProfileDetailType>?
 
-    private var defaultInformationSubject: BehaviorSubject<String>? = nil
+    private var defaultInformationSubject: BehaviorSubject<String>?
 
     private let inputPasswordSubject: BehaviorSubject<String> = BehaviorSubject<String>(value: "")
 

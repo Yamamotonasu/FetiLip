@@ -120,10 +120,6 @@ extension PostLipViewController {
                 self.launchEditor()
             }
         }).disposed(by: rx.disposeBag)
-
-        templateSegumentedControl.rx.controlEvent(.valueChanged).subscribe(onNext: { enabled in
-            
-        }).disposed(by: rx.disposeBag)
     }
 
     /// Bind UI from view model outputs and ViewModel.

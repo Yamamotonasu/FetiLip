@@ -20,7 +20,6 @@ struct GlobalTabBarViewModel {
 
 }
 
-
 extension GlobalTabBarViewModel: ViewModelType {
 
     struct Input {

@@ -169,7 +169,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     public func upgradePerpetualAccountFromAnonymous(email: String, password: String, linkingUser user: FirebaseUser) -> Single<FirebaseUser> {
         return Single.create { observer in
             let credential = EmailAuthProvider.credential(withEmail: email, password: password)
-            user.link(with: credential) { (result, error) in
+            user.link(with: credential) { (_, error) in
                 if let e = error {
                     observer(.error(AuthErrorHandler.errorCode(e)))
                 }
@@ -187,7 +187,6 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 observer(.error(User.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
-
 
             if user.isAnonymous {
                 observer(.error(User.AuthError.needToUpdateFromAnonymousUser))
@@ -208,7 +207,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return checkLogin().flatMap { user in
             return Single.create { observer in
                 let credential = EmailAuthProvider.credential(withEmail: email, password: password)
-                user.reauthenticate(with: credential) { (result, error) in
+                user.reauthenticate(with: credential) { (_, error) in
                     if let e = error {
                         observer(.error(AuthErrorHandler.errorCode(e)))
                     } else {

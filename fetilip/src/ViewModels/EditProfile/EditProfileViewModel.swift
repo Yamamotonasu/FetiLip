@@ -87,7 +87,7 @@ extension EditProfileViewModel: ViewModelType {
             return self.userModel.updateUserProfileReference(userRef: UserModel.makeDocumentRef(id: LoginAccountData.uid!), storagePath: storageRef.fullPath).trackActivity(self.activity)
         }
 
-        let _ = userAuthModel.checkLogin().subscribe(onSuccess: { user in
+        _ = userAuthModel.checkLogin().subscribe(onSuccess: { user in
             self.emailSubject.onNext(user.email)
             self.registerHiddenSubject.onNext(user.isAnonymous)
         })

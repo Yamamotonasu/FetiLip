@@ -70,7 +70,7 @@ extension RegisterUserViewModel: ViewModelType {
             (emailError: $0, passwordError: $1)
         }
 
-        let combineText = Observable.combineLatest(input.emailTextObservable.flatMap { $0.flatMap(Observable.just) ?? Observable.empty() }, input.passwordTextObservable.flatMap { $0.flatMap(Observable.just) ?? Observable.empty() } ) {
+        let combineText = Observable.combineLatest(input.emailTextObservable.flatMap { $0.flatMap(Observable.just) ?? Observable.empty() }, input.passwordTextObservable.flatMap { $0.flatMap(Observable.just) ?? Observable.empty() }) {
             (email: $0, password: $1)
         }
 
@@ -84,7 +84,7 @@ extension RegisterUserViewModel: ViewModelType {
         let registerSequence = input.registerTapEvent.asObservable().withLatestFrom(combineText).flatMapLatest { pair in
             self.userAuthModel.checkLogin().flatMap { user -> Single<FirebaseUser> in
                 return self.userAuthModel.upgradePerpetualAccountFromAnonymous(email: pair.email, password: pair.password, linkingUser: user)
-            }.flatMap { user -> Single<()> in
+            }.flatMap { _ -> Single<()> in
                 return Single.create { observer in
                     observer(.success(()))
                     return Disposables.create()

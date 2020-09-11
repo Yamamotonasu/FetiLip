@@ -26,5 +26,5 @@ public struct SecureUserModel: FirestoreDatabaseCollection {
         self.id = id
         self.fields = fields
     }
-    
+
 }

@@ -37,7 +37,7 @@ public struct AppAlert {
         config.presentationContext = .window(windowLevel: .normal)
         config.duration = duration
 
-        config.eventListeners.append() { event in
+        config.eventListeners.append { event in
             if case .didHide = event { if let c = completion { c() } }
         }
 
@@ -79,7 +79,7 @@ public struct AppAlert {
         config.presentationContext = .window(windowLevel: .normal)
         config.duration = duration
 
-        config.eventListeners.append() { event in
+        config.eventListeners.append { event in
             if case .didHide = event { if let c = completion { c() } }
         }
 
