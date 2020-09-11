@@ -39,7 +39,7 @@ class PlaceHolderTextView: UITextView {
         NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: UITextView.textDidChangeNotification, object: nil)
     }
 
-    private func changeVisiblePlaceHolder() {
+    func changeVisiblePlaceHolder() {
         self.placeHolderLabel.alpha = (self.placeHolder.isEmpty || !self.text.isEmpty) ? 0.0 : 1.0
     }
 

@@ -60,7 +60,9 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
     @IBOutlet private weak var selectedImageViewArea: UIView!
 
     /// Review selected images.
-    @IBOutlet private weak var postLipReviewTextView: UITextView!
+    @IBOutlet private weak var postLipReviewTextView: PlaceHolderTextView!
+
+    @IBOutlet private weak var templateSegumentedControl: UISegmentedControl!
 
     // MARK: - Properties
 
@@ -70,6 +72,7 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        composeUI()
         subscribe()
         bindUI()
     }
@@ -79,6 +82,10 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 // MARK: - Private functions
 
 extension PostLipViewController {
+
+    private func composeUI() {
+        templateSegumentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: R.font.sourceHanSansBold(size: 14)!], for: .normal)
+    }
 
     private func subscribe() {
         dismissButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
@@ -113,13 +120,18 @@ extension PostLipViewController {
                 self.launchEditor()
             }
         }).disposed(by: rx.disposeBag)
+
+        templateSegumentedControl.rx.controlEvent(.valueChanged).subscribe(onNext: { enabled in
+            
+        }).disposed(by: rx.disposeBag)
     }
 
     /// Bind UI from view model outputs and ViewModel.
     private func bindUI() {
         let input = ViewModel.Input(deleteButtonTapEvent: deleteImageButton.rx.tap.asObservable(),
                                     postButtonTapEvent: postButton.rx.tap.asObservable(),
-                                    postLipReviewText: postLipReviewTextView.rx.text.asObservable())
+                                    postLipReviewText: postLipReviewTextView.rx.text.asObservable(),
+                                    segumentedControlValueObservable: templateSegumentedControl.rx.value.asObservable())
         let output = viewModel.transform(input: input)
 
         output.updatedImage
@@ -127,17 +139,21 @@ extension PostLipViewController {
             .disposed(by: rx.disposeBag)
 
         output.updatedImage
-            .flatMapLatest { image in
-                return Observable.just(image != nil)
-        }
-        .observeOn(MainScheduler.instance)
-        .subscribe(onNext: { [unowned self] exists in
-            self.deleteImageButton.isHidden = !exists
-            self.descriptionLabel.isHidden = exists
-            self.addImageButton.titleLabel?.text = exists ? R._string.view_message.editImage : R._string.view_message.selectImage
-            self.postButton.alpha = exists ? 1.0 : 0.5
-            self.imagePosted.borderColor = exists ? .white : .gray
-            self.postLipReviewTextView.isHidden = !exists
+            .map { $0 != nil }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [unowned self] exists in
+                self.deleteImageButton.isHidden = !exists
+                self.descriptionLabel.isHidden = exists
+                self.templateSegumentedControl.isHidden = !exists
+                self.addImageButton.titleLabel?.text = exists ? R._string.view_message.editImage : R._string.view_message.selectImage
+                self.postButton.alpha = exists ? 1.0 : 0.5
+                self.imagePosted.borderColor = exists ? .white : .gray
+                self.postLipReviewTextView.isHidden = !exists
+            }).disposed(by: rx.disposeBag)
+
+        output.templateTextDriver.drive(onNext: { [unowned self] text in
+            self.postLipReviewTextView.text = text
+            self.postLipReviewTextView.changeVisiblePlaceHolder()
         }).disposed(by: rx.disposeBag)
 
         output.postResult.retryWithAlert().subscribe(onNext: { [weak self] in
