@@ -44,11 +44,11 @@ class MainModalViewController: UIViewController {
         let attributedString = NSMutableAttributedString(attributedString: termAndPrivacyPolicyTextView.attributedText )
 
         attributedString.addAttribute(.link,
-                                      value: "Term",
+                                      value: RemoteConfigParameters.termUrl.stringValue ?? Constants.termUrl,
                                       range: NSString(string: baseString).range(of: term))
 
         attributedString.addAttribute(.link,
-                                      value: "PrivacyPolicy",
+                                      value: RemoteConfigParameters.privacyPolicy.stringValue ?? Constants.privacyPolicyUrl,
                                       range: NSString(string: baseString).range(of: privacyPolicy))
 
         termAndPrivacyPolicyTextView.attributedText = attributedString
@@ -86,7 +86,6 @@ class MainModalViewController: UIViewController {
 extension MainModalViewController: UITextViewDelegate {
 
     public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        // TODO: Link setting.
         UIApplication.shared.open(URL)
         return false
     }
