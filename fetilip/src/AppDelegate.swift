@@ -104,6 +104,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         ApplicationFlag.shared.clearFlags()
 
+        let _ = RemoteConfigModel.init(fetch: true)
+
         return true
     }
 

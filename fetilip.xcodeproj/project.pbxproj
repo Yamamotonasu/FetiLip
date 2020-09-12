@@ -108,6 +108,11 @@
 		036318F6250C756A005B317A /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036318F3250C7569005B317A /* FirebaseRemoteConfig.framework */; };
 		036318FA250C75A2005B317A /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036318F9250C75A2005B317A /* FirebaseABTesting.framework */; };
 		03631963250C75CE005B317A /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03631900250C75B3005B317A /* Protobuf.framework */; };
+		03631969250C8859005B317A /* run in Resources */ = {isa = PBXBuildFile; fileRef = 03631968250C8859005B317A /* run */; };
+		0363196B250C8863005B317A /* upload-symbols in Resources */ = {isa = PBXBuildFile; fileRef = 0363196A250C8862005B317A /* upload-symbols */; };
+		0363196E250C95A4005B317A /* RemoteConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363196D250C95A4005B317A /* RemoteConfigModel.swift */; };
+		03631970250C95CA005B317A /* RemoteConfigParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363196F250C95CA005B317A /* RemoteConfigParameters.swift */; };
+		03631972250CA75F005B317A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03631971250CA75F005B317A /* String+Extensions.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -434,6 +439,11 @@
 		03631960250C75B4005B317A /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
 		03631961250C75B4005B317A /* E4BCF258-2AB4-31A5-80B0-FA73C177BE0D.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "E4BCF258-2AB4-31A5-80B0-FA73C177BE0D.bcsymbolmap"; sourceTree = "<group>"; };
 		03631962250C75B4005B317A /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
+		03631968250C8859005B317A /* run */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run; sourceTree = "<group>"; };
+		0363196A250C8862005B317A /* upload-symbols */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = "upload-symbols"; sourceTree = "<group>"; };
+		0363196D250C95A4005B317A /* RemoteConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigModel.swift; sourceTree = "<group>"; };
+		0363196F250C95CA005B317A /* RemoteConfigParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigParameters.swift; sourceTree = "<group>"; };
+		03631971250CA75F005B317A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -1079,6 +1089,7 @@
 			isa = PBXGroup;
 			children = (
 				035BB00324666D3E001FF6D1 /* LoginAccountData.swift */,
+				0363196D250C95A4005B317A /* RemoteConfigModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1159,6 +1170,7 @@
 			isa = PBXGroup;
 			children = (
 				035D5CF824E929B20047B4AA /* ValidationError.swift */,
+				0363196F250C95CA005B317A /* RemoteConfigParameters.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -1361,6 +1373,15 @@
 			path = Carthage/Build/iOS;
 			sourceTree = "<group>";
 		};
+		03631967250C8768005B317A /* FirebaseCrashlytics */ = {
+			isa = PBXGroup;
+			children = (
+				0363196A250C8862005B317A /* upload-symbols */,
+				03631968250C8859005B317A /* run */,
+			);
+			path = FirebaseCrashlytics;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1467,6 +1488,7 @@
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
+				03631967250C8768005B317A /* FirebaseCrashlytics */,
 				034A988E24A0EFF8009336F0 /* Nimble.framework */,
 				034A988D24A0EFF7009336F0 /* Quick.framework */,
 				039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */,
@@ -1730,6 +1752,7 @@
 				034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */,
 				035F6DA024F348FF00991231 /* UIFont+Extensions.swift */,
 				035F6DA924F4AA5D00991231 /* UILabel+Extensions.swift */,
+				03631971250CA75F005B317A /* String+Extensions.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -2020,6 +2043,7 @@
 				03AAFAE3241E2FD70068FB1E /* Resources */,
 				03AAFB2A241E47740068FB1E /* Carthage Run Script */,
 				432510C923D697783A36108D /* [CP] Embed Pods Frameworks */,
+				0363196C250C887E005B317A /* Crashlytics phase */,
 			);
 			buildRules = (
 			);
@@ -2123,6 +2147,7 @@
 				035D5CF124E8F5470047B4AA /* EditProfileDetail.storyboard in Resources */,
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
 				03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */,
+				03631969250C8859005B317A /* run in Resources */,
 				034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */,
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
@@ -2131,6 +2156,7 @@
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
 				035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */,
+				0363196B250C8863005B317A /* upload-symbols in Resources */,
 				035F6D9C24F3432600991231 /* SourceHanSans-Light.otf in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
 				035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */,
@@ -2166,6 +2192,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0363196C250C887E005B317A /* Crashlytics phase */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Crashlytics phase";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/FirebaseCrashlytics/run\"\n";
+		};
 		03AAFB2A241E47740068FB1E /* Carthage Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2382,13 +2427,16 @@
 				034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */,
 				035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */,
 				035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */,
+				0363196E250C95A4005B317A /* RemoteConfigModel.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
 				035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
+				03631970250C95CA005B317A /* RemoteConfigParameters.swift in Sources */,
 				03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
+				03631972250CA75F005B317A /* String+Extensions.swift in Sources */,
 				034A989824A713F2009336F0 /* R+Extensions.swift in Sources */,
 				03AD487F24FEA03B006BABDF /* LoginViewController.swift in Sources */,
 				035D5D0124E952B70047B4AA /* RegisterUserViewController.swift in Sources */,
@@ -2519,7 +2567,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
