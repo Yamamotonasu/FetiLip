@@ -60,6 +60,13 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
         userLoadEvent.onNext(())
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tab = self.tabBarController as? GlobalTabBarController {
+            tab.customTabBar.alpha = 1
+        }
+    }
+
 }
 
 // MARK: Private functions
