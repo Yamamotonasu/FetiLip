@@ -114,6 +114,8 @@
 		03631970250C95CA005B317A /* RemoteConfigParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0363196F250C95CA005B317A /* RemoteConfigParameters.swift */; };
 		03631972250CA75F005B317A /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03631971250CA75F005B317A /* String+Extensions.swift */; };
 		03631974250CD583005B317A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03631973250CD583005B317A /* Constants.swift */; };
+		03631977250CDDEC005B317A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03631976250CDDEC005B317A /* Setting.storyboard */; };
+		03631979250CE0F6005B317A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03631978250CE0F6005B317A /* SettingViewController.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -446,6 +448,8 @@
 		0363196F250C95CA005B317A /* RemoteConfigParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigParameters.swift; sourceTree = "<group>"; };
 		03631971250CA75F005B317A /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		03631973250CD583005B317A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		03631976250CDDEC005B317A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		03631978250CE0F6005B317A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -1384,6 +1388,15 @@
 			path = FirebaseCrashlytics;
 			sourceTree = "<group>";
 		};
+		03631975250CDDCB005B317A /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				03631976250CDDEC005B317A /* Setting.storyboard */,
+				03631978250CE0F6005B317A /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1628,6 +1641,7 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03631975250CDDCB005B317A /* Setting */,
 				039EB66D2436157B0016436C /* Debug */,
 				03B50B5724E4ADAD00C7A14F /* EditProfile */,
 				035D5CEF24E8F5230047B4AA /* EditProfileDetail */,
@@ -2151,6 +2165,7 @@
 				03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */,
 				03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */,
 				03631969250C8859005B317A /* run in Resources */,
+				03631977250CDDEC005B317A /* Setting.storyboard in Resources */,
 				034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */,
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
@@ -2391,6 +2406,7 @@
 				036A45022471212A00DD9282 /* PostsModel.swift in Sources */,
 				035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */,
 				034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */,
+				03631979250CE0F6005B317A /* SettingViewController.swift in Sources */,
 				035F6D9124F29ADD00991231 /* UserNameValidation.swift in Sources */,
 				034C562824C490410005B6C5 /* FirestorageError.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,

@@ -41,6 +41,9 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
     /// Transition button to edit profile screen.
     @IBOutlet private weak var transitionToEditProfileButton: UIButton!
 
+    /// Transition button to setting screen.
+    @IBOutlet private weak var transitionToSettingButton: UIButton!
+
     // MARK: Properties
 
     let userLoadEvent: PublishSubject<()> = PublishSubject<()>()
@@ -84,6 +87,10 @@ extension MyPageViewController {
             self.transitionDebugScreen()
         }).disposed(by: rx.disposeBag)
 
+        transitionToSettingButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
+            self.transitionToSettingScreen()
+        }).disposed(by: rx.disposeBag)
+
         transitionToEditProfileButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
             self.transitionToEditProfileScreen()
         }).disposed(by: rx.disposeBag)
@@ -105,6 +112,11 @@ extension MyPageViewController {
     private func transitionDebugScreen() {
         let vc = DebugViewControllerGenerator.generate()
         self.present(vc, animated: true)
+    }
+
+    private func transitionToSettingScreen() {
+        let vc = SettingsViewControllerGenerator.generate()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /// Transition to edit prodile screen.
