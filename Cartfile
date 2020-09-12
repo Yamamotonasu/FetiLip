@@ -14,3 +14,6 @@ binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.j
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAuthBinary.json"
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseFirestoreBinary.json"
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseStorageBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseCrashlyticsBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseRemoteConfigBinary.json"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseProtobufBinary.json"

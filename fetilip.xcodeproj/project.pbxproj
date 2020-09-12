@@ -104,6 +104,10 @@
 		035F6DB224FD2EBA00991231 /* GlobalTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */; };
 		035F6DB824FD378500991231 /* MainModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DB724FD378500991231 /* MainModalViewController.swift */; };
 		035F6DBC24FD37DB00991231 /* MainModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035F6DBB24FD37DB00991231 /* MainModal.storyboard */; };
+		036318F4250C7569005B317A /* FirebaseCrashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036318F2250C7569005B317A /* FirebaseCrashlytics.framework */; };
+		036318F6250C756A005B317A /* FirebaseRemoteConfig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036318F3250C7569005B317A /* FirebaseRemoteConfig.framework */; };
+		036318FA250C75A2005B317A /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 036318F9250C75A2005B317A /* FirebaseABTesting.framework */; };
+		03631963250C75CE005B317A /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03631900250C75B3005B317A /* Protobuf.framework */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -326,6 +330,110 @@
 		035F6DB124FD2EBA00991231 /* GlobalTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GlobalTabBarViewModel.swift; path = fetilip/src/Utils/GlobalTabBarViewModel.swift; sourceTree = SOURCE_ROOT; };
 		035F6DB724FD378500991231 /* MainModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModalViewController.swift; sourceTree = "<group>"; };
 		035F6DBB24FD37DB00991231 /* MainModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainModal.storyboard; sourceTree = "<group>"; };
+		036318F2250C7569005B317A /* FirebaseCrashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCrashlytics.framework; path = Carthage/Build/iOS/FirebaseCrashlytics.framework; sourceTree = "<group>"; };
+		036318F3250C7569005B317A /* FirebaseRemoteConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseRemoteConfig.framework; path = Carthage/Build/iOS/FirebaseRemoteConfig.framework; sourceTree = "<group>"; };
+		036318F9250C75A2005B317A /* FirebaseABTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseABTesting.framework; path = Carthage/Build/iOS/FirebaseABTesting.framework; sourceTree = "<group>"; };
+		036318FE250C75B3005B317A /* SwiftMessages.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = SwiftMessages.framework.dSYM; sourceTree = "<group>"; };
+		036318FF250C75B3005B317A /* NSObject_Rx.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = NSObject_Rx.framework.dSYM; sourceTree = "<group>"; };
+		03631900250C75B3005B317A /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Protobuf.framework; sourceTree = "<group>"; };
+		03631901250C75B3005B317A /* 3FF1B9BF-D257-3D4C-B379-B77FFB334D1A.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "3FF1B9BF-D257-3D4C-B379-B77FFB334D1A.bcsymbolmap"; sourceTree = "<group>"; };
+		03631902250C75B3005B317A /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		03631903250C75B3005B317A /* gRPC-Core.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "gRPC-Core.framework"; sourceTree = "<group>"; };
+		03631904250C75B3005B317A /* 5EA9C328-D492-3F49-A3B5-C4DFE3FD3752.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "5EA9C328-D492-3F49-A3B5-C4DFE3FD3752.bcsymbolmap"; sourceTree = "<group>"; };
+		03631905250C75B3005B317A /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = "<group>"; };
+		03631906250C75B3005B317A /* Differentiator.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Differentiator.framework.dSYM; sourceTree = "<group>"; };
+		03631907250C75B3005B317A /* NVActivityIndicatorView.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = NVActivityIndicatorView.framework.dSYM; sourceTree = "<group>"; };
+		03631908250C75B3005B317A /* D89AC0B1-03C7-369B-81DC-4D6F8C378718.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "D89AC0B1-03C7-369B-81DC-4D6F8C378718.bcsymbolmap"; sourceTree = "<group>"; };
+		03631909250C75B3005B317A /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		0363190A250C75B3005B317A /* CodableFirebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CodableFirebase.framework; sourceTree = "<group>"; };
+		0363190B250C75B3005B317A /* FirebaseFirestore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = "<group>"; };
+		0363190C250C75B3005B317A /* 8490B371-8819-3A40-8E74-0FE7D8E32C5F.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "8490B371-8819-3A40-8E74-0FE7D8E32C5F.bcsymbolmap"; sourceTree = "<group>"; };
+		0363190D250C75B3005B317A /* F716642F-6900-3478-B7F6-0BCB39F076A8.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F716642F-6900-3478-B7F6-0BCB39F076A8.bcsymbolmap"; sourceTree = "<group>"; };
+		0363190E250C75B3005B317A /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxRelay.framework; sourceTree = "<group>"; };
+		0363190F250C75B3005B317A /* EBE64194-EAD9-362D-9087-44A091037DB5.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "EBE64194-EAD9-362D-9087-44A091037DB5.bcsymbolmap"; sourceTree = "<group>"; };
+		03631910250C75B3005B317A /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		03631911250C75B3005B317A /* FirebaseCrashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCrashlytics.framework; sourceTree = "<group>"; };
+		03631912250C75B3005B317A /* SwiftMessages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = "<group>"; };
+		03631913250C75B3005B317A /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		03631914250C75B3005B317A /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		03631915250C75B3005B317A /* 00ACCBE0-A9BD-3F09-8D2B-10386D21FE23.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "00ACCBE0-A9BD-3F09-8D2B-10386D21FE23.bcsymbolmap"; sourceTree = "<group>"; };
+		03631916250C75B3005B317A /* C6CDB196-54F4-32C1-A30B-4C32844AADEB.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "C6CDB196-54F4-32C1-A30B-4C32844AADEB.bcsymbolmap"; sourceTree = "<group>"; };
+		03631917250C75B3005B317A /* 99EE8032-385F-3D15-BAF6-508450BCE1CD.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "99EE8032-385F-3D15-BAF6-508450BCE1CD.bcsymbolmap"; sourceTree = "<group>"; };
+		03631918250C75B3005B317A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		03631919250C75B3005B317A /* Nuke.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Nuke.framework.dSYM; sourceTree = "<group>"; };
+		0363191A250C75B3005B317A /* 5F2D4731-2243-3EC8-96C0-F3036670E1A5.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "5F2D4731-2243-3EC8-96C0-F3036670E1A5.bcsymbolmap"; sourceTree = "<group>"; };
+		0363191B250C75B3005B317A /* FEF67E70-3C98-3F25-B994-3C15D816BE33.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "FEF67E70-3C98-3F25-B994-3C15D816BE33.bcsymbolmap"; sourceTree = "<group>"; };
+		0363191C250C75B3005B317A /* RxDataSources.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxDataSources.framework.dSYM; sourceTree = "<group>"; };
+		0363191D250C75B3005B317A /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
+		0363191E250C75B3005B317A /* DBE32AD7-1591-3FE9-8359-84D3F44C7D4F.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DBE32AD7-1591-3FE9-8359-84D3F44C7D4F.bcsymbolmap"; sourceTree = "<group>"; };
+		0363191F250C75B3005B317A /* FirebaseRemoteConfig.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseRemoteConfig.framework; sourceTree = "<group>"; };
+		03631920250C75B3005B317A /* 4D85DE00-81D3-3319-8378-9A843096641C.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "4D85DE00-81D3-3319-8378-9A843096641C.bcsymbolmap"; sourceTree = "<group>"; };
+		03631921250C75B3005B317A /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		03631922250C75B3005B317A /* 2F7F106F-B67A-31B4-91DE-F041CD760E75.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "2F7F106F-B67A-31B4-91DE-F041CD760E75.bcsymbolmap"; sourceTree = "<group>"; };
+		03631923250C75B3005B317A /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = "<group>"; };
+		03631924250C75B3005B317A /* ObjcExceptionBridging.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = ObjcExceptionBridging.framework.dSYM; sourceTree = "<group>"; };
+		03631925250C75B3005B317A /* F937E820-D408-3CC5-AE95-268036D19E45.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F937E820-D408-3CC5-AE95-268036D19E45.bcsymbolmap"; sourceTree = "<group>"; };
+		03631926250C75B3005B317A /* BoringSSL-GRPC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BoringSSL-GRPC.framework"; sourceTree = "<group>"; };
+		03631927250C75B3005B317A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		03631928250C75B3005B317A /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
+		03631929250C75B3005B317A /* XCGLogger.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = XCGLogger.framework.dSYM; sourceTree = "<group>"; };
+		0363192A250C75B3005B317A /* CE9D0C28-F819-3353-9D5E-7235B6A5CC48.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "CE9D0C28-F819-3353-9D5E-7235B6A5CC48.bcsymbolmap"; sourceTree = "<group>"; };
+		0363192B250C75B3005B317A /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XCGLogger.framework; sourceTree = "<group>"; };
+		0363192C250C75B3005B317A /* FMPhotoPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FMPhotoPicker.framework; sourceTree = "<group>"; };
+		0363192D250C75B3005B317A /* Quick.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Quick.framework.dSYM; sourceTree = "<group>"; };
+		0363192E250C75B3005B317A /* A9C0CE07-6E3F-3A08-BEB1-E280E2A06E4B.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "A9C0CE07-6E3F-3A08-BEB1-E280E2A06E4B.bcsymbolmap"; sourceTree = "<group>"; };
+		0363192F250C75B3005B317A /* Nimble.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = Nimble.framework.dSYM; sourceTree = "<group>"; };
+		03631930250C75B3005B317A /* F6D078BD-D80B-3A92-B7CF-34D2642A2155.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F6D078BD-D80B-3A92-B7CF-34D2642A2155.bcsymbolmap"; sourceTree = "<group>"; };
+		03631931250C75B3005B317A /* FloatingPanel.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = FloatingPanel.framework.dSYM; sourceTree = "<group>"; };
+		03631932250C75B3005B317A /* PromisesObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PromisesObjC.framework; sourceTree = "<group>"; };
+		03631933250C75B3005B317A /* NVActivityIndicatorViewAppExtension.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = NVActivityIndicatorViewAppExtension.framework.dSYM; sourceTree = "<group>"; };
+		03631934250C75B3005B317A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxTest.framework; sourceTree = "<group>"; };
+		03631935250C75B3005B317A /* CodableFirebase.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = CodableFirebase.framework.dSYM; sourceTree = "<group>"; };
+		03631936250C75B3005B317A /* RxRelay.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxRelay.framework.dSYM; sourceTree = "<group>"; };
+		03631937250C75B3005B317A /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
+		03631938250C75B3005B317A /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "leveldb-library.framework"; sourceTree = "<group>"; };
+		03631939250C75B3005B317A /* IQKeyboardManager.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IQKeyboardManager.framework.dSYM; sourceTree = "<group>"; };
+		0363193A250C75B3005B317A /* 03B37780-BE1C-3CE7-BA96-C66CC27D3787.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "03B37780-BE1C-3CE7-BA96-C66CC27D3787.bcsymbolmap"; sourceTree = "<group>"; };
+		0363193B250C75B3005B317A /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxCocoa.framework.dSYM; sourceTree = "<group>"; };
+		0363193C250C75B3005B317A /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = "<group>"; };
+		0363193D250C75B3005B317A /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		0363193E250C75B3005B317A /* 4084F0C3-030B-3C34-9BDB-18B41DA517FF.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "4084F0C3-030B-3C34-9BDB-18B41DA517FF.bcsymbolmap"; sourceTree = "<group>"; };
+		0363193F250C75B3005B317A /* abseil.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = abseil.framework; sourceTree = "<group>"; };
+		03631940250C75B4005B317A /* D7A9EB39-D71A-3EC6-B2CF-7E289FF8C40E.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "D7A9EB39-D71A-3EC6-B2CF-7E289FF8C40E.bcsymbolmap"; sourceTree = "<group>"; };
+		03631941250C75B4005B317A /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
+		03631942250C75B4005B317A /* FMPhotoPicker.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = FMPhotoPicker.framework.dSYM; sourceTree = "<group>"; };
+		03631943250C75B4005B317A /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		03631944250C75B4005B317A /* 33FFC45B-0EA3-3688-9FCF-8C00A3B5342A.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "33FFC45B-0EA3-3688-9FCF-8C00A3B5342A.bcsymbolmap"; sourceTree = "<group>"; };
+		03631945250C75B4005B317A /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "gRPC-C++.framework"; sourceTree = "<group>"; };
+		03631946250C75B4005B317A /* RxTest.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxTest.framework.dSYM; sourceTree = "<group>"; };
+		03631947250C75B4005B317A /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstallations.framework; sourceTree = "<group>"; };
+		03631948250C75B4005B317A /* FirebaseABTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseABTesting.framework; sourceTree = "<group>"; };
+		03631949250C75B4005B317A /* 781B88A9-3A8F-3974-B0A6-6AEBB0A29DA5.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "781B88A9-3A8F-3974-B0A6-6AEBB0A29DA5.bcsymbolmap"; sourceTree = "<group>"; };
+		0363194A250C75B4005B317A /* 83DDB36B-BA30-3379-90E1-FBFC9967BA08.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "83DDB36B-BA30-3379-90E1-FBFC9967BA08.bcsymbolmap"; sourceTree = "<group>"; };
+		0363194B250C75B4005B317A /* A61E37DF-05FB-3C59-91F7-D733B3A7498C.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "A61E37DF-05FB-3C59-91F7-D733B3A7498C.bcsymbolmap"; sourceTree = "<group>"; };
+		0363194C250C75B4005B317A /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
+		0363194D250C75B4005B317A /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ObjcExceptionBridging.framework; sourceTree = "<group>"; };
+		0363194E250C75B4005B317A /* IQKeyboardManagerSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = IQKeyboardManagerSwift.framework.dSYM; sourceTree = "<group>"; };
+		0363194F250C75B4005B317A /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NSObject_Rx.framework; sourceTree = "<group>"; };
+		03631950250C75B4005B317A /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseStorage.framework; sourceTree = "<group>"; };
+		03631951250C75B4005B317A /* 3162DDCE-E625-33BA-88D9-C155ACE82B10.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "3162DDCE-E625-33BA-88D9-C155ACE82B10.bcsymbolmap"; sourceTree = "<group>"; };
+		03631952250C75B4005B317A /* 0DFA9864-476E-3BCD-9BA7-E38694B6BDBC.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "0DFA9864-476E-3BCD-9BA7-E38694B6BDBC.bcsymbolmap"; sourceTree = "<group>"; };
+		03631953250C75B4005B317A /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = "<group>"; };
+		03631954250C75B4005B317A /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = "<group>"; };
+		03631955250C75B4005B317A /* 9A7A4433-C4F2-38DF-933A-0AF143C49CBA.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "9A7A4433-C4F2-38DF-933A-0AF143C49CBA.bcsymbolmap"; sourceTree = "<group>"; };
+		03631956250C75B4005B317A /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FloatingPanel.framework; sourceTree = "<group>"; };
+		03631957250C75B4005B317A /* 451993B2-F808-3ED1-9BDB-3905957FA129.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "451993B2-F808-3ED1-9BDB-3905957FA129.bcsymbolmap"; sourceTree = "<group>"; };
+		03631958250C75B4005B317A /* A6DDC2BA-B598-323E-9A5D-E38B1A4F32FC.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "A6DDC2BA-B598-323E-9A5D-E38B1A4F32FC.bcsymbolmap"; sourceTree = "<group>"; };
+		03631959250C75B4005B317A /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxSwift.framework; sourceTree = "<group>"; };
+		0363195A250C75B4005B317A /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Differentiator.framework; sourceTree = "<group>"; };
+		0363195B250C75B4005B317A /* F380EB2E-E7E9-3CCF-A1AA-D95EF32AACE4.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F380EB2E-E7E9-3CCF-A1AA-D95EF32AACE4.bcsymbolmap"; sourceTree = "<group>"; };
+		0363195C250C75B4005B317A /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nuke.framework; sourceTree = "<group>"; };
+		0363195D250C75B4005B317A /* 3FF9CBA8-DB17-303A-8840-7562576846A0.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "3FF9CBA8-DB17-303A-8840-7562576846A0.bcsymbolmap"; sourceTree = "<group>"; };
+		0363195E250C75B4005B317A /* B11A92A5-BEE9-307B-B796-3022D42C4655.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "B11A92A5-BEE9-307B-B796-3022D42C4655.bcsymbolmap"; sourceTree = "<group>"; };
+		0363195F250C75B4005B317A /* F1AC3E92-6E69-3C4A-B2BA-FF328E107ACF.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "F1AC3E92-6E69-3C4A-B2BA-FF328E107ACF.bcsymbolmap"; sourceTree = "<group>"; };
+		03631960250C75B4005B317A /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		03631961250C75B4005B317A /* E4BCF258-2AB4-31A5-80B0-FA73C177BE0D.bcsymbolmap */ = {isa = PBXFileReference; lastKnownFileType = text; path = "E4BCF258-2AB4-31A5-80B0-FA73C177BE0D.bcsymbolmap"; sourceTree = "<group>"; };
+		03631962250C75B4005B317A /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -585,10 +693,14 @@
 				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
 				034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */,
+				03631963250C75CE005B317A /* Protobuf.framework in Frameworks */,
+				036318F4250C7569005B317A /* FirebaseCrashlytics.framework in Frameworks */,
 				03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
 				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
+				036318F6250C756A005B317A /* FirebaseRemoteConfig.framework in Frameworks */,
+				036318FA250C75A2005B317A /* FirebaseABTesting.framework in Frameworks */,
 				034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */,
 				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
@@ -1140,6 +1252,115 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
+		036318FD250C75B3005B317A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				036318FE250C75B3005B317A /* SwiftMessages.framework.dSYM */,
+				036318FF250C75B3005B317A /* NSObject_Rx.framework.dSYM */,
+				03631900250C75B3005B317A /* Protobuf.framework */,
+				03631901250C75B3005B317A /* 3FF1B9BF-D257-3D4C-B379-B77FFB334D1A.bcsymbolmap */,
+				03631902250C75B3005B317A /* NVActivityIndicatorView.framework */,
+				03631903250C75B3005B317A /* gRPC-Core.framework */,
+				03631904250C75B3005B317A /* 5EA9C328-D492-3F49-A3B5-C4DFE3FD3752.bcsymbolmap */,
+				03631905250C75B3005B317A /* GoogleDataTransport.framework */,
+				03631906250C75B3005B317A /* Differentiator.framework.dSYM */,
+				03631907250C75B3005B317A /* NVActivityIndicatorView.framework.dSYM */,
+				03631908250C75B3005B317A /* D89AC0B1-03C7-369B-81DC-4D6F8C378718.bcsymbolmap */,
+				03631909250C75B3005B317A /* Firebase.framework */,
+				0363190A250C75B3005B317A /* CodableFirebase.framework */,
+				0363190B250C75B3005B317A /* FirebaseFirestore.framework */,
+				0363190C250C75B3005B317A /* 8490B371-8819-3A40-8E74-0FE7D8E32C5F.bcsymbolmap */,
+				0363190D250C75B3005B317A /* F716642F-6900-3478-B7F6-0BCB39F076A8.bcsymbolmap */,
+				0363190E250C75B3005B317A /* RxRelay.framework */,
+				0363190F250C75B3005B317A /* EBE64194-EAD9-362D-9087-44A091037DB5.bcsymbolmap */,
+				03631910250C75B3005B317A /* RxBlocking.framework.dSYM */,
+				03631911250C75B3005B317A /* FirebaseCrashlytics.framework */,
+				03631912250C75B3005B317A /* SwiftMessages.framework */,
+				03631913250C75B3005B317A /* GoogleAppMeasurement.framework */,
+				03631914250C75B3005B317A /* GTMSessionFetcher.framework */,
+				03631915250C75B3005B317A /* 00ACCBE0-A9BD-3F09-8D2B-10386D21FE23.bcsymbolmap */,
+				03631916250C75B3005B317A /* C6CDB196-54F4-32C1-A30B-4C32844AADEB.bcsymbolmap */,
+				03631917250C75B3005B317A /* 99EE8032-385F-3D15-BAF6-508450BCE1CD.bcsymbolmap */,
+				03631918250C75B3005B317A /* Quick.framework */,
+				03631919250C75B3005B317A /* Nuke.framework.dSYM */,
+				0363191A250C75B3005B317A /* 5F2D4731-2243-3EC8-96C0-F3036670E1A5.bcsymbolmap */,
+				0363191B250C75B3005B317A /* FEF67E70-3C98-3F25-B994-3C15D816BE33.bcsymbolmap */,
+				0363191C250C75B3005B317A /* RxDataSources.framework.dSYM */,
+				0363191D250C75B3005B317A /* FirebaseCore.framework */,
+				0363191E250C75B3005B317A /* DBE32AD7-1591-3FE9-8359-84D3F44C7D4F.bcsymbolmap */,
+				0363191F250C75B3005B317A /* FirebaseRemoteConfig.framework */,
+				03631920250C75B3005B317A /* 4D85DE00-81D3-3319-8378-9A843096641C.bcsymbolmap */,
+				03631921250C75B3005B317A /* FirebaseAnalytics.framework */,
+				03631922250C75B3005B317A /* 2F7F106F-B67A-31B4-91DE-F041CD760E75.bcsymbolmap */,
+				03631923250C75B3005B317A /* GoogleUtilities.framework */,
+				03631924250C75B3005B317A /* ObjcExceptionBridging.framework.dSYM */,
+				03631925250C75B3005B317A /* F937E820-D408-3CC5-AE95-268036D19E45.bcsymbolmap */,
+				03631926250C75B3005B317A /* BoringSSL-GRPC.framework */,
+				03631927250C75B3005B317A /* Nimble.framework */,
+				03631928250C75B3005B317A /* FirebaseAuth.framework */,
+				03631929250C75B3005B317A /* XCGLogger.framework.dSYM */,
+				0363192A250C75B3005B317A /* CE9D0C28-F819-3353-9D5E-7235B6A5CC48.bcsymbolmap */,
+				0363192B250C75B3005B317A /* XCGLogger.framework */,
+				0363192C250C75B3005B317A /* FMPhotoPicker.framework */,
+				0363192D250C75B3005B317A /* Quick.framework.dSYM */,
+				0363192E250C75B3005B317A /* A9C0CE07-6E3F-3A08-BEB1-E280E2A06E4B.bcsymbolmap */,
+				0363192F250C75B3005B317A /* Nimble.framework.dSYM */,
+				03631930250C75B3005B317A /* F6D078BD-D80B-3A92-B7CF-34D2642A2155.bcsymbolmap */,
+				03631931250C75B3005B317A /* FloatingPanel.framework.dSYM */,
+				03631932250C75B3005B317A /* PromisesObjC.framework */,
+				03631933250C75B3005B317A /* NVActivityIndicatorViewAppExtension.framework.dSYM */,
+				03631934250C75B3005B317A /* RxTest.framework */,
+				03631935250C75B3005B317A /* CodableFirebase.framework.dSYM */,
+				03631936250C75B3005B317A /* RxRelay.framework.dSYM */,
+				03631937250C75B3005B317A /* nanopb.framework */,
+				03631938250C75B3005B317A /* leveldb-library.framework */,
+				03631939250C75B3005B317A /* IQKeyboardManager.framework.dSYM */,
+				0363193A250C75B3005B317A /* 03B37780-BE1C-3CE7-BA96-C66CC27D3787.bcsymbolmap */,
+				0363193B250C75B3005B317A /* RxCocoa.framework.dSYM */,
+				0363193C250C75B3005B317A /* IQKeyboardManager.framework */,
+				0363193D250C75B3005B317A /* IQKeyboardManagerSwift.framework */,
+				0363193E250C75B3005B317A /* 4084F0C3-030B-3C34-9BDB-18B41DA517FF.bcsymbolmap */,
+				0363193F250C75B3005B317A /* abseil.framework */,
+				03631940250C75B4005B317A /* D7A9EB39-D71A-3EC6-B2CF-7E289FF8C40E.bcsymbolmap */,
+				03631941250C75B4005B317A /* NVActivityIndicatorViewAppExtension.framework */,
+				03631942250C75B4005B317A /* FMPhotoPicker.framework.dSYM */,
+				03631943250C75B4005B317A /* RxSwift.framework.dSYM */,
+				03631944250C75B4005B317A /* 33FFC45B-0EA3-3688-9FCF-8C00A3B5342A.bcsymbolmap */,
+				03631945250C75B4005B317A /* gRPC-C++.framework */,
+				03631946250C75B4005B317A /* RxTest.framework.dSYM */,
+				03631947250C75B4005B317A /* FirebaseInstallations.framework */,
+				03631948250C75B4005B317A /* FirebaseABTesting.framework */,
+				03631949250C75B4005B317A /* 781B88A9-3A8F-3974-B0A6-6AEBB0A29DA5.bcsymbolmap */,
+				0363194A250C75B4005B317A /* 83DDB36B-BA30-3379-90E1-FBFC9967BA08.bcsymbolmap */,
+				0363194B250C75B4005B317A /* A61E37DF-05FB-3C59-91F7-D733B3A7498C.bcsymbolmap */,
+				0363194C250C75B4005B317A /* FIRAnalyticsConnector.framework */,
+				0363194D250C75B4005B317A /* ObjcExceptionBridging.framework */,
+				0363194E250C75B4005B317A /* IQKeyboardManagerSwift.framework.dSYM */,
+				0363194F250C75B4005B317A /* NSObject_Rx.framework */,
+				03631950250C75B4005B317A /* FirebaseStorage.framework */,
+				03631951250C75B4005B317A /* 3162DDCE-E625-33BA-88D9-C155ACE82B10.bcsymbolmap */,
+				03631952250C75B4005B317A /* 0DFA9864-476E-3BCD-9BA7-E38694B6BDBC.bcsymbolmap */,
+				03631953250C75B4005B317A /* RxCocoa.framework */,
+				03631954250C75B4005B317A /* RxDataSources.framework */,
+				03631955250C75B4005B317A /* 9A7A4433-C4F2-38DF-933A-0AF143C49CBA.bcsymbolmap */,
+				03631956250C75B4005B317A /* FloatingPanel.framework */,
+				03631957250C75B4005B317A /* 451993B2-F808-3ED1-9BDB-3905957FA129.bcsymbolmap */,
+				03631958250C75B4005B317A /* A6DDC2BA-B598-323E-9A5D-E38B1A4F32FC.bcsymbolmap */,
+				03631959250C75B4005B317A /* RxSwift.framework */,
+				0363195A250C75B4005B317A /* Differentiator.framework */,
+				0363195B250C75B4005B317A /* F380EB2E-E7E9-3CCF-A1AA-D95EF32AACE4.bcsymbolmap */,
+				0363195C250C75B4005B317A /* Nuke.framework */,
+				0363195D250C75B4005B317A /* 3FF9CBA8-DB17-303A-8840-7562576846A0.bcsymbolmap */,
+				0363195E250C75B4005B317A /* B11A92A5-BEE9-307B-B796-3022D42C4655.bcsymbolmap */,
+				0363195F250C75B4005B317A /* F1AC3E92-6E69-3C4A-B2BA-FF328E107ACF.bcsymbolmap */,
+				03631960250C75B4005B317A /* FirebaseCoreDiagnostics.framework */,
+				03631961250C75B4005B317A /* E4BCF258-2AB4-31A5-80B0-FA73C177BE0D.bcsymbolmap */,
+				03631962250C75B4005B317A /* RxBlocking.framework */,
+			);
+			name = iOS;
+			path = Carthage/Build/iOS;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1306,6 +1527,10 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				036318FD250C75B3005B317A /* iOS */,
+				036318F9250C75A2005B317A /* FirebaseABTesting.framework */,
+				036318F2250C7569005B317A /* FirebaseCrashlytics.framework */,
+				036318F3250C7569005B317A /* FirebaseRemoteConfig.framework */,
 				035F6DA224F47FF000991231 /* SwiftMessages.framework */,
 				03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */,
 				0359901324B407F3000F8A27 /* CodableFirebase.framework */,

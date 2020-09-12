@@ -8,16 +8,16 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.31.0",
+  "commitish" : "6.32.0",
   "iOS" : [
     {
       "name" : "FirebaseStorage",
-      "hash" : "c89f01c9b3adaf066b7471fda242b19d8aa7c22c57c743fc23d96d8275c247cf",
+      "hash" : "f19e90edfbf3461ceccdc7bf2f2028b8170ddd310aa498f09b842ef35e59db66",
       "linking" : "dynamic"
     },
     {
       "name" : "GTMSessionFetcher",
-      "hash" : "cbab767c6ea9aa1b8c5eeee79b2a1766b71659b220ecec9d55d158d3c0e67127",
+      "hash" : "0721d034e100a9d9d71daba9046f6c1bd9be1009ab9aaae646978cd90d8093eb",
       "linking" : "dynamic"
     }
   ]

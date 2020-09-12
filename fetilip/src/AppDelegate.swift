@@ -13,6 +13,8 @@ import Firebase
 import NVActivityIndicatorView
 import Nuke
 import RxDataSources
+import FirebaseCrashlytics
+import FirebaseRemoteConfig
 
 // MARK: XCGLogger
 
