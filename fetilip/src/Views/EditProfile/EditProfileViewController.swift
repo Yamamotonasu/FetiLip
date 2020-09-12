@@ -175,7 +175,6 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             .disposed(by: rx.disposeBag)
 
         output.userLoadResult.drive(onNext: { [weak self] user in
-            ApplicationFlag.shared.updateNeedProfileUpdate(false)
             self?.userNameLabel.text = user.userName
             self?.loadUserImage(storagePath: user.imageRef)
         }).disposed(by: rx.disposeBag)

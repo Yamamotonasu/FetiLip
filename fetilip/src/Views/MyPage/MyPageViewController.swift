@@ -57,13 +57,18 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
         composeUI()
         subscribe()
         subscribeUI()
-        userLoadEvent.onNext(())
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let tab = self.tabBarController as? GlobalTabBarController {
             tab.customTabBar.alpha = 1
+        }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        if ApplicationFlag.shared.needProfileUpdate {
+            userLoadEvent.onNext(())
         }
     }
 
@@ -108,6 +113,7 @@ extension MyPageViewController {
         let output = viewModel.transform(input: input)
 
         output.userLoadResult.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] domain in
+            ApplicationFlag.shared.updateNeedProfileUpdate(false)
             self?.userDomainModel = domain
             self?.drawUserData(domain)
         }, onError: { e in

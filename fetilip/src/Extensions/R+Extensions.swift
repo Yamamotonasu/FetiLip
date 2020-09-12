@@ -72,7 +72,7 @@ extension R {
 
             // MARK: - RegisterUser
 
-            static let registerUserSuccess = "ユーザー登録を行いました"
+            static let registerUserSuccess = "ユーザー登録をしました😃"
 
             // MARK: - EditProfile
 

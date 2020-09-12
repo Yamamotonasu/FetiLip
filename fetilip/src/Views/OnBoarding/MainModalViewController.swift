@@ -43,12 +43,16 @@ class MainModalViewController: UIViewController {
         let baseString = "\(term)、\(privacyPolicy)に同意する。"
         let attributedString = NSMutableAttributedString(attributedString: termAndPrivacyPolicyTextView.attributedText )
 
+        let termUrl: String = RemoteConfigParameters.termUrl.stringValue?.isEmpty == true ? Constants.termUrl : RemoteConfigParameters.termUrl.stringValue!
+
+        let privacyPolicyUrl: String = RemoteConfigParameters.privacyPolicy.stringValue?.isEmpty == true ? Constants.privacyPolicyUrl : RemoteConfigParameters.privacyPolicy.stringValue!
+
         attributedString.addAttribute(.link,
-                                      value: RemoteConfigParameters.termUrl.stringValue ?? Constants.termUrl,
+                                      value: termUrl,
                                       range: NSString(string: baseString).range(of: term))
 
         attributedString.addAttribute(.link,
-                                      value: RemoteConfigParameters.privacyPolicy.stringValue ?? Constants.privacyPolicyUrl,
+                                      value: privacyPolicyUrl,
                                       range: NSString(string: baseString).range(of: privacyPolicy))
 
         termAndPrivacyPolicyTextView.attributedText = attributedString
