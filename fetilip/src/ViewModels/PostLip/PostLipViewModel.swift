@@ -87,7 +87,7 @@ extension PostLipViewModel: ViewModelType {
             case 0:
                 self.templateTextRelay.accept("")
             case 1:
-                self.templateTextRelay.accept(R._string.view_message.postTemplate)
+                self.templateTextRelay.accept(RemoteConfigParameters.reviewTemplate.stringValue?.replacedLineFeedCode ?? R._string.view_message.postTemplate)
             default:
                 break
             }

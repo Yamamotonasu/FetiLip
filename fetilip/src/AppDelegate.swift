@@ -13,6 +13,8 @@ import Firebase
 import NVActivityIndicatorView
 import Nuke
 import RxDataSources
+import FirebaseCrashlytics
+import FirebaseRemoteConfig
 
 // MARK: XCGLogger
 
@@ -101,6 +103,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         ApplicationFlag.shared.clearFlags()
+
+        let _ = RemoteConfigModel.init(fetch: true)
 
         return true
     }

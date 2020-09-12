@@ -8,36 +8,36 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.31.0",
+  "commitish" : "6.32.0",
   "iOS" : [
     {
-      "name" : "abseil",
-      "hash" : "bf4822e43387f141fc4ae6de301db575e531de681ebbab9314b621eb0944255d",
+      "name" : "leveldb-library",
+      "hash" : "4aebef1a9beb2d465edc803c3a6e3dfa80710552d16cb0a63247b2f9dcf76224",
       "linking" : "dynamic"
     },
     {
-      "name" : "leveldb-library",
-      "hash" : "7490cc2d10a8b7ac818e7179863e940125e2b2d99c90be2a536cc6f5cffb402a",
+      "name" : "abseil",
+      "hash" : "cd23734e05dfb24a2c7f89b81c364f7ec7c708425cd5f503633081891ef18662",
       "linking" : "dynamic"
     },
     {
       "name" : "gRPC-C++",
-      "hash" : "b77006a351958f8d9cb6e37f17dcb9f9a8833dd252d115b07b8fb4869a163792",
+      "hash" : "ec3e43447cf98762c418e33cae3bf8356593d343970308a97b294e5296b5539f",
       "linking" : "dynamic"
     },
     {
       "name" : "BoringSSL-GRPC",
-      "hash" : "1b7ad1271d5cd1039c842b6fe6e17ba43d3b9563800e4dc7444b5cc886b449d7",
+      "hash" : "ae82d31502003594e8a961b2f8ecfe12a7406a376419d35fb1bb567479723f38",
       "linking" : "dynamic"
     },
     {
       "name" : "gRPC-Core",
-      "hash" : "8cf588ce07de221f94b25e90f5b65c77f4d82413b001367a4e8c59be63750153",
+      "hash" : "d23e8d03aca6dc284f5c4e1891fc15004de7829524fa388b0645cbf52b0dea87",
       "linking" : "dynamic"
     },
     {
       "name" : "FirebaseFirestore",
-      "hash" : "6be57ccfd14ad9cd0cc2cce2de6990b2d4c612787b3888c8a514a4834f717826",
+      "hash" : "21980938df7619d0e0c39d0a2601f2f695e0982ef6591fb3abaad2253fbfdbed",
       "linking" : "dynamic"
     }
   ]

@@ -2,7 +2,7 @@
   "commitish" : "9.1.2",
   "iOS" : [
     {
-      "hash" : "59d7786147cdbcdebcc109db2ae7eca0f54150f4b305c43f9f82e7abfe0db428",
+      "hash" : "7428b5d1f14c971ae766698c0253bed27911e7f9fc165627f6fe793175b41c70",
       "name" : "Nuke",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
