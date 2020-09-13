@@ -177,6 +177,8 @@ extension PostLipDetailViewController: ZoomAnimatorDelegate {
     }
 
     func referenceImageView(for zoomAnimator: TransitionManager) -> UIImageView? {
+        // Frame画面サイズより大きくなってしまうので画面サイズのwidthのサイズへ微修正している
+        self.lipImageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
         return self.lipImageView
     }
 
