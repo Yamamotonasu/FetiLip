@@ -18,10 +18,13 @@ service cloud.firestore {
     }
     match /version/1/userSocials/{userID} {
       allow create:
-      if isUserAuthenticated(userID);
-      allow update:
       if isUserAuthenticated(userID) 
+      && validateRequestTime(incomingData());
+      allow update:
+      if isUserAuthenticated(userID)
       && validateUpdateTime(incomingData());
+      allow read:
+      if isAnyAuthenticated();
     }
     match /version/1/posts/{postID} {
       allow create:
@@ -31,7 +34,7 @@ service cloud.firestore {
       && incomingData().userRef == userDocumentPath(request.auth.uid) 
       && incomingData().imageRef.matches('^posts/.+$')
       && validateRequestTime(incomingData());
-      allow read: if isAnyAuthenticated();
+      allow read: if true;
     }
 
     // - region auth functions

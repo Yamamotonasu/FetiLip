@@ -22,6 +22,15 @@ protocol UserSocialClientProtocol {
      */
     func incrementPost(uid: String) -> Single<()>
 
+    /**
+     * Get social data.
+     *
+     * - Parameters:
+     *  - uid: UID
+     * - Returns: SIngle<UserSocialEntity>
+     */
+    func getUserSocial(uid: String) -> Single<UserSocialEntity>
+
 }
 
 struct UserSocialClient: UserSocialClientProtocol {
@@ -31,6 +40,10 @@ struct UserSocialClient: UserSocialClientProtocol {
     public func incrementPost(uid: String) -> Single<()> {
         let fields = UserSocialRequest.inrementPost.parameters
         return Firestore.firestore().rx.updateData(UserSocialModel.self, documentRef: UserSocialModel.makeDocumentRef(id: uid), fields: fields)
+    }
+
+    public func getUserSocial(uid: String) -> Single<UserSocialEntity> {
+        return Firestore.firestore().rx.getDocument(UserSocialModel.self, documentReference: UserSocialModel.makeDocumentRef(id: uid))
     }
 
 }

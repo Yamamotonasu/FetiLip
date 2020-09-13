@@ -159,6 +159,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="debugButton" destination="RjR-DO-RiC" id="E7D-Kf-W8h"/>
+                        <outlet property="fetipointLabel" destination="sQe-Ew-qzF" id="4GY-Zw-rbF"/>
+                        <outlet property="postCountLabel" destination="OcA-PB-GQS" id="mWQ-8H-kFy"/>
                         <outlet property="transitionToEditProfileButton" destination="MUb-Qs-Hgt" id="j42-VY-SZp"/>
                         <outlet property="transitionToSettingButton" destination="mdT-Ci-KbY" id="LL9-5a-31O"/>
                         <outlet property="userImage" destination="mBa-d0-kQ4" id="hYu-We-FPf"/>
