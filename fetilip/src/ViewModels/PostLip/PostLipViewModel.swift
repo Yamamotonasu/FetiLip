@@ -17,15 +17,19 @@ struct PostLipViewModel {
 
     /// DI init.
     init(postModelClient: PostModelClientProtocol,
-         postStorageClient: PostsStorageClientProtocol) {
+         postStorageClient: PostsStorageClientProtocol,
+         userSocialClient: UserSocialClientProtocol) {
         self.postModelClient = postModelClient
         self.postStorageClient = postStorageClient
+        self.userSocialClient = userSocialClient
         indicator = activity.asObservable()
     }
 
     private let postModelClient: PostModelClientProtocol
 
     private let postStorageClient: PostsStorageClientProtocol
+
+    private let userSocialClient: UserSocialClientProtocol
 
     /// Image updated observable.
     let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
@@ -111,7 +115,9 @@ extension PostLipViewModel: ViewModelType {
                     }.trackActivity(self.activity)
             }.flatMapLatest { pair -> Observable<()> in
                 return self.postImage(ref: pair.0, review: pair.1).trackActivity(self.activity)
-        }.share()
+        }.flatMapLatest { _ -> Observable<()> in
+            return self.userSocialClient.incrementPost(uid: LoginAccountData.uid!).trackActivity(self.activity)
+        }
 
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: uploadedImage.asObservable(),

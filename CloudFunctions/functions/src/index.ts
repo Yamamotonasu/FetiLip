@@ -12,9 +12,11 @@ const firestore: FirebaseFirestore.Firestore = admin.firestore()
 /**
  * User initial data saving event triggered creating Firebase authentication user.
  */
-exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCreate((user) => {
+exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCreate(async (user) => {
 
   const usersRef:FirebaseFirestore.CollectionReference = firestore.collection(`${ROOT_COLLECTION}/users`);
+
+  const userSocialRef: FirebaseFirestore.DocumentReference = firestore.collection(`${ROOT_COLLECTION}/userSocials`).doc(`${user.uid}`)
 
   const generatedName: String = `user${getRandom(10000000)}`
 
@@ -24,9 +26,20 @@ exports.commitFirestore = functions.region('asia-northeast1').auth.user().onCrea
     createdAt: new Date()
   };
 
+  const requestSocialData = {
+    fetiPoint: 0,
+    postCount: 0,
+    createdAt: new Date(),
+    updatedAt: new Date()
+  }
+
   // commit user data.
   // TODO: Error Handling.
-  usersRef.doc(`${user.uid}`).set(requestData).catch(error => {
+  await usersRef.doc(`${user.uid}`).set(requestData).catch(error => {
+    print();
+  })
+
+  await userSocialRef.set(requestSocialData).catch(error => {
     print();
   })
 

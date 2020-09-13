@@ -56,6 +56,7 @@ struct EditProfileViewModel: EditProfileViewModelProtocol {
 extension EditProfileViewModel: ViewModelType {
 
     struct Input {
+        let checkUserStatusEvent: PublishRelay<()>
         let updateProfileImageEvent: Observable<()>
         let profileImageObservable: Observable<UIImage?>
         let userLoadEvent: PublishSubject<()>

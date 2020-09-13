@@ -16,6 +16,13 @@ service cloud.firestore {
       allow read: if isAnyAuthenticated();
       allow delete: if false;
     }
+    match /version/1/userSocials/{userID} {
+      allow create:
+      if isUserAuthenticated(userID);
+      allow update:
+      if isUserAuthenticated(userID) 
+      && validateUpdateTime(incomingData());
+    }
     match /version/1/posts/{postID} {
       allow create:
       if isAnyAuthenticated()

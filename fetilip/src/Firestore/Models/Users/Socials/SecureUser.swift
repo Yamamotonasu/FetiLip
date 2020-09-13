@@ -12,11 +12,11 @@ import Foundation
  * Secure user model
  * - Prevent other users from getting information.
  */
-public struct SecureUserModel: FirestoreDatabaseCollection {
+public struct UserSocialModel: FirestoreDatabaseCollection {
 
-    public typealias FieldType = _UserEntity
+    public typealias FieldType = UserSocialEntity
 
-    public static let collectionName = "_users"
+    public static let collectionName = "userSocials"
 
     public let id: String
 
