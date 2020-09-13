@@ -63,6 +63,15 @@ protocol UserAuthModelProtocol {
      */
     func reauthenticateUser(email: String, password: String) -> Single<()>
 
+    /**
+     * Update user name.
+     *
+     * - Parameters:
+     *  - name: Update user name
+     * - Return Single<()>
+     */
+    func updateDisplayUserName(name: String?) -> Single<()>
+
 }
 
 /**
@@ -214,6 +223,22 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                         observer(.success(()))
                     }
                  }
+                return Disposables.create()
+            }
+        }
+    }
+
+    public func updateDisplayUserName(name: String?) -> Single<()> {
+        return checkLogin().flatMap { user in
+            return Single.create { observer in
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.displayName = name
+                changeRequest.commitChanges { error in
+                    if let e = error {
+                        observer(.error(e))
+                    }
+                    observer(.success(()))
+                }
                 return Disposables.create()
             }
         }

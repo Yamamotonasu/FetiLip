@@ -60,7 +60,10 @@ class LoginViewController: UIViewController {
         let output = viewModel.transform(input: input)
 
         output.loginResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
+            let presenting = self?.presentingViewController
             self?.dismiss(animated: true) {
+                // LoginConfirmからログインさせるなら、この処理は考え直す必要がある
+                presenting?.dismiss(animated: true)
                 AppAlert.show(message: "ログインしました", alertType: .info)
             }
         }).disposed(by: rx.disposeBag)

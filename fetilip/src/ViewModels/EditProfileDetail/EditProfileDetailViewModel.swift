@@ -41,6 +41,8 @@ extension EditProfileDetailViewModel {
         case .userName:
             return validateUserName(userName: input).flatMap { name -> Single<()> in
                 return self.userModelClient.updateUserName(uid: LoginAccountData.uid!, userName: name)
+            }.flatMap { _ -> Single<()> in
+                return self.userAuthModel.updateDisplayUserName(name: input)
             }
         case .email(let defaults):
             return self.userAuthModel.reauthenticateUser(email: defaults, password: password).flatMap { _ in
