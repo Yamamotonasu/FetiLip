@@ -12,6 +12,19 @@ class WhatFetiPointViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        composeUI()
+    }
+
+    private func composeUI() {
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = .white
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let tab = self.tabBarController as? GlobalTabBarController {
+            tab.customTabBar.alpha = 0
+        }
     }
 
 }

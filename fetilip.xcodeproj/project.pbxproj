@@ -1688,7 +1688,6 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				03631975250CDDCB005B317A /* Setting */,
 				039EB66D2436157B0016436C /* Debug */,
 				03B50B5724E4ADAD00C7A14F /* EditProfile */,
 				035D5CEF24E8F5230047B4AA /* EditProfileDetail */,
@@ -1700,6 +1699,7 @@
 				0359900424ACDCBE000F8A27 /* PostLipDetail */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
 				035D5CFA24E951000047B4AA /* RegisterUser */,
+				03631975250CDDCB005B317A /* Setting */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
 			);
 			path = Views;

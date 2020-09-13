@@ -159,6 +159,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="debugButton" destination="RjR-DO-RiC" id="E7D-Kf-W8h"/>
+                        <outlet property="fetiPointField" destination="ntd-0z-Byn" id="L0S-RJ-aHF"/>
                         <outlet property="fetipointLabel" destination="sQe-Ew-qzF" id="4GY-Zw-rbF"/>
                         <outlet property="postCountLabel" destination="OcA-PB-GQS" id="mWQ-8H-kFy"/>
                         <outlet property="transitionToEditProfileButton" destination="MUb-Qs-Hgt" id="j42-VY-SZp"/>

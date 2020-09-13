@@ -41,6 +41,8 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
 
     @IBOutlet private weak var fetipointLabel: UILabel!
 
+    @IBOutlet private weak var fetiPointField: UIStackView!
+
     @IBOutlet private weak var postCountLabel: UILabel!
 
     /// Transition button to edit profile screen.
@@ -116,6 +118,12 @@ extension MyPageViewController {
         transitionToEditProfileButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
             self.transitionToEditProfileScreen()
         }).disposed(by: rx.disposeBag)
+
+        let tapGesture = UITapGestureRecognizer()
+        fetiPointField.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event.bind(onNext: { [unowned self] _ in
+            self.transitionToWhatFetilipPointScreen()
+        }).disposed(by: rx.disposeBag)
     }
 
     private func subscribeUI() {
@@ -158,6 +166,11 @@ extension MyPageViewController {
     private func transitionToEditProfileScreen() {
         guard let domain = self.userDomainModel else { return }
         let vc = EditProfileViewControllerGenerator.generate(userDomainModel: domain)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func transitionToWhatFetilipPointScreen() {
+        let vc = WhatFetiPointViewControllerGenerator.generate()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

@@ -83,6 +83,8 @@ class SettingsViewController: UITableViewController {
 
 final class SettingsViewControllerGenerator {
 
+    private init() {}
+
     static func generate() -> UIViewController  {
         guard let vc = R.storyboard.setting.settingsViewController() else {
             assertionFailure()
