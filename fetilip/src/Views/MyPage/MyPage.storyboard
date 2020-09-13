@@ -11,6 +11,9 @@
         <array key="SourceHanSans-Normal.otf">
             <string>SourceHanSans-Normal</string>
         </array>
+        <array key="SourceHanSans-Regular.otf">
+            <string>SourceHanSans-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--My Page View Controller-->
@@ -51,35 +54,77 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUb-Qs-Hgt">
-                                <rect key="frame" x="75" y="248" width="225" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="UZJ-jP-yWB"/>
-                                    <constraint firstAttribute="width" secondItem="MUb-Qs-Hgt" secondAttribute="height" multiplier="5:1" id="gz9-Wk-lZL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
-                                <state key="normal" title="プロフィールを編集する">
-                                    <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="C2A-S9-9u7">
+                                <rect key="frame" x="75" y="243" width="225" height="169.66666666666663"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ntd-0z-Byn">
+                                        <rect key="frame" x="87.666666666666657" y="0.0" width="49.666666666666657" height="30"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feti_coin" translatesAutoresizingMaskIntoConstraints="NO" id="6Ui-N6-oVu">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="6Ui-N6-oVu" secondAttribute="height" multiplier="1:1" id="8aY-4x-6rU"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQe-Ew-qzF">
+                                                <rect key="frame" x="38" y="0.0" width="11.666666666666664" height="30"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KyL-8r-Vws"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="PZH-2T-ND5">
+                                        <rect key="frame" x="38.333333333333329" y="65" width="148.66666666666669" height="24.666666666666671"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今までの投稿数 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgB-gZ-wzB">
+                                                <rect key="frame" x="0.0" y="0.0" width="131.33333333333334" height="24.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcA-PB-GQS">
+                                                <rect key="frame" x="139.33333333333331" y="0.0" width="9.3333333333333428" height="24.666666666666668"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUb-Qs-Hgt">
+                                        <rect key="frame" x="0.0" y="124.66666666666669" width="225" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="UZJ-jP-yWB"/>
+                                            <constraint firstAttribute="width" secondItem="MUb-Qs-Hgt" secondAttribute="height" multiplier="5:1" id="gz9-Wk-lZL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                        <state key="normal" title="プロフィールを編集する">
+                                            <color key="titleColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mBa-d0-kQ4" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="6po-D8-XuB"/>
+                            <constraint firstItem="C2A-S9-9u7" firstAttribute="top" secondItem="mBa-d0-kQ4" secondAttribute="bottom" constant="25" id="F5u-SS-70l"/>
                             <constraint firstItem="mBa-d0-kQ4" firstAttribute="top" secondItem="aUB-aZ-yPw" secondAttribute="top" constant="50" id="GGp-fV-u5n"/>
-                            <constraint firstItem="MUb-Qs-Hgt" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="cPr-FS-eYS"/>
-                            <constraint firstItem="MUb-Qs-Hgt" firstAttribute="top" secondItem="mBa-d0-kQ4" secondAttribute="bottom" constant="30" id="ygh-mk-FCC"/>
+                            <constraint firstItem="C2A-S9-9u7" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="GZP-RC-f8v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aUB-aZ-yPw"/>
                     </view>
@@ -114,6 +159,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="debugButton" destination="RjR-DO-RiC" id="E7D-Kf-W8h"/>
+                        <outlet property="fetiPointField" destination="ntd-0z-Byn" id="L0S-RJ-aHF"/>
+                        <outlet property="fetipointLabel" destination="sQe-Ew-qzF" id="4GY-Zw-rbF"/>
+                        <outlet property="postCountLabel" destination="OcA-PB-GQS" id="mWQ-8H-kFy"/>
                         <outlet property="transitionToEditProfileButton" destination="MUb-Qs-Hgt" id="j42-VY-SZp"/>
                         <outlet property="transitionToSettingButton" destination="mdT-Ci-KbY" id="LL9-5a-31O"/>
                         <outlet property="userImage" destination="mBa-d0-kQ4" id="hYu-We-FPf"/>
@@ -145,6 +193,7 @@
     </scenes>
     <resources>
         <image name="default_icon_female" width="125" height="125"/>
+        <image name="feti_coin" width="80" height="80"/>
         <image name="setting_icon" width="31.666666030883789" height="31.666666030883789"/>
     </resources>
 </document>

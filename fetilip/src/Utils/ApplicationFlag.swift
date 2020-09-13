@@ -23,14 +23,21 @@ struct ApplicationFlag {
 
     public var needProfileUpdate: Bool = false
 
+    public var needUserSocialUpdate: Bool = false
+
     // MARK: - Functions
 
     public mutating func updateNeedProfileUpdate(_ flag: Bool) {
         needProfileUpdate = flag
     }
 
+    public mutating func updateNeedSocialUpdate(_ flag: Bool) {
+        needUserSocialUpdate = flag
+    }
+
     public mutating func clearFlags() {
         needProfileUpdate = true
+        needUserSocialUpdate = true
     }
 
 }

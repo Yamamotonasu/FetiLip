@@ -24,7 +24,8 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
     typealias ViewModel = MyPageViewModel
 
     // Memo: TabBarのルートビューなので初期値を代入
-    var viewModel: ViewModel = MyPageViewModel(userModel: UsersModelClient())
+    var viewModel: ViewModel = MyPageViewModel(userModel: UsersModelClient(),
+                                               userSocialClient: UserSocialClient())
 
     func inject(with dependency: Dependency) {
         self.viewModel = dependency.viewModel
@@ -38,6 +39,12 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
     /// User image
     @IBOutlet private weak var userImage: UIImageView!
 
+    @IBOutlet private weak var fetipointLabel: UILabel!
+
+    @IBOutlet private weak var fetiPointField: UIStackView!
+
+    @IBOutlet private weak var postCountLabel: UILabel!
+
     /// Transition button to edit profile screen.
     @IBOutlet private weak var transitionToEditProfileButton: UIButton!
 
@@ -47,6 +54,8 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
     // MARK: Properties
 
     let userLoadEvent: PublishSubject<()> = PublishSubject<()>()
+
+    let userSocialLoadEvent: PublishRelay<()> = PublishRelay<()>()
 
     var userDomainModel: UserDomainModel?
 
@@ -69,6 +78,9 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
     override func viewDidAppear(_ animated: Bool) {
         if ApplicationFlag.shared.needProfileUpdate {
             userLoadEvent.onNext(())
+        }
+        if ApplicationFlag.shared.needUserSocialUpdate {
+            userSocialLoadEvent.accept(())
         }
     }
 
@@ -106,10 +118,17 @@ extension MyPageViewController {
         transitionToEditProfileButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
             self.transitionToEditProfileScreen()
         }).disposed(by: rx.disposeBag)
+
+        let tapGesture = UITapGestureRecognizer()
+        fetiPointField.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event.bind(onNext: { [unowned self] _ in
+            self.transitionToWhatFetilipPointScreen()
+        }).disposed(by: rx.disposeBag)
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(userLoadEvent: userLoadEvent.asObservable())
+        let input = ViewModel.Input(userLoadEvent: userLoadEvent.asObservable(),
+                                    userSocialLoadEvent: userSocialLoadEvent)
         let output = viewModel.transform(input: input)
 
         output.userLoadResult.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] domain in
@@ -118,6 +137,18 @@ extension MyPageViewController {
         }, onError: { e in
             log.debug(e.localizedDescription)
         }).disposed(by: rx.disposeBag)
+
+        output.userSocialLoadResult
+            .observeOn(MainScheduler.instance)
+            .map{ $0.fetiPoint }
+            .bind(to: fetipointLabel.rx.text)
+            .disposed(by: rx.disposeBag)
+
+        output.userSocialLoadResult
+            .observeOn(MainScheduler.instance)
+            .map {$0.postCount }
+            .bind(to: postCountLabel.rx.text)
+            .disposed(by: rx.disposeBag)
     }
 
     /// Transition to debug screen.
@@ -135,6 +166,11 @@ extension MyPageViewController {
     private func transitionToEditProfileScreen() {
         guard let domain = self.userDomainModel else { return }
         let vc = EditProfileViewControllerGenerator.generate(userDomainModel: domain)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func transitionToWhatFetilipPointScreen() {
+        let vc = WhatFetiPointViewControllerGenerator.generate()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

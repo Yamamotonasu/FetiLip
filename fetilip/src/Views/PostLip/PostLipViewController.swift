@@ -24,7 +24,8 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
     typealias ViewModel = PostLipViewModel
 
     var viewModel: ViewModel = PostLipViewModel(postModelClient: PostModelClient(),
-                                                postStorageClient: PostsStorageClient())
+                                                postStorageClient: PostsStorageClient(),
+                                                userSocialClient: UserSocialClient())
 
     // MARK: - Init process
 
@@ -153,6 +154,7 @@ extension PostLipViewController {
         }).disposed(by: rx.disposeBag)
 
         output.postResult.retryWithAlert().subscribe(onNext: { [weak self] in
+            ApplicationFlag.shared.updateNeedSocialUpdate(true)
             self?.dismiss(animated: true) {
                 AppAlert.show(message: R._string.success.postSucceed, alertType: .success)
             }

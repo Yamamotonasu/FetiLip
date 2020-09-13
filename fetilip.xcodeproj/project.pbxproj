@@ -42,6 +42,8 @@
 		034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */; };
 		034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563B24D245270005B6C5 /* FirestoreEntity.swift */; };
 		034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */; };
+		034F7A4C250E45730092E967 /* WhatFetiPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */; };
+		034F7A4E250E47A30092E967 /* WhatFetiPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F7A4D250E47A30092E967 /* WhatFetiPointViewController.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -116,6 +118,9 @@
 		03631974250CD583005B317A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03631973250CD583005B317A /* Constants.swift */; };
 		03631977250CDDEC005B317A /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03631976250CDDEC005B317A /* Setting.storyboard */; };
 		03631979250CE0F6005B317A /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03631978250CE0F6005B317A /* SettingViewController.swift */; };
+		0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368550C250DCD9300CB488E /* UserSocialRequest.swift */; };
+		03685510250DCEDE00CB488E /* UserSocialClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368550F250DCEDE00CB488E /* UserSocialClient.swift */; };
+		03685513250DE3E300CB488E /* UserSocialDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03685512250DE3E300CB488E /* UserSocialDomainModel.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -277,6 +282,8 @@
 		034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListSectionDomainModel.swift; path = fetilip/src/Domains/Users/PostListSectionDomainModel.swift; sourceTree = SOURCE_ROOT; };
 		034C563B24D245270005B6C5 /* FirestoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEntity.swift; sourceTree = "<group>"; };
 		034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhatFetiPoint.storyboard; sourceTree = "<group>"; };
+		034F7A4D250E47A30092E967 /* WhatFetiPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatFetiPointViewController.swift; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -450,6 +457,9 @@
 		03631973250CD583005B317A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		03631976250CDDEC005B317A /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		03631978250CE0F6005B317A /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		0368550C250DCD9300CB488E /* UserSocialRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialRequest.swift; sourceTree = "<group>"; };
+		0368550F250DCEDE00CB488E /* UserSocialClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialClient.swift; sourceTree = "<group>"; };
+		03685512250DE3E300CB488E /* UserSocialDomainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSocialDomainModel.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -945,7 +955,7 @@
 		034C563324CE4E910005B6C5 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				035D5D1024EE08640047B4AA /* Secure */,
+				035D5D1024EE08640047B4AA /* Socials */,
 				034C563424CE4EA90005B6C5 /* UserEntity.swift */,
 			);
 			path = User;
@@ -954,9 +964,19 @@
 		034C563624CF23BC0005B6C5 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				03685511250DE0AB00CB488E /* Socials */,
 				034C563724CF23D40005B6C5 /* UserDomainModel.swift */,
 			);
 			path = Users;
+			sourceTree = "<group>";
+		};
+		034F7A4A250E45550092E967 /* FetiPoint */ = {
+			isa = PBXGroup;
+			children = (
+				034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */,
+				034F7A4D250E47A30092E967 /* WhatFetiPointViewController.swift */,
+			);
+			path = FetiPoint;
 			sourceTree = "<group>";
 		};
 		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
@@ -1057,7 +1077,7 @@
 		035BAFE824598A31001FF6D1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				035D5D0D24EE07940047B4AA /* Secure */,
+				035D5D0D24EE07940047B4AA /* Socials */,
 				035BAFE924598A73001FF6D1 /* UserModel.swift */,
 			);
 			path = Users;
@@ -1086,6 +1106,7 @@
 		035BAFEF2459AD52001FF6D1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				0368550E250DCECD00CB488E /* Socials */,
 				035BAFF02459AD6F001FF6D1 /* UserModelClient.swift */,
 			);
 			path = Users;
@@ -1112,6 +1133,7 @@
 		035BAFFE246035E3001FF6D1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				0368550B250DCD7800CB488E /* Socials */,
 				035BAFFF24603602001FF6D1 /* UsersRequests.swift */,
 			);
 			path = Users;
@@ -1227,20 +1249,20 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		035D5D0D24EE07940047B4AA /* Secure */ = {
+		035D5D0D24EE07940047B4AA /* Socials */ = {
 			isa = PBXGroup;
 			children = (
 				035D5D0E24EE07BA0047B4AA /* SecureUser.swift */,
 			);
-			path = Secure;
+			path = Socials;
 			sourceTree = "<group>";
 		};
-		035D5D1024EE08640047B4AA /* Secure */ = {
+		035D5D1024EE08640047B4AA /* Socials */ = {
 			isa = PBXGroup;
 			children = (
 				035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */,
 			);
-			path = Secure;
+			path = Socials;
 			sourceTree = "<group>";
 		};
 		035F6DA624F481BD00991231 /* Alert */ = {
@@ -1391,10 +1413,35 @@
 		03631975250CDDCB005B317A /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				034F7A4A250E45550092E967 /* FetiPoint */,
 				03631976250CDDEC005B317A /* Setting.storyboard */,
 				03631978250CE0F6005B317A /* SettingViewController.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		0368550B250DCD7800CB488E /* Socials */ = {
+			isa = PBXGroup;
+			children = (
+				0368550C250DCD9300CB488E /* UserSocialRequest.swift */,
+			);
+			path = Socials;
+			sourceTree = "<group>";
+		};
+		0368550E250DCECD00CB488E /* Socials */ = {
+			isa = PBXGroup;
+			children = (
+				0368550F250DCEDE00CB488E /* UserSocialClient.swift */,
+			);
+			path = Socials;
+			sourceTree = "<group>";
+		};
+		03685511250DE0AB00CB488E /* Socials */ = {
+			isa = PBXGroup;
+			children = (
+				03685512250DE3E300CB488E /* UserSocialDomainModel.swift */,
+			);
+			path = Socials;
 			sourceTree = "<group>";
 		};
 		036A450024711D9500DD9282 /* Posts */ = {
@@ -1641,7 +1688,6 @@
 		03AAFB3A241F9D230068FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				03631975250CDDCB005B317A /* Setting */,
 				039EB66D2436157B0016436C /* Debug */,
 				03B50B5724E4ADAD00C7A14F /* EditProfile */,
 				035D5CEF24E8F5230047B4AA /* EditProfileDetail */,
@@ -1653,6 +1699,7 @@
 				0359900424ACDCBE000F8A27 /* PostLipDetail */,
 				03AAFB9B2428D1B70068FB1E /* PostList */,
 				035D5CFA24E951000047B4AA /* RegisterUser */,
+				03631975250CDDCB005B317A /* Setting */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
 			);
 			path = Views;
@@ -2171,6 +2218,7 @@
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */,
+				034F7A4C250E45730092E967 /* WhatFetiPoint.storyboard in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
 				035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */,
@@ -2394,6 +2442,7 @@
 				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
+				0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */,
@@ -2409,6 +2458,7 @@
 				03631979250CE0F6005B317A /* SettingViewController.swift in Sources */,
 				035F6D9124F29ADD00991231 /* UserNameValidation.swift in Sources */,
 				034C562824C490410005B6C5 /* FirestorageError.swift in Sources */,
+				03685513250DE3E300CB488E /* UserSocialDomainModel.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
@@ -2487,6 +2537,8 @@
 				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,
 				034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */,
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
+				034F7A4E250E47A30092E967 /* WhatFetiPointViewController.swift in Sources */,
+				03685510250DCEDE00CB488E /* UserSocialClient.swift in Sources */,
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
 				03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */,
 				036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */,

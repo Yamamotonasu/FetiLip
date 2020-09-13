@@ -59,6 +59,8 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     private let userLoadEvent: PublishSubject<()> = PublishSubject<()>()
 
+    private let checkUserStatusEvent: PublishRelay<()> = PublishRelay<()>()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         composeUI()
@@ -138,7 +140,8 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(updateProfileImageEvent: updateProfileImageSubject.asObservable(),
+        let input = ViewModel.Input(checkUserStatusEvent: checkUserStatusEvent,
+                                    updateProfileImageEvent:updateProfileImageSubject.asObservable(),
                                     profileImageObservable: profileImageSubject.asObservable(),
                                     userLoadEvent: userLoadEvent)
         let output = viewModel.transform(input: input)

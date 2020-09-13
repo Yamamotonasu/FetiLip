@@ -16,6 +16,8 @@ class SettingsViewController: UITableViewController {
 
     @IBOutlet private weak var privacyPolicyCell: UITableViewCell!
 
+    @IBOutlet private weak var whatsFetiPointCell: UITableViewCell!
+
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -43,6 +45,8 @@ class SettingsViewController: UITableViewController {
                 self.showTerm()
             case self.privacyPolicyCell:
                 self.showPrivacyPolicy()
+            case self.whatsFetiPointCell:
+                self.showWhatFetiPoint()
             default:
                 break
             }
@@ -70,9 +74,16 @@ class SettingsViewController: UITableViewController {
         UIApplication.shared.open(url, options: [:])
     }
 
+    private func showWhatFetiPoint() {
+        let vc = WhatFetiPointViewControllerGenerator.generate()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 }
 
 final class SettingsViewControllerGenerator {
+
+    private init() {}
 
     static func generate() -> UIViewController  {
         guard let vc = R.storyboard.setting.settingsViewController() else {
