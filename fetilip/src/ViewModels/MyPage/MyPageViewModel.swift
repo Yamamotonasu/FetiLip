@@ -47,6 +47,7 @@ extension MyPageViewModel: ViewModelType {
         let userLoadResult = input.userLoadEvent.flatMap { _ in
             return self.userModel.getUserData(userRef: LoginAccountData.userDocumentReference).flatMap { data -> Single<UserDomainModel> in
                 return Single.create { observer in
+                    ApplicationFlag.shared.updateNeedProfileUpdate(false)
                     let domain = UserDomainModel.convert(data)
                     observer(.success(domain))
                     return Disposables.create()

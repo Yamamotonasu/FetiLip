@@ -28,7 +28,7 @@ class InputPasswordViewController: UIViewController, ViewControllerMethodInjecta
 
     // MARK: - Outlets
 
-    @IBOutlet private weak var passwordTextField: UITextView!
+    @IBOutlet private weak var passwordTextField: UITextField!
 
     @IBOutlet private weak var authenticationButton: UIButton!
 

@@ -30,7 +30,7 @@ struct ApplicationFlag {
     }
 
     public mutating func clearFlags() {
-        needProfileUpdate = false
+        needProfileUpdate = true
     }
 
 }

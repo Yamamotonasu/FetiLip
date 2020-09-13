@@ -18,9 +18,14 @@ struct RegisterUserViewModel {
 
     init(userAuthModel: UserAuthModelProtocol) {
         self.userAuthModel = userAuthModel
+        indicator = self.activity.asObservable()
     }
 
     let userAuthModel: UserAuthModelProtocol
+
+    private let activity: ActivityIndicator = ActivityIndicator()
+
+    private let indicator: Observable<Bool>
 
 }
 
@@ -81,8 +86,9 @@ extension RegisterUserViewModel: ViewModelType {
             }
         }
 
+        // TODO: Indicator
         let registerSequence = input.registerTapEvent.asObservable().withLatestFrom(combineText).flatMapLatest { pair in
-            self.userAuthModel.checkLogin().flatMap { user -> Single<FirebaseUser> in
+            self.userAuthModel.checkLogin().flatMap { user in
                 return self.userAuthModel.upgradePerpetualAccountFromAnonymous(email: pair.email, password: pair.password, linkingUser: user)
             }.flatMap { _ -> Single<()> in
                 return Single.create { observer in

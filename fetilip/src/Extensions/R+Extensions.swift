@@ -24,6 +24,8 @@ extension R {
 
         static let editEmailScreenTitle: String = "メールアドレスを更新する"
 
+        static let settingScreenTitle: String = "設定"
+
         // MARK: - User message
 
         static let errorOccurred: String = "エラーが発生しました。時間を置いて再度お試しください。"
@@ -70,7 +72,7 @@ extension R {
 
             // MARK: - RegisterUser
 
-            static let registerUserSuccess = "ユーザー登録を行いました"
+            static let registerUserSuccess = "ユーザー登録をしました😃"
 
             // MARK: - EditProfile
 

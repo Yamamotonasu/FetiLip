@@ -43,12 +43,16 @@ class MainModalViewController: UIViewController {
         let baseString = "\(term)、\(privacyPolicy)に同意する。"
         let attributedString = NSMutableAttributedString(attributedString: termAndPrivacyPolicyTextView.attributedText )
 
+        let termUrl: String = RemoteConfigParameters.termUrl.stringValue?.isEmpty == true ? Constants.termUrl : RemoteConfigParameters.termUrl.stringValue!
+
+        let privacyPolicyUrl: String = RemoteConfigParameters.privacyPolicy.stringValue?.isEmpty == true ? Constants.privacyPolicyUrl : RemoteConfigParameters.privacyPolicy.stringValue!
+
         attributedString.addAttribute(.link,
-                                      value: "Term",
+                                      value: termUrl,
                                       range: NSString(string: baseString).range(of: term))
 
         attributedString.addAttribute(.link,
-                                      value: "PrivacyPolicy",
+                                      value: privacyPolicyUrl,
                                       range: NSString(string: baseString).range(of: privacyPolicy))
 
         termAndPrivacyPolicyTextView.attributedText = attributedString
@@ -86,7 +90,6 @@ class MainModalViewController: UIViewController {
 extension MainModalViewController: UITextViewDelegate {
 
     public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        // TODO: Link setting.
         UIApplication.shared.open(URL)
         return false
     }

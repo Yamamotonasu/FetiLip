@@ -20,12 +20,22 @@ public enum RemoteConfigParameters {
     /// Review template
     case reviewTemplate
 
+    /// Term url
+    case termUrl
+
+    /// Privacy policy url
+    case privacyPolicy
+
     var parameter: String {
         switch self {
         case .requiredAppVersion:
             return "required_app_version"
         case .reviewTemplate:
             return "review_template"
+        case .termUrl:
+            return "term_url"
+        case .privacyPolicy:
+            return "privacy_policy_url"
         }
     }
 

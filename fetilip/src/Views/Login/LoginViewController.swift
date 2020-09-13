@@ -18,9 +18,9 @@ class LoginViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet private weak var emailTextView: UITextView!
+    @IBOutlet private weak var emailTextField: UITextField!
 
-    @IBOutlet private weak var passwordTextView: UITextView!
+    @IBOutlet private weak var passwordTextField: UITextField!
 
     @IBOutlet private weak var loginButton: UIButton!
 
@@ -54,13 +54,16 @@ class LoginViewController: UIViewController {
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(inputEmail: emailTextView.rx.text.asObservable(),
-                                    inputPassword: passwordTextView.rx.text.asObservable(),
+        let input = ViewModel.Input(inputEmail: emailTextField.rx.text.asObservable(),
+                                    inputPassword: passwordTextField.rx.text.asObservable(),
                                     tapLogin: loginButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
 
         output.loginResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
+            let presenting = self?.presentingViewController
             self?.dismiss(animated: true) {
+                // LoginConfirmからログインさせるなら、この処理は考え直す必要がある
+                presenting?.dismiss(animated: true)
                 AppAlert.show(message: "ログインしました", alertType: .info)
             }
         }).disposed(by: rx.disposeBag)

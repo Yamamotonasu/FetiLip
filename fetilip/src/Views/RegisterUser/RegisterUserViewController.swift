@@ -28,11 +28,11 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
 
     // MARK: - Outlets
 
-    @IBOutlet private weak var emailTextView: UITextView!
+    @IBOutlet private weak var emailTextField: UITextField!
 
     @IBOutlet private weak var emailErrorLabel: UILabel!
 
-    @IBOutlet private weak var passwordTextView: UITextView!
+    @IBOutlet private weak var passwordTextField: UITextField!
 
     @IBOutlet private weak var passwordErrorLabel: UILabel!
 
@@ -65,15 +65,11 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 2
-
-        self.emailTextView.keyboardType = .emailAddress
-        self.passwordTextView.isSecureTextEntry = true
-        self.passwordTextView.keyboardType = .emailAddress
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(passwordTextObservable: passwordTextView.rx.text.asObservable(),
-                                    emailTextObservable: emailTextView.rx.text.asObservable(),
+        let input = ViewModel.Input(passwordTextObservable: passwordTextField.rx.text.asObservable(),
+                                    emailTextObservable: emailTextField.rx.text.asObservable(),
                                     registerTapEvent: registerButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
 

@@ -104,10 +104,18 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Exy-iO-PN8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mdT-Ci-KbY">
+                                <rect key="frame" x="274" y="0.0" width="85" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="setting_icon"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="debugButton" destination="RjR-DO-RiC" id="E7D-Kf-W8h"/>
                         <outlet property="transitionToEditProfileButton" destination="MUb-Qs-Hgt" id="j42-VY-SZp"/>
+                        <outlet property="transitionToSettingButton" destination="mdT-Ci-KbY" id="LL9-5a-31O"/>
                         <outlet property="userImage" destination="mBa-d0-kQ4" id="hYu-We-FPf"/>
                     </connections>
                 </viewController>
@@ -137,5 +145,6 @@
     </scenes>
     <resources>
         <image name="default_icon_female" width="125" height="125"/>
+        <image name="setting_icon" width="31.666666030883789" height="31.666666030883789"/>
     </resources>
 </document>
