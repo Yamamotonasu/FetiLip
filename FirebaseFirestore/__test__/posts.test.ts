@@ -4,7 +4,7 @@ import * as fs from "fs";
 import * as testModules from "./test_utils/test_module"
 import * as constant from "./test_utils/constants"
 
-describe("Firestoreセキュリティルール", () => {
+describe("postsコレクションのセキュリティルールテスト", () => {
   // ルールファイルの読み込み
   beforeAll(async () => {
     await firebase.loadFirestoreRules({
@@ -28,7 +28,7 @@ describe("Firestoreセキュリティルール", () => {
   const testDocumentID = "testPost"
 
 
-  describe("Posts collection", () => {
+  describe(constant.postsCollectionPath, () => {
     describe("create", () => {
       beforeEach(async () => {
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });

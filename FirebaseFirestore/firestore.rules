@@ -19,9 +19,13 @@ service cloud.firestore {
     match /version/1/userSocials/{userID} {
       allow create:
       if isUserAuthenticated(userID) 
+      && isValidateUserSocial(incomingData())
       && validateRequestTime(incomingData());
       allow update:
       if isUserAuthenticated(userID)
+      && isValidateUserSocial(incomingData())
+      && incomingData().postCount < resource.data.postCount + 2
+      && incomingData().fetiPoint < resource.data.fetiPoint + 6
       && validateUpdateTime(incomingData());
       allow read:
       if isAnyAuthenticated();
@@ -35,6 +39,7 @@ service cloud.firestore {
       && incomingData().imageRef.matches('^posts/.+$')
       && validateRequestTime(incomingData());
       allow read: if true;
+      allow delete: if false;
     }
 
     // - region auth functions
@@ -122,6 +127,23 @@ service cloud.firestore {
     // @param uid UID
     function userDocumentPath(userID) {
       return /databases/$(database)/documents/version/1/users/$(userID);
+    }
+
+    // - region userSocials
+
+    // userSocials collection スキーマ検証
+    //
+    // Schemaの数は4つ
+    // fetiPointは必須 && Int型 && 初期値は0
+    // postCountは必須 && Int型 && 初期値は0
+    // updatedAtは必須 && Timestamp型
+    // createdAtは必須 && Timestamp型
+    function isValidateUserSocial(userSocial) {
+      return userSocial.size() == 4
+      && 'fetiPoint' in userSocial && userSocial.fetiPoint is number
+      && 'postCount' in userSocial && userSocial.postCount is number
+      && 'updatedAt' in userSocial && userSocial.updatedAt is timestamp
+      && 'createdAt' in userSocial && userSocial.createdAt is timestamp;
     }
 
     // - region posts
