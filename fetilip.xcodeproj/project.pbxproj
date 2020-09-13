@@ -42,6 +42,8 @@
 		034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */; };
 		034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563B24D245270005B6C5 /* FirestoreEntity.swift */; };
 		034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */; };
+		034F7A4C250E45730092E967 /* WhatFetiPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */; };
+		034F7A4E250E47A30092E967 /* WhatFetiPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F7A4D250E47A30092E967 /* WhatFetiPointViewController.swift */; };
 		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
@@ -280,6 +282,8 @@
 		034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListSectionDomainModel.swift; path = fetilip/src/Domains/Users/PostListSectionDomainModel.swift; sourceTree = SOURCE_ROOT; };
 		034C563B24D245270005B6C5 /* FirestoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEntity.swift; sourceTree = "<group>"; };
 		034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhatFetiPoint.storyboard; sourceTree = "<group>"; };
+		034F7A4D250E47A30092E967 /* WhatFetiPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatFetiPointViewController.swift; sourceTree = "<group>"; };
 		03598FFE24A8D715000F8A27 /* PostModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelTests.swift; sourceTree = "<group>"; };
 		0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 		0359900224ACD775000F8A27 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
@@ -966,6 +970,15 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
+		034F7A4A250E45550092E967 /* FetiPoint */ = {
+			isa = PBXGroup;
+			children = (
+				034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */,
+				034F7A4D250E47A30092E967 /* WhatFetiPointViewController.swift */,
+			);
+			path = FetiPoint;
+			sourceTree = "<group>";
+		};
 		0359900424ACDCBE000F8A27 /* PostLipDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -1400,6 +1413,7 @@
 		03631975250CDDCB005B317A /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				034F7A4A250E45550092E967 /* FetiPoint */,
 				03631976250CDDEC005B317A /* Setting.storyboard */,
 				03631978250CE0F6005B317A /* SettingViewController.swift */,
 			);
@@ -2204,6 +2218,7 @@
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */,
+				034F7A4C250E45730092E967 /* WhatFetiPoint.storyboard in Resources */,
 				03AAFB9D2428D2430068FB1E /* GlobalTabBar.storyboard in Resources */,
 				03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */,
 				035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */,
@@ -2522,6 +2537,7 @@
 				036A45142472D13800DD9282 /* LoginRequired.swift in Sources */,
 				034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */,
 				03AAFBAB242EEFF10068FB1E /* AppInitialization.swift in Sources */,
+				034F7A4E250E47A30092E967 /* WhatFetiPointViewController.swift in Sources */,
 				03685510250DCEDE00CB488E /* UserSocialClient.swift in Sources */,
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
 				03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */,
