@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>fetilip.fetilip-production</string>
+	<string>com.fetilip.fetilip-production</string>
 	<key>PROJECT_ID</key>
 	<string>fetilip-production</string>
 	<key>STORAGE_BUCKET</key>
 	<string>fetilip-production.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:535437502744:ios:706114a39d279896ff966d</string>
 	<key>DATABASE_URL</key>
