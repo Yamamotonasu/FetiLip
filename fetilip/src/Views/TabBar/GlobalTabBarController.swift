@@ -170,7 +170,7 @@ extension GlobalTabBarController {
             case TabViewControllerIndex.postList.rawValue:
                 $0.element.image = R.image.tab_lip()
             case TabViewControllerIndex.myPage.rawValue:
-                $0.element.image = R.image.notification()
+                $0.element.image = R.image.home_icon()
             default:
                 break
             }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */; };
+		031249A725102526005AD4E2 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 031249A625102526005AD4E2 /* GoogleService-Production-Info.plist */; };
 		034A9859249602F7009336F0 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9856249602F7009336F0 /* Nuke.framework */; };
 		034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9857249602F7009336F0 /* Differentiator.framework */; };
 		034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9858249602F7009336F0 /* RxDataSources.framework */; };
@@ -67,7 +68,6 @@
 		035BB00024603602001FF6D1 /* UsersRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFFF24603602001FF6D1 /* UsersRequests.swift */; };
 		035BB00224666121001FF6D1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00124666121001FF6D1 /* AppSettings.swift */; };
 		035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00324666D3E001FF6D1 /* LoginAccountData.swift */; };
-		035BB00624668839001FF6D1 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */; };
 		035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */; };
 		035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */; };
 		035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035BB0102467CFA2001FF6D1 /* PostLip.storyboard */; };
@@ -246,6 +246,8 @@
 
 /* Begin PBXFileReference section */
 		0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewModel.swift; sourceTree = "<group>"; };
+		031249A5251023E4005AD4E2 /* fetilip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fetilip.entitlements; sourceTree = "<group>"; };
+		031249A625102526005AD4E2 /* GoogleService-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Production-Info.plist"; sourceTree = "<group>"; };
 		034A9856249602F7009336F0 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		034A9857249602F7009336F0 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		034A9858249602F7009336F0 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
@@ -304,7 +306,6 @@
 		035BAFFF24603602001FF6D1 /* UsersRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRequests.swift; sourceTree = "<group>"; };
 		035BB00124666121001FF6D1 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		035BB00324666D3E001FF6D1 /* LoginAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccountData.swift; sourceTree = "<group>"; };
-		035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Production-Info.plist"; sourceTree = "<group>"; };
 		035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetilipBuildScheme.swift; sourceTree = "<group>"; };
 		035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMPhotoPicker.framework; path = Carthage/Build/iOS/FMPhotoPicker.framework; sourceTree = "<group>"; };
 		035BB0102467CFA2001FF6D1 /* PostLip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostLip.storyboard; sourceTree = "<group>"; };
@@ -1138,9 +1139,9 @@
 		035BB007246696E7001FF6D1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				031249A625102526005AD4E2 /* GoogleService-Production-Info.plist */,
 				03AAFAF6241E2FDD0068FB1E /* Info.plist */,
 				03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */,
-				035BB00524668839001FF6D1 /* GoogleService-Production-Info.plist */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1562,6 +1563,7 @@
 		03AAFAE7241E2FD70068FB1E /* fetilip */ = {
 			isa = PBXGroup;
 			children = (
+				031249A5251023E4005AD4E2 /* fetilip.entitlements */,
 				035BB007246696E7001FF6D1 /* Service */,
 				03AAFB492420FB450068FB1E /* Resources */,
 				03AAFB39241F9D0B0068FB1E /* src */,
@@ -2190,7 +2192,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				035BB00624668839001FF6D1 /* GoogleService-Production-Info.plist in Resources */,
 				039EB6662436114D0016436C /* gRPCCertificates-Cpp.bundle in Resources */,
 				03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */,
 				035D5CF124E8F5470047B4AA /* EditProfileDetail.storyboard in Resources */,
@@ -2208,6 +2209,7 @@
 				035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */,
 				035F6D9C24F3432600991231 /* SourceHanSans-Light.otf in Resources */,
 				03AAFBA12428D54E0068FB1E /* PostList.storyboard in Resources */,
+				031249A725102526005AD4E2 /* GoogleService-Production-Info.plist in Resources */,
 				035D5CFF24E952A50047B4AA /* RegisterUser.storyboard in Resources */,
 				035F6D9E24F3432600991231 /* SourceHanSans-ExtraLight.otf in Resources */,
 				035F6D9D24F3432600991231 /* SourceHanSans-Bold.otf in Resources */,
@@ -2703,6 +2705,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_NAME_PREFIX = dev;
+				CODE_SIGN_ENTITLEMENTS = fetilip/fetilip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
@@ -2735,6 +2738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_NAME_PREFIX = "";
+				CODE_SIGN_ENTITLEMENTS = fetilip/fetilip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
