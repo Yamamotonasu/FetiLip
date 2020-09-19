@@ -48,6 +48,7 @@ enum UsersRequests: FirestoreRequest {
             return params
         case .updateUserProfileStoragePath(let storagePath):
             params[Fields.Key.userImageRef.rawValue] = storagePath
+            params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
             return params
         }
     }

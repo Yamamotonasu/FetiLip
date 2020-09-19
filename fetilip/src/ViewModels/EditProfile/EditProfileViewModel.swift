@@ -74,7 +74,6 @@ extension EditProfileViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let updateUserImageSequence = input.updateProfileImageEvent
             .withLatestFrom(input.profileImageObservable)
-            .retry(5)
             .flatMap { image -> Single<UIImage> in
                 return self.validateProfileImage(image: image)
             }.flatMap { image -> Observable<StorageReference> in

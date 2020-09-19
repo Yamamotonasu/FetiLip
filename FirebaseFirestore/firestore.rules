@@ -9,7 +9,6 @@ service cloud.firestore {
       && validateRequestTime(incomingData());
       allow update: 
       if isUserAuthenticated(userID) 
-      && isValidateUser(incomingData())
       && validateString(incomingData().userName, 1, 12)
       && validateUpdateTime(incomingData());
       allow get: if isAnyAuthenticated();
