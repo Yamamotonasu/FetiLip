@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>カメラで撮影するのに許可が必要です。</string>
+	<string>これにより、カメラで撮影した写真をアプリ内でシェアする事が出来るようになります。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>アルバムから選択するのに許可が必要です。</string>
+	<string>これにより、ライブラリの写真をアプリ内でシェアする事が出来るようになります。</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>SourceHanSans-Regular.otf</string>

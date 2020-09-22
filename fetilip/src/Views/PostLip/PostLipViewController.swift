@@ -198,10 +198,20 @@ extension PostLipViewController: FMPhotoPickerViewControllerDelegate, FMImageEdi
 
     /// Launch library with app setting.
     private func launchLibrary() {
-        let config = AppSettings.FMPhotoPickerSetting.setup()
-        let picker = FMPhotoPickerViewController(config: config)
-        picker.delegate = self
-        self.present(picker, animated: true)
+        AppSettings.libraryPermissionRequest { status in
+            if status == .authorized {
+                self.attachLibrary()
+            }
+        }
+    }
+
+    private func attachLibrary() {
+        DispatchQueue.main.async {
+            let config = AppSettings.FMPhotoPickerSetting.setup()
+            let picker = FMPhotoPickerViewController(config: config)
+            picker.delegate = self
+            self.present(picker, animated: true)
+        }
     }
 
     /// /// Launch Editor with app setting.

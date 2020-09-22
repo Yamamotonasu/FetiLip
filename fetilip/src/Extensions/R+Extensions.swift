@@ -30,6 +30,8 @@ extension R {
 
         static let errorOccurred: String = "エラーが発生しました。時間を置いて再度お試しください。"
 
+        static let requestUserLibraryPermission: String = "iPhoneの設定でFetilipから写真へのアクセスを許可してください"
+
         // MARK: - Firebase error message
 
         static let invalidEmail: String = "メールアドレスの形式が違います。正しい形式で入力してください。"
