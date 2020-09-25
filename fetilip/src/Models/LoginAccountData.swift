@@ -25,6 +25,8 @@ struct LoginAccountData {
         /// Firebase authentication uid.
         case uid = "uid"
 
+        case payAttension = "payAttension"
+
     }
 
     // MARK: - properties
@@ -37,6 +39,16 @@ struct LoginAccountData {
         set {
             self.ud.set(newValue, forKey: Self.DataType.uid.rawValue)
             self.ud.synchronize()
+        }
+    }
+
+    /// Whether to pay attension to the posted image before posting
+    static var isPayAttensionBeforePosting: Bool? {
+        get {
+            self.ud.object(forKey: Self.DataType.payAttension.rawValue) as? Bool
+        }
+        set {
+            self.ud.set(newValue, forKey: Self.DataType.payAttension.rawValue)
         }
     }
 

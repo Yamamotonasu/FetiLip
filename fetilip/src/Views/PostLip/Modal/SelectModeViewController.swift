@@ -35,9 +35,18 @@ class SelectModeViewController: UIViewController, ViewControllerMethodInjectable
     @IBOutlet private weak var libraryButton: UIButton!
 
     // MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribe()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        guard LoginAccountData.isPayAttensionBeforePosting == false else {
+            let vc = PayAttensionPostingImageViewControllerGenerater.generate()
+            self.present(vc, animated: true)
+            return
+        }
     }
 
 }
