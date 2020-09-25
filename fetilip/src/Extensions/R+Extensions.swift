@@ -63,6 +63,11 @@ extension R {
             // MARK: - EditProfile
 
             static let updateImageNotFound = "更新する画像が見つかりません。"
+
+            // MARK: - Settings
+
+            static let failedToStartMailer = "メーラーの起動に失敗しました"
+
         }
 
         struct success {
@@ -81,6 +86,10 @@ extension R {
             // MARK: - EditProfile
 
             static let updateUserImageSuccess = "プロフィール画像を更新しました😃"
+
+            // MARK: - Settings
+
+            static let successSendMail = "お問い合わせありがとうございます。3営業日以内で返信致しますので、返信をお待ち下さい。"
 
         }
 
