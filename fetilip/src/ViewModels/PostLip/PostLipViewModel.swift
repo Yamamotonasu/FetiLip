@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import FirebaseStorage
+import Firebase
 import NVActivityIndicatorView
 
 struct PostLipViewModel {
@@ -18,10 +19,12 @@ struct PostLipViewModel {
     /// DI init.
     init(postModelClient: PostModelClientProtocol,
          postStorageClient: PostsStorageClientProtocol,
-         userSocialClient: UserSocialClientProtocol) {
+         userSocialClient: UserSocialClientProtocol,
+         userAuthModel: UserAuthModelProtocol) {
         self.postModelClient = postModelClient
         self.postStorageClient = postStorageClient
         self.userSocialClient = userSocialClient
+        self.userAuthModel = userAuthModel
         indicator = activity.asObservable()
     }
 
@@ -30,6 +33,8 @@ struct PostLipViewModel {
     private let postStorageClient: PostsStorageClientProtocol
 
     private let userSocialClient: UserSocialClientProtocol
+
+    private let userAuthModel: UserAuthModelProtocol
 
     /// Image updated observable.
     let uploadedImage: BehaviorRelay<UIImage?> = BehaviorRelay<UIImage?>(value: nil)
@@ -57,6 +62,8 @@ extension PostLipViewModel: ViewModelType {
     struct Input {
         // Delete image action.
         let deleteButtonTapEvent: Observable<Void>
+        // Check login state event.
+        let checkLoginEvent: PublishRelay<()>
         // Post button action.
         let postButtonTapEvent: Observable<Void>
         // Reviewing text.
@@ -70,6 +77,8 @@ extension PostLipViewModel: ViewModelType {
         let closeButtonHiddenEvent: Driver<Bool>
         // Image observable
         let updatedImage: Observable<UIImage?>
+
+        let checkLoginResult: Observable<()>
 
         let templateTextDriver: Driver<String?>
 
@@ -119,8 +128,22 @@ extension PostLipViewModel: ViewModelType {
             return self.userSocialClient.incrementPost(uid: LoginAccountData.uid!).trackActivity(self.activity)
         }
 
+        let checkLoginSequence = input.checkLoginEvent.flatMapLatest { _ in
+            self.userAuthModel.checkLogin().flatMap { user -> Single<()> in
+                Single.create { observer in
+                    if user.isAnonymous {
+                        observer(.error(User.AuthError.needToUpdateFromAnonymousUser))
+                    } else {
+                        observer(.success(()))
+                    }
+                    return Disposables.create()
+                }
+            }
+        }
+
         return Output(closeButtonHiddenEvent: imageExistsState.asDriver(onErrorJustReturn: true),
                       updatedImage: uploadedImage.asObservable(),
+                      checkLoginResult: checkLoginSequence,
                       templateTextDriver: self.templateTextRelay.asDriver(onErrorJustReturn: ""),
                       postResult: postSequence,
                       indicator: indicator)

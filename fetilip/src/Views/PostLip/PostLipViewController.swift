@@ -25,7 +25,8 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     var viewModel: ViewModel = PostLipViewModel(postModelClient: PostModelClient(),
                                                 postStorageClient: PostsStorageClient(),
-                                                userSocialClient: UserSocialClient())
+                                                userSocialClient: UserSocialClient(),
+                                                userAuthModel: UsersAuthModel())
 
     // MARK: - Init process
 
@@ -67,7 +68,14 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     // MARK: - Properties
 
-    let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
+    private let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
+
+    private let checkLoginEvent: PublishRelay<()> = PublishRelay<()>()
+
+    // MARK: - Flags
+
+    /// Whether the user can post a review.
+    private var canPostLip: Bool = false
 
     // MARK: - LifeCycles
 
@@ -76,6 +84,7 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
         composeUI()
         subscribe()
         bindUI()
+        checkLoginEvent.accept(())
     }
 
 }
@@ -94,6 +103,11 @@ extension PostLipViewController {
         }).disposed(by: rx.disposeBag)
 
         addImageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            guard self.canPostLip else {
+                self.showNeedRegisterUserAlert()
+                return
+            }
+
             if self.imagePosted.image == nil {
                 self.presentingSelectMode()
             } else {
@@ -126,6 +140,7 @@ extension PostLipViewController {
     /// Bind UI from view model outputs and ViewModel.
     private func bindUI() {
         let input = ViewModel.Input(deleteButtonTapEvent: deleteImageButton.rx.tap.asObservable(),
+                                    checkLoginEvent: checkLoginEvent,
                                     postButtonTapEvent: postButton.rx.tap.asObservable(),
                                     postLipReviewText: postLipReviewTextView.rx.text.asObservable(),
                                     segumentedControlValueObservable: templateSegumentedControl.rx.value.asObservable())
@@ -160,6 +175,13 @@ extension PostLipViewController {
             }
         }).disposed(by: rx.disposeBag)
 
+        output.checkLoginResult.subscribe(onNext: { [weak self] _ in
+            self?.canPostLip = true
+        },onError: { [weak self] _ in
+            self?.canPostLip = false
+            self?.showNeedRegisterUserAlert()
+        }).disposed(by: rx.disposeBag)
+
         output.indicator.subscribe(onNext: { bool in
             if bool {
                 AppIndicator.show()
@@ -174,8 +196,16 @@ extension PostLipViewController {
     }
 
     private func presentingSelectMode() {
+        guard canPostLip else {
+            showNeedRegisterUserAlert()
+            return
+        }
         let vc = SelectModeViewControllerGenerator.generate(selectSubject: self.selectModeSuject)
         self.present(vc, animated: true)
+    }
+
+    private func showNeedRegisterUserAlert() {
+        AppAlert.show(message: R._string.needRegitserUser, alertType: .info)
     }
 
 }

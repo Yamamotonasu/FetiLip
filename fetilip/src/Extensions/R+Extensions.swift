@@ -50,6 +50,8 @@ extension R {
 
         static let userDisabled: String = "無効なアカウントです。"
 
+        static let needRegitserUser: String = "レビューを投稿するには正式会員登録を行う必要があります。マイページ → プロフィール編集画面から登録出来ます。"
+
         struct error {
 
             // MARK: - PostLip
