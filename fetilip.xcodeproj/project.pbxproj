@@ -2720,7 +2720,7 @@
 				CODE_SIGN_ENTITLEMENTS = fetilip/fetilip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2754,7 +2754,7 @@
 				CODE_SIGN_ENTITLEMENTS = fetilip/fetilip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
