@@ -61,6 +61,7 @@ class LoginViewController: UIViewController {
 
         output.loginResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
             let presenting = self?.presentingViewController
+            LoginAccountData.isPayAttensionBeforePosting = true
             self?.dismiss(animated: true) {
                 // LoginConfirmからログインさせるなら、この処理は考え直す必要がある
                 presenting?.dismiss(animated: true)

@@ -66,6 +66,8 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     @IBOutlet private weak var templateSegumentedControl: UISegmentedControl!
 
+    @IBOutlet weak var payAttensionButton: UIButton!
+
     // MARK: - Properties
 
     private let selectModeSuject: PublishSubject<SelectMode> = PublishSubject<SelectMode>()
@@ -134,6 +136,10 @@ extension PostLipViewController {
             case .editor:
                 self.launchEditor()
             }
+        }).disposed(by: rx.disposeBag)
+
+        payAttensionButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            self.showPayAttensionScreen()
         }).disposed(by: rx.disposeBag)
     }
 
@@ -206,6 +212,11 @@ extension PostLipViewController {
 
     private func showNeedRegisterUserAlert() {
         AppAlert.show(message: R._string.needRegitserUser, alertType: .info)
+    }
+
+    private func showPayAttensionScreen() {
+        let vc = PayAttensionPostingImageViewControllerGenerater.generate()
+        self.present(vc, animated: true)
     }
 
 }
