@@ -32,7 +32,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsr-ef-M0l">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="427.33333333333331"/>
-                                                <string key="text">以下の行為を行うと運営が予告無しにアカウントが停止する可能性があります。ご注意下さい。
+                                                <string key="text">以下の行為を行うと運営が予告無しに投稿を削除したり、アカウントを停止する可能性があります。ご注意下さい。
 
 ・ヌードや性的コンテンツが含まれる画像を公開したり、そのような表現が含まれるレビューを公開すること
 ・暴力的な画像を公開したり、そのようなレビューを投稿したりすること
