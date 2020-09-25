@@ -14,4 +14,10 @@ public struct Constants {
 
     static let privacyPolicyUrl = "https://yamamotonasu.github.io/fetilip_privacy/"
 
+    static let contactAdress = "felis.prod07@gmail.com"
+
+    static let defaultContactSubject = "Fetilipに関するお問い合わせ"
+
+    static let defaultContactBody = "お問い合わせの本文を入力してください"
+
 }

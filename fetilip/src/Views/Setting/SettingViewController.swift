@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class SettingsViewController: UITableViewController {
 
@@ -17,6 +18,8 @@ class SettingsViewController: UITableViewController {
     @IBOutlet private weak var privacyPolicyCell: UITableViewCell!
 
     @IBOutlet private weak var whatsFetiPointCell: UITableViewCell!
+
+    @IBOutlet private weak var contactCell: UITableViewCell!
 
     // MARK: - LifeCycle
 
@@ -47,6 +50,8 @@ class SettingsViewController: UITableViewController {
                 self.showPrivacyPolicy()
             case self.whatsFetiPointCell:
                 self.showWhatFetiPoint()
+            case self.contactCell:
+                self.startMailer()
             default:
                 break
             }
@@ -77,6 +82,43 @@ class SettingsViewController: UITableViewController {
     private func showWhatFetiPoint() {
         let vc = WhatFetiPointViewControllerGenerator.generate()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func startMailer() {
+        guard MFMailComposeViewController.canSendMail() else {
+            AppAlert.show(message: R._string.error.failedToStartMailer, alertType: .error)
+            return
+        }
+        let mailerViewController = MFMailComposeViewController()
+        mailerViewController.mailComposeDelegate = self
+        mailerViewController.setToRecipients([Constants.contactAdress])
+        mailerViewController.setSubject(Constants.defaultContactSubject)
+        mailerViewController.setMessageBody(Constants.defaultContactBody, isHTML: false)
+
+        self.present(mailerViewController, animated: true)
+    }
+
+}
+
+// MARK: - MFMailCompose
+
+extension SettingsViewController: MFMailComposeViewControllerDelegate {
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result {
+        case .cancelled:
+            break
+        case .saved:
+            break
+        case .sent:
+            AppAlert.show(message: R._string.success.successSendMail, alertType: .info)
+            break
+        case .failed:
+            break
+        default:
+            break
+        }
+        controller.dismiss(animated: true)
     }
 
 }

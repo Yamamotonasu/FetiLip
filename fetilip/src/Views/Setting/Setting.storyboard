@@ -64,7 +64,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="プライバシーポリシー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qG6-OH-1tW">
-                                                    <rect key="frame" x="30" y="20" width="170" height="20"/>
+                                                    <rect key="frame" x="30" y="17.5" width="170" height="25"/>
                                                     <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -95,10 +95,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eWW-B3-aEB">
-                                                    <rect key="frame" x="30" y="20" width="177.5" height="20"/>
+                                                    <rect key="frame" x="30" y="17.5" width="178.5" height="25"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feti_coin" translatesAutoresizingMaskIntoConstraints="NO" id="G5z-za-waV">
-                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <rect key="frame" x="0.0" y="2.5" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="Icb-Cy-3Ok"/>
                                                                 <constraint firstAttribute="width" secondItem="G5z-za-waV" secondAttribute="height" multiplier="1:1" id="Liy-VV-h47"/>
@@ -106,17 +106,59 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetiポイントとは？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yu-bx-Fwa">
-                                                            <rect key="frame" x="30" y="0.0" width="147.5" height="20"/>
+                                                            <rect key="frame" x="30" y="0.0" width="148.5" height="25"/>
                                                             <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Np1-Le-z6c">
+                                                    <rect key="frame" x="0.0" y="59" width="414" height="1"/>
+                                                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="DDH-x6-ZYH"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="W59-CV-xcJ"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="eWW-B3-aEB" firstAttribute="leading" secondItem="Nyg-p2-wDO" secondAttribute="leading" constant="30" id="26C-C6-50U"/>
+                                                <constraint firstAttribute="bottom" secondItem="Np1-Le-z6c" secondAttribute="bottom" id="8OG-zj-Gk4"/>
+                                                <constraint firstItem="Np1-Le-z6c" firstAttribute="leading" secondItem="Nyg-p2-wDO" secondAttribute="leading" id="8Pr-W9-3u8"/>
+                                                <constraint firstAttribute="trailing" secondItem="Np1-Le-z6c" secondAttribute="trailing" id="dGV-TE-XVX"/>
                                                 <constraint firstItem="eWW-B3-aEB" firstAttribute="centerY" secondItem="Nyg-p2-wDO" secondAttribute="centerY" id="drZ-oB-x82"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="60" id="NwD-od-BlV">
+                                        <rect key="frame" x="0.0" y="208" width="414" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NwD-od-BlV" id="nBr-gg-QDa">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お問い合わせ (メーラーが起動します)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XUm-tW-JD6">
+                                                    <rect key="frame" x="30" y="17.5" width="287.5" height="25"/>
+                                                    <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1K-dg-l1M">
+                                                    <rect key="frame" x="0.0" y="59" width="414" height="1"/>
+                                                    <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="Q6L-qH-QRo"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="k1K-dg-l1M" firstAttribute="leading" secondItem="nBr-gg-QDa" secondAttribute="leading" id="68Z-Wq-0Pc"/>
+                                                <constraint firstAttribute="bottom" secondItem="k1K-dg-l1M" secondAttribute="bottom" id="AgT-74-BGJ"/>
+                                                <constraint firstItem="XUm-tW-JD6" firstAttribute="leading" secondItem="nBr-gg-QDa" secondAttribute="leading" constant="30" id="Ka2-mr-W1f"/>
+                                                <constraint firstItem="XUm-tW-JD6" firstAttribute="centerY" secondItem="nBr-gg-QDa" secondAttribute="centerY" id="k5v-tZ-L03"/>
+                                                <constraint firstAttribute="trailing" secondItem="k1K-dg-l1M" secondAttribute="trailing" id="o6a-oa-pQf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,6 +178,7 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="contactCell" destination="NwD-od-BlV" id="GHA-YM-ENc"/>
                         <outlet property="privacyPolicyCell" destination="aNw-tp-xvB" id="8cj-UP-loa"/>
                         <outlet property="termCell" destination="gfE-7V-8xs" id="SQx-bA-Dlm"/>
                         <outlet property="whatsFetiPointCell" destination="Sp3-xd-ULF" id="r2r-5M-eQz"/>

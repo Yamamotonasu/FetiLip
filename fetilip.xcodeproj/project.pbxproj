@@ -88,6 +88,7 @@
 		035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */; };
 		035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* SecureUser.swift */; };
 		035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */; };
+		035E49F0251DB5050083EC21 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035E49EF251DB5040083EC21 /* MessageUI.framework */; };
 		035F6D9124F29ADD00991231 /* UserNameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6D9024F29ADD00991231 /* UserNameValidation.swift */; };
 		035F6D9324F342FE00991231 /* SourceHanSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9224F342F500991231 /* SourceHanSans-Regular.otf */; };
 		035F6D9A24F3432600991231 /* SourceHanSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9424F3431E00991231 /* SourceHanSans-Medium.otf */; };
@@ -326,6 +327,7 @@
 		035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCharacters.swift; sourceTree = "<group>"; };
 		035D5D0E24EE07BA0047B4AA /* SecureUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUser.swift; sourceTree = "<group>"; };
 		035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserEntity.swift; sourceTree = "<group>"; };
+		035E49EF251DB5040083EC21 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		035F6D9024F29ADD00991231 /* UserNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameValidation.swift; sourceTree = "<group>"; };
 		035F6D9224F342F500991231 /* SourceHanSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Regular.otf"; sourceTree = "<group>"; };
 		035F6D9424F3431E00991231 /* SourceHanSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Medium.otf"; sourceTree = "<group>"; };
@@ -697,6 +699,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				035E49F0251DB5050083EC21 /* MessageUI.framework in Frameworks */,
 				039EB65A243611290016436C /* abseil.framework in Frameworks */,
 				03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */,
@@ -1599,6 +1602,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				035E49EF251DB5040083EC21 /* MessageUI.framework */,
 				036318FD250C75B3005B317A /* iOS */,
 				036318F9250C75A2005B317A /* FirebaseABTesting.framework */,
 				036318F2250C7569005B317A /* FirebaseCrashlytics.framework */,
