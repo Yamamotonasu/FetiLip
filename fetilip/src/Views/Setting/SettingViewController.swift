@@ -92,6 +92,7 @@ class SettingsViewController: UITableViewController {
         let mailerViewController = MFMailComposeViewController()
         mailerViewController.mailComposeDelegate = self
         mailerViewController.setToRecipients([Constants.contactAdress])
+        mailerViewController.setSubject(Constants.defaultContactSubject)
         mailerViewController.setMessageBody(Constants.defaultContactBody, isHTML: false)
 
         self.present(mailerViewController, animated: true)
