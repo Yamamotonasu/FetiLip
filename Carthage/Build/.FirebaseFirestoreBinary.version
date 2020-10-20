@@ -8,36 +8,36 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.32.0",
+  "commitish" : "6.34.0",
   "iOS" : [
     {
-      "name" : "leveldb-library",
-      "hash" : "4aebef1a9beb2d465edc803c3a6e3dfa80710552d16cb0a63247b2f9dcf76224",
-      "linking" : "dynamic"
-    },
-    {
-      "name" : "abseil",
-      "hash" : "cd23734e05dfb24a2c7f89b81c364f7ec7c708425cd5f503633081891ef18662",
-      "linking" : "dynamic"
-    },
-    {
-      "name" : "gRPC-C++",
-      "hash" : "ec3e43447cf98762c418e33cae3bf8356593d343970308a97b294e5296b5539f",
-      "linking" : "dynamic"
-    },
-    {
       "name" : "BoringSSL-GRPC",
-      "hash" : "ae82d31502003594e8a961b2f8ecfe12a7406a376419d35fb1bb567479723f38",
-      "linking" : "dynamic"
-    },
-    {
-      "name" : "gRPC-Core",
-      "hash" : "d23e8d03aca6dc284f5c4e1891fc15004de7829524fa388b0645cbf52b0dea87",
+      "hash" : "ed5498e251eb541cd346169023c7ec9d2066797907d70c222a936d966834b488",
       "linking" : "dynamic"
     },
     {
       "name" : "FirebaseFirestore",
-      "hash" : "21980938df7619d0e0c39d0a2601f2f695e0982ef6591fb3abaad2253fbfdbed",
+      "hash" : "2cb2b73e7803e9f26d9f499bda5d6a1c74b136c348091cdcfff748e560da1af9",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "abseil",
+      "hash" : "502ff60555ea3a1a1f21f2edf490187072e8a81ee081fffad9273c48e8eade2f",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "gRPC-C++",
+      "hash" : "93548289b780a78cc01caf416abd29d43b32c6e18f169740a620722672ab3073",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "gRPC-Core",
+      "hash" : "9f856b206102ae4f83ac38f7cfa6d576e18d04684e63e11245027d8b2b30da66",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "leveldb-library",
+      "hash" : "d578e57c8d339e32c6bfba5ea7a243ebe985a59dbe24b176d468df3f06820ace",
       "linking" : "dynamic"
     }
   ]

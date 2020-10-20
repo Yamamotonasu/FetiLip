@@ -8,16 +8,16 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.32.0",
+  "commitish" : "6.34.0",
   "iOS" : [
     {
       "name" : "FirebaseABTesting",
-      "hash" : "6d7ecef24cbc6b1a5653d24890687e3856938e25b5d8cd562837044ff4ef7ea9",
+      "hash" : "a9895cd3aeb25a52f852e8829258942dded87ebde22909dd36d4090c5239c387",
       "linking" : "dynamic"
     },
     {
       "name" : "FirebaseRemoteConfig",
-      "hash" : "5ae687ce9ebca5d9bb6ae008e8dbc24ada18743439ad11d08939900359362885",
+      "hash" : "0f8343397b38a9658993ae486fc732465d0e8f9e1e29a117a7353bb54a5f734b",
       "linking" : "dynamic"
     }
   ]
