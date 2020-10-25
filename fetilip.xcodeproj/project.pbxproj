@@ -86,7 +86,7 @@
 		035D5D0724E9655E0047B4AA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0624E9655E0047B4AA /* EmailValidation.swift */; };
 		035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */; };
 		035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */; };
-		035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* SecureUser.swift */; };
+		035D5D0F24EE07BA0047B4AA /* UserSocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* UserSocialModel.swift */; };
 		035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */; };
 		035E49F0251DB5050083EC21 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035E49EF251DB5040083EC21 /* MessageUI.framework */; };
 		035E49F2251DCAAB0083EC21 /* PayAttensionPostingImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035E49F1251DCAAB0083EC21 /* PayAttensionPostingImage.storyboard */; };
@@ -330,7 +330,7 @@
 		035D5D0624E9655E0047B4AA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
 		035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCharacters.swift; sourceTree = "<group>"; };
-		035D5D0E24EE07BA0047B4AA /* SecureUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUser.swift; sourceTree = "<group>"; };
+		035D5D0E24EE07BA0047B4AA /* UserSocialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialModel.swift; sourceTree = "<group>"; };
 		035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserEntity.swift; sourceTree = "<group>"; };
 		035E49EF251DB5040083EC21 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		035E49F1251DCAAB0083EC21 /* PayAttensionPostingImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayAttensionPostingImage.storyboard; sourceTree = "<group>"; };
@@ -1262,7 +1262,7 @@
 		035D5D0D24EE07940047B4AA /* Socials */ = {
 			isa = PBXGroup;
 			children = (
-				035D5D0E24EE07BA0047B4AA /* SecureUser.swift */,
+				035D5D0E24EE07BA0047B4AA /* UserSocialModel.swift */,
 			);
 			path = Socials;
 			sourceTree = "<group>";
@@ -2505,7 +2505,7 @@
 				0363196E250C95A4005B317A /* RemoteConfigModel.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
-				035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */,
+				035D5D0F24EE07BA0047B4AA /* UserSocialModel.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03631970250C95CA005B317A /* RemoteConfigParameters.swift in Sources */,
 				03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */,

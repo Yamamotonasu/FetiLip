@@ -179,7 +179,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     private func transitionUserDetail() {
         guard let userDomainModel = displayUserDomainModel else { return }
 
-        let viewController = UserDetailViewControllerGenerator.generate(userDomainModel: userDomainModel)
+        let viewController = UserDetailViewControllerGenerator.generate(userDomainModel: userDomainModel, uid: field.userRef.documentID)
         self.present(viewController, animated: true)
     }
 

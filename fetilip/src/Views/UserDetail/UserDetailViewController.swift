@@ -20,12 +20,13 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     typealias ViewModel = UserDetailViewModel
 
-    private let viewModel: ViewModel = UserDetailViewModel()
+    private let viewModel: ViewModel = UserDetailViewModel(userSocialClient: UserSocialClient())
 
     // MARK: - init
 
     struct Dependency {
         let displayUserDomainModel: UserDomainModelProtocol
+        let displayUserUid: String
     }
 
     func inject(with dependency: Dependency) {
@@ -46,21 +47,28 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     var displayUserDomainModel: UserDomainModelProtocol?
 
-    let firstLoadEvent: PublishSubject<UserDomainModelProtocol> = PublishSubject<UserDomainModelProtocol>()
+    var displayUserUid: String?
+
+    let firstLoadEvent: PublishSubject<String> = PublishSubject<String>()
 
     // MARK: - Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let userDomainModel = displayUserDomainModel {
-            firstLoadEvent.onNext(userDomainModel)
+        print(displayUserUid)
+        if let uid = self.displayUserUid {
+            firstLoadEvent.onNext(uid)
         }
         composeUI()
         subscribeUI()
     }
 
     private func composeUI() {
-        userImageView.image = displayUserDomainModel?.loadedUserImage
+        if let image = displayUserDomainModel?.loadedUserImage {
+            userImageView.image = image
+        } else {
+            userImageView.image = R.image.default_icon_female()
+        }
         self.navigationItem.title = displayUserDomainModel?.userName
 
         self.navigationController?.navigationBar.tintColor = .white
@@ -78,6 +86,16 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
     private func subscribeUI() {
         let input = ViewModel.Input(firstLoadEvent: firstLoadEvent)
         let output = viewModel.transform(input: input)
+
+        output.userSocialDataDriver
+            .map { $0.postCount }
+            .drive(postCountTextView.rx.text)
+            .disposed(by: rx.disposeBag)
+
+        output.userSocialDataDriver
+            .map { $0.fetiPoint }
+            .drive(fetipointTextView.rx.text)
+            .disposed(by: rx.disposeBag)
     }
 
     @objc private func close() {
@@ -87,12 +105,21 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
 final class UserDetailViewControllerGenerator {
 
-    static func generate(userDomainModel: UserDomainModelProtocol) -> UIViewController {
+    /**
+     * Generate UserDetailViewController
+     *
+     * - Parameters:
+     *  - userDomainModel: UserDomainModel
+     *  - uid: Display user uid.
+     * - Returns: UserDetailViewController instance.
+     */
+    static func generate(userDomainModel: UserDomainModelProtocol, uid: String) -> UIViewController {
         guard let vc = R.storyboard.userDetail.userDetailViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(displayUserDomainModel: userDomainModel))
+        vc.inject(with: .init(displayUserDomainModel: userDomainModel,
+                              displayUserUid: uid))
         let nvc = UINavigationController(rootViewController: vc)
         return nvc
     }
