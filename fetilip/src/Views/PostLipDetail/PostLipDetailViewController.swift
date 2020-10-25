@@ -59,6 +59,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     var panGesture: UIPanGestureRecognizer!
 
+    var displayUserDomainModel: UserDomainModel?
+
     /// Load event
     let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
@@ -89,9 +91,16 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func subscribe() {
+        let tapGesture = UITapGestureRecognizer()
+        userImage.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event.bind(onNext: { [unowned self] _ in
+            self.transitionUserDetail()
+        }).disposed(by: rx.disposeBag)
+
         backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         }).disposed(by: rx.disposeBag)
+        
     }
 
     private func subscribeUI() {
@@ -103,6 +112,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         }.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] domain in
                 self?.drawUserData(domain)
+                self?.displayUser = domain
             }).disposed(by: rx.disposeBag)
     }
 
@@ -160,6 +170,16 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             }
         }
         return true
+    }
+
+    /**
+     * Transition to other user profile.
+     */
+    private func transitionUserDetail() {
+        guard let userDomainModel = displayUserDomainModel else { return }
+
+        let viewController = UserDetailViewControllerGenerator.generate(userDomainModel: userDomainModel)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 
 }

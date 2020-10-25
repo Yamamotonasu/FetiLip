@@ -122,6 +122,8 @@
 		0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368550C250DCD9300CB488E /* UserSocialRequest.swift */; };
 		03685510250DCEDE00CB488E /* UserSocialClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368550F250DCEDE00CB488E /* UserSocialClient.swift */; };
 		03685513250DE3E300CB488E /* UserSocialDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03685512250DE3E300CB488E /* UserSocialDomainModel.swift */; };
+		036937892545044500FEC1DA /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036937882545044500FEC1DA /* UserDetail.storyboard */; };
+		0369378B2545045900FEC1DA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369378A2545045900FEC1DA /* UserDetailViewController.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -463,6 +465,8 @@
 		0368550C250DCD9300CB488E /* UserSocialRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialRequest.swift; sourceTree = "<group>"; };
 		0368550F250DCEDE00CB488E /* UserSocialClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialClient.swift; sourceTree = "<group>"; };
 		03685512250DE3E300CB488E /* UserSocialDomainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSocialDomainModel.swift; sourceTree = "<group>"; };
+		036937882545044500FEC1DA /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		0369378A2545045900FEC1DA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -1439,6 +1443,15 @@
 			path = Socials;
 			sourceTree = "<group>";
 		};
+		036937872545041100FEC1DA /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				036937882545044500FEC1DA /* UserDetail.storyboard */,
+				0369378A2545045900FEC1DA /* UserDetailViewController.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1699,6 +1712,7 @@
 				035D5CFA24E951000047B4AA /* RegisterUser */,
 				03631975250CDDCB005B317A /* Setting */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
+				036937872545041100FEC1DA /* UserDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2210,6 +2224,7 @@
 				03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */,
 				03631977250CDDEC005B317A /* Setting.storyboard in Resources */,
 				034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */,
+				036937892545044500FEC1DA /* UserDetail.storyboard in Resources */,
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
@@ -2416,6 +2431,7 @@
 			files = (
 				0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */,
 				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
+				0369378B2545045900FEC1DA /* UserDetailViewController.swift in Sources */,
 				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,

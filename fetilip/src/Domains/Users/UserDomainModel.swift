@@ -10,11 +10,21 @@ import Foundation
 import UIKit
 import FirebaseStorage
 
+protocol UserDomainModelProtocol {
+
+    var userName: String { get }
+
+    var imageRef: String { get }
+
+    var hasImage: Bool { get }
+
+}
+
 /**
  * User domain model.
  * Convert from "UserEntity".
  */
-public struct UserDomainModel: DomainModelProtocol {
+public struct UserDomainModel: DomainModelProtocol, UserDomainModelProtocol {
 
     typealias Input = UserEntity
 

@@ -59,7 +59,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-4F-OM8">
                                                 <rect key="frame" x="20" y="434" width="374" height="52"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_icon_female" translatesAutoresizingMaskIntoConstraints="NO" id="vqM-g8-0Zd">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_icon_female" translatesAutoresizingMaskIntoConstraints="NO" id="vqM-g8-0Zd">
                                                         <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="vqM-g8-0Zd" secondAttribute="height" multiplier="1:1" id="GK1-j1-ptq"/>
