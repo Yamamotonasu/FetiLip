@@ -18,6 +18,10 @@ protocol UserDomainModelProtocol {
 
     var hasImage: Bool { get }
 
+    var loadedUserImage: UIImage? { get }
+
+    mutating func setUserImage(with image: UIImage?)
+
 }
 
 /**
@@ -41,9 +45,22 @@ public struct UserDomainModel: DomainModelProtocol, UserDomainModelProtocol {
         return !imageRef.isEmpty
     }
 
+    /// Loaded user image in ViewController.
+    var loadedUserImage: UIImage?
+
     static func convert(_ model: Input) -> Output {
         return self.init(userName: model.userName,
                          imageRef: model.userImageRef ?? "")
+    }
+
+    /**
+     * Set loaded image
+     *
+     * - Parameters:
+     *  - with: Set image.(User icon.)
+     */
+    public mutating func setUserImage(with image: UIImage?) {
+        self.loadedUserImage = image
     }
 
 }

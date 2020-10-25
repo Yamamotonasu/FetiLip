@@ -124,6 +124,7 @@
 		03685513250DE3E300CB488E /* UserSocialDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03685512250DE3E300CB488E /* UserSocialDomainModel.swift */; };
 		036937892545044500FEC1DA /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036937882545044500FEC1DA /* UserDetail.storyboard */; };
 		0369378B2545045900FEC1DA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369378A2545045900FEC1DA /* UserDetailViewController.swift */; };
+		0369378E2545164500FEC1DA /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369378D2545164500FEC1DA /* UserDetailViewModel.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -467,6 +468,7 @@
 		03685512250DE3E300CB488E /* UserSocialDomainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSocialDomainModel.swift; sourceTree = "<group>"; };
 		036937882545044500FEC1DA /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
 		0369378A2545045900FEC1DA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		0369378D2545164500FEC1DA /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -1452,6 +1454,14 @@
 			path = UserDetail;
 			sourceTree = "<group>";
 		};
+		0369378C2545160D00FEC1DA /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0369378D2545164500FEC1DA /* UserDetailViewModel.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
 		036A450024711D9500DD9282 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -1731,6 +1741,7 @@
 				035BAFDB24433040001FF6D1 /* PostList */,
 				035D5CFB24E951120047B4AA /* RegisterUser */,
 				035BAFDD2443306D001FF6D1 /* TabBar */,
+				0369378C2545160D00FEC1DA /* UserDetail */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2457,6 +2468,7 @@
 				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
 				035F6DAA24F4AA5D00991231 /* UILabel+Extensions.swift in Sources */,
 				035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */,
+				0369378E2545164500FEC1DA /* UserDetailViewModel.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
 				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
 				034C562624C47CA10005B6C5 /* FirestorageLoader.swift in Sources */,

@@ -84,7 +84,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="01U-oQ-ONy" firstAttribute="leading" secondItem="flD-Sb-1N4" secondAttribute="leading" id="EtG-sk-4Ej"/>
                                     <constraint firstAttribute="bottom" secondItem="01U-oQ-ONy" secondAttribute="bottom" id="gzx-bB-8OP"/>
@@ -94,14 +94,19 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="flD-Sb-1N4" firstAttribute="leading" secondItem="FLW-9c-a0L" secondAttribute="leading" constant="20" id="AQb-Na-IIU"/>
                             <constraint firstItem="FLW-9c-a0L" firstAttribute="trailing" secondItem="flD-Sb-1N4" secondAttribute="trailing" constant="20" id="Uqa-M6-Q3W"/>
-                            <constraint firstItem="flD-Sb-1N4" firstAttribute="top" secondItem="FLW-9c-a0L" secondAttribute="top" constant="30" id="qc3-E6-afr"/>
+                            <constraint firstItem="flD-Sb-1N4" firstAttribute="top" secondItem="FLW-9c-a0L" secondAttribute="top" constant="30" id="leH-Rk-9AC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FLW-9c-a0L"/>
                     </view>
+                    <connections>
+                        <outlet property="fetipointTextView" destination="IOj-0z-g1o" id="9mB-Ih-kVl"/>
+                        <outlet property="postCountTextView" destination="nRD-TW-5Dr" id="qhb-GD-tMZ"/>
+                        <outlet property="userImageView" destination="01U-oQ-ONy" id="tgy-hr-7aL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNg-jg-Lec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -111,8 +111,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             self?.firstLoadEvent.onNext(field)
         }.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] domain in
+                self?.displayUserDomainModel = domain
                 self?.drawUserData(domain)
-                self?.displayUser = domain
             }).disposed(by: rx.disposeBag)
     }
 
@@ -128,6 +128,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
                 .observeOn(MainScheduler.instance)
                 .subscribe(onSuccess: { [weak self] image in
                     self?.userImage.image = image
+                    self?.displayUserDomainModel?.setUserImage(with: image)
                 }, onError: { [weak self] _ in
                     self?.userImage.image = R.image.default_icon_female()
                 }).disposed(by: rx.disposeBag)
@@ -179,7 +180,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         guard let userDomainModel = displayUserDomainModel else { return }
 
         let viewController = UserDetailViewControllerGenerator.generate(userDomainModel: userDomainModel)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.present(viewController, animated: true)
     }
 
 }
