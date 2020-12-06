@@ -8,11 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.32.0",
+  "commitish" : "6.34.0",
   "iOS" : [
     {
       "name" : "FirebaseCrashlytics",
-      "hash" : "0b8e33a8639a33e34fb65ca97c41218dae1c1d19df531ab1f04d451a5f0bacc6",
+      "hash" : "94030556f28273fbd5a3272db950c941695b45626abed8f9078b8ca309c68398",
       "linking" : "dynamic"
     }
   ]
