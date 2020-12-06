@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,5 @@
  * limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-
-#import "FIRCoreDiagnosticsData.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-/** Allows the interoperation of FirebaseCore and FirebaseCoreDiagnostics. */
-@protocol FIRCoreDiagnosticsInterop <NSObject>
-
-/** Sends the given diagnostics data.
- *
- * @param diagnosticsData The diagnostics data object to send.
- */
-+ (void)sendDiagnosticsData:(id<FIRCoreDiagnosticsData>)diagnosticsData;
-
-@end
-
-NS_ASSUME_NONNULL_END
+// There are no actual public headers in the lib. This is a dummy public header to prevent Cocoapods
+// from adding all internal headers as public.

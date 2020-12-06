@@ -2,10 +2,10 @@
   "commitish" : "8.0.2",
   "iOS" : [
     {
-      "hash" : "dff87b97d6f85993b0f779640c2d1aab9d260bee60d8a3f05f600eb98ef8c720",
+      "hash" : "f09a3b2b0a1160be70ab8f31df8129f005ec14835c206355b955ff894252aec3",
       "name" : "SwiftMessages",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)"
+      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
     }
   ]
 }

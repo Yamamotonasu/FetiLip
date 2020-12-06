@@ -8,21 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.32.0",
+  "commitish" : "6.34.0",
   "iOS" : [
     {
-      "name" : "FirebaseCoreDiagnostics",
-      "hash" : "b0280520052a47afe4211fc1ecbb4f793ab3cc8d3ac9865b9d3fda15ae079763",
-      "linking" : "dynamic"
-    },
-    {
-      "name" : "FirebaseAnalytics",
-      "hash" : "68044f54c1173f3d7998752e2d0135379a2fe88f8bc5fee088f494aa78cb9899",
-      "linking" : "dynamic"
-    },
-    {
       "name" : "FIRAnalyticsConnector",
-      "hash" : "b224cf03a78b31375d1bc51a32013dc8a87896dbda217a4983f1ec478996d1b1",
+      "hash" : "92727a0093cd699d328221b9993dbad4a3ab7fc1dffa1d0607a745d8ba9f0b99",
       "linking" : "dynamic"
     },
     {
@@ -31,38 +21,48 @@
       "linking" : "dynamic"
     },
     {
-      "name" : "PromisesObjC",
-      "hash" : "96efada1774ff0407f54b380200d2a11e98faeb5f4ada69f2305f21f2a56d947",
-      "linking" : "dynamic"
-    },
-    {
-      "name" : "nanopb",
-      "hash" : "5b0c53c39b70d7107a64e2a6609483b53ef654775b44bfd56553e733e75babce",
-      "linking" : "dynamic"
-    },
-    {
-      "name" : "FirebaseInstallations",
-      "hash" : "1fa474178601a3200725f1985a2e4b7eef26e1045c7bb3d72437e8af4f887362",
+      "name" : "FirebaseAnalytics",
+      "hash" : "881a6aacfa33856e9b3442dda2882302830f49c9f7830ed8667eed250f0712a2",
       "linking" : "dynamic"
     },
     {
       "name" : "FirebaseCore",
-      "hash" : "f6917c416f4ba9458c768e25d8d10635a53bddd657086177f365c59da9fdb042",
+      "hash" : "631753f0d75aa121e39e87b8b82f77875bd4733a16df9816237727f801cb41d6",
       "linking" : "dynamic"
     },
     {
-      "name" : "GoogleUtilities",
-      "hash" : "9013a6d4d2fcaa667b3b3742430ad6bd295e72d80890998ef5807c5f74b9de53",
+      "name" : "FirebaseCoreDiagnostics",
+      "hash" : "98cbc2a5dda4ce5b212320d80fc9f8c996b8c68910057d25d231b9ee4dfb5908",
       "linking" : "dynamic"
     },
     {
-      "name" : "GoogleDataTransport",
-      "hash" : "b6f8c09f2157c316a387d3b2257ce2ed13832464235daf1288cde42e827f18fa",
+      "name" : "FirebaseInstallations",
+      "hash" : "01ac20f5cff938c6cec09ec282aaf2a7170ce17fcb420bfe2e1b006a1bf3a9c8",
       "linking" : "dynamic"
     },
     {
       "name" : "GoogleAppMeasurement",
-      "hash" : "88daaf48451c7dc35e0889728bf669832577d5d2533a90b21c8e2a1df521dcf5",
+      "hash" : "52ba3ec0627e6ef6bb6135671dfa8b5e9db7094bb16604e0befd7c2ad360735b",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "GoogleDataTransport",
+      "hash" : "8abc73bff63cc72f7ad7624cb02065bcecb8d81e9c97fdc947639754e8134d40",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "GoogleUtilities",
+      "hash" : "ecf760d436abad16489c5b2f3ba8efb654f30084206ee89a7d737fc6b76e1856",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "PromisesObjC",
+      "hash" : "6d5d78b3116e6243be73da0426789ed59874c695a7128dac3e5a048ded0a31c8",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "nanopb",
+      "hash" : "8546eb9f0c665c82870fa103069baaea83adbbb3c1ab1dd2bb073cbeb9a7c0fe",
       "linking" : "dynamic"
     }
   ]
