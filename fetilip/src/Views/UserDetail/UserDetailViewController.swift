@@ -31,6 +31,7 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     func inject(with dependency: Dependency) {
         self.displayUserDomainModel = dependency.displayUserDomainModel
+        self.displayUserUid = dependency.displayUserUid
     }
 
     // MARK: - Outlets
@@ -55,12 +56,12 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(displayUserUid)
+        composeUI()
+        subscribeUI()
+        
         if let uid = self.displayUserUid {
             firstLoadEvent.onNext(uid)
         }
-        composeUI()
-        subscribeUI()
     }
 
     private func composeUI() {
