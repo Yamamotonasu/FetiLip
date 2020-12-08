@@ -10,7 +10,7 @@ import Foundation
 
 extension Array: FetiLipCompatible {
 
-    public var ex: SingleAssociatedTypeContainer<Array<Element>, Element> {
+    public var ex: SingleAssociatedTypeContainer<[Element], Element> {
         get {
             return SingleAssociatedTypeContainer(base: self)
         }
@@ -20,7 +20,7 @@ extension Array: FetiLipCompatible {
 
 // MARK: Properties
 
-extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
+extension SingleAssociatedTypeContainer where Base == [AssociatedType] {
 
     /// 配列の中身をランダムで返す
     public var random: AssociatedType? {
@@ -39,23 +39,23 @@ extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
 
 // MARK: Subscripts
 
-extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
+extension SingleAssociatedTypeContainer where Base == [AssociatedType] {
 
 }
 
 // MARK: Static functions
 
-extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
+extension SingleAssociatedTypeContainer where Base == [AssociatedType] {
 
 }
 
 // MARK: Public functions(Conform Equatable)
 
-extension SingleAssociatedTypeContainer where Base == Array<AssociatedType>, AssociatedType: Equatable {
+extension SingleAssociatedTypeContainer where Base == [AssociatedType], AssociatedType: Equatable {
 
     /// 配列から指定した要素を削除する
     // TODO: コピー作って返すのびみょー・・・
-    public func remove(_ element: AssociatedType) -> Array<AssociatedType> {
+    public func remove(_ element: AssociatedType) -> [AssociatedType] {
         var array = self.base
         if let index = self.base.firstIndex(of: element) {
             array.remove(at: index)
@@ -64,7 +64,7 @@ extension SingleAssociatedTypeContainer where Base == Array<AssociatedType>, Ass
     }
 
     /// 要素を置き換える
-    public func replace(_ element: AssociatedType) -> Array<AssociatedType> {
+    public func replace(_ element: AssociatedType) -> [AssociatedType] {
         var array = self.base
         if let index = self.base.firstIndex(of: element) {
             array.remove(at: index)
@@ -87,9 +87,9 @@ extension SingleAssociatedTypeContainer where Base == Array<AssociatedType>, Ass
 
 // MARK: Public functions
 
-extension SingleAssociatedTypeContainer where Base == Array<AssociatedType> {
+extension SingleAssociatedTypeContainer where Base == [AssociatedType] {
 
-    public func appendIfPossible(_ element: AssociatedType?) -> Array<AssociatedType> {
+    public func appendIfPossible(_ element: AssociatedType?) -> [AssociatedType] {
         var array = self.base
         guard let e = element else {
             return  array

@@ -183,7 +183,7 @@ extension PostLipViewController {
 
         output.checkLoginResult.subscribe(onNext: { [weak self] _ in
             self?.canPostLip = true
-        },onError: { [weak self] _ in
+        }, onError: { [weak self] _ in
             self?.canPostLip = false
             self?.showNeedRegisterUserAlert()
         }).disposed(by: rx.disposeBag)

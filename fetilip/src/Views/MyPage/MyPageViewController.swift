@@ -140,7 +140,7 @@ extension MyPageViewController {
 
         output.userSocialLoadResult
             .observeOn(MainScheduler.instance)
-            .map{ $0.fetiPoint }
+            .map { $0.fetiPoint }
             .bind(to: fetipointLabel.rx.text)
             .disposed(by: rx.disposeBag)
 

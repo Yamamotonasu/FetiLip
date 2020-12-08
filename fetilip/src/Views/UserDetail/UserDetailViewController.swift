@@ -58,7 +58,7 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
         super.viewDidLoad()
         composeUI()
         subscribeUI()
-        
+
         if let uid = self.displayUserUid {
             firstLoadEvent.onNext(uid)
         }

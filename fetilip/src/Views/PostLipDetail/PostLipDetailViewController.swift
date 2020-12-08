@@ -100,7 +100,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         }).disposed(by: rx.disposeBag)
-        
+
     }
 
     private func subscribeUI() {
