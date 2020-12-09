@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceHanSans-Bold.otf">
+            <string>SourceHanSans-Bold</string>
+        </array>
+        <array key="SourceHanSans-Regular.otf">
+            <string>SourceHanSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--User Detail View Controller-->
+        <scene sceneID="g2Z-ZB-g0h">
+            <objects>
+                <viewController storyboardIdentifier="userDetailViewController" id="7ux-06-bgG" customClass="UserDetailViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qbg-0q-QHl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flD-Sb-1N4">
+                                <rect key="frame" x="20" y="30" width="280" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C3s-Cc-8TK">
+                                        <rect key="frame" x="110" y="11" width="40.5" height="58"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Ka-5x-cRL">
+                                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="25"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRD-TW-5Dr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="6.5" height="25"/>
+                                                        <fontDescription key="fontDescription" name="SourceHanSans-Bold" family="Source Han Sans" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfC-rb-plK">
+                                                        <rect key="frame" x="16.5" y="7.5" width="24" height="17.5"/>
+                                                        <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VZl-56-8fk">
+                                                <rect key="frame" x="0.0" y="33" width="40.5" height="25"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q8j-Mj-L6r">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40.5" height="25"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOj-0z-g1o">
+                                                                <rect key="frame" x="0.0" y="0.0" width="9.5" height="25"/>
+                                                                <fontDescription key="fontDescription" name="SourceHanSans-Bold" family="Source Han Sans" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S29-uj-cZD">
+                                                                <rect key="frame" x="19.5" y="7.5" width="21" height="17.5"/>
+                                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="12"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="01U-oQ-ONy">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="01U-oQ-ONy" secondAttribute="height" multiplier="1:1" id="CYB-9D-wJF"/>
+                                            <constraint firstAttribute="height" constant="80" id="jaR-FN-Txc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="01U-oQ-ONy" firstAttribute="leading" secondItem="flD-Sb-1N4" secondAttribute="leading" id="EtG-sk-4Ej"/>
+                                    <constraint firstAttribute="bottom" secondItem="01U-oQ-ONy" secondAttribute="bottom" id="gzx-bB-8OP"/>
+                                    <constraint firstItem="C3s-Cc-8TK" firstAttribute="centerY" secondItem="flD-Sb-1N4" secondAttribute="centerY" id="mdL-em-ET0"/>
+                                    <constraint firstItem="C3s-Cc-8TK" firstAttribute="leading" secondItem="01U-oQ-ONy" secondAttribute="trailing" constant="30" id="poV-fz-5BK"/>
+                                    <constraint firstItem="01U-oQ-ONy" firstAttribute="top" secondItem="flD-Sb-1N4" secondAttribute="top" id="xOX-Rv-8ss"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FLW-9c-a0L"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="flD-Sb-1N4" firstAttribute="leading" secondItem="FLW-9c-a0L" secondAttribute="leading" constant="20" id="AQb-Na-IIU"/>
+                            <constraint firstItem="FLW-9c-a0L" firstAttribute="trailing" secondItem="flD-Sb-1N4" secondAttribute="trailing" constant="20" id="Uqa-M6-Q3W"/>
+                            <constraint firstItem="flD-Sb-1N4" firstAttribute="top" secondItem="FLW-9c-a0L" secondAttribute="top" constant="30" id="leH-Rk-9AC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fetipointTextView" destination="IOj-0z-g1o" id="9mB-Ih-kVl"/>
+                        <outlet property="postCountTextView" destination="nRD-TW-5Dr" id="qhb-GD-tMZ"/>
+                        <outlet property="userImageView" destination="01U-oQ-ONy" id="tgy-hr-7aL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNg-jg-Lec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1.875" y="103.52112676056338"/>
+        </scene>
+    </scenes>
+</document>

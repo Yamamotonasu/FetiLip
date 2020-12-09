@@ -52,7 +52,7 @@ public struct AppSettings {
     /// Library permission request.
     ///  If user has already granted access to the library, invoke completion handler with .authorized, else invoke it with other each status with show alert.
     static func libraryPermissionRequest(completion: @escaping (PHAuthorizationStatus) -> Void) {
-        switch (PHPhotoLibrary.authorizationStatus()) {
+        switch PHPhotoLibrary.authorizationStatus() {
         // - .notDetermined: Explicit user permission is required for photo library access, but the user has not yet granted or denied such permission.
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization { status in

@@ -127,7 +127,7 @@ final class SettingsViewControllerGenerator {
 
     private init() {}
 
-    static func generate() -> UIViewController  {
+    static func generate() -> UIViewController {
         guard let vc = R.storyboard.setting.settingsViewController() else {
             assertionFailure()
             return UIViewController()

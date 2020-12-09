@@ -43,7 +43,7 @@ struct RemoteConfigModel {
                 return
             }
 
-            self.remoteConfig.activate { (result, error) in
+            self.remoteConfig.activate { (_, error) in
                 if let e = error {
                     log.error(e)
                     return

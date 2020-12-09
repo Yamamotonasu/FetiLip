@@ -59,6 +59,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     var panGesture: UIPanGestureRecognizer!
 
+    var displayUserDomainModel: UserDomainModel?
+
     /// Load event
     let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
@@ -89,9 +91,16 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func subscribe() {
+        let tapGesture = UITapGestureRecognizer()
+        userImage.addGestureRecognizer(tapGesture)
+        tapGesture.rx.event.bind(onNext: { [unowned self] _ in
+            self.transitionUserDetail()
+        }).disposed(by: rx.disposeBag)
+
         backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
             self?.navigationController?.popViewController(animated: true)
         }).disposed(by: rx.disposeBag)
+
     }
 
     private func subscribeUI() {
@@ -102,6 +111,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             self?.firstLoadEvent.onNext(field)
         }.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] domain in
+                self?.displayUserDomainModel = domain
                 self?.drawUserData(domain)
             }).disposed(by: rx.disposeBag)
     }
@@ -118,6 +128,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
                 .observeOn(MainScheduler.instance)
                 .subscribe(onSuccess: { [weak self] image in
                     self?.userImage.image = image
+                    self?.displayUserDomainModel?.setUserImage(with: image)
                 }, onError: { [weak self] _ in
                     self?.userImage.image = R.image.default_icon_female()
                 }).disposed(by: rx.disposeBag)
@@ -160,6 +171,16 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             }
         }
         return true
+    }
+
+    /**
+     * Transition to other user profile.
+     */
+    private func transitionUserDetail() {
+        guard let userDomainModel = displayUserDomainModel else { return }
+
+        let viewController = UserDetailViewControllerGenerator.generate(userDomainModel: userDomainModel, uid: field.userRef.documentID)
+        self.present(viewController, animated: true)
     }
 
 }

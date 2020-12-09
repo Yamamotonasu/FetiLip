@@ -142,7 +142,7 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     private func subscribeUI() {
         let input = ViewModel.Input(checkUserStatusEvent: checkUserStatusEvent,
-                                    updateProfileImageEvent:updateProfileImageSubject.asObservable(),
+                                    updateProfileImageEvent: updateProfileImageSubject.asObservable(),
                                     profileImageObservable: profileImageSubject.asObservable(),
                                     userLoadEvent: userLoadEvent)
         let output = viewModel.transform(input: input)

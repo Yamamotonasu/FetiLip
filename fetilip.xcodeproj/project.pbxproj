@@ -86,7 +86,7 @@
 		035D5D0724E9655E0047B4AA /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0624E9655E0047B4AA /* EmailValidation.swift */; };
 		035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */; };
 		035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */; };
-		035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* SecureUser.swift */; };
+		035D5D0F24EE07BA0047B4AA /* UserSocialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D0E24EE07BA0047B4AA /* UserSocialModel.swift */; };
 		035D5D1224EE087B0047B4AA /* SecureUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */; };
 		035E49F0251DB5050083EC21 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035E49EF251DB5040083EC21 /* MessageUI.framework */; };
 		035E49F2251DCAAB0083EC21 /* PayAttensionPostingImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035E49F1251DCAAB0083EC21 /* PayAttensionPostingImage.storyboard */; };
@@ -122,6 +122,9 @@
 		0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368550C250DCD9300CB488E /* UserSocialRequest.swift */; };
 		03685510250DCEDE00CB488E /* UserSocialClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0368550F250DCEDE00CB488E /* UserSocialClient.swift */; };
 		03685513250DE3E300CB488E /* UserSocialDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03685512250DE3E300CB488E /* UserSocialDomainModel.swift */; };
+		036937892545044500FEC1DA /* UserDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036937882545044500FEC1DA /* UserDetail.storyboard */; };
+		0369378B2545045900FEC1DA /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369378A2545045900FEC1DA /* UserDetailViewController.swift */; };
+		0369378E2545164500FEC1DA /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0369378D2545164500FEC1DA /* UserDetailViewModel.swift */; };
 		036A45022471212A00DD9282 /* PostsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45012471212A00DD9282 /* PostsModel.swift */; };
 		036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036A45042471408000DD9282 /* Reactive+Extentions.swift */; };
 		036A450824718E8D00DD9282 /* SelectMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 036A450724718E8D00DD9282 /* SelectMode.storyboard */; };
@@ -327,7 +330,7 @@
 		035D5D0624E9655E0047B4AA /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		035D5D0824E9FCAC0047B4AA /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
 		035D5D0B24E9FCE70047B4AA /* ValidationCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCharacters.swift; sourceTree = "<group>"; };
-		035D5D0E24EE07BA0047B4AA /* SecureUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUser.swift; sourceTree = "<group>"; };
+		035D5D0E24EE07BA0047B4AA /* UserSocialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialModel.swift; sourceTree = "<group>"; };
 		035D5D1124EE087B0047B4AA /* SecureUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureUserEntity.swift; sourceTree = "<group>"; };
 		035E49EF251DB5040083EC21 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		035E49F1251DCAAB0083EC21 /* PayAttensionPostingImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayAttensionPostingImage.storyboard; sourceTree = "<group>"; };
@@ -463,6 +466,9 @@
 		0368550C250DCD9300CB488E /* UserSocialRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialRequest.swift; sourceTree = "<group>"; };
 		0368550F250DCEDE00CB488E /* UserSocialClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSocialClient.swift; sourceTree = "<group>"; };
 		03685512250DE3E300CB488E /* UserSocialDomainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSocialDomainModel.swift; sourceTree = "<group>"; };
+		036937882545044500FEC1DA /* UserDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserDetail.storyboard; sourceTree = "<group>"; };
+		0369378A2545045900FEC1DA /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		0369378D2545164500FEC1DA /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		036A45012471212A00DD9282 /* PostsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsModel.swift; sourceTree = "<group>"; };
 		036A45042471408000DD9282 /* Reactive+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Extentions.swift"; sourceTree = "<group>"; };
 		036A450724718E8D00DD9282 /* SelectMode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectMode.storyboard; sourceTree = "<group>"; };
@@ -1256,7 +1262,7 @@
 		035D5D0D24EE07940047B4AA /* Socials */ = {
 			isa = PBXGroup;
 			children = (
-				035D5D0E24EE07BA0047B4AA /* SecureUser.swift */,
+				035D5D0E24EE07BA0047B4AA /* UserSocialModel.swift */,
 			);
 			path = Socials;
 			sourceTree = "<group>";
@@ -1437,6 +1443,23 @@
 				03685512250DE3E300CB488E /* UserSocialDomainModel.swift */,
 			);
 			path = Socials;
+			sourceTree = "<group>";
+		};
+		036937872545041100FEC1DA /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				036937882545044500FEC1DA /* UserDetail.storyboard */,
+				0369378A2545045900FEC1DA /* UserDetailViewController.swift */,
+			);
+			path = UserDetail;
+			sourceTree = "<group>";
+		};
+		0369378C2545160D00FEC1DA /* UserDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0369378D2545164500FEC1DA /* UserDetailViewModel.swift */,
+			);
+			path = UserDetail;
 			sourceTree = "<group>";
 		};
 		036A450024711D9500DD9282 /* Posts */ = {
@@ -1699,6 +1722,7 @@
 				035D5CFA24E951000047B4AA /* RegisterUser */,
 				03631975250CDDCB005B317A /* Setting */,
 				03AAFB992428D1A60068FB1E /* TabBar */,
+				036937872545041100FEC1DA /* UserDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1717,6 +1741,7 @@
 				035BAFDB24433040001FF6D1 /* PostList */,
 				035D5CFB24E951120047B4AA /* RegisterUser */,
 				035BAFDD2443306D001FF6D1 /* TabBar */,
+				0369378C2545160D00FEC1DA /* UserDetail */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2210,6 +2235,7 @@
 				03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */,
 				03631977250CDDEC005B317A /* Setting.storyboard in Resources */,
 				034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */,
+				036937892545044500FEC1DA /* UserDetail.storyboard in Resources */,
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
@@ -2416,6 +2442,7 @@
 			files = (
 				0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */,
 				035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */,
+				0369378B2545045900FEC1DA /* UserDetailViewController.swift in Sources */,
 				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
@@ -2441,6 +2468,7 @@
 				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
 				035F6DAA24F4AA5D00991231 /* UILabel+Extensions.swift in Sources */,
 				035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */,
+				0369378E2545164500FEC1DA /* UserDetailViewModel.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
 				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
 				034C562624C47CA10005B6C5 /* FirestorageLoader.swift in Sources */,
@@ -2477,7 +2505,7 @@
 				0363196E250C95A4005B317A /* RemoteConfigModel.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
-				035D5D0F24EE07BA0047B4AA /* SecureUser.swift in Sources */,
+				035D5D0F24EE07BA0047B4AA /* UserSocialModel.swift in Sources */,
 				035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */,
 				03631970250C95CA005B317A /* RemoteConfigParameters.swift in Sources */,
 				03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */,

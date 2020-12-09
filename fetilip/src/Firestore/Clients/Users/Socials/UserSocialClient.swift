@@ -31,6 +31,15 @@ protocol UserSocialClientProtocol {
      */
     func getUserSocial(uid: String) -> Single<UserSocialEntity>
 
+    /**
+     * Get social data.
+     *
+     * - Parameters:
+     *  - documentRef: User social document reference.
+     * - Returns: Single<UserSocialEntity>
+     */
+    func getUserSocial(documentRef: DocumentReference) -> Single<UserSocialEntity>
+
 }
 
 struct UserSocialClient: UserSocialClientProtocol {
@@ -44,6 +53,10 @@ struct UserSocialClient: UserSocialClientProtocol {
 
     public func getUserSocial(uid: String) -> Single<UserSocialEntity> {
         return Firestore.firestore().rx.getDocument(UserSocialModel.self, documentReference: UserSocialModel.makeDocumentRef(id: uid))
+    }
+
+    public func getUserSocial(documentRef: DocumentReference) -> Single<UserSocialEntity> {
+        return Firestore.firestore().rx.getDocument(UserSocialModel.self, documentReference: documentRef)
     }
 
 }
