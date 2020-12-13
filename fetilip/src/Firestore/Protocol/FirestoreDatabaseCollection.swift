@@ -81,7 +81,7 @@ extension FirestoreDatabaseCollection {
             return collectionRef.order(by: "createdAt", descending: true).limit(to: limit)
         }
     }
-    
+
     /**
      *  Make subcollection reference.
      *
