@@ -51,7 +51,7 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
     var displayUserUid: String?
 
     let firstLoadEvent: PublishSubject<String> = PublishSubject<String>()
-    
+
     let blockSubject: PublishSubject<UserBlockType> = PublishSubject<UserBlockType>()
 
     // MARK: - Functions
@@ -86,9 +86,9 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 2
-        
-        let navigationBarItemImage = UIBarButtonItem(image: R.image.menu_icon(),style: .plain, target: self, action: #selector(menuTap))
-        
+
+        let navigationBarItemImage = UIBarButtonItem(image: R.image.menu_icon(), style: .plain, target: self, action: #selector(menuTap))
+
         navigationItem.rightBarButtonItem = navigationBarItemImage
     }
 
@@ -105,11 +105,11 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
             .map { $0.fetiPoint }
             .drive(fetipointTextView.rx.text)
             .disposed(by: rx.disposeBag)
-        
+
         output.userBlockResult.subscribe(onNext: { [unowned self]_ in
             AppAlert.show(message: "\(displayUserDomainModel!.userName)さんをブロックしました。", alertType: .info)
             self.dismiss(animated: true)
-        }, onError: { e in
+        }, onError: { _ in
             AppAlert.show(message: "ブロックに失敗しました。時間を置いて再度お試しください。", alertType: .error)
         }).disposed(by: rx.disposeBag)
 
@@ -125,18 +125,18 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
     @objc private func close() {
         self.dismiss(animated: true)
     }
-    
+
     @objc private func menuTap() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "ブロックする", style: .default, handler: { [unowned self] action in
+        actionSheet.addAction(UIAlertAction(title: "ブロックする", style: .default, handler: { [unowned self] _ in
             self.blockEvent(type: (.add, displayUserUid!))
         }))
-        
+
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
-        
+
         self.present(actionSheet, animated: true)
     }
-    
+
     private func blockEvent(type: UserBlockType) {
         self.blockSubject.onNext(type)
     }

@@ -217,10 +217,12 @@
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
+		EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
 		EAC79D7C2585AF1100803B28 /* UserBlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */; };
+		EAC79D8D25860B6700803B28 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D8C25860B6700803B28 /* GlobalData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -705,10 +707,12 @@
 		9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.release.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
+		EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockDomainModel.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
 		EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockEntity.swift; sourceTree = "<group>"; };
+		EAC79D8C25860B6700803B28 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -838,7 +842,6 @@
 		034A9872249CFF94009336F0 /* Firestore */ = {
 			isa = PBXGroup;
 			children = (
-				034A9878249F3334009336F0 /* Stub */,
 				034A9875249D7E95009336F0 /* Model */,
 			);
 			path = Firestore;
@@ -867,13 +870,6 @@
 				034A9874249CFFBB009336F0 /* Posts */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		034A9878249F3334009336F0 /* Stub */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stub;
 			sourceTree = "<group>";
 		};
 		034A9879249F335F009336F0 /* TestFunctions */ = {
@@ -983,6 +979,7 @@
 		034C563624CF23BC0005B6C5 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				EA38FEA1258618A4000D38DD /* Blocks */,
 				03685511250DE0AB00CB488E /* Socials */,
 				034C563724CF23D40005B6C5 /* UserDomainModel.swift */,
 			);
@@ -1136,6 +1133,8 @@
 		035BAFF4245AEC99001FF6D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				035F6DAF24FB8CAE00991231 /* ApplicationFlag.swift */,
+				EAC79D8C25860B6700803B28 /* GlobalData.swift */,
 				035BB00324666D3E001FF6D1 /* LoginAccountData.swift */,
 				0363196D250C95A4005B317A /* RemoteConfigModel.swift */,
 			);
@@ -1621,7 +1620,6 @@
 			isa = PBXGroup;
 			children = (
 				034A987C249F5753009336F0 /* Authentications */,
-				03AAFB572425C45E0068FB1E /* CustomFunctions */,
 				03AAFB542425AB020068FB1E /* Extensions */,
 				034A9872249CFF94009336F0 /* Firestore */,
 				034A989124A18112009336F0 /* Mock */,
@@ -1804,13 +1802,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		03AAFB572425C45E0068FB1E /* CustomFunctions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomFunctions;
-			sourceTree = "<group>";
-		};
 		03AAFB5A2425E8660068FB1E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1821,7 +1812,6 @@
 				035BB00124666121001FF6D1 /* AppSettings.swift */,
 				035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */,
 				034C562B24CA4BA40005B6C5 /* ActivityIndicator.swift */,
-				035F6DAF24FB8CAE00991231 /* ApplicationFlag.swift */,
 				03631973250CD583005B317A /* Constants.swift */,
 			);
 			path = Utils;
@@ -2126,6 +2116,14 @@
 				4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EA38FEA1258618A4000D38DD /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */,
+			);
+			path = Blocks;
 			sourceTree = "<group>";
 		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
@@ -2492,6 +2490,7 @@
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
+				EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */,
 				035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */,
@@ -2508,6 +2507,7 @@
 				034C562824C490410005B6C5 /* FirestorageError.swift in Sources */,
 				03685513250DE3E300CB488E /* UserSocialDomainModel.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
+				EAC79D8D25860B6700803B28 /* GlobalData.swift in Sources */,
 				EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,

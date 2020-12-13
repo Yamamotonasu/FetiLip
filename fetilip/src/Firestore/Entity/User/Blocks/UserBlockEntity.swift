@@ -14,19 +14,19 @@ import Firebase
  *  - Other users can get information
  */
 public struct UserBlockEntity: Codable {
-    
+
     public let targetUid: String
-    
+
     public let createdAt: Timestamp
-    
+
     public let updatedAt: Timestamp
-    
+
     enum Key: String, CodingKey {
-        
+
         case targetUid
-        
+
         case createdAt
-        
+
         case updatedAt
 
     }

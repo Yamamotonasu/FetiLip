@@ -19,7 +19,7 @@ protocol UserDetailViewModelProtocol {
 }
 
 public struct UserDetailViewModel {
-    
+
     enum BlockType {
         case add
     }
@@ -33,7 +33,7 @@ public struct UserDetailViewModel {
     private let isLoading: Observable<Bool>
 
     private let userSocialClient: UserSocialClientProtocol
-    
+
     private let userBlockClient: UserBlockClientProtocol
 
     /// Tracking observable.
@@ -64,7 +64,7 @@ extension UserDetailViewModel: ViewModelType {
                 return Disposables.create()
             }
         }
-        
+
         let userBlockSequence: Observable<()> = input.userBlockSubject.flatMap { (type, targetUid) -> Observable<()> in
             switch type {
             case .add:

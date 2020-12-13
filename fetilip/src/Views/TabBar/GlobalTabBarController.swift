@@ -19,7 +19,8 @@ class GlobalTabBarController: UITabBarController {
 
     typealias ViewModel = GlobalTabBarViewModel
 
-    private let viewModel = GlobalTabBarViewModel(userAuthModel: UsersAuthModel())
+    private let viewModel = GlobalTabBarViewModel(userAuthModel: UsersAuthModel(),
+                                                  userBlockClient: UserBlockClient())
 
     // MARK: Desinable properties
 
@@ -84,6 +85,8 @@ class GlobalTabBarController: UITabBarController {
 
     private let checkLoginEvent: PublishRelay<()> = PublishRelay<()>()
 
+    private let getBlockUserEvent: PublishRelay<()> = PublishRelay<()>()
+
     // MARK: LifeCycle
 
     override open func viewDidLoad() {
@@ -101,6 +104,7 @@ class GlobalTabBarController: UITabBarController {
 
         subscribeUI()
         checkLoginEvent.accept(())
+        getBlockUserEvent.accept(())
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -132,8 +136,16 @@ class GlobalTabBarController: UITabBarController {
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(checkLoginEvent: checkLoginEvent)
+        let input = ViewModel.Input(checkLoginEvent: checkLoginEvent, getBlockUser: getBlockUserEvent)
         let output = viewModel.transform(input: input)
+
+        output.checkLoginResult.subscribe(onNext: { _ in
+            log.debug("Loggined.")
+        }).disposed(by: rx.disposeBag)
+
+        output.getBlockUsersResult.subscribe(onNext: { blockUsers in
+            log.debug("Success get bloking users. count : \(blockUsers.count)")
+        }).disposed(by: rx.disposeBag)
     }
 
     private func transitionToFirstModal() {
