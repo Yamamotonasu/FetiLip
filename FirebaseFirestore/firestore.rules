@@ -37,8 +37,16 @@ service cloud.firestore {
       && incomingData().userRef == userDocumentPath(request.auth.uid) 
       && incomingData().imageRef.matches('^posts/.+$')
       && validateRequestTime(incomingData());
-      allow read: if true;
+      // TODO: 修正
+      allow read: if isAnyAuthenticated();
       allow delete: if false;
+    }
+    match /{path=**}/userBlocks/{blockID} {
+      allow create:
+      if isUserAuthenticated(userId)
+      && isValidateUserBlock(incomingData());
+      allow read: if isAnyAuthenticated();
+      allow delete: if false
     }
 
     // - region auth functions
@@ -162,6 +170,14 @@ service cloud.firestore {
       && 'review' in postLip && isNullOrString(postLip.review, 'review')
       && 'updatedAt' in postLip && postLip.updatedAt is timestamp
       && 'createdAt' in postLip && postLip.createdAt is timestamp;
+    }
+
+    // userBlocks スキーマ検証
+    function isValidateUserBlock(userBlock) {
+      return userBlock.size == 3
+      && 'targetUid' in userBlock && userBlock.targetUid is string
+      && 'createdAt' in userBlock && userBlock.createdAt is timestamp
+      && 'updatedAt' in userBlock && userBlock.updatedAt is timestamp
     }
   }
 }

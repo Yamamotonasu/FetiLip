@@ -20,7 +20,7 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     typealias ViewModel = UserDetailViewModel
 
-    private let viewModel: ViewModel = UserDetailViewModel(userSocialClient: UserSocialClient())
+    private let viewModel: ViewModel = UserDetailViewModel(userSocialClient: UserSocialClient(), userBlockClient: UserBlockClient())
 
     // MARK: - init
 
@@ -52,17 +52,19 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     let firstLoadEvent: PublishSubject<String> = PublishSubject<String>()
     
-    let blockSubject: PublishSubject<()> = PublishSubject<()>()
+    let blockSubject: PublishSubject<UserBlockType> = PublishSubject<UserBlockType>()
 
     // MARK: - Functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        composeUI()
         subscribeUI()
+        composeUI()
 
         if let uid = self.displayUserUid {
             firstLoadEvent.onNext(uid)
+        } else {
+            assertionFailure("Failed to pass uid.")
         }
     }
 
@@ -91,7 +93,7 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent)
+        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent, userBlockSubject: blockSubject)
         let output = viewModel.transform(input: input)
 
         output.userSocialDataDriver
@@ -103,6 +105,10 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
             .map { $0.fetiPoint }
             .drive(fetipointTextView.rx.text)
             .disposed(by: rx.disposeBag)
+        
+        output.userBlockResult.asObservable().subscribe(onNext: { _ in
+            log.debug("called")
+        }).disposed(by: rx.disposeBag)
     }
 
     @objc private func close() {
@@ -112,12 +118,16 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
     @objc private func menuTap() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "ブロックする", style: .default, handler: { [unowned self] action in
-            self.blockSubject.onNext(())
+            self.blockEvent(type: (.add, displayUserUid!))
         }))
         
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
         
         self.present(actionSheet, animated: true)
+    }
+    
+    private func blockEvent(type: UserBlockType) {
+        self.blockSubject.onNext(type)
     }
 }
 

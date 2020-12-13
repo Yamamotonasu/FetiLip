@@ -10,13 +10,15 @@ import Foundation
 import RxSwift
 import Firebase
 
-protocol UserBlocksProtocol {
+protocol UserBlockClientProtocol {
     
     func setUserBlocks(uid: String, targetUid: String) -> Single<()>
     
 }
 
-public struct UserBlocksClient {
+public struct UserBlockClient: UserBlockClientProtocol {
+    
+    public init () {}
     
     func setUserBlocks(uid: String, targetUid: String) -> Single<()> {
         let fields = UserBlockRequest.addBlock(targetUid: targetUid).parameters
