@@ -12,17 +12,14 @@ import RxCocoa
 
 struct GlobalTabBarViewModel {
 
-    init(userAuthModel: UserAuthModelProtocol, userBlockClient: UserBlockClientProtocol, globalData: GlobalData) {
+    init(userAuthModel: UserAuthModelProtocol, userBlockClient: UserBlockClientProtocol) {
         self.userAuthModel = userAuthModel
         self.userBlockClient = userBlockClient
-        self.globalData = globalData
     }
 
     let userAuthModel: UserAuthModelProtocol
 
     let userBlockClient: UserBlockClientProtocol
-
-    let globalData: GlobalData
 
 }
 
@@ -52,7 +49,8 @@ extension GlobalTabBarViewModel: ViewModelType {
             return self.userBlockClient.getUserBlocks(uid: LoginAccountData.uid!)
         }.flatMapLatest { blockUsers in
             return Observable.create { observer in
-                let domains = blockUsers.map { UserBlockDomainModel.convert($0) }
+                let domains: [UserBlockDomainModel] = blockUsers.map { UserBlockDomainModel.convert($0) }
+                domains.forEach { GlobalData.shared.blokingUserUids.append($0.targetUid) }
                 observer.on(.next(domains))
                 return Disposables.create()
             }

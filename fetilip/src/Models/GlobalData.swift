@@ -10,7 +10,7 @@ import Foundation
 
 public protocol GlobalDataProtocol {
 
-    var blokingUserUids: [String] { get }
+    var blokingUserUids: [String] { get set }
 
 }
 
@@ -18,8 +18,8 @@ public struct GlobalData: GlobalDataProtocol {
 
     private init() {}
 
-    static let shared: Self = GlobalData()
+    static var shared: Self = GlobalData()
 
-    public let blokingUserUids: [String] = []
+    public var blokingUserUids: [String] = []
 
 }

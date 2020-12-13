@@ -20,8 +20,7 @@ class GlobalTabBarController: UITabBarController {
     typealias ViewModel = GlobalTabBarViewModel
 
     private let viewModel = GlobalTabBarViewModel(userAuthModel: UsersAuthModel(),
-                                                  userBlockClient: UserBlockClient(),
-                                                  globalData: GlobalData.shared)
+                                                  userBlockClient: UserBlockClient())
 
     // MARK: Desinable properties
 
@@ -142,6 +141,10 @@ class GlobalTabBarController: UITabBarController {
 
         output.checkLoginResult.subscribe(onNext: { _ in
             log.debug("Loggined.")
+        }).disposed(by: rx.disposeBag)
+
+        output.getBlockUsersResult.subscribe(onNext: { blockUsers in
+            log.debug("Success get bloking users. count : \(blockUsers.count)")
         }).disposed(by: rx.disposeBag)
     }
 
