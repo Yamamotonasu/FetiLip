@@ -82,6 +82,10 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
         self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
         self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         self.navigationController?.navigationBar.layer.shadowRadius = 2
+        
+        let navigationBarItemImage = UIBarButtonItem(image: R.image.menu_icon(),style: .plain, target: self, action: #selector(menuTap))
+        
+        navigationItem.rightBarButtonItem = navigationBarItemImage
     }
 
     private func subscribeUI() {
@@ -101,6 +105,10 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     @objc private func close() {
         self.dismiss(animated: true)
+    }
+    
+    @objc private func menuTap() {
+        // TODO: implementation
     }
 }
 
