@@ -51,6 +51,8 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
     var displayUserUid: String?
 
     let firstLoadEvent: PublishSubject<String> = PublishSubject<String>()
+    
+    let blockSubject: PublishSubject<()> = PublishSubject<()>()
 
     // MARK: - Functions
 
@@ -108,7 +110,14 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
     }
     
     @objc private func menuTap() {
-        // TODO: implementation
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "ブロックする", style: .default, handler: { [unowned self] action in
+            self.blockSubject.onNext(())
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        
+        self.present(actionSheet, animated: true)
     }
 }
 

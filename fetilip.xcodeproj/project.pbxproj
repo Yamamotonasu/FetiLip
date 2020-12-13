@@ -217,6 +217,10 @@
 		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
+		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
+		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
+		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
+		EAC79D7C2585AF1100803B28 /* UserBlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -701,6 +705,10 @@
 		9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.release.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.release.xcconfig"; sourceTree = "<group>"; };
 		9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
+		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
+		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
+		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
+		EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockEntity.swift; sourceTree = "<group>"; };
 		F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -965,6 +973,7 @@
 		034C563324CE4E910005B6C5 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				EAC79D7A2585AEF700803B28 /* Blocks */,
 				035D5D1024EE08640047B4AA /* Socials */,
 				034C563424CE4EA90005B6C5 /* UserEntity.swift */,
 			);
@@ -1087,6 +1096,7 @@
 		035BAFE824598A31001FF6D1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				EAC79D732585AEAF00803B28 /* Blocks */,
 				035D5D0D24EE07940047B4AA /* Socials */,
 				035BAFE924598A73001FF6D1 /* UserModel.swift */,
 			);
@@ -1116,6 +1126,7 @@
 		035BAFEF2459AD52001FF6D1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				EAC79D672585ACFD00803B28 /* Blocks */,
 				0368550E250DCECD00CB488E /* Socials */,
 				035BAFF02459AD6F001FF6D1 /* UserModelClient.swift */,
 			);
@@ -1143,6 +1154,7 @@
 		035BAFFE246035E3001FF6D1 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				EAC79D6E2585AE7D00803B28 /* Blocks */,
 				0368550B250DCD7800CB488E /* Socials */,
 				035BAFFF24603602001FF6D1 /* UsersRequests.swift */,
 			);
@@ -2116,6 +2128,38 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EAC79D672585ACFD00803B28 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		EAC79D6E2585AE7D00803B28 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		EAC79D732585AEAF00803B28 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC79D742585AECC00803B28 /* UserBlockModel.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+		EAC79D7A2585AEF700803B28 /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2464,6 +2508,7 @@
 				034C562824C490410005B6C5 /* FirestorageError.swift in Sources */,
 				03685513250DE3E300CB488E /* UserSocialDomainModel.swift in Sources */,
 				039EB673243833F30016436C /* DebugViewModel.swift in Sources */,
+				EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */,
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
 				035F6DAA24F4AA5D00991231 /* UILabel+Extensions.swift in Sources */,
@@ -2492,6 +2537,7 @@
 				035BB00224666121001FF6D1 /* AppSettings.swift in Sources */,
 				03631974250CD583005B317A /* Constants.swift in Sources */,
 				03AD487A24FE8A4A006BABDF /* LoginConfirmViewModel.swift in Sources */,
+				EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */,
 				0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
@@ -2501,6 +2547,7 @@
 				034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */,
 				034A986C24964F1B009336F0 /* PostDomainModel.swift in Sources */,
 				035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */,
+				EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */,
 				035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */,
 				0363196E250C95A4005B317A /* RemoteConfigModel.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
@@ -2548,6 +2595,7 @@
 				035BAFEA24598A73001FF6D1 /* UserModel.swift in Sources */,
 				03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */,
 				036A45122472CD3900DD9282 /* FirestoreRequest.swift in Sources */,
+				EAC79D7C2585AF1100803B28 /* UserBlockEntity.swift in Sources */,
 				03AAFB50242245C20068FB1E /* Array+Extentions.swift in Sources */,
 				0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */,
 				034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */,

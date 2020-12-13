@@ -81,6 +81,20 @@ extension FirestoreDatabaseCollection {
             return collectionRef.order(by: "createdAt", descending: true).limit(to: limit)
         }
     }
+    
+    /**
+     *  Make subcollection reference.
+     *
+     *  - Parameters:
+     *    - parentCollection: Parent collection type.
+     *    - uid: Document uid in parent collection.
+     *  - Returns: Sub collection reference.
+     *
+     */
+    public static func makeSubCollectionRef<T: FirestoreDatabaseCollection>(parentCollection: T.Type, uid: String) -> CollectionReference {
+        let root = AppSettings.FireStore.rootDocumentName
+        return Firestore.firestore().document(root).collection(T.collectionName).document(uid).collection(Self.collectionName)
+    }
 
     public static func makeSubCollectionQuery() -> Query {
         return Firestore.firestore().collectionGroup(collectionName)
