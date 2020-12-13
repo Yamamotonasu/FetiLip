@@ -27,11 +27,17 @@ public struct UserDetailViewModel {
     init(userSocialClient: UserSocialClientProtocol, userBlockClient: UserBlockClientProtocol) {
         self.userSocialClient = userSocialClient
         self.userBlockClient = userBlockClient
+        isLoading = activity.asObservable()
     }
+
+    private let isLoading: Observable<Bool>
 
     private let userSocialClient: UserSocialClientProtocol
     
     private let userBlockClient: UserBlockClientProtocol
+
+    /// Tracking observable.
+    private let activity: ActivityIndicator = ActivityIndicator()
 
 }
 
@@ -44,7 +50,8 @@ extension UserDetailViewModel: ViewModelType {
 
     public struct Output {
         let userSocialDataDriver: Driver<UserSocialDomainModel>
-        let userBlockResult: Driver<()>
+        let userBlockResult: Observable<()>
+        let loading: Observable<Bool>
     }
 
     public func transform(input: Input) -> Output {
@@ -58,10 +65,10 @@ extension UserDetailViewModel: ViewModelType {
             }
         }
         
-        let userBlockSequence: Observable<()> = input.userBlockSubject.flatMap { (type, targetUid) -> Single<()> in
+        let userBlockSequence: Observable<()> = input.userBlockSubject.flatMap { (type, targetUid) -> Observable<()> in
             switch type {
             case .add:
-                return self.userBlockClient.setUserBlocks(uid: LoginAccountData.uid!, targetUid: targetUid)
+                return self.userBlockClient.setUserBlocks(uid: LoginAccountData.uid!, targetUid: targetUid).trackActivity(self.activity)
             }
         }.flatMap { _ in
             Observable.create { observer in
@@ -69,8 +76,10 @@ extension UserDetailViewModel: ViewModelType {
                 return Disposables.create()
             }
         }
+
         return Output(userSocialDataDriver: userSocialLoadSequence.asDriver(onErrorDriveWith: Driver<UserSocialDomainModel>.empty()),
-                      userBlockResult: userBlockSequence.asDriver(onErrorDriveWith: Driver<()>.empty()))
+                      userBlockResult: userBlockSequence,
+                      loading: self.isLoading)
     }
 
 }

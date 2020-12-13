@@ -106,8 +106,19 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
             .drive(fetipointTextView.rx.text)
             .disposed(by: rx.disposeBag)
         
-        output.userBlockResult.asObservable().subscribe(onNext: { _ in
-            log.debug("called")
+        output.userBlockResult.subscribe(onNext: { [unowned self]_ in
+            AppAlert.show(message: "\(displayUserDomainModel!.userName)さんをブロックしました。", alertType: .info)
+            self.dismiss(animated: true)
+        }, onError: { e in
+            AppAlert.show(message: "ブロックに失敗しました。時間を置いて再度お試しください。", alertType: .error)
+        }).disposed(by: rx.disposeBag)
+
+        output.loading.subscribe(onNext: { bool in
+            if bool {
+                AppIndicator.show()
+            } else {
+                AppIndicator.dismiss()
+            }
         }).disposed(by: rx.disposeBag)
     }
 
