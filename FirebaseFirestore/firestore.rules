@@ -43,8 +43,9 @@ service cloud.firestore {
     }
     match /{path=**}/userBlocks/{blockID} {
       allow create:
-      if isUserAuthenticated(userId)
-      && isValidateUserBlock(incomingData());
+      if isUserAuthenticated(request.auth.uid)
+      && isValidateUserBlock(incomingData())
+      && request.auth.uid != incomingData().targetUid;
       allow read: if isAnyAuthenticated();
       allow delete: if false
     }
@@ -174,10 +175,10 @@ service cloud.firestore {
 
     // userBlocks スキーマ検証
     function isValidateUserBlock(userBlock) {
-      return userBlock.size == 3
+      return userBlock.size() == 3
       && 'targetUid' in userBlock && userBlock.targetUid is string
       && 'createdAt' in userBlock && userBlock.createdAt is timestamp
-      && 'updatedAt' in userBlock && userBlock.updatedAt is timestamp
+      && 'updatedAt' in userBlock && userBlock.updatedAt is timestamp;
     }
   }
 }
