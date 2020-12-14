@@ -3,7 +3,7 @@ platform :ios, '12.0'
 
 # R.swift
 def pod_Rswift
-  pod 'R.swift', '~> 5.1.0'
+  pod 'R.swift', '~> 5.3.0'
 end
 
 target 'fetilip' do
