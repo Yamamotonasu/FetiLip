@@ -103,14 +103,15 @@ class GlobalTabBarController: UITabBarController {
         customTabBar.select(at: selectedIndex)
 
         subscribeUI()
-        checkLoginEvent.accept(())
-        getBlockUserEvent.accept(())
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if LoginAccountData.uid == nil {
             self.transitionToFirstModal()
+        } else {
+            checkLoginEvent.accept(())
+            getBlockUserEvent.accept(())
         }
         // TODO: ここでユーザーが作成されていなかった時のリカバリは考えた方がいいかも。
     }
