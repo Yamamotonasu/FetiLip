@@ -2,10 +2,10 @@
   "commitish" : "0.2.2",
   "iOS" : [
     {
-      "hash" : "d1113b654391da6ec9771e7f8c0a51a2b7d04ce2db622e2cd9beff4eae713f2d",
+      "hash" : "3605e2316d67f1bc9c72eec63ee0bb8812fb8791c72608cdbb9a92d68d9085da",
       "name" : "CodableFirebase",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
     }
   ]
 }
