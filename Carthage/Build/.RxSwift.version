@@ -2,34 +2,34 @@
   "commitish" : "5.1.1",
   "iOS" : [
     {
-      "hash" : "9279e6b46fced907dcb5a3f7f109e551edea41d42ecc4dd2ced541a5a9735c53",
+      "hash" : "cef52aa22ffcfeaba0a06ff69a861a32257db8199c89f957a784f2b48d497a2d",
       "name" : "RxBlocking",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
     },
     {
-      "hash" : "2a6480023729d00166343f2cfb9ac0128a34f9a2dc61fa34cba13c80b97b93a5",
+      "hash" : "246820079bea507647b9a428f656b12972507d4016872df1e7c33ce988ee9d35",
       "name" : "RxCocoa",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
     },
     {
-      "hash" : "6806f95bea122a2336b60177d796d93df887cd74bb247ce80333fed06bc4bb3c",
+      "hash" : "4852fd142e673ffc9f540714a74f72ec27cdb16c2b7a9fe96355cd0fe3725b91",
       "name" : "RxRelay",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
     },
     {
-      "hash" : "e9f07423ee009310f6856a5ecf68132e194cb8ef00ed54c6240bedd551ebc674",
+      "hash" : "27299822bbf4fee27c6da41e575eec5455d5c1767cec10117f2e4643c8c4a142",
       "name" : "RxSwift",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
     },
     {
-      "hash" : "0378dc175becb29ba680052514fdae2890080c6577efb2d6ed92b5e1e5079477",
+      "hash" : "60ab599abceab87350ef640811cf26abe3af2ba0e0c2dc39dfa14b1c4241dc74",
       "name" : "RxTest",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
     }
   ]
 }

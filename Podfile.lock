@@ -1,10 +1,10 @@
 PODS:
-  - R.swift (5.1.0):
-    - R.swift.Library (~> 5.1.0)
-  - R.swift.Library (5.1.0)
+  - R.swift (5.3.1):
+    - R.swift.Library (~> 5.3.0)
+  - R.swift.Library (5.3.0)
 
 DEPENDENCIES:
-  - R.swift (~> 5.1.0)
+  - R.swift (~> 5.3.0)
 
 SPEC REPOS:
   trunk:
@@ -12,9 +12,9 @@ SPEC REPOS:
     - R.swift.Library
 
 SPEC CHECKSUMS:
-  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
-  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  R.swift: 56ec7e3aef34b9eee47a659e42462db2c1cc5ac3
+  R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
 
-PODFILE CHECKSUM: a715b8888f64ab99370a85658bc0a58b72c15ea8
+PODFILE CHECKSUM: 7618a23ab4dae01a8e9c354d66413241d2b819b1
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0

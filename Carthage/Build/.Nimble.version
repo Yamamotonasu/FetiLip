@@ -2,10 +2,10 @@
   "commitish" : "v9.0.0",
   "iOS" : [
     {
-      "hash" : "e43ed9e352677fcc1e9cee773ed2a92732da1498358511d41205f76ab8d5461d",
+      "hash" : "9434a6a2b455a36125fba6598773c345f0161b07f3894b53a65a42051607d465",
       "name" : "Nimble",
       "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
     }
   ]
 }
