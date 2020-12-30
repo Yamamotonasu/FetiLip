@@ -47,11 +47,15 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
 
     func getSpecifyUserPostList(targetUid: String, limit: Int, startAfter: DocumentSnapshot? = nil) -> Single<([PostModel.FieldType], DocumentSnapshot?)> {
         if let start = startAfter {
-            let query: Query = PostModel.pagingCollectionRef(limit: limit, startAfter: start)
-            let specify: Query = PostModel.specifyPost(baseQuery: query, targetUid: targetUid)
-            return Firestore.firestore().rx.get(PostModel.self, query: specify)
+            let ref: CollectionReference = PostModel.makeCollectionRef()
+            let query = PostModel.specifyPost(baseQuery: ref, targetUid: targetUid)
+            let paging = PostModel.pagingWithQuery(baseQuery: query, limit: limit, startAfter: start)
+            return Firestore.firestore().rx.get(PostModel.self, query: paging)
         } else {
-            return Firestore.firestore().rx.get(PostModel.self, query: PostModel.pagingCollectionRef(limit: limit))
+            let ref: CollectionReference = PostModel.makeCollectionRef()
+            let query = PostModel.specifyPost(baseQuery: ref, targetUid: targetUid)
+            let paging = PostModel.pagingWithQuery(baseQuery: query, limit: limit)
+            return Firestore.firestore().rx.get(PostModel.self, query: paging)
         }
     }
 

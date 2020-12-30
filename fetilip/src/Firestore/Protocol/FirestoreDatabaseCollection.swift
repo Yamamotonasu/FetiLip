@@ -83,6 +83,24 @@ extension FirestoreDatabaseCollection {
     }
 
     /**
+     * Paging with base query.
+     * You may need to create an index in Firestore.
+     *
+     * - Parameters:
+     *  - baseQuery: Base query.
+     *  - limit: Acquisition number limit.
+     *  - startAfter: Document last fetched.
+     * - Returns: New query.
+     */
+    public static func pagingWithQuery(baseQuery: Query, limit: Int, startAfter: DocumentSnapshot? = nil) -> Query {
+        if let start = startAfter {
+            return baseQuery.order(by: "createdAt", descending: true).start(afterDocument: start).limit(to: limit)
+        } else {
+            return baseQuery.order(by: "createdAt", descending: true).limit(to: limit)
+        }
+    }
+
+    /**
      *  Make subcollection reference.
      *
      *  - Parameters:
