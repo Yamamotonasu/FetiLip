@@ -39,10 +39,11 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         await firebase.clearFirestoreData({ projectId: constant.PROJECT_ID });
       });
 
-      test("データサイズが5なら作成出来る", async () => {
+      test("データサイズが6なら作成出来る", async () => {
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const correctPostData = {
           userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
           imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
           review: 'a'.repeat(1000),
           createdAt: firestore.FieldValue.serverTimestamp(),
@@ -51,10 +52,11 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
         await firebase.assertSucceeds(postDocumentRef.set(correctPostData));
       });
-      test("データサイズが4なら作成出来ない", async () => {
+      test("データサイズが5なら作成出来ない", async () => {
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const invalidPostData = {
           userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
           imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
           createdAt: firestore.FieldValue.serverTimestamp(),
           updatedAt: firestore.FieldValue.serverTimestamp()
@@ -66,6 +68,7 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const invalidPostData = {
           userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
           imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
           review: 'a'.repeat(10),
           image: '',
@@ -79,6 +82,7 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const invalidPostData = {
           userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
           imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
           review: 'a'.repeat(1001),
           createdAt: firestore.FieldValue.serverTimestamp(),
@@ -91,6 +95,7 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const invalidPostData = {
           userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
           imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
           review: "",
           createdAt: firestore.FieldValue.serverTimestamp(),
@@ -103,6 +108,7 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const invalidPostData = {
           userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
           imageRef: `post/${constant.testUserDocumentID}/aaa.jpeg`,
           review: 'a'.repeat(500),
           createdAt: firestore.FieldValue.serverTimestamp(),
@@ -115,6 +121,7 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const invalidPostData = {
           userRef: db.collection(constant.postsCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
           imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
           review: 'a'.repeat(500),
           createdAt: firestore.FieldValue.serverTimestamp(),
