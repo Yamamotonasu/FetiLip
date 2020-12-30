@@ -18,6 +18,8 @@ public struct PostEntity: Codable, FirestoreEntity {
 
     public let userRef: DocumentReference
 
+    public let userUid: String
+
     public let imageRef: String
 
     public let createdAt: Timestamp
@@ -29,6 +31,8 @@ public struct PostEntity: Codable, FirestoreEntity {
         case review
 
         case userRef
+
+        case userUid
 
         case imageRef
 

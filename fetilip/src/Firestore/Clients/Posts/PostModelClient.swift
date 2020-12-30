@@ -31,7 +31,7 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
     func postImage(uid: String, review: String, imageRef: StorageReference) -> Single<()> {
         let db = Firestore.firestore()
         let userRef: DocumentReference = db.document("/version/1/users/\(uid)")
-        let fields = PostsRequests.postImage(review: review, userRef: userRef, imageRef: imageRef.fullPath).parameters
+        let fields = PostsRequests.postImage(review: review, userRef: userRef, userUid: uid, imageRef: imageRef.fullPath).parameters
         return Firestore.firestore().rx.addData(PostModel.self, collectionRef: PostModel.makeCollectionRef(), fields: fields)
     }
 
