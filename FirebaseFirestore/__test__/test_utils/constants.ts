@@ -12,6 +12,8 @@ export const postsCollectionPath = "/version/1/posts"
 
 export const userSocialCollectionPath = "/version/1/userSocials"
 
+export const userBlocksCollectionPath = `${usersCollectionPath}/${testUserDocumentID}/userBlocks`
+
 export const correctUserData = {
   userName: "testuser",
   createdAt: firestore.FieldValue.serverTimestamp(),
@@ -21,6 +23,19 @@ export const correctUserData = {
 export const correctUserSocialData = {
   fetiPoint: 0,
   postCount: 0,
+  createdAt: firestore.FieldValue.serverTimestamp(),
+  updatedAt: firestore.FieldValue.serverTimestamp()
+}
+
+export const correctUserBlockData = {
+  targetUid: "test",
+  createdAt: firestore.FieldValue.serverTimestamp(),
+  updatedAt: firestore.FieldValue.serverTimestamp()
+}
+
+export const incorrectUserBlockData = {
+  incorrectField: "test",
+  targetUid: "test",
   createdAt: firestore.FieldValue.serverTimestamp(),
   updatedAt: firestore.FieldValue.serverTimestamp()
 }
