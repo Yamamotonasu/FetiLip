@@ -39,7 +39,7 @@ service cloud.firestore {
       && validateRequestTime(incomingData());
       // TODO: 修正
       allow read: if isAnyAuthenticated();
-      allow delete: if false;
+      allow delete: if isUserAuthenticated(request.auth.uid);
     }
     match /{path=**}/userBlocks/{blockID} {
       allow create:
