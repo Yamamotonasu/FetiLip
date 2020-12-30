@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQL-F9-A4J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oQL-F9-A4J">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,6 +36,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="gJd-3R-OSo"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fYI-Ez-7at" firstAttribute="leading" secondItem="gJd-3R-OSo" secondAttribute="leading" id="6DG-1k-YZN"/>
@@ -45,7 +46,6 @@
                             <constraint firstItem="fYI-Ez-7at" firstAttribute="top" secondItem="gJd-3R-OSo" secondAttribute="top" id="faU-qh-mSJ"/>
                             <constraint firstItem="RJu-fV-DXZ" firstAttribute="trailing" secondItem="fYI-Ez-7at" secondAttribute="trailing" id="ioP-dM-nyi"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gJd-3R-OSo"/>
                     </view>
                     <navigationItem key="navigationItem" id="hIx-I5-YOw"/>
                     <connections>
@@ -90,12 +90,12 @@
         <!--Transition Post Page View Controller-->
         <scene sceneID="lWL-Dk-SBN">
             <objects>
-                <viewController id="9ad-TS-G13" customClass="TransitionPostPageViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransitionPostPageViewController" id="9ad-TS-G13" customClass="TransitionPostPageViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aMX-3W-1OU">
                         <rect key="frame" x="0.0" y="0.0" width="185" height="213"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4u5-Oy-wkj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4u5-Oy-wkj">
                                 <rect key="frame" x="114" y="132" width="56" height="56"/>
                                 <color key="backgroundColor" red="0.99215686270000003" green="0.6588235294" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -131,12 +131,12 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="vzB-sv-Myt"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vzB-sv-Myt" firstAttribute="trailing" secondItem="4u5-Oy-wkj" secondAttribute="trailing" constant="15" id="4i7-ZK-5dL"/>
                             <constraint firstItem="vzB-sv-Myt" firstAttribute="bottom" secondItem="4u5-Oy-wkj" secondAttribute="bottom" constant="25" id="y0Q-bH-szc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="vzB-sv-Myt"/>
                     </view>
                     <connections>
                         <outlet property="transitionPostPageButton" destination="4u5-Oy-wkj" id="ASt-YD-Jdg"/>

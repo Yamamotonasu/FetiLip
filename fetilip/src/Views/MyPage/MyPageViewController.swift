@@ -183,7 +183,7 @@ extension MyPageViewController {
     }
 
     private func transitionToPostList() {
-        let vc = PostListViewControllerGenerator.generate(isHiddenBottomBar: true)
+        let vc = PostListViewControllerGenerator.generate(isHiddenBottomBar: true, myPost: true)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

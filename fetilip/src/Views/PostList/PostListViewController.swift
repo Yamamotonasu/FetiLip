@@ -26,10 +26,12 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     struct Dependency {
         let isHiddenBottomBar: Bool
+        let myPost: Bool
     }
 
     func inject(with dependency: Dependency) {
         self.isHiddenBottomBar = dependency.isHiddenBottomBar
+        self.myPost = dependency.myPost
     }
 
     // MARK: - Outlets
@@ -43,7 +45,9 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private let cellMargin: CGFloat = 15.0
 
-    private var isHiddenBottomBar: Bool? = true
+    private var isHiddenBottomBar: Bool? = false
+
+    private var myPost: Bool = false
 
     var selectedIndexPath: IndexPath!
 
@@ -78,8 +82,11 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
         if isHiddenBottomBar == true {
-            self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
+            if let tab = self.tabBarController as? GlobalTabBarController {
+                tab.customTabBar.alpha = 0
+            }
         }
     }
 
@@ -289,12 +296,12 @@ final class PostListViewControllerGenerator {
      * - isHiddenBottomBar: Boolean
      *  hidden tab bar → true,  not hidden → false
      */
-    public static func generate(isHiddenBottomBar: Bool = true) -> UIViewController {
+    public static func generate(isHiddenBottomBar: Bool = false, myPost: Bool = false) -> UIViewController {
         guard let vc = R.storyboard.postList.postListViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(isHiddenBottomBar: isHiddenBottomBar))
+        vc.inject(with: .init(isHiddenBottomBar: isHiddenBottomBar, myPost: myPost))
         return vc
     }
 
