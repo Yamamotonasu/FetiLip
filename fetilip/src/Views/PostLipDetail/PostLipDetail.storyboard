@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r4g-Wh-V0f">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r4g-Wh-V0f">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="SourceHanSans-Normal.otf">
             <string>SourceHanSans-Normal</string>
+        </array>
+        <array key="SourceHanSans-Regular.otf">
+            <string>SourceHanSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -25,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2B-lh-Vl7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="566.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="567"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A42-uA-tdc">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -88,7 +92,7 @@
                                                 </constraints>
                                             </stackView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv4-kT-ni0">
-                                                <rect key="frame" x="20" y="506.00000000000006" width="374" height="40.666666666666686"/>
+                                                <rect key="frame" x="20" y="506" width="374" height="41"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
@@ -131,17 +135,50 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="back_image"/>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQF-5T-6bB" userLabel="BottomArea">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-QY-OVd">
+                                        <rect key="frame" x="89" y="21.5" width="236" height="37"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xe-eb-WST">
+                                                <rect key="frame" x="0.0" y="0.0" width="68" height="37"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="17"/>
+                                                <state key="normal" title="編集する">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BD7-jy-nZo">
+                                                <rect key="frame" x="168" y="0.0" width="68" height="37"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="17"/>
+                                                <state key="normal" title="削除する">
+                                                    <color key="titleColor" red="1" green="0.21176470588235294" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="9UU-pi-6Sa"/>
+                                    <constraint firstItem="qxH-QY-OVd" firstAttribute="centerY" secondItem="AQF-5T-6bB" secondAttribute="centerY" id="C4z-h3-tyn"/>
+                                    <constraint firstItem="qxH-QY-OVd" firstAttribute="centerX" secondItem="AQF-5T-6bB" secondAttribute="centerX" id="bnY-WT-OWF"/>
+                                </constraints>
+                            </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bJv-GG-Gcg"/>
                         <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="AQF-5T-6bB" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" id="7in-de-uVc"/>
                             <constraint firstItem="Z8e-1C-CNC" firstAttribute="top" secondItem="bJv-GG-Gcg" secondAttribute="top" constant="25" id="7r8-5a-yzX"/>
                             <constraint firstAttribute="leading" secondItem="sd9-pE-OKy" secondAttribute="leading" id="Rxe-4X-VS9"/>
+                            <constraint firstAttribute="bottom" secondItem="AQF-5T-6bB" secondAttribute="bottom" id="ZUy-QJ-e1Q"/>
+                            <constraint firstItem="bJv-GG-Gcg" firstAttribute="trailing" secondItem="AQF-5T-6bB" secondAttribute="trailing" id="aNx-6i-5QL"/>
                             <constraint firstItem="Z8e-1C-CNC" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" constant="30" id="agw-BI-xmP"/>
                             <constraint firstItem="sd9-pE-OKy" firstAttribute="top" secondItem="Afe-8F-u6b" secondAttribute="top" id="k7f-zx-OkE"/>
                             <constraint firstAttribute="trailing" secondItem="sd9-pE-OKy" secondAttribute="trailing" id="nEM-WN-2ez"/>
                             <constraint firstAttribute="bottom" secondItem="sd9-pE-OKy" secondAttribute="bottom" id="sOZ-74-kVL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bJv-GG-Gcg"/>
                     </view>
                     <navigationItem key="navigationItem" id="2GV-4p-Vp2"/>
                     <connections>
@@ -160,7 +197,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back_image" width="13.333333015441895" height="13.333333015441895"/>
+        <image name="back_image" width="13.5" height="13.5"/>
         <image name="default_icon_female" width="125" height="125"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
