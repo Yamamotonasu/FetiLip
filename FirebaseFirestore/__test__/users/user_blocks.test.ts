@@ -1,8 +1,8 @@
 import { firestore } from 'firebase';
 import * as firebase from "@firebase/testing";
 import * as fs from "fs";
-import * as testModules from "./test_utils/test_module"
-import * as constant from "./test_utils/constants"
+import * as testModules from "../test_utils/test_module"
+import * as constant from "../test_utils/constants"
 
 describe("userSocialsコレクションのセキュリティルールテスト", () => {
       // ルールファイルの読み込み
@@ -25,7 +25,21 @@ describe("userSocialsコレクションのセキュリティルールテスト",
 
   function makeDB(): firestore.DocumentReference {
     const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
-    return db.collection(constant.userSocialCollectionPath).doc(constant.testUserDocumentID);
+    return db.collection(constant.userBlocksCollectionPath).doc("blocktest");
   }
 
-}
+  describe(`${constant.userBlocksCollectionPath}`, () => {
+    afterEach(async () => {
+      await firebase.clearFirestoreData({ projectId: constant.PROJECT_ID });
+    });
+    test("データサイズが3なら作成出来る", async () => {
+      const doc = makeDB()
+      await firebase.assertSucceeds(doc.set(constant.correctUserBlockData));
+    })
+    test("データサイズが4なら作成出来ない", async () => {
+      const doc = makeDB()
+      await firebase.assertFails(doc.set(constant.incorrectUserBlockData));
+    })
+  })
+
+})
