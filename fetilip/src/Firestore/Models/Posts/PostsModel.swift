@@ -14,6 +14,7 @@ import CodableFirebase
  * User posts model.
  */
 public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
+
     public typealias FieldType = PostEntity
 
     typealias RootCollectionModel = UserModel
@@ -39,6 +40,14 @@ public struct PostModel: FirestoreDatabaseCollection, FirestoreSubCollection {
     static func makeSubCollectionRef(uid: String) -> CollectionReference {
         let root = AppSettings.FireStore.rootDocumentName
         return Firestore.firestore().document(root).collection(Self.rootCollectionName).document(uid).collection(Self.collectionName)
+    }
+
+}
+
+extension PostModel {
+
+    static func specifyPost(baseQuery: Query, targetUid: String) -> Query {
+        return baseQuery.whereField(FieldType.Key.userUid.rawValue, isEqualTo: targetUid)
     }
 
 }

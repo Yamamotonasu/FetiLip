@@ -17,6 +17,8 @@ protocol PostModelClientProtocol {
 
     func getPostList(limit: Int, startAfter: DocumentSnapshot?) -> Single<([PostModel.FieldType], DocumentSnapshot?)>
 
+    func getSpecifyUserPostList(targetUid: String, limit: Int, startAfter: DocumentSnapshot?) -> Single<([PostModel.FieldType], DocumentSnapshot?)>
+
     func getImage() -> Single<[PostModel.FieldType]>
 
 }
@@ -38,6 +40,16 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
     func getPostList(limit: Int, startAfter: DocumentSnapshot? = nil) -> Single<([PostModel.FieldType], DocumentSnapshot?)> {
         if let start = startAfter {
             return Firestore.firestore().rx.get(PostModel.self, query: PostModel.pagingCollectionRef(limit: limit, startAfter: start))
+        } else {
+            return Firestore.firestore().rx.get(PostModel.self, query: PostModel.pagingCollectionRef(limit: limit))
+        }
+    }
+
+    func getSpecifyUserPostList(targetUid: String, limit: Int, startAfter: DocumentSnapshot? = nil) -> Single<([PostModel.FieldType], DocumentSnapshot?)> {
+        if let start = startAfter {
+            let query: Query = PostModel.pagingCollectionRef(limit: limit, startAfter: start)
+            let specify: Query = PostModel.specifyPost(baseQuery: query, targetUid: targetUid)
+            return Firestore.firestore().rx.get(PostModel.self, query: specify)
         } else {
             return Firestore.firestore().rx.get(PostModel.self, query: PostModel.pagingCollectionRef(limit: limit))
         }

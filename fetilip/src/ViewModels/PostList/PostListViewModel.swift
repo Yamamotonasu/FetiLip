@@ -123,7 +123,64 @@ extension PostListViewModel: ViewModelType {
                         return Disposables.create()
                     }
                 }.asObservable().trackActivity(self.activity)
+            case .myPost:
+                return self.postModel.getSpecifyUserPostList(targetUid: LoginAccountData.uid!,
+                                                             limit: self.limit,
+                                                             startAfter: nil).flatMap { (list, lastDoc) -> Single<[PostListSectionDomainModel]> in
+                                                                return Single.create { observer in
+                                                                    let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
 
+                                                                    self.data.append(contentsOf: domains)
+                                                                    self.lastDocument = lastDoc
+
+                                                                    self.loadedCount += self.limit
+
+                                                                    let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+                                                                    observer(.success(sections))
+                                                                    return Disposables.create()
+                                                                }
+                }.trackActivity(self.activity)
+            case .myPostPaging:
+                return self.postModel.getSpecifyUserPostList(targetUid: LoginAccountData.uid!,
+                                                             limit: self.limit,
+                                                             startAfter: self.lastDocument).flatMap { (list, lastDoc) ->Single<[PostListSectionDomainModel]> in
+                                                                return Single.create { observer in
+                                                                    let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+
+                                                                    self.data.append(contentsOf: domains)
+                                                                    self.lastDocument = lastDoc
+
+                                                                    self.loadedCount += self.limit
+
+                                                                    let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+                                                                    observer(.success(sections))
+                                                                    return Disposables.create()
+                                                                }
+                                                             }.trackActivity(self.activity)
+            case .refreshMyPost:
+                self.data.removeAll()
+                self.lastDocument = nil
+                self.loadedCount = 0
+                return self.postModel.getSpecifyUserPostList(targetUid: LoginAccountData.uid!, limit: self.limit, startAfter: nil).flatMap { (list, lastDoc) -> Single<[PostListSectionDomainModel]> in
+                    return Single.create { observer in
+                        // Clear properties
+                        self.data.removeAll()
+                        self.lastDocument = nil
+                        self.loadedCount = 0
+
+                        let domains: [PostDomainModel] = list.map { PostDomainModel.convert($0) }
+                        // Sort by dat created.
+
+                        self.data.append(contentsOf: domains)
+                        self.loadedCount += self.limit
+                        // Save createdAt.
+                        self.lastDocument = lastDoc
+                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+
+                        observer(.success(sections))
+                        return Disposables.create()
+                    }
+                }.trackActivity(self.activity)
             }
         }
 
@@ -136,4 +193,7 @@ enum LoadType {
     case firstLoad
     case paging
     case refresh
+    case myPost
+    case myPostPaging
+    case refreshMyPost
 }

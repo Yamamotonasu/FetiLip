@@ -72,7 +72,11 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         composeUI()
         subscribeUI()
         setupCollectionView()
-        loadEvent.onNext(.firstLoad)
+        if myPost {
+            loadEvent.onNext(.myPost)
+        } else {
+            loadEvent.onNext(.firstLoad)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -192,7 +196,11 @@ extension PostListViewController {
     }
 
     @objc private func refresh() {
-        loadEvent.onNext(.refresh)
+        if myPost {
+            loadEvent.onNext(.refreshMyPost)
+        } else {
+            loadEvent.onNext(.refresh)
+        }
     }
 
 }
@@ -210,7 +218,11 @@ extension PostListViewController: UICollectionViewDelegate {
         // TODO: Unwrap
         let lastElement = data.first!.items.count - 5
         if indexPath.row == lastElement && !self.isLoading {
-            loadEvent.onNext(.paging)
+            if myPost {
+                loadEvent.onNext(.myPostPaging)
+            } else {
+                loadEvent.onNext(.paging)
+            }
         }
     }
 
