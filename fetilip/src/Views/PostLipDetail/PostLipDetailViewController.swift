@@ -19,7 +19,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     typealias ViewModel = PostLipDetailViewModel
 
-    private lazy var viewModel: ViewModel = PostLipDetailViewModel(userModel: UsersModelClient())
+    private lazy var viewModel: ViewModel = PostLipDetailViewModel(userModel: UsersModelClient(), postModel: PostModelClient())
 
     // MARK: - init process
 
@@ -136,9 +136,11 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             _self.deleteEvent.onNext(_self.field)
         }.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
-
-            }, onError: { _ in
-
+                self?.navigationController?.popViewController(animated: true)
+                AppAlert.show(message: "削除しました", alertType: .success)
+            }, onError: { e in
+                log.error(e.localizedDescription)
+                AppAlert.show(message: "削除に失敗しました", alertType: .error)
             }).disposed(by: rx.disposeBag)
     }
 
