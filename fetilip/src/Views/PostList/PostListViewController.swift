@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Firebase
 
 /**
  * PostListViewController,
@@ -51,8 +52,14 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     var selectedIndexPath: IndexPath!
 
+    private var isLoading: Bool = false
+
+    private let refreshControl = UIRefreshControl()
+
     // あんまりやりたくないけど。prepareのためにやる
     var data: [PostListSectionDomainModel] = []
+
+    // MARK: - Rx
 
     private let loadEvent: PublishSubject<LoadType> = PublishSubject()
 
@@ -60,9 +67,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private lazy var dataSource: RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> = setupDataSource()
 
-    private var isLoading: Bool = false
-
-    private let refreshControl = UIRefreshControl()
+    static let deleteSubject: PublishSubject<DocumentReference> = PublishSubject()
 
     // MARK: - Lifecycle
 
@@ -119,7 +124,7 @@ extension PostListViewController {
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable())
+        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable(), deleteSubject: Self.deleteSubject)
         let output = viewModel.transform(input: input)
 
         result = output.loadResult
@@ -141,6 +146,15 @@ extension PostListViewController {
         output.loadingObservable.subscribe(onNext: {
             self.isLoading = $0
         }).disposed(by: rx.disposeBag)
+
+        output.deleteResult.do(onNext: { [weak self] data in
+            self?.data = data
+            self?.refreshControl.endRefreshing()
+        }, onError: { [weak self] _ in
+            self?.refreshControl.endRefreshing()
+        })
+        .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
+        .disposed(by: rx.disposeBag)
 
     }
 

@@ -70,10 +70,12 @@ extension PostListViewModel: ViewModelType {
 
     struct Input {
         let firstLoadEvent: Observable<LoadType>
+        let deleteSubject: PublishSubject<DocumentReference>
     }
 
     struct Output {
         let loadResult: Observable<[PostListSectionDomainModel]>
+        let deleteResult: Observable<[PostListSectionDomainModel]>
         let loadingObservable: Observable<Bool>
     }
 
@@ -198,7 +200,16 @@ extension PostListViewModel: ViewModelType {
             }
         }
 
-        return Output(loadResult: listLoadSequence, loadingObservable: self.isLoading)
+        let deleteSequence = input.deleteSubject.flatMapLatest { documentReference -> Single<[PostListSectionDomainModel]> in
+            return Single.create { observer in
+                self.data = self.data.filter { $0.documentReference != documentReference }
+                let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+                observer(.success(sections))
+                return Disposables.create()
+            }
+        }.asObservable()
+
+        return Output(loadResult: listLoadSequence, deleteResult: deleteSequence, loadingObservable: self.isLoading)
     }
 
 }
