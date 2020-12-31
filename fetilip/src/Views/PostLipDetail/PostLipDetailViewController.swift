@@ -70,6 +70,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     /// Load event
     let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
+    private let deleteEvent: PublishSubject<()> = PublishSubject()
+
     private var isMyPost: Bool {
         return LoginAccountData.uid! == field.userUid
     }
@@ -108,14 +110,18 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             self.transitionUserDetail()
         }).disposed(by: rx.disposeBag)
 
-        backButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
-            self?.navigationController?.popViewController(animated: true)
+        backButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            self.navigationController?.popViewController(animated: true)
+        }).disposed(by: rx.disposeBag)
+
+        deleteButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            self.displayDeleteAlert()
         }).disposed(by: rx.disposeBag)
 
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable())
+        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable(), deleteEvent: deleteEvent)
         let output = viewModel.transform(input: input)
 
         output.userDataObservable.retryWithRetryAlert { [weak self] _ in
@@ -124,6 +130,15 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             .subscribe(onNext: { [weak self] domain in
                 self?.displayUserDomainModel = domain
                 self?.drawUserData(domain)
+            }).disposed(by: rx.disposeBag)
+
+        output.deleteResult.retryWithRetryAlert { [weak self] _ in
+            self?.deleteEvent.onNext(())
+        }.observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] _ in
+
+            }, onError: { _ in
+
             }).disposed(by: rx.disposeBag)
     }
 
@@ -192,6 +207,15 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
         let viewController = UserDetailViewControllerGenerator.generate(userDomainModel: userDomainModel, uid: field.userRef.documentID)
         self.present(viewController, animated: true)
+    }
+
+    private func displayDeleteAlert() {
+        let actionSheet = UIAlertController(title: "本当に投稿を削除しますか？", message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "削除する", style: .default, handler: { [unowned self] _ in
+            self.deleteEvent.onNext(())
+        }))
+        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        self.present(actionSheet, animated: true)
     }
 
 }

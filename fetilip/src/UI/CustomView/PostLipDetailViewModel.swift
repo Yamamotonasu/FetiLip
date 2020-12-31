@@ -32,10 +32,12 @@ extension PostLipDetailViewModel: ViewModelType {
 
     struct Input {
         let firstLoadEvent: Observable<PostDomainModel>
+        let deleteEvent: PublishSubject<()>
     }
 
     struct Output {
         let userDataObservable: Observable<UserDomainModel>
+        let deleteResult: Observable<()>
     }
 
     func transform(input: Self.Input) -> Self.Output {
@@ -48,7 +50,11 @@ extension PostLipDetailViewModel: ViewModelType {
             }
         }.share()
 
-        return Output(userDataObservable: userLoadSequence)
+        let deleteSequence: Observable<()> = input.deleteEvent.flatMapLatest { test in
+            return Observable.empty()
+        }
+
+        return Output(userDataObservable: userLoadSequence, deleteResult: deleteSequence)
     }
 
 }
