@@ -65,7 +65,7 @@ extension PostLipDetailViewModel: ViewModelType {
         // TODO: Fource unwrap
         let deleteSequence: Observable<()> = input.deleteEvent.flatMapLatest { postDomainModel in
             return self.postModel.deletePost(targetReference: postDomainModel.documentReference!).trackActivity(self.activity)
-        }.flatMapLatest { result -> Single<()> in
+        }.flatMapLatest { _ -> Single<()> in
             return Single.create { observer in
                 observer(.success(()))
                 return Disposables.create()
