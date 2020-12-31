@@ -70,7 +70,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     /// Load event
     let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
-    private let deleteEvent: PublishSubject<()> = PublishSubject()
+    private let deleteEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
     private var isMyPost: Bool {
         return LoginAccountData.uid! == field.userUid
@@ -117,7 +117,6 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         deleteButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.displayDeleteAlert()
         }).disposed(by: rx.disposeBag)
-
     }
 
     private func subscribeUI() {
@@ -133,7 +132,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             }).disposed(by: rx.disposeBag)
 
         output.deleteResult.retryWithRetryAlert { [weak self] _ in
-            self?.deleteEvent.onNext(())
+            guard let _self = self else { return }
+            _self.deleteEvent.onNext(_self.field)
         }.observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] _ in
 
@@ -212,7 +212,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     private func displayDeleteAlert() {
         let actionSheet = UIAlertController(title: "本当に投稿を削除しますか？", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "削除する", style: .default, handler: { [unowned self] _ in
-            self.deleteEvent.onNext(())
+            self.deleteEvent.onNext(self.field)
         }))
         actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
         self.present(actionSheet, animated: true)

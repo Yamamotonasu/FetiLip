@@ -32,7 +32,7 @@ extension PostLipDetailViewModel: ViewModelType {
 
     struct Input {
         let firstLoadEvent: Observable<PostDomainModel>
-        let deleteEvent: PublishSubject<()>
+        let deleteEvent: PublishSubject<PostDomainModel>
     }
 
     struct Output {
