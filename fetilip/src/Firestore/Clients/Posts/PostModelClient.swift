@@ -21,6 +21,8 @@ protocol PostModelClientProtocol {
 
     func getImage() -> Single<[PostModel.FieldType]>
 
+    func deletePost(targetReference: DocumentReference) -> Single<()>
+
 }
 
 /**
@@ -61,6 +63,10 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
 
     func getImage() -> Single<[PostModel.FieldType]> {
         Firestore.firestore().rx.get(PostModel.self, collectionRef: PostModel.makeCollectionRef())
+    }
+
+    func deletePost(targetReference: DocumentReference) -> Single<()> {
+        return Firestore.firestore().rx.deleteDocument(documentReference: targetReference)
     }
 
 }
