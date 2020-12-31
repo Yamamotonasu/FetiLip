@@ -65,7 +65,7 @@ extension Reactive where Base: Firestore {
         }
     }
 
-    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, query: Query) -> Single<([T.FieldType], DocumentSnapshot?)> {
+    func get<T: FirestoreDatabaseCollection>(_ type: T.Type, query: Query) -> Single<([T.FieldType], [DocumentSnapshot])> {
         return Single.create { observer in
             query.getDocuments { snapshot, error in
                 if let e = error {
@@ -88,7 +88,7 @@ extension Reactive where Base: Firestore {
                     }
                 }
 
-                let returns: ([T.FieldType], DocumentSnapshot?) = (results, snap.documents.last)
+                let returns: ([T.FieldType], [DocumentSnapshot]) = (results, snap.documents)
 
                 observer(.success(returns))
             }
@@ -172,6 +172,25 @@ extension Reactive where Base: Firestore {
                 } catch {
                     log.error(error)
                     observer(.error(ApplicationError.failedParseResponse))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+
+    /**
+     * Delete specify documents.
+     * - Parameters:
+     *  - documentReference: Target document reference to delete.
+     * - Returns: Single<()>
+     */
+    func deleteDocument(documentReference: DocumentReference) -> Single<()> {
+        return Single.create { observer in
+            documentReference.delete { error in
+                if let e = error {
+                    observer(.error(e))
+                } else {
+                    observer(.success(()))
                 }
             }
             return Disposables.create()

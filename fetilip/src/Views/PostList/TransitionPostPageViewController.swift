@@ -45,6 +45,10 @@ extension TransitionPostPageViewController {
         self.present(vc, animated: true)
     }
 
+    public func hiddenPostButton() {
+        transitionPostPageButton.isHidden = true
+    }
+
     private func touchStartAnimation() {
         UIView.animate(withDuration: 0.1,
             delay: 0.0,
@@ -66,6 +70,18 @@ extension TransitionPostPageViewController {
             },
             completion: nil
         )
+    }
+
+}
+
+public struct TransitionPostPageViewControllerGenerator {
+
+    public static func generate() -> UIViewController {
+        guard let vc = R.storyboard.postList.transitionPostPageViewController() else {
+            assertionFailure()
+            return UIViewController()
+        }
+        return vc
     }
 
 }

@@ -26,10 +26,12 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     struct Dependency {
         let isHiddenBottomBar: Bool
+        let myPost: Bool
     }
 
     func inject(with dependency: Dependency) {
         self.isHiddenBottomBar = dependency.isHiddenBottomBar
+        self.myPost = dependency.myPost
     }
 
     // MARK: - Outlets
@@ -43,7 +45,9 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private let cellMargin: CGFloat = 15.0
 
-    private var isHiddenBottomBar: Bool? = true
+    private var isHiddenBottomBar: Bool? = false
+
+    private var myPost: Bool = false
 
     var selectedIndexPath: IndexPath!
 
@@ -68,7 +72,11 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
         composeUI()
         subscribeUI()
         setupCollectionView()
-        loadEvent.onNext(.firstLoad)
+        if myPost {
+            loadEvent.onNext(.myPost)
+        } else {
+            loadEvent.onNext(.firstLoad)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -78,8 +86,9 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        if isHiddenBottomBar == true {
-            self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
+        self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
+        if let tab = self.tabBarController as? GlobalTabBarController {
+            tab.customTabBar.alpha = isHiddenBottomBar == true ? 0 : 1
         }
     }
 
@@ -185,7 +194,11 @@ extension PostListViewController {
     }
 
     @objc private func refresh() {
-        loadEvent.onNext(.refresh)
+        if myPost {
+            loadEvent.onNext(.refreshMyPost)
+        } else {
+            loadEvent.onNext(.refresh)
+        }
     }
 
 }
@@ -203,7 +216,11 @@ extension PostListViewController: UICollectionViewDelegate {
         // TODO: Unwrap
         let lastElement = data.first!.items.count - 5
         if indexPath.row == lastElement && !self.isLoading {
-            loadEvent.onNext(.paging)
+            if myPost {
+                loadEvent.onNext(.myPostPaging)
+            } else {
+                loadEvent.onNext(.paging)
+            }
         }
     }
 
@@ -289,12 +306,12 @@ final class PostListViewControllerGenerator {
      * - isHiddenBottomBar: Boolean
      *  hidden tab bar → true,  not hidden → false
      */
-    public static func generate(isHiddenBottomBar: Bool = true) -> UIViewController {
+    public static func generate(isHiddenBottomBar: Bool = false, myPost: Bool = false) -> UIViewController {
         guard let vc = R.storyboard.postList.postListViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(isHiddenBottomBar: isHiddenBottomBar))
+        vc.inject(with: .init(isHiddenBottomBar: isHiddenBottomBar, myPost: myPost))
         return vc
     }
 

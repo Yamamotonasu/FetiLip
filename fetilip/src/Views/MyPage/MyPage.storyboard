@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MyU-1r-8H3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MyU-1r-8H3">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -94,7 +94,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUb-Qs-Hgt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUb-Qs-Hgt">
                                         <rect key="frame" x="0.0" y="124.66666666666669" width="225" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="UZJ-jP-yWB"/>
@@ -119,6 +119,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="aUB-aZ-yPw"/>
                         <color key="backgroundColor" red="1" green="1" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mBa-d0-kQ4" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="6po-D8-XuB"/>
@@ -126,11 +127,10 @@
                             <constraint firstItem="mBa-d0-kQ4" firstAttribute="top" secondItem="aUB-aZ-yPw" secondAttribute="top" constant="50" id="GGp-fV-u5n"/>
                             <constraint firstItem="C2A-S9-9u7" firstAttribute="centerX" secondItem="aUB-aZ-yPw" secondAttribute="centerX" id="GZP-RC-f8v"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aUB-aZ-yPw"/>
                     </view>
                     <navigationItem key="navigationItem" id="KMn-KN-nkj">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Hdc-UK-JsX">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RjR-DO-RiC">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="RjR-DO-RiC">
                                 <rect key="frame" x="16" y="2" width="60" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,6 +162,7 @@
                         <outlet property="fetiPointField" destination="ntd-0z-Byn" id="L0S-RJ-aHF"/>
                         <outlet property="fetipointLabel" destination="sQe-Ew-qzF" id="4GY-Zw-rbF"/>
                         <outlet property="postCountLabel" destination="OcA-PB-GQS" id="mWQ-8H-kFy"/>
+                        <outlet property="postCountStackView" destination="PZH-2T-ND5" id="c6g-Hi-YYj"/>
                         <outlet property="transitionToEditProfileButton" destination="MUb-Qs-Hgt" id="j42-VY-SZp"/>
                         <outlet property="transitionToSettingButton" destination="mdT-Ci-KbY" id="LL9-5a-31O"/>
                         <outlet property="userImage" destination="mBa-d0-kQ4" id="hYu-We-FPf"/>

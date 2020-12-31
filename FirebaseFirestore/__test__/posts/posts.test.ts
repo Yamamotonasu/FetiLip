@@ -141,6 +141,21 @@ describe("postsコレクションのセキュリティルールテスト", () =>
     describe("update", () => {
     });
     describe("delete", () => {
+      test("自身の投稿が削除出来る", async() => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const data = constant.createPostData(db, constant.testUserDocumentID, "test");
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertSucceeds(postDocumentRef.set(data))
+        await firebase.assertSucceeds(postDocumentRef.delete())
+      })
+      // TODO: 他ユーザーでのテスト方法
+      xtest("自身の投稿以外は削除出来ない", async() => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const data = constant.createPostData(db, constant.testUserDocumentID, "test");
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertSucceeds(postDocumentRef.set(data))
+        await firebase.assertFails(postDocumentRef.delete())
+      })
     });
   });
 });
