@@ -20,11 +20,22 @@ protocol PostLipDetailViewModelProtocol {
  */
 struct PostLipDetailViewModel: PostLipDetailViewModelProtocol {
 
-    init(userModel: UsersModelClientProtocol) {
+    init(userModel: UsersModelClientProtocol, postModel: PostModelClientProtocol) {
         self.userModel = userModel
+        self.postModel = postModel
+        self.indicator = activity.asObservable()
     }
 
+    // MARK: - Model
     private let userModel: UsersModelClientProtocol
+
+    private let postModel: PostModelClientProtocol
+
+    // MARK: - Rx
+
+    private let activity: ActivityIndicator = ActivityIndicator()
+
+    private let indicator: Observable<Bool>
 
 }
 
@@ -38,6 +49,7 @@ extension PostLipDetailViewModel: ViewModelType {
     struct Output {
         let userDataObservable: Observable<UserDomainModel>
         let deleteResult: Observable<()>
+        let loading: Observable<Bool>
     }
 
     func transform(input: Self.Input) -> Self.Output {
@@ -50,11 +62,17 @@ extension PostLipDetailViewModel: ViewModelType {
             }
         }.share()
 
-        let deleteSequence: Observable<()> = input.deleteEvent.flatMapLatest { test in
-            return Observable.empty()
+        // TODO: Fource unwrap
+        let deleteSequence: Observable<()> = input.deleteEvent.flatMapLatest { postDomainModel in
+            return self.postModel.deletePost(targetReference: postDomainModel.documentReference!).trackActivity(self.activity)
+        }.flatMapLatest { result -> Single<()> in
+            return Single.create { observer in
+                observer(.success(()))
+                return Disposables.create()
+            }
         }
 
-        return Output(userDataObservable: userLoadSequence, deleteResult: deleteSequence)
+        return Output(userDataObservable: userLoadSequence, deleteResult: deleteSequence, loading: indicator)
     }
 
 }
