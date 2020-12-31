@@ -23,6 +23,9 @@ struct PostDomainModel: DomainModelProtocol {
     /// Reference of user document associated with document.
     let userRef: DocumentReference
 
+    /// User uid posted.
+    let userUid: String
+
     /// Post image.
     let imageRef: String
 
@@ -39,6 +42,7 @@ struct PostDomainModel: DomainModelProtocol {
         let f = DateFormatter()
         f.setTemplate(.full)
         return self.init(userRef: model.userRef,
+                         userUid: model.userUid,
                          imageRef: model.imageRef,
                          review: model.review ?? "",
                          createdAt: model.createdAt,

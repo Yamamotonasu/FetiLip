@@ -49,6 +49,12 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet private weak var userName: UILabel!
 
+    @IBOutlet private weak var bottomView: UIView!
+
+    @IBOutlet private weak var editButton: UIButton!
+
+    @IBOutlet private weak var deleteButton: UIButton!
+
     // MARK: - Properties
 
     let transitionController: ZoomTransitionController = ZoomTransitionController()
@@ -63,6 +69,10 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     /// Load event
     let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
+
+    private var isMyPost: Bool {
+        return LoginAccountData.uid! == field.userUid
+    }
 
     // MARK: - LifeCycles
 
@@ -84,6 +94,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     private func composeUI() {
         self.lipImageView.image = self.image
         self.reviewTextView.text = self.field?.review
+        self.bottomView.isHidden = !self.isMyPost
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
         self.panGesture.delegate = self

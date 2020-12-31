@@ -164,6 +164,17 @@
                                     <constraint firstItem="qxH-QY-OVd" firstAttribute="centerY" secondItem="AQF-5T-6bB" secondAttribute="centerY" id="C4z-h3-tyn"/>
                                     <constraint firstItem="qxH-QY-OVd" firstAttribute="centerX" secondItem="AQF-5T-6bB" secondAttribute="centerX" id="bnY-WT-OWF"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.52000000000000002" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bJv-GG-Gcg"/>
@@ -183,7 +194,10 @@
                     <navigationItem key="navigationItem" id="2GV-4p-Vp2"/>
                     <connections>
                         <outlet property="backButton" destination="Z8e-1C-CNC" id="c5h-oj-GoS"/>
+                        <outlet property="bottomView" destination="AQF-5T-6bB" id="qgx-LG-XdH"/>
                         <outlet property="contentView" destination="y2B-lh-Vl7" id="L5L-fN-2oU"/>
+                        <outlet property="deleteButton" destination="BD7-jy-nZo" id="Axn-Xn-ADr"/>
+                        <outlet property="editButton" destination="4xe-eb-WST" id="fpM-KZ-mjV"/>
                         <outlet property="lipImageView" destination="A42-uA-tdc" id="QSR-ew-bUk"/>
                         <outlet property="reviewTextView" destination="sv4-kT-ni0" id="s7t-uR-vs6"/>
                         <outlet property="scrollView" destination="sd9-pE-OKy" id="c6h-le-Utk"/>
