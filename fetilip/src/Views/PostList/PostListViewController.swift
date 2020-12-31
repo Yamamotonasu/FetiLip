@@ -87,10 +87,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.collectionViewBottomConstraint.constant = AppSettings.tabBarHeight + AppSettings.tabBarBottomMargin + self.view.safeAreaInsets.bottom
-        if isHiddenBottomBar == true {
-            if let tab = self.tabBarController as? GlobalTabBarController {
-                tab.customTabBar.alpha = 0
-            }
+        if let tab = self.tabBarController as? GlobalTabBarController {
+            tab.customTabBar.alpha = isHiddenBottomBar == true ? 0 : 1
         }
     }
 
