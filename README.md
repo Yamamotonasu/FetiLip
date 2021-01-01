@@ -8,7 +8,10 @@
 ・Carthage 0.36.0  
 ・iPhone only  
   
-## Environment
+## Environment  
+Production -> fetilip_prod  
+Verification -> fetilip  
+
 "Carthage/Build" and "Pods/" are in git management.  
 So, Can build without any pre-operation.  
   
@@ -18,11 +21,31 @@ So, Can build without any pre-operation.
    
 ## Firestore
 ```
-$ cd FirebaseFirestore
+$ cd FirebaseFirestore/
 $ yarn
+$ yarn test
 ```
   
 ## Firestore test simulator
 ```
 $ firebase emulators:start --only firestore
 ```
+  
+## Firestore rule deploy
+```
+$ cd FirebaseFirestore/
+$ firebase deploy --only firestore:rules
+```
+  
+## Storage rule deploy
+```
+$ cd Firestorage
+$ firebase deploy --only storage:rules
+```
+  
+## Cloud Functions deploy
+```
+$ cd CloudFunctions
+$ firebase deploy --only functions
+```
+
