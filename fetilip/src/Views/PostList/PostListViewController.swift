@@ -222,9 +222,9 @@ extension PostListViewController {
 
     @objc private func refresh() {
         if myPost {
-            loadEvent.onNext(.refreshMyPost)
+            Self.refreshSubject.onNext(.refreshMyPost)
         } else {
-            loadEvent.onNext(.refresh)
+            Self.refreshSubject.onNext(.refresh)
         }
     }
 
