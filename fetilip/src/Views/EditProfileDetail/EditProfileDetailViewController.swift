@@ -158,14 +158,14 @@ extension EditProfileDetailViewController: FloatingPanelControllerDelegate {
 
     func floatingPanelDidEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetPosition: FloatingPanelPosition) {
         switch targetPosition {
-        case .tip:
+        case .top:
             vc.dismiss(animated: true)
-        case .half:
-            log.debug("half dragging.")
-        case .full:
-            log.debug("full dragging")
-        case .hidden:
-            log.debug("hidden dragging")
+        case .left:
+            log.debug("left dragging.")
+        case .right:
+            log.debug("right dragging")
+        case .bottom:
+            log.debug("bottom dragging")
         @unknown default:
             break
         }
