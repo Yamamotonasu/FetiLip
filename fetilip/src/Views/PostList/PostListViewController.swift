@@ -208,7 +208,8 @@ extension PostListViewController {
             let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
             if let domain = data.first?.items[self.selectedIndexPath.row] {
                 vc.inject(with: .init(displayImage: cell.lipImage.image,
-                                      postModel: domain ))
+                                      postModel: domain,
+                                      fromMyPostList: myPost))
             } else {
                 // ここで取れなかったらバグになるので、開発環境のみクラッシュさせる。
                 assertionFailure()
