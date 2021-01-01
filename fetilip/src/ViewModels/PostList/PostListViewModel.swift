@@ -123,7 +123,7 @@ extension PostListViewModel: ViewModelType {
     struct Input {
         let firstLoadEvent: Observable<LoadType>
         let deleteSubject: PublishSubject<DocumentReference>
-        let refreshSubject: PublishSubject<LoadType>
+        let refreshSubject: PublishSubject<RefreshLoadType>
     }
 
     struct Output {
@@ -135,7 +135,7 @@ extension PostListViewModel: ViewModelType {
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
         let listLoadSequence = input.firstLoadEvent
-            .filter { type in self.loadedCount == self.data.count || type == .refresh}
+            .filter { type in self.loadedCount == self.data.count }
             .flatMap { type -> Observable<[PostListSectionDomainModel]> in
             switch type {
             case .firstLoad:
@@ -169,8 +169,6 @@ extension PostListViewModel: ViewModelType {
                         return Disposables.create()
                     }
                 }.trackActivity(self.activity)
-            case .refresh:
-                return self.refreshPost()
             case .myPost:
                 return self.postModel.getSpecifyUserPostList(targetUid: LoginAccountData.uid!,
                                                              limit: self.limit,
@@ -205,8 +203,6 @@ extension PostListViewModel: ViewModelType {
                                                                     return Disposables.create()
                                                                 }
                                                              }.trackActivity(self.activity)
-            case .refreshMyPost:
-                return self.refreshMyPost()
             }
         }
 
@@ -225,8 +221,6 @@ extension PostListViewModel: ViewModelType {
                 return self.refreshMyPost()
             case .refresh:
                 return self.refreshPost()
-            default:
-                return Observable.empty()
             }
         }
 
@@ -241,8 +235,11 @@ extension PostListViewModel: ViewModelType {
 enum LoadType {
     case firstLoad
     case paging
-    case refresh
     case myPost
     case myPostPaging
+}
+
+enum RefreshLoadType {
+    case refresh
     case refreshMyPost
 }

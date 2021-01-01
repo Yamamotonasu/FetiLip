@@ -69,7 +69,7 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     static let deleteSubject: PublishSubject<DocumentReference> = PublishSubject()
 
-    static let refreshSubject: PublishSubject<LoadType> = PublishSubject()
+    static let refreshSubject: PublishSubject<RefreshLoadType> = PublishSubject()
 
     // MARK: - Lifecycle
 

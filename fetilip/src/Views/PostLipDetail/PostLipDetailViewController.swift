@@ -142,7 +142,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             .subscribe(onNext: { [weak self] documentReference in
                 self?.navigationController?.popViewController(animated: true)
                 // Delete post deleted.
-                let refreshLoadType: LoadType = self?.fromMyPostList == true ? .refreshMyPost : .refresh
+                let refreshLoadType: RefreshLoadType = self?.fromMyPostList == true ? .refreshMyPost : .refresh
                 PostListViewController.refreshSubject.onNext(refreshLoadType)
                 AppAlert.show(message: "削除しました", alertType: .success)
             }, onError: { e in
