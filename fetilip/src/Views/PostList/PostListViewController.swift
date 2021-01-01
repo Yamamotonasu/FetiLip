@@ -155,7 +155,6 @@ extension PostListViewController {
         })
         .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
         .disposed(by: rx.disposeBag)
-
     }
 
     /// Transition post lip page.
@@ -291,7 +290,6 @@ extension PostListViewController: ZoomAnimatorDelegate {
         if let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as? PostLipCollectionViewCell {
             return cell.lipImage
         } else {
-            assertionFailure()
             return UIImageView()
         }
     }

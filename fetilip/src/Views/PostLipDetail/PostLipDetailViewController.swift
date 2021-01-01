@@ -135,8 +135,10 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             guard let _self = self else { return }
             _self.deleteEvent.onNext(_self.field)
         }.observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] _ in
+            .subscribe(onNext: { [weak self] documentReference in
                 self?.navigationController?.popViewController(animated: true)
+                // Delete post deleted.
+                PostListViewController.deleteSubject.onNext(documentReference)
                 AppAlert.show(message: "削除しました", alertType: .success)
             }, onError: { e in
                 log.error(e.localizedDescription)

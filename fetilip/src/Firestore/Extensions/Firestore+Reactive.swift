@@ -182,15 +182,15 @@ extension Reactive where Base: Firestore {
      * Delete specify documents.
      * - Parameters:
      *  - documentReference: Target document reference to delete.
-     * - Returns: Single<()>
+     * - Returns: Single<DocumentReference>
      */
-    func deleteDocument(documentReference: DocumentReference) -> Single<()> {
+    func deleteDocument(documentReference: DocumentReference) -> Single<DocumentReference> {
         return Single.create { observer in
             documentReference.delete { error in
                 if let e = error {
                     observer(.error(e))
                 } else {
-                    observer(.success(()))
+                    observer(.success(documentReference))
                 }
             }
             return Disposables.create()
