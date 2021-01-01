@@ -48,7 +48,7 @@ extension PostLipDetailViewModel: ViewModelType {
 
     struct Output {
         let userDataObservable: Observable<UserDomainModel>
-        let deleteResult: Observable<()>
+        let deleteResult: Observable<DocumentReference>
         let loading: Observable<Bool>
     }
 
@@ -63,13 +63,8 @@ extension PostLipDetailViewModel: ViewModelType {
         }.share()
 
         // TODO: Fource unwrap
-        let deleteSequence: Observable<()> = input.deleteEvent.flatMapLatest { postDomainModel in
+        let deleteSequence: Observable<DocumentReference> = input.deleteEvent.flatMapLatest { postDomainModel in
             return self.postModel.deletePost(targetReference: postDomainModel.documentReference!).trackActivity(self.activity)
-        }.flatMapLatest { _ -> Single<()> in
-            return Single.create { observer in
-                observer(.success(()))
-                return Disposables.create()
-            }
         }
 
         return Output(userDataObservable: userLoadSequence, deleteResult: deleteSequence, loading: indicator)

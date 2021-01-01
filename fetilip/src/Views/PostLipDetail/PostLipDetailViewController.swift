@@ -26,11 +26,13 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     struct Dependency {
         let displayImage: UIImage?
         let postModel: PostDomainModel
+        let fromMyPostList: Bool
     }
 
     func inject(with dependency: Dependency) {
         image = dependency.displayImage
         field = dependency.postModel
+        fromMyPostList = dependency.fromMyPostList
     }
 
     // MARK: - Outlets
@@ -62,6 +64,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     var field: PostDomainModel!
 
     var image: UIImage?
+
+    var fromMyPostList: Bool!
 
     var panGesture: UIPanGestureRecognizer!
 
@@ -135,8 +139,11 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             guard let _self = self else { return }
             _self.deleteEvent.onNext(_self.field)
         }.observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] _ in
+            .subscribe(onNext: { [weak self] documentReference in
                 self?.navigationController?.popViewController(animated: true)
+                // Delete post deleted.
+                let refreshLoadType: RefreshLoadType = self?.fromMyPostList == true ? .refreshMyPost : .refresh
+                PostListViewController.refreshSubject.onNext(refreshLoadType)
                 AppAlert.show(message: "削除しました", alertType: .success)
             }, onError: { e in
                 log.error(e.localizedDescription)
@@ -253,12 +260,12 @@ final class PostLipDetailViewControllerGenerator {
 
     public init() {}
 
-    public static func generate(displayImage: UIImage, postField: PostDomainModel) -> UIViewController {
+    public static func generate(displayImage: UIImage, postField: PostDomainModel, fromMyPostList: Bool = false) -> UIViewController {
         guard let vc = R.storyboard.postLipDetail.postLipDetailViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(displayImage: displayImage, postModel: postField))
+        vc.inject(with: .init(displayImage: displayImage, postModel: postField, fromMyPostList: fromMyPostList))
         return vc
     }
 

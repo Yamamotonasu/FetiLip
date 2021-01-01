@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Firebase
 
 /**
  * PostListViewController,
@@ -51,8 +52,14 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     var selectedIndexPath: IndexPath!
 
+    private var isLoading: Bool = false
+
+    private let refreshControl = UIRefreshControl()
+
     // あんまりやりたくないけど。prepareのためにやる
     var data: [PostListSectionDomainModel] = []
+
+    // MARK: - Rx
 
     private let loadEvent: PublishSubject<LoadType> = PublishSubject()
 
@@ -60,9 +67,9 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     private lazy var dataSource: RxCollectionViewSectionedReloadDataSource<PostListSectionDomainModel> = setupDataSource()
 
-    private var isLoading: Bool = false
+    static let deleteSubject: PublishSubject<DocumentReference> = PublishSubject()
 
-    private let refreshControl = UIRefreshControl()
+    static let refreshSubject: PublishSubject<RefreshLoadType> = PublishSubject()
 
     // MARK: - Lifecycle
 
@@ -119,7 +126,9 @@ extension PostListViewController {
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable())
+        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable(),
+                                    deleteSubject: Self.deleteSubject,
+                                    refreshSubject: Self.refreshSubject)
         let output = viewModel.transform(input: input)
 
         result = output.loadResult
@@ -133,6 +142,15 @@ extension PostListViewController {
             .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
             .disposed(by: rx.disposeBag)
 
+        output.refreshResult.do(onNext: { [weak self] data in
+            self?.data = data
+            self?.refreshControl.endRefreshing()
+        }, onError: { [weak self] _ in
+            self?.refreshControl.endRefreshing()
+        })
+        .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
+        .disposed(by: rx.disposeBag)
+
         lipCollectionView.rx.itemSelected
             .subscribe(onNext: { [unowned self] indexPath in
                 self.selectedIndexPath = indexPath
@@ -142,6 +160,14 @@ extension PostListViewController {
             self.isLoading = $0
         }).disposed(by: rx.disposeBag)
 
+        output.deleteResult.do(onNext: { [weak self] data in
+            self?.data = data
+            self?.refreshControl.endRefreshing()
+        }, onError: { [weak self] _ in
+            self?.refreshControl.endRefreshing()
+        })
+        .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
+        .disposed(by: rx.disposeBag)
     }
 
     /// Transition post lip page.
@@ -182,7 +208,8 @@ extension PostListViewController {
             let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as! PostLipCollectionViewCell
             if let domain = data.first?.items[self.selectedIndexPath.row] {
                 vc.inject(with: .init(displayImage: cell.lipImage.image,
-                                      postModel: domain ))
+                                      postModel: domain,
+                                      fromMyPostList: myPost))
             } else {
                 // ここで取れなかったらバグになるので、開発環境のみクラッシュさせる。
                 assertionFailure()
@@ -195,9 +222,9 @@ extension PostListViewController {
 
     @objc private func refresh() {
         if myPost {
-            loadEvent.onNext(.refreshMyPost)
+            Self.refreshSubject.onNext(.refreshMyPost)
         } else {
-            loadEvent.onNext(.refresh)
+            Self.refreshSubject.onNext(.refresh)
         }
     }
 
@@ -255,7 +282,7 @@ extension  PostListViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if let tab = self.tabBarController as? GlobalTabBarController {
             UIView.animate(withDuration: 0.1) {
-                tab.customTabBar.alpha = 1.0
+                tab.customTabBar.alpha = self.myPost ? 0 : 1.0
             }
         }
     }
@@ -277,7 +304,6 @@ extension PostListViewController: ZoomAnimatorDelegate {
         if let cell = self.lipCollectionView.cellForItem(at: self.selectedIndexPath) as? PostLipCollectionViewCell {
             return cell.lipImage
         } else {
-            assertionFailure()
             return UIImageView()
         }
     }
