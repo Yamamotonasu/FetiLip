@@ -7,7 +7,7 @@ git "git@github.com:congnd/FMPhotoPicker.git" ~> 0.9.0
 github "RxSwiftCommunity/RxDataSources" ~> 4.0.1
 github "kean/Nuke" ~> 9.1.0
 github "alickbass/CodableFirebase" ~> 0.2.2
-github "scenee/FloatingPanel" ~> 1.7.5
+github "scenee/FloatingPanel" ~> 2.1.0
 github "SwiftKickMobile/SwiftMessages" ~> 8.0.2
 
 binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json"
