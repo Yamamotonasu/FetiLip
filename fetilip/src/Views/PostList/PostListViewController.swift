@@ -69,6 +69,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     static let deleteSubject: PublishSubject<DocumentReference> = PublishSubject()
 
+    static let refreshSubject: PublishSubject<LoadType> = PublishSubject()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -124,7 +126,9 @@ extension PostListViewController {
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable(), deleteSubject: Self.deleteSubject)
+        let input = ViewModel.Input(firstLoadEvent: loadEvent.asObservable(),
+                                    deleteSubject: Self.deleteSubject,
+                                    refreshSubject: Self.refreshSubject)
         let output = viewModel.transform(input: input)
 
         result = output.loadResult
@@ -137,6 +141,15 @@ extension PostListViewController {
             })
             .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
             .disposed(by: rx.disposeBag)
+
+        output.refreshResult.do(onNext: { [weak self] data in
+            self?.data = data
+            self?.refreshControl.endRefreshing()
+        }, onError: { [weak self] _ in
+            self?.refreshControl.endRefreshing()
+        })
+        .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
+        .disposed(by: rx.disposeBag)
 
         lipCollectionView.rx.itemSelected
             .subscribe(onNext: { [unowned self] indexPath in

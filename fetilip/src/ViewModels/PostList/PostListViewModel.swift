@@ -64,6 +64,58 @@ extension PostListViewModel {
         return domains
     }
 
+    private func refreshMyPost() -> Observable<[PostListSectionDomainModel]> {
+        self.data.removeAll()
+        self.lastDocument = nil
+        self.loadedCount = 0
+        return self.postModel.getSpecifyUserPostList(targetUid: LoginAccountData.uid!, limit: self.limit, startAfter: nil).flatMap { (list, documents) -> Single<[PostListSectionDomainModel]> in
+            return Single.create { observer in
+                // Clear properties
+                self.data.removeAll()
+                self.lastDocument = nil
+                self.loadedCount = 0
+
+                let domains: [PostDomainModel] = self.convertPostDomainModel(entities: list, documents: documents)
+                // Sort by dat created.
+
+                self.data.append(contentsOf: domains)
+                self.loadedCount += self.limit
+                // Save createdAt.
+                self.lastDocument = documents.last
+                let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+
+                observer(.success(sections))
+                return Disposables.create()
+            }
+        }.trackActivity(self.activity)
+    }
+
+    private func refreshPost() -> Observable<[PostListSectionDomainModel]> {
+        self.data.removeAll()
+        self.lastDocument = nil
+        self.loadedCount = 0
+        return self.postModel.getPostList(limit: self.limit, startAfter: nil).flatMap { (list, documents) -> Single<[PostListSectionDomainModel]> in
+            return Single.create { observer in
+                // Clear properties
+                self.data.removeAll()
+                self.lastDocument = nil
+                self.loadedCount = 0
+
+                let domains: [PostDomainModel] = self.convertPostDomainModel(entities: list, documents: documents)
+                // Sort by dat created.
+
+                self.data.append(contentsOf: domains)
+                self.loadedCount += self.limit
+                // Save createdAt.
+                self.lastDocument = documents.last
+                let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
+
+                observer(.success(sections))
+                return Disposables.create()
+            }
+        }.asObservable().trackActivity(self.activity)
+    }
+
 }
 
 extension PostListViewModel: ViewModelType {
@@ -71,10 +123,12 @@ extension PostListViewModel: ViewModelType {
     struct Input {
         let firstLoadEvent: Observable<LoadType>
         let deleteSubject: PublishSubject<DocumentReference>
+        let refreshSubject: PublishSubject<LoadType>
     }
 
     struct Output {
         let loadResult: Observable<[PostListSectionDomainModel]>
+        let refreshResult: Observable<[PostListSectionDomainModel]>
         let deleteResult: Observable<[PostListSectionDomainModel]>
         let loadingObservable: Observable<Bool>
     }
@@ -116,29 +170,7 @@ extension PostListViewModel: ViewModelType {
                     }
                 }.trackActivity(self.activity)
             case .refresh:
-                self.data.removeAll()
-                self.lastDocument = nil
-                self.loadedCount = 0
-                return self.postModel.getPostList(limit: self.limit, startAfter: nil).flatMap { (list, documents) -> Single<[PostListSectionDomainModel]> in
-                    return Single.create { observer in
-                        // Clear properties
-                        self.data.removeAll()
-                        self.lastDocument = nil
-                        self.loadedCount = 0
-
-                        let domains: [PostDomainModel] = self.convertPostDomainModel(entities: list, documents: documents)
-                        // Sort by dat created.
-
-                        self.data.append(contentsOf: domains)
-                        self.loadedCount += self.limit
-                        // Save createdAt.
-                        self.lastDocument = documents.last
-                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
-
-                        observer(.success(sections))
-                        return Disposables.create()
-                    }
-                }.asObservable().trackActivity(self.activity)
+                return self.refreshPost()
             case .myPost:
                 return self.postModel.getSpecifyUserPostList(targetUid: LoginAccountData.uid!,
                                                              limit: self.limit,
@@ -174,29 +206,7 @@ extension PostListViewModel: ViewModelType {
                                                                 }
                                                              }.trackActivity(self.activity)
             case .refreshMyPost:
-                self.data.removeAll()
-                self.lastDocument = nil
-                self.loadedCount = 0
-                return self.postModel.getSpecifyUserPostList(targetUid: LoginAccountData.uid!, limit: self.limit, startAfter: nil).flatMap { (list, documents) -> Single<[PostListSectionDomainModel]> in
-                    return Single.create { observer in
-                        // Clear properties
-                        self.data.removeAll()
-                        self.lastDocument = nil
-                        self.loadedCount = 0
-
-                        let domains: [PostDomainModel] = self.convertPostDomainModel(entities: list, documents: documents)
-                        // Sort by dat created.
-
-                        self.data.append(contentsOf: domains)
-                        self.loadedCount += self.limit
-                        // Save createdAt.
-                        self.lastDocument = documents.last
-                        let sections: [PostListSectionDomainModel] = [PostListSectionDomainModel(items: self.data)]
-
-                        observer(.success(sections))
-                        return Disposables.create()
-                    }
-                }.trackActivity(self.activity)
+                return self.refreshMyPost()
             }
         }
 
@@ -209,7 +219,21 @@ extension PostListViewModel: ViewModelType {
             }
         }.asObservable()
 
-        return Output(loadResult: listLoadSequence, deleteResult: deleteSequence, loadingObservable: self.isLoading)
+        let refreshSequence = input.refreshSubject.flatMapLatest { loadType -> Observable<[PostListSectionDomainModel]> in
+            switch loadType {
+            case .refreshMyPost:
+                return self.refreshMyPost()
+            case .refresh:
+                return self.refreshPost()
+            default:
+                return Observable.empty()
+            }
+        }
+
+        return Output(loadResult: listLoadSequence,
+                      refreshResult: refreshSequence,
+                      deleteResult: deleteSequence,
+                      loadingObservable: self.isLoading)
     }
 
 }
