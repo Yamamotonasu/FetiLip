@@ -139,7 +139,9 @@ extension MyPageViewController {
                                     userSocialLoadEvent: userSocialLoadEvent)
         let output = viewModel.transform(input: input)
 
-        output.userLoadResult.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] domain in
+        output.userLoadResult.retryWithRetryAlert { [weak self] _ in
+            self?.userLoadEvent.onNext(())
+        }.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] domain in
             self?.userDomainModel = domain
             self?.drawUserData(domain)
         }, onError: { e in
