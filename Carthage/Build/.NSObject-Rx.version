@@ -1,0 +1,11 @@
+{
+  "commitish" : "5.1.1",
+  "iOS" : [
+    {
+      "hash" : "fc82aae160f5932dfc68b1b1130ec096441eac5728e2825d893576cdb111376d",
+      "name" : "NSObject_Rx",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+    }
+  ]
+}

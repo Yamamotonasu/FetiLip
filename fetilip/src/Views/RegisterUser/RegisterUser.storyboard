@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceHanSans-Bold.otf">
+            <string>SourceHanSans-Bold</string>
+        </array>
+        <array key="SourceHanSans-Normal.otf">
+            <string>SourceHanSans-Normal</string>
+        </array>
+        <array key="SourceHanSans-Regular.otf">
+            <string>SourceHanSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Register User View Controller-->
+        <scene sceneID="jT7-aF-FNp">
+            <objects>
+                <viewController storyboardIdentifier="RegisterUserViewController" id="aM7-rT-yqY" customClass="RegisterUserViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lWe-OO-X9h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="P2V-Sj-oBo">
+                                <rect key="frame" x="30" y="94" width="354" height="87"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SQA-tQ-hng">
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVF-Xg-A3T">
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK7-9F-0DU">
+                                                <rect key="frame" x="134" y="0.0" width="34" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                                <color key="textColor" red="0.93725490196078431" green="0.27058823529411763" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O9y-bY-D6R">
+                                        <rect key="frame" x="0.0" y="37" width="354" height="50"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="gCF-JT-ggL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラー時のメッセージが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-VU-1bY">
+                                        <rect key="frame" x="0.0" y="87" width="270" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.27058823529999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="O9y-bY-D6R" firstAttribute="width" secondItem="P2V-Sj-oBo" secondAttribute="width" id="Irv-fd-NhC"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="i8F-yg-jQq">
+                                <rect key="frame" x="30" y="211" width="354" height="87"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1r0-5L-fLq">
+                                        <rect key="frame" x="0.0" y="0.0" width="279.5" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" パスワード(6文字から32文字)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Aty-p0-PcY">
+                                                <rect key="frame" x="0.0" y="0.0" width="230.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="必須" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-R0-5Pq">
+                                                <rect key="frame" x="245.5" y="0.0" width="34" height="25"/>
+                                                <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                                <color key="textColor" red="0.93725490196078431" green="0.27058823529411763" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jup-2c-lPX">
+                                        <rect key="frame" x="0.0" y="37" width="354" height="50"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="SMm-dM-z8V"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Regular" family="Source Han Sans" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingLeft">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingRight">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラー時のメッセージが入ります。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prU-gU-oFL">
+                                        <rect key="frame" x="0.0" y="87" width="270" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.27058823529999998" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jup-2c-lPX" firstAttribute="width" secondItem="i8F-yg-jQq" secondAttribute="width" id="LUH-eM-cVA"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD0-mO-erA">
+                                <rect key="frame" x="30" y="338" width="354" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="SWn-EM-pKI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceHanSans-Bold" family="Source Han Sans" pointSize="17"/>
+                                <state key="normal" title="登録する">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.01176470588" green="0.01176470588" blue="0.01176470588" alpha="0.3046607449" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="lpq-66-oGA">
+                                <rect key="frame" x="50" y="418" width="314" height="57"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたのアカウントを守るために" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU1-5R-5CM">
+                                        <rect key="frame" x="29.5" y="0.0" width="255" height="25"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正式登録をお願いします😊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34r-Tw-40I">
+                                        <rect key="frame" x="52.5" y="32" width="209" height="25"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSans-Normal" family="Source Han Sans" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="P2V-Sj-oBo" firstAttribute="centerX" secondItem="YVE-Dc-mzO" secondAttribute="centerX" id="96h-7Z-qsN"/>
+                            <constraint firstItem="WD0-mO-erA" firstAttribute="top" secondItem="i8F-yg-jQq" secondAttribute="bottom" constant="40" id="Daz-vc-wwP"/>
+                            <constraint firstItem="YVE-Dc-mzO" firstAttribute="trailing" secondItem="i8F-yg-jQq" secondAttribute="trailing" constant="30" id="KF0-Wh-sre"/>
+                            <constraint firstItem="lpq-66-oGA" firstAttribute="top" secondItem="WD0-mO-erA" secondAttribute="bottom" constant="30" id="KJu-Qk-IlG"/>
+                            <constraint firstItem="YVE-Dc-mzO" firstAttribute="trailing" secondItem="WD0-mO-erA" secondAttribute="trailing" constant="30" id="Mxx-gI-Ssh"/>
+                            <constraint firstItem="lpq-66-oGA" firstAttribute="leading" secondItem="YVE-Dc-mzO" secondAttribute="leading" constant="50" id="UHn-qW-HYV"/>
+                            <constraint firstItem="YVE-Dc-mzO" firstAttribute="trailing" secondItem="lpq-66-oGA" secondAttribute="trailing" constant="50" id="ZoK-0j-c3X"/>
+                            <constraint firstItem="P2V-Sj-oBo" firstAttribute="top" secondItem="YVE-Dc-mzO" secondAttribute="top" constant="50" id="bBV-ud-kRL"/>
+                            <constraint firstItem="i8F-yg-jQq" firstAttribute="leading" secondItem="YVE-Dc-mzO" secondAttribute="leading" constant="30" id="eKU-dF-9bz"/>
+                            <constraint firstItem="i8F-yg-jQq" firstAttribute="top" secondItem="P2V-Sj-oBo" secondAttribute="bottom" constant="30" id="lSt-Wf-wse"/>
+                            <constraint firstItem="P2V-Sj-oBo" firstAttribute="leading" secondItem="YVE-Dc-mzO" secondAttribute="leading" constant="30" id="msO-82-ztp"/>
+                            <constraint firstAttribute="trailing" secondItem="P2V-Sj-oBo" secondAttribute="trailing" constant="30" id="q2I-dm-0dO"/>
+                            <constraint firstItem="WD0-mO-erA" firstAttribute="leading" secondItem="YVE-Dc-mzO" secondAttribute="leading" constant="30" id="yEF-Us-XCh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YVE-Dc-mzO"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailErrorLabel" destination="BZR-VU-1bY" id="GYO-RN-TyL"/>
+                        <outlet property="emailTextField" destination="O9y-bY-D6R" id="CZ9-02-OtP"/>
+                        <outlet property="passwordErrorLabel" destination="prU-gU-oFL" id="kZz-LP-yZu"/>
+                        <outlet property="passwordTextField" destination="jup-2c-lPX" id="ZW3-yd-afr"/>
+                        <outlet property="registerButton" destination="WD0-mO-erA" id="trY-nJ-m1x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G2J-m4-637" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100.00000000000001" y="-6.0267857142857144"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,69 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "6.34.0",
+  "iOS" : [
+    {
+      "name" : "FIRAnalyticsConnector",
+      "hash" : "92727a0093cd699d328221b9993dbad4a3ab7fc1dffa1d0607a745d8ba9f0b99",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "Firebase",
+      "hash" : "a8669248da9519e9955e00448e518e1ca6becb32689eedddde237e19ad1136ae",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "FirebaseAnalytics",
+      "hash" : "881a6aacfa33856e9b3442dda2882302830f49c9f7830ed8667eed250f0712a2",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "FirebaseCore",
+      "hash" : "631753f0d75aa121e39e87b8b82f77875bd4733a16df9816237727f801cb41d6",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "FirebaseCoreDiagnostics",
+      "hash" : "98cbc2a5dda4ce5b212320d80fc9f8c996b8c68910057d25d231b9ee4dfb5908",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "FirebaseInstallations",
+      "hash" : "01ac20f5cff938c6cec09ec282aaf2a7170ce17fcb420bfe2e1b006a1bf3a9c8",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "GoogleAppMeasurement",
+      "hash" : "52ba3ec0627e6ef6bb6135671dfa8b5e9db7094bb16604e0befd7c2ad360735b",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "GoogleDataTransport",
+      "hash" : "8abc73bff63cc72f7ad7624cb02065bcecb8d81e9c97fdc947639754e8134d40",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "GoogleUtilities",
+      "hash" : "ecf760d436abad16489c5b2f3ba8efb654f30084206ee89a7d737fc6b76e1856",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "PromisesObjC",
+      "hash" : "6d5d78b3116e6243be73da0426789ed59874c695a7128dac3e5a048ded0a31c8",
+      "linking" : "dynamic"
+    },
+    {
+      "name" : "nanopb",
+      "hash" : "8546eb9f0c665c82870fa103069baaea83adbbb3c1ab1dd2bb073cbeb9a7c0fe",
+      "linking" : "dynamic"
+    }
+  ]
+}

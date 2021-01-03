@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1029675283143-087bgrm1i9p661qev53aab5q1c9rctar.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1029675283143-087bgrm1i9p661qev53aab5q1c9rctar</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCYZom7Yya2_ZcX5n6YiB3Hjy2_W1EnPE0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1029675283143</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fetilip.fetilip-production</string>
+	<key>PROJECT_ID</key>
+	<string>fetilip-prod</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fetilip-prod.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1029675283143:ios:ed0a49f842feb01d1fc4e2</string>
+	<key>DATABASE_URL</key>
+	<string>https://fetilip-prod.firebaseio.com</string>
+</dict>
+</plist>

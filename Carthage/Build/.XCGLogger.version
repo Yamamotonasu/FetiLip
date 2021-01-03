@@ -1,0 +1,16 @@
+{
+  "commitish" : "7.0.1",
+  "iOS" : [
+    {
+      "name" : "ObjcExceptionBridging",
+      "hash" : "f6f415819403c37eec178db894e32d966025c83fd5019dc46dd39210740cbd35",
+      "linking" : "dynamic"
+    },
+    {
+      "hash" : "c7d68acf940d8f9494a9b1d3c0953d75ad39eb746681db6dedffb489d3da800e",
+      "name" : "XCGLogger",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+    }
+  ]
+}

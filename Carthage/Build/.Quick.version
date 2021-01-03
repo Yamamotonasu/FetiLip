@@ -1,0 +1,11 @@
+{
+  "commitish" : "v3.0.0",
+  "iOS" : [
+    {
+      "hash" : "bb7c2331fe830acfdbe22aa8521d5f00f38fea7575e953ecd77c86e0d210b762",
+      "name" : "Quick",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+    }
+  ]
+}

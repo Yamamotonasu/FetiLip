@@ -1,0 +1,373 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FloatingPanel
+@_exported import FloatingPanel
+import Foundation
+import Swift
+import UIKit
+import os.log
+import os
+@objc public enum FloatingPanelPosition : Swift.Int {
+  case top
+  case left
+  case bottom
+  case right
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol FloatingPanelLayoutAnchoring {
+  @objc var referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide { get }
+  @objc func layoutConstraints(_ fpc: FloatingPanel.FloatingPanelController, for position: FloatingPanel.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+@objc final public class FloatingPanelLayoutAnchor : ObjectiveC.NSObject, FloatingPanel.FloatingPanelLayoutAnchoring {
+  @objc public init(absoluteInset: CoreGraphics.CGFloat, edge: FloatingPanel.FloatingPanelReferenceEdge, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide)
+  @objc public init(fractionalInset: CoreGraphics.CGFloat, edge: FloatingPanel.FloatingPanelReferenceEdge, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide)
+  @objc final public let referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FloatingPanelLayoutAnchor {
+  @objc final public func layoutConstraints(_ vc: FloatingPanel.FloatingPanelController, for position: FloatingPanel.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+@objc final public class FloatingPanelIntrinsicLayoutAnchor : ObjectiveC.NSObject, FloatingPanel.FloatingPanelLayoutAnchoring {
+  @objc public init(absoluteOffset offset: CoreGraphics.CGFloat, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
+  @objc public init(fractionalOffset offset: CoreGraphics.CGFloat, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
+  @objc final public let referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FloatingPanelIntrinsicLayoutAnchor {
+  @objc final public func layoutConstraints(_ vc: FloatingPanel.FloatingPanelController, for position: FloatingPanel.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+@objc final public class FloatingPanelAdaptiveLayoutAnchor : ObjectiveC.NSObject, FloatingPanel.FloatingPanelLayoutAnchoring {
+  @objc public init(absoluteOffset offset: CoreGraphics.CGFloat, contentLayout: UIKit.UILayoutGuide, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
+  @objc public init(fractionalOffset offset: CoreGraphics.CGFloat, contentLayout: UIKit.UILayoutGuide, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
+  @objc final public let referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FloatingPanelAdaptiveLayoutAnchor {
+  @objc final public func layoutConstraints(_ vc: FloatingPanel.FloatingPanelController, for position: FloatingPanel.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
+}
+@_inheritsConvenienceInitializers @objc(FloatingPanelSurfaceAppearance) @objcMembers public class SurfaceAppearance : ObjectiveC.NSObject {
+  @_inheritsConvenienceInitializers @objc(FloatingPanelSurfaceAppearanceShadow) public class Shadow : ObjectiveC.NSObject {
+    @objc public var hidden: Swift.Bool
+    @objc public var color: UIKit.UIColor
+    @objc public var offset: CoreGraphics.CGSize
+    @objc public var opacity: Swift.Float
+    @objc public var radius: CoreGraphics.CGFloat
+    @objc public var spread: CoreGraphics.CGFloat
+    @objc deinit
+    @objc override dynamic public init()
+  }
+  @objc public var backgroundColor: UIKit.UIColor?
+  @objc public var cornerRadius: CoreGraphics.CGFloat
+  @objc public var shadows: [FloatingPanel.SurfaceAppearance.Shadow]
+  @objc public var borderColor: UIKit.UIColor?
+  @objc public var borderWidth: CoreGraphics.CGFloat
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(FloatingPanelSurfaceView) @objcMembers public class SurfaceView : UIKit.UIView {
+  @objc final public let grabberHandle: FloatingPanel.GrabberView
+  @objc public var grabberHandlePadding: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc public var grabberAreaOffset: CoreGraphics.CGFloat
+  @objc public var grabberHandleSize: CoreGraphics.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc weak public var contentView: UIKit.UIView?
+  @objc public var contentPadding: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public var backgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc public var appearance: FloatingPanel.SurfaceAppearance {
+    @objc get
+    @objc set
+  }
+  @objc public var containerMargins: UIKit.UIEdgeInsets {
+    @objc get
+    @objc set
+  }
+  @objc final public let containerView: UIKit.UIView
+  @objc override dynamic public class var requiresConstraintBasedLayout: Swift.Bool {
+    @objc get
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func updateConstraints()
+  @objc override dynamic public func layoutSubviews()
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
+@objc public protocol FloatingPanelLayout {
+  @objc var position: FloatingPanel.FloatingPanelPosition { get }
+  @objc var initialState: FloatingPanel.FloatingPanelState { get }
+  @objc var anchors: [FloatingPanel.FloatingPanelState : FloatingPanel.FloatingPanelLayoutAnchoring] { get }
+  @objc optional func prepareLayout(surfaceView: UIKit.UIView, in view: UIKit.UIView) -> [UIKit.NSLayoutConstraint]
+  @objc optional func backdropAlpha(for state: FloatingPanel.FloatingPanelState) -> CoreGraphics.CGFloat
+}
+@objc @_inheritsConvenienceInitializers @objcMembers open class FloatingPanelBottomLayout : ObjectiveC.NSObject, FloatingPanel.FloatingPanelLayout {
+  @objc override dynamic public init()
+  @objc open var initialState: FloatingPanel.FloatingPanelState {
+    @objc get
+  }
+  @objc open var anchors: [FloatingPanel.FloatingPanelState : FloatingPanel.FloatingPanelLayoutAnchoring] {
+    @objc get
+  }
+  @objc open var position: FloatingPanel.FloatingPanelPosition {
+    @objc get
+  }
+  @objc open func prepareLayout(surfaceView: UIKit.UIView, in view: UIKit.UIView) -> [UIKit.NSLayoutConstraint]
+  @objc open func backdropAlpha(for state: FloatingPanel.FloatingPanelState) -> CoreGraphics.CGFloat
+  @objc deinit
+}
+@objc public enum FloatingPanelReferenceEdge : Swift.Int {
+  case top
+  case left
+  case bottom
+  case right
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum FloatingPanelLayoutReferenceGuide : Swift.Int {
+  case superview = 0
+  case safeArea = 1
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(FloatingPanelBackdropView) public class BackdropView : UIKit.UIView {
+  public var dismissalTapGestureRecognizer: UIKit.UITapGestureRecognizer!
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class FloatingPanelPanGestureRecognizer : UIKit.UIPanGestureRecognizer {
+  @objc override final public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent)
+  @objc override weak final public var delegate: UIKit.UIGestureRecognizerDelegate? {
+    @objc get
+    @objc set
+  }
+  weak final public var delegateProxy: UIKit.UIGestureRecognizerDelegate? {
+    get
+    set
+  }
+  @objc deinit
+  @objc override dynamic public init(target: Any?, action: ObjectiveC.Selector?)
+}
+@objc public protocol FloatingPanelControllerDelegate : AnyObject {
+  @objc(floatingPanel:layoutForTraitCollection:) optional func floatingPanel(_ fpc: FloatingPanel.FloatingPanelController, layoutFor newCollection: UIKit.UITraitCollection) -> FloatingPanel.FloatingPanelLayout
+  @objc(floatingPanel:layoutForSize:) optional func floatingPanel(_ fpc: FloatingPanel.FloatingPanelController, layoutFor size: CoreGraphics.CGSize) -> FloatingPanel.FloatingPanelLayout
+  @objc(floatingPanel:animatorForPresentingToState:) optional func floatingPanel(_ fpc: FloatingPanel.FloatingPanelController, animatorForPresentingTo state: FloatingPanel.FloatingPanelState) -> UIKit.UIViewPropertyAnimator
+  @objc(floatingPanel:animatorForDismissingWithVelocity:) optional func floatingPanel(_ fpc: FloatingPanel.FloatingPanelController, animatorForDismissingWith velocity: CoreGraphics.CGVector) -> UIKit.UIViewPropertyAnimator
+  @objc optional func floatingPanelDidChangePosition(_ fpc: FloatingPanel.FloatingPanelController)
+  @objc optional func floatingPanelShouldBeginDragging(_ fpc: FloatingPanel.FloatingPanelController) -> Swift.Bool
+  @objc optional func floatingPanelDidMove(_ fpc: FloatingPanel.FloatingPanelController)
+  @objc optional func floatingPanelWillBeginDragging(_ fpc: FloatingPanel.FloatingPanelController)
+  @objc optional func floatingPanelWillEndDragging(_ fpc: FloatingPanel.FloatingPanelController, withVelocity velocity: CoreGraphics.CGPoint, targetState: Swift.UnsafeMutablePointer<FloatingPanel.FloatingPanelState>)
+  @objc optional func floatingPanelDidEndDragging(_ fpc: FloatingPanel.FloatingPanelController, willAttract attract: Swift.Bool)
+  @objc optional func floatingPanelWillBeginAttracting(_ fpc: FloatingPanel.FloatingPanelController, to state: FloatingPanel.FloatingPanelState)
+  @objc optional func floatingPanelDidEndAttracting(_ fpc: FloatingPanel.FloatingPanelController)
+  @objc(floatingPanel:shouldRemoveAtLocation:withVelocity:) optional func floatingPanel(_ fpc: FloatingPanel.FloatingPanelController, shouldRemoveAt location: CoreGraphics.CGPoint, with velocity: CoreGraphics.CGVector) -> Swift.Bool
+  @objc(floatingPanelWillRemove:) optional func floatingPanelWillRemove(_ fpc: FloatingPanel.FloatingPanelController)
+  @objc optional func floatingPanelDidRemove(_ fpc: FloatingPanel.FloatingPanelController)
+  @objc(floatingPanel:contentOffsetForPinningScrollView:) optional func floatingPanel(_ fpc: FloatingPanel.FloatingPanelController, contentOffsetForPinning trackingScrollView: UIKit.UIScrollView) -> CoreGraphics.CGPoint
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc open class FloatingPanelController : UIKit.UIViewController {
+  @objc public enum ContentInsetAdjustmentBehavior : Swift.Int {
+    case always
+    case never
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public enum ContentMode : Swift.Int {
+    case `static`
+    case fitToBounds
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc weak public var delegate: FloatingPanel.FloatingPanelControllerDelegate? {
+    @objc get
+    @objc set
+  }
+  @objc public var surfaceView: FloatingPanel.SurfaceView! {
+    @objc get
+  }
+  @objc public var backdropView: FloatingPanel.BackdropView! {
+    @objc get
+  }
+  @objc weak public var trackingScrollView: UIKit.UIScrollView? {
+    @objc get
+  }
+  @objc public var panGestureRecognizer: FloatingPanel.FloatingPanelPanGestureRecognizer {
+    @objc get
+  }
+  @objc public var state: FloatingPanel.FloatingPanelState {
+    @objc get
+  }
+  @objc public var isAttracting: Swift.Bool {
+    @objc get
+  }
+  @objc public var layout: FloatingPanel.FloatingPanelLayout {
+    @objc get
+    @objc set
+  }
+  @objc public var behavior: FloatingPanel.FloatingPanelBehavior {
+    @objc get
+    @objc set
+  }
+  @objc public var adjustedContentInsets: UIKit.UIEdgeInsets {
+    @objc get
+  }
+  @objc public var contentInsetAdjustmentBehavior: FloatingPanel.FloatingPanelController.ContentInsetAdjustmentBehavior
+  @objc public var isRemovalInteractionEnabled: Swift.Bool {
+    @objc(isRemovalInteractionEnabled) get
+    @objc(setRemovalInteractionEnabled:) set
+  }
+  @objc public var contentViewController: UIKit.UIViewController? {
+    @objc get
+    @objc set
+  }
+  public var nearbyState: FloatingPanel.FloatingPanelState {
+    get
+  }
+  @objc public var contentMode: FloatingPanel.FloatingPanelController.ContentMode {
+    @objc get
+    @objc set
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc public init(delegate: FloatingPanel.FloatingPanelControllerDelegate? = nil)
+  @objc override dynamic open func loadView()
+  @objc override dynamic open func viewDidLayoutSubviews()
+  @objc override dynamic open func viewWillTransition(to size: CoreGraphics.CGSize, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc override dynamic open func willTransition(to newCollection: UIKit.UITraitCollection, with coordinator: UIKit.UIViewControllerTransitionCoordinator)
+  @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override dynamic open var childForStatusBarStyle: UIKit.UIViewController? {
+    @objc get
+  }
+  @objc override dynamic open var childForStatusBarHidden: UIKit.UIViewController? {
+    @objc get
+  }
+  @objc override dynamic open var childForScreenEdgesDeferringSystemGestures: UIKit.UIViewController? {
+    @objc get
+  }
+  @objc override dynamic open var childForHomeIndicatorAutoHidden: UIKit.UIViewController? {
+    @objc get
+  }
+  @objc(show:completion:) public func show(animated: Swift.Bool = false, completion: (() -> Swift.Void)? = nil)
+  @objc(hide:completion:) public func hide(animated: Swift.Bool = false, completion: (() -> Swift.Void)? = nil)
+  @objc(addPanelToParent:at:animated:) public func addPanel(toParent parent: UIKit.UIViewController, at viewIndex: Swift.Int = -1, animated: Swift.Bool = false)
+  @objc(removePanelFromParent:completion:) public func removePanelFromParent(animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc(moveToState:animated:completion:) public func move(to: FloatingPanel.FloatingPanelState, animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  public func set(contentViewController: UIKit.UIViewController?)
+  @objc(trackScrollView:) public func track(scrollView: UIKit.UIScrollView)
+  @objc(untrackScrollView:) public func untrack(scrollView: UIKit.UIScrollView)
+  @objc override dynamic open func accessibilityPerformEscape() -> Swift.Bool
+  @objc public func invalidateLayout()
+  @objc public func surfaceLocation(for state: FloatingPanel.FloatingPanelState) -> CoreGraphics.CGPoint
+  @objc public var surfaceLocation: CoreGraphics.CGPoint {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+}
+extension UIViewController {
+  @objc dynamic public func fp_original_dismiss(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc dynamic public func fp_dismiss(animated flag: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+}
+@objc public protocol FloatingPanelBehavior {
+  @objc optional var springDecelerationRate: CoreGraphics.CGFloat { get }
+  @objc optional var springResponseTime: CoreGraphics.CGFloat { get }
+  @objc optional var momentumProjectionRate: CoreGraphics.CGFloat { get }
+  @objc optional func shouldProjectMomentum(_ fpc: FloatingPanel.FloatingPanelController, to proposedTargetPosition: FloatingPanel.FloatingPanelState) -> Swift.Bool
+  @objc optional func redirectionalProgress(_ fpc: FloatingPanel.FloatingPanelController, from: FloatingPanel.FloatingPanelState, to: FloatingPanel.FloatingPanelState) -> CoreGraphics.CGFloat
+  @objc optional func allowsRubberBanding(for edge: UIKit.UIRectEdge) -> Swift.Bool
+}
+open class FloatingPanelDefaultBehavior : FloatingPanel.FloatingPanelBehavior {
+  public init()
+  @objc open var springDecelerationRate: CoreGraphics.CGFloat {
+    @objc get
+  }
+  @objc open var springResponseTime: CoreGraphics.CGFloat {
+    @objc get
+  }
+  @objc open var momentumProjectionRate: CoreGraphics.CGFloat {
+    @objc get
+  }
+  @objc open func redirectionalProgress(_ fpc: FloatingPanel.FloatingPanelController, from: FloatingPanel.FloatingPanelState, to: FloatingPanel.FloatingPanelState) -> CoreGraphics.CGFloat
+  @objc open func allowsRubberBanding(for edge: UIKit.UIRectEdge) -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc(FloatingPanelGrabberView) public class GrabberView : UIKit.UIView {
+  public var barColor: UIKit.UIColor {
+    get
+    set
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc override dynamic public func layoutSubviews()
+  @objc override dynamic public func hitTest(_ point: CoreGraphics.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+extension UISpringTimingParameters {
+  convenience public init(decelerationRate: CoreGraphics.CGFloat, frequencyResponse: CoreGraphics.CGFloat, initialVelocity: CoreGraphics.CGVector = .zero)
+  convenience public init(dampingRatio: CoreGraphics.CGFloat, frequencyResponse: CoreGraphics.CGFloat, initialVelocity: CoreGraphics.CGVector = .zero)
+}
+@objc public class FloatingPanelState : ObjectiveC.NSObject, Foundation.NSCopying, Swift.RawRepresentable {
+  public typealias RawValue = Swift.String
+  required public init?(rawValue: FloatingPanel.FloatingPanelState.RawValue)
+  public init(rawValue: FloatingPanel.FloatingPanelState.RawValue, order: Swift.Int)
+  final public let rawValue: FloatingPanel.FloatingPanelState.RawValue
+  final public let order: Swift.Int
+  @objc public func copy(with zone: ObjectiveC.NSZone? = nil) -> Any
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc override dynamic public var debugDescription: Swift.String {
+    @objc get
+  }
+  @objc(Full) public static let full: FloatingPanel.FloatingPanelState
+  @objc(Half) public static let half: FloatingPanel.FloatingPanelState
+  @objc(Tip) public static let tip: FloatingPanel.FloatingPanelState
+  @objc(Hidden) public static let hidden: FloatingPanel.FloatingPanelState
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension FloatingPanel.FloatingPanelPosition : Swift.Equatable {}
+extension FloatingPanel.FloatingPanelPosition : Swift.Hashable {}
+extension FloatingPanel.FloatingPanelPosition : Swift.RawRepresentable {}
+extension FloatingPanel.FloatingPanelReferenceEdge : Swift.Equatable {}
+extension FloatingPanel.FloatingPanelReferenceEdge : Swift.Hashable {}
+extension FloatingPanel.FloatingPanelReferenceEdge : Swift.RawRepresentable {}
+extension FloatingPanel.FloatingPanelLayoutReferenceGuide : Swift.Equatable {}
+extension FloatingPanel.FloatingPanelLayoutReferenceGuide : Swift.Hashable {}
+extension FloatingPanel.FloatingPanelLayoutReferenceGuide : Swift.RawRepresentable {}
+extension FloatingPanel.FloatingPanelController.ContentInsetAdjustmentBehavior : Swift.Equatable {}
+extension FloatingPanel.FloatingPanelController.ContentInsetAdjustmentBehavior : Swift.Hashable {}
+extension FloatingPanel.FloatingPanelController.ContentInsetAdjustmentBehavior : Swift.RawRepresentable {}
+extension FloatingPanel.FloatingPanelController.ContentMode : Swift.Equatable {}
+extension FloatingPanel.FloatingPanelController.ContentMode : Swift.Hashable {}
+extension FloatingPanel.FloatingPanelController.ContentMode : Swift.RawRepresentable {}

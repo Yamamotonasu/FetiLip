@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select Mode View Controller-->
+        <scene sceneID="qcm-79-6U9">
+            <objects>
+                <viewController storyboardIdentifier="selectModeViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="fBz-SS-CGT" customClass="SelectModeViewController" customModule="fetilip" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="953-xo-MfT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BoR-2f-tQs">
+                                <rect key="frame" x="60" y="378" width="294" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="jUa-Qu-Mhs">
+                                        <rect key="frame" x="62" y="40" width="170" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fzb-MR-RmC">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Fzb-MR-RmC" secondAttribute="height" multiplier="1:1" id="bg7-Xi-WlB"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="select_camera"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFa-e4-ty7">
+                                                <rect key="frame" x="100" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="oFa-e4-ty7" secondAttribute="height" multiplier="1:1" id="bvJ-rQ-OYg"/>
+                                                    <constraint firstAttribute="width" secondItem="oFa-e4-ty7" secondAttribute="height" multiplier="1:1" id="jKJ-VY-o6e"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="select_photo"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="jUa-Qu-Mhs" firstAttribute="top" secondItem="BoR-2f-tQs" secondAttribute="top" constant="40" id="NIw-qb-E0f"/>
+                                    <constraint firstAttribute="bottom" secondItem="jUa-Qu-Mhs" secondAttribute="bottom" constant="40" id="Nim-D1-m98"/>
+                                    <constraint firstItem="jUa-Qu-Mhs" firstAttribute="centerX" secondItem="BoR-2f-tQs" secondAttribute="centerX" id="lIa-eu-IsC"/>
+                                    <constraint firstAttribute="height" constant="150" id="mF3-ec-nfu"/>
+                                    <constraint firstItem="jUa-Qu-Mhs" firstAttribute="centerY" secondItem="BoR-2f-tQs" secondAttribute="centerY" id="t63-bu-EDb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.6588235294" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.84597067636986301" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BoR-2f-tQs" firstAttribute="leading" secondItem="Zlf-My-gf8" secondAttribute="leading" constant="60" id="6tZ-Jz-fob"/>
+                            <constraint firstItem="Zlf-My-gf8" firstAttribute="trailing" secondItem="BoR-2f-tQs" secondAttribute="trailing" constant="60" id="HyC-NV-8Rz"/>
+                            <constraint firstItem="BoR-2f-tQs" firstAttribute="centerY" secondItem="Zlf-My-gf8" secondAttribute="centerY" id="L9Y-Im-mKb"/>
+                            <constraint firstItem="BoR-2f-tQs" firstAttribute="centerX" secondItem="Zlf-My-gf8" secondAttribute="centerX" id="Rga-vB-Muu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zlf-My-gf8"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="Fzb-MR-RmC" id="6FI-wD-JQA"/>
+                        <outlet property="libraryButton" destination="oFa-e4-ty7" id="uPe-VD-6jH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3SM-MW-yX9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94.20289855072464" y="89.732142857142847"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="select_camera" width="90.5" height="88"/>
+        <image name="select_photo" width="90.5" height="88"/>
+    </resources>
+</document>
