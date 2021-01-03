@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
             self?.dismiss(animated: true) {
                 // LoginConfirmからログインさせるなら、この処理は考え直す必要がある
                 presenting?.dismiss(animated: true)
-                AppAlert.show(message: "ログインしました", alertType: .info)
+                AppAlert.show(message: R._string.doneLogin, alertType: .info)
             }
         }).disposed(by: rx.disposeBag)
     }

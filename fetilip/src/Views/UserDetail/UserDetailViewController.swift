@@ -107,10 +107,10 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
             .disposed(by: rx.disposeBag)
 
         output.userBlockResult.subscribe(onNext: { [unowned self]_ in
-            AppAlert.show(message: "\(displayUserDomainModel!.userName)さんをブロックしました。", alertType: .info)
+            AppAlert.show(message: R._string.success.block(targetUserName: displayUserDomainModel!.userName), alertType: .info)
             self.dismiss(animated: true)
         }, onError: { _ in
-            AppAlert.show(message: "ブロックに失敗しました。時間を置いて再度お試しください。", alertType: .error)
+            AppAlert.show(message: R._string.error.block, alertType: .error)
         }).disposed(by: rx.disposeBag)
 
         output.loading.subscribe(onNext: { bool in
@@ -128,11 +128,11 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     @objc private func menuTap() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "ブロックする", style: .default, handler: { [unowned self] _ in
+        actionSheet.addAction(UIAlertAction(title: R._string.block, style: .default, handler: { [unowned self] _ in
             self.blockEvent(type: (.add, displayUserUid!))
         }))
 
-        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
 
         self.present(actionSheet, animated: true)
     }
