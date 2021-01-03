@@ -147,10 +147,10 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
                 // Delete post deleted.
                 let refreshLoadType: RefreshLoadType = self?.fromMyPostList == true ? .refreshMyPost : .refresh
                 PostListViewController.refreshSubject.onNext(refreshLoadType)
-                AppAlert.show(message: "削除しました", alertType: .success)
+                AppAlert.show(message: R._string.success.delete, alertType: .success)
             }, onError: { e in
                 log.error(e.localizedDescription)
-                AppAlert.show(message: "削除に失敗しました", alertType: .error)
+                AppAlert.show(message: R._string.error.delete, alertType: .error)
             }).disposed(by: rx.disposeBag)
     }
 
@@ -222,11 +222,11 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func displayDeleteAlert() {
-        let actionSheet = UIAlertController(title: "本当に投稿を削除しますか？", message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "削除する", style: .default, handler: { [unowned self] _ in
+        let actionSheet = UIAlertController(title: R._string.success.reallyWantToDelete, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: R._string.success.delete, style: .default, handler: { [unowned self] _ in
             self.deleteEvent.onNext(self.field)
         }))
-        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
         self.present(actionSheet, animated: true)
     }
 

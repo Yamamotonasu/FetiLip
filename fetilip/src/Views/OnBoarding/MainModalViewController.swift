@@ -38,9 +38,9 @@ class MainModalViewController: UIViewController {
     }
 
     private func setupTermAndPrivacyPolicy() {
-        let term = "利用規約"
-        let privacyPolicy = "プライバシーポリシー"
-        let baseString = "\(term)、\(privacyPolicy)に同意する。"
+        let term = R._string.term
+        let privacyPolicy = R._string.privacyPolicy
+        let baseString = R._string.termAndPrivacyPolicy
         let attributedString = NSMutableAttributedString(attributedString: termAndPrivacyPolicyTextView.attributedText )
 
         let termUrl: String = RemoteConfigParameters.termUrl.stringValue?.isEmpty == true ? Constants.termUrl : RemoteConfigParameters.termUrl.stringValue!
