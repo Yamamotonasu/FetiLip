@@ -58,6 +58,7 @@ class LoginConfirmViewController: UIViewController {
         let output = viewModel.transform(input: input)
 
         output.createAnonymousUserResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
+            PostListViewController.refreshSubject.onNext(.refresh)
             self?.dismiss(animated: true)
         }).disposed(by: rx.disposeBag)
 
