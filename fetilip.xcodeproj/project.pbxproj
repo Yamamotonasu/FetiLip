@@ -2796,7 +2796,7 @@
 				CODE_SIGN_ENTITLEMENTS = fetilip/fetilip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
 				EXCLUDED_ARCHS = "arm64e arm64";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2832,7 +2832,7 @@
 				CODE_SIGN_ENTITLEMENTS = fetilip/fetilip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
 				EXCLUDED_ARCHS = "arm64e arm64";
 				FRAMEWORK_SEARCH_PATHS = (
