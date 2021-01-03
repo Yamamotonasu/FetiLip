@@ -219,6 +219,14 @@ describe("postsコレクションのセキュリティルールテスト", () =>
         const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
         await firebase.assertSucceeds(postDocumentRef.update(testData))
       })
+      test("updatedAtを更新しないと更新出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          review: ""
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.update(testData))
+      })
     });
     describe("delete", () => {
       test("自身の投稿が削除出来る", async() => {
