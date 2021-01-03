@@ -27,7 +27,6 @@ describe("postsコレクションのセキュリティルールテスト", () =>
 
   const testDocumentID = "testPost"
 
-
   describe(constant.postsCollectionPath, () => {
     describe("create", () => {
       beforeEach(async () => {
@@ -139,6 +138,50 @@ describe("postsコレクションのセキュリティルールテスト", () =>
       });
     });
     describe("update", () => {
+      beforeEach(async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const correctPostData = {
+          userRef: db.collection(constant.usersCollectionPath).doc(constant.testUserDocumentID),
+          userUid: `${constant.testUserDocumentID}`,
+          imageRef: `posts/${constant.testUserDocumentID}/aaa.jpeg`,
+          review: 'a'.repeat(1000),
+          createdAt: firestore.FieldValue.serverTimestamp(),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        };
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await postDocumentRef.set(correctPostData);
+      });
+      afterEach(async () => {
+        await firebase.clearFirestoreData({ projectId: constant.PROJECT_ID });
+      });
+
+      test("ストレージへの参照が正常な場合でも更新出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          imageRef: "posts/test",
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.update(testData))
+      });
+      test("ストレージへの参照が不正な場合は更新出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+      });
+      test("投稿ユーザーの識別子は更新出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+      });
+      test("ユーザーのドキュメントリファレンスは更新出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+      });
+      test("レビューの更新が出来る", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          review: "test review.",
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertSucceeds(postDocumentRef.update(testData))
+      });
     });
     describe("delete", () => {
       test("自身の投稿が削除出来る", async() => {
