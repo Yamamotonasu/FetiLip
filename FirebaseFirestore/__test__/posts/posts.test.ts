@@ -166,22 +166,59 @@ describe("postsコレクションのセキュリティルールテスト", () =>
       });
       test("ストレージへの参照が不正な場合は更新出来ない", async () => {
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          imageRef: "bbb",
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.update(testData))
       });
       test("投稿ユーザーの識別子は更新出来ない", async () => {
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          imageRef: "userUid",
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.update(testData))
       });
       test("ユーザーのドキュメントリファレンスは更新出来ない", async () => {
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          userRef: "userRef",
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.update(testData))
       });
       test("レビューの更新が出来る", async () => {
         const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
         const testData = {
-          review: "test review.",
+          review: "a".repeat(1000),
           updatedAt: firestore.FieldValue.serverTimestamp()
         }
         const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
         await firebase.assertSucceeds(postDocumentRef.update(testData))
       });
+      test("レビューは1001文字以上だと更新出来ない", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          review: "a".repeat(1001),
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertFails(postDocumentRef.update(testData))
+      })
+
+      test("レビュー空でも更新出来る", async () => {
+        const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+        const testData = {
+          review: "",
+          updatedAt: firestore.FieldValue.serverTimestamp()
+        }
+        const postDocumentRef: firestore.DocumentReference = db.collection(constant.postsCollectionPath).doc(testDocumentID);
+        await firebase.assertSucceeds(postDocumentRef.update(testData))
+      })
     });
     describe("delete", () => {
       test("自身の投稿が削除出来る", async() => {

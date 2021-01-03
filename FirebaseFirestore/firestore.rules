@@ -45,6 +45,8 @@ service cloud.firestore {
       && resource.data.imageRef == request.resource.data.imageRef
       && resource.data.userRef == request.resource.data.userRef
       && resource.data.userUid == request.resource.data.userUid
+      && incomingData().userRef == userDocumentPath(request.auth.uid)
+      && validateString(incomingData().review, 0, 1000)
       && validateUpdateTime(incomingData());
       allow delete: if isUserAuthenticated(request.auth.uid);
     }
