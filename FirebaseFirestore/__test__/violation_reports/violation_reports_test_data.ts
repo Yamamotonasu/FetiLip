@@ -1,7 +1,6 @@
 import { firestore } from 'firebase';
-import * as firebase from "@firebase/testing";
 
-export const violationReportsCollectionPath = "version/v1/violationReports"
+export const violationReportsCollectionPath = "version/1/violationReports"
 
 interface ViolationReport {
     targetUid: string,
