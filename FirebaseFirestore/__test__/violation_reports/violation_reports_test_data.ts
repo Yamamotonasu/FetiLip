@@ -11,6 +11,8 @@ interface ViolationReport {
 }
 
 interface IncorrectViolationReport {
+    dummy?: string,
+    targetUid?: string,
     targetPostId: string,
     targetImageRef: string,
     createdAt: firestore.FieldValue,
@@ -20,14 +22,40 @@ interface IncorrectViolationReport {
 export const correctViolationReport: ViolationReport = {
     targetUid: "test",
     targetPostId: "testId",
-    targetImageRef: "",
+    targetImageRef: "posts/testId",
     createdAt: firestore.FieldValue.serverTimestamp(),
     updatedAt: firestore.FieldValue.serverTimestamp()
 }
 
+/**
+ * Data size is 4
+ */
 export const incorrectViolationReport: IncorrectViolationReport = {
     targetPostId: "testId",
-    targetImageRef: "",
+    targetImageRef: "posts/testId",
+    createdAt: firestore.FieldValue.serverTimestamp(),
+    updatedAt: firestore.FieldValue.serverTimestamp()
+}
+
+/**
+ * Data size is 6
+ */
+export const incorrectViolationReport2: IncorrectViolationReport = {
+    dummy: "",
+    targetUid: "",
+    targetPostId: "testId",
+    targetImageRef: "posts/testId",
+    createdAt: firestore.FieldValue.serverTimestamp(),
+    updatedAt: firestore.FieldValue.serverTimestamp()
+}
+
+/**
+ * Difference post id
+ */
+export const incorrectViolationReport3: IncorrectViolationReport = {
+    targetUid: "test",
+    targetPostId: "testId",
+    targetImageRef: "post/testId",
     createdAt: firestore.FieldValue.serverTimestamp(),
     updatedAt: firestore.FieldValue.serverTimestamp()
 }

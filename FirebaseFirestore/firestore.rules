@@ -33,7 +33,8 @@ service cloud.firestore {
       allow create:
       if isAnyAuthenticated()
       && isValidateViolationReports(incomingData())
-      && validateRequestTime(incomingData());
+      && validateRequestTime(incomingData())
+      && incomingData().targetImageRef.matches('^posts/.+$');
       allow update: if false;
       allow delete: if false;
       allow read: if false;

@@ -40,6 +40,16 @@ describe("violationReportsコレクションのセキュリティルールテス
             const violationReportsCollectionPath = db.collection(violationReportTestData.violationReportsCollectionPath)
             await firebase.assertFails(violationReportsCollectionPath.add(violationReportTestData.incorrectViolationReport))
         })
+        test("データサイズが4なら作成出来ない", async () => {
+            const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+            const violationReportsCollectionPath = db.collection(violationReportTestData.violationReportsCollectionPath)
+            await firebase.assertFails(violationReportsCollectionPath.add(violationReportTestData.incorrectViolationReport2))
+        })
+        test('画像のリファレンスが不正なら作成出来ない', async () => {
+            const db = testModules.createAuthApp({ uid: constant.testUserDocumentID });
+            const violationReportsCollectionPath = db.collection(violationReportTestData.violationReportsCollectionPath)
+            await firebase.assertFails(violationReportsCollectionPath.add(violationReportTestData.incorrectViolationReport3))
+        })
     })
   })
 })
