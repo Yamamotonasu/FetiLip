@@ -206,6 +206,7 @@
                         <outlet property="deleteButton" destination="BD7-jy-nZo" id="Axn-Xn-ADr"/>
                         <outlet property="editButton" destination="4xe-eb-WST" id="fpM-KZ-mjV"/>
                         <outlet property="lipImageView" destination="A42-uA-tdc" id="QSR-ew-bUk"/>
+                        <outlet property="menuButton" destination="5IH-g5-4Ta" id="vBU-Ve-qBN"/>
                         <outlet property="reviewTextView" destination="sv4-kT-ni0" id="s7t-uR-vs6"/>
                         <outlet property="scrollView" destination="sd9-pE-OKy" id="c6h-le-Utk"/>
                         <outlet property="userImage" destination="vqM-g8-0Zd" id="OIx-LX-2vz"/>

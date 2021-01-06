@@ -57,6 +57,9 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet private weak var deleteButton: UIButton!
 
+    @IBOutlet private weak var menuButton: UIButton!
+
+
     // MARK: - Properties
 
     let transitionController: ZoomTransitionController = ZoomTransitionController()
@@ -75,6 +78,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
     private let deleteEvent: PublishSubject<PostDomainModel> = PublishSubject()
+
+    private let violationReportEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
     private var isMyPost: Bool {
         return LoginAccountData.uid! == field.userUid
@@ -121,10 +126,16 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         deleteButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.displayDeleteAlert()
         }).disposed(by: rx.disposeBag)
+
+        menuButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            self.displayMenu()
+        }).disposed(by: rx.disposeBag)
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable(), deleteEvent: deleteEvent)
+        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable(),
+                                    deleteEvent: deleteEvent,
+                                    violationReportEvent: violationReportEvent)
         let output = viewModel.transform(input: input)
 
         output.userDataObservable.retryWithRetryAlert { [weak self] _ in
@@ -222,6 +233,15 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         let actionSheet = UIAlertController(title: R._string.success.reallyWantToDelete, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: R._string.success.delete, style: .default, handler: { [unowned self] _ in
             self.deleteEvent.onNext(self.field)
+        }))
+        actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
+        self.present(actionSheet, animated: true)
+    }
+
+    private func displayMenu() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: R._string.view_message.violationReport, style: .default, handler: { [unowned self] _ in
+            self.violationReportEvent.onNext(self.field)
         }))
         actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
         self.present(actionSheet, animated: true)

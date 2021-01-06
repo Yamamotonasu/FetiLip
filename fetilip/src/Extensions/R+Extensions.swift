@@ -167,6 +167,10 @@ extension R {
             static let selectImage = "画像を選択する"
 
             static let postTemplate = "使用した口紅: \n\n使用した感想:\n"
+
+            // MARK: - PostLipDetail
+
+            static let violationReport = "この投稿を報告する"
         }
 
         struct common {
