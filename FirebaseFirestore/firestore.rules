@@ -29,6 +29,16 @@ service cloud.firestore {
       allow read:
       if isAnyAuthenticated();
     }
+    match /version/1/violationReports/{violationReportID} {
+      allow create:
+      if isAnyAuthenticated()
+      && isValidateViolationReports(incomingData())
+      && validateRequestTime(incomingData())
+      && incomingData().targetImageRef.matches('^posts/.+$');
+      allow update: if false;
+      allow delete: if false;
+      allow read: if false;
+    }
     match /version/1/posts/{postID} {
       allow create:
       if isAnyAuthenticated()
@@ -180,6 +190,15 @@ service cloud.firestore {
       && 'targetUid' in userBlock && userBlock.targetUid is string
       && 'createdAt' in userBlock && userBlock.createdAt is timestamp
       && 'updatedAt' in userBlock && userBlock.updatedAt is timestamp;
+    }
+
+    function isValidateViolationReports(violationReport) {
+      return violationReport.size() == 5
+      && 'targetUid' in violationReport && violationReport.targetUid is string
+      && 'targetPostId' in violationReport && violationReport.targetPostId is string
+      && 'targetImageRef' in violationReport && violationReport.targetImageRef is string
+      && 'createdAt' in violationReport && violationReport.createdAt is timestamp
+      && 'updatedAt' in violationReport && violationReport.updatedAt is timestamp;
     }
   }
 }
