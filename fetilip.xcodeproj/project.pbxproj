@@ -220,6 +220,7 @@
 		EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */; };
 		EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47425A7E533005DC446 /* ViolationReportClient.swift */; };
 		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
+		EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48425A7E824005DC446 /* ViolationReportModel.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -712,6 +713,7 @@
 		EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockDomainModel.swift; sourceTree = "<group>"; };
 		EA49D47425A7E533005DC446 /* ViolationReportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportClient.swift; sourceTree = "<group>"; };
 		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
+		EA49D48425A7E824005DC446 /* ViolationReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportModel.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -1570,6 +1572,7 @@
 		039EB689243B5F570016436C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D48325A7E80F005DC446 /* ViolationReports */,
 				036A450024711D9500DD9282 /* Posts */,
 				035BAFE824598A31001FF6D1 /* Users */,
 			);
@@ -2148,6 +2151,14 @@
 			path = ViolationReports;
 			sourceTree = "<group>";
 		};
+		EA49D48325A7E80F005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D48425A7E824005DC446 /* ViolationReportModel.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2534,6 +2545,7 @@
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
 				035F6DAA24F4AA5D00991231 /* UILabel+Extensions.swift in Sources */,
+				EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */,
 				035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */,
 				0369378E2545164500FEC1DA /* UserDetailViewModel.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
