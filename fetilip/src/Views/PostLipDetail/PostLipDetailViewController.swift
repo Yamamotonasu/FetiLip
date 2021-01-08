@@ -59,7 +59,6 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet private weak var menuButton: UIButton!
 
-
     // MARK: - Properties
 
     let transitionController: ZoomTransitionController = ZoomTransitionController()
@@ -150,7 +149,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             guard let _self = self else { return }
             _self.deleteEvent.onNext(_self.field)
         }.observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] documentReference in
+            .subscribe(onNext: { [weak self] _ in
                 self?.navigationController?.popViewController(animated: true)
                 // Delete post deleted.
                 let refreshLoadType: RefreshLoadType = self?.fromMyPostList == true ? .refreshMyPost : .refresh
