@@ -123,6 +123,10 @@ extension R {
                 return "\(targetUserName)さんをブロックしました。"
             }
 
+            // MARK: - ViolationReports
+
+            static let violationReports = "報告ありがとうございます。運営で投稿を確認し、適切な処置を行います。"
+
         }
 
         struct validation {
@@ -169,6 +173,8 @@ extension R {
             static let postTemplate = "使用した口紅: \n\n使用した感想:\n"
 
             // MARK: - PostLipDetail
+
+            static let deletePost = "削除する"
 
             static let confirmationSendingReport = "この投稿を不適切な投稿として運営へ報告しますか？"
 

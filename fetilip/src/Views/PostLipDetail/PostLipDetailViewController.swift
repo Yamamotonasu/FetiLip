@@ -165,7 +165,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             guard let _self = self else { return }
             _self.violationReportEvent.onNext(_self.field)
         }.subscribe(onNext: { _ in
-            AppAlert.show(message: R._string.success.delete, alertType: .success)
+            AppAlert.show(message: R._string.success.violationReports, alertType: .success)
         }, onError: { e in
             log.error(e.localizedDescription)
         }).disposed(by: rx.disposeBag)
@@ -240,7 +240,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     private func displayDeleteAlert() {
         let actionSheet = UIAlertController(title: R._string.success.reallyWantToDelete, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: R._string.success.delete, style: .default, handler: { [unowned self] _ in
+        actionSheet.addAction(UIAlertAction(title: R._string.view_message.deletePost, style: .default, handler: { [unowned self] _ in
             self.deleteEvent.onNext(self.field)
         }))
         actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
