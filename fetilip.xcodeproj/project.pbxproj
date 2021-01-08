@@ -221,6 +221,7 @@
 		EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47425A7E533005DC446 /* ViolationReportClient.swift */; };
 		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
 		EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48425A7E824005DC446 /* ViolationReportModel.swift */; };
+		EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -714,6 +715,7 @@
 		EA49D47425A7E533005DC446 /* ViolationReportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportClient.swift; sourceTree = "<group>"; };
 		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
 		EA49D48425A7E824005DC446 /* ViolationReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportModel.swift; sourceTree = "<group>"; };
+		EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportsRequest.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -1152,6 +1154,7 @@
 		035BAFFB246035B7001FF6D1 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D48A25A7E8EC005DC446 /* ViolationReports */,
 				036A450E2472CC2F00DD9282 /* Posts */,
 				035BAFFE246035E3001FF6D1 /* Users */,
 			);
@@ -2159,6 +2162,14 @@
 			path = ViolationReports;
 			sourceTree = "<group>";
 		};
+		EA49D48A25A7E8EC005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2520,6 +2531,7 @@
 				0369378B2545045900FEC1DA /* UserDetailViewController.swift in Sources */,
 				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
+				EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
