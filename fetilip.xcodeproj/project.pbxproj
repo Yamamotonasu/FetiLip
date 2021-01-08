@@ -218,6 +218,7 @@
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
 		EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */; };
+		EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47425A7E533005DC446 /* ViolationReportClient.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -708,6 +709,7 @@
 		9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
 		EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockDomainModel.swift; sourceTree = "<group>"; };
+		EA49D47425A7E533005DC446 /* ViolationReportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportClient.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -1114,6 +1116,7 @@
 		035BAFEE2459AD3C001FF6D1 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D47325A7E50D005DC446 /* ViolationReports */,
 				036A450B2472CB6E00DD9282 /* Posts */,
 				035BAFEF2459AD52001FF6D1 /* Users */,
 			);
@@ -2126,6 +2129,14 @@
 			path = Blocks;
 			sourceTree = "<group>";
 		};
+		EA49D47325A7E50D005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D47425A7E533005DC446 /* ViolationReportClient.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2549,6 +2560,7 @@
 				035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */,
 				EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */,
 				035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */,
+				EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */,
 				0363196E250C95A4005B317A /* RemoteConfigModel.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,
