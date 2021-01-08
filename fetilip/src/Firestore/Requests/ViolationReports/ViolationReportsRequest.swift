@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 public enum ViolationReportsRequest: FirestoreRequest {
 
@@ -21,6 +22,8 @@ public enum ViolationReportsRequest: FirestoreRequest {
             params[Fields.Key.targetUid.rawValue] = targetUid
             params[Fields.Key.targetPostId.rawValue] = targetPostId
             params[Fields.Key.targetImageRef.rawValue] = targetImageRef
+            params[Fields.Key.createdAt.rawValue] = FieldValue.serverTimestamp()
+            params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
         }
         return params
     }

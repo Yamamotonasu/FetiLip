@@ -161,7 +161,10 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
                 AppAlert.show(message: R._string.error.delete, alertType: .error)
             }).disposed(by: rx.disposeBag)
 
-        output.sendViolationReportResult.subscribe(onNext: { [weak self] _ in
+        output.sendViolationReportResult.retryWithRetryAlert { [weak self] _ in
+            guard let _self = self else { return }
+            _self.violationReportEvent.onNext(_self.field)
+        }.subscribe(onNext: { _ in
             AppAlert.show(message: R._string.success.delete, alertType: .success)
         }, onError: { e in
             log.error(e.localizedDescription)
