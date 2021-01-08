@@ -218,6 +218,10 @@
 		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
 		EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */; };
+		EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47425A7E533005DC446 /* ViolationReportClient.swift */; };
+		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
+		EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48425A7E824005DC446 /* ViolationReportModel.swift */; };
+		EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -708,6 +712,10 @@
 		9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
 		EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockDomainModel.swift; sourceTree = "<group>"; };
+		EA49D47425A7E533005DC446 /* ViolationReportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportClient.swift; sourceTree = "<group>"; };
+		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
+		EA49D48425A7E824005DC446 /* ViolationReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportModel.swift; sourceTree = "<group>"; };
+		EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportsRequest.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -952,6 +960,7 @@
 		034C562F24CE4E230005B6C5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D47C25A7E632005DC446 /* ViolationReports */,
 				034C563024CE4E690005B6C5 /* Post */,
 				034C563324CE4E910005B6C5 /* User */,
 			);
@@ -1114,6 +1123,7 @@
 		035BAFEE2459AD3C001FF6D1 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D47325A7E50D005DC446 /* ViolationReports */,
 				036A450B2472CB6E00DD9282 /* Posts */,
 				035BAFEF2459AD52001FF6D1 /* Users */,
 			);
@@ -1144,6 +1154,7 @@
 		035BAFFB246035B7001FF6D1 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D48A25A7E8EC005DC446 /* ViolationReports */,
 				036A450E2472CC2F00DD9282 /* Posts */,
 				035BAFFE246035E3001FF6D1 /* Users */,
 			);
@@ -1564,6 +1575,7 @@
 		039EB689243B5F570016436C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D48325A7E80F005DC446 /* ViolationReports */,
 				036A450024711D9500DD9282 /* Posts */,
 				035BAFE824598A31001FF6D1 /* Users */,
 			);
@@ -2126,6 +2138,38 @@
 			path = Blocks;
 			sourceTree = "<group>";
 		};
+		EA49D47325A7E50D005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D47425A7E533005DC446 /* ViolationReportClient.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
+		EA49D47C25A7E632005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
+		EA49D48325A7E80F005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D48425A7E824005DC446 /* ViolationReportModel.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
+		EA49D48A25A7E8EC005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2487,6 +2531,7 @@
 				0369378B2545045900FEC1DA /* UserDetailViewController.swift in Sources */,
 				034A986F24984025009336F0 /* DomainModelProtocol.swift in Sources */,
 				036A450A2471902000DD9282 /* SelectModeViewController.swift in Sources */,
+				EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */,
 				03AAFBA72428DA890068FB1E /* GlobalTabBarController.swift in Sources */,
 				0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
@@ -2512,6 +2557,7 @@
 				039EB671243615FC0016436C /* DebugViewController.swift in Sources */,
 				034C561E24C45A110005B6C5 /* Firestorage+Reactive.swift in Sources */,
 				035F6DAA24F4AA5D00991231 /* UILabel+Extensions.swift in Sources */,
+				EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */,
 				035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */,
 				0369378E2545164500FEC1DA /* UserDetailViewModel.swift in Sources */,
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
@@ -2540,6 +2586,7 @@
 				EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */,
 				0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
+				EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
@@ -2549,6 +2596,7 @@
 				035D5CEE24E6B41C0047B4AA /* UsersStorageClient.swift in Sources */,
 				EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */,
 				035D5CF924E929B20047B4AA /* ValidationError.swift in Sources */,
+				EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */,
 				0363196E250C95A4005B317A /* RemoteConfigModel.swift in Sources */,
 				034C561724C3EDE70005B6C5 /* PostLipDetailViewModel.swift in Sources */,
 				036A45052471408000DD9282 /* Reactive+Extentions.swift in Sources */,

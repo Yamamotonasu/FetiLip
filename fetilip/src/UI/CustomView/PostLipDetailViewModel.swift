@@ -20,9 +20,10 @@ protocol PostLipDetailViewModelProtocol {
  */
 struct PostLipDetailViewModel: PostLipDetailViewModelProtocol {
 
-    init(userModel: UsersModelClientProtocol, postModel: PostModelClientProtocol) {
+    init(userModel: UsersModelClientProtocol, postModel: PostModelClientProtocol, violationModel: ViolationReportClientProtocol) {
         self.userModel = userModel
         self.postModel = postModel
+        self.violationModel = violationModel
         self.indicator = activity.asObservable()
     }
 
@@ -30,6 +31,8 @@ struct PostLipDetailViewModel: PostLipDetailViewModelProtocol {
     private let userModel: UsersModelClientProtocol
 
     private let postModel: PostModelClientProtocol
+
+    private let violationModel: ViolationReportClientProtocol
 
     // MARK: - Rx
 
@@ -44,11 +47,13 @@ extension PostLipDetailViewModel: ViewModelType {
     struct Input {
         let firstLoadEvent: Observable<PostDomainModel>
         let deleteEvent: PublishSubject<PostDomainModel>
+        let violationReportEvent: PublishSubject<PostDomainModel>
     }
 
     struct Output {
         let userDataObservable: Observable<UserDomainModel>
         let deleteResult: Observable<DocumentReference>
+        let sendViolationReportResult: Observable<()>
         let loading: Observable<Bool>
     }
 
@@ -67,7 +72,12 @@ extension PostLipDetailViewModel: ViewModelType {
             return self.postModel.deletePost(targetReference: postDomainModel.documentReference!).trackActivity(self.activity)
         }
 
-        return Output(userDataObservable: userLoadSequence, deleteResult: deleteSequence, loading: indicator)
+        // TODO: Fource unwrap
+        let sendViolationReportSequence: Observable<()> = input.violationReportEvent.flatMapLatest { postDomainModel in
+            return self.violationModel.sendViolationReport(targetUid: postDomainModel.userUid, targetPostId: postDomainModel.documentReference!.documentID, targetImageRef: postDomainModel.imageRef).trackActivity(self.activity)
+        }
+
+        return Output(userDataObservable: userLoadSequence, deleteResult: deleteSequence, sendViolationReportResult: sendViolationReportSequence, loading: indicator)
     }
 
 }

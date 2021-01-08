@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r4g-Wh-V0f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r4g-Wh-V0f">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -126,6 +126,14 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="dki-6K-fqy"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="00r-Cs-Z7j"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IH-g5-4Ta">
+                                <rect key="frame" x="339" y="69" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="J5x-sM-eHM"/>
+                                    <constraint firstAttribute="width" constant="45" id="tP6-G3-kgf"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="menu_icon_gray"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8e-1C-CNC">
                                 <rect key="frame" x="30" y="69" width="45" height="45"/>
                                 <constraints>
@@ -179,12 +187,14 @@
                         <constraints>
                             <constraint firstItem="AQF-5T-6bB" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" id="7in-de-uVc"/>
                             <constraint firstItem="Z8e-1C-CNC" firstAttribute="top" secondItem="bJv-GG-Gcg" secondAttribute="top" constant="25" id="7r8-5a-yzX"/>
+                            <constraint firstItem="5IH-g5-4Ta" firstAttribute="top" secondItem="bJv-GG-Gcg" secondAttribute="top" constant="25" id="K2y-D7-yLD"/>
                             <constraint firstAttribute="leading" secondItem="sd9-pE-OKy" secondAttribute="leading" id="Rxe-4X-VS9"/>
                             <constraint firstAttribute="bottom" secondItem="AQF-5T-6bB" secondAttribute="bottom" id="ZUy-QJ-e1Q"/>
                             <constraint firstItem="bJv-GG-Gcg" firstAttribute="trailing" secondItem="AQF-5T-6bB" secondAttribute="trailing" id="aNx-6i-5QL"/>
                             <constraint firstItem="Z8e-1C-CNC" firstAttribute="leading" secondItem="bJv-GG-Gcg" secondAttribute="leading" constant="30" id="agw-BI-xmP"/>
                             <constraint firstItem="sd9-pE-OKy" firstAttribute="top" secondItem="Afe-8F-u6b" secondAttribute="top" id="k7f-zx-OkE"/>
                             <constraint firstAttribute="trailing" secondItem="sd9-pE-OKy" secondAttribute="trailing" id="nEM-WN-2ez"/>
+                            <constraint firstItem="bJv-GG-Gcg" firstAttribute="trailing" secondItem="5IH-g5-4Ta" secondAttribute="trailing" constant="30" id="oMJ-Fm-IIP"/>
                             <constraint firstAttribute="bottom" secondItem="sd9-pE-OKy" secondAttribute="bottom" id="sOZ-74-kVL"/>
                         </constraints>
                     </view>
@@ -196,6 +206,7 @@
                         <outlet property="deleteButton" destination="BD7-jy-nZo" id="Axn-Xn-ADr"/>
                         <outlet property="editButton" destination="4xe-eb-WST" id="fpM-KZ-mjV"/>
                         <outlet property="lipImageView" destination="A42-uA-tdc" id="QSR-ew-bUk"/>
+                        <outlet property="menuButton" destination="5IH-g5-4Ta" id="vBU-Ve-qBN"/>
                         <outlet property="reviewTextView" destination="sv4-kT-ni0" id="s7t-uR-vs6"/>
                         <outlet property="scrollView" destination="sd9-pE-OKy" id="c6h-le-Utk"/>
                         <outlet property="userImage" destination="vqM-g8-0Zd" id="OIx-LX-2vz"/>
@@ -210,6 +221,7 @@
     <resources>
         <image name="back_image" width="13.5" height="13.5"/>
         <image name="default_icon_female" width="125" height="125"/>
+        <image name="menu_icon_gray" width="27" height="27"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
