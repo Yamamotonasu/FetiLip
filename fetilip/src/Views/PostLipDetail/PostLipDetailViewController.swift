@@ -105,6 +105,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         self.lipImageView.image = self.image
         self.reviewTextView.text = self.field?.review
         self.bottomView.isHidden = !self.isMyPost
+        self.editButton.isHidden = true
         self.menuButton.isHidden = self.isMyPost
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
