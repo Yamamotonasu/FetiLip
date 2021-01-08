@@ -122,6 +122,10 @@ extension PostListViewController {
 
         // Setup refresh control
         lipCollectionView.refreshControl = refreshControl
+        refreshControl.bounds = CGRect(x: refreshControl.bounds.origin.x,
+                                       y: refreshControl.bounds.origin.y,
+                                       width: refreshControl.bounds.width,
+                                       height: refreshControl.bounds.height)
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
@@ -144,7 +148,10 @@ extension PostListViewController {
 
         output.refreshResult.do(onNext: { [weak self] data in
             self?.data = data
-            self?.refreshControl.endRefreshing()
+            // Make the behavior of RefreshControl look nature.
+            GCD.run(.after(second: 0.5, queue: .main)) {
+                self?.refreshControl.endRefreshing()
+            }
         }, onError: { [weak self] _ in
             self?.refreshControl.endRefreshing()
         })
