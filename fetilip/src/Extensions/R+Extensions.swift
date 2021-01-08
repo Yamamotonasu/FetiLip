@@ -170,7 +170,11 @@ extension R {
 
             // MARK: - PostLipDetail
 
+            static let confirmationSendingReport = "この投稿を不適切な投稿として運営へ報告しますか？"
+
             static let violationReport = "この投稿を報告する"
+
+            static let sendViolationReport = "報告する"
         }
 
         struct common {
