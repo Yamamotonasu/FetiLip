@@ -219,6 +219,7 @@
 		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
 		EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */; };
 		EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47425A7E533005DC446 /* ViolationReportClient.swift */; };
+		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -710,6 +711,7 @@
 		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
 		EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockDomainModel.swift; sourceTree = "<group>"; };
 		EA49D47425A7E533005DC446 /* ViolationReportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportClient.swift; sourceTree = "<group>"; };
+		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -954,6 +956,7 @@
 		034C562F24CE4E230005B6C5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				EA49D47C25A7E632005DC446 /* ViolationReports */,
 				034C563024CE4E690005B6C5 /* Post */,
 				034C563324CE4E910005B6C5 /* User */,
 			);
@@ -2137,6 +2140,14 @@
 			path = ViolationReports;
 			sourceTree = "<group>";
 		};
+		EA49D47C25A7E632005DC446 /* ViolationReports */ = {
+			isa = PBXGroup;
+			children = (
+				EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */,
+			);
+			path = ViolationReports;
+			sourceTree = "<group>";
+		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2551,6 +2562,7 @@
 				EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */,
 				0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */,
 				035BAFE1244330E8001FF6D1 /* PostListViewModel.swift in Sources */,
+				EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */,
 				039EB6872439BEB00016436C /* AppIndicator.swift in Sources */,
 				035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */,
 				03AAFBA52428D5D20068FB1E /* MyPageViewController.swift in Sources */,
