@@ -19,7 +19,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     typealias ViewModel = PostLipDetailViewModel
 
-    private lazy var viewModel: ViewModel = PostLipDetailViewModel(userModel: UsersModelClient(), postModel: PostModelClient())
+    private lazy var viewModel: ViewModel = PostLipDetailViewModel(userModel: UsersModelClient(), postModel: PostModelClient(), violationModel: ViolationReportClient())
 
     // MARK: - init process
 
