@@ -241,10 +241,19 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     private func displayMenu() {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: R._string.view_message.violationReport, style: .default, handler: { [unowned self] _ in
-            self.violationReportEvent.onNext(self.field)
+            self.displaySendingViolationConfirmation()
         }))
         actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
         self.present(actionSheet, animated: true)
+    }
+
+    private func displaySendingViolationConfirmation() {
+        let alert = UIAlertController.init(title: "この投稿を不適切な投稿として運営へ報告しますか？", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: "報告する", style: .default, handler: { _ in
+            self.violationReportEvent.onNext(self.field)
+        }))
+        alert.addAction(UIAlertAction.init(title: "キャンセル", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
 
 }
