@@ -121,11 +121,14 @@ extension PostListViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
 
         // Setup refresh control
+        // - Centering.
+        // - Color change.
         lipCollectionView.refreshControl = refreshControl
-        refreshControl.bounds = CGRect(x: refreshControl.bounds.origin.x,
-                                       y: refreshControl.bounds.origin.y,
-                                       width: refreshControl.bounds.width,
-                                       height: refreshControl.bounds.height)
+        refreshControl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: refreshControl, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: refreshControl, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
+        refreshControl.tintColor = FetiLipColors.theme()
+
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
