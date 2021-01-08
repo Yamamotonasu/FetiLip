@@ -12,7 +12,7 @@ public struct ViolationReportModel: FirestoreDatabaseCollection {
 
     public typealias FieldType = ViolationReportEntity
 
-    public static let collectionName: String = "violationRepots"
+    public static let collectionName: String = "violationReports"
 
     public let id: String
 
