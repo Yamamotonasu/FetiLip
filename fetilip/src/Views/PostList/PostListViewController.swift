@@ -121,7 +121,14 @@ extension PostListViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
 
         // Setup refresh control
+        // - Centering.
+        // - Color change.
         lipCollectionView.refreshControl = refreshControl
+        refreshControl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(item: refreshControl, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: refreshControl, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1.0, constant: 0).isActive = true
+        refreshControl.tintColor = FetiLipColors.theme()
+
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
@@ -144,7 +151,10 @@ extension PostListViewController {
 
         output.refreshResult.do(onNext: { [weak self] data in
             self?.data = data
-            self?.refreshControl.endRefreshing()
+            // Make the behavior of RefreshControl look nature.
+            GCD.run(.after(second: 0.5, queue: .main)) {
+                self?.refreshControl.endRefreshing()
+            }
         }, onError: { [weak self] _ in
             self?.refreshControl.endRefreshing()
         })
