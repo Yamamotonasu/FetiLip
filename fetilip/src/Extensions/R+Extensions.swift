@@ -12,6 +12,14 @@ extension R {
 
     struct _string {
 
+        // MARK: - MainModal
+
+        static let term = "利用規約"
+
+        static let privacyPolicy = "プライバシーポリシー"
+
+        static let termAndPrivacyPolicy = "\(term)、\(privacyPolicy)に同意する。"
+
         // MARK: - Title
 
         static let profileScreenTitle: String = "プロフィールを編集する"
@@ -25,6 +33,10 @@ extension R {
         static let editEmailScreenTitle: String = "メールアドレスを更新する"
 
         static let settingScreenTitle: String = "設定"
+
+        // MARK: - Login
+
+        static let doneLogin: String = "ログインしました"
 
         // MARK: - User message
 
@@ -52,6 +64,10 @@ extension R {
 
         static let needRegitserUser: String = "レビューを投稿するには正式会員登録を行う必要があります。マイページ → プロフィール編集画面から登録出来ます。"
 
+        // MARK: - UserDetail
+
+        static let block = "ブロックする"
+
         struct error {
 
             // MARK: - PostLip
@@ -59,6 +75,8 @@ extension R {
             static let imageNotFound = "画像が見つかりません。再度選択してください。"
 
             static let excessiveNumberOfInputs = "制限を超える文字数のレビューは投稿出来ません。"
+
+            static let delete = "削除に失敗しました"
 
             // MARK: - EditProfile
 
@@ -68,6 +86,10 @@ extension R {
 
             static let failedToStartMailer = "メーラーの起動に失敗しました"
 
+            // MARK: - UserDetail
+
+            static let block = "ブロックに失敗しました。時間を置いて再度お試しください。"
+
         }
 
         struct success {
@@ -76,8 +98,12 @@ extension R {
 
             static let updateInformation = "情報を更新しました。"
 
+            static let delete = "削除しました"
+
             // MARK: - PostLip
             static let postSucceed = "投稿しました！\nありがとうございます😃"
+
+            static let reallyWantToDelete = "本当に投稿を削除しますか？"
 
             // MARK: - RegisterUser
 
@@ -90,6 +116,16 @@ extension R {
             // MARK: - Settings
 
             static let successSendMail = "お問い合わせありがとうございます。3営業日以内で返信致しますので、返信をお待ち下さい。"
+
+            // MARK: - UserDetail
+
+            static func block(targetUserName: String) -> String {
+                return "\(targetUserName)さんをブロックしました。"
+            }
+
+            // MARK: - ViolationReports
+
+            static let violationReports = "報告ありがとうございます。運営で投稿を確認し、適切な処置を行います。"
 
         }
 
@@ -135,6 +171,22 @@ extension R {
             static let selectImage = "画像を選択する"
 
             static let postTemplate = "使用した口紅: \n\n使用した感想:\n"
+
+            // MARK: - PostLipDetail
+
+            static let deletePost = "削除する"
+
+            static let confirmationSendingReport = "この投稿を不適切な投稿として運営へ報告しますか？"
+
+            static let violationReport = "この投稿を報告する"
+
+            static let sendViolationReport = "報告する"
+        }
+
+        struct common {
+
+            static let cancel = "キャンセル"
+
         }
 
     }

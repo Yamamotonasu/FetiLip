@@ -135,7 +135,7 @@ extension PostListViewModel: ViewModelType {
 
     func transform(input: PostListViewModel.Input) -> PostListViewModel.Output {
         let listLoadSequence = input.firstLoadEvent
-            .filter { type in self.loadedCount == self.data.count }
+            .filter { _ in self.loadedCount == self.data.count }
             .flatMap { type -> Observable<[PostListSectionDomainModel]> in
             switch type {
             case .firstLoad:

@@ -19,7 +19,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     typealias ViewModel = PostLipDetailViewModel
 
-    private lazy var viewModel: ViewModel = PostLipDetailViewModel(userModel: UsersModelClient(), postModel: PostModelClient())
+    private lazy var viewModel: ViewModel = PostLipDetailViewModel(userModel: UsersModelClient(), postModel: PostModelClient(), violationModel: ViolationReportClient())
 
     // MARK: - init process
 
@@ -57,6 +57,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     @IBOutlet private weak var deleteButton: UIButton!
 
+    @IBOutlet private weak var menuButton: UIButton!
+
     // MARK: - Properties
 
     let transitionController: ZoomTransitionController = ZoomTransitionController()
@@ -75,6 +77,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     let firstLoadEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
     private let deleteEvent: PublishSubject<PostDomainModel> = PublishSubject()
+
+    private let violationReportEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
     private var isMyPost: Bool {
         return LoginAccountData.uid! == field.userUid
@@ -101,9 +105,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         self.lipImageView.image = self.image
         self.reviewTextView.text = self.field?.review
         self.bottomView.isHidden = !self.isMyPost
-
-        // TODO: Implementation
         self.editButton.isHidden = true
+        self.menuButton.isHidden = self.isMyPost
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
         self.panGesture.delegate = self
@@ -124,10 +127,16 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         deleteButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.displayDeleteAlert()
         }).disposed(by: rx.disposeBag)
+
+        menuButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            self.displayMenu()
+        }).disposed(by: rx.disposeBag)
     }
 
     private func subscribeUI() {
-        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable(), deleteEvent: deleteEvent)
+        let input = ViewModel.Input(firstLoadEvent: firstLoadEvent.asObservable(),
+                                    deleteEvent: deleteEvent,
+                                    violationReportEvent: violationReportEvent)
         let output = viewModel.transform(input: input)
 
         output.userDataObservable.retryWithRetryAlert { [weak self] _ in
@@ -142,16 +151,25 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             guard let _self = self else { return }
             _self.deleteEvent.onNext(_self.field)
         }.observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] documentReference in
+            .subscribe(onNext: { [weak self] _ in
                 self?.navigationController?.popViewController(animated: true)
                 // Delete post deleted.
                 let refreshLoadType: RefreshLoadType = self?.fromMyPostList == true ? .refreshMyPost : .refresh
                 PostListViewController.refreshSubject.onNext(refreshLoadType)
-                AppAlert.show(message: "削除しました", alertType: .success)
+                AppAlert.show(message: R._string.success.delete, alertType: .success)
             }, onError: { e in
                 log.error(e.localizedDescription)
-                AppAlert.show(message: "削除に失敗しました", alertType: .error)
+                AppAlert.show(message: R._string.error.delete, alertType: .error)
             }).disposed(by: rx.disposeBag)
+
+        output.sendViolationReportResult.retryWithRetryAlert { [weak self] _ in
+            guard let _self = self else { return }
+            _self.violationReportEvent.onNext(_self.field)
+        }.subscribe(onNext: { _ in
+            AppAlert.show(message: R._string.success.violationReports, alertType: .success)
+        }, onError: { e in
+            log.error(e.localizedDescription)
+        }).disposed(by: rx.disposeBag)
     }
 
     /**
@@ -222,12 +240,30 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func displayDeleteAlert() {
-        let actionSheet = UIAlertController(title: "本当に投稿を削除しますか？", message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "削除する", style: .default, handler: { [unowned self] _ in
+        let actionSheet = UIAlertController(title: R._string.success.reallyWantToDelete, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: R._string.view_message.deletePost, style: .default, handler: { [unowned self] _ in
             self.deleteEvent.onNext(self.field)
         }))
-        actionSheet.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
         self.present(actionSheet, animated: true)
+    }
+
+    private func displayMenu() {
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        actionSheet.addAction(UIAlertAction(title: R._string.view_message.violationReport, style: .default, handler: { [unowned self] _ in
+            self.displaySendingViolationConfirmation()
+        }))
+        actionSheet.addAction(UIAlertAction(title: R._string.common.cancel, style: .cancel))
+        self.present(actionSheet, animated: true)
+    }
+
+    private func displaySendingViolationConfirmation() {
+        let alert = UIAlertController.init(title: R._string.view_message.confirmationSendingReport, message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction.init(title: R._string.view_message.sendViolationReport, style: .default, handler: { _ in
+            self.violationReportEvent.onNext(self.field)
+        }))
+        alert.addAction(UIAlertAction.init(title: R._string.common.cancel, style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
 
 }
