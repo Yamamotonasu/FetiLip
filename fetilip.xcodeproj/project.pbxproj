@@ -222,6 +222,8 @@
 		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
 		EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48425A7E824005DC446 /* ViolationReportModel.swift */; };
 		EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */; };
+		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
+		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -716,6 +718,8 @@
 		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
 		EA49D48425A7E824005DC446 /* ViolationReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportModel.swift; sourceTree = "<group>"; };
 		EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportsRequest.swift; sourceTree = "<group>"; };
+		EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPost.storyboard; sourceTree = "<group>"; };
+		EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -1732,6 +1736,7 @@
 			isa = PBXGroup;
 			children = (
 				039EB66D2436157B0016436C /* Debug */,
+				EA6A5EC725AA8FC700EE9AD8 /* EditPost */,
 				03B50B5724E4ADAD00C7A14F /* EditProfile */,
 				035D5CEF24E8F5230047B4AA /* EditProfileDetail */,
 				034A98602496063E009336F0 /* Layouts */,
@@ -2170,6 +2175,15 @@
 			path = ViolationReports;
 			sourceTree = "<group>";
 		};
+		EA6A5EC725AA8FC700EE9AD8 /* EditPost */ = {
+			isa = PBXGroup;
+			children = (
+				EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */,
+				EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */,
+			);
+			path = EditPost;
+			sourceTree = "<group>";
+		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2323,6 +2337,7 @@
 				034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */,
 				036937892545044500FEC1DA /* UserDetail.storyboard in Resources */,
 				035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */,
+				EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */,
 				03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */,
 				03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */,
 				03AD487424FDDD12006BABDF /* LoginConfirmViewController.storyboard in Resources */,
@@ -2536,6 +2551,7 @@
 				0368550D250DCD9300CB488E /* UserSocialRequest.swift in Sources */,
 				03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */,
 				EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */,
+				EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */,
 				03AAFB602425EB0B0068FB1E /* FetiLipColors.swift in Sources */,
 				0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */,
 				035D5D0C24E9FCE70047B4AA /* ValidationCharacters.swift in Sources */,

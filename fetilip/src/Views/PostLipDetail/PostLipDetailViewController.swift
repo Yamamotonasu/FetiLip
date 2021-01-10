@@ -105,7 +105,6 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         self.lipImageView.image = self.image
         self.reviewTextView.text = self.field?.review
         self.bottomView.isHidden = !self.isMyPost
-        self.editButton.isHidden = true
         self.menuButton.isHidden = self.isMyPost
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
@@ -130,6 +129,10 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
         menuButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.displayMenu()
+        }).disposed(by: rx.disposeBag)
+
+        editButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+
         }).disposed(by: rx.disposeBag)
     }
 
@@ -264,6 +267,10 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         }))
         alert.addAction(UIAlertAction.init(title: R._string.common.cancel, style: .default, handler: nil))
         self.present(alert, animated: true)
+    }
+
+    private func transitionPostEditScreen() {
+        
     }
 
 }
