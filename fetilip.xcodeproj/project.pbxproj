@@ -224,6 +224,7 @@
 		EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */; };
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
+		EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -720,6 +721,7 @@
 		EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportsRequest.swift; sourceTree = "<group>"; };
 		EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPost.storyboard; sourceTree = "<group>"; };
 		EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -1758,6 +1760,7 @@
 			isa = PBXGroup;
 			children = (
 				035BAFDA2443302D001FF6D1 /* Debug */,
+				EA6A5ED725AABFF200EE9AD8 /* EditPost */,
 				03B50B5824E4ADC300C7A14F /* EditProfile */,
 				035D5CF424E910F40047B4AA /* EditProfileDetail */,
 				03AD488024FF20D2006BABDF /* Login */,
@@ -2180,6 +2183,14 @@
 			children = (
 				EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */,
 				EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */,
+			);
+			path = EditPost;
+			sourceTree = "<group>";
+		};
+		EA6A5ED725AABFF200EE9AD8 /* EditPost */ = {
+			isa = PBXGroup;
+			children = (
+				EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */,
 			);
 			path = EditPost;
 			sourceTree = "<group>";
@@ -2621,6 +2632,7 @@
 				03631970250C95CA005B317A /* RemoteConfigParameters.swift in Sources */,
 				03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */,
 				03AAFBAD243094A40068FB1E /* UIView+Extensions.swift in Sources */,
+				EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */,
 				035E49F4251DCE240083EC21 /* PayAttensionPostingImageViewController.swift in Sources */,
 				03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */,
 				03631972250CA75F005B317A /* String+Extensions.swift in Sources */,
