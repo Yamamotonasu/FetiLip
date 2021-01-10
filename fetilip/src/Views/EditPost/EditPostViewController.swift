@@ -15,3 +15,24 @@ class EditPostViewController: UIViewController {
     }
 
 }
+
+final class EditPostViewControllerGenerator {
+
+    static func generate() -> UIViewController {
+        guard let vc = R.storyboard.editPost.editPostViewController() else {
+            assertionFailure()
+            return UIViewController()
+        }
+        return vc
+    }
+
+    static func generateWithNavigation() -> UIViewController {
+        guard let vc = R.storyboard.editPost.editPostViewController() else {
+            assertionFailure()
+            return UIViewController()
+        }
+        let nvc = UINavigationController(rootViewController: vc)
+        return nvc
+    }
+
+}

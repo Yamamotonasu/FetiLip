@@ -132,7 +132,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         }).disposed(by: rx.disposeBag)
 
         editButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
-
+            self.transitionPostEditScreen()
         }).disposed(by: rx.disposeBag)
     }
 
@@ -270,7 +270,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func transitionPostEditScreen() {
-        
+        let vc = EditPostViewControllerGenerator.generateWithNavigation()
+        self.present(vc, animated: true)
     }
 
 }
