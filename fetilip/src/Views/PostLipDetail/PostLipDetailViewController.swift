@@ -270,7 +270,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func transitionPostEditScreen() {
-        let vc = EditPostViewControllerGenerator.generateWithNavigation()
+        let vc = EditPostViewControllerGenerator.generateWithNavigation(postDomainModel: field)
         self.present(vc, animated: true)
     }
 

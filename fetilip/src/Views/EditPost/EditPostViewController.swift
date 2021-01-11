@@ -19,12 +19,16 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
     // MARK: - Init process
 
     struct Dependency {
-
+        let postDomainModel: PostDomainModel
     }
 
     func inject(with dependency: Dependency) {
-
+        self.postDomainModel = dependency.postDomainModel
     }
+
+    // MARK: - Properties
+
+    private var postDomainModel: PostDomainModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,21 +38,21 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
 final class EditPostViewControllerGenerator {
 
-    static func generate() -> UIViewController {
+    static func generate(postDomainModel: PostDomainModel) -> UIViewController {
         guard let vc = R.storyboard.editPost.editPostViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init())
+        vc.inject(with: .init(postDomainModel: postDomainModel))
         return vc
     }
 
-    static func generateWithNavigation() -> UIViewController {
+    static func generateWithNavigation(postDomainModel: PostDomainModel) -> UIViewController {
         guard let vc = R.storyboard.editPost.editPostViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init())
+        vc.inject(with: .init(postDomainModel: postDomainModel))
         let nvc = UINavigationController(rootViewController: vc)
         return nvc
     }
