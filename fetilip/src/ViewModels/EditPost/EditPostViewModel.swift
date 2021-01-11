@@ -14,8 +14,11 @@ protocol EditPostViewModelProtocol {
 
 public struct EditPostViewModel: EditPostViewModelProtocol {
 
-    public init() {
+    init(postModel: PostModelClientProtocol) {
+        self.postModel = postModel
     }
+
+    let postModel: PostModelClientProtocol
 
 }
 

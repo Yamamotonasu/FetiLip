@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
@@ -14,7 +15,7 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
     typealias ViewModel = EditPostViewModel
 
-    let viewModel: ViewModel = EditPostViewModel()
+    let viewModel: ViewModel = EditPostViewModel(postModel: PostModelClient())
 
     // MARK: - Init process
 
@@ -30,8 +31,24 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
     private var postDomainModel: PostDomainModel!
 
+    // MARK: - Rx
+
+    private let updatePostEvent: PublishSubject<PostDomainModel> = PublishSubject()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribeUI()
+    }
+
+}
+
+// MARK: - Functions
+
+extension EditPostViewController {
+
+    private func subscribeUI() {
+        let input = ViewModel.Input()
+        let output = viewModel.transform(input: input)
     }
 
 }
