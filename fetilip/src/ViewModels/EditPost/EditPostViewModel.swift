@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol EditPostViewModelProtocol {
 
@@ -25,7 +26,7 @@ public struct EditPostViewModel: EditPostViewModelProtocol {
 extension EditPostViewModel: ViewModelType {
 
     public struct Input {
-
+        let updatePostEvent: PublishSubject<PostDomainModel>
     }
 
     public struct Output {

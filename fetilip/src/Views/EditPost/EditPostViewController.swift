@@ -27,6 +27,14 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
         self.postDomainModel = dependency.postDomainModel
     }
 
+    // MARK: - Outlets
+
+    @IBOutlet private weak var postImageView: UIImageView!
+
+    @IBOutlet private weak var reviewTextView: UITextView!
+
+    @IBOutlet private weak var updatePostButton: UIButton!
+
     // MARK: - Properties
 
     private var postDomainModel: PostDomainModel!
@@ -37,6 +45,7 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        composeUI()
         subscribeUI()
     }
 
@@ -46,8 +55,16 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
 extension EditPostViewController {
 
+    private func composeUI() {
+        FirestorageLoader.loadImage(storagePath: postDomainModel.imageRef).subscribe(onSuccess: { [weak self] image in
+            self?.postImageView.image = image
+        }).disposed(by: rx.disposeBag)
+
+        reviewTextView.text = postDomainModel.review
+    }
+
     private func subscribeUI() {
-        let input = ViewModel.Input()
+        let input = ViewModel.Input(updatePostEvent: updatePostEvent)
         let output = viewModel.transform(input: input)
     }
 
