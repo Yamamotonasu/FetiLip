@@ -76,7 +76,21 @@ extension EditPostViewController {
         let input = ViewModel.Input(reviewTextObservable: reviewTextView.rx.text.asObservable(), updatePostEvent: updatePostEvent)
         let output = viewModel.transform(input: input)
 
+        output.updatePostResult.subscribe(onNext: { [weak self] _ in
+            self?.dismiss(animated: true)
+            AppAlert.show(message: "投稿を更新しました。", alertType: .success)
+        }, onError: { e in
+            log.error(e.localizedDescription)
+            AppAlert.show(message: "投稿の更新に失敗しました。時間を置いて再度お試しください。", alertType: .error)
+        }).disposed(by: rx.disposeBag)
 
+        output.loading.subscribe(onNext: { bool in
+            if bool {
+                AppIndicator.show()
+            } else {
+                AppIndicator.dismiss()
+            }
+        }).disposed(by: rx.disposeBag)
     }
 
 }
