@@ -39,6 +39,8 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
     private var postDomainModel: PostDomainModel!
 
+    private lazy var leftBarButton: UIBarButtonItem = UIBarButtonItem(title: "✗", style: .done, target: self, action: #selector(close))
+
     // MARK: - Rx
 
     private let updatePostEvent: PublishSubject<PostDomainModel> = PublishSubject()
@@ -59,6 +61,19 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 extension EditPostViewController {
 
     private func composeUI() {
+        // Setup navigation controller
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationItem.leftBarButtonItem = leftBarButton
+        self.navigationItem.title = R._string.editPostScreen
+
+        self.navigationController?.navigationBar.barTintColor = FetiLipColors.theme()
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.layer.masksToBounds = false
+        self.navigationController?.navigationBar.layer.shadowColor = UIColor.lightGray.cgColor
+        self.navigationController?.navigationBar.layer.shadowOpacity = 0.8
+        self.navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.navigationController?.navigationBar.layer.shadowRadius = 2
+
         FirestorageLoader.loadImage(storagePath: postDomainModel.imageRef).subscribe(onSuccess: { [weak self] image in
             self?.postImageView.image = image
         }).disposed(by: rx.disposeBag)
@@ -91,6 +106,10 @@ extension EditPostViewController {
                 AppIndicator.dismiss()
             }
         }).disposed(by: rx.disposeBag)
+    }
+
+    @objc func close() {
+        self.dismiss(animated: true)
     }
 
 }

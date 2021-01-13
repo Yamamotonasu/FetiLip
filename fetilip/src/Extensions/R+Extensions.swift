@@ -34,6 +34,8 @@ extension R {
 
         static let settingScreenTitle: String = "設定"
 
+        static let editPostScreen: String = "投稿を編集する"
+
         // MARK: - Login
 
         static let doneLogin: String = "ログインしました"
