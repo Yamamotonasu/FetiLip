@@ -43,9 +43,12 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
     private let updatePostEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
+    // MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         composeUI()
+        subscribe()
         subscribeUI()
     }
 
@@ -63,9 +66,17 @@ extension EditPostViewController {
         reviewTextView.text = postDomainModel.review
     }
 
+    private func subscribe() {
+        updatePostButton.rx.tap.subscribe(onNext: { [unowned self] _ in
+            self.updatePostEvent.onNext(postDomainModel)
+        }).disposed(by: rx.disposeBag)
+    }
+
     private func subscribeUI() {
-        let input = ViewModel.Input(updatePostEvent: updatePostEvent)
+        let input = ViewModel.Input(reviewTextObservable: reviewTextView.rx.text.asObservable(), updatePostEvent: updatePostEvent)
         let output = viewModel.transform(input: input)
+
+
     }
 
 }

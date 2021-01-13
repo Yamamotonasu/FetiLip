@@ -26,15 +26,20 @@ public struct EditPostViewModel: EditPostViewModelProtocol {
 extension EditPostViewModel: ViewModelType {
 
     public struct Input {
+        let reviewTextObservable: Observable<String?>
         let updatePostEvent: PublishSubject<PostDomainModel>
     }
 
     public struct Output {
-
+        let updatePostResult: Observable<()>
     }
 
     public func transform(input: Input) -> Output {
-        return Output()
+        let combine = Observable.combineLatest(input.updatePostEvent.asObservable(), input.reviewTextObservable)
+        let updateSequence = input.updatePostEvent.withLatestFrom(combine).flatMapLatest { (postDomainModel, review) in
+            return postModel.updatePost(targetReference: postDomainModel.documentReference!, review: review ?? "")
+        }
+        return Output(updatePostResult: updateSequence)
     }
 
 }
