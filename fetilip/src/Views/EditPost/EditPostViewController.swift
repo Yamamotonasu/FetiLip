@@ -21,11 +21,19 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
     struct Dependency {
         let postDomainModel: PostDomainModel
+        let updatePostDomainModelSubject: PublishSubject<PostDomainModel>
     }
 
     func inject(with dependency: Dependency) {
         self.postDomainModel = dependency.postDomainModel
+        self.updatePostDomainModelSubject = dependency.updatePostDomainModelSubject
     }
+
+    // MARK: - Dependencies
+
+    private var postDomainModel: PostDomainModel!
+
+    private var updatePostDomainModelSubject: PublishSubject<PostDomainModel>!
 
     // MARK: - Outlets
 
@@ -36,8 +44,6 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
     @IBOutlet private weak var updatePostButton: UIButton!
 
     // MARK: - Properties
-
-    private var postDomainModel: PostDomainModel!
 
     private lazy var leftBarButton: UIBarButtonItem = UIBarButtonItem(title: "✗", style: .done, target: self, action: #selector(close))
 
@@ -92,6 +98,9 @@ extension EditPostViewController {
         let output = viewModel.transform(input: input)
 
         output.updatePostResult.subscribe(onNext: { [weak self] _ in
+            guard let _self = self else { return }
+            _self.postDomainModel.updateReview(newReview: _self.reviewTextView.text)
+            self?.updatePostDomainModelSubject.onNext(_self.postDomainModel)
             self?.dismiss(animated: true)
             AppAlert.show(message: "投稿を更新しました。", alertType: .success)
         }, onError: { e in
@@ -116,21 +125,21 @@ extension EditPostViewController {
 
 final class EditPostViewControllerGenerator {
 
-    static func generate(postDomainModel: PostDomainModel) -> UIViewController {
+    static func generate(postDomainModel: PostDomainModel, updatePostDomainModelSubject: PublishSubject<PostDomainModel>) -> UIViewController {
         guard let vc = R.storyboard.editPost.editPostViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(postDomainModel: postDomainModel))
+        vc.inject(with: .init(postDomainModel: postDomainModel, updatePostDomainModelSubject: updatePostDomainModelSubject))
         return vc
     }
 
-    static func generateWithNavigation(postDomainModel: PostDomainModel) -> UIViewController {
+    static func generateWithNavigation(postDomainModel: PostDomainModel, updatePostDomainModelSubject: PublishSubject<PostDomainModel>) -> UIViewController {
         guard let vc = R.storyboard.editPost.editPostViewController() else {
             assertionFailure()
             return UIViewController()
         }
-        vc.inject(with: .init(postDomainModel: postDomainModel))
+        vc.inject(with: .init(postDomainModel: postDomainModel, updatePostDomainModelSubject: updatePostDomainModelSubject))
         let nvc = UINavigationController(rootViewController: vc)
         return nvc
     }

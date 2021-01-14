@@ -80,6 +80,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     private let violationReportEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
+    private let updatePostDomainModelSubject: PublishSubject<PostDomainModel> = PublishSubject<PostDomainModel>()
+
     private var isMyPost: Bool {
         return LoginAccountData.uid! == field.userUid
     }
@@ -134,6 +136,15 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         editButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.transitionPostEditScreen()
         }).disposed(by: rx.disposeBag)
+
+        updatePostDomainModelSubject
+            .do(onNext: { [weak self] newDomain in
+                self?.field = newDomain
+            })
+            .map { $0.review }
+            .asDriver(onErrorJustReturn: "")
+            .drive(self.reviewTextView.rx.text)
+            .disposed(by: rx.disposeBag)
     }
 
     private func subscribeUI() {
@@ -270,7 +281,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
     }
 
     private func transitionPostEditScreen() {
-        let vc = EditPostViewControllerGenerator.generateWithNavigation(postDomainModel: field)
+        let vc = EditPostViewControllerGenerator.generateWithNavigation(postDomainModel: field, updatePostDomainModelSubject: updatePostDomainModelSubject)
         self.present(vc, animated: true)
     }
 

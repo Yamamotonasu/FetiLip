@@ -32,7 +32,7 @@ struct PostDomainModel: DomainModelProtocol {
     let imageRef: String
 
     /// Review lip image.
-    let review: String
+    private(set) var review: String
 
     /// Date posted.
     let createdAt: Timestamp
@@ -67,4 +67,13 @@ extension PostDomainModel {
                          createdAt: model.createdAt,
                          displayCreatedAt: f.string(from: model.createdAt.dateValue()))
     }
+
+}
+
+extension PostDomainModel {
+
+    mutating func updateReview(newReview: String) {
+        self.review = newReview
+    }
+
 }
