@@ -85,6 +85,8 @@ extension EditPostViewController {
         }).disposed(by: rx.disposeBag)
 
         reviewTextView.text = postDomainModel.review
+
+        reviewTextView.becomeFirstResponder()
     }
 
     private func subscribe() {

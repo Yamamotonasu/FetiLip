@@ -28,10 +28,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Ajw-vJ-ZIL">
-                                                <rect key="frame" x="30" y="60" width="354" height="806"/>
+                                                <rect key="frame" x="30" y="50" width="354" height="816"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LzY-4r-nG8">
-                                                        <rect key="frame" x="20" y="0.0" width="314" height="314"/>
+                                                        <rect key="frame" x="40" y="0.0" width="274" height="274"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="LzY-4r-nG8" secondAttribute="height" multiplier="1:1" id="taH-Nf-L0c"/>
                                                         </constraints>
@@ -57,7 +57,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dl2-JQ-vzU">
-                                                        <rect key="frame" x="30" y="339" width="294" height="392"/>
+                                                        <rect key="frame" x="30" y="299" width="294" height="442"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="dLZ-1A-D0T"/>
@@ -81,7 +81,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eb4-G3-fYb">
-                                                        <rect key="frame" x="20" y="756" width="314" height="50"/>
+                                                        <rect key="frame" x="20" y="766" width="314" height="50"/>
                                                         <color key="backgroundColor" red="1" green="0.70588235290000001" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="yBz-w4-2cV"/>
@@ -110,11 +110,11 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="LzY-4r-nG8" secondAttribute="trailing" constant="20" id="0CX-Ia-uKZ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LzY-4r-nG8" secondAttribute="trailing" constant="40" id="0CX-Ia-uKZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="eb4-G3-fYb" secondAttribute="trailing" constant="20" id="FBF-2q-UOE"/>
                                                     <constraint firstAttribute="trailing" secondItem="dl2-JQ-vzU" secondAttribute="trailing" constant="30" id="Prr-dU-Yx6"/>
                                                     <constraint firstItem="eb4-G3-fYb" firstAttribute="leading" secondItem="Ajw-vJ-ZIL" secondAttribute="leading" constant="20" id="hNj-KR-nSJ"/>
-                                                    <constraint firstItem="LzY-4r-nG8" firstAttribute="leading" secondItem="Ajw-vJ-ZIL" secondAttribute="leading" constant="20" id="kKA-4g-qdM"/>
+                                                    <constraint firstItem="LzY-4r-nG8" firstAttribute="leading" secondItem="Ajw-vJ-ZIL" secondAttribute="leading" constant="40" id="kKA-4g-qdM"/>
                                                     <constraint firstItem="dl2-JQ-vzU" firstAttribute="leading" secondItem="Ajw-vJ-ZIL" secondAttribute="leading" constant="30" id="zb8-QO-Ufh"/>
                                                 </constraints>
                                             </stackView>
@@ -123,7 +123,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="Ajw-vJ-ZIL" secondAttribute="trailing" constant="30" id="qYY-h0-kPS"/>
                                             <constraint firstItem="Ajw-vJ-ZIL" firstAttribute="leading" secondItem="d6R-VY-TC0" secondAttribute="leading" constant="30" id="s6f-na-3IL"/>
-                                            <constraint firstItem="Ajw-vJ-ZIL" firstAttribute="top" secondItem="d6R-VY-TC0" secondAttribute="top" constant="60" id="uZC-PS-Y4e"/>
+                                            <constraint firstItem="Ajw-vJ-ZIL" firstAttribute="top" secondItem="d6R-VY-TC0" secondAttribute="top" constant="50" id="uZC-PS-Y4e"/>
                                             <constraint firstAttribute="bottom" secondItem="Ajw-vJ-ZIL" secondAttribute="bottom" constant="30" id="vVR-Kd-JWx"/>
                                             <constraint firstItem="Ajw-vJ-ZIL" firstAttribute="centerX" secondItem="d6R-VY-TC0" secondAttribute="centerX" id="vWX-9W-n5W"/>
                                         </constraints>
