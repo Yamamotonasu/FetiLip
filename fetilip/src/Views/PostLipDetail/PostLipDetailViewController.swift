@@ -80,6 +80,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
 
     private let violationReportEvent: PublishSubject<PostDomainModel> = PublishSubject()
 
+    private let updatePostDomainModelSubject: PublishSubject<PostDomainModel> = PublishSubject<PostDomainModel>()
+
     private var isMyPost: Bool {
         return LoginAccountData.uid! == field.userUid
     }
@@ -105,7 +107,6 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         self.lipImageView.image = self.image
         self.reviewTextView.text = self.field?.review
         self.bottomView.isHidden = !self.isMyPost
-        self.editButton.isHidden = true
         self.menuButton.isHidden = self.isMyPost
 
         self.panGesture = UIPanGestureRecognizer(target: self, action: #selector(didPanWith(gestureRecognizer:)))
@@ -131,6 +132,19 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         menuButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.displayMenu()
         }).disposed(by: rx.disposeBag)
+
+        editButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
+            self.transitionPostEditScreen()
+        }).disposed(by: rx.disposeBag)
+
+        updatePostDomainModelSubject
+            .do(onNext: { [weak self] newDomain in
+                self?.field = newDomain
+            })
+            .map { $0.review }
+            .asDriver(onErrorJustReturn: "")
+            .drive(self.reviewTextView.rx.text)
+            .disposed(by: rx.disposeBag)
     }
 
     private func subscribeUI() {
@@ -264,6 +278,11 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         }))
         alert.addAction(UIAlertAction.init(title: R._string.common.cancel, style: .default, handler: nil))
         self.present(alert, animated: true)
+    }
+
+    private func transitionPostEditScreen() {
+        let vc = EditPostViewControllerGenerator.generateWithNavigation(postDomainModel: field, updatePostDomainModelSubject: updatePostDomainModelSubject)
+        self.present(vc, animated: true)
     }
 
 }

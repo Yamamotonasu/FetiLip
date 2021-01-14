@@ -16,6 +16,8 @@ public enum PostsRequests: FirestoreRequest {
 
     case postImage(review: String, userRef: DocumentReference, userUid: String, imageRef: String)
 
+    case updatePost(review: String)
+
     public var parameters: Parameters {
         var params: Parameters = [:]
         switch self {
@@ -25,6 +27,10 @@ public enum PostsRequests: FirestoreRequest {
             params[Fields.Key.userUid.rawValue] = userUid
             params[Fields.Key.imageRef.rawValue] = imageRef
             params[Fields.Key.createdAt.rawValue] = FieldValue.serverTimestamp()
+            params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
+            return params
+        case .updatePost(let review):
+            params[Fields.Key.review.rawValue] = review
             params[Fields.Key.updatedAt.rawValue] = FieldValue.serverTimestamp()
             return params
         }

@@ -23,6 +23,8 @@ protocol PostModelClientProtocol {
 
     func deletePost(targetReference: DocumentReference) -> Single<DocumentReference>
 
+    func updatePost(targetReference: DocumentReference, review: String) -> Single<()>
+
 }
 
 /**
@@ -67,6 +69,11 @@ public class PostModelClient: PostModelClientProtocol, RequiredLogin {
 
     func deletePost(targetReference: DocumentReference) -> Single<DocumentReference> {
         return Firestore.firestore().rx.deleteDocument(documentReference: targetReference)
+    }
+
+    func updatePost(targetReference: DocumentReference, review: String) -> Single<()> {
+        let field: Parameters = PostsRequests.updatePost(review: review).parameters
+        return Firestore.firestore().rx.updateData(PostModel.self, documentRef: targetReference, fields: field)
     }
 
 }
