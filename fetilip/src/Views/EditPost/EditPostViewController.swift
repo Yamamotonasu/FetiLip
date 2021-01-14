@@ -102,10 +102,10 @@ extension EditPostViewController {
             _self.postDomainModel.updateReview(newReview: _self.reviewTextView.text)
             self?.updatePostDomainModelSubject.onNext(_self.postDomainModel)
             self?.dismiss(animated: true)
-            AppAlert.show(message: "投稿を更新しました。", alertType: .success)
+            AppAlert.show(message: R._string.success.editPost, alertType: .success)
         }, onError: { e in
             log.error(e.localizedDescription)
-            AppAlert.show(message: "投稿の更新に失敗しました。時間を置いて再度お試しください。", alertType: .error)
+            AppAlert.show(message: R._string.error.editPost, alertType: .error)
         }).disposed(by: rx.disposeBag)
 
         output.loading.subscribe(onNext: { bool in

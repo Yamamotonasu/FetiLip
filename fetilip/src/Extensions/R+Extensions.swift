@@ -92,6 +92,10 @@ extension R {
 
             static let block = "ブロックに失敗しました。時間を置いて再度お試しください。"
 
+            // MARK: - EditPost
+
+            static let editPost = "投稿の更新に失敗しました。時間を置いて再度お試しください。"
+
         }
 
         struct success {
@@ -128,6 +132,10 @@ extension R {
             // MARK: - ViolationReports
 
             static let violationReports = "報告ありがとうございます。運営で投稿を確認し、適切な処置を行います。"
+
+            // MARK: - EditPost
+
+            static let editPost = "投稿を更新しました。"
 
         }
 
