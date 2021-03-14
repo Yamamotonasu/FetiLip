@@ -29,12 +29,12 @@ extension Reactive where Base: Storage {
             let imageData: Data = image.jpeg(.medium)
             storageRef.putData(imageData, metadata: nil) { (metadata, error) in
                 if let e = error {
-                    observer(.error(FirestorageError.failedUploadImage("Failed uploading image at firestorage. reason: \(e.localizedDescription)")))
+                    observer(.failure(FirestorageError.failedUploadImage("Failed uploading image at firestorage. reason: \(e.localizedDescription)")))
                 }
                 if let _ = metadata {
                     observer(.success(storageRef))
                 } else {
-                    observer(.error(FirestorageError.failedUploadImage("Unexpected error occured.")))
+                    observer(.failure(FirestorageError.failedUploadImage("Unexpected error occured.")))
                 }
             }
             return Disposables.create()

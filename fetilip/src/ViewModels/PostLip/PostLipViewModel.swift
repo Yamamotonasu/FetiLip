@@ -132,7 +132,7 @@ extension PostLipViewModel: ViewModelType {
             self.userAuthModel.checkLogin().flatMap { user -> Single<()> in
                 Single.create { observer in
                     if user.isAnonymous {
-                        observer(.error(User.AuthError.needToUpdateFromAnonymousUser))
+                        observer(.failure(User.AuthError.needToUpdateFromAnonymousUser))
                     } else {
                         observer(.success(()))
                     }

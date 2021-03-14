@@ -17,12 +17,12 @@ struct FirestorageLoader {
         return Single.create { observer in
             Storage.storage().reference().child(path).getData(maxSize: 1 * 1024 * 1024) { (data, error) in
                 if let e = error {
-                    observer(.error(FirestorageError.failedGetImage(e.localizedDescription)))
+                    observer(.failure(FirestorageError.failedGetImage(e.localizedDescription)))
                 }
                 if let data = data, let image = UIImage(data: data) {
                     observer(.success(image))
                 } else {
-                    observer(.error(FirestorageError.failedGetImage("Unexpected error occured.")))
+                    observer(.failure(FirestorageError.failedGetImage("Unexpected error occured.")))
                 }
             }
             return Disposables.create()

@@ -149,7 +149,6 @@
 		03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */; };
 		03AAFB0B241E2FDD0068FB1E /* fetilipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */; };
 		03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */; };
-		03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB45241FAC530068FB1E /* R.generated.swift */; };
 		03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */; };
 		03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */; };
 		03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */; };
@@ -220,6 +219,7 @@
 		EA51362825FE503500E8486B /* CodableFirebase.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362625FE503500E8486B /* CodableFirebase.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA51362F25FE505900E8486B /* ObjcExceptionBridging.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; };
 		EA51363025FE505900E8486B /* ObjcExceptionBridging.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA51364E25FE542E00E8486B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51364D25FE542E00E8486B /* R.generated.swift */; };
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
 		EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */; };
@@ -537,7 +537,6 @@
 		03AAFB31241E50E10068FB1E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
-		03AAFB45241FAC530068FB1E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCompatible.swift; sourceTree = "<group>"; };
 		03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Bold.otf"; sourceTree = "<group>"; };
 		03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Medium.otf"; sourceTree = "<group>"; };
@@ -742,6 +741,7 @@
 		EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FMPhotoPicker.xcframework; path = Carthage/Build/FMPhotoPicker.xcframework; sourceTree = "<group>"; };
 		EA51362625FE503500E8486B /* CodableFirebase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CodableFirebase.xcframework; path = Carthage/Build/CodableFirebase.xcframework; sourceTree = "<group>"; };
 		EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ObjcExceptionBridging.xcframework; path = Carthage/Build/ObjcExceptionBridging.xcframework; sourceTree = "<group>"; };
+		EA51364D25FE542E00E8486B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPost.storyboard; sourceTree = "<group>"; };
 		EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
@@ -1759,9 +1759,9 @@
 				03AAFB3B241F9D2B0068FB1E /* ViewModels */,
 				03AAFB3A241F9D230068FB1E /* Views */,
 				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
-				03AAFB45241FAC530068FB1E /* R.generated.swift */,
 				03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */,
 				03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */,
+				EA51364D25FE542E00E8486B /* R.generated.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -2575,7 +2575,6 @@
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
-				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */,
 				035D5D0424E964640047B4AA /* ValidationContainer.swift in Sources */,
 				035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */,
@@ -2632,6 +2631,7 @@
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				035D5CF624E911200047B4AA /* EditProfileDetailViewModel.swift in Sources */,
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
+				EA51364E25FE542E00E8486B /* R.generated.swift in Sources */,
 				035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
 				035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */,
@@ -2856,7 +2856,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -2893,7 +2893,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
-				EXCLUDED_ARCHS = "";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

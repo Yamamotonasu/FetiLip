@@ -16,7 +16,7 @@ extension RequiredLogin {
     func getUserId() -> Single<String> {
         return Single.create { observer in
             guard let uid = LoginAccountData.uid else {
-                observer(.error(FirebaseUser.AuthError.currentUserNotFound))
+                observer(.failure(FirebaseUser.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
             observer(.success(uid))

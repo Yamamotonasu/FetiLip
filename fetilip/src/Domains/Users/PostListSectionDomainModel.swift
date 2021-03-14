@@ -7,21 +7,4 @@
 //
 
 import Foundation
-import RxDataSources
 
-struct PostListSectionDomainModel {
-
-    var items: [Item]
-
-}
-
-extension PostListSectionDomainModel: SectionModelType {
-
-    typealias Item = PostDomainModel
-
-    init(original: PostListSectionDomainModel, items: [Item]) {
-        self = original
-        self.items = items
-    }
-
-}
