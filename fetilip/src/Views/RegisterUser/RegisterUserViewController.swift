@@ -38,6 +38,8 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
 
     @IBOutlet private weak var registerButton: UIButton!
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Properties
 
     private lazy var leftBarButton: UIBarButtonItem = UIBarButtonItem(title: "✗", style: .done, target: self, action: #selector(close))
@@ -73,19 +75,19 @@ class RegisterUserViewController: UIViewController, ViewControllerMethodInjectab
                                     registerTapEvent: registerButton.rx.tap.asSignal())
         let output = viewModel.transform(input: input)
 
-        output.emailValidatedDriver.drive(emailErrorLabel.rx.text).disposed(by: rx.disposeBag)
+        output.emailValidatedDriver.drive(emailErrorLabel.rx.text).disposed(by: disposeBag)
 
-        output.passwordValidatedDriver.drive(passwordErrorLabel.rx.text).disposed(by: rx.disposeBag)
+        output.passwordValidatedDriver.drive(passwordErrorLabel.rx.text).disposed(by: disposeBag)
 
         output.enableRegisterButtonDriver.drive(onNext: { [unowned self] enabled in
             self.registerButton.alpha = enabled ? 1 : 0.5
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.registerResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
             self?.dismiss(animated: true) {
                 AppAlert.show(message: R._string.success.registerUserSuccess, alertType: .success)
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @objc private func close() {

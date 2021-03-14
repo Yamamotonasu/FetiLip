@@ -15,6 +15,10 @@ class PayAttensionPostingImageViewController: UIViewController {
 
     @IBOutlet private weak var okButton: UIButton!
 
+    // MARK: - Properties
+
+    private let disposeBag = DisposeBag()
+
     // MARK: - LifyCycle
 
     override func viewDidLoad() {
@@ -28,7 +32,7 @@ class PayAttensionPostingImageViewController: UIViewController {
         okButton.rx.tap.asSignal().emit(onNext: { _ in
             LoginAccountData.isPayAttensionBeforePosting = false
             self.dismiss(animated: true)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
 }

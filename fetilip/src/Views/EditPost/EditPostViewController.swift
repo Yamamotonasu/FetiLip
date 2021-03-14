@@ -47,6 +47,8 @@ class EditPostViewController: UIViewController, ViewControllerMethodInjectable {
 
     private lazy var leftBarButton: UIBarButtonItem = UIBarButtonItem(title: "✗", style: .done, target: self, action: #selector(close))
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Rx
 
     private let updatePostEvent: PublishSubject<PostDomainModel> = PublishSubject()
@@ -82,7 +84,7 @@ extension EditPostViewController {
 
         FirestorageLoader.loadImage(storagePath: postDomainModel.imageRef).subscribe(onSuccess: { [weak self] image in
             self?.postImageView.image = image
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         reviewTextView.text = postDomainModel.review
 
@@ -92,7 +94,7 @@ extension EditPostViewController {
     private func subscribe() {
         updatePostButton.rx.tap.subscribe(onNext: { [unowned self] _ in
             self.updatePostEvent.onNext(postDomainModel)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func subscribeUI() {
@@ -108,7 +110,7 @@ extension EditPostViewController {
         }, onError: { e in
             log.error(e.localizedDescription)
             AppAlert.show(message: R._string.error.editPost, alertType: .error)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.loading.subscribe(onNext: { bool in
             if bool {
@@ -116,7 +118,7 @@ extension EditPostViewController {
             } else {
                 AppIndicator.dismiss()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @objc func close() {

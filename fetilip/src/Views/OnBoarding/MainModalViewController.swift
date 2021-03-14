@@ -20,6 +20,8 @@ class MainModalViewController: UIViewController {
 
     @IBOutlet private weak var checkBoxButton: UIButton!
 
+    private let disposeBag = DisposeBag()
+
     private var checkedBox: Bool = false
 
     // MARK: - Lifecycle
@@ -72,7 +74,7 @@ class MainModalViewController: UIViewController {
                 let image = enabled ? R.image.square_theme() : R.image.square()
                 self.checkBoxButton.setImage(image, for: .normal)
                 self.checkedBox = !self.checkedBox
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
 
         startFetilipButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.setFlag()
@@ -81,7 +83,7 @@ class MainModalViewController: UIViewController {
             self.dismiss(animated: true) {
                 previousVC?.present(vc, animated: true)
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func setFlag() {

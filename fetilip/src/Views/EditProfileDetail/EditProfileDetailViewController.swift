@@ -34,6 +34,8 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
 
     private var floatingPanelController: FloatingPanelController!
 
+    private let disposeBag = DisposeBag()
+
     private lazy var rightSaveButton: UIBarButtonItem = UIBarButtonItem(title: "保存", style: .done, target: self, action: #selector(saveProfile))
 
     // MARK: - Rx
@@ -114,7 +116,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
         self.view.addGestureRecognizer(tapGesture)
         tapGesture.rx.event.bind(onNext: { [unowned self] _ in
             self.floatingPanelController.dismiss(animated: true)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func subscribeUI() {
@@ -128,7 +130,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
             ApplicationFlag.shared.updateNeedProfileUpdate(true)
             AppAlert.show(message: R._string.success.updateInformation, alertType: .success)
             self?.navigationController?.popViewController(animated: true)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.indicator.subscribe(onNext: { bool in
             if bool {
@@ -136,7 +138,7 @@ class EditProfileDetailViewController: UIViewController, ViewControllerMethodInj
             } else {
                 AppIndicator.dismiss()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @objc private func saveProfile() {

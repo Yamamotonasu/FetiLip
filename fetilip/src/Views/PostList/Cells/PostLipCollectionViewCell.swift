@@ -20,6 +20,10 @@ class PostLipCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var reviewText: UILabel!
 
+    // MARK: - Properties
+
+    private let disposeBag = DisposeBag()
+
     // MARK: - LifeCycle
 
     override func awakeFromNib() {
@@ -52,7 +56,7 @@ class PostLipCollectionViewCell: UICollectionViewCell {
                     }
                 }, onError: { e in
                     log.error(e.localizedDescription)
-                }).disposed(by: rx.disposeBag)
+                }).disposed(by: disposeBag)
         setupDesign()
     }
 

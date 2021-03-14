@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class LoginViewController: UIViewController {
 
@@ -27,6 +28,8 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
 
     private lazy var leftBarButton: UIBarButtonItem = UIBarButtonItem(title: "✗", style: .done, target: self, action: #selector(close))
+
+    private let disposeBag = DisposeBag()
 
     // MARK: - Lifecycle
 
@@ -67,7 +70,7 @@ class LoginViewController: UIViewController {
                 presenting?.dismiss(animated: true)
                 AppAlert.show(message: R._string.doneLogin, alertType: .info)
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @objc private func close() {

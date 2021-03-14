@@ -71,6 +71,8 @@ class PostListViewController: UIViewController, ViewControllerMethodInjectable {
 
     static let refreshSubject: PublishSubject<RefreshLoadType> = PublishSubject()
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -147,7 +149,7 @@ extension PostListViewController {
                 self?.refreshControl.endRefreshing()
             })
             .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.refreshResult.do(onNext: { [weak self] data in
             self?.data = data
@@ -159,16 +161,16 @@ extension PostListViewController {
             self?.refreshControl.endRefreshing()
         })
         .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
-        .disposed(by: rx.disposeBag)
+        .disposed(by: disposeBag)
 
         lipCollectionView.rx.itemSelected
             .subscribe(onNext: { [unowned self] indexPath in
                 self.selectedIndexPath = indexPath
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
 
         output.loadingObservable.subscribe(onNext: {
             self.isLoading = $0
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.deleteResult.do(onNext: { [weak self] data in
             self?.data = data
@@ -177,7 +179,7 @@ extension PostListViewController {
             self?.refreshControl.endRefreshing()
         })
         .bind(to: lipCollectionView.rx.items(dataSource: self.dataSource))
-        .disposed(by: rx.disposeBag)
+        .disposed(by: disposeBag)
     }
 
     /// Transition post lip page.

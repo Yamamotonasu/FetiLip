@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class TransitionPostPageViewController: UIViewController {
 
@@ -16,8 +17,14 @@ class TransitionPostPageViewController: UIViewController {
 
     var viewModel: ViewModel = PostListViewModel(postModel: PostModelClient())
 
+    // MARK: - Outlets
+
     /// Button to transition to the lip posting page.
     @IBOutlet weak var transitionPostPageButton: UIButton!
+
+    // MARK: - Properties
+
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +41,7 @@ extension TransitionPostPageViewController {
     private func subscribeUI() {
         transitionPostPageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.transitionPostLipScene()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     /// Transition post lip page.

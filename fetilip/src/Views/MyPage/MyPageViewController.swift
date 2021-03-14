@@ -61,6 +61,8 @@ class MyPageViewController: UIViewController, ViewControllerMethodInjectable {
 
     var userDomainModel: UserDomainModel?
 
+    private let disposeBag = DisposeBag()
+
     // MARK: LifeCycle
 
     override func viewDidLoad() {
@@ -111,27 +113,27 @@ extension MyPageViewController {
     private func subscribe() {
         debugButton.rx.tap.asDriver().drive(onNext: { [unowned self] in
             self.transitionDebugScreen()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         transitionToSettingButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
             self.transitionToSettingScreen()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         transitionToEditProfileButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
             self.transitionToEditProfileScreen()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         let tapGesture = UITapGestureRecognizer()
         fetiPointField.addGestureRecognizer(tapGesture)
         tapGesture.rx.event.bind(onNext: { [unowned self] _ in
             self.transitionToWhatFetilipPointScreen()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         let postCountTapGesture = UITapGestureRecognizer()
         postCountStackView.addGestureRecognizer(postCountTapGesture)
         postCountTapGesture.rx.event.bind(onNext: { [unowned self] _ in
             self.transitionToPostList()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func subscribeUI() {
@@ -146,19 +148,19 @@ extension MyPageViewController {
             self?.drawUserData(domain)
         }, onError: { e in
             log.debug(e.localizedDescription)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.userSocialLoadResult
             .observeOn(MainScheduler.instance)
             .map { $0.fetiPoint }
             .bind(to: fetipointLabel.rx.text)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.userSocialLoadResult
             .observeOn(MainScheduler.instance)
             .map {$0.postCount }
             .bind(to: postCountLabel.rx.text)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
     }
 
     /// Transition to debug screen.
@@ -198,7 +200,7 @@ extension MyPageViewController {
                 self?.userImage.image = image
             }, onError: { _ in
                     // TODO: Error handling
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
         }
     }
 
