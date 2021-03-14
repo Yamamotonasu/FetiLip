@@ -37,7 +37,6 @@
 		034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563124CE4E7C0005B6C5 /* PostEntity.swift */; };
 		034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563424CE4EA90005B6C5 /* UserEntity.swift */; };
 		034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563724CF23D40005B6C5 /* UserDomainModel.swift */; };
-		034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */; };
 		034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563B24D245270005B6C5 /* FirestoreEntity.swift */; };
 		034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */; };
 		034F7A4C250E45730092E967 /* WhatFetiPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */; };
@@ -308,7 +307,6 @@
 		034C563124CE4E7C0005B6C5 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		034C563424CE4EA90005B6C5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		034C563724CF23D40005B6C5 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
-		034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListSectionDomainModel.swift; path = fetilip/src/Domains/Users/PostListSectionDomainModel.swift; sourceTree = SOURCE_ROOT; };
 		034C563B24D245270005B6C5 /* FirestoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEntity.swift; sourceTree = "<group>"; };
 		034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhatFetiPoint.storyboard; sourceTree = "<group>"; };
@@ -850,7 +848,6 @@
 			isa = PBXGroup;
 			children = (
 				034C563624CF23BC0005B6C5 /* Users */,
-				034A986D24983FE8009336F0 /* RxDatasource */,
 				034A986A24964EFE009336F0 /* Posts */,
 			);
 			path = Domains;
@@ -862,14 +859,6 @@
 				034A986B24964F1B009336F0 /* PostDomainModel.swift */,
 			);
 			path = Posts;
-			sourceTree = "<group>";
-		};
-		034A986D24983FE8009336F0 /* RxDatasource */ = {
-			isa = PBXGroup;
-			children = (
-				034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */,
-			);
-			path = RxDatasource;
 			sourceTree = "<group>";
 		};
 		034A9872249CFF94009336F0 /* Firestore */ = {
@@ -2659,7 +2648,6 @@
 				034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */,
 				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
 				035F6DB024FB8CAE00991231 /* ApplicationFlag.swift in Sources */,
-				034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,
 				035F6DA824F481D500991231 /* AppAlert.swift in Sources */,
 				035F6DAE24FB34DB00991231 /* ReviewValidation.swift in Sources */,
