@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */; };
 		031249A725102526005AD4E2 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 031249A625102526005AD4E2 /* GoogleService-Production-Info.plist */; };
-		034A9859249602F7009336F0 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9856249602F7009336F0 /* Nuke.framework */; };
-		034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9857249602F7009336F0 /* Differentiator.framework */; };
-		034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9858249602F7009336F0 /* RxDataSources.framework */; };
 		034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986224960674009336F0 /* MasonaryCollectionViewLayout.swift */; };
 		034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */; };
 		034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */; };
@@ -54,7 +51,6 @@
 		0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */; };
 		0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */; };
 		0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */; };
-		0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359901324B407F3000F8A27 /* CodableFirebase.framework */; };
 		0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */; };
 		0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
@@ -69,7 +65,6 @@
 		035BB00224666121001FF6D1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00124666121001FF6D1 /* AppSettings.swift */; };
 		035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00324666D3E001FF6D1 /* LoginAccountData.swift */; };
 		035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */; };
-		035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */; };
 		035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035BB0102467CFA2001FF6D1 /* PostLip.storyboard */; };
 		035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */; };
 		035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0142467D080001FF6D1 /* PostLipViewModel.swift */; };
@@ -100,7 +95,6 @@
 		035F6D9E24F3432600991231 /* SourceHanSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */; };
 		035F6D9F24F3432600991231 /* SourceHanSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */; };
 		035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA024F348FF00991231 /* UIFont+Extensions.swift */; };
-		035F6DA324F47FF000991231 /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035F6DA224F47FF000991231 /* SwiftMessages.framework */; };
 		035F6DA824F481D500991231 /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA724F481D500991231 /* AppAlert.swift */; };
 		035F6DAA24F4AA5D00991231 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA924F4AA5D00991231 /* UILabel+Extensions.swift */; };
 		035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAB24F9CC0100991231 /* Observable+extensions.swift */; };
@@ -147,7 +141,6 @@
 		039EB673243833F30016436C /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB672243833F30016436C /* DebugViewModel.swift */; };
 		039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB675243840580016436C /* ViewControllerMethodInjectable.swift */; };
 		039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67724384FD50016436C /* FirebaseAuth.framework */; };
-		039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */; };
 		039EB6872439BEB00016436C /* AppIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB6862439BEB00016436C /* AppIndicator.swift */; };
 		039EB68B243B641B0016436C /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB68A243B641A0016436C /* UsersModel.swift */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
@@ -155,15 +148,6 @@
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
 		03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */; };
 		03AAFB0B241E2FDD0068FB1E /* fetilipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */; };
-		03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */; };
-		03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */; };
-		03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB20241E45730068FB1E /* RxSwift.framework */; };
-		03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB24241E46800068FB1E /* RxRelay.framework */; };
-		03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB27241E46970068FB1E /* IQKeyboardManagerSwift.framework */; };
-		03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB24241E46800068FB1E /* RxRelay.framework */; };
-		03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; };
-		03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB31241E50E10068FB1E /* XCGLogger.framework */; };
-		03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
 		03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */; };
 		03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB45241FAC530068FB1E /* R.generated.swift */; };
 		03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */; };
@@ -191,7 +175,6 @@
 		03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB424309BE40068FB1E /* CardTabBar.swift */; };
 		03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */; };
 		03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */; };
-		03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
 		03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */; };
 		03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC312434C7130068FB1E /* nanopb.framework */; };
 		03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */; };
@@ -208,7 +191,6 @@
 		03AD487D24FEA024006BABDF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AD487C24FEA024006BABDF /* Login.storyboard */; };
 		03AD487F24FEA03B006BABDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487E24FEA03B006BABDF /* LoginViewController.swift */; };
 		03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD488124FF20F4006BABDF /* LoginViewModel.swift */; };
-		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
 		03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */; };
 		03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */; };
 		03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */; };
@@ -222,6 +204,22 @@
 		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
 		EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48425A7E824005DC446 /* ViolationReportModel.swift */; };
 		EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */; };
+		EA5135DC25FE4E7A00E8486B /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */; };
+		EA5135E625FE4E9900E8486B /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */; };
+		EA5135E925FE4EA900E8486B /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135E825FE4EA900E8486B /* RxRelay.xcframework */; };
+		EA5135F025FE4ED800E8486B /* XCGLogger.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135EF25FE4ED800E8486B /* XCGLogger.xcframework */; };
+		EA5135F525FE4EE800E8486B /* SwiftMessages.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135F425FE4EE800E8486B /* SwiftMessages.xcframework */; };
+		EA5135FA25FE4F8900E8486B /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135F925FE4F8900E8486B /* RxCocoa.xcframework */; };
+		EA5135FF25FE4FA000E8486B /* NVActivityIndicatorView.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135FD25FE4FA000E8486B /* NVActivityIndicatorView.xcframework */; };
+		EA51360125FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135FE25FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework */; };
+		EA51360725FE4FC200E8486B /* IQKeyboardManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51360525FE4FC200E8486B /* IQKeyboardManager.xcframework */; };
+		EA51360925FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51360625FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework */; };
+		EA51361925FE500600E8486B /* FloatingPanel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51361825FE500600E8486B /* FloatingPanel.xcframework */; };
+		EA51362025FE501800E8486B /* FMPhotoPicker.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */; };
+		EA51362725FE503500E8486B /* CodableFirebase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362625FE503500E8486B /* CodableFirebase.xcframework */; };
+		EA51362825FE503500E8486B /* CodableFirebase.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362625FE503500E8486B /* CodableFirebase.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EA51362F25FE505900E8486B /* ObjcExceptionBridging.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; };
+		EA51363025FE505900E8486B /* ObjcExceptionBridging.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
 		EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */; };
@@ -259,6 +257,18 @@
 				034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */,
 				034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EA51362925FE503500E8486B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EA51362825FE503500E8486B /* CodableFirebase.xcframework in Embed Frameworks */,
+				EA51363025FE505900E8486B /* ObjcExceptionBridging.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -719,6 +729,19 @@
 		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
 		EA49D48425A7E824005DC446 /* ViolationReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportModel.swift; sourceTree = "<group>"; };
 		EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportsRequest.swift; sourceTree = "<group>"; };
+		EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		EA5135E825FE4EA900E8486B /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
+		EA5135EF25FE4ED800E8486B /* XCGLogger.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = XCGLogger.xcframework; path = Carthage/Build/XCGLogger.xcframework; sourceTree = "<group>"; };
+		EA5135F425FE4EE800E8486B /* SwiftMessages.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftMessages.xcframework; path = Carthage/Build/SwiftMessages.xcframework; sourceTree = "<group>"; };
+		EA5135F925FE4F8900E8486B /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		EA5135FD25FE4FA000E8486B /* NVActivityIndicatorView.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NVActivityIndicatorView.xcframework; path = Carthage/Build/NVActivityIndicatorView.xcframework; sourceTree = "<group>"; };
+		EA5135FE25FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NVActivityIndicatorViewAppExtension.xcframework; path = Carthage/Build/NVActivityIndicatorViewAppExtension.xcframework; sourceTree = "<group>"; };
+		EA51360525FE4FC200E8486B /* IQKeyboardManager.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardManager.xcframework; path = Carthage/Build/IQKeyboardManager.xcframework; sourceTree = "<group>"; };
+		EA51360625FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardManagerSwift.xcframework; path = Carthage/Build/IQKeyboardManagerSwift.xcframework; sourceTree = "<group>"; };
+		EA51361825FE500600E8486B /* FloatingPanel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FloatingPanel.xcframework; path = Carthage/Build/FloatingPanel.xcframework; sourceTree = "<group>"; };
+		EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FMPhotoPicker.xcframework; path = Carthage/Build/FMPhotoPicker.xcframework; sourceTree = "<group>"; };
+		EA51362625FE503500E8486B /* CodableFirebase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CodableFirebase.xcframework; path = Carthage/Build/CodableFirebase.xcframework; sourceTree = "<group>"; };
+		EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ObjcExceptionBridging.xcframework; path = Carthage/Build/ObjcExceptionBridging.xcframework; sourceTree = "<group>"; };
 		EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPost.storyboard; sourceTree = "<group>"; };
 		EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
@@ -736,47 +759,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				035E49F0251DB5050083EC21 /* MessageUI.framework in Frameworks */,
+				EA51362F25FE505900E8486B /* ObjcExceptionBridging.xcframework in Frameworks */,
 				039EB65A243611290016436C /* abseil.framework in Frameworks */,
-				03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */,
 				03AAFC452434C7140068FB1E /* FirebaseInstallations.framework in Frameworks */,
 				03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */,
+				EA5135F525FE4EE800E8486B /* SwiftMessages.xcframework in Frameworks */,
 				039EB662243611290016436C /* leveldb-library.framework in Frameworks */,
-				03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */,
 				03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */,
-				0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */,
 				03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */,
-				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
-				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
+				EA5135E925FE4EA900E8486B /* RxRelay.xcframework in Frameworks */,
 				03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */,
 				039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */,
 				03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */,
-				035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */,
-				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
-				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
-				034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */,
 				03631963250C75CE005B317A /* Protobuf.framework in Frameworks */,
 				036318F4250C7569005B317A /* FirebaseCrashlytics.framework in Frameworks */,
-				03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */,
+				EA51362025FE501800E8486B /* FMPhotoPicker.xcframework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
+				EA5135F025FE4ED800E8486B /* XCGLogger.xcframework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
-				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
 				036318F6250C756A005B317A /* FirebaseRemoteConfig.framework in Frameworks */,
 				036318FA250C75A2005B317A /* FirebaseABTesting.framework in Frameworks */,
-				034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */,
-				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
+				EA5135FA25FE4F8900E8486B /* RxCocoa.xcframework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
 				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
-				035F6DA324F47FF000991231 /* SwiftMessages.framework in Frameworks */,
+				EA51361925FE500600E8486B /* FloatingPanel.xcframework in Frameworks */,
 				039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */,
-				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
-				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
+				EA51360925FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework in Frameworks */,
 				03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
+				EA51360125FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework in Frameworks */,
+				EA51360725FE4FC200E8486B /* IQKeyboardManager.xcframework in Frameworks */,
 				039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */,
-				034A9859249602F7009336F0 /* Nuke.framework in Frameworks */,
+				EA5135FF25FE4FA000E8486B /* NVActivityIndicatorView.xcframework in Frameworks */,
 				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
+				EA5135DC25FE4E7A00E8486B /* RxSwift.xcframework in Frameworks */,
+				EA5135E625FE4E9900E8486B /* RxSwift.xcframework in Frameworks */,
 				039EB660243611290016436C /* FirebaseStorage.framework in Frameworks */,
+				EA51362725FE503500E8486B /* CodableFirebase.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1659,6 +1678,19 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */,
+				EA51362625FE503500E8486B /* CodableFirebase.xcframework */,
+				EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */,
+				EA51361825FE500600E8486B /* FloatingPanel.xcframework */,
+				EA51360525FE4FC200E8486B /* IQKeyboardManager.xcframework */,
+				EA51360625FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework */,
+				EA5135FD25FE4FA000E8486B /* NVActivityIndicatorView.xcframework */,
+				EA5135FE25FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework */,
+				EA5135F925FE4F8900E8486B /* RxCocoa.xcframework */,
+				EA5135F425FE4EE800E8486B /* SwiftMessages.xcframework */,
+				EA5135EF25FE4ED800E8486B /* XCGLogger.xcframework */,
+				EA5135E825FE4EA900E8486B /* RxRelay.xcframework */,
+				EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */,
 				035E49EF251DB5040083EC21 /* MessageUI.framework */,
 				036318FD250C75B3005B317A /* iOS */,
 				036318F9250C75A2005B317A /* FirebaseABTesting.framework */,
@@ -2239,8 +2271,8 @@
 				03AAFAE1241E2FD70068FB1E /* Sources */,
 				03AAFAE2241E2FD70068FB1E /* Frameworks */,
 				03AAFAE3241E2FD70068FB1E /* Resources */,
-				03AAFB2A241E47740068FB1E /* Carthage Run Script */,
 				432510C923D697783A36108D /* [CP] Embed Pods Frameworks */,
+				EA51362925FE503500E8486B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2392,56 +2424,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03AAFB2A241E47740068FB1E /* Carthage Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManager.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FMPhotoPicker.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CodableFirebase.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftMessages.framework",
-			);
-			name = "Carthage Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManager.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FMPhotoPicker.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CodableFirebase.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FloatingPanel.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftMessages.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		03AAFB44241FAB690068FB1E /* Rswift Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2874,7 +2856,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
-				EXCLUDED_ARCHS = "arm64e arm64";
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -2911,7 +2893,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
-				EXCLUDED_ARCHS = "arm64e arm64";
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

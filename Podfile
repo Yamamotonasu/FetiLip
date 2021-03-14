@@ -9,7 +9,7 @@ end
 
 # R.swift
 def pod_Rswift
-  pod 'R.swift', '~> 5.3.0'
+  pod 'R.swift', '~> 5.4.0'
 end
 
 target 'fetilip' do

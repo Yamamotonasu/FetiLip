@@ -1,0 +1,33 @@
+[submodule "Carthage/Checkouts/FMPhotoPicker"]
+	path = Carthage/Checkouts/FMPhotoPicker
+	url = https://github.com/congnd/FMPhotoPicker.git
+[submodule "Carthage/Checkouts/XCGLogger"]
+	path = Carthage/Checkouts/XCGLogger
+	url = https://github.com/DaveWoodCom/XCGLogger.git
+[submodule "Carthage/Checkouts/Nimble"]
+	path = Carthage/Checkouts/Nimble
+	url = https://github.com/Quick/Nimble.git
+[submodule "Carthage/Checkouts/Quick"]
+	path = Carthage/Checkouts/Quick
+	url = https://github.com/Quick/Quick.git
+[submodule "Carthage/Checkouts/SwiftMessages"]
+	path = Carthage/Checkouts/SwiftMessages
+	url = https://github.com/SwiftKickMobile/SwiftMessages.git
+[submodule "Carthage/Checkouts/RxSwift"]
+	path = Carthage/Checkouts/RxSwift
+	url = https://github.com/ReactiveX/RxSwift.git
+[submodule "Carthage/Checkouts/CodableFirebase"]
+	path = Carthage/Checkouts/CodableFirebase
+	url = https://github.com/alickbass/CodableFirebase.git
+[submodule "Carthage/Checkouts/IQKeyboardManager"]
+	path = Carthage/Checkouts/IQKeyboardManager
+	url = https://github.com/hackiftekhar/IQKeyboardManager.git
+[submodule "Carthage/Checkouts/Nuke"]
+	path = Carthage/Checkouts/Nuke
+	url = https://github.com/kean/Nuke.git
+[submodule "Carthage/Checkouts/FloatingPanel"]
+	path = Carthage/Checkouts/FloatingPanel
+	url = https://github.com/scenee/FloatingPanel.git
+[submodule "Carthage/Checkouts/NVActivityIndicatorView"]
+	path = Carthage/Checkouts/NVActivityIndicatorView
+	url = https://github.com/ninjaprox/NVActivityIndicatorView.git

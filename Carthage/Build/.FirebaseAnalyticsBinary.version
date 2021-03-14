@@ -8,11 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "6.34.0",
+  "commitish" : "7.4.0",
   "iOS" : [
     {
       "name" : "FIRAnalyticsConnector",
-      "hash" : "92727a0093cd699d328221b9993dbad4a3ab7fc1dffa1d0607a745d8ba9f0b99",
+      "hash" : "d7c0353cd4c330a138f03c6fc1a3d06ef01a08a9a4c5e03e4a388c950320ffb6",
       "linking" : "dynamic"
     },
     {
@@ -22,47 +22,47 @@
     },
     {
       "name" : "FirebaseAnalytics",
-      "hash" : "881a6aacfa33856e9b3442dda2882302830f49c9f7830ed8667eed250f0712a2",
+      "hash" : "3d8923bba257bd991b7ee39b4ca3231cf166296b054176a63dc1093b25e244d4",
       "linking" : "dynamic"
     },
     {
       "name" : "FirebaseCore",
-      "hash" : "631753f0d75aa121e39e87b8b82f77875bd4733a16df9816237727f801cb41d6",
+      "hash" : "6c85b4a9214b1b815c4a534de543034e5c0be0f240889f4fcc5b811159f7465e",
       "linking" : "dynamic"
     },
     {
       "name" : "FirebaseCoreDiagnostics",
-      "hash" : "98cbc2a5dda4ce5b212320d80fc9f8c996b8c68910057d25d231b9ee4dfb5908",
+      "hash" : "016631f560ffa789fcd289c8556468fdb5dbc14f1e9d4b61f215926fe2ffd44d",
       "linking" : "dynamic"
     },
     {
       "name" : "FirebaseInstallations",
-      "hash" : "01ac20f5cff938c6cec09ec282aaf2a7170ce17fcb420bfe2e1b006a1bf3a9c8",
+      "hash" : "eaec135ce4e09ecfe183a003ae869d7696db9c4337bde19f028cd8d82ab27cfb",
       "linking" : "dynamic"
     },
     {
       "name" : "GoogleAppMeasurement",
-      "hash" : "52ba3ec0627e6ef6bb6135671dfa8b5e9db7094bb16604e0befd7c2ad360735b",
+      "hash" : "019f7bccb1cf225cde818590d7d2da3dde22aace3d00936e6e61a583091d100a",
       "linking" : "dynamic"
     },
     {
       "name" : "GoogleDataTransport",
-      "hash" : "8abc73bff63cc72f7ad7624cb02065bcecb8d81e9c97fdc947639754e8134d40",
+      "hash" : "44c0a62cacebcfa54087fd94ea3933826d98bb7f56b7849013cf4a482d73ecb1",
       "linking" : "dynamic"
     },
     {
       "name" : "GoogleUtilities",
-      "hash" : "ecf760d436abad16489c5b2f3ba8efb654f30084206ee89a7d737fc6b76e1856",
+      "hash" : "89eae8eea41092dee0984453d062014620fda4bf4ed10e586975a77a4f1d6864",
       "linking" : "dynamic"
     },
     {
       "name" : "PromisesObjC",
-      "hash" : "6d5d78b3116e6243be73da0426789ed59874c695a7128dac3e5a048ded0a31c8",
+      "hash" : "d5ef9d4d6b98b5ac1bab449ce39291da663c768fd09d80b837f378b2c4cdfab1",
       "linking" : "dynamic"
     },
     {
       "name" : "nanopb",
-      "hash" : "8546eb9f0c665c82870fa103069baaea83adbbb3c1ab1dd2bb073cbeb9a7c0fe",
+      "hash" : "c8dc7c51d1d7fd37d24ec8eedb9fc412239b5f73515e4e59fd9257d4f29e0a56",
       "linking" : "dynamic"
     }
   ]

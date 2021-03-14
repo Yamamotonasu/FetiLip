@@ -2,10 +2,18 @@
   "commitish" : "v9.0.0",
   "iOS" : [
     {
-      "hash" : "9434a6a2b455a36125fba6598773c345f0161b07f3894b53a65a42051607d465",
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
+      "hash" : "72b2204b48b33d5bc684dc053bd36001b3a95cbf9a36ff11d0e2f29530b87d65",
       "name" : "Nimble",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "container" : "Nimble.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
+      "hash" : "c92bd9b5edc790b0164ba1f70ac175bfa484ccba4d828ccadb117c8b008907a3",
+      "name" : "Nimble",
+      "container" : "Nimble.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
     }
   ]
 }
