@@ -6,59 +6,59 @@
 	<dict>
 		<key>Headers/Nuke-Swift.h</key>
 		<data>
-		16Dux4Wlx1MVwDELlwrozJ+GBt8=
+		ilrbbtYkojkeVuVkJLMy8DmYKsY=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		MqBvmr0EIXKrqPyhOIuXg7KmZ/k=
+		v///S6sC68p9w/yYY1RRcY2BEEM=
 		</data>
 		<key>Modules/Nuke.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		WHShD907HvEOd+pijwXo42XHYaw=
+		0Ia9fCbWQ4F4z03l/f4FIMqhaaQ=
 		</data>
 		<key>Modules/Nuke.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		WHShD907HvEOd+pijwXo42XHYaw=
+		0Ia9fCbWQ4F4z03l/f4FIMqhaaQ=
 		</data>
 		<key>Modules/Nuke.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		Lsm9chgBkMsdOw+/n2XXbCVzptY=
+		OBsoEK4jAuBQLr37R0s3VWT6UGc=
 		</data>
 		<key>Modules/Nuke.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		Lsm9chgBkMsdOw+/n2XXbCVzptY=
+		OBsoEK4jAuBQLr37R0s3VWT6UGc=
 		</data>
 		<key>Modules/Nuke.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		h6SwsjpDdCVKIJFc2d3knEzJ6YA=
+		+DFTowTiC+Yj13Pd1YucA/CdAgY=
 		</data>
 		<key>Modules/Nuke.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4jkkp7cENudmo1uqxjzLEIiI31g=
+		0Swa25s0PVrFX4MEMU93u9ZSBPo=
 		</data>
 		<key>Modules/Nuke.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		h6SwsjpDdCVKIJFc2d3knEzJ6YA=
+		+DFTowTiC+Yj13Pd1YucA/CdAgY=
 		</data>
 		<key>Modules/Nuke.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		4jkkp7cENudmo1uqxjzLEIiI31g=
+		0Swa25s0PVrFX4MEMU93u9ZSBPo=
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ig6bXk7OwwdPChgP0sEKVND1+og=
+		xOdGoNp0ouwnqwv/mO3FUm9Vbmk=
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		co3uKGVrsltsfQr0JHglVRr/4fE=
+		vk6uZcWzj8IOoR1UdQAW9jbLcjI=
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		ig6bXk7OwwdPChgP0sEKVND1+og=
+		xOdGoNp0ouwnqwv/mO3FUm9Vbmk=
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		co3uKGVrsltsfQr0JHglVRr/4fE=
+		vk6uZcWzj8IOoR1UdQAW9jbLcjI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -67,91 +67,91 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oXjeAObGju9L0VUcakaIDO6ndGXucKihE744wqDIOE0=
+			r2ZqE4tFP+5TAmEXiw0xXfuInHsqxu2TSlM0AWgJl54=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z8OdU0WTDUUr4eDNIC0u8Fac5z5aP1cAoLf7KZORHvY=
+			McMatTmxCXFYJOxru0qq4PenqDGD62qk/SWSml9WK5Y=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z8OdU0WTDUUr4eDNIC0u8Fac5z5aP1cAoLf7KZORHvY=
+			McMatTmxCXFYJOxru0qq4PenqDGD62qk/SWSml9WK5Y=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V5MidbKONOkzIZsaUow0pQF4I8RHXdvMQEjhUNj9EgM=
+			4pHKc93HhxGCvisJQRvRx2Ma4ViwsPeoGHfy+VINmIA=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V5MidbKONOkzIZsaUow0pQF4I8RHXdvMQEjhUNj9EgM=
+			4pHKc93HhxGCvisJQRvRx2Ma4ViwsPeoGHfy+VINmIA=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oWFi8mzqgfrY7qJjsm2IOyBtpaVba7IBww5zNZeFt5k=
+			PehhtMWA8AFJu9Q+apMs0T+o8jHFiBFNqTiTvuwVgC0=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f/aL6Y36bK7CoUl+WukShg5URz7vTwgwsuGamOmZ98g=
+			qju/CIUTgJDgtN4Zhz21uPbST724DCM/J+Y56Cf55/4=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oWFi8mzqgfrY7qJjsm2IOyBtpaVba7IBww5zNZeFt5k=
+			PehhtMWA8AFJu9Q+apMs0T+o8jHFiBFNqTiTvuwVgC0=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			f/aL6Y36bK7CoUl+WukShg5URz7vTwgwsuGamOmZ98g=
+			qju/CIUTgJDgtN4Zhz21uPbST724DCM/J+Y56Cf55/4=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJ0pLFwBYfUYk2/PgtCz6GhfBYbI728Lr4VDOvwrAu4=
+			t3qBI2lV+pBb6jxFfkmgGJlPHC8zw/yRWNOYo6XVZU8=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5fLaqscaYsnsN24Y0+HAk6ewlCiGHRI+Bi6+wAnMQhM=
+			lkuA4PCgYAbZbF6uFj01AA2ahihlkjlBEa7CR6WwWHE=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJ0pLFwBYfUYk2/PgtCz6GhfBYbI728Lr4VDOvwrAu4=
+			t3qBI2lV+pBb6jxFfkmgGJlPHC8zw/yRWNOYo6XVZU8=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5fLaqscaYsnsN24Y0+HAk6ewlCiGHRI+Bi6+wAnMQhM=
+			lkuA4PCgYAbZbF6uFj01AA2ahihlkjlBEa7CR6WwWHE=
 			</data>
 		</dict>
 	</dict>

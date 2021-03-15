@@ -6,83 +6,83 @@
 	<dict>
 		<key>Headers/XCGLogger-Swift.h</key>
 		<data>
-		+j3Qqy4oHGt8eQbJ3aOzn6A2KtM=
+		dmFsTEfUFc+K9WohFJLJxps8TEo=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4xxnF9rB7KeRUjtdgAS4+JADuss=
+		bmfWai1OY7FhZX1TW8sFQbJfXBw=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		Uxn/NV02pV7+byEuAfi2psmAHM4=
+		wskSueLp8dCdp8oItWvzMkwO2Uk=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		Uxn/NV02pV7+byEuAfi2psmAHM4=
+		wskSueLp8dCdp8oItWvzMkwO2Uk=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		U/j9Ud3MGlsuI0Zcazrfi7T0bwA=
+		RMhZEaQaQol+zi25B6B3y7dfzK4=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<data>
-		U/j9Ud3MGlsuI0Zcazrfi7T0bwA=
+		RMhZEaQaQol+zi25B6B3y7dfzK4=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		YCVSB7nt2AsDxiiJAhAw9xodF8A=
+		bEAYMuPzjvCRJxEDZvuk2gABjN8=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		YCVSB7nt2AsDxiiJAhAw9xodF8A=
+		bEAYMuPzjvCRJxEDZvuk2gABjN8=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		x67WkRLDR+TuuxE3/lppY6Ad+tg=
+		kSECq5xlk/i5ia9dNgm0bUPVrUA=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		QO/4uCV51pFU3Aml12ZuHm+GTvo=
+		U/9Gejk1IdFKVYoK+SbKFkFgACA=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		x67WkRLDR+TuuxE3/lppY6Ad+tg=
+		kSECq5xlk/i5ia9dNgm0bUPVrUA=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		QO/4uCV51pFU3Aml12ZuHm+GTvo=
+		U/9Gejk1IdFKVYoK+SbKFkFgACA=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		lzzO++QjH7RfNXxE8Fbbds7W6TQ=
+		THVmJLbrgJJh7u6HTKe5HpZ2LVU=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ciWW2x4l8vkXvE5B+HxNOY8XEIc=
+		G14sBcL42KLLmQxggl3Gs3ZoOOs=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/i386.swiftdoc</key>
 		<data>
-		lzzO++QjH7RfNXxE8Fbbds7W6TQ=
+		THVmJLbrgJJh7u6HTKe5HpZ2LVU=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/i386.swiftmodule</key>
 		<data>
-		ciWW2x4l8vkXvE5B+HxNOY8XEIc=
+		G14sBcL42KLLmQxggl3Gs3ZoOOs=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ua+gtq+sQpFlegxpW7SG16xsTVE=
+		iX1Qqav+yEzs5YJbbTTsNFWhArc=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/hI+g3MyXqTDQQW20fdxuMyLizA=
+		0dw2nE5yJOFJZtgYnprZA0IKgAQ=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		ua+gtq+sQpFlegxpW7SG16xsTVE=
+		iX1Qqav+yEzs5YJbbTTsNFWhArc=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		/hI+g3MyXqTDQQW20fdxuMyLizA=
+		0dw2nE5yJOFJZtgYnprZA0IKgAQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -95,209 +95,209 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+j3Qqy4oHGt8eQbJ3aOzn6A2KtM=
+			dmFsTEfUFc+K9WohFJLJxps8TEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			C7z7WbLwnZ3QbFuqW7F3q2OSZpx1XPQC/GETFvsqSic=
+			cPzJEbcYFh3mmDlcwdspRl4zfS5YvcZJKhEBSTZI6io=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Uxn/NV02pV7+byEuAfi2psmAHM4=
+			wskSueLp8dCdp8oItWvzMkwO2Uk=
 			</data>
 			<key>hash2</key>
 			<data>
-			bT6ePPUCV7hKmJ3Ae32PjmMcSZzwLy+H4m9f4c1kfvg=
+			nW+vYGB2GD6nRyDSPdxUJ1XSyBcQUtIYqyCQq2mE3hM=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Uxn/NV02pV7+byEuAfi2psmAHM4=
+			wskSueLp8dCdp8oItWvzMkwO2Uk=
 			</data>
 			<key>hash2</key>
 			<data>
-			bT6ePPUCV7hKmJ3Ae32PjmMcSZzwLy+H4m9f4c1kfvg=
+			nW+vYGB2GD6nRyDSPdxUJ1XSyBcQUtIYqyCQq2mE3hM=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U/j9Ud3MGlsuI0Zcazrfi7T0bwA=
+			RMhZEaQaQol+zi25B6B3y7dfzK4=
 			</data>
 			<key>hash2</key>
 			<data>
-			k89W+QV3/dsOkjSqRTVpxSIgU2CEJaSfy5fm2vxYjMQ=
+			LP0Mnd3uGUkpjIS6Zbm7lkHZHLP3HnIHxcBtjAIefI0=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U/j9Ud3MGlsuI0Zcazrfi7T0bwA=
+			RMhZEaQaQol+zi25B6B3y7dfzK4=
 			</data>
 			<key>hash2</key>
 			<data>
-			k89W+QV3/dsOkjSqRTVpxSIgU2CEJaSfy5fm2vxYjMQ=
+			LP0Mnd3uGUkpjIS6Zbm7lkHZHLP3HnIHxcBtjAIefI0=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YCVSB7nt2AsDxiiJAhAw9xodF8A=
+			bEAYMuPzjvCRJxEDZvuk2gABjN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			nQSoL7UQHKpc8aygAJqn55yvXUBb2GjEwRiMkMGu2h0=
+			7F8dXInYYZMXP6gpNV0FDPIJt9NrxqdmJPvgMBeYkC4=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YCVSB7nt2AsDxiiJAhAw9xodF8A=
+			bEAYMuPzjvCRJxEDZvuk2gABjN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			nQSoL7UQHKpc8aygAJqn55yvXUBb2GjEwRiMkMGu2h0=
+			7F8dXInYYZMXP6gpNV0FDPIJt9NrxqdmJPvgMBeYkC4=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x67WkRLDR+TuuxE3/lppY6Ad+tg=
+			kSECq5xlk/i5ia9dNgm0bUPVrUA=
 			</data>
 			<key>hash2</key>
 			<data>
-			L1hOPqyDnJilP1HtRsyPWMT/KztDFiT3Zq1g6CyD05Q=
+			0Wm9HFDNpDnl1ZrWOQNhYeYioShDRZxnBJ88pqo7F8o=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QO/4uCV51pFU3Aml12ZuHm+GTvo=
+			U/9Gejk1IdFKVYoK+SbKFkFgACA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wtBUkYkwFvOHDgb/IlA7+r/XxXdWAdPS/7A+dfVV+3A=
+			fe0fH/LEb/gxTssvRgbtmfv64OoICQUSeGrZuNBxfnA=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			x67WkRLDR+TuuxE3/lppY6Ad+tg=
+			kSECq5xlk/i5ia9dNgm0bUPVrUA=
 			</data>
 			<key>hash2</key>
 			<data>
-			L1hOPqyDnJilP1HtRsyPWMT/KztDFiT3Zq1g6CyD05Q=
+			0Wm9HFDNpDnl1ZrWOQNhYeYioShDRZxnBJ88pqo7F8o=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QO/4uCV51pFU3Aml12ZuHm+GTvo=
+			U/9Gejk1IdFKVYoK+SbKFkFgACA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wtBUkYkwFvOHDgb/IlA7+r/XxXdWAdPS/7A+dfVV+3A=
+			fe0fH/LEb/gxTssvRgbtmfv64OoICQUSeGrZuNBxfnA=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lzzO++QjH7RfNXxE8Fbbds7W6TQ=
+			THVmJLbrgJJh7u6HTKe5HpZ2LVU=
 			</data>
 			<key>hash2</key>
 			<data>
-			65unbEdEVPgDuxjlyGeMXGb0WLW07oR4HueeX9H2Epw=
+			GtriLVpGpXW3iH0ZD7Q2Ny85VHn5sVP0XGslrcRjU0o=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ciWW2x4l8vkXvE5B+HxNOY8XEIc=
+			G14sBcL42KLLmQxggl3Gs3ZoOOs=
 			</data>
 			<key>hash2</key>
 			<data>
-			jrg+ga6cbYprCpl/xM/A+dNRGzuut5Wn519p8Rroj3s=
+			/hHHY04gGoLry3gYtmw+s8m2GzStbLoR9Xq+8xpGS14=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lzzO++QjH7RfNXxE8Fbbds7W6TQ=
+			THVmJLbrgJJh7u6HTKe5HpZ2LVU=
 			</data>
 			<key>hash2</key>
 			<data>
-			65unbEdEVPgDuxjlyGeMXGb0WLW07oR4HueeX9H2Epw=
+			GtriLVpGpXW3iH0ZD7Q2Ny85VHn5sVP0XGslrcRjU0o=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ciWW2x4l8vkXvE5B+HxNOY8XEIc=
+			G14sBcL42KLLmQxggl3Gs3ZoOOs=
 			</data>
 			<key>hash2</key>
 			<data>
-			jrg+ga6cbYprCpl/xM/A+dNRGzuut5Wn519p8Rroj3s=
+			/hHHY04gGoLry3gYtmw+s8m2GzStbLoR9Xq+8xpGS14=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ua+gtq+sQpFlegxpW7SG16xsTVE=
+			iX1Qqav+yEzs5YJbbTTsNFWhArc=
 			</data>
 			<key>hash2</key>
 			<data>
-			K5BIwmKpC3U07egms9Yp1f8ohq7/oOjRroF6Y08D5WM=
+			7PsoXreZDdkVi7oRQ/IZ+W0GTvBVn5cqY35GyISG8YQ=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/hI+g3MyXqTDQQW20fdxuMyLizA=
+			0dw2nE5yJOFJZtgYnprZA0IKgAQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			1Hsa/bQnT53Bkejdx5WIelejFwVB4r8qyLxTiC072nY=
+			uQrn1GlhMVekSrfQ+EIkiZ0k2acYpCKp1Pl4d1WxbK8=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ua+gtq+sQpFlegxpW7SG16xsTVE=
+			iX1Qqav+yEzs5YJbbTTsNFWhArc=
 			</data>
 			<key>hash2</key>
 			<data>
-			K5BIwmKpC3U07egms9Yp1f8ohq7/oOjRroF6Y08D5WM=
+			7PsoXreZDdkVi7oRQ/IZ+W0GTvBVn5cqY35GyISG8YQ=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/hI+g3MyXqTDQQW20fdxuMyLizA=
+			0dw2nE5yJOFJZtgYnprZA0IKgAQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			1Hsa/bQnT53Bkejdx5WIelejFwVB4r8qyLxTiC072nY=
+			uQrn1GlhMVekSrfQ+EIkiZ0k2acYpCKp1Pl4d1WxbK8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

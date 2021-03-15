@@ -2,15 +2,15 @@
   "commitish" : "v3.1.2",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
-      "hash" : "b7894b6f41286f4c52c26937d3e5d23b36f4419ff7a54b7da2fcb19da83ad3a0",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "f9186f0376795c5b814adc71945d9a889f4364ad40f0b71faa05962bea75a2b8",
       "name" : "Quick",
       "container" : "Quick.xcframework",
       "identifier" : "ios-arm64_armv7"
     },
     {
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
-      "hash" : "8ddde90ab68deb0ec350987458f05cb5269d999b9c6b1230858479065094b4ca",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "dd24f95b6bcf874604ac29db1ed0cddda517c9faf22d076cf482f724bd05df85",
       "name" : "Quick",
       "container" : "Quick.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"

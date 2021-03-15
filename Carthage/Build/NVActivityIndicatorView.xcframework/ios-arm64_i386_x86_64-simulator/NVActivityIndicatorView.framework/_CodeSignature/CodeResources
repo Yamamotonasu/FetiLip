@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/NVActivityIndicatorView-Swift.h</key>
 		<data>
-		0NE4QM1Y4ECrgutOogjFN5CXQN4=
+		+K+4h4897C6048R/nRJkxA0x2LU=
 		</data>
 		<key>Headers/NVActivityIndicatorView.h</key>
 		<data>
@@ -14,79 +14,79 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lwQWxk9mAbVowqhrvex1GqiNSq8=
+		RCv/Z0htkz86f7YYRbTZ4geYxGw=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		QvsGK2PfB+jsoBQ0Lh+yvZJ50V4=
+		yWNrckmqMiP6V5w3IVKbXfG7sF0=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		QvsGK2PfB+jsoBQ0Lh+yvZJ50V4=
+		yWNrckmqMiP6V5w3IVKbXfG7sF0=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		oaxrj0x719Chcovi9AKPJ68TZm0=
+		D2QhADh0/VKWdaUi4FEDcXcGgUY=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<data>
-		oaxrj0x719Chcovi9AKPJ68TZm0=
+		D2QhADh0/VKWdaUi4FEDcXcGgUY=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		jniDXCW3LkCp8GOpVXjBaqLEwS8=
+		Bxc/JA4p3JFksdFSDUMHKD1XsCU=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		jniDXCW3LkCp8GOpVXjBaqLEwS8=
+		Bxc/JA4p3JFksdFSDUMHKD1XsCU=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		USrBaM0F6l17yUA4MiiNRfRrPno=
+		HLi6L6u3U9CpkA6YISvDdiFoG+Y=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UOr8/Q5DJJwoacexCqsVyk2vecU=
+		Rv7OtJ9vf5b8JlOdoTyLdFej6Tw=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		USrBaM0F6l17yUA4MiiNRfRrPno=
+		HLi6L6u3U9CpkA6YISvDdiFoG+Y=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		UOr8/Q5DJJwoacexCqsVyk2vecU=
+		Rv7OtJ9vf5b8JlOdoTyLdFej6Tw=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		pma0KXmBKpvE+KxX9CLVJpcp4YI=
+		u6deGF+x8iqIzz2l1Z/wttDVYgE=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		F/ED/M8j5u0LTtLuTjYzqkEvoCo=
+		VdXEcakzN8IUFlSQfnYaH9wbY/g=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386.swiftdoc</key>
 		<data>
-		pma0KXmBKpvE+KxX9CLVJpcp4YI=
+		u6deGF+x8iqIzz2l1Z/wttDVYgE=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386.swiftmodule</key>
 		<data>
-		F/ED/M8j5u0LTtLuTjYzqkEvoCo=
+		VdXEcakzN8IUFlSQfnYaH9wbY/g=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		/56gz0UcxPuFe3uaZ8MGOjJp79Q=
+		Tv89K8n1xuve6Jn9HChk6/ZZSEo=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cG1QI545/VKSizB2UOOvSIzSwAw=
+		xIxWjaJ1JzSiqho6vA5cwHiFFsg=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		/56gz0UcxPuFe3uaZ8MGOjJp79Q=
+		Tv89K8n1xuve6Jn9HChk6/ZZSEo=
 		</data>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		cG1QI545/VKSizB2UOOvSIzSwAw=
+		xIxWjaJ1JzSiqho6vA5cwHiFFsg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -99,11 +99,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0NE4QM1Y4ECrgutOogjFN5CXQN4=
+			+K+4h4897C6048R/nRJkxA0x2LU=
 			</data>
 			<key>hash2</key>
 			<data>
-			PXFmH4fqIhQt9Va/HZlsqpjwZctmVlQ62Wf3cYEpL90=
+			VPwebknOs7dGuK/pyBT3/MchmJD77gGHvJvaO5jFeDI=
 			</data>
 		</dict>
 		<key>Headers/NVActivityIndicatorView.h</key>
@@ -121,198 +121,198 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QvsGK2PfB+jsoBQ0Lh+yvZJ50V4=
+			yWNrckmqMiP6V5w3IVKbXfG7sF0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Rixi6kqBFRvYLaN6jE9YV2KYZOT72YeHsinWPmEtHmE=
+			/QIzG2V6QnMMhH0JTUm+S4vrmMgudMYVTaWW2PhpguI=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QvsGK2PfB+jsoBQ0Lh+yvZJ50V4=
+			yWNrckmqMiP6V5w3IVKbXfG7sF0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Rixi6kqBFRvYLaN6jE9YV2KYZOT72YeHsinWPmEtHmE=
+			/QIzG2V6QnMMhH0JTUm+S4vrmMgudMYVTaWW2PhpguI=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oaxrj0x719Chcovi9AKPJ68TZm0=
+			D2QhADh0/VKWdaUi4FEDcXcGgUY=
 			</data>
 			<key>hash2</key>
 			<data>
-			cKhlhCYWusVv31R+mbnO657o5qJzhzAgcM2HDgR49J0=
+			2HUnJGYSPZZ8IACn2GThNYcVkkZZmweA+YmGAMg5kRQ=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oaxrj0x719Chcovi9AKPJ68TZm0=
+			D2QhADh0/VKWdaUi4FEDcXcGgUY=
 			</data>
 			<key>hash2</key>
 			<data>
-			cKhlhCYWusVv31R+mbnO657o5qJzhzAgcM2HDgR49J0=
+			2HUnJGYSPZZ8IACn2GThNYcVkkZZmweA+YmGAMg5kRQ=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jniDXCW3LkCp8GOpVXjBaqLEwS8=
+			Bxc/JA4p3JFksdFSDUMHKD1XsCU=
 			</data>
 			<key>hash2</key>
 			<data>
-			57qqI5ElOEq762Nk8RWRheOIRaSFwQqdc00D20dk5Zo=
+			E9krphmFSCZ4P1Q2Ks3T6qYpMEKvtLyfRhQRO00tl5k=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jniDXCW3LkCp8GOpVXjBaqLEwS8=
+			Bxc/JA4p3JFksdFSDUMHKD1XsCU=
 			</data>
 			<key>hash2</key>
 			<data>
-			57qqI5ElOEq762Nk8RWRheOIRaSFwQqdc00D20dk5Zo=
+			E9krphmFSCZ4P1Q2Ks3T6qYpMEKvtLyfRhQRO00tl5k=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			USrBaM0F6l17yUA4MiiNRfRrPno=
+			HLi6L6u3U9CpkA6YISvDdiFoG+Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			ykGDnfVhMvsieSpZqYlOifUaBmHTaNj2Loo9TmQw6gc=
+			0NGXPnIFYw+YCWC0uo8AxeBPLtZhYChOeZv7caJc3fw=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UOr8/Q5DJJwoacexCqsVyk2vecU=
+			Rv7OtJ9vf5b8JlOdoTyLdFej6Tw=
 			</data>
 			<key>hash2</key>
 			<data>
-			idMXLu4KuW9fi5Y7U7PQcxETyayGffQZkzJBVc4XtiA=
+			wi6/0gMHEvNfTvxMlBQJA+c3E7p9LtuNKTz9r6BTBvc=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			USrBaM0F6l17yUA4MiiNRfRrPno=
+			HLi6L6u3U9CpkA6YISvDdiFoG+Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			ykGDnfVhMvsieSpZqYlOifUaBmHTaNj2Loo9TmQw6gc=
+			0NGXPnIFYw+YCWC0uo8AxeBPLtZhYChOeZv7caJc3fw=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			UOr8/Q5DJJwoacexCqsVyk2vecU=
+			Rv7OtJ9vf5b8JlOdoTyLdFej6Tw=
 			</data>
 			<key>hash2</key>
 			<data>
-			idMXLu4KuW9fi5Y7U7PQcxETyayGffQZkzJBVc4XtiA=
+			wi6/0gMHEvNfTvxMlBQJA+c3E7p9LtuNKTz9r6BTBvc=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pma0KXmBKpvE+KxX9CLVJpcp4YI=
+			u6deGF+x8iqIzz2l1Z/wttDVYgE=
 			</data>
 			<key>hash2</key>
 			<data>
-			jDsrJvDrTpdGQhSCw6d8YB4vBS5Q1KjfbfEfo3uiLgo=
+			2WD6D29EfgHigan6QZERJIErmO5ZDNoZHDwcgmwIOCs=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F/ED/M8j5u0LTtLuTjYzqkEvoCo=
+			VdXEcakzN8IUFlSQfnYaH9wbY/g=
 			</data>
 			<key>hash2</key>
 			<data>
-			TRP5xw1oMie0/xuuBQmlDoA9bdhuIcj+N7bCqB8wFbw=
+			xNaUuPzH6akoT+QMRxYuVXEts2Bl67zWByk7J8DIksE=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pma0KXmBKpvE+KxX9CLVJpcp4YI=
+			u6deGF+x8iqIzz2l1Z/wttDVYgE=
 			</data>
 			<key>hash2</key>
 			<data>
-			jDsrJvDrTpdGQhSCw6d8YB4vBS5Q1KjfbfEfo3uiLgo=
+			2WD6D29EfgHigan6QZERJIErmO5ZDNoZHDwcgmwIOCs=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F/ED/M8j5u0LTtLuTjYzqkEvoCo=
+			VdXEcakzN8IUFlSQfnYaH9wbY/g=
 			</data>
 			<key>hash2</key>
 			<data>
-			TRP5xw1oMie0/xuuBQmlDoA9bdhuIcj+N7bCqB8wFbw=
+			xNaUuPzH6akoT+QMRxYuVXEts2Bl67zWByk7J8DIksE=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/56gz0UcxPuFe3uaZ8MGOjJp79Q=
+			Tv89K8n1xuve6Jn9HChk6/ZZSEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			zOPSubEddZpib2BvEsSGeOvzw5cNrjRlpX3AngSqaTs=
+			j3A1AscGlgrHyVpWbCgvo/kKWjn2DfVOOhoiOI4+gM8=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cG1QI545/VKSizB2UOOvSIzSwAw=
+			xIxWjaJ1JzSiqho6vA5cwHiFFsg=
 			</data>
 			<key>hash2</key>
 			<data>
-			B7BJoiHzjEbUZpHnxeAKUshzzRv0FMosXSjwYVHQDFs=
+			HEc3UP/Fw+es/jE8YpZs1a3A9Bjrkxq5SAOA8EF4nTg=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/56gz0UcxPuFe3uaZ8MGOjJp79Q=
+			Tv89K8n1xuve6Jn9HChk6/ZZSEo=
 			</data>
 			<key>hash2</key>
 			<data>
-			zOPSubEddZpib2BvEsSGeOvzw5cNrjRlpX3AngSqaTs=
+			j3A1AscGlgrHyVpWbCgvo/kKWjn2DfVOOhoiOI4+gM8=
 			</data>
 		</dict>
 		<key>Modules/NVActivityIndicatorView.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cG1QI545/VKSizB2UOOvSIzSwAw=
+			xIxWjaJ1JzSiqho6vA5cwHiFFsg=
 			</data>
 			<key>hash2</key>
 			<data>
-			B7BJoiHzjEbUZpHnxeAKUshzzRv0FMosXSjwYVHQDFs=
+			HEc3UP/Fw+es/jE8YpZs1a3A9Bjrkxq5SAOA8EF4nTg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

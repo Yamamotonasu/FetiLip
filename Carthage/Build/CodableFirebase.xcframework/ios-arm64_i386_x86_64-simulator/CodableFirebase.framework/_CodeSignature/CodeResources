@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/CodableFirebase-Swift.h</key>
 		<data>
-		w6XyhzKeYZX6+993RxwO5ORy/v8=
+		Fl7geIEG45exMosiSHAhUBRDdXE=
 		</data>
 		<key>Headers/CodableFirebase.h</key>
 		<data>
@@ -14,79 +14,79 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		qI6smXHgGtfQxJuWyUkuURjK6zE=
+		AkvAaf38SUHJDGu/37deUCGWHYE=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		cwxsxNb0HTbvy4DzBv1PgQagib4=
+		fIIuov5N/4muhDD1XhB+k5F1zPM=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		cwxsxNb0HTbvy4DzBv1PgQagib4=
+		fIIuov5N/4muhDD1XhB+k5F1zPM=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		lN+V2lDoAA53Dzoa9Y+6C9IBLIY=
+		MPZ3DANvL/XmUh5fN4mjo2vrIdg=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<data>
-		lN+V2lDoAA53Dzoa9Y+6C9IBLIY=
+		MPZ3DANvL/XmUh5fN4mjo2vrIdg=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		Bqc3btUHNCqihGZ2f9NAHN0QFME=
+		3wInRqa6pumnaxLw/Gic1WUGhMI=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		Bqc3btUHNCqihGZ2f9NAHN0QFME=
+		3wInRqa6pumnaxLw/Gic1WUGhMI=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		ZBGdfDJlMDTM5WKhvvghROAIJmU=
+		p6JPUUChHKyiYFud6gfrS8V6CNc=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KlWzgeEAvm3ErDWsX5WGKEL6hl8=
+		RekaHgeOe+nQXQoppZM4CSk+Hc0=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		ZBGdfDJlMDTM5WKhvvghROAIJmU=
+		p6JPUUChHKyiYFud6gfrS8V6CNc=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		KlWzgeEAvm3ErDWsX5WGKEL6hl8=
+		RekaHgeOe+nQXQoppZM4CSk+Hc0=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		anx3xNCrao8AGAHO/kG0pz8fKEA=
+		34oBUW676Y3bSXKRjKCx8gFDTVY=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		/STWD2ZE0TqXktR+ymtidSZvA5I=
+		GkBSyxZte0NxmF9q35kubhn8P8g=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/i386.swiftdoc</key>
 		<data>
-		anx3xNCrao8AGAHO/kG0pz8fKEA=
+		34oBUW676Y3bSXKRjKCx8gFDTVY=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/i386.swiftmodule</key>
 		<data>
-		/STWD2ZE0TqXktR+ymtidSZvA5I=
+		GkBSyxZte0NxmF9q35kubhn8P8g=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		thM03z5xss8s9cdNpRUl7NKK0AE=
+		2ceqqwJoXmnqkxbl1TBEm77fQdU=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RL4a7GSrCai5Y4+XgerOe8fUPok=
+		POnoHYsoq4LliXDe4CSY3y0RdFU=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		thM03z5xss8s9cdNpRUl7NKK0AE=
+		2ceqqwJoXmnqkxbl1TBEm77fQdU=
 		</data>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		RL4a7GSrCai5Y4+XgerOe8fUPok=
+		POnoHYsoq4LliXDe4CSY3y0RdFU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -99,11 +99,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w6XyhzKeYZX6+993RxwO5ORy/v8=
+			Fl7geIEG45exMosiSHAhUBRDdXE=
 			</data>
 			<key>hash2</key>
 			<data>
-			u5Iw31zbmCOjxBDrdttTeSSGEkGfoH5XN0BZLNltdd4=
+			yeHMXPnZ462SEr5i9nYWqkYpNhia+Il+D6a+b8swFsI=
 			</data>
 		</dict>
 		<key>Headers/CodableFirebase.h</key>
@@ -121,198 +121,198 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cwxsxNb0HTbvy4DzBv1PgQagib4=
+			fIIuov5N/4muhDD1XhB+k5F1zPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			1Zze5eZDaxIX2TBpttElJIHdrEktjbO0oD26dBGKUj8=
+			GVuW3NuYEKL0XtGlk+Nsnuvv3h5ScbV0MevJzgpobBc=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cwxsxNb0HTbvy4DzBv1PgQagib4=
+			fIIuov5N/4muhDD1XhB+k5F1zPM=
 			</data>
 			<key>hash2</key>
 			<data>
-			1Zze5eZDaxIX2TBpttElJIHdrEktjbO0oD26dBGKUj8=
+			GVuW3NuYEKL0XtGlk+Nsnuvv3h5ScbV0MevJzgpobBc=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/Project/i386-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lN+V2lDoAA53Dzoa9Y+6C9IBLIY=
+			MPZ3DANvL/XmUh5fN4mjo2vrIdg=
 			</data>
 			<key>hash2</key>
 			<data>
-			CaH+EmXx+zdmbSkT/KojJqO7OmULRV47tfhHco3aXLs=
+			ZGVBCSO3eVWRbLN+M75+XElQpOcDFl6WQNJ6atEcscI=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/Project/i386.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lN+V2lDoAA53Dzoa9Y+6C9IBLIY=
+			MPZ3DANvL/XmUh5fN4mjo2vrIdg=
 			</data>
 			<key>hash2</key>
 			<data>
-			CaH+EmXx+zdmbSkT/KojJqO7OmULRV47tfhHco3aXLs=
+			ZGVBCSO3eVWRbLN+M75+XElQpOcDFl6WQNJ6atEcscI=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Bqc3btUHNCqihGZ2f9NAHN0QFME=
+			3wInRqa6pumnaxLw/Gic1WUGhMI=
 			</data>
 			<key>hash2</key>
 			<data>
-			+s7VD5k9uFLNZOCTBYxEuvYzFMlYBg0Gm0EXTfu4N4Q=
+			RrPWmhLELKC9W3t2/Z4WWtYDgHM/Q0nLPafzsPPWlfA=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Bqc3btUHNCqihGZ2f9NAHN0QFME=
+			3wInRqa6pumnaxLw/Gic1WUGhMI=
 			</data>
 			<key>hash2</key>
 			<data>
-			+s7VD5k9uFLNZOCTBYxEuvYzFMlYBg0Gm0EXTfu4N4Q=
+			RrPWmhLELKC9W3t2/Z4WWtYDgHM/Q0nLPafzsPPWlfA=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZBGdfDJlMDTM5WKhvvghROAIJmU=
+			p6JPUUChHKyiYFud6gfrS8V6CNc=
 			</data>
 			<key>hash2</key>
 			<data>
-			/XUlE4OusU7TZmtnkSAN53CHi+7ViXfWZrroSacoQtM=
+			oqJ2NGIVqYydBYYhLsxi0kR7Q/WH4ZUtQjKjTkl0eIE=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KlWzgeEAvm3ErDWsX5WGKEL6hl8=
+			RekaHgeOe+nQXQoppZM4CSk+Hc0=
 			</data>
 			<key>hash2</key>
 			<data>
-			5iN2s4O7AAIc5tplHz4cPstYpkax9fGLa8KOAO3tj0k=
+			tJoisLeVq+LY4XsV0rB3Z7HZ6uX7Y/jJgOfX3HmzfCU=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZBGdfDJlMDTM5WKhvvghROAIJmU=
+			p6JPUUChHKyiYFud6gfrS8V6CNc=
 			</data>
 			<key>hash2</key>
 			<data>
-			/XUlE4OusU7TZmtnkSAN53CHi+7ViXfWZrroSacoQtM=
+			oqJ2NGIVqYydBYYhLsxi0kR7Q/WH4ZUtQjKjTkl0eIE=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KlWzgeEAvm3ErDWsX5WGKEL6hl8=
+			RekaHgeOe+nQXQoppZM4CSk+Hc0=
 			</data>
 			<key>hash2</key>
 			<data>
-			5iN2s4O7AAIc5tplHz4cPstYpkax9fGLa8KOAO3tj0k=
+			tJoisLeVq+LY4XsV0rB3Z7HZ6uX7Y/jJgOfX3HmzfCU=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			anx3xNCrao8AGAHO/kG0pz8fKEA=
+			34oBUW676Y3bSXKRjKCx8gFDTVY=
 			</data>
 			<key>hash2</key>
 			<data>
-			tqn6h0Pp2kspycKdrG/aDEshrEFW1Tg4+VSxLChQQWo=
+			yUHkowHWJWCqfvPzRSmahkWL37nO75+2Soe2By4Vu6o=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/STWD2ZE0TqXktR+ymtidSZvA5I=
+			GkBSyxZte0NxmF9q35kubhn8P8g=
 			</data>
 			<key>hash2</key>
 			<data>
-			kkeOZK+W0jlyC5sMEAfiEhpv8h9ZvLWdBOdBY7zUetQ=
+			oHGCv5ZeqJJOoYSVkVeNkctv+vvNB23ivis2RuDfMEo=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/i386.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			anx3xNCrao8AGAHO/kG0pz8fKEA=
+			34oBUW676Y3bSXKRjKCx8gFDTVY=
 			</data>
 			<key>hash2</key>
 			<data>
-			tqn6h0Pp2kspycKdrG/aDEshrEFW1Tg4+VSxLChQQWo=
+			yUHkowHWJWCqfvPzRSmahkWL37nO75+2Soe2By4Vu6o=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/i386.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/STWD2ZE0TqXktR+ymtidSZvA5I=
+			GkBSyxZte0NxmF9q35kubhn8P8g=
 			</data>
 			<key>hash2</key>
 			<data>
-			kkeOZK+W0jlyC5sMEAfiEhpv8h9ZvLWdBOdBY7zUetQ=
+			oHGCv5ZeqJJOoYSVkVeNkctv+vvNB23ivis2RuDfMEo=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			thM03z5xss8s9cdNpRUl7NKK0AE=
+			2ceqqwJoXmnqkxbl1TBEm77fQdU=
 			</data>
 			<key>hash2</key>
 			<data>
-			9M0/yh0CYP/3hGF2fBASARwSP2oUQmcUbVxum+Lsc2A=
+			gYntz7sfFSXoAId3Gq90L84nuAbj6H6LL8ecQRSS0RY=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RL4a7GSrCai5Y4+XgerOe8fUPok=
+			POnoHYsoq4LliXDe4CSY3y0RdFU=
 			</data>
 			<key>hash2</key>
 			<data>
-			4X6cqxR7+G1UEq7/gDjyz6bb7ZzVM6GIET0OXLRIRWI=
+			5l/s9Ksrx4rZuATFJqlbVJX1O43sF5ZerBPffPc7Bgk=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			thM03z5xss8s9cdNpRUl7NKK0AE=
+			2ceqqwJoXmnqkxbl1TBEm77fQdU=
 			</data>
 			<key>hash2</key>
 			<data>
-			9M0/yh0CYP/3hGF2fBASARwSP2oUQmcUbVxum+Lsc2A=
+			gYntz7sfFSXoAId3Gq90L84nuAbj6H6LL8ecQRSS0RY=
 			</data>
 		</dict>
 		<key>Modules/CodableFirebase.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RL4a7GSrCai5Y4+XgerOe8fUPok=
+			POnoHYsoq4LliXDe4CSY3y0RdFU=
 			</data>
 			<key>hash2</key>
 			<data>
-			4X6cqxR7+G1UEq7/gDjyz6bb7ZzVM6GIET0OXLRIRWI=
+			5l/s9Ksrx4rZuATFJqlbVJX1O43sF5ZerBPffPc7Bgk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

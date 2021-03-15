@@ -1,8 +1,8 @@
 BCSymbolMap Version: 2.0
-Apple clang version 12.0.0 (clang-1200.0.32.27)
-/Applications/Xcode12.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk
-iPhoneOS14.2.sdk
-/Users/yuuyamamoto/Library/Caches/org.carthage.CarthageKit/DerivedData/12.2_12B45b/IQKeyboardManager/v6.5.6/Build/Intermediates.noindex/ArchiveIntermediates/IQKeyboardManager/IntermediateBuildFilesPath/IQKeyboardManager.build/Release-iphoneos/IQKeyboardManager.build/DerivedSources/IQKeyboardManager_vers.c
+Apple clang version 12.0.0 (clang-1200.0.32.28)
+/Applications/Xcode12.3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk
+iPhoneOS14.3.sdk
+/Users/yuuyamamoto/Library/Caches/org.carthage.CarthageKit/DerivedData/12.3_12C33/IQKeyboardManager/v6.5.6/Build/Intermediates.noindex/ArchiveIntermediates/IQKeyboardManager/IntermediateBuildFilesPath/IQKeyboardManager.build/Release-iphoneos/IQKeyboardManager.build/DerivedSources/IQKeyboardManager_vers.c
 /Users/yuuyamamoto/iOS_Development/FetiLip/Carthage/Checkouts/IQKeyboardManager
 -[UIView(IQ_UIView_Hierarchy) viewContainingController]
 -[UIView(IQ_UIView_Hierarchy) topMostController]
@@ -726,12 +726,12 @@ IQKeyboardManager/IQKeyboardManager.m
 IQKeyboardManager/IQKeyboardManager.h
 __52-[IQKeyboardManager willChangeStatusBarOrientation:]_block_invoke
 UIEdgeInsetsEqualToEdgeInsets
-/Applications/Xcode12.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIGeometry.h
+/Applications/Xcode12.3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIGeometry.h
 __48-[IQKeyboardManager textFieldViewDidEndEditing:]_block_invoke
 __50-[IQKeyboardManager textFieldViewDidBeginEditing:]_block_invoke_2
 __50-[IQKeyboardManager textFieldViewDidBeginEditing:]_block_invoke
 __CGPointEqualToPoint
-/Applications/Xcode12.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
+/Applications/Xcode12.3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
 __destroy_helper_block_e8_32s40s48w56w
 __copy_helper_block_e8_32s40s48w56w
 __38-[IQKeyboardManager keyboardWillHide:]_block_invoke
@@ -752,7 +752,7 @@ __44-[IQKeyboardManager optimizedAdjustPosition]_block_invoke
 __destroy_helper_block_e8_
 __copy_helper_block_e8_
 __34+[IQKeyboardManager sharedManager]_block_invoke
-/Applications/Xcode12.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/usr/include/dispatch/once.h
+/Applications/Xcode12.3.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.3.sdk/usr/include/dispatch/once.h
 __destroy_helper_block_e8_32w
 __copy_helper_block_e8_32w
 __25-[IQKeyboardManager init]_block_invoke

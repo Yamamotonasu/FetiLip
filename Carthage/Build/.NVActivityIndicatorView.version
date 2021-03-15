@@ -2,29 +2,29 @@
   "commitish" : "4.8.0",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
-      "hash" : "fec82ed455d0fbcc0a1e23ebc47b49043736ade38c0e7b0955748aecbc904cca",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "f2f11e888b186f2a344f8ff556491c86e6ef4a95ccbb187cb0af396842ef37ba",
       "name" : "NVActivityIndicatorView",
       "container" : "NVActivityIndicatorView.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
-      "hash" : "29b225687f948d6d153d317ddac526e38a299817852fe0553a8f52abfb226280",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "212a55bf0b0d93b5aeebed26b2a7dc27cb2d9b00417968313d844f4c28eb4b5f",
       "name" : "NVActivityIndicatorView",
       "container" : "NVActivityIndicatorView.xcframework",
       "identifier" : "ios-arm64_armv7"
     },
     {
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
-      "hash" : "02c8df3b3f6472d1bf7f2b7d9906891f6fb3deea3b32a30c7234835227de7a7f",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "5121a1c3da13b58a9fa2fd33b5dff5825ee8ad61fd646076e2181cbb6e490340",
       "name" : "NVActivityIndicatorViewAppExtension",
       "container" : "NVActivityIndicatorViewAppExtension.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)",
-      "hash" : "65255b0fdeaddc5f411f0e2547d2ccc6c9a7206ce43eb824f24a4ec62e008563",
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "fa7cf929429a187a540e31e08e35901e3a78e1c94cc7e06bdb254792a928e421",
       "name" : "NVActivityIndicatorViewAppExtension",
       "container" : "NVActivityIndicatorViewAppExtension.xcframework",
       "identifier" : "ios-arm64_armv7"
