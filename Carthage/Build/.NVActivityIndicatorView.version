@@ -3,31 +3,31 @@
   "iOS" : [
     {
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "f2f11e888b186f2a344f8ff556491c86e6ef4a95ccbb187cb0af396842ef37ba",
+      "hash" : "68fe3baad85a416d4c2d1e762aeef0ab86f156c46f32ebd6d25e7b955bb60bb9",
       "name" : "NVActivityIndicatorView",
       "container" : "NVActivityIndicatorView.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "212a55bf0b0d93b5aeebed26b2a7dc27cb2d9b00417968313d844f4c28eb4b5f",
+      "hash" : "695796789832a423884c070a5a55b72b3ca312d8a2e9334c5470f65cd1c28f7f",
       "name" : "NVActivityIndicatorView",
       "container" : "NVActivityIndicatorView.xcframework",
       "identifier" : "ios-arm64_armv7"
     },
     {
       "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "5121a1c3da13b58a9fa2fd33b5dff5825ee8ad61fd646076e2181cbb6e490340",
-      "name" : "NVActivityIndicatorViewAppExtension",
-      "container" : "NVActivityIndicatorViewAppExtension.xcframework",
-      "identifier" : "ios-arm64_i386_x86_64-simulator"
-    },
-    {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "fa7cf929429a187a540e31e08e35901e3a78e1c94cc7e06bdb254792a928e421",
+      "hash" : "228c504eddf52c11bfbb1e75cf349725e5743974d0864c2370bd05551eca9955",
       "name" : "NVActivityIndicatorViewAppExtension",
       "container" : "NVActivityIndicatorViewAppExtension.xcframework",
       "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
+      "hash" : "e7b512d94396755ba41a8898552b0808f16fbd0be9b95b3a21c6a194a45ba4ed",
+      "name" : "NVActivityIndicatorViewAppExtension",
+      "container" : "NVActivityIndicatorViewAppExtension.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
     }
   ]
 }

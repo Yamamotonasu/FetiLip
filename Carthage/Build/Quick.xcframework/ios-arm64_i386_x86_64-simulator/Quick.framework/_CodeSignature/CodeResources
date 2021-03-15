@@ -110,7 +110,7 @@
 		</data>
 		<key>Modules/Quick.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		lPdJNb8l5/LyxyYNbjoaWMLOry4=
+		WYWoRfKYmpSRdCpKreRjRqpKjIs=
 		</data>
 		<key>Modules/Quick.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -122,7 +122,7 @@
 		</data>
 		<key>Modules/Quick.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		lPdJNb8l5/LyxyYNbjoaWMLOry4=
+		WYWoRfKYmpSRdCpKreRjRqpKjIs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -410,11 +410,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lPdJNb8l5/LyxyYNbjoaWMLOry4=
+			WYWoRfKYmpSRdCpKreRjRqpKjIs=
 			</data>
 			<key>hash2</key>
 			<data>
-			W1kUzMACj8bkhxed8dSyhFo+41h2UYdvVjYxzE/b21U=
+			4yugd+WXp8XsVwMuWOokfHHtyEqeR9TcqCGXZbPp//8=
 			</data>
 		</dict>
 		<key>Modules/Quick.swiftmodule/x86_64.swiftdoc</key>
@@ -443,11 +443,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lPdJNb8l5/LyxyYNbjoaWMLOry4=
+			WYWoRfKYmpSRdCpKreRjRqpKjIs=
 			</data>
 			<key>hash2</key>
 			<data>
-			W1kUzMACj8bkhxed8dSyhFo+41h2UYdvVjYxzE/b21U=
+			4yugd+WXp8XsVwMuWOokfHHtyEqeR9TcqCGXZbPp//8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

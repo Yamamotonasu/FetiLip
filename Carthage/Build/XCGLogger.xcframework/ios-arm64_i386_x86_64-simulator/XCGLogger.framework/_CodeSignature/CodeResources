@@ -74,7 +74,7 @@
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0dw2nE5yJOFJZtgYnprZA0IKgAQ=
+		Q0KYmlYa1ZnRBhUns0ld/haNNFA=
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Modules/XCGLogger.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		0dw2nE5yJOFJZtgYnprZA0IKgAQ=
+		Q0KYmlYa1ZnRBhUns0ld/haNNFA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -271,11 +271,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0dw2nE5yJOFJZtgYnprZA0IKgAQ=
+			Q0KYmlYa1ZnRBhUns0ld/haNNFA=
 			</data>
 			<key>hash2</key>
 			<data>
-			uQrn1GlhMVekSrfQ+EIkiZ0k2acYpCKp1Pl4d1WxbK8=
+			cg8D3zutND0riW2VROmWPxXuAuQUHvw8Btr6zAPnm7k=
 			</data>
 		</dict>
 		<key>Modules/XCGLogger.swiftmodule/x86_64.swiftdoc</key>
@@ -293,11 +293,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0dw2nE5yJOFJZtgYnprZA0IKgAQ=
+			Q0KYmlYa1ZnRBhUns0ld/haNNFA=
 			</data>
 			<key>hash2</key>
 			<data>
-			uQrn1GlhMVekSrfQ+EIkiZ0k2acYpCKp1Pl4d1WxbK8=
+			cg8D3zutND0riW2VROmWPxXuAuQUHvw8Btr6zAPnm7k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
