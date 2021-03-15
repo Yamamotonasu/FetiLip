@@ -18,10 +18,6 @@
 		034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9876249D7F50009336F0 /* UsersModelTests.swift */; };
 		034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987A249F3372009336F0 /* LoginFunctions.swift */; };
 		034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987D249F5779009336F0 /* TestUserAuthentications.swift */; };
-		034A988024A0ECE7009336F0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A987F24A0ECE6009336F0 /* Quick.framework */; platformFilter = ios; };
-		034A988224A0ECF9009336F0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A988124A0ECF9009336F0 /* Nimble.framework */; platformFilter = ios; };
-		034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988D24A0EFF7009336F0 /* Quick.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988E24A0EFF8009336F0 /* Nimble.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		034A989324A1814B009336F0 /* MockUserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989224A1814B009336F0 /* MockUserAuthentication.swift */; };
 		034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989524A6F86B009336F0 /* AuthErrorHandler.swift */; };
 		034A989824A713F2009336F0 /* R+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989724A713F2009336F0 /* R+Extensions.swift */; };
@@ -216,7 +212,10 @@
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
 		EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */; };
-		EA70EC9525FF6CB80030884A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70EC9425FF6CB80030884A /* RxBlocking.framework */; platformFilter = ios; };
+		EA70ECF1260015340030884A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECF0260015340030884A /* Quick.framework */; platformFilter = ios; };
+		EA70ECF5260015480030884A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECF4260015480030884A /* Nimble.framework */; platformFilter = ios; };
+		EA70ECFC2600156E0030884A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECFB260015600030884A /* RxBlocking.framework */; platformFilter = ios; };
+		EA70ED00260015960030884A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECFF260015960030884A /* RxTest.framework */; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -248,8 +247,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */,
-				034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +265,6 @@
 		034A9876249D7F50009336F0 /* UsersModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModelTests.swift; sourceTree = "<group>"; };
 		034A987A249F3372009336F0 /* LoginFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFunctions.swift; sourceTree = "<group>"; };
 		034A987D249F5779009336F0 /* TestUserAuthentications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserAuthentications.swift; sourceTree = "<group>"; };
-		034A987F24A0ECE6009336F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		034A988124A0ECF9009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		034A988D24A0EFF7009336F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		034A988E24A0EFF8009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		034A989224A1814B009336F0 /* MockUserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserAuthentication.swift; sourceTree = "<group>"; };
 		034A989524A6F86B009336F0 /* AuthErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorHandler.swift; sourceTree = "<group>"; };
 		034A989724A713F2009336F0 /* R+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Extensions.swift"; sourceTree = "<group>"; };
@@ -708,6 +701,11 @@
 		EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
 		EA70EC8C25FF6C4E0030884A /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = Carthage/Build/RxBlocking.xcframework; sourceTree = "<group>"; };
 		EA70EC9425FF6CB80030884A /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = "Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework"; sourceTree = "<group>"; };
+		EA70ECF0260015340030884A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Build/Quick.xcframework/ios-arm64_i386_x86_64-simulator/Quick.framework"; sourceTree = "<group>"; };
+		EA70ECF4260015480030884A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Build/Nimble.xcframework/ios-arm64_i386_x86_64-simulator/Nimble.framework"; sourceTree = "<group>"; };
+		EA70ECFA260015600030884A /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		EA70ECFB260015600030884A /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
+		EA70ECFF260015960030884A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = "Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework"; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
@@ -764,9 +762,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA70EC9525FF6CB80030884A /* RxBlocking.framework in Frameworks */,
-				034A988224A0ECF9009336F0 /* Nimble.framework in Frameworks */,
-				034A988024A0ECE7009336F0 /* Quick.framework in Frameworks */,
+				EA70ED00260015960030884A /* RxTest.framework in Frameworks */,
+				EA70ECFC2600156E0030884A /* RxBlocking.framework in Frameworks */,
+				EA70ECF5260015480030884A /* Nimble.framework in Frameworks */,
+				EA70ECF1260015340030884A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1568,8 +1567,6 @@
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
-				034A988E24A0EFF8009336F0 /* Nimble.framework */,
-				034A988D24A0EFF7009336F0 /* Quick.framework */,
 				039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */,
 				03AAFAE7241E2FD70068FB1E /* fetilip */,
 				03AAFAFE241E2FDD0068FB1E /* fetilipTests */,
@@ -1628,6 +1625,10 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA70ECFF260015960030884A /* RxTest.framework */,
+				EA70ECF8260015600030884A /* ios-arm64_i386_x86_64-simulator */,
+				EA70ECF4260015480030884A /* Nimble.framework */,
+				EA70ECF0260015340030884A /* Quick.framework */,
 				EA70EC9425FF6CB80030884A /* RxBlocking.framework */,
 				EA70EC8C25FF6C4E0030884A /* RxBlocking.xcframework */,
 				EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */,
@@ -1648,8 +1649,6 @@
 				036318F9250C75A2005B317A /* FirebaseABTesting.framework */,
 				036318F2250C7569005B317A /* FirebaseCrashlytics.framework */,
 				036318F3250C7569005B317A /* FirebaseRemoteConfig.framework */,
-				034A988124A0ECF9009336F0 /* Nimble.framework */,
-				034A987F24A0ECE6009336F0 /* Quick.framework */,
 				039EB67724384FD50016436C /* FirebaseAuth.framework */,
 				039EB669243611F00016436C /* gRPC-Core.framework */,
 				039EB655243611280016436C /* abseil.framework */,
@@ -2156,6 +2155,24 @@
 				EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */,
 			);
 			path = EditPost;
+			sourceTree = "<group>";
+		};
+		EA70ECF8260015600030884A /* ios-arm64_i386_x86_64-simulator */ = {
+			isa = PBXGroup;
+			children = (
+				EA70ECF9260015600030884A /* dSYMs */,
+				EA70ECFB260015600030884A /* RxBlocking.framework */,
+			);
+			name = "ios-arm64_i386_x86_64-simulator";
+			path = "Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator";
+			sourceTree = "<group>";
+		};
+		EA70ECF9260015600030884A /* dSYMs */ = {
+			isa = PBXGroup;
+			children = (
+				EA70ECFA260015600030884A /* RxBlocking.framework.dSYM */,
+			);
+			path = dSYMs;
 			sourceTree = "<group>";
 		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
@@ -2861,6 +2878,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Quick.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Nimble.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
 				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -2891,6 +2911,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Quick.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Nimble.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
 				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
