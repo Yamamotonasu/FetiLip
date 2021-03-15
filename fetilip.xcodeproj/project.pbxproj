@@ -215,9 +215,7 @@
 		EA51361925FE500600E8486B /* FloatingPanel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51361825FE500600E8486B /* FloatingPanel.xcframework */; };
 		EA51362025FE501800E8486B /* FMPhotoPicker.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */; };
 		EA51362725FE503500E8486B /* CodableFirebase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362625FE503500E8486B /* CodableFirebase.xcframework */; };
-		EA51362825FE503500E8486B /* CodableFirebase.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362625FE503500E8486B /* CodableFirebase.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA51362F25FE505900E8486B /* ObjcExceptionBridging.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; };
-		EA51363025FE505900E8486B /* ObjcExceptionBridging.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EA51364E25FE542E00E8486B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51364D25FE542E00E8486B /* R.generated.swift */; };
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
@@ -256,18 +254,6 @@
 				034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */,
 				034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EA51362925FE503500E8486B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EA51362825FE503500E8486B /* CodableFirebase.xcframework in Embed Frameworks */,
-				EA51363025FE505900E8486B /* ObjcExceptionBridging.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -2261,7 +2247,6 @@
 				03AAFAE2241E2FD70068FB1E /* Frameworks */,
 				03AAFAE3241E2FD70068FB1E /* Resources */,
 				432510C923D697783A36108D /* [CP] Embed Pods Frameworks */,
-				EA51362925FE503500E8486B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
