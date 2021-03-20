@@ -212,10 +212,7 @@
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
 		EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */; };
-		EA70ECF1260015340030884A /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECF0260015340030884A /* Quick.framework */; platformFilter = ios; };
-		EA70ECF5260015480030884A /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECF4260015480030884A /* Nimble.framework */; platformFilter = ios; };
-		EA70ECFC2600156E0030884A /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECFB260015600030884A /* RxBlocking.framework */; platformFilter = ios; };
-		EA70ED00260015960030884A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECFF260015960030884A /* RxTest.framework */; };
+		EA70ED00260015960030884A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECFF260015960030884A /* RxTest.framework */; platformFilter = ios; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
@@ -763,9 +760,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA70ED00260015960030884A /* RxTest.framework in Frameworks */,
-				EA70ECFC2600156E0030884A /* RxBlocking.framework in Frameworks */,
-				EA70ECF5260015480030884A /* Nimble.framework in Frameworks */,
-				EA70ECF1260015340030884A /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2808,6 +2802,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fetilip/Service/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2845,6 +2840,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fetilip/Service/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

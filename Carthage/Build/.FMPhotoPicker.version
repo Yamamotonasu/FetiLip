@@ -2,15 +2,15 @@
   "commitish" : "0.9.1",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "ebed378a5e82d8b64a78f3619b9975057c43bcdeac79e77949a428b17f908f0b",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "53fb139c0f7a872dfec2cc4fa85ec6cd176e8c6c54c0062ff9b69ea18c063072",
       "name" : "FMPhotoPicker",
       "container" : "FMPhotoPicker.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "314925ad89a42e4d1e2e0a52431062be6ba232782062e46527f81efdb863e94f",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "5cd38a6e9e7d0914a4049bc86390b8d483d8670e63bf2f273374af24283088a7",
       "name" : "FMPhotoPicker",
       "container" : "FMPhotoPicker.xcframework",
       "identifier" : "ios-arm64_armv7"

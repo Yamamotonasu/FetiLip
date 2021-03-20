@@ -2,29 +2,29 @@
   "commitish" : "4.8.0",
   "iOS" : [
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "68fe3baad85a416d4c2d1e762aeef0ab86f156c46f32ebd6d25e7b955bb60bb9",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "12f7da3e7e4aac0bbeade59704e59111bfff10c65c63b454b66f4a2b2c3b7468",
       "name" : "NVActivityIndicatorView",
       "container" : "NVActivityIndicatorView.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "695796789832a423884c070a5a55b72b3ca312d8a2e9334c5470f65cd1c28f7f",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "ea1c47c903dd48153baacb76db755a1fc1d25e43f9c0117583902d2844517683",
       "name" : "NVActivityIndicatorView",
       "container" : "NVActivityIndicatorView.xcframework",
       "identifier" : "ios-arm64_armv7"
     },
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "228c504eddf52c11bfbb1e75cf349725e5743974d0864c2370bd05551eca9955",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "6e492377d76331a0a31cea9a30354b0d10af6d870c2c58c6856ac423bde71831",
       "name" : "NVActivityIndicatorViewAppExtension",
       "container" : "NVActivityIndicatorViewAppExtension.xcframework",
       "identifier" : "ios-arm64_armv7"
     },
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "e7b512d94396755ba41a8898552b0808f16fbd0be9b95b3a21c6a194a45ba4ed",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "d19bcc0fffa05d80c0fa069d21955c1ad6072660cf2e07c5633447ad911d12b7",
       "name" : "NVActivityIndicatorViewAppExtension",
       "container" : "NVActivityIndicatorViewAppExtension.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"

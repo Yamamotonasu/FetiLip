@@ -2,30 +2,30 @@
   "commitish" : "7.0.1",
   "iOS" : [
     {
-      "hash" : "5439d195ce7ecbc85af71bebe2bc80a483e67ba2a5d084d3ef4b4b13380892b1",
-      "name" : "ObjcExceptionBridging",
-      "container" : "ObjcExceptionBridging.xcframework",
-      "identifier" : "ios-arm64_armv7"
-    },
-    {
-      "hash" : "5a51b5d62c8aad54c7837ce2b21974d0437fae7ea292250a78c3f837d588e0c1",
+      "hash" : "960395f065c5168f22c38aeb29f18f468773556b5a0d3b78e785989a45af1909",
       "name" : "ObjcExceptionBridging",
       "container" : "ObjcExceptionBridging.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "bc1c154ce0be65de050dc47d4cf4503a4b2c957a6cbd4a9fad9a1b4e20685936",
-      "name" : "XCGLogger",
-      "container" : "XCGLogger.xcframework",
+      "hash" : "3c2afedc4eec1091e6727325c2679f01f3a5d6a4ee79d367a3ef7118c1b77eb3",
+      "name" : "ObjcExceptionBridging",
+      "container" : "ObjcExceptionBridging.xcframework",
       "identifier" : "ios-arm64_armv7"
     },
     {
-      "swiftToolchainVersion" : "5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)",
-      "hash" : "339735f6bdb129de94bb3a97121b8fd16d57f57295f6e668fdc49cc974ee718a",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "26cb34ba5e31cb5db31f9edea76193f46b961736ce6aabb9002b946e05b15dcf",
       "name" : "XCGLogger",
       "container" : "XCGLogger.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "64060d837b98c943400a91e751f807ce823e5ffb69e3bb258afb8dc485aae1d8",
+      "name" : "XCGLogger",
+      "container" : "XCGLogger.xcframework",
+      "identifier" : "ios-arm64_armv7"
     }
   ]
 }

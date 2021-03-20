@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FloatingPanel
 @_exported import FloatingPanel
 import Foundation
@@ -12,8 +12,8 @@ import os
   case left
   case bottom
   case right
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -26,8 +26,8 @@ import os
   @objc public init(absoluteInset: CoreGraphics.CGFloat, edge: FloatingPanel.FloatingPanelReferenceEdge, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide)
   @objc public init(fractionalInset: CoreGraphics.CGFloat, edge: FloatingPanel.FloatingPanelReferenceEdge, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide)
   @objc final public let referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension FloatingPanelLayoutAnchor {
   @objc final public func layoutConstraints(_ vc: FloatingPanel.FloatingPanelController, for position: FloatingPanel.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
@@ -36,8 +36,8 @@ extension FloatingPanelLayoutAnchor {
   @objc public init(absoluteOffset offset: CoreGraphics.CGFloat, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
   @objc public init(fractionalOffset offset: CoreGraphics.CGFloat, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
   @objc final public let referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension FloatingPanelIntrinsicLayoutAnchor {
   @objc final public func layoutConstraints(_ vc: FloatingPanel.FloatingPanelController, for position: FloatingPanel.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
@@ -46,8 +46,8 @@ extension FloatingPanelIntrinsicLayoutAnchor {
   @objc public init(absoluteOffset offset: CoreGraphics.CGFloat, contentLayout: UIKit.UILayoutGuide, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
   @objc public init(fractionalOffset offset: CoreGraphics.CGFloat, contentLayout: UIKit.UILayoutGuide, referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide = .safeArea)
   @objc final public let referenceGuide: FloatingPanel.FloatingPanelLayoutReferenceGuide
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension FloatingPanelAdaptiveLayoutAnchor {
   @objc final public func layoutConstraints(_ vc: FloatingPanel.FloatingPanelController, for position: FloatingPanel.FloatingPanelPosition) -> [UIKit.NSLayoutConstraint]
@@ -60,8 +60,8 @@ extension FloatingPanelAdaptiveLayoutAnchor {
     @objc public var opacity: Swift.Float
     @objc public var radius: CoreGraphics.CGFloat
     @objc public var spread: CoreGraphics.CGFloat
-    @objc deinit
     @objc override dynamic public init()
+    @objc deinit
   }
   @objc public var backgroundColor: UIKit.UIColor?
   @objc public var cornerRadius: CoreGraphics.CGFloat
@@ -73,8 +73,8 @@ extension FloatingPanelAdaptiveLayoutAnchor {
   @objc public var shadows: [FloatingPanel.SurfaceAppearance.Shadow]
   @objc public var borderColor: UIKit.UIColor?
   @objc public var borderWidth: CoreGraphics.CGFloat
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(FloatingPanelSurfaceView) @objcMembers public class SurfaceView : UIKit.UIView {
   @objc final public let grabberHandle: FloatingPanel.GrabberView
@@ -143,8 +143,8 @@ extension FloatingPanelAdaptiveLayoutAnchor {
   case left
   case bottom
   case right
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -152,17 +152,17 @@ extension FloatingPanelAdaptiveLayoutAnchor {
 @objc public enum FloatingPanelLayoutReferenceGuide : Swift.Int {
   case superview = 0
   case safeArea = 1
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
 @_inheritsConvenienceInitializers @objc(FloatingPanelBackdropView) public class BackdropView : UIKit.UIView {
   public var dismissalTapGestureRecognizer: UIKit.UITapGestureRecognizer!
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers final public class FloatingPanelPanGestureRecognizer : UIKit.UIPanGestureRecognizer {
   @objc override final public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent)
@@ -174,8 +174,8 @@ extension FloatingPanelAdaptiveLayoutAnchor {
     get
     set
   }
-  @objc deinit
   @objc override dynamic public init(target: Any?, action: ObjectiveC.Selector?)
+  @objc deinit
 }
 @objc public protocol FloatingPanelControllerDelegate {
   @objc(floatingPanel:layoutForTraitCollection:) optional func floatingPanel(_ fpc: FloatingPanel.FloatingPanelController, layoutFor newCollection: UIKit.UITraitCollection) -> FloatingPanel.FloatingPanelLayout
@@ -199,8 +199,8 @@ extension FloatingPanelAdaptiveLayoutAnchor {
   @objc public enum ContentInsetAdjustmentBehavior : Swift.Int {
     case always
     case never
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -208,8 +208,8 @@ extension FloatingPanelAdaptiveLayoutAnchor {
   @objc public enum ContentMode : Swift.Int {
     case `static`
     case fitToBounds
-    public typealias RawValue = Swift.Int
     public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
     public var rawValue: Swift.Int {
       get
     }
@@ -360,8 +360,8 @@ extension UISpringTimingParameters {
   @objc(Half) public static let half: FloatingPanel.FloatingPanelState
   @objc(Tip) public static let tip: FloatingPanel.FloatingPanelState
   @objc(Hidden) public static let hidden: FloatingPanel.FloatingPanelState
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension FloatingPanel.FloatingPanelPosition : Swift.Equatable {}
 extension FloatingPanel.FloatingPanelPosition : Swift.Hashable {}
