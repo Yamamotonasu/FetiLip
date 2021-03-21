@@ -3,17 +3,17 @@
   "iOS" : [
     {
       "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
-      "hash" : "e7a0fafe7983eba5b26c49ce6d05f299fb68bebcfad2d66c25b2ee5694e1e582",
-      "name" : "FloatingPanel",
-      "container" : "FloatingPanel.xcframework",
-      "identifier" : "ios-arm64_armv7"
-    },
-    {
-      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
-      "hash" : "e7ef41c014f520c4daf652570a93c2aa1fa6981d052f30395a1100175871095a",
+      "hash" : "3e9f081138a3e7c3e6b946caa616f9e5c5104576fae4514906388d4d14703845",
       "name" : "FloatingPanel",
       "container" : "FloatingPanel.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "dcfa016ea60fa9626aa2762f3c7032a9bb05275bf0e538d3f1906ef6c99cb31d",
+      "name" : "FloatingPanel",
+      "container" : "FloatingPanel.xcframework",
+      "identifier" : "ios-arm64_armv7"
     }
   ]
 }

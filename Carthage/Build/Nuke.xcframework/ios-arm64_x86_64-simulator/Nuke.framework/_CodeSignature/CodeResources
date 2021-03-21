@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/Nuke.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		NqhtaSIZw8iUBWhB0gnqlBot6Lo=
+		2QdABfSE0tL43Pd9/csg3tqn1b4=
 		</data>
 		<key>Modules/Nuke.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/Nuke.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		NqhtaSIZw8iUBWhB0gnqlBot6Lo=
+		2QdABfSE0tL43Pd9/csg3tqn1b4=
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aXJdisav/Reu10B9L2m63/jYXnQ=
+		0XHVv40jbw7KhCpXLinlCUgLGvw=
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>Modules/Nuke.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		aXJdisav/Reu10B9L2m63/jYXnQ=
+		0XHVv40jbw7KhCpXLinlCUgLGvw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -109,7 +109,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZGrYZkB9jzME+JdmuFL1ekAlohEXFDczJznxT0YB574=
+			Jg4X+4HpvVf2kHfLkVxRWAvK6BVPiUb28U+CBk5OHfQ=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/arm64.swiftdoc</key>
@@ -123,7 +123,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZGrYZkB9jzME+JdmuFL1ekAlohEXFDczJznxT0YB574=
+			Jg4X+4HpvVf2kHfLkVxRWAvK6BVPiUb28U+CBk5OHfQ=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -137,7 +137,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wDaxh0iKTe9+zzc1qf8XYwuR/eKRiTIBNeZ59QU8SAI=
+			LGfMZ5TzN1FrHgKMRJxM++8Xk8yVjMLQqcsV/b3nQ4A=
 			</data>
 		</dict>
 		<key>Modules/Nuke.swiftmodule/x86_64.swiftdoc</key>
@@ -151,7 +151,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wDaxh0iKTe9+zzc1qf8XYwuR/eKRiTIBNeZ59QU8SAI=
+			LGfMZ5TzN1FrHgKMRJxM++8Xk8yVjMLQqcsV/b3nQ4A=
 			</data>
 		</dict>
 	</dict>

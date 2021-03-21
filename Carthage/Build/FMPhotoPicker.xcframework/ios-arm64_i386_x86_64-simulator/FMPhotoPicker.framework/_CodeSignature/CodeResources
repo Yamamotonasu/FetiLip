@@ -10,35 +10,35 @@
 		</data>
 		<key>FMImageEditorViewController.nib/objects-11.0+.nib</key>
 		<data>
-		+loFPjdYq1KRjICnnrqH3en8mUc=
+		A1ctJJM9whO7MjahZUoZ9g1Bd9s=
 		</data>
 		<key>FMImageEditorViewController.nib/runtime.nib</key>
 		<data>
-		ZJFwTDpkEPxjbQzQe1xCKAges/o=
+		KmkuK2atCV1DdXexOfIFLl00n00=
 		</data>
 		<key>FMPhotoPickerImageCollectionViewCell.nib/objects-12.3+.nib</key>
 		<data>
-		uKZDHwJHUNF2g6vkoymwm7y3Qw0=
+		40+0PXtCW2Qx2dubdzQaTAUWEWM=
 		</data>
 		<key>FMPhotoPickerImageCollectionViewCell.nib/runtime.nib</key>
 		<data>
-		QXHWFw5+uQShhR5gcREcSa+axs4=
+		th/IN5I08u1gymc/I/tvAovaUKw=
 		</data>
 		<key>FMPhotoPickerViewController.nib/objects-11.0+.nib</key>
 		<data>
-		ulMsHTN1lm4ZiXnFJ9y/uie5Dcg=
+		DCI9oYgCoxExnhGcRxC5RR99oek=
 		</data>
 		<key>FMPhotoPickerViewController.nib/runtime.nib</key>
 		<data>
-		XaiN/FFktBt7H0Blas+uILZT+tE=
+		QW+CZJIK/G/Dn0rqCMwLeHed8M8=
 		</data>
 		<key>FMPhotoPresenterViewController.nib/objects-11.0+.nib</key>
 		<data>
-		TdDu7QHV7DThKw9IPU2D0FNGjA0=
+		m9kVRB94VkqdMrgi8hkILVQ0NNo=
 		</data>
 		<key>FMPhotoPresenterViewController.nib/runtime.nib</key>
 		<data>
-		LpE9js/NWClw8J3dtoHk3BWjng4=
+		QPYUEaufOFPWVB/a2P96Tdjj66U=
 		</data>
 		<key>Headers/FMPhotoPicker-Swift.h</key>
 		<data>
@@ -142,88 +142,88 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+loFPjdYq1KRjICnnrqH3en8mUc=
+			A1ctJJM9whO7MjahZUoZ9g1Bd9s=
 			</data>
 			<key>hash2</key>
 			<data>
-			PfHvtWHxV/a7aHlvhRsTSe9O8mEVcz4SLOhtFW3Hv2U=
+			In5N37hg/EXxMV+pppG5NOmE86Flqd2h6Bu1S6xcZ5Y=
 			</data>
 		</dict>
 		<key>FMImageEditorViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZJFwTDpkEPxjbQzQe1xCKAges/o=
+			KmkuK2atCV1DdXexOfIFLl00n00=
 			</data>
 			<key>hash2</key>
 			<data>
-			QqJci+X5/suGQJnh6EGGGgCOmmpgtwClnLhLgtaCm/Q=
+			MQ2SFW6oAiLjXIfBB8nVyfzjTSv4AJyHC51yKLm/Nws=
 			</data>
 		</dict>
 		<key>FMPhotoPickerImageCollectionViewCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uKZDHwJHUNF2g6vkoymwm7y3Qw0=
+			40+0PXtCW2Qx2dubdzQaTAUWEWM=
 			</data>
 			<key>hash2</key>
 			<data>
-			4V9uJlVS/u3MV/MEfJBZ+WkJGcndxgp3EEHipI4NpTc=
+			xoPwUmk9FLE5ENVS0BRvuQvSiY14bgJMJoKlSk+n6yQ=
 			</data>
 		</dict>
 		<key>FMPhotoPickerImageCollectionViewCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QXHWFw5+uQShhR5gcREcSa+axs4=
+			th/IN5I08u1gymc/I/tvAovaUKw=
 			</data>
 			<key>hash2</key>
 			<data>
-			tXM0IxRit0ZfhZOm/xYCMLZD6vIo3ZUHdpy8jC6En2A=
+			s9hDLrQ+LcuTWIugZpFYo98U+3FMW9/aO91uGOrTcPo=
 			</data>
 		</dict>
 		<key>FMPhotoPickerViewController.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ulMsHTN1lm4ZiXnFJ9y/uie5Dcg=
+			DCI9oYgCoxExnhGcRxC5RR99oek=
 			</data>
 			<key>hash2</key>
 			<data>
-			/D7CTaNbhPLec3JGxihZw3XFgMyTvXe96Mv1Vezsvv4=
+			oqntg6E/ZkKwBgTgg7ZIFsfW4tJxRzkLZUSMnm4B5Z4=
 			</data>
 		</dict>
 		<key>FMPhotoPickerViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XaiN/FFktBt7H0Blas+uILZT+tE=
+			QW+CZJIK/G/Dn0rqCMwLeHed8M8=
 			</data>
 			<key>hash2</key>
 			<data>
-			zEylx/reDL0slN8bYlQnDKftD9zQ2ZDu5uz39BUynkE=
+			WxFaQbE3FPNoWcIGaEJq0fNM2xeaUXr+dO0+gnoa8Ug=
 			</data>
 		</dict>
 		<key>FMPhotoPresenterViewController.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TdDu7QHV7DThKw9IPU2D0FNGjA0=
+			m9kVRB94VkqdMrgi8hkILVQ0NNo=
 			</data>
 			<key>hash2</key>
 			<data>
-			hKYpLl0ax6BkRtDI/9zw151gWENant/PjezRauK8jO4=
+			5JAio712Cf0Gw7fgZ+7O8KFxCnrOlOuN4V+VkrRCDU0=
 			</data>
 		</dict>
 		<key>FMPhotoPresenterViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LpE9js/NWClw8J3dtoHk3BWjng4=
+			QPYUEaufOFPWVB/a2P96Tdjj66U=
 			</data>
 			<key>hash2</key>
 			<data>
-			hgry7h0KALDPc1PXt13ipkyvl0fPVQSdtYf6IgEoKBY=
+			oy6NoXtSgedjextHcQSeEu6Wg/BNvWM4ovSzV/f+uFM=
 			</data>
 		</dict>
 		<key>Headers/FMPhotoPicker-Swift.h</key>

@@ -6,11 +6,11 @@
 	<dict>
 		<key>CardView.nib</key>
 		<data>
-		mhqtIguGxzrujVkswK4i+4/VccY=
+		olpxYSnkeOSMbzFJNazRWz5OVzU=
 		</data>
 		<key>CenteredView.nib</key>
 		<data>
-		yzL8/T6GIoPXpaPZ/HWCS/i4+Ow=
+		5DghER5GEAjgfBNZar2JeZMMH7s=
 		</data>
 		<key>Headers/SwiftMessages.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>MessageView.nib</key>
 		<data>
-		ERTHkwTEBchgfWrLAvP6OpmHgGg=
+		vNgoGl2OYZtwigs8+NcScr3Hhhc=
 		</data>
 		<key>Modules/SwiftMessages.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
@@ -102,11 +102,11 @@
 		</data>
 		<key>StatusLine.nib</key>
 		<data>
-		GckAjaQJ4V6qYHStvTJd77g6+tE=
+		5/k+p+yvotu5M+gk+zPHqcRQpyI=
 		</data>
 		<key>TabView.nib</key>
 		<data>
-		nQRu8QGHAzKkpHCzuDtw0545I0A=
+		8FXDJqF6tq7MznNb8I5io60yHp4=
 		</data>
 		<key>errorIcon.png</key>
 		<data>
@@ -259,22 +259,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mhqtIguGxzrujVkswK4i+4/VccY=
+			olpxYSnkeOSMbzFJNazRWz5OVzU=
 			</data>
 			<key>hash2</key>
 			<data>
-			rgyGzF11BHLT+y9q8d+1GekgEnCqpeQ8w5yT7SH+mN0=
+			ILUvKSmkP/K56GE05judBRXdh/PuW2/aqoBaJ/8ruH8=
 			</data>
 		</dict>
 		<key>CenteredView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yzL8/T6GIoPXpaPZ/HWCS/i4+Ow=
+			5DghER5GEAjgfBNZar2JeZMMH7s=
 			</data>
 			<key>hash2</key>
 			<data>
-			vW3eHhSC9KEmzdERQtFvxNo9F4BlDSflKn78JRrdy20=
+			rMdq3k8Zbw6KSoSHVMyguT06oc2Ec9EUnIjlEVW6QDY=
 			</data>
 		</dict>
 		<key>Headers/SwiftMessages.h</key>
@@ -292,11 +292,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ERTHkwTEBchgfWrLAvP6OpmHgGg=
+			vNgoGl2OYZtwigs8+NcScr3Hhhc=
 			</data>
 			<key>hash2</key>
 			<data>
-			iowQ9k/6MMtdrPwaDBhBDPYtY0zeTgIEALx+WTiQtD8=
+			WER++vrGSHVBfq6kDSbiCMRPDrJSvfhgSiC/2mwbE28=
 			</data>
 		</dict>
 		<key>Modules/SwiftMessages.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
@@ -512,22 +512,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GckAjaQJ4V6qYHStvTJd77g6+tE=
+			5/k+p+yvotu5M+gk+zPHqcRQpyI=
 			</data>
 			<key>hash2</key>
 			<data>
-			HEN6XbzBB4vAccLvZ53OQtLv1Q27gSi5fuxo7D06ugM=
+			q/m3Y1g0piBq7n0BxPBnDhdBn5TYlZJfQedEG8YdEf8=
 			</data>
 		</dict>
 		<key>TabView.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nQRu8QGHAzKkpHCzuDtw0545I0A=
+			8FXDJqF6tq7MznNb8I5io60yHp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			vyK83unKYWBkyBv8YNoRkY11gs32EsIIXBhQBE4L+HU=
+			fpbr1FY45e1wpjLz3nz5fYTXlDm2EolFTr+p/7EL0pw=
 			</data>
 		</dict>
 		<key>errorIcon.png</key>

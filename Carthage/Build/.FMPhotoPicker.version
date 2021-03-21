@@ -3,14 +3,14 @@
   "iOS" : [
     {
       "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
-      "hash" : "53fb139c0f7a872dfec2cc4fa85ec6cd176e8c6c54c0062ff9b69ea18c063072",
+      "hash" : "3cdbe4d2cecd8eaebca52f5f517c7d8b6cf45fa2a4e432a46fa42c8e7e650af1",
       "name" : "FMPhotoPicker",
       "container" : "FMPhotoPicker.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
       "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
-      "hash" : "5cd38a6e9e7d0914a4049bc86390b8d483d8670e63bf2f273374af24283088a7",
+      "hash" : "72fffb627ff4d92a26baa87b31add36d296fe2147b9c4b9c34b33e99346b5a55",
       "name" : "FMPhotoPicker",
       "container" : "FMPhotoPicker.xcframework",
       "identifier" : "ios-arm64_armv7"
