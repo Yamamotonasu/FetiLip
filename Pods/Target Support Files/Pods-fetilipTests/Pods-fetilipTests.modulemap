@@ -1,6 +1,0 @@
-framework module Pods_fetilipTests {
-  umbrella header "Pods-fetilipTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

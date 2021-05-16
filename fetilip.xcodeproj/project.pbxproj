@@ -190,6 +190,7 @@
 		03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */; };
 		03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */; };
 		EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */; };
+		EA3F42BB2650CC6600179C10 /* Rswift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3F42BA2650CC6600179C10 /* Rswift.xcframework */; };
 		EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47425A7E533005DC446 /* ViolationReportClient.swift */; };
 		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
 		EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48425A7E824005DC446 /* ViolationReportModel.swift */; };
@@ -208,7 +209,6 @@
 		EA51362025FE501800E8486B /* FMPhotoPicker.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */; };
 		EA51362725FE503500E8486B /* CodableFirebase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362625FE503500E8486B /* CodableFirebase.xcframework */; };
 		EA51362F25FE505900E8486B /* ObjcExceptionBridging.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; };
-		EA51364E25FE542E00E8486B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA51364D25FE542E00E8486B /* R.generated.swift */; };
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
 		EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */; };
@@ -218,6 +218,7 @@
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
 		EAC79D7C2585AF1100803B28 /* UserBlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */; };
 		EAC79D8D25860B6700803B28 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D8C25860B6700803B28 /* GlobalData.swift */; };
+		EACBB0282650DB8B00979496 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACBB0272650DB8B00979496 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -668,13 +669,9 @@
 		03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
-		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.debug.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.debug.xcconfig"; sourceTree = "<group>"; };
-		9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.release.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.release.xcconfig"; sourceTree = "<group>"; };
-		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
 		EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockDomainModel.swift; sourceTree = "<group>"; };
+		EA3F42BA2650CC6600179C10 /* Rswift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Rswift.xcframework; path = Carthage/Build/Rswift.xcframework; sourceTree = "<group>"; };
+		EA3F42BF2650CDF400179C10 /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rswift; sourceTree = "<group>"; };
 		EA49D47425A7E533005DC446 /* ViolationReportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportClient.swift; sourceTree = "<group>"; };
 		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
 		EA49D48425A7E824005DC446 /* ViolationReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportModel.swift; sourceTree = "<group>"; };
@@ -692,7 +689,6 @@
 		EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FMPhotoPicker.xcframework; path = Carthage/Build/FMPhotoPicker.xcframework; sourceTree = "<group>"; };
 		EA51362625FE503500E8486B /* CodableFirebase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CodableFirebase.xcframework; path = Carthage/Build/CodableFirebase.xcframework; sourceTree = "<group>"; };
 		EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ObjcExceptionBridging.xcframework; path = Carthage/Build/ObjcExceptionBridging.xcframework; sourceTree = "<group>"; };
-		EA51364D25FE542E00E8486B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPost.storyboard; sourceTree = "<group>"; };
 		EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
@@ -708,6 +704,7 @@
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
 		EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockEntity.swift; sourceTree = "<group>"; };
 		EAC79D8C25860B6700803B28 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		EACBB0272650DB8B00979496 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = fetilip/src/R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -733,6 +730,7 @@
 				036318F4250C7569005B317A /* FirebaseCrashlytics.framework in Frameworks */,
 				EA51362025FE501800E8486B /* FMPhotoPicker.xcframework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
+				EA3F42BB2650CC6600179C10 /* Rswift.xcframework in Frameworks */,
 				EA5135F025FE4ED800E8486B /* XCGLogger.xcframework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
 				036318F6250C756A005B317A /* FirebaseRemoteConfig.framework in Frameworks */,
@@ -1561,13 +1559,13 @@
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
+				EA3F42BF2650CDF400179C10 /* rswift */,
 				039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */,
 				03AAFAE7241E2FD70068FB1E /* fetilip */,
 				03AAFAFE241E2FDD0068FB1E /* fetilipTests */,
 				03AAFB09241E2FDD0068FB1E /* fetilipUITests */,
 				03AAFAE6241E2FD70068FB1E /* Products */,
 				03AAFB18241E45460068FB1E /* Frameworks */,
-				86210B9D74CAD08855592760 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1619,6 +1617,7 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA3F42BA2650CC6600179C10 /* Rswift.xcframework */,
 				EA70ECFF260015960030884A /* RxTest.framework */,
 				EA70ECF8260015600030884A /* ios-arm64_i386_x86_64-simulator */,
 				EA70ECF4260015480030884A /* Nimble.framework */,
@@ -1685,7 +1684,7 @@
 				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
 				03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */,
 				03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */,
-				EA51364D25FE542E00E8486B /* R.generated.swift */,
+				EACBB0272650DB8B00979496 /* R.generated.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -2081,19 +2080,6 @@
 			path = EditProfile;
 			sourceTree = "<group>";
 		};
-		86210B9D74CAD08855592760 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */,
-				DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */,
-				3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */,
-				9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */,
-				295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */,
-				4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		EA38FEA1258618A4000D38DD /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2208,12 +2194,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB0F241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilip" */;
 			buildPhases = (
-				495E295DA36C5F5C9F564043 /* [CP] Check Pods Manifest.lock */,
 				03AAFB44241FAB690068FB1E /* Rswift Run Script */,
 				03AAFAE1241E2FD70068FB1E /* Sources */,
 				03AAFAE2241E2FD70068FB1E /* Frameworks */,
 				03AAFAE3241E2FD70068FB1E /* Resources */,
-				432510C923D697783A36108D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2228,7 +2212,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB12241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilipTests" */;
 			buildPhases = (
-				1F845C1FD009EA7829127B73 /* [CP] Check Pods Manifest.lock */,
 				03AAFAF7241E2FDD0068FB1E /* Sources */,
 				03AAFAF8241E2FDD0068FB1E /* Frameworks */,
 				03AAFAF9241E2FDD0068FB1E /* Resources */,
@@ -2248,7 +2231,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB15241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilipUITests" */;
 			buildPhases = (
-				AA375CFA37B41BA7D2DB22EB /* [CP] Check Pods Manifest.lock */,
 				03AAFB02241E2FDD0068FB1E /* Sources */,
 				03AAFB03241E2FDD0068FB1E /* Frameworks */,
 				03AAFB04241E2FDD0068FB1E /* Resources */,
@@ -2383,90 +2365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
-		1F845C1FD009EA7829127B73 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fetilipTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		432510C923D697783A36108D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		495E295DA36C5F5C9F564043 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fetilip-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA375CFA37B41BA7D2DB22EB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fetilipUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2513,6 +2412,7 @@
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
 				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
 				034C562624C47CA10005B6C5 /* FirestorageLoader.swift in Sources */,
+				EACBB0282650DB8B00979496 /* R.generated.swift in Sources */,
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
@@ -2572,7 +2472,6 @@
 				03AAFB5C2425E8770068FB1E /* GCD.swift in Sources */,
 				035D5CF624E911200047B4AA /* EditProfileDetailViewModel.swift in Sources */,
 				039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */,
-				EA51364E25FE542E00E8486B /* R.generated.swift in Sources */,
 				035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */,
 				03AAFB592425E4E40068FB1E /* UIColor.Extensions.swift in Sources */,
 				035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */,
@@ -2709,7 +2608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2770,7 +2669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2789,7 +2688,6 @@
 		};
 		03AAFB10241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_NAME_PREFIX = dev;
@@ -2804,18 +2702,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fetilip/Service/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Rswift\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2827,7 +2721,6 @@
 		};
 		03AAFB11241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_NAME_PREFIX = "";
@@ -2842,18 +2735,14 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fetilip/Service/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Rswift\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D PRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fetilip.fetilip-production";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2865,7 +2754,6 @@
 		};
 		03AAFB13241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2898,7 +2786,6 @@
 		};
 		03AAFB14241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2931,7 +2818,6 @@
 		};
 		03AAFB16241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2953,7 +2839,6 @@
 		};
 		03AAFB17241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
