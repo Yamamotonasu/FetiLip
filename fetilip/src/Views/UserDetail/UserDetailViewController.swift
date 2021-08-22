@@ -54,6 +54,8 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
 
     let blockSubject: PublishSubject<UserBlockType> = PublishSubject<UserBlockType>()
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Functions
 
     override func viewDidLoad() {
@@ -99,19 +101,19 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
         output.userSocialDataDriver
             .map { $0.postCount }
             .drive(postCountTextView.rx.text)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.userSocialDataDriver
             .map { $0.fetiPoint }
             .drive(fetipointTextView.rx.text)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.userBlockResult.subscribe(onNext: { [unowned self]_ in
             AppAlert.show(message: R._string.success.block(targetUserName: displayUserDomainModel!.userName), alertType: .info)
             self.dismiss(animated: true)
         }, onError: { _ in
             AppAlert.show(message: R._string.error.block, alertType: .error)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.loading.subscribe(onNext: { bool in
             if bool {
@@ -119,7 +121,7 @@ class UserDetailViewController: UIViewController, ViewControllerMethodInjectable
             } else {
                 AppIndicator.dismiss()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @objc private func close() {

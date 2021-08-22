@@ -59,6 +59,8 @@ class GlobalTabBarController: UITabBarController {
 
     fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
 
+    private let disposeBag = DisposeBag()
+
     private lazy var smallBottomView: UIView = {
         let anotherSmallView = UIView()
         anotherSmallView.backgroundColor = .clear
@@ -142,11 +144,11 @@ class GlobalTabBarController: UITabBarController {
 
         output.checkLoginResult.subscribe(onNext: { _ in
             log.debug("Loggined.")
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.getBlockUsersResult.subscribe(onNext: { blockUsers in
             log.debug("Success get bloking users. count : \(blockUsers.count)")
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func transitionToFirstModal() {

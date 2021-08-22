@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import NSObject_Rx
 import UIKit
 
 extension UIViewController: ExtensionCompatible {}

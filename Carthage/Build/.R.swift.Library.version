@@ -1,0 +1,19 @@
+{
+  "commitish" : "v5.4.0",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "2f38a792ea6869431c265524d99229bc6d1e11f7acbbc2f241f450dee6dec743",
+      "name" : "Rswift",
+      "container" : "Rswift.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "cd8339a4645aaae05018961938d0892f77dd55547b1af1693490a5b2274297cf",
+      "name" : "Rswift",
+      "container" : "Rswift.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    }
+  ]
+}

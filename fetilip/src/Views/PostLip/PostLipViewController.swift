@@ -74,6 +74,8 @@ class PostLipViewController: UIViewController, ViewControllerMethodInjectable {
 
     private let checkLoginEvent: PublishRelay<()> = PublishRelay<()>()
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Flags
 
     /// Whether the user can post a review.
@@ -102,7 +104,7 @@ extension PostLipViewController {
     private func subscribe() {
         dismissButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.close()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         addImageButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             guard self.canPostLip else {
@@ -115,7 +117,7 @@ extension PostLipViewController {
             } else {
                 self.launchEditor()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         let tapGesture = UITapGestureRecognizer()
         selectedImageViewArea.addGestureRecognizer(tapGesture)
@@ -125,7 +127,7 @@ extension PostLipViewController {
                 if self.imagePosted.image == nil {
                     self.presentingSelectMode()
                 }
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
 
         selectModeSuject.asObservable().subscribe(onNext: { [unowned self] mode in
             switch mode {
@@ -136,11 +138,11 @@ extension PostLipViewController {
             case .editor:
                 self.launchEditor()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         payAttensionButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.showPayAttensionScreen()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     /// Bind UI from view model outputs and ViewModel.
@@ -154,7 +156,7 @@ extension PostLipViewController {
 
         output.updatedImage
             .bind(to: self.imagePosted.rx.image)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.updatedImage
             .map { $0 != nil }
@@ -167,26 +169,26 @@ extension PostLipViewController {
                 self.postButton.alpha = exists ? 1.0 : 0.5
                 self.imagePosted.borderColor = exists ? .white : .gray
                 self.postLipReviewTextView.isHidden = !exists
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
 
         output.templateTextDriver.drive(onNext: { [unowned self] text in
             self.postLipReviewTextView.text = text
             self.postLipReviewTextView.changeVisiblePlaceHolder()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.postResult.retryWithAlert().subscribe(onNext: { [weak self] in
             ApplicationFlag.shared.updateNeedSocialUpdate(true)
             self?.dismiss(animated: true) {
                 AppAlert.show(message: R._string.success.postSucceed, alertType: .success)
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.checkLoginResult.subscribe(onNext: { [weak self] _ in
             self?.canPostLip = true
         }, onError: { [weak self] _ in
             self?.canPostLip = false
             self?.showNeedRegisterUserAlert()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.indicator.subscribe(onNext: { bool in
             if bool {
@@ -194,7 +196,7 @@ extension PostLipViewController {
             } else {
                 AppIndicator.dismiss()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func close() {

@@ -1,11 +1,19 @@
 {
-  "commitish" : "9.1.2",
+  "commitish" : "9.3.0",
   "iOS" : [
     {
-      "hash" : "cf4902ca0fd905f9f667b690082961d2577bd969bd7214e6a55d53c00e2d7dcc",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "95361d8b2f404ed30984bc4471c2081d7647c13f9c6bddabece13db5e6059d08",
       "name" : "Nuke",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "container" : "Nuke.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "f34c4220b979020975728af9e2c50e92f2732e7fcba1158a9407ea16e842c5f0",
+      "name" : "Nuke",
+      "container" : "Nuke.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
     }
   ]
 }

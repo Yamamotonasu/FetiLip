@@ -2,10 +2,18 @@
   "commitish" : "0.2.2",
   "iOS" : [
     {
-      "hash" : "3605e2316d67f1bc9c72eec63ee0bb8812fb8791c72608cdbb9a92d68d9085da",
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "391e75190ef22bf71be1d0529974e2e54b36b4455d64fdf4441dd6e426fec78a",
       "name" : "CodableFirebase",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "container" : "CodableFirebase.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "c8d721559476f6d261c37d74537985a1d861bd24c215ab6ce13d9d6f9f3dd156",
+      "name" : "CodableFirebase",
+      "container" : "CodableFirebase.xcframework",
+      "identifier" : "ios-arm64_armv7"
     }
   ]
 }

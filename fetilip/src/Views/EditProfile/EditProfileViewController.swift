@@ -62,6 +62,8 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
 
     private let checkUserStatusEvent: PublishRelay<()> = PublishRelay<()>()
 
+    private let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         composeUI()
@@ -109,20 +111,20 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
         editProfileStackView.addGestureRecognizer(tapGesture)
         tapGesture.rx.event.bind(onNext: { [unowned self] _ in
             self.presentingSelectMode()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         let userNameTapGesture = UITapGestureRecognizer()
         userNameView.addGestureRecognizer(userNameTapGesture)
         userNameTapGesture.rx.event.bind(onNext: { [unowned self] _ in
             self.presentingEditProfileDetail(editProfileType: .userName(default: self.userDomainModel?.userName ?? ""))
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         let emailTapGesture = UITapGestureRecognizer()
         displayEmailField.addGestureRecognizer(emailTapGesture)
         emailTapGesture.rx.event.bind(onNext: { [unowned self] _ in
             guard let email = self.emailLabel.text else { return }
             self.presentingEditProfileDetail(editProfileType: .email(default: email))
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         selectModeSuject.asObservable().subscribe(onNext: { [unowned self] mode in
             switch mode {
@@ -133,11 +135,11 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             case .editor:
                 break
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         registerUserButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.presentingRegisterUser()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func subscribeUI() {
@@ -151,20 +153,20 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             .retryWithAlert()
             .subscribe(onNext: { _ in
                 AppAlert.show(message: R._string.success.updateUserImageSuccess, alertType: .success)
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
 
         output.emailDriver
             .drive(emailLabel.rx.text)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.registerButtonDriver
             .map { !$0 }
             .drive(registerUserButton.rx.isHidden)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.registerButtonDriver
             .drive(displayEmailField.rx.isHidden)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.loading.subscribe(onNext: { bool in
             if bool {
@@ -172,23 +174,23 @@ class EditProfileViewController: UIViewController, ViewControllerMethodInjectabl
             } else {
                 AppIndicator.dismiss()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.profileImageDriver
             .drive(profileImage.rx.image)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
 
         output.userLoadResult.drive(onNext: { [weak self] user in
             self?.userNameLabel.text = user.userName
             self?.loadUserImage(storagePath: user.imageRef)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
     }
 
     private func loadUserImage(storagePath: String) {
         FirestorageLoader.loadImage(storagePath: storagePath).subscribe(onSuccess: { [weak self] image in
             self?.profileImage.image = image
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func presentingSelectMode() {

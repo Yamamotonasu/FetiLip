@@ -60,7 +60,7 @@ extension EditProfileDetailViewModel {
             let validator = UserNameValidator.validate(userName) { $0.isNotEmpty().lessThanDigits().greaterThanDigits() }
             switch validator {
             case .invalid(let status):
-                observer(.error(status))
+                observer(.failure(status))
             case .valid:
                 observer(.success(userName!))
             }
@@ -73,7 +73,7 @@ extension EditProfileDetailViewModel {
             let validator = EmailValidator.validate(email) { $0.isNotEmpty().validFormat() }
             switch validator {
             case .invalid(let status):
-                observer(.error(status))
+                observer(.failure(status))
             case .valid:
                 observer(.success(email!))
             }

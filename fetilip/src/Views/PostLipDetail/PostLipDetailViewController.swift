@@ -86,6 +86,8 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         return LoginAccountData.uid! == field.userUid
     }
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - LifeCycles
 
     override func viewDidLoad() {
@@ -119,23 +121,23 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
         userImage.addGestureRecognizer(tapGesture)
         tapGesture.rx.event.bind(onNext: { [unowned self] _ in
             self.transitionUserDetail()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         backButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.navigationController?.popViewController(animated: true)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         deleteButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.displayDeleteAlert()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         menuButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.displayMenu()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         editButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.transitionPostEditScreen()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         updatePostDomainModelSubject
             .do(onNext: { [weak self] newDomain in
@@ -144,7 +146,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             .map { $0.review }
             .asDriver(onErrorJustReturn: "")
             .drive(self.reviewTextView.rx.text)
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
     }
 
     private func subscribeUI() {
@@ -159,7 +161,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             .subscribe(onNext: { [weak self] domain in
                 self?.displayUserDomainModel = domain
                 self?.drawUserData(domain)
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
 
         output.deleteResult.retryWithRetryAlert { [weak self] _ in
             guard let _self = self else { return }
@@ -174,7 +176,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             }, onError: { e in
                 log.error(e.localizedDescription)
                 AppAlert.show(message: R._string.error.delete, alertType: .error)
-            }).disposed(by: rx.disposeBag)
+            }).disposed(by: disposeBag)
 
         output.sendViolationReportResult.retryWithRetryAlert { [weak self] _ in
             guard let _self = self else { return }
@@ -183,7 +185,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
             AppAlert.show(message: R._string.success.violationReports, alertType: .success)
         }, onError: { e in
             log.error(e.localizedDescription)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     /**
@@ -201,7 +203,7 @@ class PostLipDetailViewController: UIViewController, ViewControllerMethodInjecta
                     self?.displayUserDomainModel?.setUserImage(with: image)
                 }, onError: { [weak self] _ in
                     self?.userImage.image = R.image.default_icon_female()
-                }).disposed(by: rx.disposeBag)
+                }).disposed(by: disposeBag)
         } else {
             userImage.image = R.image.default_icon_female()
         }

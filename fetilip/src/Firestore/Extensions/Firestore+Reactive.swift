@@ -21,7 +21,7 @@ extension Reactive where Base: Firestore {
             collectionRef.addDocument(data: fields) { error in
                 if let error = error {
                     log.error(error)
-                    observer(.error(AuthErrorHandler.errorCode(error)))
+                    observer(.failure(AuthErrorHandler.errorCode(error)))
                 } else {
                     observer(.success(()))
                 }
@@ -39,7 +39,7 @@ extension Reactive where Base: Firestore {
             documentRef.setData(fields) { error in
                 if let error = error {
                     log.error(error)
-                    observer(.error(AuthErrorHandler.errorCode(error)))
+                    observer(.failure(AuthErrorHandler.errorCode(error)))
                 } else {
                     observer(.success(()))
                 }
@@ -56,7 +56,7 @@ extension Reactive where Base: Firestore {
             documentRef.updateData(fields) { error in
                 if let error = error {
                     log.error(error)
-                    observer(.error(AuthErrorHandler.errorCode(error)))
+                    observer(.failure(AuthErrorHandler.errorCode(error)))
                 } else {
                     observer(.success(()))
                 }
@@ -69,11 +69,11 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             query.getDocuments { snapshot, error in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot else {
-                    observer(.error(ApplicationError.unknown))
+                    observer(.failure(ApplicationError.unknown))
                     return
                 }
 
@@ -101,11 +101,11 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             collectionRef.getDocuments { snapshot, error in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot else {
-                    observer(.error(ApplicationError.unknown))
+                    observer(.failure(ApplicationError.unknown))
                     return
                 }
 
@@ -129,11 +129,11 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             subCollectionQuery.getDocuments { (snapshot, error) in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot else {
-                    observer(.error(ApplicationError.unknown))
+                    observer(.failure(ApplicationError.unknown))
                     return
                 }
                 let results = snap.documents.compactMap { document -> T.FieldType? in
@@ -159,11 +159,11 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             documentReference.getDocument { (snapshot, error) in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                     return
                 }
                 guard let snap = snapshot, let data = snap.data() else {
-                    observer(.error(ApplicationError.unknown))
+                    observer(.failure(ApplicationError.unknown))
                     return
                 }
                 do {
@@ -171,7 +171,7 @@ extension Reactive where Base: Firestore {
                     observer(.success(field))
                 } catch {
                     log.error(error)
-                    observer(.error(ApplicationError.failedParseResponse))
+                    observer(.failure(ApplicationError.failedParseResponse))
                 }
             }
             return Disposables.create()
@@ -188,7 +188,7 @@ extension Reactive where Base: Firestore {
         return Single.create { observer in
             documentReference.delete { error in
                 if let e = error {
-                    observer(.error(e))
+                    observer(.failure(e))
                 } else {
                     observer(.success(documentReference))
                 }

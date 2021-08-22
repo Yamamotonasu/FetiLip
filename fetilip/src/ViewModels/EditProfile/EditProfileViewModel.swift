@@ -121,7 +121,7 @@ extension EditProfileViewModel {
             if let i = image {
                 observer(.success(i))
             } else {
-                observer(.error(EditProfileViewModelError.imageNotFount(message: R._string.error.updateImageNotFound)))
+                observer(.failure(EditProfileViewModelError.imageNotFount(message: R._string.error.updateImageNotFound)))
             }
             return Disposables.create()
         }

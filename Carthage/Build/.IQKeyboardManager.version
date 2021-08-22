@@ -2,15 +2,30 @@
   "commitish" : "v6.5.6",
   "iOS" : [
     {
+      "hash" : "65fb4f07a31e2d271fea4001ea3646a3c284af7110026d73fa70aec7e958d6ac",
       "name" : "IQKeyboardManager",
-      "hash" : "fd22c8956730b7856a1b614425ea46302831ba2a5ec50ad1c06a976e9ed64fc8",
-      "linking" : "dynamic"
+      "container" : "IQKeyboardManager.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
-      "hash" : "5111a761dcaaf97c94709c1f3854c722124c583ba6023968cf31b3ae107bb368",
+      "hash" : "2fb0f91e3c12b33db3c773ca3661e74277d6f3e9b3e2eed3c2e9dc7c54fc0472",
+      "name" : "IQKeyboardManager",
+      "container" : "IQKeyboardManager.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "2356de7e87c7f2ac254600088f4d3d9dba0265208b23b58867e272ffdcda3d9a",
       "name" : "IQKeyboardManagerSwift",
-      "linking" : "dynamic",
-      "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+      "container" : "IQKeyboardManagerSwift.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.4 (swiftlang-1205.0.26.4 clang-1205.0.19.54)",
+      "hash" : "77d1c9fac2df649af29146c6f75398265f77170759529021e7e61cdec009c69b",
+      "name" : "IQKeyboardManagerSwift",
+      "container" : "IQKeyboardManagerSwift.xcframework",
+      "identifier" : "ios-arm64_armv7"
     }
   ]
 }

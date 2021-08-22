@@ -31,6 +31,5 @@ class UIColorExtensionTests: XCTestCase {
 extension UIColorExtensionTests {
 
     func xtestHexSuccess() {
-        // TODO: 良い方法思いついたら書く
     }
 }

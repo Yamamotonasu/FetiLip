@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import RxSwift
 
 class SettingsViewController: UITableViewController {
 
@@ -20,6 +21,10 @@ class SettingsViewController: UITableViewController {
     @IBOutlet private weak var whatsFetiPointCell: UITableViewCell!
 
     @IBOutlet private weak var contactCell: UITableViewCell!
+
+    // MARK: - Properties
+
+    private let disposeBag = DisposeBag()
 
     // MARK: - LifeCycle
 
@@ -55,7 +60,7 @@ class SettingsViewController: UITableViewController {
             default:
                 break
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func composeUI() {

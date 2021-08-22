@@ -38,6 +38,8 @@ class InputPasswordViewController: UIViewController, ViewControllerMethodInjecta
 
     private var saveInformationSubject: PublishSubject<()>?
 
+    private let disposeBag = DisposeBag()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -52,7 +54,7 @@ class InputPasswordViewController: UIViewController, ViewControllerMethodInjecta
         authenticationButton.rx.tap.asSignal().emit(onNext: { [unowned self] in
             self.saveInformationSubject?.onNext(())
             self.dismiss(animated: true)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func subscribeUI() {
@@ -63,12 +65,12 @@ class InputPasswordViewController: UIViewController, ViewControllerMethodInjecta
         output.validPasswordDriver.drive(onNext: { enabled in
             self.authenticationButton.isEnabled = enabled
             self.authenticationButton.alpha = enabled ? 1.0 : 0.5
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         passwordTextObservable.subscribe(onNext: { [unowned self] text in
             guard let t = text else { return }
             self.inputPasswordSubject?.onNext(t)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
 }

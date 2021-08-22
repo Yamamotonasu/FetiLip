@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		0307C76124F2790200BB9395 /* InputPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */; };
 		031249A725102526005AD4E2 /* GoogleService-Production-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 031249A625102526005AD4E2 /* GoogleService-Production-Info.plist */; };
-		034A9859249602F7009336F0 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9856249602F7009336F0 /* Nuke.framework */; };
-		034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9857249602F7009336F0 /* Differentiator.framework */; };
-		034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A9858249602F7009336F0 /* RxDataSources.framework */; };
 		034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A986224960674009336F0 /* MasonaryCollectionViewLayout.swift */; };
 		034A9867249642CC009336F0 /* PostLipCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */; };
 		034A9868249642CC009336F0 /* PostLipCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */; };
@@ -21,10 +18,6 @@
 		034A9877249D7F50009336F0 /* UsersModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A9876249D7F50009336F0 /* UsersModelTests.swift */; };
 		034A987B249F3372009336F0 /* LoginFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987A249F3372009336F0 /* LoginFunctions.swift */; };
 		034A987E249F577A009336F0 /* TestUserAuthentications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A987D249F5779009336F0 /* TestUserAuthentications.swift */; };
-		034A988024A0ECE7009336F0 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A987F24A0ECE6009336F0 /* Quick.framework */; platformFilter = ios; };
-		034A988224A0ECF9009336F0 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034A988124A0ECF9009336F0 /* Nimble.framework */; platformFilter = ios; };
-		034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988D24A0EFF7009336F0 /* Quick.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 034A988E24A0EFF8009336F0 /* Nimble.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		034A989324A1814B009336F0 /* MockUserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989224A1814B009336F0 /* MockUserAuthentication.swift */; };
 		034A989624A6F86C009336F0 /* AuthErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989524A6F86B009336F0 /* AuthErrorHandler.swift */; };
 		034A989824A713F2009336F0 /* R+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034A989724A713F2009336F0 /* R+Extensions.swift */; };
@@ -40,12 +33,10 @@
 		034C563224CE4E7C0005B6C5 /* PostEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563124CE4E7C0005B6C5 /* PostEntity.swift */; };
 		034C563524CE4EA90005B6C5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563424CE4EA90005B6C5 /* UserEntity.swift */; };
 		034C563824CF23D40005B6C5 /* UserDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563724CF23D40005B6C5 /* UserDomainModel.swift */; };
-		034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */; };
 		034C563C24D245270005B6C5 /* FirestoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563B24D245270005B6C5 /* FirestoreEntity.swift */; };
 		034C563E24D678800005B6C5 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */; };
 		034F7A4C250E45730092E967 /* WhatFetiPoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */; };
 		034F7A4E250E47A30092E967 /* WhatFetiPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F7A4D250E47A30092E967 /* WhatFetiPointViewController.swift */; };
-		0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; platformFilter = ios; };
 		03598FFF24A8D715000F8A27 /* PostModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03598FFE24A8D715000F8A27 /* PostModelTests.swift */; };
 		0359900124A8DD42000F8A27 /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900024A8DD42000F8A27 /* UIImageExtensionsTests.swift */; };
 		0359900324ACD775000F8A27 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900224ACD775000F8A27 /* TransitionManager.swift */; };
@@ -54,7 +45,6 @@
 		0359900C24AEA364000F8A27 /* ZoomAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */; };
 		0359901024B174FA000F8A27 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */; };
 		0359901224B1B602000F8A27 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */; };
-		0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0359901324B407F3000F8A27 /* CodableFirebase.framework */; };
 		0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */; };
 		0359901C24BD30EF000F8A27 /* PlaceHolderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */; };
 		035BAFDF244330D7001FF6D1 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */; };
@@ -69,7 +59,6 @@
 		035BB00224666121001FF6D1 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00124666121001FF6D1 /* AppSettings.swift */; };
 		035BB00424666D3E001FF6D1 /* LoginAccountData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00324666D3E001FF6D1 /* LoginAccountData.swift */; };
 		035BB00924669E01001FF6D1 /* FetilipBuildScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */; };
-		035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */; };
 		035BB0112467CFA2001FF6D1 /* PostLip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 035BB0102467CFA2001FF6D1 /* PostLip.storyboard */; };
 		035BB0132467CFC7001FF6D1 /* PostLipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */; };
 		035BB0152467D080001FF6D1 /* PostLipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035BB0142467D080001FF6D1 /* PostLipViewModel.swift */; };
@@ -100,7 +89,6 @@
 		035F6D9E24F3432600991231 /* SourceHanSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */; };
 		035F6D9F24F3432600991231 /* SourceHanSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */; };
 		035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA024F348FF00991231 /* UIFont+Extensions.swift */; };
-		035F6DA324F47FF000991231 /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 035F6DA224F47FF000991231 /* SwiftMessages.framework */; };
 		035F6DA824F481D500991231 /* AppAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA724F481D500991231 /* AppAlert.swift */; };
 		035F6DAA24F4AA5D00991231 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DA924F4AA5D00991231 /* UILabel+Extensions.swift */; };
 		035F6DAC24F9CC0100991231 /* Observable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F6DAB24F9CC0100991231 /* Observable+extensions.swift */; };
@@ -147,7 +135,6 @@
 		039EB673243833F30016436C /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB672243833F30016436C /* DebugViewModel.swift */; };
 		039EB676243840580016436C /* ViewControllerMethodInjectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB675243840580016436C /* ViewControllerMethodInjectable.swift */; };
 		039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67724384FD50016436C /* FirebaseAuth.framework */; };
-		039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */; };
 		039EB6872439BEB00016436C /* AppIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB6862439BEB00016436C /* AppIndicator.swift */; };
 		039EB68B243B641B0016436C /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039EB68A243B641A0016436C /* UsersModel.swift */; };
 		03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */; };
@@ -155,17 +142,7 @@
 		03AAFAF2241E2FDD0068FB1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF1241E2FDD0068FB1E /* Assets.xcassets */; };
 		03AAFAF5241E2FDD0068FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFAF3241E2FDD0068FB1E /* LaunchScreen.storyboard */; };
 		03AAFB0B241E2FDD0068FB1E /* fetilipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */; };
-		03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */; };
-		03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */; };
-		03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB20241E45730068FB1E /* RxSwift.framework */; };
-		03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB24241E46800068FB1E /* RxRelay.framework */; };
-		03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB27241E46970068FB1E /* IQKeyboardManagerSwift.framework */; };
-		03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB24241E46800068FB1E /* RxRelay.framework */; };
-		03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB2E241E4A140068FB1E /* RxCocoa.framework */; };
-		03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB31241E50E10068FB1E /* XCGLogger.framework */; };
-		03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
 		03AAFB3F241FA0240068FB1E /* UIViewController+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */; };
-		03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB45241FAC530068FB1E /* R.generated.swift */; };
 		03AAFB48241FB81B0068FB1E /* ExtensionCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */; };
 		03AAFB4C2420FEA30068FB1E /* YuGothic-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */; };
 		03AAFB4E2420FEAF0068FB1E /* YuGothic-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */; };
@@ -191,7 +168,6 @@
 		03AAFBB524309BE40068FB1E /* CardTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB424309BE40068FB1E /* CardTabBar.swift */; };
 		03AAFBB8243366810068FB1E /* UITabBarController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAFBB7243366810068FB1E /* UITabBarController+Extensions.swift */; };
 		03AAFBBA2434AEF50068FB1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03AAFBB92434AEF50068FB1E /* GoogleService-Info.plist */; };
-		03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */; };
 		03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC302434C7130068FB1E /* FirebaseCoreDiagnostics.framework */; };
 		03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC312434C7130068FB1E /* nanopb.framework */; };
 		03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */; };
@@ -208,28 +184,41 @@
 		03AD487D24FEA024006BABDF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AD487C24FEA024006BABDF /* Login.storyboard */; };
 		03AD487F24FEA03B006BABDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD487E24FEA03B006BABDF /* LoginViewController.swift */; };
 		03AD488224FF20F4006BABDF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AD488124FF20F4006BABDF /* LoginViewModel.swift */; };
-		03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */; };
 		03B1B29024F2625D00E0D1DE /* InputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */; };
 		03B1B29224F2626E00E0D1DE /* InputPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */; };
 		03B50B5A24E4ADED00C7A14F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */; };
 		03B50B5C24E4AE0C00C7A14F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */; };
 		03B50B5E24E4B0FF00C7A14F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */; };
-		33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */; };
-		CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */; };
-		DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */; platformFilter = ios; };
 		EA38FEA3258618BC000D38DD /* UserBlockDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */; };
+		EA3F42BB2650CC6600179C10 /* Rswift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA3F42BA2650CC6600179C10 /* Rswift.xcframework */; };
 		EA49D47525A7E533005DC446 /* ViolationReportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47425A7E533005DC446 /* ViolationReportClient.swift */; };
 		EA49D47E25A7E64E005DC446 /* ViolationReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */; };
 		EA49D48525A7E824005DC446 /* ViolationReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48425A7E824005DC446 /* ViolationReportModel.swift */; };
 		EA49D48C25A7E90A005DC446 /* ViolationReportsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */; };
+		EA5135DC25FE4E7A00E8486B /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */; };
+		EA5135E625FE4E9900E8486B /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */; };
+		EA5135E925FE4EA900E8486B /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135E825FE4EA900E8486B /* RxRelay.xcframework */; };
+		EA5135F025FE4ED800E8486B /* XCGLogger.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135EF25FE4ED800E8486B /* XCGLogger.xcframework */; };
+		EA5135F525FE4EE800E8486B /* SwiftMessages.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135F425FE4EE800E8486B /* SwiftMessages.xcframework */; };
+		EA5135FA25FE4F8900E8486B /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135F925FE4F8900E8486B /* RxCocoa.xcframework */; };
+		EA5135FF25FE4FA000E8486B /* NVActivityIndicatorView.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135FD25FE4FA000E8486B /* NVActivityIndicatorView.xcframework */; };
+		EA51360125FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA5135FE25FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework */; };
+		EA51360725FE4FC200E8486B /* IQKeyboardManager.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51360525FE4FC200E8486B /* IQKeyboardManager.xcframework */; };
+		EA51360925FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51360625FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework */; };
+		EA51361925FE500600E8486B /* FloatingPanel.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51361825FE500600E8486B /* FloatingPanel.xcframework */; };
+		EA51362025FE501800E8486B /* FMPhotoPicker.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */; };
+		EA51362725FE503500E8486B /* CodableFirebase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362625FE503500E8486B /* CodableFirebase.xcframework */; };
+		EA51362F25FE505900E8486B /* ObjcExceptionBridging.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */; };
 		EA6A5EC925AA8FEF00EE9AD8 /* EditPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */; };
 		EA6A5ECD25AA900700EE9AD8 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */; };
 		EA6A5ED925AAC00D00EE9AD8 /* EditPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */; };
+		EA70ED00260015960030884A /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA70ECFF260015960030884A /* RxTest.framework */; platformFilter = ios; };
 		EAC79D692585AD3800803B28 /* UserBlocksClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */; };
 		EAC79D702585AE9900803B28 /* UserBlocksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */; };
 		EAC79D752585AECC00803B28 /* UserBlockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D742585AECC00803B28 /* UserBlockModel.swift */; };
 		EAC79D7C2585AF1100803B28 /* UserBlockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */; };
 		EAC79D8D25860B6700803B28 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC79D8C25860B6700803B28 /* GlobalData.swift */; };
+		EACBB0282650DB8B00979496 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACBB0272650DB8B00979496 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,8 +245,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				034A988F24A0EFF8009336F0 /* Quick.framework in CopyFiles */,
-				034A989024A0EFF8009336F0 /* Nimble.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +254,6 @@
 		0307C76024F2790200BB9395 /* InputPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewModel.swift; sourceTree = "<group>"; };
 		031249A5251023E4005AD4E2 /* fetilip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fetilip.entitlements; sourceTree = "<group>"; };
 		031249A625102526005AD4E2 /* GoogleService-Production-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Production-Info.plist"; sourceTree = "<group>"; };
-		034A9856249602F7009336F0 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
-		034A9857249602F7009336F0 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
-		034A9858249602F7009336F0 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		034A986224960674009336F0 /* MasonaryCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasonaryCollectionViewLayout.swift; sourceTree = "<group>"; };
 		034A9865249642CC009336F0 /* PostLipCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipCollectionViewCell.swift; sourceTree = "<group>"; };
 		034A9866249642CC009336F0 /* PostLipCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostLipCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -279,10 +263,6 @@
 		034A9876249D7F50009336F0 /* UsersModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModelTests.swift; sourceTree = "<group>"; };
 		034A987A249F3372009336F0 /* LoginFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFunctions.swift; sourceTree = "<group>"; };
 		034A987D249F5779009336F0 /* TestUserAuthentications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserAuthentications.swift; sourceTree = "<group>"; };
-		034A987F24A0ECE6009336F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		034A988124A0ECF9009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		034A988D24A0EFF7009336F0 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		034A988E24A0EFF8009336F0 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		034A989224A1814B009336F0 /* MockUserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserAuthentication.swift; sourceTree = "<group>"; };
 		034A989524A6F86B009336F0 /* AuthErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthErrorHandler.swift; sourceTree = "<group>"; };
 		034A989724A713F2009336F0 /* R+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Extensions.swift"; sourceTree = "<group>"; };
@@ -298,7 +278,6 @@
 		034C563124CE4E7C0005B6C5 /* PostEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEntity.swift; sourceTree = "<group>"; };
 		034C563424CE4EA90005B6C5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		034C563724CF23D40005B6C5 /* UserDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDomainModel.swift; sourceTree = "<group>"; };
-		034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostListSectionDomainModel.swift; path = fetilip/src/Domains/Users/PostListSectionDomainModel.swift; sourceTree = SOURCE_ROOT; };
 		034C563B24D245270005B6C5 /* FirestoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEntity.swift; sourceTree = "<group>"; };
 		034C563D24D6787F0005B6C5 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		034F7A4B250E45730092E967 /* WhatFetiPoint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhatFetiPoint.storyboard; sourceTree = "<group>"; };
@@ -311,7 +290,6 @@
 		0359900B24AEA364000F8A27 /* ZoomAnimatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAnimatorDelegate.swift; sourceTree = "<group>"; };
 		0359900F24B174FA000F8A27 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
 		0359901124B1B602000F8A27 /* ZoomDismissalInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomDismissalInteractionController.swift; sourceTree = "<group>"; };
-		0359901324B407F3000F8A27 /* CodableFirebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CodableFirebase.framework; path = Carthage/Build/iOS/CodableFirebase.framework; sourceTree = "<group>"; };
 		0359901724BAFFAD000F8A27 /* CodableFirebaseExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFirebaseExtensions.swift; sourceTree = "<group>"; };
 		0359901B24BD30ED000F8A27 /* PlaceHolderTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderTextView.swift; sourceTree = "<group>"; };
 		035BAFDE244330D7001FF6D1 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
@@ -326,7 +304,6 @@
 		035BB00124666121001FF6D1 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		035BB00324666D3E001FF6D1 /* LoginAccountData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAccountData.swift; sourceTree = "<group>"; };
 		035BB00824669E01001FF6D1 /* FetilipBuildScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetilipBuildScheme.swift; sourceTree = "<group>"; };
-		035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMPhotoPicker.framework; path = Carthage/Build/iOS/FMPhotoPicker.framework; sourceTree = "<group>"; };
 		035BB0102467CFA2001FF6D1 /* PostLip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostLip.storyboard; sourceTree = "<group>"; };
 		035BB0122467CFC7001FF6D1 /* PostLipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewController.swift; sourceTree = "<group>"; };
 		035BB0142467D080001FF6D1 /* PostLipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLipViewModel.swift; sourceTree = "<group>"; };
@@ -357,7 +334,6 @@
 		035F6D9824F3432400991231 /* SourceHanSans-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-ExtraLight.otf"; sourceTree = "<group>"; };
 		035F6D9924F3432500991231 /* SourceHanSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSans-Heavy.otf"; sourceTree = "<group>"; };
 		035F6DA024F348FF00991231 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
-		035F6DA224F47FF000991231 /* SwiftMessages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMessages.framework; path = Carthage/Build/iOS/SwiftMessages.framework; sourceTree = "<group>"; };
 		035F6DA724F481D500991231 /* AppAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlert.swift; sourceTree = "<group>"; };
 		035F6DA924F4AA5D00991231 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		035F6DAB24F9CC0100991231 /* Observable+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+extensions.swift"; sourceTree = "<group>"; };
@@ -503,8 +479,6 @@
 		039EB672243833F30016436C /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugViewModel.swift; path = fetilip/src/ViewModels/Debug/DebugViewModel.swift; sourceTree = SOURCE_ROOT; };
 		039EB675243840580016436C /* ViewControllerMethodInjectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMethodInjectable.swift; sourceTree = "<group>"; };
 		039EB67724384FD50016436C /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Carthage/Build/iOS/FirebaseAuth.framework; sourceTree = "<group>"; };
-		039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorViewAppExtension.framework; path = Carthage/Build/iOS/NVActivityIndicatorViewAppExtension.framework; sourceTree = "<group>"; };
-		039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
 		039EB6862439BEB00016436C /* AppIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIndicator.swift; sourceTree = "<group>"; };
 		039EB68A243B641A0016436C /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
 		03AAFAE5241E2FD70068FB1E /* fetilip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fetilip.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -518,16 +492,7 @@
 		03AAFB06241E2FDD0068FB1E /* fetilipUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fetilipUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03AAFB0A241E2FDD0068FB1E /* fetilipUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetilipUITests.swift; sourceTree = "<group>"; };
 		03AAFB0C241E2FDD0068FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
-		03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
-		03AAFB20241E45730068FB1E /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		03AAFB24241E46800068FB1E /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		03AAFB27241E46970068FB1E /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
-		03AAFB2E241E4A140068FB1E /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		03AAFB31241E50E10068FB1E /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
-		03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		03AAFB3E241FA0240068FB1E /* UIViewController+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extentions.swift"; sourceTree = "<group>"; };
-		03AAFB45241FAC530068FB1E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		03AAFB47241FB81B0068FB1E /* ExtensionCompatible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCompatible.swift; sourceTree = "<group>"; };
 		03AAFB4B2420FEA30068FB1E /* YuGothic-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Bold.otf"; sourceTree = "<group>"; };
 		03AAFB4D2420FEAF0068FB1E /* YuGothic-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuGothic-Medium.otf"; sourceTree = "<group>"; };
@@ -563,7 +528,6 @@
 		03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransport.framework; path = Carthage/Build/iOS/GoogleDataTransport.framework; sourceTree = "<group>"; };
 		03AAFC382434C7140068FB1E /* gRPC-C++.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "gRPC-C++.framework"; path = "Carthage/Build/iOS/gRPC-C++.framework"; sourceTree = "<group>"; };
 		03AAFC392434C7140068FB1E /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Carthage/Build/iOS/GoogleUtilities.framework; sourceTree = "<group>"; };
-		03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleDataTransportCCTSupport.framework; path = Carthage/Build/iOS/GoogleDataTransportCCTSupport.framework; sourceTree = "<group>"; };
 		03AAFC3B2434C7140068FB1E /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Carthage/Build/iOS/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		03AAFC3C2434C7140068FB1E /* FIRAnalyticsConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FIRAnalyticsConnector.framework; path = Carthage/Build/iOS/FIRAnalyticsConnector.framework; sourceTree = "<group>"; };
 		03AAFC582434C9520068FB1E /* .NSObject-Rx.version */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".NSObject-Rx.version"; sourceTree = "<group>"; };
@@ -700,34 +664,47 @@
 		03AD487C24FEA024006BABDF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		03AD487E24FEA03B006BABDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03AD488124FF20F4006BABDF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FloatingPanel.framework; path = Carthage/Build/iOS/FloatingPanel.framework; sourceTree = "<group>"; };
 		03B1B28F24F2625D00E0D1DE /* InputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPasswordViewController.swift; sourceTree = "<group>"; };
 		03B1B29124F2626E00E0D1DE /* InputPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputPassword.storyboard; sourceTree = "<group>"; };
 		03B50B5924E4ADED00C7A14F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		03B50B5B24E4AE0C00C7A14F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		03B50B5D24E4B0FF00C7A14F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
-		295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.debug.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipUITests.release.xcconfig"; path = "Target Support Files/Pods-fetilipUITests/Pods-fetilipUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.debug.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.debug.xcconfig"; sourceTree = "<group>"; };
-		92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilipTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilipTests.release.xcconfig"; path = "Target Support Files/Pods-fetilipTests/Pods-fetilipTests.release.xcconfig"; sourceTree = "<group>"; };
-		9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-fetilipUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fetilip.release.xcconfig"; path = "Target Support Files/Pods-fetilip/Pods-fetilip.release.xcconfig"; sourceTree = "<group>"; };
 		EA38FEA2258618BC000D38DD /* UserBlockDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockDomainModel.swift; sourceTree = "<group>"; };
+		EA3F42BA2650CC6600179C10 /* Rswift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Rswift.xcframework; path = Carthage/Build/Rswift.xcframework; sourceTree = "<group>"; };
+		EA3F42BF2650CDF400179C10 /* rswift */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rswift; sourceTree = "<group>"; };
 		EA49D47425A7E533005DC446 /* ViolationReportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportClient.swift; sourceTree = "<group>"; };
 		EA49D47D25A7E64E005DC446 /* ViolationReportEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportEntity.swift; sourceTree = "<group>"; };
 		EA49D48425A7E824005DC446 /* ViolationReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportModel.swift; sourceTree = "<group>"; };
 		EA49D48B25A7E90A005DC446 /* ViolationReportsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationReportsRequest.swift; sourceTree = "<group>"; };
+		EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = Carthage/Build/RxSwift.xcframework; sourceTree = "<group>"; };
+		EA5135E825FE4EA900E8486B /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = Carthage/Build/RxRelay.xcframework; sourceTree = "<group>"; };
+		EA5135EF25FE4ED800E8486B /* XCGLogger.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = XCGLogger.xcframework; path = Carthage/Build/XCGLogger.xcframework; sourceTree = "<group>"; };
+		EA5135F425FE4EE800E8486B /* SwiftMessages.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftMessages.xcframework; path = Carthage/Build/SwiftMessages.xcframework; sourceTree = "<group>"; };
+		EA5135F925FE4F8900E8486B /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = Carthage/Build/RxCocoa.xcframework; sourceTree = "<group>"; };
+		EA5135FD25FE4FA000E8486B /* NVActivityIndicatorView.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NVActivityIndicatorView.xcframework; path = Carthage/Build/NVActivityIndicatorView.xcframework; sourceTree = "<group>"; };
+		EA5135FE25FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = NVActivityIndicatorViewAppExtension.xcframework; path = Carthage/Build/NVActivityIndicatorViewAppExtension.xcframework; sourceTree = "<group>"; };
+		EA51360525FE4FC200E8486B /* IQKeyboardManager.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardManager.xcframework; path = Carthage/Build/IQKeyboardManager.xcframework; sourceTree = "<group>"; };
+		EA51360625FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IQKeyboardManagerSwift.xcframework; path = Carthage/Build/IQKeyboardManagerSwift.xcframework; sourceTree = "<group>"; };
+		EA51361825FE500600E8486B /* FloatingPanel.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FloatingPanel.xcframework; path = Carthage/Build/FloatingPanel.xcframework; sourceTree = "<group>"; };
+		EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FMPhotoPicker.xcframework; path = Carthage/Build/FMPhotoPicker.xcframework; sourceTree = "<group>"; };
+		EA51362625FE503500E8486B /* CodableFirebase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CodableFirebase.xcframework; path = Carthage/Build/CodableFirebase.xcframework; sourceTree = "<group>"; };
+		EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ObjcExceptionBridging.xcframework; path = Carthage/Build/ObjcExceptionBridging.xcframework; sourceTree = "<group>"; };
 		EA6A5EC825AA8FEF00EE9AD8 /* EditPost.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPost.storyboard; sourceTree = "<group>"; };
 		EA6A5ECC25AA900700EE9AD8 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		EA6A5ED825AAC00D00EE9AD8 /* EditPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewModel.swift; sourceTree = "<group>"; };
+		EA70EC8C25FF6C4E0030884A /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = Carthage/Build/RxBlocking.xcframework; sourceTree = "<group>"; };
+		EA70EC9425FF6CB80030884A /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = "Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator/RxBlocking.framework"; sourceTree = "<group>"; };
+		EA70ECF0260015340030884A /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = "Carthage/Build/Quick.xcframework/ios-arm64_i386_x86_64-simulator/Quick.framework"; sourceTree = "<group>"; };
+		EA70ECF4260015480030884A /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = "Carthage/Build/Nimble.xcframework/ios-arm64_i386_x86_64-simulator/Nimble.framework"; sourceTree = "<group>"; };
+		EA70ECFA260015600030884A /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		EA70ECFB260015600030884A /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RxBlocking.framework; sourceTree = "<group>"; };
+		EA70ECFF260015960030884A /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = "Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator/RxTest.framework"; sourceTree = "<group>"; };
 		EAC79D682585AD3800803B28 /* UserBlocksClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksClientProtocol.swift; sourceTree = "<group>"; };
 		EAC79D6F2585AE9900803B28 /* UserBlocksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlocksRequest.swift; sourceTree = "<group>"; };
 		EAC79D742585AECC00803B28 /* UserBlockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockModel.swift; sourceTree = "<group>"; };
 		EAC79D7B2585AF1100803B28 /* UserBlockEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBlockEntity.swift; sourceTree = "<group>"; };
 		EAC79D8C25860B6700803B28 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
-		F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fetilip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EACBB0272650DB8B00979496 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = fetilip/src/R.generated.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -736,47 +713,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				035E49F0251DB5050083EC21 /* MessageUI.framework in Frameworks */,
+				EA51362F25FE505900E8486B /* ObjcExceptionBridging.xcframework in Frameworks */,
 				039EB65A243611290016436C /* abseil.framework in Frameworks */,
-				03AAFB25241E46800068FB1E /* RxRelay.framework in Frameworks */,
 				03AAFC4B2434C7140068FB1E /* GoogleDataTransport.framework in Frameworks */,
 				03AAFC452434C7140068FB1E /* FirebaseInstallations.framework in Frameworks */,
 				03AAFC492434C7140068FB1E /* PromisesObjC.framework in Frameworks */,
+				EA5135F525FE4EE800E8486B /* SwiftMessages.xcframework in Frameworks */,
 				039EB662243611290016436C /* leveldb-library.framework in Frameworks */,
-				03AAFB32241E50E10068FB1E /* XCGLogger.framework in Frameworks */,
 				03AAFC4F2434C7140068FB1E /* GoogleUtilities.framework in Frameworks */,
-				0359901424B407F4000F8A27 /* CodableFirebase.framework in Frameworks */,
 				03AAFC552434C7140068FB1E /* FIRAnalyticsConnector.framework in Frameworks */,
-				03AAFB28241E46970068FB1E /* IQKeyboardManagerSwift.framework in Frameworks */,
-				03AAFB2F241E4A140068FB1E /* RxCocoa.framework in Frameworks */,
+				EA5135E925FE4EA900E8486B /* RxRelay.xcframework in Frameworks */,
 				03AAFC412434C7140068FB1E /* GoogleAppMeasurement.framework in Frameworks */,
 				039EB65C243611290016436C /* FirebaseFirestore.framework in Frameworks */,
 				03AAFC3F2434C7140068FB1E /* nanopb.framework in Frameworks */,
-				035BB00B2467CCEB001FF6D1 /* FMPhotoPicker.framework in Frameworks */,
-				03AAFB2B241E4A030068FB1E /* RxRelay.framework in Frameworks */,
-				03AAFB1E241E45560068FB1E /* NSObject_Rx.framework in Frameworks */,
-				034A985D249602F8009336F0 /* RxDataSources.framework in Frameworks */,
 				03631963250C75CE005B317A /* Protobuf.framework in Frameworks */,
 				036318F4250C7569005B317A /* FirebaseCrashlytics.framework in Frameworks */,
-				03B1B28924F25FB800E0D1DE /* FloatingPanel.framework in Frameworks */,
+				EA51362025FE501800E8486B /* FMPhotoPicker.xcframework in Frameworks */,
 				039EB66A243611F00016436C /* gRPC-Core.framework in Frameworks */,
+				EA3F42BB2650CC6600179C10 /* Rswift.xcframework in Frameworks */,
+				EA5135F025FE4ED800E8486B /* XCGLogger.xcframework in Frameworks */,
 				039EB667243611900016436C /* gRPC-C++.framework in Frameworks */,
-				039EB67F2439B46D0016436C /* NVActivityIndicatorView.framework in Frameworks */,
 				036318F6250C756A005B317A /* FirebaseRemoteConfig.framework in Frameworks */,
 				036318FA250C75A2005B317A /* FirebaseABTesting.framework in Frameworks */,
-				034A985B249602F8009336F0 /* Differentiator.framework in Frameworks */,
-				03AAFB1A241E45460068FB1E /* IQKeyboardManager.framework in Frameworks */,
+				EA5135FA25FE4F8900E8486B /* RxCocoa.xcframework in Frameworks */,
 				03AAFC472434C7140068FB1E /* FirebaseCore.framework in Frameworks */,
 				03AAFC532434C7140068FB1E /* FirebaseAnalytics.framework in Frameworks */,
-				035F6DA324F47FF000991231 /* SwiftMessages.framework in Frameworks */,
+				EA51361925FE500600E8486B /* FloatingPanel.xcframework in Frameworks */,
 				039EB65E243611290016436C /* BoringSSL-GRPC.framework in Frameworks */,
-				03AAFB21241E45730068FB1E /* RxSwift.framework in Frameworks */,
-				03AAFB36241E51510068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
+				EA51360925FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework in Frameworks */,
 				03AAFC3D2434C7140068FB1E /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				03AAFC2D2434C7110068FB1E /* ObjcExceptionBridging.framework in Frameworks */,
+				EA51360125FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework in Frameworks */,
+				EA51360725FE4FC200E8486B /* IQKeyboardManager.xcframework in Frameworks */,
 				039EB67824384FD50016436C /* FirebaseAuth.framework in Frameworks */,
-				034A9859249602F7009336F0 /* Nuke.framework in Frameworks */,
-				33A4A7092A3228E0EBE14914 /* Pods_fetilip.framework in Frameworks */,
+				EA5135FF25FE4FA000E8486B /* NVActivityIndicatorView.xcframework in Frameworks */,
+				EA5135DC25FE4E7A00E8486B /* RxSwift.xcframework in Frameworks */,
+				EA5135E625FE4E9900E8486B /* RxSwift.xcframework in Frameworks */,
 				039EB660243611290016436C /* FirebaseStorage.framework in Frameworks */,
+				EA51362725FE503500E8486B /* CodableFirebase.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,10 +757,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				034A988224A0ECF9009336F0 /* Nimble.framework in Frameworks */,
-				034A988024A0ECE7009336F0 /* Quick.framework in Frameworks */,
-				0358B8BE24A034FD0010BDF4 /* RxCocoa.framework in Frameworks */,
-				DE2C56F54E50031D3C4AA2EF /* Pods_fetilipTests.framework in Frameworks */,
+				EA70ED00260015960030884A /* RxTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,7 +765,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCCC00F6CA9DE756EA6B72D4 /* libPods-fetilipUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,7 +800,6 @@
 			isa = PBXGroup;
 			children = (
 				034C563624CF23BC0005B6C5 /* Users */,
-				034A986D24983FE8009336F0 /* RxDatasource */,
 				034A986A24964EFE009336F0 /* Posts */,
 			);
 			path = Domains;
@@ -843,14 +811,6 @@
 				034A986B24964F1B009336F0 /* PostDomainModel.swift */,
 			);
 			path = Posts;
-			sourceTree = "<group>";
-		};
-		034A986D24983FE8009336F0 /* RxDatasource */ = {
-			isa = PBXGroup;
-			children = (
-				034C563924CFA86C0005B6C5 /* PostListSectionDomainModel.swift */,
-			);
-			path = RxDatasource;
 			sourceTree = "<group>";
 		};
 		034A9872249CFF94009336F0 /* Firestore */ = {
@@ -1599,15 +1559,13 @@
 		03AAFADC241E2FD70068FB1E = {
 			isa = PBXGroup;
 			children = (
-				034A988E24A0EFF8009336F0 /* Nimble.framework */,
-				034A988D24A0EFF7009336F0 /* Quick.framework */,
+				EA3F42BF2650CDF400179C10 /* rswift */,
 				039EB6652436114D0016436C /* gRPCCertificates-Cpp.bundle */,
 				03AAFAE7241E2FD70068FB1E /* fetilip */,
 				03AAFAFE241E2FDD0068FB1E /* fetilipTests */,
 				03AAFB09241E2FDD0068FB1E /* fetilipUITests */,
 				03AAFAE6241E2FD70068FB1E /* Products */,
 				03AAFB18241E45460068FB1E /* Frameworks */,
-				86210B9D74CAD08855592760 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1659,22 +1617,31 @@
 		03AAFB18241E45460068FB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA3F42BA2650CC6600179C10 /* Rswift.xcframework */,
+				EA70ECFF260015960030884A /* RxTest.framework */,
+				EA70ECF8260015600030884A /* ios-arm64_i386_x86_64-simulator */,
+				EA70ECF4260015480030884A /* Nimble.framework */,
+				EA70ECF0260015340030884A /* Quick.framework */,
+				EA70EC9425FF6CB80030884A /* RxBlocking.framework */,
+				EA70EC8C25FF6C4E0030884A /* RxBlocking.xcframework */,
+				EA51362E25FE505900E8486B /* ObjcExceptionBridging.xcframework */,
+				EA51362625FE503500E8486B /* CodableFirebase.xcframework */,
+				EA51361F25FE501800E8486B /* FMPhotoPicker.xcframework */,
+				EA51361825FE500600E8486B /* FloatingPanel.xcframework */,
+				EA51360525FE4FC200E8486B /* IQKeyboardManager.xcframework */,
+				EA51360625FE4FC200E8486B /* IQKeyboardManagerSwift.xcframework */,
+				EA5135FD25FE4FA000E8486B /* NVActivityIndicatorView.xcframework */,
+				EA5135FE25FE4FA000E8486B /* NVActivityIndicatorViewAppExtension.xcframework */,
+				EA5135F925FE4F8900E8486B /* RxCocoa.xcframework */,
+				EA5135F425FE4EE800E8486B /* SwiftMessages.xcframework */,
+				EA5135EF25FE4ED800E8486B /* XCGLogger.xcframework */,
+				EA5135E825FE4EA900E8486B /* RxRelay.xcframework */,
+				EA5135DB25FE4E7A00E8486B /* RxSwift.xcframework */,
 				035E49EF251DB5040083EC21 /* MessageUI.framework */,
 				036318FD250C75B3005B317A /* iOS */,
 				036318F9250C75A2005B317A /* FirebaseABTesting.framework */,
 				036318F2250C7569005B317A /* FirebaseCrashlytics.framework */,
 				036318F3250C7569005B317A /* FirebaseRemoteConfig.framework */,
-				035F6DA224F47FF000991231 /* SwiftMessages.framework */,
-				03B1B28824F25FB800E0D1DE /* FloatingPanel.framework */,
-				0359901324B407F3000F8A27 /* CodableFirebase.framework */,
-				034A988124A0ECF9009336F0 /* Nimble.framework */,
-				034A987F24A0ECE6009336F0 /* Quick.framework */,
-				034A9857249602F7009336F0 /* Differentiator.framework */,
-				034A9856249602F7009336F0 /* Nuke.framework */,
-				034A9858249602F7009336F0 /* RxDataSources.framework */,
-				035BB00A2467CCEB001FF6D1 /* FMPhotoPicker.framework */,
-				039EB67C2439B46C0016436C /* NVActivityIndicatorView.framework */,
-				039EB67B2439B46C0016436C /* NVActivityIndicatorViewAppExtension.framework */,
 				039EB67724384FD50016436C /* FirebaseAuth.framework */,
 				039EB669243611F00016436C /* gRPC-Core.framework */,
 				039EB655243611280016436C /* abseil.framework */,
@@ -1692,22 +1659,10 @@
 				03AAFC342434C7130068FB1E /* FirebaseInstallations.framework */,
 				03AAFC322434C7130068FB1E /* GoogleAppMeasurement.framework */,
 				03AAFC372434C7140068FB1E /* GoogleDataTransport.framework */,
-				03AAFC3A2434C7140068FB1E /* GoogleDataTransportCCTSupport.framework */,
 				03AAFC392434C7140068FB1E /* GoogleUtilities.framework */,
 				03AAFC382434C7140068FB1E /* gRPC-C++.framework */,
 				03AAFC312434C7130068FB1E /* nanopb.framework */,
 				03AAFC362434C7130068FB1E /* PromisesObjC.framework */,
-				03AAFB35241E51510068FB1E /* ObjcExceptionBridging.framework */,
-				03AAFB31241E50E10068FB1E /* XCGLogger.framework */,
-				03AAFB2E241E4A140068FB1E /* RxCocoa.framework */,
-				03AAFB27241E46970068FB1E /* IQKeyboardManagerSwift.framework */,
-				03AAFB24241E46800068FB1E /* RxRelay.framework */,
-				03AAFB20241E45730068FB1E /* RxSwift.framework */,
-				03AAFB1D241E45560068FB1E /* NSObject_Rx.framework */,
-				03AAFB19241E45460068FB1E /* IQKeyboardManager.framework */,
-				9D8FDE1635CF034353597888 /* libPods-fetilipUITests.a */,
-				F401A1C28FD975278A1EB69E /* Pods_fetilip.framework */,
-				92CC7E42863AD4129BB5A142 /* Pods_fetilipTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1727,9 +1682,9 @@
 				03AAFB3B241F9D2B0068FB1E /* ViewModels */,
 				03AAFB3A241F9D230068FB1E /* Views */,
 				03AAFAE8241E2FD70068FB1E /* AppDelegate.swift */,
-				03AAFB45241FAC530068FB1E /* R.generated.swift */,
 				03AAFBAA242EEFF10068FB1E /* AppInitialization.swift */,
 				03AAFAEA241E2FD70068FB1E /* SceneDelegate.swift */,
+				EACBB0272650DB8B00979496 /* R.generated.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -2125,19 +2080,6 @@
 			path = EditProfile;
 			sourceTree = "<group>";
 		};
-		86210B9D74CAD08855592760 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */,
-				DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */,
-				3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */,
-				9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */,
-				295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */,
-				4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		EA38FEA1258618A4000D38DD /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2195,6 +2137,24 @@
 			path = EditPost;
 			sourceTree = "<group>";
 		};
+		EA70ECF8260015600030884A /* ios-arm64_i386_x86_64-simulator */ = {
+			isa = PBXGroup;
+			children = (
+				EA70ECF9260015600030884A /* dSYMs */,
+				EA70ECFB260015600030884A /* RxBlocking.framework */,
+			);
+			name = "ios-arm64_i386_x86_64-simulator";
+			path = "Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator";
+			sourceTree = "<group>";
+		};
+		EA70ECF9260015600030884A /* dSYMs */ = {
+			isa = PBXGroup;
+			children = (
+				EA70ECFA260015600030884A /* RxBlocking.framework.dSYM */,
+			);
+			path = dSYMs;
+			sourceTree = "<group>";
+		};
 		EAC79D672585ACFD00803B28 /* Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2234,13 +2194,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB0F241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilip" */;
 			buildPhases = (
-				495E295DA36C5F5C9F564043 /* [CP] Check Pods Manifest.lock */,
 				03AAFB44241FAB690068FB1E /* Rswift Run Script */,
 				03AAFAE1241E2FD70068FB1E /* Sources */,
 				03AAFAE2241E2FD70068FB1E /* Frameworks */,
 				03AAFAE3241E2FD70068FB1E /* Resources */,
-				03AAFB2A241E47740068FB1E /* Carthage Run Script */,
-				432510C923D697783A36108D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2255,7 +2212,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB12241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilipTests" */;
 			buildPhases = (
-				1F845C1FD009EA7829127B73 /* [CP] Check Pods Manifest.lock */,
 				03AAFAF7241E2FDD0068FB1E /* Sources */,
 				03AAFAF8241E2FDD0068FB1E /* Frameworks */,
 				03AAFAF9241E2FDD0068FB1E /* Resources */,
@@ -2275,7 +2231,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03AAFB15241E2FDD0068FB1E /* Build configuration list for PBXNativeTarget "fetilipUITests" */;
 			buildPhases = (
-				AA375CFA37B41BA7D2DB22EB /* [CP] Check Pods Manifest.lock */,
 				03AAFB02241E2FDD0068FB1E /* Sources */,
 				03AAFB03241E2FDD0068FB1E /* Frameworks */,
 				03AAFB04241E2FDD0068FB1E /* Resources */,
@@ -2392,56 +2347,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03AAFB2A241E47740068FB1E /* Carthage Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManager.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjcExceptionBridging.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NVActivityIndicatorView.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FMPhotoPicker.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/CodableFirebase.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/FloatingPanel.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftMessages.framework",
-			);
-			name = "Carthage Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManager.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/IQKeyboardManagerSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ObjcExceptionBridging.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NVActivityIndicatorView.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FMPhotoPicker.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Differentiator.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Nuke.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxDataSources.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CodableFirebase.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/FloatingPanel.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftMessages.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		03AAFB44241FAB690068FB1E /* Rswift Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2460,90 +2365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
-		1F845C1FD009EA7829127B73 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fetilipTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		432510C923D697783A36108D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-fetilip/Pods-fetilip-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		495E295DA36C5F5C9F564043 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fetilip-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AA375CFA37B41BA7D2DB22EB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-fetilipUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "\"$SRCROOT/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2590,10 +2412,10 @@
 				034A986324960674009336F0 /* MasonaryCollectionViewLayout.swift in Sources */,
 				0359901824BAFFAE000F8A27 /* CodableFirebaseExtensions.swift in Sources */,
 				034C562624C47CA10005B6C5 /* FirestorageLoader.swift in Sources */,
+				EACBB0282650DB8B00979496 /* R.generated.swift in Sources */,
 				036A45162472D96000DD9282 /* UIImage+Extensions.swift in Sources */,
 				03AAFAE9241E2FD70068FB1E /* AppDelegate.swift in Sources */,
 				035BB0172467DC33001FF6D1 /* TransitionPostPageViewController.swift in Sources */,
-				03AAFB46241FAC530068FB1E /* R.generated.swift in Sources */,
 				035F6DA124F348FF00991231 /* UIFont+Extensions.swift in Sources */,
 				035D5D0424E964640047B4AA /* ValidationContainer.swift in Sources */,
 				035D5D0924E9FCAC0047B4AA /* PasswordValidation.swift in Sources */,
@@ -2677,7 +2499,6 @@
 				034A98712498FFA1009336F0 /* UICollectionView+Extensions.swift in Sources */,
 				035BAFFA245ED6FD001FF6D1 /* Firestore+Reactive.swift in Sources */,
 				035F6DB024FB8CAE00991231 /* ApplicationFlag.swift in Sources */,
-				034C563A24CFA86C0005B6C5 /* PostListSectionDomainModel.swift in Sources */,
 				035BAFF12459AD6F001FF6D1 /* UserModelClient.swift in Sources */,
 				035F6DA824F481D500991231 /* AppAlert.swift in Sources */,
 				035F6DAE24FB34DB00991231 /* ReviewValidation.swift in Sources */,
@@ -2772,6 +2593,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj *.xcframework";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -2786,7 +2608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2838,6 +2660,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj *.xcframework";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2846,7 +2669,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2865,7 +2688,6 @@
 		};
 		03AAFB10241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A42CA53A89A669AD2B0D03B /* Pods-fetilip.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_NAME_PREFIX = dev;
@@ -2874,23 +2696,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
-				EXCLUDED_ARCHS = "arm64e arm64";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fetilip/Service/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Rswift\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = fetilip.fetilip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2902,7 +2721,6 @@
 		};
 		03AAFB11241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB5E8695938E024C99BCC11C /* Pods-fetilip.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				BUNDLE_NAME_PREFIX = "";
@@ -2911,23 +2729,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
-				EXCLUDED_ARCHS = "arm64e arm64";
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = fetilip/Service/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.1;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-framework",
-					"\"Rswift\"",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D PRODUCTION";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fetilip.fetilip-production";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2939,15 +2754,19 @@
 		};
 		03AAFB13241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AC83E40926C61D54333B7C9 /* Pods-fetilipTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Quick.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Nimble.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
 				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -2967,15 +2786,19 @@
 		};
 		03AAFB14241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9ACC4BB0653AD11B30ACA080 /* Pods-fetilipTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				EXCLUDED_ARCHS = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/RxBlocking.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Quick.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/Nimble.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/RxTest.xcframework/ios-arm64_i386_x86_64-simulator",
 				);
 				INFOPLIST_FILE = fetilipTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -2995,11 +2818,11 @@
 		};
 		03AAFB16241E2FDD0068FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 295E8AE9577A8D5D2B651A2E /* Pods-fetilipUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = fetilipUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3016,11 +2839,11 @@
 		};
 		03AAFB17241E2FDD0068FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B0012BDC5C1303728C3DE48 /* Pods-fetilipUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QJA2WU2RRL;
+				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = fetilipUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

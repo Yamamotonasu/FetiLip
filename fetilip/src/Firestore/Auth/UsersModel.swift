@@ -86,7 +86,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().signInAnonymously { _, error in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -103,12 +103,12 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
                 } else {
-                    observer(.error(User.AuthError.currentUserNotFound))
+                    observer(.failure(User.AuthError.currentUserNotFound))
                 }
             }
             return Disposables.create()
@@ -121,7 +121,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
             if let user = Auth.auth().currentUser {
                 observer(.success(user))
             } else {
-                observer(.error(User.AuthError.currentUserNotFound))
+                observer(.failure(User.AuthError.currentUserNotFound))
             }
             return Disposables.create()
         }
@@ -132,12 +132,12 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().signIn(withEmail: email, password: password, completion: { (_, error) in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
                 } else {
-                    observer(.error(User.AuthError.currentUserNotFound))
+                    observer(.failure(User.AuthError.currentUserNotFound))
                 }
             })
             return Disposables.create()
@@ -149,12 +149,12 @@ public struct UsersAuthModel: UserAuthModelProtocol {
         return Single.create { observer in
             Auth.auth().createUser(withEmail: email, password: password) { (_, error) in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
                 } else {
-                    observer(.error(User.AuthError.currentUserNotFound))
+                    observer(.failure(User.AuthError.currentUserNotFound))
                 }
             }
             return Disposables.create()
@@ -169,7 +169,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 LoginAccountData.resetUserData()
                 observer(.success(()))
             } catch {
-                observer(.error(User.AuthError.failedLogout))
+                observer(.failure(User.AuthError.failedLogout))
             }
             return Disposables.create()
         }
@@ -180,7 +180,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
             let credential = EmailAuthProvider.credential(withEmail: email, password: password)
             user.link(with: credential) { (_, error) in
                 if let e = error {
-                    observer(.error(AuthErrorHandler.errorCode(e)))
+                    observer(.failure(AuthErrorHandler.errorCode(e)))
                 }
                 if let user = Auth.auth().currentUser {
                     observer(.success(user))
@@ -193,16 +193,16 @@ public struct UsersAuthModel: UserAuthModelProtocol {
     public func updateUserEmail(email: String) -> Single<()> {
         return Single.create { observer in
             guard let user = Auth.auth().currentUser else {
-                observer(.error(User.AuthError.currentUserNotFound))
+                observer(.failure(User.AuthError.currentUserNotFound))
                 return Disposables.create()
             }
 
             if user.isAnonymous {
-                observer(.error(User.AuthError.needToUpdateFromAnonymousUser))
+                observer(.failure(User.AuthError.needToUpdateFromAnonymousUser))
             } else {
                 user.updateEmail(to: email) { error in
                     if let e = error {
-                        observer(.error(User.AuthError.failedUpdateEmail(reason: e.localizedDescription)))
+                        observer(.failure(User.AuthError.failedUpdateEmail(reason: e.localizedDescription)))
                     } else {
                         observer(.success(()))
                     }
@@ -218,7 +218,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 let credential = EmailAuthProvider.credential(withEmail: email, password: password)
                 user.reauthenticate(with: credential) { (_, error) in
                     if let e = error {
-                        observer(.error(AuthErrorHandler.errorCode(e)))
+                        observer(.failure(AuthErrorHandler.errorCode(e)))
                     } else {
                         observer(.success(()))
                     }
@@ -235,7 +235,7 @@ public struct UsersAuthModel: UserAuthModelProtocol {
                 changeRequest.displayName = name
                 changeRequest.commitChanges { error in
                     if let e = error {
-                        observer(.error(e))
+                        observer(.failure(e))
                     }
                     observer(.success(()))
                 }

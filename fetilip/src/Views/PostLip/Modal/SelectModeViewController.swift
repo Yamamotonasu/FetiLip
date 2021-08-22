@@ -34,6 +34,10 @@ class SelectModeViewController: UIViewController, ViewControllerMethodInjectable
     /// Library button.
     @IBOutlet private weak var libraryButton: UIButton!
 
+    // MARK: - Properties
+
+    private let disposeBag = DisposeBag()
+
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -60,19 +64,19 @@ extension SelectModeViewController {
             self?.dismiss(animated: true) {
                 self?.selectSubject.onNext(.camera)
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         libraryButton.rx.tap.asSignal().emit(onNext: { [weak self] _ in
             self?.dismiss(animated: true) {
                 self?.selectSubject.onNext(.libary)
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         let tapGesture = UITapGestureRecognizer()
         self.view.addGestureRecognizer(tapGesture)
         tapGesture.rx.event.bind(onNext: { [weak self] _ in
             self?.dismiss(animated: true)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 }
 

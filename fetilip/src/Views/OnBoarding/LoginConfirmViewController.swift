@@ -28,6 +28,10 @@ class LoginConfirmViewController: UIViewController {
 
     @IBOutlet private weak var startAnonymousButton: UIButton!
 
+    // MARK: - Proprties
+
+    private let disposeBag = DisposeBag()
+
     // MARK: - LifeCycle
 
     override func viewDidLoad() {
@@ -46,11 +50,11 @@ class LoginConfirmViewController: UIViewController {
     private func subscribe() {
         alreadyExistAccountButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.transitionToLoginScreen()
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         startAnonymousButton.rx.tap.asSignal().emit(onNext: { [unowned self] _ in
             self.createAnonymousUserEvent.accept(())
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func subscribeUI() {
@@ -60,7 +64,7 @@ class LoginConfirmViewController: UIViewController {
         output.createAnonymousUserResult.retryWithAlert().subscribe(onNext: { [weak self] _ in
             PostListViewController.refreshSubject.onNext(.refresh)
             self?.dismiss(animated: true)
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
 
         output.loading.subscribe(onNext: { bool in
             if bool {
@@ -68,7 +72,7 @@ class LoginConfirmViewController: UIViewController {
             } else {
                 AppIndicator.dismiss()
             }
-        }).disposed(by: rx.disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     private func transitionToLoginScreen() {
